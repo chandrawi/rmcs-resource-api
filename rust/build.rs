@@ -4,7 +4,8 @@ use std::path::PathBuf;
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let proto_files = [
         ("../proto/model.proto", "model_descriptor.bin"),
-        ("../proto/device.proto", "device_descriptor.bin")
+        ("../proto/device.proto", "device_descriptor.bin"),
+        ("../proto/group.proto", "group_descriptor.bin")
     ];
     let out_dir = PathBuf::from(env::var("OUT_DIR").unwrap());
 

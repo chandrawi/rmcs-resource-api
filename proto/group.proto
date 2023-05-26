@@ -1,0 +1,121 @@
+syntax = "proto3";
+package group;
+
+import "common.proto";
+
+service GroupService {
+    rpc ReadGroupModel(GroupId) returns (GroupModelReadResponse);
+
+    rpc ListGroupModelByName(GroupName) returns (GroupModelListResponse);
+
+    rpc ListGroupModelByCategory(GroupCategory) returns (GroupModelListResponse);
+
+    rpc ListGroupModelByNameCategory(GroupNameCategory) returns (GroupModelListResponse);
+
+    rpc CreateGroupModel(GroupModelSchema) returns (GroupCreateResponse);
+
+    rpc UpdateGroupModel(GroupUpdate) returns (GroupChangeResponse);
+
+    rpc DeleteGroupModel(GroupId) returns (GroupChangeResponse);
+
+    rpc AddGroupModelMember(GroupModel) returns (GroupChangeResponse);
+
+    rpc RemoveGroupModelMember(GroupModel) returns (GroupChangeResponse);
+
+    rpc ReadGroupDevice(GroupId) returns (GroupDeviceReadResponse);
+
+    rpc ListGroupDeviceByName(GroupName) returns (GroupDeviceListResponse);
+
+    rpc ListGroupDeviceByCategory(GroupCategory) returns (GroupDeviceListResponse);
+
+    rpc ListGroupDeviceByNameCategory(GroupNameCategory) returns (GroupDeviceListResponse);
+
+    rpc CreateGroupDevice(GroupDeviceSchema) returns (GroupCreateResponse);
+
+    rpc UpdateGroupDevice(GroupUpdate) returns (GroupChangeResponse);
+
+    rpc DeleteGroupDevice(GroupId) returns (GroupChangeResponse);
+
+    rpc AddGroupDeviceMember(GroupDevice) returns (GroupChangeResponse);
+
+    rpc RemoveGroupDeviceMember(GroupDevice) returns (GroupChangeResponse);
+}
+
+message GroupModelSchema {
+    uint32 id = 1;
+    string name = 2;
+    string category = 3;
+    string description = 4;
+    repeated uint32 models = 5;
+}
+
+message GroupDeviceSchema {
+    uint32 id = 1;
+    string name = 2;
+    string category = 3;
+    string description = 4;
+    repeated uint64 devices = 5;
+}
+
+message GroupId {
+    uint32 id = 1;
+}
+
+message GroupName {
+    string name = 1;
+}
+
+message GroupCategory {
+    string category = 1;
+}
+
+message GroupNameCategory {
+    string name = 1;
+    string category = 2;
+}
+
+message GroupUpdate {
+    uint32 id = 1;
+    optional string name = 2;
+    optional string category = 3;
+    optional string description = 4;
+}
+
+message GroupModel {
+    uint32 id = 1;
+    uint32 model_id = 2;
+}
+
+message GroupDevice {
+    uint32 id = 1;
+    uint64 device_id = 2;
+}
+
+message GroupModelReadResponse {
+    GroupModelSchema result = 1;
+    common.ResponseStatus status = 2;
+}
+
+message GroupModelListResponse {
+    repeated GroupModelSchema results = 1;
+    common.ResponseStatus status = 2;
+}
+
+message GroupDeviceReadResponse {
+    GroupDeviceSchema result = 1;
+    common.ResponseStatus status = 2;
+}
+
+message GroupDeviceListResponse {
+    repeated GroupDeviceSchema results = 1;
+    common.ResponseStatus status = 2;
+}
+
+message GroupCreateResponse {
+    uint32 id = 1;
+    common.ResponseStatus status = 2;
+}
+
+message GroupChangeResponse {
+    common.ResponseStatus status = 1;
+}
