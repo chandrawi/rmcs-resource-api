@@ -1,0 +1,141 @@
+syntax = "proto3";
+package data;
+
+import "common.proto";
+
+service DataService {
+    rpc ReadData(DataId) returns (DataReadResponse);
+
+    rpc ListDataByTime(DataTime) returns (DataListResponse);
+
+    rpc ListDataByLastTime(DataTime) returns (DataListResponse);
+
+    rpc ListDataByRangeTime(DataRange) returns (DataListResponse);
+
+    rpc ListDataByNumberBefore(DataNumber) returns (DataListResponse);
+
+    rpc ListDataByNumberAfter(DataNumber) returns (DataListResponse);
+
+    rpc GetDataModel(ModelId) returns (DataModelResponse);
+
+    rpc ReadDataWithModel(DataIdModel) returns (DataReadResponse);
+
+    rpc ListDataWithModelByTime(DataTimeModel) returns (DataListResponse);
+
+    rpc ListDataWithModelByLastTime(DataTimeModel) returns (DataListResponse);
+
+    rpc ListDataWithModelByRangeTime(DataRangeModel) returns (DataListResponse);
+
+    rpc ListDataWithModelByNumberBefore(DataNumberModel) returns (DataListResponse);
+
+    rpc ListDataWithModelByNumberAfter(DataNumberModel) returns (DataListResponse);
+
+    rpc CreateData(DataSchema) returns (DataChangeResponse);
+
+    rpc CreateDataWithModel(DataSchemaModel) returns (DataChangeResponse);
+
+    rpc DeleteData(DataId) returns (DataChangeResponse);
+
+    rpc DeleteDataWithModel(DataIdModel) returns (DataChangeResponse);
+}
+
+message DataSchema {
+    uint64 device_id = 1;
+    uint32 model_id = 2;
+    int64 timestamp = 3;
+    uint32 index = 4;
+    bytes data_bytes = 5;
+    repeated common.DataType data_type = 6;
+}
+
+message DataId {
+    uint64 device_id = 1;
+    uint32 model_id = 2;
+    int64 timestamp = 3;
+    uint32 index = 4;
+}
+
+message DataTime {
+    uint64 device_id = 1;
+    uint32 model_id = 2;
+    int64 timestamp = 3;
+}
+
+message DataRange {
+    uint64 device_id = 1;
+    uint32 model_id = 2;
+    int64 begin = 3;
+    int64 end = 4;
+}
+
+message DataNumber {
+    uint64 device_id = 1;
+    uint32 model_id = 2;
+    int64 timestamp = 3;
+    uint32 number = 4;
+}
+
+message ModelId {
+    uint32 id = 1;
+}
+
+message DataModel {
+    uint32 id = 1;
+    common.DataIndexing indexing = 2;
+    repeated common.DataType types = 3;
+}
+
+message DataSchemaModel {
+    DataModel model = 1;
+    uint64 device_id = 2;
+    int64 timestamp = 3;
+    uint32 index = 4;
+    bytes data_bytes = 5;
+    repeated common.DataType data_type = 6;
+}
+
+message DataIdModel {
+    DataModel model = 1;
+    uint64 device_id = 2;
+    int64 timestamp = 3;
+    uint32 index = 4;
+}
+
+message DataTimeModel {
+    DataModel model = 1;
+    uint64 device_id = 2;
+    int64 timestamp = 3;
+}
+
+message DataRangeModel {
+    DataModel model = 1;
+    uint64 device_id = 2;
+    int64 begin = 3;
+    int64 end = 4;
+}
+
+message DataNumberModel {
+    DataModel model = 1;
+    uint64 device_id = 2;
+    int64 timestamp = 3;
+    uint32 number = 4;
+}
+
+message DataReadResponse {
+    DataSchema result = 1;
+    common.ResponseStatus status = 2;
+}
+
+message DataListResponse {
+    repeated DataSchema results = 1;
+    common.ResponseStatus status = 2;
+}
+
+message DataModelResponse {
+    DataModel result = 1;
+    common.ResponseStatus status = 2;
+}
+
+message DataChangeResponse {
+    common.ResponseStatus status = 1;
+}
