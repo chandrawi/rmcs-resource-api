@@ -1,0 +1,243 @@
+syntax = "proto3";
+package device;
+
+import "common.proto";
+
+service DeviceService {
+    rpc ReadDevice(DeviceId) returns (DeviceReadResponse);
+
+    rpc ReadDeviceBySn(SerialNumber) returns (DeviceReadResponse);
+
+    rpc ListDeviceByGateway(GatewayId) returns (DeviceListResponse);
+
+    rpc ListDeviceByType(TypeId) returns (DeviceListResponse);
+
+    rpc ListDeviceByName(DeviceName) returns (DeviceListResponse);
+
+    rpc ListDeviceByGatewayType(DeviceGatewayType) returns (DeviceListResponse);
+
+    rpc ListDeviceByGatewayName(DeviceGatewayName) returns (DeviceListResponse);
+
+    rpc CreateDevice(DeviceSchema) returns (DeviceChangeResponse);
+
+    rpc UpdateDevice(DeviceUpdate) returns (DeviceChangeResponse);
+
+    rpc DeleteDevice(DeviceId) returns (DeviceChangeResponse);
+
+    rpc ReadGateway(GatewayId) returns (GatewayReadResponse);
+
+    rpc ReadGatewayBySn(SerialNumber) returns (GatewayReadResponse);
+
+    rpc ListGatewayByType(TypeId) returns (GatewayListResponse);
+
+    rpc ListGatewayByName(GatewayName) returns (GatewayListResponse);
+
+    rpc CreateGateway(GatewaySchema) returns (GatewayChangeResponse);
+
+    rpc UpdateGateway(GatewayUpdate) returns (GatewayChangeResponse);
+
+    rpc DeleteGateway(GatewayId) returns (GatewayChangeResponse);
+
+    rpc ReadDeviceConfig(ConfigId) returns (ConfigReadResponse);
+
+    rpc ListDeviceConfig(DeviceId) returns (ConfigListResponse);
+
+    rpc CreateDeviceConfig(ConfigSchema) returns (ConfigCreateResponse);
+
+    rpc UpdateDeviceConfig(ConfigUpdate) returns (ConfigChangeResponse);
+
+    rpc DeleteDeviceConfig(ConfigId) returns (ConfigChangeResponse);
+
+    rpc ReadType(TypeId) returns (TypeReadResponse);
+
+    rpc ListTypeByName(TypeName) returns (TypeListResponse);
+
+    rpc CreateType(TypeSchema) returns (TypeCreateResponse);
+
+    rpc UpdateType(TypeUpdate) returns (TypeChangeResponse);
+
+    rpc DeleteType(TypeId) returns (TypeChangeResponse);
+
+    rpc AddTypeModel(TypeModel) returns (TypeChangeResponse);
+
+    rpc RemoveTypeModel(TypeModel) returns (TypeChangeResponse);
+}
+
+message DeviceSchema {
+    uint64 id = 1;
+    uint64 gateway_id = 2;
+    string serial_number = 3;
+    string name = 4;
+    string description = 5;
+    TypeSchema device_type = 6;
+    repeated ConfigSchema configs = 7;
+}
+
+message GatewaySchema {
+    uint64 id = 1;
+    string serial_number = 2;
+    string name = 3;
+    string description = 4;
+    TypeSchema gateway_type = 5;
+    repeated ConfigSchema configs = 6;
+}
+
+message DeviceId {
+    uint64 id = 1;
+}
+
+message GatewayId {
+    uint64 id = 1;
+}
+
+message SerialNumber {
+    string serial_number = 1;
+}
+
+message DeviceName {
+    string name = 1;
+}
+
+message GatewayName {
+    string name = 1;
+}
+
+message DeviceGatewayType {
+    uint64 gateway_id = 1;
+    uint32 type_id = 2;
+}
+
+message DeviceGatewayName {
+    uint64 gateway_id = 1;
+    string name = 2;
+}
+
+message DeviceUpdate {
+    uint64 id = 1;
+    optional uint64 gateway_id = 2;
+    optional string serial_number = 3;
+    optional string name = 4;
+    optional string description = 5;
+    optional uint32 type_id = 6;
+}
+
+message GatewayUpdate {
+    uint64 id = 1;
+    optional string serial_number = 2;
+    optional string name = 3;
+    optional string description = 4;
+    optional uint32 type_id = 5;
+}
+
+message ConfigSchema {
+    uint32 id = 1;
+    uint64 device_id = 2;
+    string name = 3;
+    bytes config_bytes = 4;
+    common.ConfigType config_type = 5;
+    string category = 6;
+}
+
+message ConfigId {
+    uint32 id = 1;
+}
+
+message ConfigUpdate {
+    uint32 id = 1;
+    optional string name = 2;
+    optional bytes config_bytes = 3;
+    optional common.ConfigType config_type = 4;
+    optional string category = 5;
+}
+
+message TypeSchema {
+    uint32 id = 1;
+    string name = 2;
+    string description = 3;
+    repeated uint32 models = 4;
+}
+
+message TypeId {
+    uint32 id = 1;
+}
+
+message TypeName {
+    string name = 1;
+}
+
+message TypeUpdate {
+    uint32 id = 1;
+    optional string name = 2;
+    optional string description = 3;
+}
+
+message TypeModel {
+    uint32 id = 1;
+    uint32 model_id = 2;
+}
+
+message DeviceReadResponse {
+    DeviceSchema result = 1;
+    common.ResponseStatus status = 2;
+}
+
+message DeviceListResponse {
+    repeated DeviceSchema results = 1;
+    common.ResponseStatus status = 2;
+}
+
+message DeviceChangeResponse {
+    common.ResponseStatus status = 1;
+}
+
+message GatewayReadResponse {
+    GatewaySchema result = 1;
+    common.ResponseStatus status = 2;
+}
+
+message GatewayListResponse {
+    repeated GatewaySchema results = 1;
+    common.ResponseStatus status = 2;
+}
+
+message GatewayChangeResponse {
+    common.ResponseStatus status = 1;
+}
+
+message ConfigReadResponse {
+    ConfigSchema result = 1;
+    common.ResponseStatus status = 2;
+}
+
+message ConfigListResponse {
+    repeated ConfigSchema results = 1;
+    common.ResponseStatus status = 2;
+}
+
+message ConfigCreateResponse {
+    uint32 id = 1;
+    common.ResponseStatus status = 2;
+}
+
+message ConfigChangeResponse {
+    common.ResponseStatus status = 1;
+}
+
+message TypeReadResponse {
+    TypeSchema result = 1;
+    common.ResponseStatus status = 2;
+}
+
+message TypeListResponse {
+    repeated TypeSchema results = 1;
+    common.ResponseStatus status = 2;
+}
+
+message TypeCreateResponse {
+    uint32 id = 1;
+    common.ResponseStatus status = 2;
+}
+
+message TypeChangeResponse {
+    common.ResponseStatus status = 1;
+}
