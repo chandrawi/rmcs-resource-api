@@ -1,0 +1,138 @@
+syntax = "proto3";
+package model;
+
+import "common.proto";
+
+service ModelService {
+    rpc ReadModel(ModelId) returns (ModelReadResponse);
+
+    rpc ListModelByName(ModelName) returns (ModelListResponse);
+
+    rpc ListModelByCategory(ModelCategory) returns (ModelListResponse);
+
+    rpc ListModelByNameCategory(ModelNameCategory) returns (ModelListResponse);
+
+    rpc CreateModel(ModelSchema) returns (ModelCreateResponse);
+
+    rpc UpdateModel(ModelUpdate) returns (ModelChangeResponse);
+
+    rpc DeleteModel(ModelId) returns (ModelChangeResponse);
+
+    rpc AddModelType(ModelTypes) returns (ModelChangeResponse);
+
+    rpc RemoveModelType(ModelId) returns (ModelChangeResponse);
+
+    rpc ReadModelConfig(ConfigId) returns (ConfigReadResponse);
+
+    rpc ListModelConfig(ModelId) returns (ConfigListResponse);
+
+    rpc CreateModelConfig(ConfigSchema) returns (ConfigCreateResponse);
+
+    rpc UpdateModelConfig(ConfigUpdate) returns (ConfigChangeResponse);
+
+    rpc DeleteModelConfig(ConfigId) returns (ConfigChangeResponse);
+}
+
+message ModelSchema {
+    uint32 id = 1;
+    common.DataIndexing indexing = 2;
+    string category = 3;
+    string name = 4;
+    string description = 5;
+    repeated common.DataType types = 6;
+    repeated ConfigSchemaVec configs = 7;
+}
+
+message ConfigSchemaVec {
+    repeated ConfigSchema configs = 1;
+}
+
+message ModelId {
+    uint32 id = 1;
+}
+
+message ModelName {
+    string name = 1;
+}
+
+message ModelCategory {
+    string category = 1;
+}
+
+message ModelNameCategory {
+    string name = 1;
+    string category = 2;
+}
+
+message ModelUpdate {
+    uint32 id = 1;
+    optional common.DataIndexing indexing = 2;
+    optional string category = 3;
+    optional string name = 4;
+    optional string description = 5;
+}
+
+message ModelTypes {
+    uint32 id = 1;
+    repeated common.DataType types = 6;
+}
+
+message ConfigSchema {
+    uint32 id = 1;
+    uint32 model_id = 2;
+    uint32 index = 3;
+    string name = 4;
+    bytes config_bytes = 5;
+    common.ConfigType config_type = 6;
+    string category = 7;
+}
+
+message ConfigId {
+    uint32 id = 1;
+}
+
+message ConfigUpdate {
+    uint32 id = 1;
+    optional string name = 2;
+    optional bytes config_bytes = 3;
+    optional common.ConfigType config_type = 4;
+    optional string category = 5;
+}
+
+message ModelReadResponse {
+    ModelSchema result = 1;
+    common.ResponseStatus status = 2;
+}
+
+message ModelListResponse {
+    repeated ModelSchema results = 1;
+    common.ResponseStatus status = 2;
+}
+
+message ModelCreateResponse {
+    uint32 id = 1;
+    common.ResponseStatus status = 2;
+}
+
+message ModelChangeResponse {
+    common.ResponseStatus status = 1;
+}
+
+message ConfigReadResponse {
+    ConfigSchema result = 1;
+    common.ResponseStatus status = 2;
+}
+
+message ConfigListResponse {
+    repeated ConfigSchema results = 1;
+    common.ResponseStatus status = 2;
+}
+
+message ConfigCreateResponse {
+    uint32 id = 1;
+    common.ResponseStatus status = 2;
+}
+
+message ConfigChangeResponse {
+    common.ResponseStatus status = 1;
+}
