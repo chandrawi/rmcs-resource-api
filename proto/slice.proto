@@ -1,0 +1,84 @@
+syntax = "proto3";
+package slice;
+
+import "common.proto";
+
+service SliceService {
+    rpc ReadSlice(SliceId) returns (SliceReadResponse);
+
+    rpc ListSliceByName(SliceName) returns (SliceListResponse);
+
+    rpc ListSliceByDevice(SliceDevice) returns (SliceListResponse);
+
+    rpc ListSliceByModel(SliceModel) returns (SliceListResponse);
+
+    rpc ListSliceByDeviceModel(SliceDeviceModel) returns (SliceListResponse);
+
+    rpc CreateSlice(SliceSchema) returns (SliceCreateResponse);
+
+    rpc UpdateSlice(SliceUpdate) returns (SliceChangeResponse);
+
+    rpc DeleteSlice(SliceId) returns (SliceChangeResponse);
+}
+
+message SliceSchema {
+    uint32 id = 1;
+    uint64 device_id = 2;
+    uint32 model_id = 3;
+    int64 timestamp_begin = 4;
+    int64 timestamp_end = 5;
+    uint32 index_begin = 6;
+    uint32 index_end = 7;
+    string name = 8;
+    string description = 9;
+}
+
+message SliceId {
+    uint32 id = 1;
+}
+
+message SliceName {
+    string name = 1;
+}
+
+message SliceDevice {
+    uint64 device_id = 1;
+}
+
+message SliceModel {
+    uint32 model_id = 1;
+}
+
+message SliceDeviceModel {
+    uint64 device_id = 1;
+    uint32 model_id = 2;
+}
+
+message SliceUpdate {
+    uint32 id = 1;
+    optional int64 timestamp_begin = 2;
+    optional int64 timestamp_end = 3;
+    optional uint32 index_begin = 4;
+    optional uint32 index_end = 5;
+    optional string name = 6;
+    optional string description = 7;
+}
+
+message SliceReadResponse {
+    SliceSchema result = 1;
+    common.ResponseStatus status = 2;
+}
+
+message SliceListResponse {
+    repeated SliceSchema results = 1;
+    common.ResponseStatus status = 2;
+}
+
+message SliceCreateResponse {
+    uint32 id = 1;
+    common.ResponseStatus status = 2;
+}
+
+message SliceChangeResponse {
+    common.ResponseStatus status = 1;
+}
