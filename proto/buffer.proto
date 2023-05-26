@@ -1,0 +1,88 @@
+syntax = "proto3";
+package buffer;
+
+import "common.proto";
+
+service BufferService {
+    rpc ReadBuffer(BufferId) returns (BufferReadResponse);
+
+    rpc ReadBufferFirst(BufferSelector) returns (BufferReadResponse);
+
+    rpc ReadBufferLast(BufferSelector) returns (BufferReadResponse);
+
+    rpc ListBufferFirst(BuffersSelector) returns (BufferListResponse);
+
+    rpc ListBufferLast(BuffersSelector) returns (BufferListResponse);
+
+    rpc CreateBuffer(BufferSchema) returns (BufferCreateResponse);
+
+    rpc UpdateBuffer(BufferUpdate) returns (BufferChangeResponse);
+
+    rpc DeleteBuffer(BufferId) returns (BufferChangeResponse);
+}
+
+enum BufferStatus {
+    DEFAULT = 0;
+    CONVERT = 1;
+    ANALYZE_GATEWAY = 2;
+    ANALYZE_SERVER = 3;
+    TRANSFER_GATEWAY = 4;
+    TRANSFER_SERVER = 5;
+    BACKUP = 6;
+    DELETE = 7;
+    ERROR = 8;
+}
+
+message BufferSchema {
+    uint32 id = 1;
+    uint64 device_id = 2;
+    uint32 model_id = 3;
+    int64 timestamp = 4;
+    uint32 index = 5;
+    bytes data_bytes = 6;
+    repeated common.DataType data_type = 7;
+    BufferStatus status = 8;
+}
+
+message BufferId {
+    uint32 id = 1;
+}
+
+message BufferSelector {
+    optional uint64 device_id = 1;
+    optional uint32 model_id = 2;
+    optional BufferStatus status = 3;
+}
+
+message BuffersSelector {
+    optional uint64 device_id = 1;
+    optional uint32 model_id = 2;
+    optional BufferStatus status = 3;
+    uint32 number = 4;
+}
+
+message BufferUpdate {
+    uint32 id = 1;
+    optional bytes data_bytes = 6;
+    repeated common.DataType data_type = 7;
+    optional BufferStatus status = 8;
+}
+
+message BufferReadResponse {
+    BufferSchema result = 1;
+    common.ResponseStatus status = 2;
+}
+
+message BufferListResponse {
+    repeated BufferSchema results = 1;
+    common.ResponseStatus status = 2;
+}
+
+message BufferCreateResponse {
+    uint32 id = 1;
+    common.ResponseStatus status = 2;
+}
+
+message BufferChangeResponse {
+    common.ResponseStatus status = 1;
+}
