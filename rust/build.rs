@@ -8,7 +8,8 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         ("../proto/group.proto", "group_descriptor.bin"),
         ("../proto/data.proto", "data_descriptor.bin"),
         ("../proto/buffer.proto", "buffer_descriptor.bin"),
-        ("../proto/slice.proto", "slice_descriptor.bin")
+        ("../proto/slice.proto", "slice_descriptor.bin"),
+        ("../proto/log.proto", "log_descriptor.bin")
     ];
     let out_dir = PathBuf::from(env::var("OUT_DIR").unwrap());
 

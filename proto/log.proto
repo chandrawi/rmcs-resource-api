@@ -1,0 +1,88 @@
+syntax = "proto3";
+package log;
+
+import "common.proto";
+
+service LogService {
+    rpc ReadLog(LogId) returns (LogReadResponse);
+
+    rpc ListLogByTime(LogTime) returns (LogListResponse);
+
+    rpc ListLogByLastTime(LogTime) returns (LogListResponse);
+
+    rpc ListLogByRangeTime(LogRange) returns (LogListResponse);
+
+    rpc CreateLog(LogSchema) returns (LogChangeResponse);
+
+    rpc UpdateLog(LogUpdate) returns (LogChangeResponse);
+
+    rpc DeleteLog(LogId) returns (LogChangeResponse);
+}
+
+enum LogStatus {
+    DEFAULT = 0;
+    SUCCESS = 1;
+    ERROR_RAW = 2;
+    ERROR_MISSING = 3;
+    ERROR_CONVERSION = 4;
+    ERROR_ANALYZE = 5;
+    ERROR_NETWORK = 6;
+    FAIL_READ = 7;
+    FAIL_CREATE = 8;
+    FAIL_UPDATE = 9;
+    FAIL_DELETE = 10;
+    INVALID_TOKEN = 11;
+    INVALID_REQUEST = 12;
+    NOT_FOUND = 13;
+    METHOD_NOT_ALLOWED = 14;
+    UNKNOWN_ERROR = 15;
+    UNKNOWN_STATUS = 16;
+}
+
+message LogSchema {
+    int64 timestamp = 1;
+    uint64 device_id = 2;
+    LogStatus status = 3;
+    bytes log_bytes = 4;
+    common.ConfigType log_type = 5;
+}
+
+message LogId {
+    int64 timestamp = 1;
+    uint64 device_id = 2;
+}
+
+message LogTime {
+    int64 timestamp = 1;
+    optional uint64 device_id = 2;
+    optional LogStatus status = 3;
+}
+
+message LogRange {
+    int64 begin = 1;
+    int64 end = 2;
+    optional uint64 device_id = 3;
+    optional LogStatus status = 4;
+}
+
+message LogUpdate {
+    int64 timestamp = 1;
+    uint64 device_id = 2;
+    optional LogStatus status = 3;
+    optional bytes log_bytes = 4;
+    optional common.ConfigType log_type = 5;
+}
+
+message LogReadResponse {
+    LogSchema result = 1;
+    common.ResponseStatus status = 2;
+}
+
+message LogListResponse {
+    repeated LogSchema results = 1;
+    common.ResponseStatus status = 2;
+}
+
+message LogChangeResponse {
+    common.ResponseStatus status = 1;
+}
