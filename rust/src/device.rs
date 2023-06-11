@@ -191,105 +191,73 @@ pub struct TypeModel {
 pub struct DeviceReadResponse {
     #[prost(message, optional, tag = "1")]
     pub result: ::core::option::Option<DeviceSchema>,
-    #[prost(enumeration = "super::common::ResponseStatus", tag = "2")]
-    pub status: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct DeviceListResponse {
     #[prost(message, repeated, tag = "1")]
     pub results: ::prost::alloc::vec::Vec<DeviceSchema>,
-    #[prost(enumeration = "super::common::ResponseStatus", tag = "2")]
-    pub status: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct DeviceChangeResponse {
-    #[prost(enumeration = "super::common::ResponseStatus", tag = "1")]
-    pub status: i32,
-}
+pub struct DeviceChangeResponse {}
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GatewayReadResponse {
     #[prost(message, optional, tag = "1")]
     pub result: ::core::option::Option<GatewaySchema>,
-    #[prost(enumeration = "super::common::ResponseStatus", tag = "2")]
-    pub status: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GatewayListResponse {
     #[prost(message, repeated, tag = "1")]
     pub results: ::prost::alloc::vec::Vec<GatewaySchema>,
-    #[prost(enumeration = "super::common::ResponseStatus", tag = "2")]
-    pub status: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct GatewayChangeResponse {
-    #[prost(enumeration = "super::common::ResponseStatus", tag = "1")]
-    pub status: i32,
-}
+pub struct GatewayChangeResponse {}
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ConfigReadResponse {
     #[prost(message, optional, tag = "1")]
     pub result: ::core::option::Option<ConfigSchema>,
-    #[prost(enumeration = "super::common::ResponseStatus", tag = "2")]
-    pub status: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ConfigListResponse {
     #[prost(message, repeated, tag = "1")]
     pub results: ::prost::alloc::vec::Vec<ConfigSchema>,
-    #[prost(enumeration = "super::common::ResponseStatus", tag = "2")]
-    pub status: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ConfigCreateResponse {
     #[prost(uint32, tag = "1")]
     pub id: u32,
-    #[prost(enumeration = "super::common::ResponseStatus", tag = "2")]
-    pub status: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct ConfigChangeResponse {
-    #[prost(enumeration = "super::common::ResponseStatus", tag = "1")]
-    pub status: i32,
-}
+pub struct ConfigChangeResponse {}
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct TypeReadResponse {
     #[prost(message, optional, tag = "1")]
     pub result: ::core::option::Option<TypeSchema>,
-    #[prost(enumeration = "super::common::ResponseStatus", tag = "2")]
-    pub status: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct TypeListResponse {
     #[prost(message, repeated, tag = "1")]
     pub results: ::prost::alloc::vec::Vec<TypeSchema>,
-    #[prost(enumeration = "super::common::ResponseStatus", tag = "2")]
-    pub status: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct TypeCreateResponse {
     #[prost(uint32, tag = "1")]
     pub id: u32,
-    #[prost(enumeration = "super::common::ResponseStatus", tag = "2")]
-    pub status: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct TypeChangeResponse {
-    #[prost(enumeration = "super::common::ResponseStatus", tag = "1")]
-    pub status: i32,
-}
+pub struct TypeChangeResponse {}
 /// Generated client implementations.
 pub mod device_service_client {
     #![allow(unused_variables, dead_code, missing_docs, clippy::let_unit_value)]

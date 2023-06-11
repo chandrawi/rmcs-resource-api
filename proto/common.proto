@@ -1,11 +1,6 @@
 syntax = "proto3";
 package common;
 
-enum ResponseStatus {
-    FAILED = 0;
-    SUCCESS = 1;
-}
-
 enum DataIndexing {
     TIMESTAMP = 0;
     TIMESTAMP_INDEX = 1;

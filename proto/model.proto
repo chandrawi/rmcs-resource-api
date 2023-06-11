@@ -101,38 +101,30 @@ message ConfigUpdate {
 
 message ModelReadResponse {
     ModelSchema result = 1;
-    common.ResponseStatus status = 2;
 }
 
 message ModelListResponse {
     repeated ModelSchema results = 1;
-    common.ResponseStatus status = 2;
 }
 
 message ModelCreateResponse {
     uint32 id = 1;
-    common.ResponseStatus status = 2;
 }
 
 message ModelChangeResponse {
-    common.ResponseStatus status = 1;
 }
 
 message ConfigReadResponse {
     ConfigSchema result = 1;
-    common.ResponseStatus status = 2;
 }
 
 message ConfigListResponse {
     repeated ConfigSchema results = 1;
-    common.ResponseStatus status = 2;
 }
 
 message ConfigCreateResponse {
     uint32 id = 1;
-    common.ResponseStatus status = 2;
 }
 
 message ConfigChangeResponse {
-    common.ResponseStatus status = 1;
 }

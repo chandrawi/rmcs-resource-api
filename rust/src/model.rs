@@ -113,61 +113,43 @@ pub struct ConfigUpdate {
 pub struct ModelReadResponse {
     #[prost(message, optional, tag = "1")]
     pub result: ::core::option::Option<ModelSchema>,
-    #[prost(enumeration = "super::common::ResponseStatus", tag = "2")]
-    pub status: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ModelListResponse {
     #[prost(message, repeated, tag = "1")]
     pub results: ::prost::alloc::vec::Vec<ModelSchema>,
-    #[prost(enumeration = "super::common::ResponseStatus", tag = "2")]
-    pub status: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ModelCreateResponse {
     #[prost(uint32, tag = "1")]
     pub id: u32,
-    #[prost(enumeration = "super::common::ResponseStatus", tag = "2")]
-    pub status: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct ModelChangeResponse {
-    #[prost(enumeration = "super::common::ResponseStatus", tag = "1")]
-    pub status: i32,
-}
+pub struct ModelChangeResponse {}
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ConfigReadResponse {
     #[prost(message, optional, tag = "1")]
     pub result: ::core::option::Option<ConfigSchema>,
-    #[prost(enumeration = "super::common::ResponseStatus", tag = "2")]
-    pub status: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ConfigListResponse {
     #[prost(message, repeated, tag = "1")]
     pub results: ::prost::alloc::vec::Vec<ConfigSchema>,
-    #[prost(enumeration = "super::common::ResponseStatus", tag = "2")]
-    pub status: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ConfigCreateResponse {
     #[prost(uint32, tag = "1")]
     pub id: u32,
-    #[prost(enumeration = "super::common::ResponseStatus", tag = "2")]
-    pub status: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct ConfigChangeResponse {
-    #[prost(enumeration = "super::common::ResponseStatus", tag = "1")]
-    pub status: i32,
-}
+pub struct ConfigChangeResponse {}
 /// Generated client implementations.
 pub mod model_service_client {
     #![allow(unused_variables, dead_code, missing_docs, clippy::let_unit_value)]

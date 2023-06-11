@@ -85,47 +85,34 @@ pub struct GroupDevice {
 pub struct GroupModelReadResponse {
     #[prost(message, optional, tag = "1")]
     pub result: ::core::option::Option<GroupModelSchema>,
-    #[prost(enumeration = "super::common::ResponseStatus", tag = "2")]
-    pub status: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GroupModelListResponse {
     #[prost(message, repeated, tag = "1")]
     pub results: ::prost::alloc::vec::Vec<GroupModelSchema>,
-    #[prost(enumeration = "super::common::ResponseStatus", tag = "2")]
-    pub status: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GroupDeviceReadResponse {
     #[prost(message, optional, tag = "1")]
     pub result: ::core::option::Option<GroupDeviceSchema>,
-    #[prost(enumeration = "super::common::ResponseStatus", tag = "2")]
-    pub status: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GroupDeviceListResponse {
     #[prost(message, repeated, tag = "1")]
     pub results: ::prost::alloc::vec::Vec<GroupDeviceSchema>,
-    #[prost(enumeration = "super::common::ResponseStatus", tag = "2")]
-    pub status: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GroupCreateResponse {
     #[prost(uint32, tag = "1")]
     pub id: u32,
-    #[prost(enumeration = "super::common::ResponseStatus", tag = "2")]
-    pub status: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct GroupChangeResponse {
-    #[prost(enumeration = "super::common::ResponseStatus", tag = "1")]
-    pub status: i32,
-}
+pub struct GroupChangeResponse {}
 /// Generated client implementations.
 pub mod group_service_client {
     #![allow(unused_variables, dead_code, missing_docs, clippy::let_unit_value)]

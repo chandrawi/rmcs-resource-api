@@ -93,29 +93,23 @@ message GroupDevice {
 
 message GroupModelReadResponse {
     GroupModelSchema result = 1;
-    common.ResponseStatus status = 2;
 }
 
 message GroupModelListResponse {
     repeated GroupModelSchema results = 1;
-    common.ResponseStatus status = 2;
 }
 
 message GroupDeviceReadResponse {
     GroupDeviceSchema result = 1;
-    common.ResponseStatus status = 2;
 }
 
 message GroupDeviceListResponse {
     repeated GroupDeviceSchema results = 1;
-    common.ResponseStatus status = 2;
 }
 
 message GroupCreateResponse {
     uint32 id = 1;
-    common.ResponseStatus status = 2;
 }
 
 message GroupChangeResponse {
-    common.ResponseStatus status = 1;
 }

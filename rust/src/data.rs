@@ -143,31 +143,22 @@ pub struct DataNumberModel {
 pub struct DataReadResponse {
     #[prost(message, optional, tag = "1")]
     pub result: ::core::option::Option<DataSchema>,
-    #[prost(enumeration = "super::common::ResponseStatus", tag = "2")]
-    pub status: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct DataListResponse {
     #[prost(message, repeated, tag = "1")]
     pub results: ::prost::alloc::vec::Vec<DataSchema>,
-    #[prost(enumeration = "super::common::ResponseStatus", tag = "2")]
-    pub status: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct DataModelResponse {
     #[prost(message, optional, tag = "1")]
     pub result: ::core::option::Option<DataModel>,
-    #[prost(enumeration = "super::common::ResponseStatus", tag = "2")]
-    pub status: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct DataChangeResponse {
-    #[prost(enumeration = "super::common::ResponseStatus", tag = "1")]
-    pub status: i32,
-}
+pub struct DataChangeResponse {}
 /// Generated client implementations.
 pub mod data_service_client {
     #![allow(unused_variables, dead_code, missing_docs, clippy::let_unit_value)]

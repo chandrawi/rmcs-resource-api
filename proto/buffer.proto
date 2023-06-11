@@ -70,19 +70,15 @@ message BufferUpdate {
 
 message BufferReadResponse {
     BufferSchema result = 1;
-    common.ResponseStatus status = 2;
 }
 
 message BufferListResponse {
     repeated BufferSchema results = 1;
-    common.ResponseStatus status = 2;
 }
 
 message BufferCreateResponse {
     uint32 id = 1;
-    common.ResponseStatus status = 2;
 }
 
 message BufferChangeResponse {
-    common.ResponseStatus status = 1;
 }

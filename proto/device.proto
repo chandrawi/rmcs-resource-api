@@ -178,66 +178,52 @@ message TypeModel {
 
 message DeviceReadResponse {
     DeviceSchema result = 1;
-    common.ResponseStatus status = 2;
 }
 
 message DeviceListResponse {
     repeated DeviceSchema results = 1;
-    common.ResponseStatus status = 2;
 }
 
 message DeviceChangeResponse {
-    common.ResponseStatus status = 1;
 }
 
 message GatewayReadResponse {
     GatewaySchema result = 1;
-    common.ResponseStatus status = 2;
 }
 
 message GatewayListResponse {
     repeated GatewaySchema results = 1;
-    common.ResponseStatus status = 2;
 }
 
 message GatewayChangeResponse {
-    common.ResponseStatus status = 1;
 }
 
 message ConfigReadResponse {
     ConfigSchema result = 1;
-    common.ResponseStatus status = 2;
 }
 
 message ConfigListResponse {
     repeated ConfigSchema results = 1;
-    common.ResponseStatus status = 2;
 }
 
 message ConfigCreateResponse {
     uint32 id = 1;
-    common.ResponseStatus status = 2;
 }
 
 message ConfigChangeResponse {
-    common.ResponseStatus status = 1;
 }
 
 message TypeReadResponse {
     TypeSchema result = 1;
-    common.ResponseStatus status = 2;
 }
 
 message TypeListResponse {
     repeated TypeSchema results = 1;
-    common.ResponseStatus status = 2;
 }
 
 message TypeCreateResponse {
     uint32 id = 1;
-    common.ResponseStatus status = 2;
 }
 
 message TypeChangeResponse {
-    common.ResponseStatus status = 1;
 }

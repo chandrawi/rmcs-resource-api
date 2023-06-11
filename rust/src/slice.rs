@@ -75,31 +75,22 @@ pub struct SliceUpdate {
 pub struct SliceReadResponse {
     #[prost(message, optional, tag = "1")]
     pub result: ::core::option::Option<SliceSchema>,
-    #[prost(enumeration = "super::common::ResponseStatus", tag = "2")]
-    pub status: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct SliceListResponse {
     #[prost(message, repeated, tag = "1")]
     pub results: ::prost::alloc::vec::Vec<SliceSchema>,
-    #[prost(enumeration = "super::common::ResponseStatus", tag = "2")]
-    pub status: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct SliceCreateResponse {
     #[prost(uint32, tag = "1")]
     pub id: u32,
-    #[prost(enumeration = "super::common::ResponseStatus", tag = "2")]
-    pub status: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct SliceChangeResponse {
-    #[prost(enumeration = "super::common::ResponseStatus", tag = "1")]
-    pub status: i32,
-}
+pub struct SliceChangeResponse {}
 /// Generated client implementations.
 pub mod slice_service_client {
     #![allow(unused_variables, dead_code, missing_docs, clippy::let_unit_value)]

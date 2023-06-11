@@ -66,19 +66,15 @@ message SliceUpdate {
 
 message SliceReadResponse {
     SliceSchema result = 1;
-    common.ResponseStatus status = 2;
 }
 
 message SliceListResponse {
     repeated SliceSchema results = 1;
-    common.ResponseStatus status = 2;
 }
 
 message SliceCreateResponse {
     uint32 id = 1;
-    common.ResponseStatus status = 2;
 }
 
 message SliceChangeResponse {
-    common.ResponseStatus status = 1;
 }

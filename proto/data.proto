@@ -123,19 +123,15 @@ message DataNumberModel {
 
 message DataReadResponse {
     DataSchema result = 1;
-    common.ResponseStatus status = 2;
 }
 
 message DataListResponse {
     repeated DataSchema results = 1;
-    common.ResponseStatus status = 2;
 }
 
 message DataModelResponse {
     DataModel result = 1;
-    common.ResponseStatus status = 2;
 }
 
 message DataChangeResponse {
-    common.ResponseStatus status = 1;
 }

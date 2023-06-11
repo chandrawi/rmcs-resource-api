@@ -75,14 +75,11 @@ message LogUpdate {
 
 message LogReadResponse {
     LogSchema result = 1;
-    common.ResponseStatus status = 2;
 }
 
 message LogListResponse {
     repeated LogSchema results = 1;
-    common.ResponseStatus status = 2;
 }
 
 message LogChangeResponse {
-    common.ResponseStatus status = 1;
 }
