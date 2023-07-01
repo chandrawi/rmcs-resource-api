@@ -661,6 +661,240 @@ pub mod group_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
+        pub async fn read_group_gateway(
+            &mut self,
+            request: impl tonic::IntoRequest<super::GroupId>,
+        ) -> std::result::Result<
+            tonic::Response<super::GroupDeviceReadResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/group.GroupService/ReadGroupGateway",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("group.GroupService", "ReadGroupGateway"));
+            self.inner.unary(req, path, codec).await
+        }
+        pub async fn list_group_gateway_by_name(
+            &mut self,
+            request: impl tonic::IntoRequest<super::GroupName>,
+        ) -> std::result::Result<
+            tonic::Response<super::GroupDeviceListResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/group.GroupService/ListGroupGatewayByName",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("group.GroupService", "ListGroupGatewayByName"));
+            self.inner.unary(req, path, codec).await
+        }
+        pub async fn list_group_gateway_by_category(
+            &mut self,
+            request: impl tonic::IntoRequest<super::GroupCategory>,
+        ) -> std::result::Result<
+            tonic::Response<super::GroupDeviceListResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/group.GroupService/ListGroupGatewayByCategory",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new("group.GroupService", "ListGroupGatewayByCategory"),
+                );
+            self.inner.unary(req, path, codec).await
+        }
+        pub async fn list_group_gateway_by_name_category(
+            &mut self,
+            request: impl tonic::IntoRequest<super::GroupNameCategory>,
+        ) -> std::result::Result<
+            tonic::Response<super::GroupDeviceListResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/group.GroupService/ListGroupGatewayByNameCategory",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "group.GroupService",
+                        "ListGroupGatewayByNameCategory",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
+        }
+        pub async fn create_group_gateway(
+            &mut self,
+            request: impl tonic::IntoRequest<super::GroupDeviceSchema>,
+        ) -> std::result::Result<
+            tonic::Response<super::GroupCreateResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/group.GroupService/CreateGroupGateway",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("group.GroupService", "CreateGroupGateway"));
+            self.inner.unary(req, path, codec).await
+        }
+        pub async fn update_group_gateway(
+            &mut self,
+            request: impl tonic::IntoRequest<super::GroupUpdate>,
+        ) -> std::result::Result<
+            tonic::Response<super::GroupChangeResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/group.GroupService/UpdateGroupGateway",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("group.GroupService", "UpdateGroupGateway"));
+            self.inner.unary(req, path, codec).await
+        }
+        pub async fn delete_group_gateway(
+            &mut self,
+            request: impl tonic::IntoRequest<super::GroupId>,
+        ) -> std::result::Result<
+            tonic::Response<super::GroupChangeResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/group.GroupService/DeleteGroupGateway",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("group.GroupService", "DeleteGroupGateway"));
+            self.inner.unary(req, path, codec).await
+        }
+        pub async fn add_group_gateway_member(
+            &mut self,
+            request: impl tonic::IntoRequest<super::GroupDevice>,
+        ) -> std::result::Result<
+            tonic::Response<super::GroupChangeResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/group.GroupService/AddGroupGatewayMember",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("group.GroupService", "AddGroupGatewayMember"));
+            self.inner.unary(req, path, codec).await
+        }
+        pub async fn remove_group_gateway_member(
+            &mut self,
+            request: impl tonic::IntoRequest<super::GroupDevice>,
+        ) -> std::result::Result<
+            tonic::Response<super::GroupChangeResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/group.GroupService/RemoveGroupGatewayMember",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new("group.GroupService", "RemoveGroupGatewayMember"),
+                );
+            self.inner.unary(req, path, codec).await
+        }
     }
 }
 /// Generated server implementations.
@@ -790,6 +1024,69 @@ pub mod group_service_server {
             tonic::Status,
         >;
         async fn remove_group_device_member(
+            &self,
+            request: tonic::Request<super::GroupDevice>,
+        ) -> std::result::Result<
+            tonic::Response<super::GroupChangeResponse>,
+            tonic::Status,
+        >;
+        async fn read_group_gateway(
+            &self,
+            request: tonic::Request<super::GroupId>,
+        ) -> std::result::Result<
+            tonic::Response<super::GroupDeviceReadResponse>,
+            tonic::Status,
+        >;
+        async fn list_group_gateway_by_name(
+            &self,
+            request: tonic::Request<super::GroupName>,
+        ) -> std::result::Result<
+            tonic::Response<super::GroupDeviceListResponse>,
+            tonic::Status,
+        >;
+        async fn list_group_gateway_by_category(
+            &self,
+            request: tonic::Request<super::GroupCategory>,
+        ) -> std::result::Result<
+            tonic::Response<super::GroupDeviceListResponse>,
+            tonic::Status,
+        >;
+        async fn list_group_gateway_by_name_category(
+            &self,
+            request: tonic::Request<super::GroupNameCategory>,
+        ) -> std::result::Result<
+            tonic::Response<super::GroupDeviceListResponse>,
+            tonic::Status,
+        >;
+        async fn create_group_gateway(
+            &self,
+            request: tonic::Request<super::GroupDeviceSchema>,
+        ) -> std::result::Result<
+            tonic::Response<super::GroupCreateResponse>,
+            tonic::Status,
+        >;
+        async fn update_group_gateway(
+            &self,
+            request: tonic::Request<super::GroupUpdate>,
+        ) -> std::result::Result<
+            tonic::Response<super::GroupChangeResponse>,
+            tonic::Status,
+        >;
+        async fn delete_group_gateway(
+            &self,
+            request: tonic::Request<super::GroupId>,
+        ) -> std::result::Result<
+            tonic::Response<super::GroupChangeResponse>,
+            tonic::Status,
+        >;
+        async fn add_group_gateway_member(
+            &self,
+            request: tonic::Request<super::GroupDevice>,
+        ) -> std::result::Result<
+            tonic::Response<super::GroupChangeResponse>,
+            tonic::Status,
+        >;
+        async fn remove_group_gateway_member(
             &self,
             request: tonic::Request<super::GroupDevice>,
         ) -> std::result::Result<
@@ -1665,6 +1962,410 @@ pub mod group_service_server {
                     let fut = async move {
                         let inner = inner.0;
                         let method = RemoveGroupDeviceMemberSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/group.GroupService/ReadGroupGateway" => {
+                    #[allow(non_camel_case_types)]
+                    struct ReadGroupGatewaySvc<T: GroupService>(pub Arc<T>);
+                    impl<T: GroupService> tonic::server::UnaryService<super::GroupId>
+                    for ReadGroupGatewaySvc<T> {
+                        type Response = super::GroupDeviceReadResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::GroupId>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                (*inner).read_group_gateway(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = ReadGroupGatewaySvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/group.GroupService/ListGroupGatewayByName" => {
+                    #[allow(non_camel_case_types)]
+                    struct ListGroupGatewayByNameSvc<T: GroupService>(pub Arc<T>);
+                    impl<T: GroupService> tonic::server::UnaryService<super::GroupName>
+                    for ListGroupGatewayByNameSvc<T> {
+                        type Response = super::GroupDeviceListResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::GroupName>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                (*inner).list_group_gateway_by_name(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = ListGroupGatewayByNameSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/group.GroupService/ListGroupGatewayByCategory" => {
+                    #[allow(non_camel_case_types)]
+                    struct ListGroupGatewayByCategorySvc<T: GroupService>(pub Arc<T>);
+                    impl<
+                        T: GroupService,
+                    > tonic::server::UnaryService<super::GroupCategory>
+                    for ListGroupGatewayByCategorySvc<T> {
+                        type Response = super::GroupDeviceListResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::GroupCategory>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                (*inner).list_group_gateway_by_category(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = ListGroupGatewayByCategorySvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/group.GroupService/ListGroupGatewayByNameCategory" => {
+                    #[allow(non_camel_case_types)]
+                    struct ListGroupGatewayByNameCategorySvc<T: GroupService>(
+                        pub Arc<T>,
+                    );
+                    impl<
+                        T: GroupService,
+                    > tonic::server::UnaryService<super::GroupNameCategory>
+                    for ListGroupGatewayByNameCategorySvc<T> {
+                        type Response = super::GroupDeviceListResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::GroupNameCategory>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                (*inner).list_group_gateway_by_name_category(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = ListGroupGatewayByNameCategorySvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/group.GroupService/CreateGroupGateway" => {
+                    #[allow(non_camel_case_types)]
+                    struct CreateGroupGatewaySvc<T: GroupService>(pub Arc<T>);
+                    impl<
+                        T: GroupService,
+                    > tonic::server::UnaryService<super::GroupDeviceSchema>
+                    for CreateGroupGatewaySvc<T> {
+                        type Response = super::GroupCreateResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::GroupDeviceSchema>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                (*inner).create_group_gateway(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = CreateGroupGatewaySvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/group.GroupService/UpdateGroupGateway" => {
+                    #[allow(non_camel_case_types)]
+                    struct UpdateGroupGatewaySvc<T: GroupService>(pub Arc<T>);
+                    impl<T: GroupService> tonic::server::UnaryService<super::GroupUpdate>
+                    for UpdateGroupGatewaySvc<T> {
+                        type Response = super::GroupChangeResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::GroupUpdate>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                (*inner).update_group_gateway(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = UpdateGroupGatewaySvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/group.GroupService/DeleteGroupGateway" => {
+                    #[allow(non_camel_case_types)]
+                    struct DeleteGroupGatewaySvc<T: GroupService>(pub Arc<T>);
+                    impl<T: GroupService> tonic::server::UnaryService<super::GroupId>
+                    for DeleteGroupGatewaySvc<T> {
+                        type Response = super::GroupChangeResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::GroupId>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                (*inner).delete_group_gateway(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = DeleteGroupGatewaySvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/group.GroupService/AddGroupGatewayMember" => {
+                    #[allow(non_camel_case_types)]
+                    struct AddGroupGatewayMemberSvc<T: GroupService>(pub Arc<T>);
+                    impl<T: GroupService> tonic::server::UnaryService<super::GroupDevice>
+                    for AddGroupGatewayMemberSvc<T> {
+                        type Response = super::GroupChangeResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::GroupDevice>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                (*inner).add_group_gateway_member(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = AddGroupGatewayMemberSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/group.GroupService/RemoveGroupGatewayMember" => {
+                    #[allow(non_camel_case_types)]
+                    struct RemoveGroupGatewayMemberSvc<T: GroupService>(pub Arc<T>);
+                    impl<T: GroupService> tonic::server::UnaryService<super::GroupDevice>
+                    for RemoveGroupGatewayMemberSvc<T> {
+                        type Response = super::GroupChangeResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::GroupDevice>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                (*inner).remove_group_gateway_member(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = RemoveGroupGatewayMemberSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(

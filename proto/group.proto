@@ -39,6 +39,24 @@ service GroupService {
     rpc AddGroupDeviceMember(GroupDevice) returns (GroupChangeResponse);
 
     rpc RemoveGroupDeviceMember(GroupDevice) returns (GroupChangeResponse);
+
+    rpc ReadGroupGateway(GroupId) returns (GroupDeviceReadResponse);
+
+    rpc ListGroupGatewayByName(GroupName) returns (GroupDeviceListResponse);
+
+    rpc ListGroupGatewayByCategory(GroupCategory) returns (GroupDeviceListResponse);
+
+    rpc ListGroupGatewayByNameCategory(GroupNameCategory) returns (GroupDeviceListResponse);
+
+    rpc CreateGroupGateway(GroupDeviceSchema) returns (GroupCreateResponse);
+
+    rpc UpdateGroupGateway(GroupUpdate) returns (GroupChangeResponse);
+
+    rpc DeleteGroupGateway(GroupId) returns (GroupChangeResponse);
+
+    rpc AddGroupGatewayMember(GroupDevice) returns (GroupChangeResponse);
+
+    rpc RemoveGroupGatewayMember(GroupDevice) returns (GroupChangeResponse);
 }
 
 message GroupModelSchema {

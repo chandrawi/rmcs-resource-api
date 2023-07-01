@@ -48,6 +48,16 @@ service DeviceService {
 
     rpc DeleteDeviceConfig(ConfigId) returns (ConfigChangeResponse);
 
+    rpc ReadGatewayConfig(ConfigId) returns (ConfigReadResponse);
+
+    rpc ListGatewayConfig(GatewayId) returns (ConfigListResponse);
+
+    rpc CreateGatewayConfig(ConfigSchema) returns (ConfigCreateResponse);
+
+    rpc UpdateGatewayConfig(ConfigUpdate) returns (ConfigChangeResponse);
+
+    rpc DeleteGatewayConfig(ConfigId) returns (ConfigChangeResponse);
+
     rpc ReadType(TypeId) returns (TypeReadResponse);
 
     rpc ListTypeByName(TypeName) returns (TypeListResponse);

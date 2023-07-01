@@ -897,6 +897,131 @@ pub mod device_service_client {
                 .insert(GrpcMethod::new("device.DeviceService", "DeleteDeviceConfig"));
             self.inner.unary(req, path, codec).await
         }
+        pub async fn read_gateway_config(
+            &mut self,
+            request: impl tonic::IntoRequest<super::ConfigId>,
+        ) -> std::result::Result<
+            tonic::Response<super::ConfigReadResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/device.DeviceService/ReadGatewayConfig",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("device.DeviceService", "ReadGatewayConfig"));
+            self.inner.unary(req, path, codec).await
+        }
+        pub async fn list_gateway_config(
+            &mut self,
+            request: impl tonic::IntoRequest<super::GatewayId>,
+        ) -> std::result::Result<
+            tonic::Response<super::ConfigListResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/device.DeviceService/ListGatewayConfig",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("device.DeviceService", "ListGatewayConfig"));
+            self.inner.unary(req, path, codec).await
+        }
+        pub async fn create_gateway_config(
+            &mut self,
+            request: impl tonic::IntoRequest<super::ConfigSchema>,
+        ) -> std::result::Result<
+            tonic::Response<super::ConfigCreateResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/device.DeviceService/CreateGatewayConfig",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("device.DeviceService", "CreateGatewayConfig"));
+            self.inner.unary(req, path, codec).await
+        }
+        pub async fn update_gateway_config(
+            &mut self,
+            request: impl tonic::IntoRequest<super::ConfigUpdate>,
+        ) -> std::result::Result<
+            tonic::Response<super::ConfigChangeResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/device.DeviceService/UpdateGatewayConfig",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("device.DeviceService", "UpdateGatewayConfig"));
+            self.inner.unary(req, path, codec).await
+        }
+        pub async fn delete_gateway_config(
+            &mut self,
+            request: impl tonic::IntoRequest<super::ConfigId>,
+        ) -> std::result::Result<
+            tonic::Response<super::ConfigChangeResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/device.DeviceService/DeleteGatewayConfig",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("device.DeviceService", "DeleteGatewayConfig"));
+            self.inner.unary(req, path, codec).await
+        }
         pub async fn read_type(
             &mut self,
             request: impl tonic::IntoRequest<super::TypeId>,
@@ -1229,6 +1354,41 @@ pub mod device_service_server {
             tonic::Status,
         >;
         async fn delete_device_config(
+            &self,
+            request: tonic::Request<super::ConfigId>,
+        ) -> std::result::Result<
+            tonic::Response<super::ConfigChangeResponse>,
+            tonic::Status,
+        >;
+        async fn read_gateway_config(
+            &self,
+            request: tonic::Request<super::ConfigId>,
+        ) -> std::result::Result<
+            tonic::Response<super::ConfigReadResponse>,
+            tonic::Status,
+        >;
+        async fn list_gateway_config(
+            &self,
+            request: tonic::Request<super::GatewayId>,
+        ) -> std::result::Result<
+            tonic::Response<super::ConfigListResponse>,
+            tonic::Status,
+        >;
+        async fn create_gateway_config(
+            &self,
+            request: tonic::Request<super::ConfigSchema>,
+        ) -> std::result::Result<
+            tonic::Response<super::ConfigCreateResponse>,
+            tonic::Status,
+        >;
+        async fn update_gateway_config(
+            &self,
+            request: tonic::Request<super::ConfigUpdate>,
+        ) -> std::result::Result<
+            tonic::Response<super::ConfigChangeResponse>,
+            tonic::Status,
+        >;
+        async fn delete_gateway_config(
             &self,
             request: tonic::Request<super::ConfigId>,
         ) -> std::result::Result<
@@ -2337,6 +2497,230 @@ pub mod device_service_server {
                     let fut = async move {
                         let inner = inner.0;
                         let method = DeleteDeviceConfigSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/device.DeviceService/ReadGatewayConfig" => {
+                    #[allow(non_camel_case_types)]
+                    struct ReadGatewayConfigSvc<T: DeviceService>(pub Arc<T>);
+                    impl<T: DeviceService> tonic::server::UnaryService<super::ConfigId>
+                    for ReadGatewayConfigSvc<T> {
+                        type Response = super::ConfigReadResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::ConfigId>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                (*inner).read_gateway_config(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = ReadGatewayConfigSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/device.DeviceService/ListGatewayConfig" => {
+                    #[allow(non_camel_case_types)]
+                    struct ListGatewayConfigSvc<T: DeviceService>(pub Arc<T>);
+                    impl<T: DeviceService> tonic::server::UnaryService<super::GatewayId>
+                    for ListGatewayConfigSvc<T> {
+                        type Response = super::ConfigListResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::GatewayId>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                (*inner).list_gateway_config(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = ListGatewayConfigSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/device.DeviceService/CreateGatewayConfig" => {
+                    #[allow(non_camel_case_types)]
+                    struct CreateGatewayConfigSvc<T: DeviceService>(pub Arc<T>);
+                    impl<
+                        T: DeviceService,
+                    > tonic::server::UnaryService<super::ConfigSchema>
+                    for CreateGatewayConfigSvc<T> {
+                        type Response = super::ConfigCreateResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::ConfigSchema>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                (*inner).create_gateway_config(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = CreateGatewayConfigSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/device.DeviceService/UpdateGatewayConfig" => {
+                    #[allow(non_camel_case_types)]
+                    struct UpdateGatewayConfigSvc<T: DeviceService>(pub Arc<T>);
+                    impl<
+                        T: DeviceService,
+                    > tonic::server::UnaryService<super::ConfigUpdate>
+                    for UpdateGatewayConfigSvc<T> {
+                        type Response = super::ConfigChangeResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::ConfigUpdate>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                (*inner).update_gateway_config(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = UpdateGatewayConfigSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/device.DeviceService/DeleteGatewayConfig" => {
+                    #[allow(non_camel_case_types)]
+                    struct DeleteGatewayConfigSvc<T: DeviceService>(pub Arc<T>);
+                    impl<T: DeviceService> tonic::server::UnaryService<super::ConfigId>
+                    for DeleteGatewayConfigSvc<T> {
+                        type Response = super::ConfigChangeResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::ConfigId>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                (*inner).delete_gateway_config(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = DeleteGatewayConfigSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
