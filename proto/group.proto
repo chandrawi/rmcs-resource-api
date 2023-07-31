@@ -60,23 +60,23 @@ service GroupService {
 }
 
 message GroupModelSchema {
-    uint32 id = 1;
+    int32 id = 1;
     string name = 2;
     string category = 3;
     string description = 4;
-    repeated uint32 models = 5;
+    repeated int32 models = 5;
 }
 
 message GroupDeviceSchema {
-    uint32 id = 1;
+    int32 id = 1;
     string name = 2;
     string category = 3;
     string description = 4;
-    repeated uint64 devices = 5;
+    repeated int64 devices = 5;
 }
 
 message GroupId {
-    uint32 id = 1;
+    int32 id = 1;
 }
 
 message GroupName {
@@ -93,20 +93,20 @@ message GroupNameCategory {
 }
 
 message GroupUpdate {
-    uint32 id = 1;
+    int32 id = 1;
     optional string name = 2;
     optional string category = 3;
     optional string description = 4;
 }
 
 message GroupModel {
-    uint32 id = 1;
-    uint32 model_id = 2;
+    int32 id = 1;
+    int32 model_id = 2;
 }
 
 message GroupDevice {
-    uint32 id = 1;
-    uint64 device_id = 2;
+    int32 id = 1;
+    int64 device_id = 2;
 }
 
 message GroupModelReadResponse {
@@ -126,7 +126,7 @@ message GroupDeviceListResponse {
 }
 
 message GroupCreateResponse {
-    uint32 id = 1;
+    int32 id = 1;
 }
 
 message GroupChangeResponse {

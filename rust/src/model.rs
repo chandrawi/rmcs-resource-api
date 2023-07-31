@@ -1,8 +1,8 @@
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ModelSchema {
-    #[prost(uint32, tag = "1")]
-    pub id: u32,
+    #[prost(int32, tag = "1")]
+    pub id: i32,
     #[prost(enumeration = "super::common::DataIndexing", tag = "2")]
     pub indexing: i32,
     #[prost(string, tag = "3")]
@@ -25,8 +25,8 @@ pub struct ConfigSchemaVec {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ModelId {
-    #[prost(uint32, tag = "1")]
-    pub id: u32,
+    #[prost(int32, tag = "1")]
+    pub id: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -51,8 +51,8 @@ pub struct ModelNameCategory {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ModelUpdate {
-    #[prost(uint32, tag = "1")]
-    pub id: u32,
+    #[prost(int32, tag = "1")]
+    pub id: i32,
     #[prost(enumeration = "super::common::DataIndexing", optional, tag = "2")]
     pub indexing: ::core::option::Option<i32>,
     #[prost(string, optional, tag = "3")]
@@ -65,20 +65,20 @@ pub struct ModelUpdate {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ModelTypes {
-    #[prost(uint32, tag = "1")]
-    pub id: u32,
+    #[prost(int32, tag = "1")]
+    pub id: i32,
     #[prost(enumeration = "super::common::DataType", repeated, tag = "6")]
     pub types: ::prost::alloc::vec::Vec<i32>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ConfigSchema {
-    #[prost(uint32, tag = "1")]
-    pub id: u32,
-    #[prost(uint32, tag = "2")]
-    pub model_id: u32,
-    #[prost(uint32, tag = "3")]
-    pub index: u32,
+    #[prost(int32, tag = "1")]
+    pub id: i32,
+    #[prost(int32, tag = "2")]
+    pub model_id: i32,
+    #[prost(int32, tag = "3")]
+    pub index: i32,
     #[prost(string, tag = "4")]
     pub name: ::prost::alloc::string::String,
     #[prost(bytes = "vec", tag = "5")]
@@ -91,14 +91,14 @@ pub struct ConfigSchema {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ConfigId {
-    #[prost(uint32, tag = "1")]
-    pub id: u32,
+    #[prost(int32, tag = "1")]
+    pub id: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ConfigUpdate {
-    #[prost(uint32, tag = "1")]
-    pub id: u32,
+    #[prost(int32, tag = "1")]
+    pub id: i32,
     #[prost(string, optional, tag = "2")]
     pub name: ::core::option::Option<::prost::alloc::string::String>,
     #[prost(bytes = "vec", optional, tag = "3")]
@@ -123,8 +123,8 @@ pub struct ModelListResponse {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ModelCreateResponse {
-    #[prost(uint32, tag = "1")]
-    pub id: u32,
+    #[prost(int32, tag = "1")]
+    pub id: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -144,8 +144,8 @@ pub struct ConfigListResponse {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ConfigCreateResponse {
-    #[prost(uint32, tag = "1")]
-    pub id: u32,
+    #[prost(int32, tag = "1")]
+    pub id: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]

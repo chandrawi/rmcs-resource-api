@@ -1,14 +1,14 @@
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct DataSchema {
-    #[prost(uint64, tag = "1")]
-    pub device_id: u64,
-    #[prost(uint32, tag = "2")]
-    pub model_id: u32,
+    #[prost(int64, tag = "1")]
+    pub device_id: i64,
+    #[prost(int32, tag = "2")]
+    pub model_id: i32,
     #[prost(int64, tag = "3")]
     pub timestamp: i64,
-    #[prost(uint32, tag = "4")]
-    pub index: u32,
+    #[prost(int32, tag = "4")]
+    pub index: i32,
     #[prost(bytes = "vec", tag = "5")]
     pub data_bytes: ::prost::alloc::vec::Vec<u8>,
     #[prost(enumeration = "super::common::DataType", repeated, tag = "6")]
@@ -17,32 +17,32 @@ pub struct DataSchema {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct DataId {
-    #[prost(uint64, tag = "1")]
-    pub device_id: u64,
-    #[prost(uint32, tag = "2")]
-    pub model_id: u32,
+    #[prost(int64, tag = "1")]
+    pub device_id: i64,
+    #[prost(int32, tag = "2")]
+    pub model_id: i32,
     #[prost(int64, tag = "3")]
     pub timestamp: i64,
-    #[prost(uint32, tag = "4")]
-    pub index: u32,
+    #[prost(int32, tag = "4")]
+    pub index: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct DataTime {
-    #[prost(uint64, tag = "1")]
-    pub device_id: u64,
-    #[prost(uint32, tag = "2")]
-    pub model_id: u32,
+    #[prost(int64, tag = "1")]
+    pub device_id: i64,
+    #[prost(int32, tag = "2")]
+    pub model_id: i32,
     #[prost(int64, tag = "3")]
     pub timestamp: i64,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct DataRange {
-    #[prost(uint64, tag = "1")]
-    pub device_id: u64,
-    #[prost(uint32, tag = "2")]
-    pub model_id: u32,
+    #[prost(int64, tag = "1")]
+    pub device_id: i64,
+    #[prost(int32, tag = "2")]
+    pub model_id: i32,
     #[prost(int64, tag = "3")]
     pub begin: i64,
     #[prost(int64, tag = "4")]
@@ -51,10 +51,10 @@ pub struct DataRange {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct DataNumber {
-    #[prost(uint64, tag = "1")]
-    pub device_id: u64,
-    #[prost(uint32, tag = "2")]
-    pub model_id: u32,
+    #[prost(int64, tag = "1")]
+    pub device_id: i64,
+    #[prost(int32, tag = "2")]
+    pub model_id: i32,
     #[prost(int64, tag = "3")]
     pub timestamp: i64,
     #[prost(uint32, tag = "4")]
@@ -63,14 +63,14 @@ pub struct DataNumber {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ModelId {
-    #[prost(uint32, tag = "1")]
-    pub id: u32,
+    #[prost(int32, tag = "1")]
+    pub id: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct DataModel {
-    #[prost(uint32, tag = "1")]
-    pub id: u32,
+    #[prost(int32, tag = "1")]
+    pub id: i32,
     #[prost(enumeration = "super::common::DataIndexing", tag = "2")]
     pub indexing: i32,
     #[prost(enumeration = "super::common::DataType", repeated, tag = "3")]
@@ -81,12 +81,12 @@ pub struct DataModel {
 pub struct DataSchemaModel {
     #[prost(message, optional, tag = "1")]
     pub model: ::core::option::Option<DataModel>,
-    #[prost(uint64, tag = "2")]
-    pub device_id: u64,
+    #[prost(int64, tag = "2")]
+    pub device_id: i64,
     #[prost(int64, tag = "3")]
     pub timestamp: i64,
-    #[prost(uint32, tag = "4")]
-    pub index: u32,
+    #[prost(int32, tag = "4")]
+    pub index: i32,
     #[prost(bytes = "vec", tag = "5")]
     pub data_bytes: ::prost::alloc::vec::Vec<u8>,
     #[prost(enumeration = "super::common::DataType", repeated, tag = "6")]
@@ -97,20 +97,20 @@ pub struct DataSchemaModel {
 pub struct DataIdModel {
     #[prost(message, optional, tag = "1")]
     pub model: ::core::option::Option<DataModel>,
-    #[prost(uint64, tag = "2")]
-    pub device_id: u64,
+    #[prost(int64, tag = "2")]
+    pub device_id: i64,
     #[prost(int64, tag = "3")]
     pub timestamp: i64,
-    #[prost(uint32, tag = "4")]
-    pub index: u32,
+    #[prost(int32, tag = "4")]
+    pub index: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct DataTimeModel {
     #[prost(message, optional, tag = "1")]
     pub model: ::core::option::Option<DataModel>,
-    #[prost(uint64, tag = "2")]
-    pub device_id: u64,
+    #[prost(int64, tag = "2")]
+    pub device_id: i64,
     #[prost(int64, tag = "3")]
     pub timestamp: i64,
 }
@@ -119,8 +119,8 @@ pub struct DataTimeModel {
 pub struct DataRangeModel {
     #[prost(message, optional, tag = "1")]
     pub model: ::core::option::Option<DataModel>,
-    #[prost(uint64, tag = "2")]
-    pub device_id: u64,
+    #[prost(int64, tag = "2")]
+    pub device_id: i64,
     #[prost(int64, tag = "3")]
     pub begin: i64,
     #[prost(int64, tag = "4")]
@@ -131,8 +131,8 @@ pub struct DataRangeModel {
 pub struct DataNumberModel {
     #[prost(message, optional, tag = "1")]
     pub model: ::core::option::Option<DataModel>,
-    #[prost(uint64, tag = "2")]
-    pub device_id: u64,
+    #[prost(int64, tag = "2")]
+    pub device_id: i64,
     #[prost(int64, tag = "3")]
     pub timestamp: i64,
     #[prost(uint32, tag = "4")]

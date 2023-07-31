@@ -3,8 +3,8 @@
 pub struct LogSchema {
     #[prost(int64, tag = "1")]
     pub timestamp: i64,
-    #[prost(uint64, tag = "2")]
-    pub device_id: u64,
+    #[prost(int64, tag = "2")]
+    pub device_id: i64,
     #[prost(enumeration = "LogStatus", tag = "3")]
     pub status: i32,
     #[prost(bytes = "vec", tag = "4")]
@@ -17,16 +17,16 @@ pub struct LogSchema {
 pub struct LogId {
     #[prost(int64, tag = "1")]
     pub timestamp: i64,
-    #[prost(uint64, tag = "2")]
-    pub device_id: u64,
+    #[prost(int64, tag = "2")]
+    pub device_id: i64,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct LogTime {
     #[prost(int64, tag = "1")]
     pub timestamp: i64,
-    #[prost(uint64, optional, tag = "2")]
-    pub device_id: ::core::option::Option<u64>,
+    #[prost(int64, optional, tag = "2")]
+    pub device_id: ::core::option::Option<i64>,
     #[prost(enumeration = "LogStatus", optional, tag = "3")]
     pub status: ::core::option::Option<i32>,
 }
@@ -37,8 +37,8 @@ pub struct LogRange {
     pub begin: i64,
     #[prost(int64, tag = "2")]
     pub end: i64,
-    #[prost(uint64, optional, tag = "3")]
-    pub device_id: ::core::option::Option<u64>,
+    #[prost(int64, optional, tag = "3")]
+    pub device_id: ::core::option::Option<i64>,
     #[prost(enumeration = "LogStatus", optional, tag = "4")]
     pub status: ::core::option::Option<i32>,
 }
@@ -47,8 +47,8 @@ pub struct LogRange {
 pub struct LogUpdate {
     #[prost(int64, tag = "1")]
     pub timestamp: i64,
-    #[prost(uint64, tag = "2")]
-    pub device_id: u64,
+    #[prost(int64, tag = "2")]
+    pub device_id: i64,
     #[prost(enumeration = "LogStatus", optional, tag = "3")]
     pub status: ::core::option::Option<i32>,
     #[prost(bytes = "vec", optional, tag = "4")]

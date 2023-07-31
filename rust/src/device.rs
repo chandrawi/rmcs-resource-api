@@ -1,10 +1,10 @@
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct DeviceSchema {
-    #[prost(uint64, tag = "1")]
-    pub id: u64,
-    #[prost(uint64, tag = "2")]
-    pub gateway_id: u64,
+    #[prost(int64, tag = "1")]
+    pub id: i64,
+    #[prost(int64, tag = "2")]
+    pub gateway_id: i64,
     #[prost(string, tag = "3")]
     pub serial_number: ::prost::alloc::string::String,
     #[prost(string, tag = "4")]
@@ -19,8 +19,8 @@ pub struct DeviceSchema {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GatewaySchema {
-    #[prost(uint64, tag = "1")]
-    pub id: u64,
+    #[prost(int64, tag = "1")]
+    pub id: i64,
     #[prost(string, tag = "2")]
     pub serial_number: ::prost::alloc::string::String,
     #[prost(string, tag = "3")]
@@ -35,14 +35,14 @@ pub struct GatewaySchema {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct DeviceId {
-    #[prost(uint64, tag = "1")]
-    pub id: u64,
+    #[prost(int64, tag = "1")]
+    pub id: i64,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GatewayId {
-    #[prost(uint64, tag = "1")]
-    pub id: u64,
+    #[prost(int64, tag = "1")]
+    pub id: i64,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -65,56 +65,56 @@ pub struct GatewayName {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct DeviceGatewayType {
-    #[prost(uint64, tag = "1")]
-    pub gateway_id: u64,
-    #[prost(uint32, tag = "2")]
-    pub type_id: u32,
+    #[prost(int64, tag = "1")]
+    pub gateway_id: i64,
+    #[prost(int32, tag = "2")]
+    pub type_id: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct DeviceGatewayName {
-    #[prost(uint64, tag = "1")]
-    pub gateway_id: u64,
+    #[prost(int64, tag = "1")]
+    pub gateway_id: i64,
     #[prost(string, tag = "2")]
     pub name: ::prost::alloc::string::String,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct DeviceUpdate {
-    #[prost(uint64, tag = "1")]
-    pub id: u64,
-    #[prost(uint64, optional, tag = "2")]
-    pub gateway_id: ::core::option::Option<u64>,
+    #[prost(int64, tag = "1")]
+    pub id: i64,
+    #[prost(int64, optional, tag = "2")]
+    pub gateway_id: ::core::option::Option<i64>,
     #[prost(string, optional, tag = "3")]
     pub serial_number: ::core::option::Option<::prost::alloc::string::String>,
     #[prost(string, optional, tag = "4")]
     pub name: ::core::option::Option<::prost::alloc::string::String>,
     #[prost(string, optional, tag = "5")]
     pub description: ::core::option::Option<::prost::alloc::string::String>,
-    #[prost(uint32, optional, tag = "6")]
-    pub type_id: ::core::option::Option<u32>,
+    #[prost(int32, optional, tag = "6")]
+    pub type_id: ::core::option::Option<i32>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GatewayUpdate {
-    #[prost(uint64, tag = "1")]
-    pub id: u64,
+    #[prost(int64, tag = "1")]
+    pub id: i64,
     #[prost(string, optional, tag = "2")]
     pub serial_number: ::core::option::Option<::prost::alloc::string::String>,
     #[prost(string, optional, tag = "3")]
     pub name: ::core::option::Option<::prost::alloc::string::String>,
     #[prost(string, optional, tag = "4")]
     pub description: ::core::option::Option<::prost::alloc::string::String>,
-    #[prost(uint32, optional, tag = "5")]
-    pub type_id: ::core::option::Option<u32>,
+    #[prost(int32, optional, tag = "5")]
+    pub type_id: ::core::option::Option<i32>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ConfigSchema {
-    #[prost(uint32, tag = "1")]
-    pub id: u32,
-    #[prost(uint64, tag = "2")]
-    pub device_id: u64,
+    #[prost(int32, tag = "1")]
+    pub id: i32,
+    #[prost(int64, tag = "2")]
+    pub device_id: i64,
     #[prost(string, tag = "3")]
     pub name: ::prost::alloc::string::String,
     #[prost(bytes = "vec", tag = "4")]
@@ -127,14 +127,14 @@ pub struct ConfigSchema {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ConfigId {
-    #[prost(uint32, tag = "1")]
-    pub id: u32,
+    #[prost(int32, tag = "1")]
+    pub id: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ConfigUpdate {
-    #[prost(uint32, tag = "1")]
-    pub id: u32,
+    #[prost(int32, tag = "1")]
+    pub id: i32,
     #[prost(string, optional, tag = "2")]
     pub name: ::core::option::Option<::prost::alloc::string::String>,
     #[prost(bytes = "vec", optional, tag = "3")]
@@ -147,20 +147,20 @@ pub struct ConfigUpdate {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct TypeSchema {
-    #[prost(uint32, tag = "1")]
-    pub id: u32,
+    #[prost(int32, tag = "1")]
+    pub id: i32,
     #[prost(string, tag = "2")]
     pub name: ::prost::alloc::string::String,
     #[prost(string, tag = "3")]
     pub description: ::prost::alloc::string::String,
-    #[prost(uint32, repeated, tag = "4")]
-    pub models: ::prost::alloc::vec::Vec<u32>,
+    #[prost(int32, repeated, tag = "4")]
+    pub models: ::prost::alloc::vec::Vec<i32>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct TypeId {
-    #[prost(uint32, tag = "1")]
-    pub id: u32,
+    #[prost(int32, tag = "1")]
+    pub id: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -171,8 +171,8 @@ pub struct TypeName {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct TypeUpdate {
-    #[prost(uint32, tag = "1")]
-    pub id: u32,
+    #[prost(int32, tag = "1")]
+    pub id: i32,
     #[prost(string, optional, tag = "2")]
     pub name: ::core::option::Option<::prost::alloc::string::String>,
     #[prost(string, optional, tag = "3")]
@@ -181,10 +181,10 @@ pub struct TypeUpdate {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct TypeModel {
-    #[prost(uint32, tag = "1")]
-    pub id: u32,
-    #[prost(uint32, tag = "2")]
-    pub model_id: u32,
+    #[prost(int32, tag = "1")]
+    pub id: i32,
+    #[prost(int32, tag = "2")]
+    pub model_id: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -231,8 +231,8 @@ pub struct ConfigListResponse {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ConfigCreateResponse {
-    #[prost(uint32, tag = "1")]
-    pub id: u32,
+    #[prost(int32, tag = "1")]
+    pub id: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -252,8 +252,8 @@ pub struct TypeListResponse {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct TypeCreateResponse {
-    #[prost(uint32, tag = "1")]
-    pub id: u32,
+    #[prost(int32, tag = "1")]
+    pub id: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]

@@ -23,46 +23,46 @@ service BufferService {
 
 enum BufferStatus {
     DEFAULT = 0;
-    CONVERT = 1;
-    ANALYZE_GATEWAY = 2;
-    ANALYZE_SERVER = 3;
-    TRANSFER_GATEWAY = 4;
-    TRANSFER_SERVER = 5;
-    BACKUP = 6;
-    DELETE = 7;
-    ERROR = 8;
+    ERROR = 1;
+    CONVERT = 2;
+    ANALYZE_GATEWAY = 3;
+    ANALYZE_SERVER = 4;
+    TRANSFER_GATEWAY = 5;
+    TRANSFER_SERVER = 6;
+    BACKUP = 7;
+    DELETE = 8;
 }
 
 message BufferSchema {
-    uint32 id = 1;
-    uint64 device_id = 2;
-    uint32 model_id = 3;
+    int32 id = 1;
+    int64 device_id = 2;
+    int32 model_id = 3;
     int64 timestamp = 4;
-    uint32 index = 5;
+    int32 index = 5;
     bytes data_bytes = 6;
     repeated common.DataType data_type = 7;
     BufferStatus status = 8;
 }
 
 message BufferId {
-    uint32 id = 1;
+    int32 id = 1;
 }
 
 message BufferSelector {
-    optional uint64 device_id = 1;
-    optional uint32 model_id = 2;
+    optional int64 device_id = 1;
+    optional int32 model_id = 2;
     optional BufferStatus status = 3;
 }
 
 message BuffersSelector {
-    optional uint64 device_id = 1;
-    optional uint32 model_id = 2;
+    optional int64 device_id = 1;
+    optional int32 model_id = 2;
     optional BufferStatus status = 3;
     uint32 number = 4;
 }
 
 message BufferUpdate {
-    uint32 id = 1;
+    int32 id = 1;
     optional bytes data_bytes = 6;
     repeated common.DataType data_type = 7;
     optional BufferStatus status = 8;
@@ -77,7 +77,7 @@ message BufferListResponse {
 }
 
 message BufferCreateResponse {
-    uint32 id = 1;
+    int32 id = 1;
 }
 
 message BufferChangeResponse {

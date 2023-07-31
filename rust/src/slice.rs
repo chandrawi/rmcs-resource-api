@@ -1,20 +1,20 @@
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct SliceSchema {
-    #[prost(uint32, tag = "1")]
-    pub id: u32,
-    #[prost(uint64, tag = "2")]
-    pub device_id: u64,
-    #[prost(uint32, tag = "3")]
-    pub model_id: u32,
+    #[prost(int32, tag = "1")]
+    pub id: i32,
+    #[prost(int64, tag = "2")]
+    pub device_id: i64,
+    #[prost(int32, tag = "3")]
+    pub model_id: i32,
     #[prost(int64, tag = "4")]
     pub timestamp_begin: i64,
     #[prost(int64, tag = "5")]
     pub timestamp_end: i64,
-    #[prost(uint32, tag = "6")]
-    pub index_begin: u32,
-    #[prost(uint32, tag = "7")]
-    pub index_end: u32,
+    #[prost(int32, tag = "6")]
+    pub index_begin: i32,
+    #[prost(int32, tag = "7")]
+    pub index_end: i32,
     #[prost(string, tag = "8")]
     pub name: ::prost::alloc::string::String,
     #[prost(string, tag = "9")]
@@ -23,8 +23,8 @@ pub struct SliceSchema {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct SliceId {
-    #[prost(uint32, tag = "1")]
-    pub id: u32,
+    #[prost(int32, tag = "1")]
+    pub id: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -35,36 +35,36 @@ pub struct SliceName {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct SliceDevice {
-    #[prost(uint64, tag = "1")]
-    pub device_id: u64,
+    #[prost(int64, tag = "1")]
+    pub device_id: i64,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct SliceModel {
-    #[prost(uint32, tag = "1")]
-    pub model_id: u32,
+    #[prost(int32, tag = "1")]
+    pub model_id: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct SliceDeviceModel {
-    #[prost(uint64, tag = "1")]
-    pub device_id: u64,
-    #[prost(uint32, tag = "2")]
-    pub model_id: u32,
+    #[prost(int64, tag = "1")]
+    pub device_id: i64,
+    #[prost(int32, tag = "2")]
+    pub model_id: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct SliceUpdate {
-    #[prost(uint32, tag = "1")]
-    pub id: u32,
+    #[prost(int32, tag = "1")]
+    pub id: i32,
     #[prost(int64, optional, tag = "2")]
     pub timestamp_begin: ::core::option::Option<i64>,
     #[prost(int64, optional, tag = "3")]
     pub timestamp_end: ::core::option::Option<i64>,
-    #[prost(uint32, optional, tag = "4")]
-    pub index_begin: ::core::option::Option<u32>,
-    #[prost(uint32, optional, tag = "5")]
-    pub index_end: ::core::option::Option<u32>,
+    #[prost(int32, optional, tag = "4")]
+    pub index_begin: ::core::option::Option<i32>,
+    #[prost(int32, optional, tag = "5")]
+    pub index_end: ::core::option::Option<i32>,
     #[prost(string, optional, tag = "6")]
     pub name: ::core::option::Option<::prost::alloc::string::String>,
     #[prost(string, optional, tag = "7")]
@@ -85,8 +85,8 @@ pub struct SliceListResponse {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct SliceCreateResponse {
-    #[prost(uint32, tag = "1")]
-    pub id: u32,
+    #[prost(int32, tag = "1")]
+    pub id: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]

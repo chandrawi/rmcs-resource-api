@@ -74,8 +74,8 @@ service DeviceService {
 }
 
 message DeviceSchema {
-    uint64 id = 1;
-    uint64 gateway_id = 2;
+    int64 id = 1;
+    int64 gateway_id = 2;
     string serial_number = 3;
     string name = 4;
     string description = 5;
@@ -84,7 +84,7 @@ message DeviceSchema {
 }
 
 message GatewaySchema {
-    uint64 id = 1;
+    int64 id = 1;
     string serial_number = 2;
     string name = 3;
     string description = 4;
@@ -93,11 +93,11 @@ message GatewaySchema {
 }
 
 message DeviceId {
-    uint64 id = 1;
+    int64 id = 1;
 }
 
 message GatewayId {
-    uint64 id = 1;
+    int64 id = 1;
 }
 
 message SerialNumber {
@@ -113,35 +113,35 @@ message GatewayName {
 }
 
 message DeviceGatewayType {
-    uint64 gateway_id = 1;
-    uint32 type_id = 2;
+    int64 gateway_id = 1;
+    int32 type_id = 2;
 }
 
 message DeviceGatewayName {
-    uint64 gateway_id = 1;
+    int64 gateway_id = 1;
     string name = 2;
 }
 
 message DeviceUpdate {
-    uint64 id = 1;
-    optional uint64 gateway_id = 2;
+    int64 id = 1;
+    optional int64 gateway_id = 2;
     optional string serial_number = 3;
     optional string name = 4;
     optional string description = 5;
-    optional uint32 type_id = 6;
+    optional int32 type_id = 6;
 }
 
 message GatewayUpdate {
-    uint64 id = 1;
+    int64 id = 1;
     optional string serial_number = 2;
     optional string name = 3;
     optional string description = 4;
-    optional uint32 type_id = 5;
+    optional int32 type_id = 5;
 }
 
 message ConfigSchema {
-    uint32 id = 1;
-    uint64 device_id = 2;
+    int32 id = 1;
+    int64 device_id = 2;
     string name = 3;
     bytes config_bytes = 4;
     common.ConfigType config_type = 5;
@@ -149,11 +149,11 @@ message ConfigSchema {
 }
 
 message ConfigId {
-    uint32 id = 1;
+    int32 id = 1;
 }
 
 message ConfigUpdate {
-    uint32 id = 1;
+    int32 id = 1;
     optional string name = 2;
     optional bytes config_bytes = 3;
     optional common.ConfigType config_type = 4;
@@ -161,14 +161,14 @@ message ConfigUpdate {
 }
 
 message TypeSchema {
-    uint32 id = 1;
+    int32 id = 1;
     string name = 2;
     string description = 3;
-    repeated uint32 models = 4;
+    repeated int32 models = 4;
 }
 
 message TypeId {
-    uint32 id = 1;
+    int32 id = 1;
 }
 
 message TypeName {
@@ -176,14 +176,14 @@ message TypeName {
 }
 
 message TypeUpdate {
-    uint32 id = 1;
+    int32 id = 1;
     optional string name = 2;
     optional string description = 3;
 }
 
 message TypeModel {
-    uint32 id = 1;
-    uint32 model_id = 2;
+    int32 id = 1;
+    int32 model_id = 2;
 }
 
 message DeviceReadResponse {
@@ -217,7 +217,7 @@ message ConfigListResponse {
 }
 
 message ConfigCreateResponse {
-    uint32 id = 1;
+    int32 id = 1;
 }
 
 message ConfigChangeResponse {
@@ -232,7 +232,7 @@ message TypeListResponse {
 }
 
 message TypeCreateResponse {
-    uint32 id = 1;
+    int32 id = 1;
 }
 
 message TypeChangeResponse {
