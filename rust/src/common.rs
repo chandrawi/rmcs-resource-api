@@ -2,8 +2,8 @@
 #[repr(i32)]
 pub enum DataIndexing {
     Timestamp = 0,
-    TimestampIndex = 1,
-    TimestampMicros = 2,
+    Index = 1,
+    TimestampIndex = 2,
 }
 impl DataIndexing {
     /// String value of the enum field names used in the ProtoBuf definition.
@@ -13,16 +13,16 @@ impl DataIndexing {
     pub fn as_str_name(&self) -> &'static str {
         match self {
             DataIndexing::Timestamp => "TIMESTAMP",
+            DataIndexing::Index => "INDEX",
             DataIndexing::TimestampIndex => "TIMESTAMP_INDEX",
-            DataIndexing::TimestampMicros => "TIMESTAMP_MICROS",
         }
     }
     /// Creates an enum from field names used in the ProtoBuf definition.
     pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
         match value {
             "TIMESTAMP" => Some(Self::Timestamp),
+            "INDEX" => Some(Self::Index),
             "TIMESTAMP_INDEX" => Some(Self::TimestampIndex),
-            "TIMESTAMP_MICROS" => Some(Self::TimestampMicros),
             _ => None,
         }
     }

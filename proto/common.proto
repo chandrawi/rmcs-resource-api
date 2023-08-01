@@ -3,8 +3,8 @@ package common;
 
 enum DataIndexing {
     TIMESTAMP = 0;
-    TIMESTAMP_INDEX = 1;
-    TIMESTAMP_MICROS = 2;
+    INDEX = 1;
+    TIMESTAMP_INDEX = 2;
 }
 
 enum DataType {
