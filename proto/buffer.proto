@@ -35,8 +35,8 @@ enum BufferStatus {
 
 message BufferSchema {
     int32 id = 1;
-    int64 device_id = 2;
-    int32 model_id = 3;
+    bytes device_id = 2;
+    bytes model_id = 3;
     int64 timestamp = 4;
     int32 index = 5;
     bytes data_bytes = 6;
@@ -49,14 +49,14 @@ message BufferId {
 }
 
 message BufferSelector {
-    optional int64 device_id = 1;
-    optional int32 model_id = 2;
+    optional bytes device_id = 1;
+    optional bytes model_id = 2;
     optional BufferStatus status = 3;
 }
 
 message BuffersSelector {
-    optional int64 device_id = 1;
-    optional int32 model_id = 2;
+    optional bytes device_id = 1;
+    optional bytes model_id = 2;
     optional BufferStatus status = 3;
     uint32 number = 4;
 }

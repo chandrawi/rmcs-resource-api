@@ -40,8 +40,8 @@ service DataService {
 }
 
 message DataSchema {
-    int64 device_id = 1;
-    int32 model_id = 2;
+    bytes device_id = 1;
+    bytes model_id = 2;
     int64 timestamp = 3;
     int32 index = 4;
     bytes data_bytes = 5;
@@ -49,45 +49,45 @@ message DataSchema {
 }
 
 message DataId {
-    int64 device_id = 1;
-    int32 model_id = 2;
+    bytes device_id = 1;
+    bytes model_id = 2;
     int64 timestamp = 3;
     int32 index = 4;
 }
 
 message DataTime {
-    int64 device_id = 1;
-    int32 model_id = 2;
+    bytes device_id = 1;
+    bytes model_id = 2;
     int64 timestamp = 3;
 }
 
 message DataRange {
-    int64 device_id = 1;
-    int32 model_id = 2;
+    bytes device_id = 1;
+    bytes model_id = 2;
     int64 begin = 3;
     int64 end = 4;
 }
 
 message DataNumber {
-    int64 device_id = 1;
-    int32 model_id = 2;
+    bytes device_id = 1;
+    bytes model_id = 2;
     int64 timestamp = 3;
     uint32 number = 4;
 }
 
 message ModelId {
-    int32 id = 1;
+    bytes id = 1;
 }
 
 message DataModel {
-    int32 id = 1;
+    bytes id = 1;
     common.DataIndexing indexing = 2;
     repeated common.DataType types = 3;
 }
 
 message DataSchemaModel {
     DataModel model = 1;
-    int64 device_id = 2;
+    bytes device_id = 2;
     int64 timestamp = 3;
     int32 index = 4;
     bytes data_bytes = 5;
@@ -96,27 +96,27 @@ message DataSchemaModel {
 
 message DataIdModel {
     DataModel model = 1;
-    int64 device_id = 2;
+    bytes device_id = 2;
     int64 timestamp = 3;
     int32 index = 4;
 }
 
 message DataTimeModel {
     DataModel model = 1;
-    int64 device_id = 2;
+    bytes device_id = 2;
     int64 timestamp = 3;
 }
 
 message DataRangeModel {
     DataModel model = 1;
-    int64 device_id = 2;
+    bytes device_id = 2;
     int64 begin = 3;
     int64 end = 4;
 }
 
 message DataNumberModel {
     DataModel model = 1;
-    int64 device_id = 2;
+    bytes device_id = 2;
     int64 timestamp = 3;
     uint32 number = 4;
 }

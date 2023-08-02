@@ -1,36 +1,36 @@
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GroupModelSchema {
-    #[prost(int32, tag = "1")]
-    pub id: i32,
+    #[prost(bytes = "vec", tag = "1")]
+    pub id: ::prost::alloc::vec::Vec<u8>,
     #[prost(string, tag = "2")]
     pub name: ::prost::alloc::string::String,
     #[prost(string, tag = "3")]
     pub category: ::prost::alloc::string::String,
     #[prost(string, tag = "4")]
     pub description: ::prost::alloc::string::String,
-    #[prost(int32, repeated, tag = "5")]
-    pub models: ::prost::alloc::vec::Vec<i32>,
+    #[prost(bytes = "vec", repeated, tag = "5")]
+    pub models: ::prost::alloc::vec::Vec<::prost::alloc::vec::Vec<u8>>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GroupDeviceSchema {
-    #[prost(int32, tag = "1")]
-    pub id: i32,
+    #[prost(bytes = "vec", tag = "1")]
+    pub id: ::prost::alloc::vec::Vec<u8>,
     #[prost(string, tag = "2")]
     pub name: ::prost::alloc::string::String,
     #[prost(string, tag = "3")]
     pub category: ::prost::alloc::string::String,
     #[prost(string, tag = "4")]
     pub description: ::prost::alloc::string::String,
-    #[prost(int64, repeated, tag = "5")]
-    pub devices: ::prost::alloc::vec::Vec<i64>,
+    #[prost(bytes = "vec", repeated, tag = "5")]
+    pub devices: ::prost::alloc::vec::Vec<::prost::alloc::vec::Vec<u8>>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GroupId {
-    #[prost(int32, tag = "1")]
-    pub id: i32,
+    #[prost(bytes = "vec", tag = "1")]
+    pub id: ::prost::alloc::vec::Vec<u8>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -55,8 +55,8 @@ pub struct GroupNameCategory {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GroupUpdate {
-    #[prost(int32, tag = "1")]
-    pub id: i32,
+    #[prost(bytes = "vec", tag = "1")]
+    pub id: ::prost::alloc::vec::Vec<u8>,
     #[prost(string, optional, tag = "2")]
     pub name: ::core::option::Option<::prost::alloc::string::String>,
     #[prost(string, optional, tag = "3")]
@@ -67,18 +67,18 @@ pub struct GroupUpdate {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GroupModel {
-    #[prost(int32, tag = "1")]
-    pub id: i32,
-    #[prost(int32, tag = "2")]
-    pub model_id: i32,
+    #[prost(bytes = "vec", tag = "1")]
+    pub id: ::prost::alloc::vec::Vec<u8>,
+    #[prost(bytes = "vec", tag = "2")]
+    pub model_id: ::prost::alloc::vec::Vec<u8>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GroupDevice {
-    #[prost(int32, tag = "1")]
-    pub id: i32,
-    #[prost(int64, tag = "2")]
-    pub device_id: i64,
+    #[prost(bytes = "vec", tag = "1")]
+    pub id: ::prost::alloc::vec::Vec<u8>,
+    #[prost(bytes = "vec", tag = "2")]
+    pub device_id: ::prost::alloc::vec::Vec<u8>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -107,8 +107,8 @@ pub struct GroupDeviceListResponse {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GroupCreateResponse {
-    #[prost(int32, tag = "1")]
-    pub id: i32,
+    #[prost(bytes = "vec", tag = "1")]
+    pub id: ::prost::alloc::vec::Vec<u8>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]

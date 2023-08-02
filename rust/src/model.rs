@@ -1,8 +1,8 @@
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ModelSchema {
-    #[prost(int32, tag = "1")]
-    pub id: i32,
+    #[prost(bytes = "vec", tag = "1")]
+    pub id: ::prost::alloc::vec::Vec<u8>,
     #[prost(enumeration = "super::common::DataIndexing", tag = "2")]
     pub indexing: i32,
     #[prost(string, tag = "3")]
@@ -25,8 +25,8 @@ pub struct ConfigSchemaVec {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ModelId {
-    #[prost(int32, tag = "1")]
-    pub id: i32,
+    #[prost(bytes = "vec", tag = "1")]
+    pub id: ::prost::alloc::vec::Vec<u8>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -51,8 +51,8 @@ pub struct ModelNameCategory {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ModelUpdate {
-    #[prost(int32, tag = "1")]
-    pub id: i32,
+    #[prost(bytes = "vec", tag = "1")]
+    pub id: ::prost::alloc::vec::Vec<u8>,
     #[prost(enumeration = "super::common::DataIndexing", optional, tag = "2")]
     pub indexing: ::core::option::Option<i32>,
     #[prost(string, optional, tag = "3")]
@@ -65,8 +65,8 @@ pub struct ModelUpdate {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ModelTypes {
-    #[prost(int32, tag = "1")]
-    pub id: i32,
+    #[prost(bytes = "vec", tag = "1")]
+    pub id: ::prost::alloc::vec::Vec<u8>,
     #[prost(enumeration = "super::common::DataType", repeated, tag = "6")]
     pub types: ::prost::alloc::vec::Vec<i32>,
 }
@@ -75,8 +75,8 @@ pub struct ModelTypes {
 pub struct ConfigSchema {
     #[prost(int32, tag = "1")]
     pub id: i32,
-    #[prost(int32, tag = "2")]
-    pub model_id: i32,
+    #[prost(bytes = "vec", tag = "2")]
+    pub model_id: ::prost::alloc::vec::Vec<u8>,
     #[prost(int32, tag = "3")]
     pub index: i32,
     #[prost(string, tag = "4")]
@@ -123,8 +123,8 @@ pub struct ModelListResponse {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ModelCreateResponse {
-    #[prost(int32, tag = "1")]
-    pub id: i32,
+    #[prost(bytes = "vec", tag = "1")]
+    pub id: ::prost::alloc::vec::Vec<u8>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]

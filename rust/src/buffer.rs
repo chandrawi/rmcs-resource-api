@@ -3,10 +3,10 @@
 pub struct BufferSchema {
     #[prost(int32, tag = "1")]
     pub id: i32,
-    #[prost(int64, tag = "2")]
-    pub device_id: i64,
-    #[prost(int32, tag = "3")]
-    pub model_id: i32,
+    #[prost(bytes = "vec", tag = "2")]
+    pub device_id: ::prost::alloc::vec::Vec<u8>,
+    #[prost(bytes = "vec", tag = "3")]
+    pub model_id: ::prost::alloc::vec::Vec<u8>,
     #[prost(int64, tag = "4")]
     pub timestamp: i64,
     #[prost(int32, tag = "5")]
@@ -27,20 +27,20 @@ pub struct BufferId {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct BufferSelector {
-    #[prost(int64, optional, tag = "1")]
-    pub device_id: ::core::option::Option<i64>,
-    #[prost(int32, optional, tag = "2")]
-    pub model_id: ::core::option::Option<i32>,
+    #[prost(bytes = "vec", optional, tag = "1")]
+    pub device_id: ::core::option::Option<::prost::alloc::vec::Vec<u8>>,
+    #[prost(bytes = "vec", optional, tag = "2")]
+    pub model_id: ::core::option::Option<::prost::alloc::vec::Vec<u8>>,
     #[prost(enumeration = "BufferStatus", optional, tag = "3")]
     pub status: ::core::option::Option<i32>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct BuffersSelector {
-    #[prost(int64, optional, tag = "1")]
-    pub device_id: ::core::option::Option<i64>,
-    #[prost(int32, optional, tag = "2")]
-    pub model_id: ::core::option::Option<i32>,
+    #[prost(bytes = "vec", optional, tag = "1")]
+    pub device_id: ::core::option::Option<::prost::alloc::vec::Vec<u8>>,
+    #[prost(bytes = "vec", optional, tag = "2")]
+    pub model_id: ::core::option::Option<::prost::alloc::vec::Vec<u8>>,
     #[prost(enumeration = "BufferStatus", optional, tag = "3")]
     pub status: ::core::option::Option<i32>,
     #[prost(uint32, tag = "4")]

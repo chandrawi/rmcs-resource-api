@@ -23,8 +23,8 @@ service SliceService {
 
 message SliceSchema {
     int32 id = 1;
-    int64 device_id = 2;
-    int32 model_id = 3;
+    bytes device_id = 2;
+    bytes model_id = 3;
     int64 timestamp_begin = 4;
     int64 timestamp_end = 5;
     int32 index_begin = 6;
@@ -42,16 +42,16 @@ message SliceName {
 }
 
 message SliceDevice {
-    int64 device_id = 1;
+    bytes device_id = 1;
 }
 
 message SliceModel {
-    int32 model_id = 1;
+    bytes model_id = 1;
 }
 
 message SliceDeviceModel {
-    int64 device_id = 1;
-    int32 model_id = 2;
+    bytes device_id = 1;
+    bytes model_id = 2;
 }
 
 message SliceUpdate {
