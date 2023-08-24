@@ -1,7 +1,7 @@
 syntax = "proto3";
 package buffer;
 
-import "common.proto";
+import "rmcs_resource_api/common.proto";
 
 service BufferService {
     rpc ReadBuffer(BufferId) returns (BufferReadResponse);

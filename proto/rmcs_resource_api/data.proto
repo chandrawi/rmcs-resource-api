@@ -1,7 +1,7 @@
 syntax = "proto3";
 package data;
 
-import "common.proto";
+import "rmcs_resource_api/common.proto";
 
 service DataService {
     rpc ReadData(DataId) returns (DataReadResponse);

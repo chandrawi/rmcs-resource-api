@@ -1,7 +1,7 @@
 syntax = "proto3";
 package device;
 
-import "common.proto";
+import "rmcs_resource_api/common.proto";
 
 service DeviceService {
     rpc ReadDevice(DeviceId) returns (DeviceReadResponse);

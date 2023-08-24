@@ -1,8 +1,6 @@
 syntax = "proto3";
 package slice;
 
-import "common.proto";
-
 service SliceService {
     rpc ReadSlice(SliceId) returns (SliceReadResponse);
 

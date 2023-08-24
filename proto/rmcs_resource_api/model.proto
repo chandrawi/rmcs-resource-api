@@ -1,7 +1,7 @@
 syntax = "proto3";
 package model;
 
-import "common.proto";
+import "rmcs_resource_api/common.proto";
 
 service ModelService {
     rpc ReadModel(ModelId) returns (ModelReadResponse);

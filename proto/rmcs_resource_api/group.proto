@@ -1,8 +1,6 @@
 syntax = "proto3";
 package group;
 
-import "common.proto";
-
 service GroupService {
     rpc ReadGroupModel(GroupId) returns (GroupModelReadResponse);
 
