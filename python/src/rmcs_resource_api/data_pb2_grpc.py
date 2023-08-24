@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-import data_pb2 as data__pb2
+from rmcs_resource_api import data_pb2 as rmcs__resource__api_dot_data__pb2
 
 
 class DataServiceStub(object):
@@ -16,88 +16,88 @@ class DataServiceStub(object):
         """
         self.ReadData = channel.unary_unary(
                 '/data.DataService/ReadData',
-                request_serializer=data__pb2.DataId.SerializeToString,
-                response_deserializer=data__pb2.DataReadResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_data__pb2.DataId.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_data__pb2.DataReadResponse.FromString,
                 )
         self.ListDataByTime = channel.unary_unary(
                 '/data.DataService/ListDataByTime',
-                request_serializer=data__pb2.DataTime.SerializeToString,
-                response_deserializer=data__pb2.DataListResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_data__pb2.DataTime.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_data__pb2.DataListResponse.FromString,
                 )
         self.ListDataByLastTime = channel.unary_unary(
                 '/data.DataService/ListDataByLastTime',
-                request_serializer=data__pb2.DataTime.SerializeToString,
-                response_deserializer=data__pb2.DataListResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_data__pb2.DataTime.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_data__pb2.DataListResponse.FromString,
                 )
         self.ListDataByRangeTime = channel.unary_unary(
                 '/data.DataService/ListDataByRangeTime',
-                request_serializer=data__pb2.DataRange.SerializeToString,
-                response_deserializer=data__pb2.DataListResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_data__pb2.DataRange.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_data__pb2.DataListResponse.FromString,
                 )
         self.ListDataByNumberBefore = channel.unary_unary(
                 '/data.DataService/ListDataByNumberBefore',
-                request_serializer=data__pb2.DataNumber.SerializeToString,
-                response_deserializer=data__pb2.DataListResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_data__pb2.DataNumber.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_data__pb2.DataListResponse.FromString,
                 )
         self.ListDataByNumberAfter = channel.unary_unary(
                 '/data.DataService/ListDataByNumberAfter',
-                request_serializer=data__pb2.DataNumber.SerializeToString,
-                response_deserializer=data__pb2.DataListResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_data__pb2.DataNumber.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_data__pb2.DataListResponse.FromString,
                 )
         self.GetDataModel = channel.unary_unary(
                 '/data.DataService/GetDataModel',
-                request_serializer=data__pb2.ModelId.SerializeToString,
-                response_deserializer=data__pb2.DataModelResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_data__pb2.ModelId.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_data__pb2.DataModelResponse.FromString,
                 )
         self.ReadDataWithModel = channel.unary_unary(
                 '/data.DataService/ReadDataWithModel',
-                request_serializer=data__pb2.DataIdModel.SerializeToString,
-                response_deserializer=data__pb2.DataReadResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_data__pb2.DataIdModel.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_data__pb2.DataReadResponse.FromString,
                 )
         self.ListDataWithModelByTime = channel.unary_unary(
                 '/data.DataService/ListDataWithModelByTime',
-                request_serializer=data__pb2.DataTimeModel.SerializeToString,
-                response_deserializer=data__pb2.DataListResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_data__pb2.DataTimeModel.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_data__pb2.DataListResponse.FromString,
                 )
         self.ListDataWithModelByLastTime = channel.unary_unary(
                 '/data.DataService/ListDataWithModelByLastTime',
-                request_serializer=data__pb2.DataTimeModel.SerializeToString,
-                response_deserializer=data__pb2.DataListResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_data__pb2.DataTimeModel.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_data__pb2.DataListResponse.FromString,
                 )
         self.ListDataWithModelByRangeTime = channel.unary_unary(
                 '/data.DataService/ListDataWithModelByRangeTime',
-                request_serializer=data__pb2.DataRangeModel.SerializeToString,
-                response_deserializer=data__pb2.DataListResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_data__pb2.DataRangeModel.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_data__pb2.DataListResponse.FromString,
                 )
         self.ListDataWithModelByNumberBefore = channel.unary_unary(
                 '/data.DataService/ListDataWithModelByNumberBefore',
-                request_serializer=data__pb2.DataNumberModel.SerializeToString,
-                response_deserializer=data__pb2.DataListResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_data__pb2.DataNumberModel.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_data__pb2.DataListResponse.FromString,
                 )
         self.ListDataWithModelByNumberAfter = channel.unary_unary(
                 '/data.DataService/ListDataWithModelByNumberAfter',
-                request_serializer=data__pb2.DataNumberModel.SerializeToString,
-                response_deserializer=data__pb2.DataListResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_data__pb2.DataNumberModel.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_data__pb2.DataListResponse.FromString,
                 )
         self.CreateData = channel.unary_unary(
                 '/data.DataService/CreateData',
-                request_serializer=data__pb2.DataSchema.SerializeToString,
-                response_deserializer=data__pb2.DataChangeResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_data__pb2.DataSchema.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_data__pb2.DataChangeResponse.FromString,
                 )
         self.CreateDataWithModel = channel.unary_unary(
                 '/data.DataService/CreateDataWithModel',
-                request_serializer=data__pb2.DataSchemaModel.SerializeToString,
-                response_deserializer=data__pb2.DataChangeResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_data__pb2.DataSchemaModel.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_data__pb2.DataChangeResponse.FromString,
                 )
         self.DeleteData = channel.unary_unary(
                 '/data.DataService/DeleteData',
-                request_serializer=data__pb2.DataId.SerializeToString,
-                response_deserializer=data__pb2.DataChangeResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_data__pb2.DataId.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_data__pb2.DataChangeResponse.FromString,
                 )
         self.DeleteDataWithModel = channel.unary_unary(
                 '/data.DataService/DeleteDataWithModel',
-                request_serializer=data__pb2.DataIdModel.SerializeToString,
-                response_deserializer=data__pb2.DataChangeResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_data__pb2.DataIdModel.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_data__pb2.DataChangeResponse.FromString,
                 )
 
 
@@ -211,88 +211,88 @@ def add_DataServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'ReadData': grpc.unary_unary_rpc_method_handler(
                     servicer.ReadData,
-                    request_deserializer=data__pb2.DataId.FromString,
-                    response_serializer=data__pb2.DataReadResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_data__pb2.DataId.FromString,
+                    response_serializer=rmcs__resource__api_dot_data__pb2.DataReadResponse.SerializeToString,
             ),
             'ListDataByTime': grpc.unary_unary_rpc_method_handler(
                     servicer.ListDataByTime,
-                    request_deserializer=data__pb2.DataTime.FromString,
-                    response_serializer=data__pb2.DataListResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_data__pb2.DataTime.FromString,
+                    response_serializer=rmcs__resource__api_dot_data__pb2.DataListResponse.SerializeToString,
             ),
             'ListDataByLastTime': grpc.unary_unary_rpc_method_handler(
                     servicer.ListDataByLastTime,
-                    request_deserializer=data__pb2.DataTime.FromString,
-                    response_serializer=data__pb2.DataListResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_data__pb2.DataTime.FromString,
+                    response_serializer=rmcs__resource__api_dot_data__pb2.DataListResponse.SerializeToString,
             ),
             'ListDataByRangeTime': grpc.unary_unary_rpc_method_handler(
                     servicer.ListDataByRangeTime,
-                    request_deserializer=data__pb2.DataRange.FromString,
-                    response_serializer=data__pb2.DataListResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_data__pb2.DataRange.FromString,
+                    response_serializer=rmcs__resource__api_dot_data__pb2.DataListResponse.SerializeToString,
             ),
             'ListDataByNumberBefore': grpc.unary_unary_rpc_method_handler(
                     servicer.ListDataByNumberBefore,
-                    request_deserializer=data__pb2.DataNumber.FromString,
-                    response_serializer=data__pb2.DataListResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_data__pb2.DataNumber.FromString,
+                    response_serializer=rmcs__resource__api_dot_data__pb2.DataListResponse.SerializeToString,
             ),
             'ListDataByNumberAfter': grpc.unary_unary_rpc_method_handler(
                     servicer.ListDataByNumberAfter,
-                    request_deserializer=data__pb2.DataNumber.FromString,
-                    response_serializer=data__pb2.DataListResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_data__pb2.DataNumber.FromString,
+                    response_serializer=rmcs__resource__api_dot_data__pb2.DataListResponse.SerializeToString,
             ),
             'GetDataModel': grpc.unary_unary_rpc_method_handler(
                     servicer.GetDataModel,
-                    request_deserializer=data__pb2.ModelId.FromString,
-                    response_serializer=data__pb2.DataModelResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_data__pb2.ModelId.FromString,
+                    response_serializer=rmcs__resource__api_dot_data__pb2.DataModelResponse.SerializeToString,
             ),
             'ReadDataWithModel': grpc.unary_unary_rpc_method_handler(
                     servicer.ReadDataWithModel,
-                    request_deserializer=data__pb2.DataIdModel.FromString,
-                    response_serializer=data__pb2.DataReadResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_data__pb2.DataIdModel.FromString,
+                    response_serializer=rmcs__resource__api_dot_data__pb2.DataReadResponse.SerializeToString,
             ),
             'ListDataWithModelByTime': grpc.unary_unary_rpc_method_handler(
                     servicer.ListDataWithModelByTime,
-                    request_deserializer=data__pb2.DataTimeModel.FromString,
-                    response_serializer=data__pb2.DataListResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_data__pb2.DataTimeModel.FromString,
+                    response_serializer=rmcs__resource__api_dot_data__pb2.DataListResponse.SerializeToString,
             ),
             'ListDataWithModelByLastTime': grpc.unary_unary_rpc_method_handler(
                     servicer.ListDataWithModelByLastTime,
-                    request_deserializer=data__pb2.DataTimeModel.FromString,
-                    response_serializer=data__pb2.DataListResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_data__pb2.DataTimeModel.FromString,
+                    response_serializer=rmcs__resource__api_dot_data__pb2.DataListResponse.SerializeToString,
             ),
             'ListDataWithModelByRangeTime': grpc.unary_unary_rpc_method_handler(
                     servicer.ListDataWithModelByRangeTime,
-                    request_deserializer=data__pb2.DataRangeModel.FromString,
-                    response_serializer=data__pb2.DataListResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_data__pb2.DataRangeModel.FromString,
+                    response_serializer=rmcs__resource__api_dot_data__pb2.DataListResponse.SerializeToString,
             ),
             'ListDataWithModelByNumberBefore': grpc.unary_unary_rpc_method_handler(
                     servicer.ListDataWithModelByNumberBefore,
-                    request_deserializer=data__pb2.DataNumberModel.FromString,
-                    response_serializer=data__pb2.DataListResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_data__pb2.DataNumberModel.FromString,
+                    response_serializer=rmcs__resource__api_dot_data__pb2.DataListResponse.SerializeToString,
             ),
             'ListDataWithModelByNumberAfter': grpc.unary_unary_rpc_method_handler(
                     servicer.ListDataWithModelByNumberAfter,
-                    request_deserializer=data__pb2.DataNumberModel.FromString,
-                    response_serializer=data__pb2.DataListResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_data__pb2.DataNumberModel.FromString,
+                    response_serializer=rmcs__resource__api_dot_data__pb2.DataListResponse.SerializeToString,
             ),
             'CreateData': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateData,
-                    request_deserializer=data__pb2.DataSchema.FromString,
-                    response_serializer=data__pb2.DataChangeResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_data__pb2.DataSchema.FromString,
+                    response_serializer=rmcs__resource__api_dot_data__pb2.DataChangeResponse.SerializeToString,
             ),
             'CreateDataWithModel': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateDataWithModel,
-                    request_deserializer=data__pb2.DataSchemaModel.FromString,
-                    response_serializer=data__pb2.DataChangeResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_data__pb2.DataSchemaModel.FromString,
+                    response_serializer=rmcs__resource__api_dot_data__pb2.DataChangeResponse.SerializeToString,
             ),
             'DeleteData': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteData,
-                    request_deserializer=data__pb2.DataId.FromString,
-                    response_serializer=data__pb2.DataChangeResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_data__pb2.DataId.FromString,
+                    response_serializer=rmcs__resource__api_dot_data__pb2.DataChangeResponse.SerializeToString,
             ),
             'DeleteDataWithModel': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteDataWithModel,
-                    request_deserializer=data__pb2.DataIdModel.FromString,
-                    response_serializer=data__pb2.DataChangeResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_data__pb2.DataIdModel.FromString,
+                    response_serializer=rmcs__resource__api_dot_data__pb2.DataChangeResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -316,8 +316,8 @@ class DataService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/data.DataService/ReadData',
-            data__pb2.DataId.SerializeToString,
-            data__pb2.DataReadResponse.FromString,
+            rmcs__resource__api_dot_data__pb2.DataId.SerializeToString,
+            rmcs__resource__api_dot_data__pb2.DataReadResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -333,8 +333,8 @@ class DataService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/data.DataService/ListDataByTime',
-            data__pb2.DataTime.SerializeToString,
-            data__pb2.DataListResponse.FromString,
+            rmcs__resource__api_dot_data__pb2.DataTime.SerializeToString,
+            rmcs__resource__api_dot_data__pb2.DataListResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -350,8 +350,8 @@ class DataService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/data.DataService/ListDataByLastTime',
-            data__pb2.DataTime.SerializeToString,
-            data__pb2.DataListResponse.FromString,
+            rmcs__resource__api_dot_data__pb2.DataTime.SerializeToString,
+            rmcs__resource__api_dot_data__pb2.DataListResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -367,8 +367,8 @@ class DataService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/data.DataService/ListDataByRangeTime',
-            data__pb2.DataRange.SerializeToString,
-            data__pb2.DataListResponse.FromString,
+            rmcs__resource__api_dot_data__pb2.DataRange.SerializeToString,
+            rmcs__resource__api_dot_data__pb2.DataListResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -384,8 +384,8 @@ class DataService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/data.DataService/ListDataByNumberBefore',
-            data__pb2.DataNumber.SerializeToString,
-            data__pb2.DataListResponse.FromString,
+            rmcs__resource__api_dot_data__pb2.DataNumber.SerializeToString,
+            rmcs__resource__api_dot_data__pb2.DataListResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -401,8 +401,8 @@ class DataService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/data.DataService/ListDataByNumberAfter',
-            data__pb2.DataNumber.SerializeToString,
-            data__pb2.DataListResponse.FromString,
+            rmcs__resource__api_dot_data__pb2.DataNumber.SerializeToString,
+            rmcs__resource__api_dot_data__pb2.DataListResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -418,8 +418,8 @@ class DataService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/data.DataService/GetDataModel',
-            data__pb2.ModelId.SerializeToString,
-            data__pb2.DataModelResponse.FromString,
+            rmcs__resource__api_dot_data__pb2.ModelId.SerializeToString,
+            rmcs__resource__api_dot_data__pb2.DataModelResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -435,8 +435,8 @@ class DataService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/data.DataService/ReadDataWithModel',
-            data__pb2.DataIdModel.SerializeToString,
-            data__pb2.DataReadResponse.FromString,
+            rmcs__resource__api_dot_data__pb2.DataIdModel.SerializeToString,
+            rmcs__resource__api_dot_data__pb2.DataReadResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -452,8 +452,8 @@ class DataService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/data.DataService/ListDataWithModelByTime',
-            data__pb2.DataTimeModel.SerializeToString,
-            data__pb2.DataListResponse.FromString,
+            rmcs__resource__api_dot_data__pb2.DataTimeModel.SerializeToString,
+            rmcs__resource__api_dot_data__pb2.DataListResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -469,8 +469,8 @@ class DataService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/data.DataService/ListDataWithModelByLastTime',
-            data__pb2.DataTimeModel.SerializeToString,
-            data__pb2.DataListResponse.FromString,
+            rmcs__resource__api_dot_data__pb2.DataTimeModel.SerializeToString,
+            rmcs__resource__api_dot_data__pb2.DataListResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -486,8 +486,8 @@ class DataService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/data.DataService/ListDataWithModelByRangeTime',
-            data__pb2.DataRangeModel.SerializeToString,
-            data__pb2.DataListResponse.FromString,
+            rmcs__resource__api_dot_data__pb2.DataRangeModel.SerializeToString,
+            rmcs__resource__api_dot_data__pb2.DataListResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -503,8 +503,8 @@ class DataService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/data.DataService/ListDataWithModelByNumberBefore',
-            data__pb2.DataNumberModel.SerializeToString,
-            data__pb2.DataListResponse.FromString,
+            rmcs__resource__api_dot_data__pb2.DataNumberModel.SerializeToString,
+            rmcs__resource__api_dot_data__pb2.DataListResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -520,8 +520,8 @@ class DataService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/data.DataService/ListDataWithModelByNumberAfter',
-            data__pb2.DataNumberModel.SerializeToString,
-            data__pb2.DataListResponse.FromString,
+            rmcs__resource__api_dot_data__pb2.DataNumberModel.SerializeToString,
+            rmcs__resource__api_dot_data__pb2.DataListResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -537,8 +537,8 @@ class DataService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/data.DataService/CreateData',
-            data__pb2.DataSchema.SerializeToString,
-            data__pb2.DataChangeResponse.FromString,
+            rmcs__resource__api_dot_data__pb2.DataSchema.SerializeToString,
+            rmcs__resource__api_dot_data__pb2.DataChangeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -554,8 +554,8 @@ class DataService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/data.DataService/CreateDataWithModel',
-            data__pb2.DataSchemaModel.SerializeToString,
-            data__pb2.DataChangeResponse.FromString,
+            rmcs__resource__api_dot_data__pb2.DataSchemaModel.SerializeToString,
+            rmcs__resource__api_dot_data__pb2.DataChangeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -571,8 +571,8 @@ class DataService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/data.DataService/DeleteData',
-            data__pb2.DataId.SerializeToString,
-            data__pb2.DataChangeResponse.FromString,
+            rmcs__resource__api_dot_data__pb2.DataId.SerializeToString,
+            rmcs__resource__api_dot_data__pb2.DataChangeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -588,7 +588,7 @@ class DataService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/data.DataService/DeleteDataWithModel',
-            data__pb2.DataIdModel.SerializeToString,
-            data__pb2.DataChangeResponse.FromString,
+            rmcs__resource__api_dot_data__pb2.DataIdModel.SerializeToString,
+            rmcs__resource__api_dot_data__pb2.DataChangeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-import slice_pb2 as slice__pb2
+from rmcs_resource_api import slice_pb2 as rmcs__resource__api_dot_slice__pb2
 
 
 class SliceServiceStub(object):
@@ -16,43 +16,43 @@ class SliceServiceStub(object):
         """
         self.ReadSlice = channel.unary_unary(
                 '/slice.SliceService/ReadSlice',
-                request_serializer=slice__pb2.SliceId.SerializeToString,
-                response_deserializer=slice__pb2.SliceReadResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_slice__pb2.SliceId.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_slice__pb2.SliceReadResponse.FromString,
                 )
         self.ListSliceByName = channel.unary_unary(
                 '/slice.SliceService/ListSliceByName',
-                request_serializer=slice__pb2.SliceName.SerializeToString,
-                response_deserializer=slice__pb2.SliceListResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_slice__pb2.SliceName.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_slice__pb2.SliceListResponse.FromString,
                 )
         self.ListSliceByDevice = channel.unary_unary(
                 '/slice.SliceService/ListSliceByDevice',
-                request_serializer=slice__pb2.SliceDevice.SerializeToString,
-                response_deserializer=slice__pb2.SliceListResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_slice__pb2.SliceDevice.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_slice__pb2.SliceListResponse.FromString,
                 )
         self.ListSliceByModel = channel.unary_unary(
                 '/slice.SliceService/ListSliceByModel',
-                request_serializer=slice__pb2.SliceModel.SerializeToString,
-                response_deserializer=slice__pb2.SliceListResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_slice__pb2.SliceModel.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_slice__pb2.SliceListResponse.FromString,
                 )
         self.ListSliceByDeviceModel = channel.unary_unary(
                 '/slice.SliceService/ListSliceByDeviceModel',
-                request_serializer=slice__pb2.SliceDeviceModel.SerializeToString,
-                response_deserializer=slice__pb2.SliceListResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_slice__pb2.SliceDeviceModel.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_slice__pb2.SliceListResponse.FromString,
                 )
         self.CreateSlice = channel.unary_unary(
                 '/slice.SliceService/CreateSlice',
-                request_serializer=slice__pb2.SliceSchema.SerializeToString,
-                response_deserializer=slice__pb2.SliceCreateResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_slice__pb2.SliceSchema.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_slice__pb2.SliceCreateResponse.FromString,
                 )
         self.UpdateSlice = channel.unary_unary(
                 '/slice.SliceService/UpdateSlice',
-                request_serializer=slice__pb2.SliceUpdate.SerializeToString,
-                response_deserializer=slice__pb2.SliceChangeResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_slice__pb2.SliceUpdate.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_slice__pb2.SliceChangeResponse.FromString,
                 )
         self.DeleteSlice = channel.unary_unary(
                 '/slice.SliceService/DeleteSlice',
-                request_serializer=slice__pb2.SliceId.SerializeToString,
-                response_deserializer=slice__pb2.SliceChangeResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_slice__pb2.SliceId.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_slice__pb2.SliceChangeResponse.FromString,
                 )
 
 
@@ -112,43 +112,43 @@ def add_SliceServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'ReadSlice': grpc.unary_unary_rpc_method_handler(
                     servicer.ReadSlice,
-                    request_deserializer=slice__pb2.SliceId.FromString,
-                    response_serializer=slice__pb2.SliceReadResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_slice__pb2.SliceId.FromString,
+                    response_serializer=rmcs__resource__api_dot_slice__pb2.SliceReadResponse.SerializeToString,
             ),
             'ListSliceByName': grpc.unary_unary_rpc_method_handler(
                     servicer.ListSliceByName,
-                    request_deserializer=slice__pb2.SliceName.FromString,
-                    response_serializer=slice__pb2.SliceListResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_slice__pb2.SliceName.FromString,
+                    response_serializer=rmcs__resource__api_dot_slice__pb2.SliceListResponse.SerializeToString,
             ),
             'ListSliceByDevice': grpc.unary_unary_rpc_method_handler(
                     servicer.ListSliceByDevice,
-                    request_deserializer=slice__pb2.SliceDevice.FromString,
-                    response_serializer=slice__pb2.SliceListResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_slice__pb2.SliceDevice.FromString,
+                    response_serializer=rmcs__resource__api_dot_slice__pb2.SliceListResponse.SerializeToString,
             ),
             'ListSliceByModel': grpc.unary_unary_rpc_method_handler(
                     servicer.ListSliceByModel,
-                    request_deserializer=slice__pb2.SliceModel.FromString,
-                    response_serializer=slice__pb2.SliceListResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_slice__pb2.SliceModel.FromString,
+                    response_serializer=rmcs__resource__api_dot_slice__pb2.SliceListResponse.SerializeToString,
             ),
             'ListSliceByDeviceModel': grpc.unary_unary_rpc_method_handler(
                     servicer.ListSliceByDeviceModel,
-                    request_deserializer=slice__pb2.SliceDeviceModel.FromString,
-                    response_serializer=slice__pb2.SliceListResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_slice__pb2.SliceDeviceModel.FromString,
+                    response_serializer=rmcs__resource__api_dot_slice__pb2.SliceListResponse.SerializeToString,
             ),
             'CreateSlice': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateSlice,
-                    request_deserializer=slice__pb2.SliceSchema.FromString,
-                    response_serializer=slice__pb2.SliceCreateResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_slice__pb2.SliceSchema.FromString,
+                    response_serializer=rmcs__resource__api_dot_slice__pb2.SliceCreateResponse.SerializeToString,
             ),
             'UpdateSlice': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateSlice,
-                    request_deserializer=slice__pb2.SliceUpdate.FromString,
-                    response_serializer=slice__pb2.SliceChangeResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_slice__pb2.SliceUpdate.FromString,
+                    response_serializer=rmcs__resource__api_dot_slice__pb2.SliceChangeResponse.SerializeToString,
             ),
             'DeleteSlice': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteSlice,
-                    request_deserializer=slice__pb2.SliceId.FromString,
-                    response_serializer=slice__pb2.SliceChangeResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_slice__pb2.SliceId.FromString,
+                    response_serializer=rmcs__resource__api_dot_slice__pb2.SliceChangeResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -172,8 +172,8 @@ class SliceService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/slice.SliceService/ReadSlice',
-            slice__pb2.SliceId.SerializeToString,
-            slice__pb2.SliceReadResponse.FromString,
+            rmcs__resource__api_dot_slice__pb2.SliceId.SerializeToString,
+            rmcs__resource__api_dot_slice__pb2.SliceReadResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -189,8 +189,8 @@ class SliceService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/slice.SliceService/ListSliceByName',
-            slice__pb2.SliceName.SerializeToString,
-            slice__pb2.SliceListResponse.FromString,
+            rmcs__resource__api_dot_slice__pb2.SliceName.SerializeToString,
+            rmcs__resource__api_dot_slice__pb2.SliceListResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -206,8 +206,8 @@ class SliceService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/slice.SliceService/ListSliceByDevice',
-            slice__pb2.SliceDevice.SerializeToString,
-            slice__pb2.SliceListResponse.FromString,
+            rmcs__resource__api_dot_slice__pb2.SliceDevice.SerializeToString,
+            rmcs__resource__api_dot_slice__pb2.SliceListResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -223,8 +223,8 @@ class SliceService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/slice.SliceService/ListSliceByModel',
-            slice__pb2.SliceModel.SerializeToString,
-            slice__pb2.SliceListResponse.FromString,
+            rmcs__resource__api_dot_slice__pb2.SliceModel.SerializeToString,
+            rmcs__resource__api_dot_slice__pb2.SliceListResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -240,8 +240,8 @@ class SliceService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/slice.SliceService/ListSliceByDeviceModel',
-            slice__pb2.SliceDeviceModel.SerializeToString,
-            slice__pb2.SliceListResponse.FromString,
+            rmcs__resource__api_dot_slice__pb2.SliceDeviceModel.SerializeToString,
+            rmcs__resource__api_dot_slice__pb2.SliceListResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -257,8 +257,8 @@ class SliceService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/slice.SliceService/CreateSlice',
-            slice__pb2.SliceSchema.SerializeToString,
-            slice__pb2.SliceCreateResponse.FromString,
+            rmcs__resource__api_dot_slice__pb2.SliceSchema.SerializeToString,
+            rmcs__resource__api_dot_slice__pb2.SliceCreateResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -274,8 +274,8 @@ class SliceService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/slice.SliceService/UpdateSlice',
-            slice__pb2.SliceUpdate.SerializeToString,
-            slice__pb2.SliceChangeResponse.FromString,
+            rmcs__resource__api_dot_slice__pb2.SliceUpdate.SerializeToString,
+            rmcs__resource__api_dot_slice__pb2.SliceChangeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -291,7 +291,7 @@ class SliceService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/slice.SliceService/DeleteSlice',
-            slice__pb2.SliceId.SerializeToString,
-            slice__pb2.SliceChangeResponse.FromString,
+            rmcs__resource__api_dot_slice__pb2.SliceId.SerializeToString,
+            rmcs__resource__api_dot_slice__pb2.SliceChangeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

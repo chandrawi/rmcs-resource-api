@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-import log_pb2 as log__pb2
+from rmcs_resource_api import log_pb2 as rmcs__resource__api_dot_log__pb2
 
 
 class LogServiceStub(object):
@@ -16,38 +16,38 @@ class LogServiceStub(object):
         """
         self.ReadLog = channel.unary_unary(
                 '/log.LogService/ReadLog',
-                request_serializer=log__pb2.LogId.SerializeToString,
-                response_deserializer=log__pb2.LogReadResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_log__pb2.LogId.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_log__pb2.LogReadResponse.FromString,
                 )
         self.ListLogByTime = channel.unary_unary(
                 '/log.LogService/ListLogByTime',
-                request_serializer=log__pb2.LogTime.SerializeToString,
-                response_deserializer=log__pb2.LogListResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_log__pb2.LogTime.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_log__pb2.LogListResponse.FromString,
                 )
         self.ListLogByLastTime = channel.unary_unary(
                 '/log.LogService/ListLogByLastTime',
-                request_serializer=log__pb2.LogTime.SerializeToString,
-                response_deserializer=log__pb2.LogListResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_log__pb2.LogTime.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_log__pb2.LogListResponse.FromString,
                 )
         self.ListLogByRangeTime = channel.unary_unary(
                 '/log.LogService/ListLogByRangeTime',
-                request_serializer=log__pb2.LogRange.SerializeToString,
-                response_deserializer=log__pb2.LogListResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_log__pb2.LogRange.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_log__pb2.LogListResponse.FromString,
                 )
         self.CreateLog = channel.unary_unary(
                 '/log.LogService/CreateLog',
-                request_serializer=log__pb2.LogSchema.SerializeToString,
-                response_deserializer=log__pb2.LogChangeResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_log__pb2.LogSchema.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_log__pb2.LogChangeResponse.FromString,
                 )
         self.UpdateLog = channel.unary_unary(
                 '/log.LogService/UpdateLog',
-                request_serializer=log__pb2.LogUpdate.SerializeToString,
-                response_deserializer=log__pb2.LogChangeResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_log__pb2.LogUpdate.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_log__pb2.LogChangeResponse.FromString,
                 )
         self.DeleteLog = channel.unary_unary(
                 '/log.LogService/DeleteLog',
-                request_serializer=log__pb2.LogId.SerializeToString,
-                response_deserializer=log__pb2.LogChangeResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_log__pb2.LogId.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_log__pb2.LogChangeResponse.FromString,
                 )
 
 
@@ -101,38 +101,38 @@ def add_LogServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'ReadLog': grpc.unary_unary_rpc_method_handler(
                     servicer.ReadLog,
-                    request_deserializer=log__pb2.LogId.FromString,
-                    response_serializer=log__pb2.LogReadResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_log__pb2.LogId.FromString,
+                    response_serializer=rmcs__resource__api_dot_log__pb2.LogReadResponse.SerializeToString,
             ),
             'ListLogByTime': grpc.unary_unary_rpc_method_handler(
                     servicer.ListLogByTime,
-                    request_deserializer=log__pb2.LogTime.FromString,
-                    response_serializer=log__pb2.LogListResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_log__pb2.LogTime.FromString,
+                    response_serializer=rmcs__resource__api_dot_log__pb2.LogListResponse.SerializeToString,
             ),
             'ListLogByLastTime': grpc.unary_unary_rpc_method_handler(
                     servicer.ListLogByLastTime,
-                    request_deserializer=log__pb2.LogTime.FromString,
-                    response_serializer=log__pb2.LogListResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_log__pb2.LogTime.FromString,
+                    response_serializer=rmcs__resource__api_dot_log__pb2.LogListResponse.SerializeToString,
             ),
             'ListLogByRangeTime': grpc.unary_unary_rpc_method_handler(
                     servicer.ListLogByRangeTime,
-                    request_deserializer=log__pb2.LogRange.FromString,
-                    response_serializer=log__pb2.LogListResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_log__pb2.LogRange.FromString,
+                    response_serializer=rmcs__resource__api_dot_log__pb2.LogListResponse.SerializeToString,
             ),
             'CreateLog': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateLog,
-                    request_deserializer=log__pb2.LogSchema.FromString,
-                    response_serializer=log__pb2.LogChangeResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_log__pb2.LogSchema.FromString,
+                    response_serializer=rmcs__resource__api_dot_log__pb2.LogChangeResponse.SerializeToString,
             ),
             'UpdateLog': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateLog,
-                    request_deserializer=log__pb2.LogUpdate.FromString,
-                    response_serializer=log__pb2.LogChangeResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_log__pb2.LogUpdate.FromString,
+                    response_serializer=rmcs__resource__api_dot_log__pb2.LogChangeResponse.SerializeToString,
             ),
             'DeleteLog': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteLog,
-                    request_deserializer=log__pb2.LogId.FromString,
-                    response_serializer=log__pb2.LogChangeResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_log__pb2.LogId.FromString,
+                    response_serializer=rmcs__resource__api_dot_log__pb2.LogChangeResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -156,8 +156,8 @@ class LogService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/log.LogService/ReadLog',
-            log__pb2.LogId.SerializeToString,
-            log__pb2.LogReadResponse.FromString,
+            rmcs__resource__api_dot_log__pb2.LogId.SerializeToString,
+            rmcs__resource__api_dot_log__pb2.LogReadResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -173,8 +173,8 @@ class LogService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/log.LogService/ListLogByTime',
-            log__pb2.LogTime.SerializeToString,
-            log__pb2.LogListResponse.FromString,
+            rmcs__resource__api_dot_log__pb2.LogTime.SerializeToString,
+            rmcs__resource__api_dot_log__pb2.LogListResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -190,8 +190,8 @@ class LogService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/log.LogService/ListLogByLastTime',
-            log__pb2.LogTime.SerializeToString,
-            log__pb2.LogListResponse.FromString,
+            rmcs__resource__api_dot_log__pb2.LogTime.SerializeToString,
+            rmcs__resource__api_dot_log__pb2.LogListResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -207,8 +207,8 @@ class LogService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/log.LogService/ListLogByRangeTime',
-            log__pb2.LogRange.SerializeToString,
-            log__pb2.LogListResponse.FromString,
+            rmcs__resource__api_dot_log__pb2.LogRange.SerializeToString,
+            rmcs__resource__api_dot_log__pb2.LogListResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -224,8 +224,8 @@ class LogService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/log.LogService/CreateLog',
-            log__pb2.LogSchema.SerializeToString,
-            log__pb2.LogChangeResponse.FromString,
+            rmcs__resource__api_dot_log__pb2.LogSchema.SerializeToString,
+            rmcs__resource__api_dot_log__pb2.LogChangeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -241,8 +241,8 @@ class LogService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/log.LogService/UpdateLog',
-            log__pb2.LogUpdate.SerializeToString,
-            log__pb2.LogChangeResponse.FromString,
+            rmcs__resource__api_dot_log__pb2.LogUpdate.SerializeToString,
+            rmcs__resource__api_dot_log__pb2.LogChangeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -258,7 +258,7 @@ class LogService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/log.LogService/DeleteLog',
-            log__pb2.LogId.SerializeToString,
-            log__pb2.LogChangeResponse.FromString,
+            rmcs__resource__api_dot_log__pb2.LogId.SerializeToString,
+            rmcs__resource__api_dot_log__pb2.LogChangeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

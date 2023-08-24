@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-import device_pb2 as device__pb2
+from rmcs_resource_api import device_pb2 as rmcs__resource__api_dot_device__pb2
 
 
 class DeviceServiceStub(object):
@@ -16,173 +16,173 @@ class DeviceServiceStub(object):
         """
         self.ReadDevice = channel.unary_unary(
                 '/device.DeviceService/ReadDevice',
-                request_serializer=device__pb2.DeviceId.SerializeToString,
-                response_deserializer=device__pb2.DeviceReadResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_device__pb2.DeviceId.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_device__pb2.DeviceReadResponse.FromString,
                 )
         self.ReadDeviceBySn = channel.unary_unary(
                 '/device.DeviceService/ReadDeviceBySn',
-                request_serializer=device__pb2.SerialNumber.SerializeToString,
-                response_deserializer=device__pb2.DeviceReadResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_device__pb2.SerialNumber.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_device__pb2.DeviceReadResponse.FromString,
                 )
         self.ListDeviceByGateway = channel.unary_unary(
                 '/device.DeviceService/ListDeviceByGateway',
-                request_serializer=device__pb2.GatewayId.SerializeToString,
-                response_deserializer=device__pb2.DeviceListResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_device__pb2.GatewayId.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_device__pb2.DeviceListResponse.FromString,
                 )
         self.ListDeviceByType = channel.unary_unary(
                 '/device.DeviceService/ListDeviceByType',
-                request_serializer=device__pb2.TypeId.SerializeToString,
-                response_deserializer=device__pb2.DeviceListResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_device__pb2.TypeId.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_device__pb2.DeviceListResponse.FromString,
                 )
         self.ListDeviceByName = channel.unary_unary(
                 '/device.DeviceService/ListDeviceByName',
-                request_serializer=device__pb2.DeviceName.SerializeToString,
-                response_deserializer=device__pb2.DeviceListResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_device__pb2.DeviceName.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_device__pb2.DeviceListResponse.FromString,
                 )
         self.ListDeviceByGatewayType = channel.unary_unary(
                 '/device.DeviceService/ListDeviceByGatewayType',
-                request_serializer=device__pb2.DeviceGatewayType.SerializeToString,
-                response_deserializer=device__pb2.DeviceListResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_device__pb2.DeviceGatewayType.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_device__pb2.DeviceListResponse.FromString,
                 )
         self.ListDeviceByGatewayName = channel.unary_unary(
                 '/device.DeviceService/ListDeviceByGatewayName',
-                request_serializer=device__pb2.DeviceGatewayName.SerializeToString,
-                response_deserializer=device__pb2.DeviceListResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_device__pb2.DeviceGatewayName.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_device__pb2.DeviceListResponse.FromString,
                 )
         self.CreateDevice = channel.unary_unary(
                 '/device.DeviceService/CreateDevice',
-                request_serializer=device__pb2.DeviceSchema.SerializeToString,
-                response_deserializer=device__pb2.DeviceChangeResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_device__pb2.DeviceSchema.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_device__pb2.DeviceChangeResponse.FromString,
                 )
         self.UpdateDevice = channel.unary_unary(
                 '/device.DeviceService/UpdateDevice',
-                request_serializer=device__pb2.DeviceUpdate.SerializeToString,
-                response_deserializer=device__pb2.DeviceChangeResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_device__pb2.DeviceUpdate.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_device__pb2.DeviceChangeResponse.FromString,
                 )
         self.DeleteDevice = channel.unary_unary(
                 '/device.DeviceService/DeleteDevice',
-                request_serializer=device__pb2.DeviceId.SerializeToString,
-                response_deserializer=device__pb2.DeviceChangeResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_device__pb2.DeviceId.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_device__pb2.DeviceChangeResponse.FromString,
                 )
         self.ReadGateway = channel.unary_unary(
                 '/device.DeviceService/ReadGateway',
-                request_serializer=device__pb2.GatewayId.SerializeToString,
-                response_deserializer=device__pb2.GatewayReadResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_device__pb2.GatewayId.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_device__pb2.GatewayReadResponse.FromString,
                 )
         self.ReadGatewayBySn = channel.unary_unary(
                 '/device.DeviceService/ReadGatewayBySn',
-                request_serializer=device__pb2.SerialNumber.SerializeToString,
-                response_deserializer=device__pb2.GatewayReadResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_device__pb2.SerialNumber.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_device__pb2.GatewayReadResponse.FromString,
                 )
         self.ListGatewayByType = channel.unary_unary(
                 '/device.DeviceService/ListGatewayByType',
-                request_serializer=device__pb2.TypeId.SerializeToString,
-                response_deserializer=device__pb2.GatewayListResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_device__pb2.TypeId.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_device__pb2.GatewayListResponse.FromString,
                 )
         self.ListGatewayByName = channel.unary_unary(
                 '/device.DeviceService/ListGatewayByName',
-                request_serializer=device__pb2.GatewayName.SerializeToString,
-                response_deserializer=device__pb2.GatewayListResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_device__pb2.GatewayName.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_device__pb2.GatewayListResponse.FromString,
                 )
         self.CreateGateway = channel.unary_unary(
                 '/device.DeviceService/CreateGateway',
-                request_serializer=device__pb2.GatewaySchema.SerializeToString,
-                response_deserializer=device__pb2.GatewayChangeResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_device__pb2.GatewaySchema.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_device__pb2.GatewayChangeResponse.FromString,
                 )
         self.UpdateGateway = channel.unary_unary(
                 '/device.DeviceService/UpdateGateway',
-                request_serializer=device__pb2.GatewayUpdate.SerializeToString,
-                response_deserializer=device__pb2.GatewayChangeResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_device__pb2.GatewayUpdate.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_device__pb2.GatewayChangeResponse.FromString,
                 )
         self.DeleteGateway = channel.unary_unary(
                 '/device.DeviceService/DeleteGateway',
-                request_serializer=device__pb2.GatewayId.SerializeToString,
-                response_deserializer=device__pb2.GatewayChangeResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_device__pb2.GatewayId.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_device__pb2.GatewayChangeResponse.FromString,
                 )
         self.ReadDeviceConfig = channel.unary_unary(
                 '/device.DeviceService/ReadDeviceConfig',
-                request_serializer=device__pb2.ConfigId.SerializeToString,
-                response_deserializer=device__pb2.ConfigReadResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_device__pb2.ConfigId.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_device__pb2.ConfigReadResponse.FromString,
                 )
         self.ListDeviceConfig = channel.unary_unary(
                 '/device.DeviceService/ListDeviceConfig',
-                request_serializer=device__pb2.DeviceId.SerializeToString,
-                response_deserializer=device__pb2.ConfigListResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_device__pb2.DeviceId.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_device__pb2.ConfigListResponse.FromString,
                 )
         self.CreateDeviceConfig = channel.unary_unary(
                 '/device.DeviceService/CreateDeviceConfig',
-                request_serializer=device__pb2.ConfigSchema.SerializeToString,
-                response_deserializer=device__pb2.ConfigCreateResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_device__pb2.ConfigSchema.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_device__pb2.ConfigCreateResponse.FromString,
                 )
         self.UpdateDeviceConfig = channel.unary_unary(
                 '/device.DeviceService/UpdateDeviceConfig',
-                request_serializer=device__pb2.ConfigUpdate.SerializeToString,
-                response_deserializer=device__pb2.ConfigChangeResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_device__pb2.ConfigUpdate.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_device__pb2.ConfigChangeResponse.FromString,
                 )
         self.DeleteDeviceConfig = channel.unary_unary(
                 '/device.DeviceService/DeleteDeviceConfig',
-                request_serializer=device__pb2.ConfigId.SerializeToString,
-                response_deserializer=device__pb2.ConfigChangeResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_device__pb2.ConfigId.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_device__pb2.ConfigChangeResponse.FromString,
                 )
         self.ReadGatewayConfig = channel.unary_unary(
                 '/device.DeviceService/ReadGatewayConfig',
-                request_serializer=device__pb2.ConfigId.SerializeToString,
-                response_deserializer=device__pb2.ConfigReadResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_device__pb2.ConfigId.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_device__pb2.ConfigReadResponse.FromString,
                 )
         self.ListGatewayConfig = channel.unary_unary(
                 '/device.DeviceService/ListGatewayConfig',
-                request_serializer=device__pb2.GatewayId.SerializeToString,
-                response_deserializer=device__pb2.ConfigListResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_device__pb2.GatewayId.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_device__pb2.ConfigListResponse.FromString,
                 )
         self.CreateGatewayConfig = channel.unary_unary(
                 '/device.DeviceService/CreateGatewayConfig',
-                request_serializer=device__pb2.ConfigSchema.SerializeToString,
-                response_deserializer=device__pb2.ConfigCreateResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_device__pb2.ConfigSchema.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_device__pb2.ConfigCreateResponse.FromString,
                 )
         self.UpdateGatewayConfig = channel.unary_unary(
                 '/device.DeviceService/UpdateGatewayConfig',
-                request_serializer=device__pb2.ConfigUpdate.SerializeToString,
-                response_deserializer=device__pb2.ConfigChangeResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_device__pb2.ConfigUpdate.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_device__pb2.ConfigChangeResponse.FromString,
                 )
         self.DeleteGatewayConfig = channel.unary_unary(
                 '/device.DeviceService/DeleteGatewayConfig',
-                request_serializer=device__pb2.ConfigId.SerializeToString,
-                response_deserializer=device__pb2.ConfigChangeResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_device__pb2.ConfigId.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_device__pb2.ConfigChangeResponse.FromString,
                 )
         self.ReadType = channel.unary_unary(
                 '/device.DeviceService/ReadType',
-                request_serializer=device__pb2.TypeId.SerializeToString,
-                response_deserializer=device__pb2.TypeReadResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_device__pb2.TypeId.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_device__pb2.TypeReadResponse.FromString,
                 )
         self.ListTypeByName = channel.unary_unary(
                 '/device.DeviceService/ListTypeByName',
-                request_serializer=device__pb2.TypeName.SerializeToString,
-                response_deserializer=device__pb2.TypeListResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_device__pb2.TypeName.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_device__pb2.TypeListResponse.FromString,
                 )
         self.CreateType = channel.unary_unary(
                 '/device.DeviceService/CreateType',
-                request_serializer=device__pb2.TypeSchema.SerializeToString,
-                response_deserializer=device__pb2.TypeCreateResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_device__pb2.TypeSchema.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_device__pb2.TypeCreateResponse.FromString,
                 )
         self.UpdateType = channel.unary_unary(
                 '/device.DeviceService/UpdateType',
-                request_serializer=device__pb2.TypeUpdate.SerializeToString,
-                response_deserializer=device__pb2.TypeChangeResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_device__pb2.TypeUpdate.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_device__pb2.TypeChangeResponse.FromString,
                 )
         self.DeleteType = channel.unary_unary(
                 '/device.DeviceService/DeleteType',
-                request_serializer=device__pb2.TypeId.SerializeToString,
-                response_deserializer=device__pb2.TypeChangeResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_device__pb2.TypeId.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_device__pb2.TypeChangeResponse.FromString,
                 )
         self.AddTypeModel = channel.unary_unary(
                 '/device.DeviceService/AddTypeModel',
-                request_serializer=device__pb2.TypeModel.SerializeToString,
-                response_deserializer=device__pb2.TypeChangeResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_device__pb2.TypeModel.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_device__pb2.TypeChangeResponse.FromString,
                 )
         self.RemoveTypeModel = channel.unary_unary(
                 '/device.DeviceService/RemoveTypeModel',
-                request_serializer=device__pb2.TypeModel.SerializeToString,
-                response_deserializer=device__pb2.TypeChangeResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_device__pb2.TypeModel.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_device__pb2.TypeChangeResponse.FromString,
                 )
 
 
@@ -398,173 +398,173 @@ def add_DeviceServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'ReadDevice': grpc.unary_unary_rpc_method_handler(
                     servicer.ReadDevice,
-                    request_deserializer=device__pb2.DeviceId.FromString,
-                    response_serializer=device__pb2.DeviceReadResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_device__pb2.DeviceId.FromString,
+                    response_serializer=rmcs__resource__api_dot_device__pb2.DeviceReadResponse.SerializeToString,
             ),
             'ReadDeviceBySn': grpc.unary_unary_rpc_method_handler(
                     servicer.ReadDeviceBySn,
-                    request_deserializer=device__pb2.SerialNumber.FromString,
-                    response_serializer=device__pb2.DeviceReadResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_device__pb2.SerialNumber.FromString,
+                    response_serializer=rmcs__resource__api_dot_device__pb2.DeviceReadResponse.SerializeToString,
             ),
             'ListDeviceByGateway': grpc.unary_unary_rpc_method_handler(
                     servicer.ListDeviceByGateway,
-                    request_deserializer=device__pb2.GatewayId.FromString,
-                    response_serializer=device__pb2.DeviceListResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_device__pb2.GatewayId.FromString,
+                    response_serializer=rmcs__resource__api_dot_device__pb2.DeviceListResponse.SerializeToString,
             ),
             'ListDeviceByType': grpc.unary_unary_rpc_method_handler(
                     servicer.ListDeviceByType,
-                    request_deserializer=device__pb2.TypeId.FromString,
-                    response_serializer=device__pb2.DeviceListResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_device__pb2.TypeId.FromString,
+                    response_serializer=rmcs__resource__api_dot_device__pb2.DeviceListResponse.SerializeToString,
             ),
             'ListDeviceByName': grpc.unary_unary_rpc_method_handler(
                     servicer.ListDeviceByName,
-                    request_deserializer=device__pb2.DeviceName.FromString,
-                    response_serializer=device__pb2.DeviceListResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_device__pb2.DeviceName.FromString,
+                    response_serializer=rmcs__resource__api_dot_device__pb2.DeviceListResponse.SerializeToString,
             ),
             'ListDeviceByGatewayType': grpc.unary_unary_rpc_method_handler(
                     servicer.ListDeviceByGatewayType,
-                    request_deserializer=device__pb2.DeviceGatewayType.FromString,
-                    response_serializer=device__pb2.DeviceListResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_device__pb2.DeviceGatewayType.FromString,
+                    response_serializer=rmcs__resource__api_dot_device__pb2.DeviceListResponse.SerializeToString,
             ),
             'ListDeviceByGatewayName': grpc.unary_unary_rpc_method_handler(
                     servicer.ListDeviceByGatewayName,
-                    request_deserializer=device__pb2.DeviceGatewayName.FromString,
-                    response_serializer=device__pb2.DeviceListResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_device__pb2.DeviceGatewayName.FromString,
+                    response_serializer=rmcs__resource__api_dot_device__pb2.DeviceListResponse.SerializeToString,
             ),
             'CreateDevice': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateDevice,
-                    request_deserializer=device__pb2.DeviceSchema.FromString,
-                    response_serializer=device__pb2.DeviceChangeResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_device__pb2.DeviceSchema.FromString,
+                    response_serializer=rmcs__resource__api_dot_device__pb2.DeviceChangeResponse.SerializeToString,
             ),
             'UpdateDevice': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateDevice,
-                    request_deserializer=device__pb2.DeviceUpdate.FromString,
-                    response_serializer=device__pb2.DeviceChangeResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_device__pb2.DeviceUpdate.FromString,
+                    response_serializer=rmcs__resource__api_dot_device__pb2.DeviceChangeResponse.SerializeToString,
             ),
             'DeleteDevice': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteDevice,
-                    request_deserializer=device__pb2.DeviceId.FromString,
-                    response_serializer=device__pb2.DeviceChangeResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_device__pb2.DeviceId.FromString,
+                    response_serializer=rmcs__resource__api_dot_device__pb2.DeviceChangeResponse.SerializeToString,
             ),
             'ReadGateway': grpc.unary_unary_rpc_method_handler(
                     servicer.ReadGateway,
-                    request_deserializer=device__pb2.GatewayId.FromString,
-                    response_serializer=device__pb2.GatewayReadResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_device__pb2.GatewayId.FromString,
+                    response_serializer=rmcs__resource__api_dot_device__pb2.GatewayReadResponse.SerializeToString,
             ),
             'ReadGatewayBySn': grpc.unary_unary_rpc_method_handler(
                     servicer.ReadGatewayBySn,
-                    request_deserializer=device__pb2.SerialNumber.FromString,
-                    response_serializer=device__pb2.GatewayReadResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_device__pb2.SerialNumber.FromString,
+                    response_serializer=rmcs__resource__api_dot_device__pb2.GatewayReadResponse.SerializeToString,
             ),
             'ListGatewayByType': grpc.unary_unary_rpc_method_handler(
                     servicer.ListGatewayByType,
-                    request_deserializer=device__pb2.TypeId.FromString,
-                    response_serializer=device__pb2.GatewayListResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_device__pb2.TypeId.FromString,
+                    response_serializer=rmcs__resource__api_dot_device__pb2.GatewayListResponse.SerializeToString,
             ),
             'ListGatewayByName': grpc.unary_unary_rpc_method_handler(
                     servicer.ListGatewayByName,
-                    request_deserializer=device__pb2.GatewayName.FromString,
-                    response_serializer=device__pb2.GatewayListResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_device__pb2.GatewayName.FromString,
+                    response_serializer=rmcs__resource__api_dot_device__pb2.GatewayListResponse.SerializeToString,
             ),
             'CreateGateway': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateGateway,
-                    request_deserializer=device__pb2.GatewaySchema.FromString,
-                    response_serializer=device__pb2.GatewayChangeResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_device__pb2.GatewaySchema.FromString,
+                    response_serializer=rmcs__resource__api_dot_device__pb2.GatewayChangeResponse.SerializeToString,
             ),
             'UpdateGateway': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateGateway,
-                    request_deserializer=device__pb2.GatewayUpdate.FromString,
-                    response_serializer=device__pb2.GatewayChangeResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_device__pb2.GatewayUpdate.FromString,
+                    response_serializer=rmcs__resource__api_dot_device__pb2.GatewayChangeResponse.SerializeToString,
             ),
             'DeleteGateway': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteGateway,
-                    request_deserializer=device__pb2.GatewayId.FromString,
-                    response_serializer=device__pb2.GatewayChangeResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_device__pb2.GatewayId.FromString,
+                    response_serializer=rmcs__resource__api_dot_device__pb2.GatewayChangeResponse.SerializeToString,
             ),
             'ReadDeviceConfig': grpc.unary_unary_rpc_method_handler(
                     servicer.ReadDeviceConfig,
-                    request_deserializer=device__pb2.ConfigId.FromString,
-                    response_serializer=device__pb2.ConfigReadResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_device__pb2.ConfigId.FromString,
+                    response_serializer=rmcs__resource__api_dot_device__pb2.ConfigReadResponse.SerializeToString,
             ),
             'ListDeviceConfig': grpc.unary_unary_rpc_method_handler(
                     servicer.ListDeviceConfig,
-                    request_deserializer=device__pb2.DeviceId.FromString,
-                    response_serializer=device__pb2.ConfigListResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_device__pb2.DeviceId.FromString,
+                    response_serializer=rmcs__resource__api_dot_device__pb2.ConfigListResponse.SerializeToString,
             ),
             'CreateDeviceConfig': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateDeviceConfig,
-                    request_deserializer=device__pb2.ConfigSchema.FromString,
-                    response_serializer=device__pb2.ConfigCreateResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_device__pb2.ConfigSchema.FromString,
+                    response_serializer=rmcs__resource__api_dot_device__pb2.ConfigCreateResponse.SerializeToString,
             ),
             'UpdateDeviceConfig': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateDeviceConfig,
-                    request_deserializer=device__pb2.ConfigUpdate.FromString,
-                    response_serializer=device__pb2.ConfigChangeResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_device__pb2.ConfigUpdate.FromString,
+                    response_serializer=rmcs__resource__api_dot_device__pb2.ConfigChangeResponse.SerializeToString,
             ),
             'DeleteDeviceConfig': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteDeviceConfig,
-                    request_deserializer=device__pb2.ConfigId.FromString,
-                    response_serializer=device__pb2.ConfigChangeResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_device__pb2.ConfigId.FromString,
+                    response_serializer=rmcs__resource__api_dot_device__pb2.ConfigChangeResponse.SerializeToString,
             ),
             'ReadGatewayConfig': grpc.unary_unary_rpc_method_handler(
                     servicer.ReadGatewayConfig,
-                    request_deserializer=device__pb2.ConfigId.FromString,
-                    response_serializer=device__pb2.ConfigReadResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_device__pb2.ConfigId.FromString,
+                    response_serializer=rmcs__resource__api_dot_device__pb2.ConfigReadResponse.SerializeToString,
             ),
             'ListGatewayConfig': grpc.unary_unary_rpc_method_handler(
                     servicer.ListGatewayConfig,
-                    request_deserializer=device__pb2.GatewayId.FromString,
-                    response_serializer=device__pb2.ConfigListResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_device__pb2.GatewayId.FromString,
+                    response_serializer=rmcs__resource__api_dot_device__pb2.ConfigListResponse.SerializeToString,
             ),
             'CreateGatewayConfig': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateGatewayConfig,
-                    request_deserializer=device__pb2.ConfigSchema.FromString,
-                    response_serializer=device__pb2.ConfigCreateResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_device__pb2.ConfigSchema.FromString,
+                    response_serializer=rmcs__resource__api_dot_device__pb2.ConfigCreateResponse.SerializeToString,
             ),
             'UpdateGatewayConfig': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateGatewayConfig,
-                    request_deserializer=device__pb2.ConfigUpdate.FromString,
-                    response_serializer=device__pb2.ConfigChangeResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_device__pb2.ConfigUpdate.FromString,
+                    response_serializer=rmcs__resource__api_dot_device__pb2.ConfigChangeResponse.SerializeToString,
             ),
             'DeleteGatewayConfig': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteGatewayConfig,
-                    request_deserializer=device__pb2.ConfigId.FromString,
-                    response_serializer=device__pb2.ConfigChangeResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_device__pb2.ConfigId.FromString,
+                    response_serializer=rmcs__resource__api_dot_device__pb2.ConfigChangeResponse.SerializeToString,
             ),
             'ReadType': grpc.unary_unary_rpc_method_handler(
                     servicer.ReadType,
-                    request_deserializer=device__pb2.TypeId.FromString,
-                    response_serializer=device__pb2.TypeReadResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_device__pb2.TypeId.FromString,
+                    response_serializer=rmcs__resource__api_dot_device__pb2.TypeReadResponse.SerializeToString,
             ),
             'ListTypeByName': grpc.unary_unary_rpc_method_handler(
                     servicer.ListTypeByName,
-                    request_deserializer=device__pb2.TypeName.FromString,
-                    response_serializer=device__pb2.TypeListResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_device__pb2.TypeName.FromString,
+                    response_serializer=rmcs__resource__api_dot_device__pb2.TypeListResponse.SerializeToString,
             ),
             'CreateType': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateType,
-                    request_deserializer=device__pb2.TypeSchema.FromString,
-                    response_serializer=device__pb2.TypeCreateResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_device__pb2.TypeSchema.FromString,
+                    response_serializer=rmcs__resource__api_dot_device__pb2.TypeCreateResponse.SerializeToString,
             ),
             'UpdateType': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateType,
-                    request_deserializer=device__pb2.TypeUpdate.FromString,
-                    response_serializer=device__pb2.TypeChangeResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_device__pb2.TypeUpdate.FromString,
+                    response_serializer=rmcs__resource__api_dot_device__pb2.TypeChangeResponse.SerializeToString,
             ),
             'DeleteType': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteType,
-                    request_deserializer=device__pb2.TypeId.FromString,
-                    response_serializer=device__pb2.TypeChangeResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_device__pb2.TypeId.FromString,
+                    response_serializer=rmcs__resource__api_dot_device__pb2.TypeChangeResponse.SerializeToString,
             ),
             'AddTypeModel': grpc.unary_unary_rpc_method_handler(
                     servicer.AddTypeModel,
-                    request_deserializer=device__pb2.TypeModel.FromString,
-                    response_serializer=device__pb2.TypeChangeResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_device__pb2.TypeModel.FromString,
+                    response_serializer=rmcs__resource__api_dot_device__pb2.TypeChangeResponse.SerializeToString,
             ),
             'RemoveTypeModel': grpc.unary_unary_rpc_method_handler(
                     servicer.RemoveTypeModel,
-                    request_deserializer=device__pb2.TypeModel.FromString,
-                    response_serializer=device__pb2.TypeChangeResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_device__pb2.TypeModel.FromString,
+                    response_serializer=rmcs__resource__api_dot_device__pb2.TypeChangeResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -588,8 +588,8 @@ class DeviceService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/device.DeviceService/ReadDevice',
-            device__pb2.DeviceId.SerializeToString,
-            device__pb2.DeviceReadResponse.FromString,
+            rmcs__resource__api_dot_device__pb2.DeviceId.SerializeToString,
+            rmcs__resource__api_dot_device__pb2.DeviceReadResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -605,8 +605,8 @@ class DeviceService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/device.DeviceService/ReadDeviceBySn',
-            device__pb2.SerialNumber.SerializeToString,
-            device__pb2.DeviceReadResponse.FromString,
+            rmcs__resource__api_dot_device__pb2.SerialNumber.SerializeToString,
+            rmcs__resource__api_dot_device__pb2.DeviceReadResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -622,8 +622,8 @@ class DeviceService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/device.DeviceService/ListDeviceByGateway',
-            device__pb2.GatewayId.SerializeToString,
-            device__pb2.DeviceListResponse.FromString,
+            rmcs__resource__api_dot_device__pb2.GatewayId.SerializeToString,
+            rmcs__resource__api_dot_device__pb2.DeviceListResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -639,8 +639,8 @@ class DeviceService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/device.DeviceService/ListDeviceByType',
-            device__pb2.TypeId.SerializeToString,
-            device__pb2.DeviceListResponse.FromString,
+            rmcs__resource__api_dot_device__pb2.TypeId.SerializeToString,
+            rmcs__resource__api_dot_device__pb2.DeviceListResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -656,8 +656,8 @@ class DeviceService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/device.DeviceService/ListDeviceByName',
-            device__pb2.DeviceName.SerializeToString,
-            device__pb2.DeviceListResponse.FromString,
+            rmcs__resource__api_dot_device__pb2.DeviceName.SerializeToString,
+            rmcs__resource__api_dot_device__pb2.DeviceListResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -673,8 +673,8 @@ class DeviceService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/device.DeviceService/ListDeviceByGatewayType',
-            device__pb2.DeviceGatewayType.SerializeToString,
-            device__pb2.DeviceListResponse.FromString,
+            rmcs__resource__api_dot_device__pb2.DeviceGatewayType.SerializeToString,
+            rmcs__resource__api_dot_device__pb2.DeviceListResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -690,8 +690,8 @@ class DeviceService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/device.DeviceService/ListDeviceByGatewayName',
-            device__pb2.DeviceGatewayName.SerializeToString,
-            device__pb2.DeviceListResponse.FromString,
+            rmcs__resource__api_dot_device__pb2.DeviceGatewayName.SerializeToString,
+            rmcs__resource__api_dot_device__pb2.DeviceListResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -707,8 +707,8 @@ class DeviceService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/device.DeviceService/CreateDevice',
-            device__pb2.DeviceSchema.SerializeToString,
-            device__pb2.DeviceChangeResponse.FromString,
+            rmcs__resource__api_dot_device__pb2.DeviceSchema.SerializeToString,
+            rmcs__resource__api_dot_device__pb2.DeviceChangeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -724,8 +724,8 @@ class DeviceService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/device.DeviceService/UpdateDevice',
-            device__pb2.DeviceUpdate.SerializeToString,
-            device__pb2.DeviceChangeResponse.FromString,
+            rmcs__resource__api_dot_device__pb2.DeviceUpdate.SerializeToString,
+            rmcs__resource__api_dot_device__pb2.DeviceChangeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -741,8 +741,8 @@ class DeviceService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/device.DeviceService/DeleteDevice',
-            device__pb2.DeviceId.SerializeToString,
-            device__pb2.DeviceChangeResponse.FromString,
+            rmcs__resource__api_dot_device__pb2.DeviceId.SerializeToString,
+            rmcs__resource__api_dot_device__pb2.DeviceChangeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -758,8 +758,8 @@ class DeviceService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/device.DeviceService/ReadGateway',
-            device__pb2.GatewayId.SerializeToString,
-            device__pb2.GatewayReadResponse.FromString,
+            rmcs__resource__api_dot_device__pb2.GatewayId.SerializeToString,
+            rmcs__resource__api_dot_device__pb2.GatewayReadResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -775,8 +775,8 @@ class DeviceService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/device.DeviceService/ReadGatewayBySn',
-            device__pb2.SerialNumber.SerializeToString,
-            device__pb2.GatewayReadResponse.FromString,
+            rmcs__resource__api_dot_device__pb2.SerialNumber.SerializeToString,
+            rmcs__resource__api_dot_device__pb2.GatewayReadResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -792,8 +792,8 @@ class DeviceService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/device.DeviceService/ListGatewayByType',
-            device__pb2.TypeId.SerializeToString,
-            device__pb2.GatewayListResponse.FromString,
+            rmcs__resource__api_dot_device__pb2.TypeId.SerializeToString,
+            rmcs__resource__api_dot_device__pb2.GatewayListResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -809,8 +809,8 @@ class DeviceService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/device.DeviceService/ListGatewayByName',
-            device__pb2.GatewayName.SerializeToString,
-            device__pb2.GatewayListResponse.FromString,
+            rmcs__resource__api_dot_device__pb2.GatewayName.SerializeToString,
+            rmcs__resource__api_dot_device__pb2.GatewayListResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -826,8 +826,8 @@ class DeviceService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/device.DeviceService/CreateGateway',
-            device__pb2.GatewaySchema.SerializeToString,
-            device__pb2.GatewayChangeResponse.FromString,
+            rmcs__resource__api_dot_device__pb2.GatewaySchema.SerializeToString,
+            rmcs__resource__api_dot_device__pb2.GatewayChangeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -843,8 +843,8 @@ class DeviceService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/device.DeviceService/UpdateGateway',
-            device__pb2.GatewayUpdate.SerializeToString,
-            device__pb2.GatewayChangeResponse.FromString,
+            rmcs__resource__api_dot_device__pb2.GatewayUpdate.SerializeToString,
+            rmcs__resource__api_dot_device__pb2.GatewayChangeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -860,8 +860,8 @@ class DeviceService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/device.DeviceService/DeleteGateway',
-            device__pb2.GatewayId.SerializeToString,
-            device__pb2.GatewayChangeResponse.FromString,
+            rmcs__resource__api_dot_device__pb2.GatewayId.SerializeToString,
+            rmcs__resource__api_dot_device__pb2.GatewayChangeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -877,8 +877,8 @@ class DeviceService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/device.DeviceService/ReadDeviceConfig',
-            device__pb2.ConfigId.SerializeToString,
-            device__pb2.ConfigReadResponse.FromString,
+            rmcs__resource__api_dot_device__pb2.ConfigId.SerializeToString,
+            rmcs__resource__api_dot_device__pb2.ConfigReadResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -894,8 +894,8 @@ class DeviceService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/device.DeviceService/ListDeviceConfig',
-            device__pb2.DeviceId.SerializeToString,
-            device__pb2.ConfigListResponse.FromString,
+            rmcs__resource__api_dot_device__pb2.DeviceId.SerializeToString,
+            rmcs__resource__api_dot_device__pb2.ConfigListResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -911,8 +911,8 @@ class DeviceService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/device.DeviceService/CreateDeviceConfig',
-            device__pb2.ConfigSchema.SerializeToString,
-            device__pb2.ConfigCreateResponse.FromString,
+            rmcs__resource__api_dot_device__pb2.ConfigSchema.SerializeToString,
+            rmcs__resource__api_dot_device__pb2.ConfigCreateResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -928,8 +928,8 @@ class DeviceService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/device.DeviceService/UpdateDeviceConfig',
-            device__pb2.ConfigUpdate.SerializeToString,
-            device__pb2.ConfigChangeResponse.FromString,
+            rmcs__resource__api_dot_device__pb2.ConfigUpdate.SerializeToString,
+            rmcs__resource__api_dot_device__pb2.ConfigChangeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -945,8 +945,8 @@ class DeviceService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/device.DeviceService/DeleteDeviceConfig',
-            device__pb2.ConfigId.SerializeToString,
-            device__pb2.ConfigChangeResponse.FromString,
+            rmcs__resource__api_dot_device__pb2.ConfigId.SerializeToString,
+            rmcs__resource__api_dot_device__pb2.ConfigChangeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -962,8 +962,8 @@ class DeviceService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/device.DeviceService/ReadGatewayConfig',
-            device__pb2.ConfigId.SerializeToString,
-            device__pb2.ConfigReadResponse.FromString,
+            rmcs__resource__api_dot_device__pb2.ConfigId.SerializeToString,
+            rmcs__resource__api_dot_device__pb2.ConfigReadResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -979,8 +979,8 @@ class DeviceService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/device.DeviceService/ListGatewayConfig',
-            device__pb2.GatewayId.SerializeToString,
-            device__pb2.ConfigListResponse.FromString,
+            rmcs__resource__api_dot_device__pb2.GatewayId.SerializeToString,
+            rmcs__resource__api_dot_device__pb2.ConfigListResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -996,8 +996,8 @@ class DeviceService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/device.DeviceService/CreateGatewayConfig',
-            device__pb2.ConfigSchema.SerializeToString,
-            device__pb2.ConfigCreateResponse.FromString,
+            rmcs__resource__api_dot_device__pb2.ConfigSchema.SerializeToString,
+            rmcs__resource__api_dot_device__pb2.ConfigCreateResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -1013,8 +1013,8 @@ class DeviceService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/device.DeviceService/UpdateGatewayConfig',
-            device__pb2.ConfigUpdate.SerializeToString,
-            device__pb2.ConfigChangeResponse.FromString,
+            rmcs__resource__api_dot_device__pb2.ConfigUpdate.SerializeToString,
+            rmcs__resource__api_dot_device__pb2.ConfigChangeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -1030,8 +1030,8 @@ class DeviceService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/device.DeviceService/DeleteGatewayConfig',
-            device__pb2.ConfigId.SerializeToString,
-            device__pb2.ConfigChangeResponse.FromString,
+            rmcs__resource__api_dot_device__pb2.ConfigId.SerializeToString,
+            rmcs__resource__api_dot_device__pb2.ConfigChangeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -1047,8 +1047,8 @@ class DeviceService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/device.DeviceService/ReadType',
-            device__pb2.TypeId.SerializeToString,
-            device__pb2.TypeReadResponse.FromString,
+            rmcs__resource__api_dot_device__pb2.TypeId.SerializeToString,
+            rmcs__resource__api_dot_device__pb2.TypeReadResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -1064,8 +1064,8 @@ class DeviceService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/device.DeviceService/ListTypeByName',
-            device__pb2.TypeName.SerializeToString,
-            device__pb2.TypeListResponse.FromString,
+            rmcs__resource__api_dot_device__pb2.TypeName.SerializeToString,
+            rmcs__resource__api_dot_device__pb2.TypeListResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -1081,8 +1081,8 @@ class DeviceService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/device.DeviceService/CreateType',
-            device__pb2.TypeSchema.SerializeToString,
-            device__pb2.TypeCreateResponse.FromString,
+            rmcs__resource__api_dot_device__pb2.TypeSchema.SerializeToString,
+            rmcs__resource__api_dot_device__pb2.TypeCreateResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -1098,8 +1098,8 @@ class DeviceService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/device.DeviceService/UpdateType',
-            device__pb2.TypeUpdate.SerializeToString,
-            device__pb2.TypeChangeResponse.FromString,
+            rmcs__resource__api_dot_device__pb2.TypeUpdate.SerializeToString,
+            rmcs__resource__api_dot_device__pb2.TypeChangeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -1115,8 +1115,8 @@ class DeviceService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/device.DeviceService/DeleteType',
-            device__pb2.TypeId.SerializeToString,
-            device__pb2.TypeChangeResponse.FromString,
+            rmcs__resource__api_dot_device__pb2.TypeId.SerializeToString,
+            rmcs__resource__api_dot_device__pb2.TypeChangeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -1132,8 +1132,8 @@ class DeviceService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/device.DeviceService/AddTypeModel',
-            device__pb2.TypeModel.SerializeToString,
-            device__pb2.TypeChangeResponse.FromString,
+            rmcs__resource__api_dot_device__pb2.TypeModel.SerializeToString,
+            rmcs__resource__api_dot_device__pb2.TypeChangeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -1149,7 +1149,7 @@ class DeviceService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/device.DeviceService/RemoveTypeModel',
-            device__pb2.TypeModel.SerializeToString,
-            device__pb2.TypeChangeResponse.FromString,
+            rmcs__resource__api_dot_device__pb2.TypeModel.SerializeToString,
+            rmcs__resource__api_dot_device__pb2.TypeChangeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-import group_pb2 as group__pb2
+from rmcs_resource_api import group_pb2 as rmcs__resource__api_dot_group__pb2
 
 
 class GroupServiceStub(object):
@@ -16,138 +16,138 @@ class GroupServiceStub(object):
         """
         self.ReadGroupModel = channel.unary_unary(
                 '/group.GroupService/ReadGroupModel',
-                request_serializer=group__pb2.GroupId.SerializeToString,
-                response_deserializer=group__pb2.GroupModelReadResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_group__pb2.GroupId.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_group__pb2.GroupModelReadResponse.FromString,
                 )
         self.ListGroupModelByName = channel.unary_unary(
                 '/group.GroupService/ListGroupModelByName',
-                request_serializer=group__pb2.GroupName.SerializeToString,
-                response_deserializer=group__pb2.GroupModelListResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_group__pb2.GroupName.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_group__pb2.GroupModelListResponse.FromString,
                 )
         self.ListGroupModelByCategory = channel.unary_unary(
                 '/group.GroupService/ListGroupModelByCategory',
-                request_serializer=group__pb2.GroupCategory.SerializeToString,
-                response_deserializer=group__pb2.GroupModelListResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_group__pb2.GroupCategory.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_group__pb2.GroupModelListResponse.FromString,
                 )
         self.ListGroupModelByNameCategory = channel.unary_unary(
                 '/group.GroupService/ListGroupModelByNameCategory',
-                request_serializer=group__pb2.GroupNameCategory.SerializeToString,
-                response_deserializer=group__pb2.GroupModelListResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_group__pb2.GroupNameCategory.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_group__pb2.GroupModelListResponse.FromString,
                 )
         self.CreateGroupModel = channel.unary_unary(
                 '/group.GroupService/CreateGroupModel',
-                request_serializer=group__pb2.GroupModelSchema.SerializeToString,
-                response_deserializer=group__pb2.GroupCreateResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_group__pb2.GroupModelSchema.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_group__pb2.GroupCreateResponse.FromString,
                 )
         self.UpdateGroupModel = channel.unary_unary(
                 '/group.GroupService/UpdateGroupModel',
-                request_serializer=group__pb2.GroupUpdate.SerializeToString,
-                response_deserializer=group__pb2.GroupChangeResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_group__pb2.GroupUpdate.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_group__pb2.GroupChangeResponse.FromString,
                 )
         self.DeleteGroupModel = channel.unary_unary(
                 '/group.GroupService/DeleteGroupModel',
-                request_serializer=group__pb2.GroupId.SerializeToString,
-                response_deserializer=group__pb2.GroupChangeResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_group__pb2.GroupId.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_group__pb2.GroupChangeResponse.FromString,
                 )
         self.AddGroupModelMember = channel.unary_unary(
                 '/group.GroupService/AddGroupModelMember',
-                request_serializer=group__pb2.GroupModel.SerializeToString,
-                response_deserializer=group__pb2.GroupChangeResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_group__pb2.GroupModel.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_group__pb2.GroupChangeResponse.FromString,
                 )
         self.RemoveGroupModelMember = channel.unary_unary(
                 '/group.GroupService/RemoveGroupModelMember',
-                request_serializer=group__pb2.GroupModel.SerializeToString,
-                response_deserializer=group__pb2.GroupChangeResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_group__pb2.GroupModel.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_group__pb2.GroupChangeResponse.FromString,
                 )
         self.ReadGroupDevice = channel.unary_unary(
                 '/group.GroupService/ReadGroupDevice',
-                request_serializer=group__pb2.GroupId.SerializeToString,
-                response_deserializer=group__pb2.GroupDeviceReadResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_group__pb2.GroupId.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_group__pb2.GroupDeviceReadResponse.FromString,
                 )
         self.ListGroupDeviceByName = channel.unary_unary(
                 '/group.GroupService/ListGroupDeviceByName',
-                request_serializer=group__pb2.GroupName.SerializeToString,
-                response_deserializer=group__pb2.GroupDeviceListResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_group__pb2.GroupName.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_group__pb2.GroupDeviceListResponse.FromString,
                 )
         self.ListGroupDeviceByCategory = channel.unary_unary(
                 '/group.GroupService/ListGroupDeviceByCategory',
-                request_serializer=group__pb2.GroupCategory.SerializeToString,
-                response_deserializer=group__pb2.GroupDeviceListResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_group__pb2.GroupCategory.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_group__pb2.GroupDeviceListResponse.FromString,
                 )
         self.ListGroupDeviceByNameCategory = channel.unary_unary(
                 '/group.GroupService/ListGroupDeviceByNameCategory',
-                request_serializer=group__pb2.GroupNameCategory.SerializeToString,
-                response_deserializer=group__pb2.GroupDeviceListResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_group__pb2.GroupNameCategory.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_group__pb2.GroupDeviceListResponse.FromString,
                 )
         self.CreateGroupDevice = channel.unary_unary(
                 '/group.GroupService/CreateGroupDevice',
-                request_serializer=group__pb2.GroupDeviceSchema.SerializeToString,
-                response_deserializer=group__pb2.GroupCreateResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_group__pb2.GroupDeviceSchema.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_group__pb2.GroupCreateResponse.FromString,
                 )
         self.UpdateGroupDevice = channel.unary_unary(
                 '/group.GroupService/UpdateGroupDevice',
-                request_serializer=group__pb2.GroupUpdate.SerializeToString,
-                response_deserializer=group__pb2.GroupChangeResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_group__pb2.GroupUpdate.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_group__pb2.GroupChangeResponse.FromString,
                 )
         self.DeleteGroupDevice = channel.unary_unary(
                 '/group.GroupService/DeleteGroupDevice',
-                request_serializer=group__pb2.GroupId.SerializeToString,
-                response_deserializer=group__pb2.GroupChangeResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_group__pb2.GroupId.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_group__pb2.GroupChangeResponse.FromString,
                 )
         self.AddGroupDeviceMember = channel.unary_unary(
                 '/group.GroupService/AddGroupDeviceMember',
-                request_serializer=group__pb2.GroupDevice.SerializeToString,
-                response_deserializer=group__pb2.GroupChangeResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_group__pb2.GroupDevice.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_group__pb2.GroupChangeResponse.FromString,
                 )
         self.RemoveGroupDeviceMember = channel.unary_unary(
                 '/group.GroupService/RemoveGroupDeviceMember',
-                request_serializer=group__pb2.GroupDevice.SerializeToString,
-                response_deserializer=group__pb2.GroupChangeResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_group__pb2.GroupDevice.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_group__pb2.GroupChangeResponse.FromString,
                 )
         self.ReadGroupGateway = channel.unary_unary(
                 '/group.GroupService/ReadGroupGateway',
-                request_serializer=group__pb2.GroupId.SerializeToString,
-                response_deserializer=group__pb2.GroupDeviceReadResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_group__pb2.GroupId.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_group__pb2.GroupDeviceReadResponse.FromString,
                 )
         self.ListGroupGatewayByName = channel.unary_unary(
                 '/group.GroupService/ListGroupGatewayByName',
-                request_serializer=group__pb2.GroupName.SerializeToString,
-                response_deserializer=group__pb2.GroupDeviceListResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_group__pb2.GroupName.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_group__pb2.GroupDeviceListResponse.FromString,
                 )
         self.ListGroupGatewayByCategory = channel.unary_unary(
                 '/group.GroupService/ListGroupGatewayByCategory',
-                request_serializer=group__pb2.GroupCategory.SerializeToString,
-                response_deserializer=group__pb2.GroupDeviceListResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_group__pb2.GroupCategory.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_group__pb2.GroupDeviceListResponse.FromString,
                 )
         self.ListGroupGatewayByNameCategory = channel.unary_unary(
                 '/group.GroupService/ListGroupGatewayByNameCategory',
-                request_serializer=group__pb2.GroupNameCategory.SerializeToString,
-                response_deserializer=group__pb2.GroupDeviceListResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_group__pb2.GroupNameCategory.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_group__pb2.GroupDeviceListResponse.FromString,
                 )
         self.CreateGroupGateway = channel.unary_unary(
                 '/group.GroupService/CreateGroupGateway',
-                request_serializer=group__pb2.GroupDeviceSchema.SerializeToString,
-                response_deserializer=group__pb2.GroupCreateResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_group__pb2.GroupDeviceSchema.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_group__pb2.GroupCreateResponse.FromString,
                 )
         self.UpdateGroupGateway = channel.unary_unary(
                 '/group.GroupService/UpdateGroupGateway',
-                request_serializer=group__pb2.GroupUpdate.SerializeToString,
-                response_deserializer=group__pb2.GroupChangeResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_group__pb2.GroupUpdate.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_group__pb2.GroupChangeResponse.FromString,
                 )
         self.DeleteGroupGateway = channel.unary_unary(
                 '/group.GroupService/DeleteGroupGateway',
-                request_serializer=group__pb2.GroupId.SerializeToString,
-                response_deserializer=group__pb2.GroupChangeResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_group__pb2.GroupId.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_group__pb2.GroupChangeResponse.FromString,
                 )
         self.AddGroupGatewayMember = channel.unary_unary(
                 '/group.GroupService/AddGroupGatewayMember',
-                request_serializer=group__pb2.GroupDevice.SerializeToString,
-                response_deserializer=group__pb2.GroupChangeResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_group__pb2.GroupDevice.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_group__pb2.GroupChangeResponse.FromString,
                 )
         self.RemoveGroupGatewayMember = channel.unary_unary(
                 '/group.GroupService/RemoveGroupGatewayMember',
-                request_serializer=group__pb2.GroupDevice.SerializeToString,
-                response_deserializer=group__pb2.GroupChangeResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_group__pb2.GroupDevice.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_group__pb2.GroupChangeResponse.FromString,
                 )
 
 
@@ -321,138 +321,138 @@ def add_GroupServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'ReadGroupModel': grpc.unary_unary_rpc_method_handler(
                     servicer.ReadGroupModel,
-                    request_deserializer=group__pb2.GroupId.FromString,
-                    response_serializer=group__pb2.GroupModelReadResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_group__pb2.GroupId.FromString,
+                    response_serializer=rmcs__resource__api_dot_group__pb2.GroupModelReadResponse.SerializeToString,
             ),
             'ListGroupModelByName': grpc.unary_unary_rpc_method_handler(
                     servicer.ListGroupModelByName,
-                    request_deserializer=group__pb2.GroupName.FromString,
-                    response_serializer=group__pb2.GroupModelListResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_group__pb2.GroupName.FromString,
+                    response_serializer=rmcs__resource__api_dot_group__pb2.GroupModelListResponse.SerializeToString,
             ),
             'ListGroupModelByCategory': grpc.unary_unary_rpc_method_handler(
                     servicer.ListGroupModelByCategory,
-                    request_deserializer=group__pb2.GroupCategory.FromString,
-                    response_serializer=group__pb2.GroupModelListResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_group__pb2.GroupCategory.FromString,
+                    response_serializer=rmcs__resource__api_dot_group__pb2.GroupModelListResponse.SerializeToString,
             ),
             'ListGroupModelByNameCategory': grpc.unary_unary_rpc_method_handler(
                     servicer.ListGroupModelByNameCategory,
-                    request_deserializer=group__pb2.GroupNameCategory.FromString,
-                    response_serializer=group__pb2.GroupModelListResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_group__pb2.GroupNameCategory.FromString,
+                    response_serializer=rmcs__resource__api_dot_group__pb2.GroupModelListResponse.SerializeToString,
             ),
             'CreateGroupModel': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateGroupModel,
-                    request_deserializer=group__pb2.GroupModelSchema.FromString,
-                    response_serializer=group__pb2.GroupCreateResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_group__pb2.GroupModelSchema.FromString,
+                    response_serializer=rmcs__resource__api_dot_group__pb2.GroupCreateResponse.SerializeToString,
             ),
             'UpdateGroupModel': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateGroupModel,
-                    request_deserializer=group__pb2.GroupUpdate.FromString,
-                    response_serializer=group__pb2.GroupChangeResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_group__pb2.GroupUpdate.FromString,
+                    response_serializer=rmcs__resource__api_dot_group__pb2.GroupChangeResponse.SerializeToString,
             ),
             'DeleteGroupModel': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteGroupModel,
-                    request_deserializer=group__pb2.GroupId.FromString,
-                    response_serializer=group__pb2.GroupChangeResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_group__pb2.GroupId.FromString,
+                    response_serializer=rmcs__resource__api_dot_group__pb2.GroupChangeResponse.SerializeToString,
             ),
             'AddGroupModelMember': grpc.unary_unary_rpc_method_handler(
                     servicer.AddGroupModelMember,
-                    request_deserializer=group__pb2.GroupModel.FromString,
-                    response_serializer=group__pb2.GroupChangeResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_group__pb2.GroupModel.FromString,
+                    response_serializer=rmcs__resource__api_dot_group__pb2.GroupChangeResponse.SerializeToString,
             ),
             'RemoveGroupModelMember': grpc.unary_unary_rpc_method_handler(
                     servicer.RemoveGroupModelMember,
-                    request_deserializer=group__pb2.GroupModel.FromString,
-                    response_serializer=group__pb2.GroupChangeResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_group__pb2.GroupModel.FromString,
+                    response_serializer=rmcs__resource__api_dot_group__pb2.GroupChangeResponse.SerializeToString,
             ),
             'ReadGroupDevice': grpc.unary_unary_rpc_method_handler(
                     servicer.ReadGroupDevice,
-                    request_deserializer=group__pb2.GroupId.FromString,
-                    response_serializer=group__pb2.GroupDeviceReadResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_group__pb2.GroupId.FromString,
+                    response_serializer=rmcs__resource__api_dot_group__pb2.GroupDeviceReadResponse.SerializeToString,
             ),
             'ListGroupDeviceByName': grpc.unary_unary_rpc_method_handler(
                     servicer.ListGroupDeviceByName,
-                    request_deserializer=group__pb2.GroupName.FromString,
-                    response_serializer=group__pb2.GroupDeviceListResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_group__pb2.GroupName.FromString,
+                    response_serializer=rmcs__resource__api_dot_group__pb2.GroupDeviceListResponse.SerializeToString,
             ),
             'ListGroupDeviceByCategory': grpc.unary_unary_rpc_method_handler(
                     servicer.ListGroupDeviceByCategory,
-                    request_deserializer=group__pb2.GroupCategory.FromString,
-                    response_serializer=group__pb2.GroupDeviceListResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_group__pb2.GroupCategory.FromString,
+                    response_serializer=rmcs__resource__api_dot_group__pb2.GroupDeviceListResponse.SerializeToString,
             ),
             'ListGroupDeviceByNameCategory': grpc.unary_unary_rpc_method_handler(
                     servicer.ListGroupDeviceByNameCategory,
-                    request_deserializer=group__pb2.GroupNameCategory.FromString,
-                    response_serializer=group__pb2.GroupDeviceListResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_group__pb2.GroupNameCategory.FromString,
+                    response_serializer=rmcs__resource__api_dot_group__pb2.GroupDeviceListResponse.SerializeToString,
             ),
             'CreateGroupDevice': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateGroupDevice,
-                    request_deserializer=group__pb2.GroupDeviceSchema.FromString,
-                    response_serializer=group__pb2.GroupCreateResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_group__pb2.GroupDeviceSchema.FromString,
+                    response_serializer=rmcs__resource__api_dot_group__pb2.GroupCreateResponse.SerializeToString,
             ),
             'UpdateGroupDevice': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateGroupDevice,
-                    request_deserializer=group__pb2.GroupUpdate.FromString,
-                    response_serializer=group__pb2.GroupChangeResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_group__pb2.GroupUpdate.FromString,
+                    response_serializer=rmcs__resource__api_dot_group__pb2.GroupChangeResponse.SerializeToString,
             ),
             'DeleteGroupDevice': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteGroupDevice,
-                    request_deserializer=group__pb2.GroupId.FromString,
-                    response_serializer=group__pb2.GroupChangeResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_group__pb2.GroupId.FromString,
+                    response_serializer=rmcs__resource__api_dot_group__pb2.GroupChangeResponse.SerializeToString,
             ),
             'AddGroupDeviceMember': grpc.unary_unary_rpc_method_handler(
                     servicer.AddGroupDeviceMember,
-                    request_deserializer=group__pb2.GroupDevice.FromString,
-                    response_serializer=group__pb2.GroupChangeResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_group__pb2.GroupDevice.FromString,
+                    response_serializer=rmcs__resource__api_dot_group__pb2.GroupChangeResponse.SerializeToString,
             ),
             'RemoveGroupDeviceMember': grpc.unary_unary_rpc_method_handler(
                     servicer.RemoveGroupDeviceMember,
-                    request_deserializer=group__pb2.GroupDevice.FromString,
-                    response_serializer=group__pb2.GroupChangeResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_group__pb2.GroupDevice.FromString,
+                    response_serializer=rmcs__resource__api_dot_group__pb2.GroupChangeResponse.SerializeToString,
             ),
             'ReadGroupGateway': grpc.unary_unary_rpc_method_handler(
                     servicer.ReadGroupGateway,
-                    request_deserializer=group__pb2.GroupId.FromString,
-                    response_serializer=group__pb2.GroupDeviceReadResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_group__pb2.GroupId.FromString,
+                    response_serializer=rmcs__resource__api_dot_group__pb2.GroupDeviceReadResponse.SerializeToString,
             ),
             'ListGroupGatewayByName': grpc.unary_unary_rpc_method_handler(
                     servicer.ListGroupGatewayByName,
-                    request_deserializer=group__pb2.GroupName.FromString,
-                    response_serializer=group__pb2.GroupDeviceListResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_group__pb2.GroupName.FromString,
+                    response_serializer=rmcs__resource__api_dot_group__pb2.GroupDeviceListResponse.SerializeToString,
             ),
             'ListGroupGatewayByCategory': grpc.unary_unary_rpc_method_handler(
                     servicer.ListGroupGatewayByCategory,
-                    request_deserializer=group__pb2.GroupCategory.FromString,
-                    response_serializer=group__pb2.GroupDeviceListResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_group__pb2.GroupCategory.FromString,
+                    response_serializer=rmcs__resource__api_dot_group__pb2.GroupDeviceListResponse.SerializeToString,
             ),
             'ListGroupGatewayByNameCategory': grpc.unary_unary_rpc_method_handler(
                     servicer.ListGroupGatewayByNameCategory,
-                    request_deserializer=group__pb2.GroupNameCategory.FromString,
-                    response_serializer=group__pb2.GroupDeviceListResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_group__pb2.GroupNameCategory.FromString,
+                    response_serializer=rmcs__resource__api_dot_group__pb2.GroupDeviceListResponse.SerializeToString,
             ),
             'CreateGroupGateway': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateGroupGateway,
-                    request_deserializer=group__pb2.GroupDeviceSchema.FromString,
-                    response_serializer=group__pb2.GroupCreateResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_group__pb2.GroupDeviceSchema.FromString,
+                    response_serializer=rmcs__resource__api_dot_group__pb2.GroupCreateResponse.SerializeToString,
             ),
             'UpdateGroupGateway': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateGroupGateway,
-                    request_deserializer=group__pb2.GroupUpdate.FromString,
-                    response_serializer=group__pb2.GroupChangeResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_group__pb2.GroupUpdate.FromString,
+                    response_serializer=rmcs__resource__api_dot_group__pb2.GroupChangeResponse.SerializeToString,
             ),
             'DeleteGroupGateway': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteGroupGateway,
-                    request_deserializer=group__pb2.GroupId.FromString,
-                    response_serializer=group__pb2.GroupChangeResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_group__pb2.GroupId.FromString,
+                    response_serializer=rmcs__resource__api_dot_group__pb2.GroupChangeResponse.SerializeToString,
             ),
             'AddGroupGatewayMember': grpc.unary_unary_rpc_method_handler(
                     servicer.AddGroupGatewayMember,
-                    request_deserializer=group__pb2.GroupDevice.FromString,
-                    response_serializer=group__pb2.GroupChangeResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_group__pb2.GroupDevice.FromString,
+                    response_serializer=rmcs__resource__api_dot_group__pb2.GroupChangeResponse.SerializeToString,
             ),
             'RemoveGroupGatewayMember': grpc.unary_unary_rpc_method_handler(
                     servicer.RemoveGroupGatewayMember,
-                    request_deserializer=group__pb2.GroupDevice.FromString,
-                    response_serializer=group__pb2.GroupChangeResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_group__pb2.GroupDevice.FromString,
+                    response_serializer=rmcs__resource__api_dot_group__pb2.GroupChangeResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -476,8 +476,8 @@ class GroupService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/group.GroupService/ReadGroupModel',
-            group__pb2.GroupId.SerializeToString,
-            group__pb2.GroupModelReadResponse.FromString,
+            rmcs__resource__api_dot_group__pb2.GroupId.SerializeToString,
+            rmcs__resource__api_dot_group__pb2.GroupModelReadResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -493,8 +493,8 @@ class GroupService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/group.GroupService/ListGroupModelByName',
-            group__pb2.GroupName.SerializeToString,
-            group__pb2.GroupModelListResponse.FromString,
+            rmcs__resource__api_dot_group__pb2.GroupName.SerializeToString,
+            rmcs__resource__api_dot_group__pb2.GroupModelListResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -510,8 +510,8 @@ class GroupService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/group.GroupService/ListGroupModelByCategory',
-            group__pb2.GroupCategory.SerializeToString,
-            group__pb2.GroupModelListResponse.FromString,
+            rmcs__resource__api_dot_group__pb2.GroupCategory.SerializeToString,
+            rmcs__resource__api_dot_group__pb2.GroupModelListResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -527,8 +527,8 @@ class GroupService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/group.GroupService/ListGroupModelByNameCategory',
-            group__pb2.GroupNameCategory.SerializeToString,
-            group__pb2.GroupModelListResponse.FromString,
+            rmcs__resource__api_dot_group__pb2.GroupNameCategory.SerializeToString,
+            rmcs__resource__api_dot_group__pb2.GroupModelListResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -544,8 +544,8 @@ class GroupService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/group.GroupService/CreateGroupModel',
-            group__pb2.GroupModelSchema.SerializeToString,
-            group__pb2.GroupCreateResponse.FromString,
+            rmcs__resource__api_dot_group__pb2.GroupModelSchema.SerializeToString,
+            rmcs__resource__api_dot_group__pb2.GroupCreateResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -561,8 +561,8 @@ class GroupService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/group.GroupService/UpdateGroupModel',
-            group__pb2.GroupUpdate.SerializeToString,
-            group__pb2.GroupChangeResponse.FromString,
+            rmcs__resource__api_dot_group__pb2.GroupUpdate.SerializeToString,
+            rmcs__resource__api_dot_group__pb2.GroupChangeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -578,8 +578,8 @@ class GroupService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/group.GroupService/DeleteGroupModel',
-            group__pb2.GroupId.SerializeToString,
-            group__pb2.GroupChangeResponse.FromString,
+            rmcs__resource__api_dot_group__pb2.GroupId.SerializeToString,
+            rmcs__resource__api_dot_group__pb2.GroupChangeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -595,8 +595,8 @@ class GroupService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/group.GroupService/AddGroupModelMember',
-            group__pb2.GroupModel.SerializeToString,
-            group__pb2.GroupChangeResponse.FromString,
+            rmcs__resource__api_dot_group__pb2.GroupModel.SerializeToString,
+            rmcs__resource__api_dot_group__pb2.GroupChangeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -612,8 +612,8 @@ class GroupService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/group.GroupService/RemoveGroupModelMember',
-            group__pb2.GroupModel.SerializeToString,
-            group__pb2.GroupChangeResponse.FromString,
+            rmcs__resource__api_dot_group__pb2.GroupModel.SerializeToString,
+            rmcs__resource__api_dot_group__pb2.GroupChangeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -629,8 +629,8 @@ class GroupService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/group.GroupService/ReadGroupDevice',
-            group__pb2.GroupId.SerializeToString,
-            group__pb2.GroupDeviceReadResponse.FromString,
+            rmcs__resource__api_dot_group__pb2.GroupId.SerializeToString,
+            rmcs__resource__api_dot_group__pb2.GroupDeviceReadResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -646,8 +646,8 @@ class GroupService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/group.GroupService/ListGroupDeviceByName',
-            group__pb2.GroupName.SerializeToString,
-            group__pb2.GroupDeviceListResponse.FromString,
+            rmcs__resource__api_dot_group__pb2.GroupName.SerializeToString,
+            rmcs__resource__api_dot_group__pb2.GroupDeviceListResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -663,8 +663,8 @@ class GroupService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/group.GroupService/ListGroupDeviceByCategory',
-            group__pb2.GroupCategory.SerializeToString,
-            group__pb2.GroupDeviceListResponse.FromString,
+            rmcs__resource__api_dot_group__pb2.GroupCategory.SerializeToString,
+            rmcs__resource__api_dot_group__pb2.GroupDeviceListResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -680,8 +680,8 @@ class GroupService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/group.GroupService/ListGroupDeviceByNameCategory',
-            group__pb2.GroupNameCategory.SerializeToString,
-            group__pb2.GroupDeviceListResponse.FromString,
+            rmcs__resource__api_dot_group__pb2.GroupNameCategory.SerializeToString,
+            rmcs__resource__api_dot_group__pb2.GroupDeviceListResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -697,8 +697,8 @@ class GroupService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/group.GroupService/CreateGroupDevice',
-            group__pb2.GroupDeviceSchema.SerializeToString,
-            group__pb2.GroupCreateResponse.FromString,
+            rmcs__resource__api_dot_group__pb2.GroupDeviceSchema.SerializeToString,
+            rmcs__resource__api_dot_group__pb2.GroupCreateResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -714,8 +714,8 @@ class GroupService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/group.GroupService/UpdateGroupDevice',
-            group__pb2.GroupUpdate.SerializeToString,
-            group__pb2.GroupChangeResponse.FromString,
+            rmcs__resource__api_dot_group__pb2.GroupUpdate.SerializeToString,
+            rmcs__resource__api_dot_group__pb2.GroupChangeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -731,8 +731,8 @@ class GroupService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/group.GroupService/DeleteGroupDevice',
-            group__pb2.GroupId.SerializeToString,
-            group__pb2.GroupChangeResponse.FromString,
+            rmcs__resource__api_dot_group__pb2.GroupId.SerializeToString,
+            rmcs__resource__api_dot_group__pb2.GroupChangeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -748,8 +748,8 @@ class GroupService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/group.GroupService/AddGroupDeviceMember',
-            group__pb2.GroupDevice.SerializeToString,
-            group__pb2.GroupChangeResponse.FromString,
+            rmcs__resource__api_dot_group__pb2.GroupDevice.SerializeToString,
+            rmcs__resource__api_dot_group__pb2.GroupChangeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -765,8 +765,8 @@ class GroupService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/group.GroupService/RemoveGroupDeviceMember',
-            group__pb2.GroupDevice.SerializeToString,
-            group__pb2.GroupChangeResponse.FromString,
+            rmcs__resource__api_dot_group__pb2.GroupDevice.SerializeToString,
+            rmcs__resource__api_dot_group__pb2.GroupChangeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -782,8 +782,8 @@ class GroupService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/group.GroupService/ReadGroupGateway',
-            group__pb2.GroupId.SerializeToString,
-            group__pb2.GroupDeviceReadResponse.FromString,
+            rmcs__resource__api_dot_group__pb2.GroupId.SerializeToString,
+            rmcs__resource__api_dot_group__pb2.GroupDeviceReadResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -799,8 +799,8 @@ class GroupService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/group.GroupService/ListGroupGatewayByName',
-            group__pb2.GroupName.SerializeToString,
-            group__pb2.GroupDeviceListResponse.FromString,
+            rmcs__resource__api_dot_group__pb2.GroupName.SerializeToString,
+            rmcs__resource__api_dot_group__pb2.GroupDeviceListResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -816,8 +816,8 @@ class GroupService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/group.GroupService/ListGroupGatewayByCategory',
-            group__pb2.GroupCategory.SerializeToString,
-            group__pb2.GroupDeviceListResponse.FromString,
+            rmcs__resource__api_dot_group__pb2.GroupCategory.SerializeToString,
+            rmcs__resource__api_dot_group__pb2.GroupDeviceListResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -833,8 +833,8 @@ class GroupService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/group.GroupService/ListGroupGatewayByNameCategory',
-            group__pb2.GroupNameCategory.SerializeToString,
-            group__pb2.GroupDeviceListResponse.FromString,
+            rmcs__resource__api_dot_group__pb2.GroupNameCategory.SerializeToString,
+            rmcs__resource__api_dot_group__pb2.GroupDeviceListResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -850,8 +850,8 @@ class GroupService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/group.GroupService/CreateGroupGateway',
-            group__pb2.GroupDeviceSchema.SerializeToString,
-            group__pb2.GroupCreateResponse.FromString,
+            rmcs__resource__api_dot_group__pb2.GroupDeviceSchema.SerializeToString,
+            rmcs__resource__api_dot_group__pb2.GroupCreateResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -867,8 +867,8 @@ class GroupService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/group.GroupService/UpdateGroupGateway',
-            group__pb2.GroupUpdate.SerializeToString,
-            group__pb2.GroupChangeResponse.FromString,
+            rmcs__resource__api_dot_group__pb2.GroupUpdate.SerializeToString,
+            rmcs__resource__api_dot_group__pb2.GroupChangeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -884,8 +884,8 @@ class GroupService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/group.GroupService/DeleteGroupGateway',
-            group__pb2.GroupId.SerializeToString,
-            group__pb2.GroupChangeResponse.FromString,
+            rmcs__resource__api_dot_group__pb2.GroupId.SerializeToString,
+            rmcs__resource__api_dot_group__pb2.GroupChangeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -901,8 +901,8 @@ class GroupService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/group.GroupService/AddGroupGatewayMember',
-            group__pb2.GroupDevice.SerializeToString,
-            group__pb2.GroupChangeResponse.FromString,
+            rmcs__resource__api_dot_group__pb2.GroupDevice.SerializeToString,
+            rmcs__resource__api_dot_group__pb2.GroupChangeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -918,7 +918,7 @@ class GroupService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/group.GroupService/RemoveGroupGatewayMember',
-            group__pb2.GroupDevice.SerializeToString,
-            group__pb2.GroupChangeResponse.FromString,
+            rmcs__resource__api_dot_group__pb2.GroupDevice.SerializeToString,
+            rmcs__resource__api_dot_group__pb2.GroupChangeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

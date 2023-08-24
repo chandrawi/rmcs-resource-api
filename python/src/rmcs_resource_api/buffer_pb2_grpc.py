@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-import buffer_pb2 as buffer__pb2
+from rmcs_resource_api import buffer_pb2 as rmcs__resource__api_dot_buffer__pb2
 
 
 class BufferServiceStub(object):
@@ -16,43 +16,43 @@ class BufferServiceStub(object):
         """
         self.ReadBuffer = channel.unary_unary(
                 '/buffer.BufferService/ReadBuffer',
-                request_serializer=buffer__pb2.BufferId.SerializeToString,
-                response_deserializer=buffer__pb2.BufferReadResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_buffer__pb2.BufferId.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferReadResponse.FromString,
                 )
         self.ReadBufferFirst = channel.unary_unary(
                 '/buffer.BufferService/ReadBufferFirst',
-                request_serializer=buffer__pb2.BufferSelector.SerializeToString,
-                response_deserializer=buffer__pb2.BufferReadResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_buffer__pb2.BufferSelector.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferReadResponse.FromString,
                 )
         self.ReadBufferLast = channel.unary_unary(
                 '/buffer.BufferService/ReadBufferLast',
-                request_serializer=buffer__pb2.BufferSelector.SerializeToString,
-                response_deserializer=buffer__pb2.BufferReadResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_buffer__pb2.BufferSelector.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferReadResponse.FromString,
                 )
         self.ListBufferFirst = channel.unary_unary(
                 '/buffer.BufferService/ListBufferFirst',
-                request_serializer=buffer__pb2.BuffersSelector.SerializeToString,
-                response_deserializer=buffer__pb2.BufferListResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_buffer__pb2.BuffersSelector.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferListResponse.FromString,
                 )
         self.ListBufferLast = channel.unary_unary(
                 '/buffer.BufferService/ListBufferLast',
-                request_serializer=buffer__pb2.BuffersSelector.SerializeToString,
-                response_deserializer=buffer__pb2.BufferListResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_buffer__pb2.BuffersSelector.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferListResponse.FromString,
                 )
         self.CreateBuffer = channel.unary_unary(
                 '/buffer.BufferService/CreateBuffer',
-                request_serializer=buffer__pb2.BufferSchema.SerializeToString,
-                response_deserializer=buffer__pb2.BufferCreateResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_buffer__pb2.BufferSchema.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferCreateResponse.FromString,
                 )
         self.UpdateBuffer = channel.unary_unary(
                 '/buffer.BufferService/UpdateBuffer',
-                request_serializer=buffer__pb2.BufferUpdate.SerializeToString,
-                response_deserializer=buffer__pb2.BufferChangeResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_buffer__pb2.BufferUpdate.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferChangeResponse.FromString,
                 )
         self.DeleteBuffer = channel.unary_unary(
                 '/buffer.BufferService/DeleteBuffer',
-                request_serializer=buffer__pb2.BufferId.SerializeToString,
-                response_deserializer=buffer__pb2.BufferChangeResponse.FromString,
+                request_serializer=rmcs__resource__api_dot_buffer__pb2.BufferId.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferChangeResponse.FromString,
                 )
 
 
@@ -112,43 +112,43 @@ def add_BufferServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'ReadBuffer': grpc.unary_unary_rpc_method_handler(
                     servicer.ReadBuffer,
-                    request_deserializer=buffer__pb2.BufferId.FromString,
-                    response_serializer=buffer__pb2.BufferReadResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferId.FromString,
+                    response_serializer=rmcs__resource__api_dot_buffer__pb2.BufferReadResponse.SerializeToString,
             ),
             'ReadBufferFirst': grpc.unary_unary_rpc_method_handler(
                     servicer.ReadBufferFirst,
-                    request_deserializer=buffer__pb2.BufferSelector.FromString,
-                    response_serializer=buffer__pb2.BufferReadResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferSelector.FromString,
+                    response_serializer=rmcs__resource__api_dot_buffer__pb2.BufferReadResponse.SerializeToString,
             ),
             'ReadBufferLast': grpc.unary_unary_rpc_method_handler(
                     servicer.ReadBufferLast,
-                    request_deserializer=buffer__pb2.BufferSelector.FromString,
-                    response_serializer=buffer__pb2.BufferReadResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferSelector.FromString,
+                    response_serializer=rmcs__resource__api_dot_buffer__pb2.BufferReadResponse.SerializeToString,
             ),
             'ListBufferFirst': grpc.unary_unary_rpc_method_handler(
                     servicer.ListBufferFirst,
-                    request_deserializer=buffer__pb2.BuffersSelector.FromString,
-                    response_serializer=buffer__pb2.BufferListResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_buffer__pb2.BuffersSelector.FromString,
+                    response_serializer=rmcs__resource__api_dot_buffer__pb2.BufferListResponse.SerializeToString,
             ),
             'ListBufferLast': grpc.unary_unary_rpc_method_handler(
                     servicer.ListBufferLast,
-                    request_deserializer=buffer__pb2.BuffersSelector.FromString,
-                    response_serializer=buffer__pb2.BufferListResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_buffer__pb2.BuffersSelector.FromString,
+                    response_serializer=rmcs__resource__api_dot_buffer__pb2.BufferListResponse.SerializeToString,
             ),
             'CreateBuffer': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateBuffer,
-                    request_deserializer=buffer__pb2.BufferSchema.FromString,
-                    response_serializer=buffer__pb2.BufferCreateResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferSchema.FromString,
+                    response_serializer=rmcs__resource__api_dot_buffer__pb2.BufferCreateResponse.SerializeToString,
             ),
             'UpdateBuffer': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateBuffer,
-                    request_deserializer=buffer__pb2.BufferUpdate.FromString,
-                    response_serializer=buffer__pb2.BufferChangeResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferUpdate.FromString,
+                    response_serializer=rmcs__resource__api_dot_buffer__pb2.BufferChangeResponse.SerializeToString,
             ),
             'DeleteBuffer': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteBuffer,
-                    request_deserializer=buffer__pb2.BufferId.FromString,
-                    response_serializer=buffer__pb2.BufferChangeResponse.SerializeToString,
+                    request_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferId.FromString,
+                    response_serializer=rmcs__resource__api_dot_buffer__pb2.BufferChangeResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -172,8 +172,8 @@ class BufferService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/buffer.BufferService/ReadBuffer',
-            buffer__pb2.BufferId.SerializeToString,
-            buffer__pb2.BufferReadResponse.FromString,
+            rmcs__resource__api_dot_buffer__pb2.BufferId.SerializeToString,
+            rmcs__resource__api_dot_buffer__pb2.BufferReadResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -189,8 +189,8 @@ class BufferService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/buffer.BufferService/ReadBufferFirst',
-            buffer__pb2.BufferSelector.SerializeToString,
-            buffer__pb2.BufferReadResponse.FromString,
+            rmcs__resource__api_dot_buffer__pb2.BufferSelector.SerializeToString,
+            rmcs__resource__api_dot_buffer__pb2.BufferReadResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -206,8 +206,8 @@ class BufferService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/buffer.BufferService/ReadBufferLast',
-            buffer__pb2.BufferSelector.SerializeToString,
-            buffer__pb2.BufferReadResponse.FromString,
+            rmcs__resource__api_dot_buffer__pb2.BufferSelector.SerializeToString,
+            rmcs__resource__api_dot_buffer__pb2.BufferReadResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -223,8 +223,8 @@ class BufferService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/buffer.BufferService/ListBufferFirst',
-            buffer__pb2.BuffersSelector.SerializeToString,
-            buffer__pb2.BufferListResponse.FromString,
+            rmcs__resource__api_dot_buffer__pb2.BuffersSelector.SerializeToString,
+            rmcs__resource__api_dot_buffer__pb2.BufferListResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -240,8 +240,8 @@ class BufferService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/buffer.BufferService/ListBufferLast',
-            buffer__pb2.BuffersSelector.SerializeToString,
-            buffer__pb2.BufferListResponse.FromString,
+            rmcs__resource__api_dot_buffer__pb2.BuffersSelector.SerializeToString,
+            rmcs__resource__api_dot_buffer__pb2.BufferListResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -257,8 +257,8 @@ class BufferService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/buffer.BufferService/CreateBuffer',
-            buffer__pb2.BufferSchema.SerializeToString,
-            buffer__pb2.BufferCreateResponse.FromString,
+            rmcs__resource__api_dot_buffer__pb2.BufferSchema.SerializeToString,
+            rmcs__resource__api_dot_buffer__pb2.BufferCreateResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -274,8 +274,8 @@ class BufferService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/buffer.BufferService/UpdateBuffer',
-            buffer__pb2.BufferUpdate.SerializeToString,
-            buffer__pb2.BufferChangeResponse.FromString,
+            rmcs__resource__api_dot_buffer__pb2.BufferUpdate.SerializeToString,
+            rmcs__resource__api_dot_buffer__pb2.BufferChangeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -291,7 +291,7 @@ class BufferService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/buffer.BufferService/DeleteBuffer',
-            buffer__pb2.BufferId.SerializeToString,
-            buffer__pb2.BufferChangeResponse.FromString,
+            rmcs__resource__api_dot_buffer__pb2.BufferId.SerializeToString,
+            rmcs__resource__api_dot_buffer__pb2.BufferChangeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
