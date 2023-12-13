@@ -18,7 +18,7 @@ service DeviceService {
 
     rpc ListDeviceByGatewayName(DeviceGatewayName) returns (DeviceListResponse);
 
-    rpc CreateDevice(DeviceSchema) returns (DeviceChangeResponse);
+    rpc CreateDevice(DeviceSchema) returns (DeviceCreateResponse);
 
     rpc UpdateDevice(DeviceUpdate) returns (DeviceChangeResponse);
 
@@ -32,7 +32,7 @@ service DeviceService {
 
     rpc ListGatewayByName(GatewayName) returns (GatewayListResponse);
 
-    rpc CreateGateway(GatewaySchema) returns (GatewayChangeResponse);
+    rpc CreateGateway(GatewaySchema) returns (GatewayCreateResponse);
 
     rpc UpdateGateway(GatewayUpdate) returns (GatewayChangeResponse);
 
@@ -194,6 +194,10 @@ message DeviceListResponse {
     repeated DeviceSchema results = 1;
 }
 
+message DeviceCreateResponse {
+    bytes id = 1;
+}
+
 message DeviceChangeResponse {
 }
 
@@ -203,6 +207,10 @@ message GatewayReadResponse {
 
 message GatewayListResponse {
     repeated GatewaySchema results = 1;
+}
+
+message GatewayCreateResponse {
+    bytes id = 1;
 }
 
 message GatewayChangeResponse {

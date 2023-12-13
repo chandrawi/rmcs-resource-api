@@ -8,7 +8,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class BufferStatus(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-    __slots__ = []
+    __slots__ = ()
     DEFAULT: _ClassVar[BufferStatus]
     ERROR: _ClassVar[BufferStatus]
     CONVERT: _ClassVar[BufferStatus]
@@ -29,7 +29,7 @@ BACKUP: BufferStatus
 DELETE: BufferStatus
 
 class BufferSchema(_message.Message):
-    __slots__ = ["id", "device_id", "model_id", "timestamp", "index", "data_bytes", "data_type", "status"]
+    __slots__ = ("id", "device_id", "model_id", "timestamp", "index", "data_bytes", "data_type", "status")
     ID_FIELD_NUMBER: _ClassVar[int]
     DEVICE_ID_FIELD_NUMBER: _ClassVar[int]
     MODEL_ID_FIELD_NUMBER: _ClassVar[int]
@@ -49,13 +49,13 @@ class BufferSchema(_message.Message):
     def __init__(self, id: _Optional[int] = ..., device_id: _Optional[bytes] = ..., model_id: _Optional[bytes] = ..., timestamp: _Optional[int] = ..., index: _Optional[int] = ..., data_bytes: _Optional[bytes] = ..., data_type: _Optional[_Iterable[_Union[_common_pb2.DataType, str]]] = ..., status: _Optional[_Union[BufferStatus, str]] = ...) -> None: ...
 
 class BufferId(_message.Message):
-    __slots__ = ["id"]
+    __slots__ = ("id",)
     ID_FIELD_NUMBER: _ClassVar[int]
     id: int
     def __init__(self, id: _Optional[int] = ...) -> None: ...
 
 class BufferSelector(_message.Message):
-    __slots__ = ["device_id", "model_id", "status"]
+    __slots__ = ("device_id", "model_id", "status")
     DEVICE_ID_FIELD_NUMBER: _ClassVar[int]
     MODEL_ID_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
@@ -65,7 +65,7 @@ class BufferSelector(_message.Message):
     def __init__(self, device_id: _Optional[bytes] = ..., model_id: _Optional[bytes] = ..., status: _Optional[_Union[BufferStatus, str]] = ...) -> None: ...
 
 class BuffersSelector(_message.Message):
-    __slots__ = ["device_id", "model_id", "status", "number"]
+    __slots__ = ("device_id", "model_id", "status", "number")
     DEVICE_ID_FIELD_NUMBER: _ClassVar[int]
     MODEL_ID_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
@@ -77,7 +77,7 @@ class BuffersSelector(_message.Message):
     def __init__(self, device_id: _Optional[bytes] = ..., model_id: _Optional[bytes] = ..., status: _Optional[_Union[BufferStatus, str]] = ..., number: _Optional[int] = ...) -> None: ...
 
 class BufferUpdate(_message.Message):
-    __slots__ = ["id", "data_bytes", "data_type", "status"]
+    __slots__ = ("id", "data_bytes", "data_type", "status")
     ID_FIELD_NUMBER: _ClassVar[int]
     DATA_BYTES_FIELD_NUMBER: _ClassVar[int]
     DATA_TYPE_FIELD_NUMBER: _ClassVar[int]
@@ -89,23 +89,23 @@ class BufferUpdate(_message.Message):
     def __init__(self, id: _Optional[int] = ..., data_bytes: _Optional[bytes] = ..., data_type: _Optional[_Iterable[_Union[_common_pb2.DataType, str]]] = ..., status: _Optional[_Union[BufferStatus, str]] = ...) -> None: ...
 
 class BufferReadResponse(_message.Message):
-    __slots__ = ["result"]
+    __slots__ = ("result",)
     RESULT_FIELD_NUMBER: _ClassVar[int]
     result: BufferSchema
     def __init__(self, result: _Optional[_Union[BufferSchema, _Mapping]] = ...) -> None: ...
 
 class BufferListResponse(_message.Message):
-    __slots__ = ["results"]
+    __slots__ = ("results",)
     RESULTS_FIELD_NUMBER: _ClassVar[int]
     results: _containers.RepeatedCompositeFieldContainer[BufferSchema]
     def __init__(self, results: _Optional[_Iterable[_Union[BufferSchema, _Mapping]]] = ...) -> None: ...
 
 class BufferCreateResponse(_message.Message):
-    __slots__ = ["id"]
+    __slots__ = ("id",)
     ID_FIELD_NUMBER: _ClassVar[int]
     id: int
     def __init__(self, id: _Optional[int] = ...) -> None: ...
 
 class BufferChangeResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...

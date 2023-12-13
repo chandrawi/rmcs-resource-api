@@ -6,7 +6,7 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class GroupModelSchema(_message.Message):
-    __slots__ = ["id", "name", "category", "description", "models"]
+    __slots__ = ("id", "name", "category", "description", "models")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     CATEGORY_FIELD_NUMBER: _ClassVar[int]
@@ -20,7 +20,7 @@ class GroupModelSchema(_message.Message):
     def __init__(self, id: _Optional[bytes] = ..., name: _Optional[str] = ..., category: _Optional[str] = ..., description: _Optional[str] = ..., models: _Optional[_Iterable[bytes]] = ...) -> None: ...
 
 class GroupDeviceSchema(_message.Message):
-    __slots__ = ["id", "name", "category", "description", "devices"]
+    __slots__ = ("id", "name", "category", "description", "devices")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     CATEGORY_FIELD_NUMBER: _ClassVar[int]
@@ -34,25 +34,25 @@ class GroupDeviceSchema(_message.Message):
     def __init__(self, id: _Optional[bytes] = ..., name: _Optional[str] = ..., category: _Optional[str] = ..., description: _Optional[str] = ..., devices: _Optional[_Iterable[bytes]] = ...) -> None: ...
 
 class GroupId(_message.Message):
-    __slots__ = ["id"]
+    __slots__ = ("id",)
     ID_FIELD_NUMBER: _ClassVar[int]
     id: bytes
     def __init__(self, id: _Optional[bytes] = ...) -> None: ...
 
 class GroupName(_message.Message):
-    __slots__ = ["name"]
+    __slots__ = ("name",)
     NAME_FIELD_NUMBER: _ClassVar[int]
     name: str
     def __init__(self, name: _Optional[str] = ...) -> None: ...
 
 class GroupCategory(_message.Message):
-    __slots__ = ["category"]
+    __slots__ = ("category",)
     CATEGORY_FIELD_NUMBER: _ClassVar[int]
     category: str
     def __init__(self, category: _Optional[str] = ...) -> None: ...
 
 class GroupNameCategory(_message.Message):
-    __slots__ = ["name", "category"]
+    __slots__ = ("name", "category")
     NAME_FIELD_NUMBER: _ClassVar[int]
     CATEGORY_FIELD_NUMBER: _ClassVar[int]
     name: str
@@ -60,7 +60,7 @@ class GroupNameCategory(_message.Message):
     def __init__(self, name: _Optional[str] = ..., category: _Optional[str] = ...) -> None: ...
 
 class GroupUpdate(_message.Message):
-    __slots__ = ["id", "name", "category", "description"]
+    __slots__ = ("id", "name", "category", "description")
     ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     CATEGORY_FIELD_NUMBER: _ClassVar[int]
@@ -72,7 +72,7 @@ class GroupUpdate(_message.Message):
     def __init__(self, id: _Optional[bytes] = ..., name: _Optional[str] = ..., category: _Optional[str] = ..., description: _Optional[str] = ...) -> None: ...
 
 class GroupModel(_message.Message):
-    __slots__ = ["id", "model_id"]
+    __slots__ = ("id", "model_id")
     ID_FIELD_NUMBER: _ClassVar[int]
     MODEL_ID_FIELD_NUMBER: _ClassVar[int]
     id: bytes
@@ -80,7 +80,7 @@ class GroupModel(_message.Message):
     def __init__(self, id: _Optional[bytes] = ..., model_id: _Optional[bytes] = ...) -> None: ...
 
 class GroupDevice(_message.Message):
-    __slots__ = ["id", "device_id"]
+    __slots__ = ("id", "device_id")
     ID_FIELD_NUMBER: _ClassVar[int]
     DEVICE_ID_FIELD_NUMBER: _ClassVar[int]
     id: bytes
@@ -88,35 +88,35 @@ class GroupDevice(_message.Message):
     def __init__(self, id: _Optional[bytes] = ..., device_id: _Optional[bytes] = ...) -> None: ...
 
 class GroupModelReadResponse(_message.Message):
-    __slots__ = ["result"]
+    __slots__ = ("result",)
     RESULT_FIELD_NUMBER: _ClassVar[int]
     result: GroupModelSchema
     def __init__(self, result: _Optional[_Union[GroupModelSchema, _Mapping]] = ...) -> None: ...
 
 class GroupModelListResponse(_message.Message):
-    __slots__ = ["results"]
+    __slots__ = ("results",)
     RESULTS_FIELD_NUMBER: _ClassVar[int]
     results: _containers.RepeatedCompositeFieldContainer[GroupModelSchema]
     def __init__(self, results: _Optional[_Iterable[_Union[GroupModelSchema, _Mapping]]] = ...) -> None: ...
 
 class GroupDeviceReadResponse(_message.Message):
-    __slots__ = ["result"]
+    __slots__ = ("result",)
     RESULT_FIELD_NUMBER: _ClassVar[int]
     result: GroupDeviceSchema
     def __init__(self, result: _Optional[_Union[GroupDeviceSchema, _Mapping]] = ...) -> None: ...
 
 class GroupDeviceListResponse(_message.Message):
-    __slots__ = ["results"]
+    __slots__ = ("results",)
     RESULTS_FIELD_NUMBER: _ClassVar[int]
     results: _containers.RepeatedCompositeFieldContainer[GroupDeviceSchema]
     def __init__(self, results: _Optional[_Iterable[_Union[GroupDeviceSchema, _Mapping]]] = ...) -> None: ...
 
 class GroupCreateResponse(_message.Message):
-    __slots__ = ["id"]
+    __slots__ = ("id",)
     ID_FIELD_NUMBER: _ClassVar[int]
     id: bytes
     def __init__(self, id: _Optional[bytes] = ...) -> None: ...
 
 class GroupChangeResponse(_message.Message):
-    __slots__ = []
+    __slots__ = ()
     def __init__(self) -> None: ...

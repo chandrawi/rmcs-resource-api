@@ -200,6 +200,12 @@ pub struct DeviceListResponse {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+pub struct DeviceCreateResponse {
+    #[prost(bytes = "vec", tag = "1")]
+    pub id: ::prost::alloc::vec::Vec<u8>,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
 pub struct DeviceChangeResponse {}
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -212,6 +218,12 @@ pub struct GatewayReadResponse {
 pub struct GatewayListResponse {
     #[prost(message, repeated, tag = "1")]
     pub results: ::prost::alloc::vec::Vec<GatewaySchema>,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct GatewayCreateResponse {
+    #[prost(bytes = "vec", tag = "1")]
+    pub id: ::prost::alloc::vec::Vec<u8>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -526,7 +538,7 @@ pub mod device_service_client {
             &mut self,
             request: impl tonic::IntoRequest<super::DeviceSchema>,
         ) -> std::result::Result<
-            tonic::Response<super::DeviceChangeResponse>,
+            tonic::Response<super::DeviceCreateResponse>,
             tonic::Status,
         > {
             self.inner
@@ -701,7 +713,7 @@ pub mod device_service_client {
             &mut self,
             request: impl tonic::IntoRequest<super::GatewaySchema>,
         ) -> std::result::Result<
-            tonic::Response<super::GatewayChangeResponse>,
+            tonic::Response<super::GatewayCreateResponse>,
             tonic::Status,
         > {
             self.inner
@@ -1259,7 +1271,7 @@ pub mod device_service_server {
             &self,
             request: tonic::Request<super::DeviceSchema>,
         ) -> std::result::Result<
-            tonic::Response<super::DeviceChangeResponse>,
+            tonic::Response<super::DeviceCreateResponse>,
             tonic::Status,
         >;
         async fn update_device(
@@ -1308,7 +1320,7 @@ pub mod device_service_server {
             &self,
             request: tonic::Request<super::GatewaySchema>,
         ) -> std::result::Result<
-            tonic::Response<super::GatewayChangeResponse>,
+            tonic::Response<super::GatewayCreateResponse>,
             tonic::Status,
         >;
         async fn update_gateway(
@@ -1843,7 +1855,7 @@ pub mod device_service_server {
                         T: DeviceService,
                     > tonic::server::UnaryService<super::DeviceSchema>
                     for CreateDeviceSvc<T> {
-                        type Response = super::DeviceChangeResponse;
+                        type Response = super::DeviceCreateResponse;
                         type Future = BoxFuture<
                             tonic::Response<Self::Response>,
                             tonic::Status,
@@ -2159,7 +2171,7 @@ pub mod device_service_server {
                         T: DeviceService,
                     > tonic::server::UnaryService<super::GatewaySchema>
                     for CreateGatewaySvc<T> {
-                        type Response = super::GatewayChangeResponse;
+                        type Response = super::GatewayCreateResponse;
                         type Future = BoxFuture<
                             tonic::Response<Self::Response>,
                             tonic::Status,
