@@ -25,10 +25,8 @@ message SliceSchema {
     bytes model_id = 3;
     int64 timestamp_begin = 4;
     int64 timestamp_end = 5;
-    int32 index_begin = 6;
-    int32 index_end = 7;
-    string name = 8;
-    string description = 9;
+    string name = 6;
+    string description = 7;
 }
 
 message SliceId {
@@ -56,10 +54,8 @@ message SliceUpdate {
     int32 id = 1;
     optional int64 timestamp_begin = 2;
     optional int64 timestamp_end = 3;
-    optional int32 index_begin = 4;
-    optional int32 index_end = 5;
-    optional string name = 6;
-    optional string description = 7;
+    optional string name = 4;
+    optional string description = 5;
 }
 
 message SliceReadResponse {

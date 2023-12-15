@@ -11,13 +11,9 @@ pub struct SliceSchema {
     pub timestamp_begin: i64,
     #[prost(int64, tag = "5")]
     pub timestamp_end: i64,
-    #[prost(int32, tag = "6")]
-    pub index_begin: i32,
-    #[prost(int32, tag = "7")]
-    pub index_end: i32,
-    #[prost(string, tag = "8")]
+    #[prost(string, tag = "6")]
     pub name: ::prost::alloc::string::String,
-    #[prost(string, tag = "9")]
+    #[prost(string, tag = "7")]
     pub description: ::prost::alloc::string::String,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
@@ -61,13 +57,9 @@ pub struct SliceUpdate {
     pub timestamp_begin: ::core::option::Option<i64>,
     #[prost(int64, optional, tag = "3")]
     pub timestamp_end: ::core::option::Option<i64>,
-    #[prost(int32, optional, tag = "4")]
-    pub index_begin: ::core::option::Option<i32>,
-    #[prost(int32, optional, tag = "5")]
-    pub index_end: ::core::option::Option<i32>,
-    #[prost(string, optional, tag = "6")]
+    #[prost(string, optional, tag = "4")]
     pub name: ::core::option::Option<::prost::alloc::string::String>,
-    #[prost(string, optional, tag = "7")]
+    #[prost(string, optional, tag = "5")]
     pub description: ::core::option::Option<::prost::alloc::string::String>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]

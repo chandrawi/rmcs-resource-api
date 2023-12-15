@@ -7,32 +7,28 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class DataSchema(_message.Message):
-    __slots__ = ("device_id", "model_id", "timestamp", "index", "data_bytes", "data_type")
+    __slots__ = ("device_id", "model_id", "timestamp", "data_bytes", "data_type")
     DEVICE_ID_FIELD_NUMBER: _ClassVar[int]
     MODEL_ID_FIELD_NUMBER: _ClassVar[int]
     TIMESTAMP_FIELD_NUMBER: _ClassVar[int]
-    INDEX_FIELD_NUMBER: _ClassVar[int]
     DATA_BYTES_FIELD_NUMBER: _ClassVar[int]
     DATA_TYPE_FIELD_NUMBER: _ClassVar[int]
     device_id: bytes
     model_id: bytes
     timestamp: int
-    index: int
     data_bytes: bytes
     data_type: _containers.RepeatedScalarFieldContainer[_common_pb2.DataType]
-    def __init__(self, device_id: _Optional[bytes] = ..., model_id: _Optional[bytes] = ..., timestamp: _Optional[int] = ..., index: _Optional[int] = ..., data_bytes: _Optional[bytes] = ..., data_type: _Optional[_Iterable[_Union[_common_pb2.DataType, str]]] = ...) -> None: ...
+    def __init__(self, device_id: _Optional[bytes] = ..., model_id: _Optional[bytes] = ..., timestamp: _Optional[int] = ..., data_bytes: _Optional[bytes] = ..., data_type: _Optional[_Iterable[_Union[_common_pb2.DataType, str]]] = ...) -> None: ...
 
 class DataId(_message.Message):
-    __slots__ = ("device_id", "model_id", "timestamp", "index")
+    __slots__ = ("device_id", "model_id", "timestamp")
     DEVICE_ID_FIELD_NUMBER: _ClassVar[int]
     MODEL_ID_FIELD_NUMBER: _ClassVar[int]
     TIMESTAMP_FIELD_NUMBER: _ClassVar[int]
-    INDEX_FIELD_NUMBER: _ClassVar[int]
     device_id: bytes
     model_id: bytes
     timestamp: int
-    index: int
-    def __init__(self, device_id: _Optional[bytes] = ..., model_id: _Optional[bytes] = ..., timestamp: _Optional[int] = ..., index: _Optional[int] = ...) -> None: ...
+    def __init__(self, device_id: _Optional[bytes] = ..., model_id: _Optional[bytes] = ..., timestamp: _Optional[int] = ...) -> None: ...
 
 class DataTime(_message.Message):
     __slots__ = ("device_id", "model_id", "timestamp")
@@ -75,42 +71,36 @@ class ModelId(_message.Message):
     def __init__(self, id: _Optional[bytes] = ...) -> None: ...
 
 class DataModel(_message.Message):
-    __slots__ = ("id", "indexing", "types")
+    __slots__ = ("id", "types")
     ID_FIELD_NUMBER: _ClassVar[int]
-    INDEXING_FIELD_NUMBER: _ClassVar[int]
     TYPES_FIELD_NUMBER: _ClassVar[int]
     id: bytes
-    indexing: _common_pb2.DataIndexing
     types: _containers.RepeatedScalarFieldContainer[_common_pb2.DataType]
-    def __init__(self, id: _Optional[bytes] = ..., indexing: _Optional[_Union[_common_pb2.DataIndexing, str]] = ..., types: _Optional[_Iterable[_Union[_common_pb2.DataType, str]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[bytes] = ..., types: _Optional[_Iterable[_Union[_common_pb2.DataType, str]]] = ...) -> None: ...
 
 class DataSchemaModel(_message.Message):
-    __slots__ = ("model", "device_id", "timestamp", "index", "data_bytes", "data_type")
+    __slots__ = ("model", "device_id", "timestamp", "data_bytes", "data_type")
     MODEL_FIELD_NUMBER: _ClassVar[int]
     DEVICE_ID_FIELD_NUMBER: _ClassVar[int]
     TIMESTAMP_FIELD_NUMBER: _ClassVar[int]
-    INDEX_FIELD_NUMBER: _ClassVar[int]
     DATA_BYTES_FIELD_NUMBER: _ClassVar[int]
     DATA_TYPE_FIELD_NUMBER: _ClassVar[int]
     model: DataModel
     device_id: bytes
     timestamp: int
-    index: int
     data_bytes: bytes
     data_type: _containers.RepeatedScalarFieldContainer[_common_pb2.DataType]
-    def __init__(self, model: _Optional[_Union[DataModel, _Mapping]] = ..., device_id: _Optional[bytes] = ..., timestamp: _Optional[int] = ..., index: _Optional[int] = ..., data_bytes: _Optional[bytes] = ..., data_type: _Optional[_Iterable[_Union[_common_pb2.DataType, str]]] = ...) -> None: ...
+    def __init__(self, model: _Optional[_Union[DataModel, _Mapping]] = ..., device_id: _Optional[bytes] = ..., timestamp: _Optional[int] = ..., data_bytes: _Optional[bytes] = ..., data_type: _Optional[_Iterable[_Union[_common_pb2.DataType, str]]] = ...) -> None: ...
 
 class DataIdModel(_message.Message):
-    __slots__ = ("model", "device_id", "timestamp", "index")
+    __slots__ = ("model", "device_id", "timestamp")
     MODEL_FIELD_NUMBER: _ClassVar[int]
     DEVICE_ID_FIELD_NUMBER: _ClassVar[int]
     TIMESTAMP_FIELD_NUMBER: _ClassVar[int]
-    INDEX_FIELD_NUMBER: _ClassVar[int]
     model: DataModel
     device_id: bytes
     timestamp: int
-    index: int
-    def __init__(self, model: _Optional[_Union[DataModel, _Mapping]] = ..., device_id: _Optional[bytes] = ..., timestamp: _Optional[int] = ..., index: _Optional[int] = ...) -> None: ...
+    def __init__(self, model: _Optional[_Union[DataModel, _Mapping]] = ..., device_id: _Optional[bytes] = ..., timestamp: _Optional[int] = ...) -> None: ...
 
 class DataTimeModel(_message.Message):
     __slots__ = ("model", "device_id", "timestamp")

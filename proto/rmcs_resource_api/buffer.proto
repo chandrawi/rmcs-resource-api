@@ -38,10 +38,9 @@ message BufferSchema {
     bytes device_id = 2;
     bytes model_id = 3;
     int64 timestamp = 4;
-    int32 index = 5;
-    bytes data_bytes = 6;
-    repeated common.DataType data_type = 7;
-    BufferStatus status = 8;
+    bytes data_bytes = 5;
+    repeated common.DataType data_type = 6;
+    BufferStatus status = 7;
 }
 
 message BufferId {

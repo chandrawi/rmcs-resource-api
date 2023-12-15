@@ -35,12 +35,11 @@ service ModelService {
 
 message ModelSchema {
     bytes id = 1;
-    common.DataIndexing indexing = 2;
-    string category = 3;
-    string name = 4;
-    string description = 5;
-    repeated common.DataType types = 6;
-    repeated ConfigSchemaVec configs = 7;
+    string category = 2;
+    string name = 3;
+    string description = 4;
+    repeated common.DataType types = 5;
+    repeated ConfigSchemaVec configs = 6;
 }
 
 message ConfigSchemaVec {
@@ -66,10 +65,9 @@ message ModelNameCategory {
 
 message ModelUpdate {
     bytes id = 1;
-    optional common.DataIndexing indexing = 2;
-    optional string category = 3;
-    optional string name = 4;
-    optional string description = 5;
+    optional string category = 2;
+    optional string name = 3;
+    optional string description = 4;
 }
 
 message ModelTypes {

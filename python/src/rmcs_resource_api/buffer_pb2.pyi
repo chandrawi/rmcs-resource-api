@@ -29,12 +29,11 @@ BACKUP: BufferStatus
 DELETE: BufferStatus
 
 class BufferSchema(_message.Message):
-    __slots__ = ("id", "device_id", "model_id", "timestamp", "index", "data_bytes", "data_type", "status")
+    __slots__ = ("id", "device_id", "model_id", "timestamp", "data_bytes", "data_type", "status")
     ID_FIELD_NUMBER: _ClassVar[int]
     DEVICE_ID_FIELD_NUMBER: _ClassVar[int]
     MODEL_ID_FIELD_NUMBER: _ClassVar[int]
     TIMESTAMP_FIELD_NUMBER: _ClassVar[int]
-    INDEX_FIELD_NUMBER: _ClassVar[int]
     DATA_BYTES_FIELD_NUMBER: _ClassVar[int]
     DATA_TYPE_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
@@ -42,11 +41,10 @@ class BufferSchema(_message.Message):
     device_id: bytes
     model_id: bytes
     timestamp: int
-    index: int
     data_bytes: bytes
     data_type: _containers.RepeatedScalarFieldContainer[_common_pb2.DataType]
     status: BufferStatus
-    def __init__(self, id: _Optional[int] = ..., device_id: _Optional[bytes] = ..., model_id: _Optional[bytes] = ..., timestamp: _Optional[int] = ..., index: _Optional[int] = ..., data_bytes: _Optional[bytes] = ..., data_type: _Optional[_Iterable[_Union[_common_pb2.DataType, str]]] = ..., status: _Optional[_Union[BufferStatus, str]] = ...) -> None: ...
+    def __init__(self, id: _Optional[int] = ..., device_id: _Optional[bytes] = ..., model_id: _Optional[bytes] = ..., timestamp: _Optional[int] = ..., data_bytes: _Optional[bytes] = ..., data_type: _Optional[_Iterable[_Union[_common_pb2.DataType, str]]] = ..., status: _Optional[_Union[BufferStatus, str]] = ...) -> None: ...
 
 class BufferId(_message.Message):
     __slots__ = ("id",)

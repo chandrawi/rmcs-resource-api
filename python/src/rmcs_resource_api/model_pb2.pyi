@@ -7,22 +7,20 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class ModelSchema(_message.Message):
-    __slots__ = ("id", "indexing", "category", "name", "description", "types", "configs")
+    __slots__ = ("id", "category", "name", "description", "types", "configs")
     ID_FIELD_NUMBER: _ClassVar[int]
-    INDEXING_FIELD_NUMBER: _ClassVar[int]
     CATEGORY_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     TYPES_FIELD_NUMBER: _ClassVar[int]
     CONFIGS_FIELD_NUMBER: _ClassVar[int]
     id: bytes
-    indexing: _common_pb2.DataIndexing
     category: str
     name: str
     description: str
     types: _containers.RepeatedScalarFieldContainer[_common_pb2.DataType]
     configs: _containers.RepeatedCompositeFieldContainer[ConfigSchemaVec]
-    def __init__(self, id: _Optional[bytes] = ..., indexing: _Optional[_Union[_common_pb2.DataIndexing, str]] = ..., category: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., types: _Optional[_Iterable[_Union[_common_pb2.DataType, str]]] = ..., configs: _Optional[_Iterable[_Union[ConfigSchemaVec, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[bytes] = ..., category: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., types: _Optional[_Iterable[_Union[_common_pb2.DataType, str]]] = ..., configs: _Optional[_Iterable[_Union[ConfigSchemaVec, _Mapping]]] = ...) -> None: ...
 
 class ConfigSchemaVec(_message.Message):
     __slots__ = ("configs",)
@@ -57,18 +55,16 @@ class ModelNameCategory(_message.Message):
     def __init__(self, name: _Optional[str] = ..., category: _Optional[str] = ...) -> None: ...
 
 class ModelUpdate(_message.Message):
-    __slots__ = ("id", "indexing", "category", "name", "description")
+    __slots__ = ("id", "category", "name", "description")
     ID_FIELD_NUMBER: _ClassVar[int]
-    INDEXING_FIELD_NUMBER: _ClassVar[int]
     CATEGORY_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     id: bytes
-    indexing: _common_pb2.DataIndexing
     category: str
     name: str
     description: str
-    def __init__(self, id: _Optional[bytes] = ..., indexing: _Optional[_Union[_common_pb2.DataIndexing, str]] = ..., category: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ...) -> None: ...
+    def __init__(self, id: _Optional[bytes] = ..., category: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ...) -> None: ...
 
 class ModelTypes(_message.Message):
     __slots__ = ("id", "types")

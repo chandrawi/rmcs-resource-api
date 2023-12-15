@@ -43,16 +43,14 @@ message DataSchema {
     bytes device_id = 1;
     bytes model_id = 2;
     int64 timestamp = 3;
-    int32 index = 4;
-    bytes data_bytes = 5;
-    repeated common.DataType data_type = 6;
+    bytes data_bytes = 4;
+    repeated common.DataType data_type = 5;
 }
 
 message DataId {
     bytes device_id = 1;
     bytes model_id = 2;
     int64 timestamp = 3;
-    int32 index = 4;
 }
 
 message DataTime {
@@ -81,24 +79,21 @@ message ModelId {
 
 message DataModel {
     bytes id = 1;
-    common.DataIndexing indexing = 2;
-    repeated common.DataType types = 3;
+    repeated common.DataType types = 2;
 }
 
 message DataSchemaModel {
     DataModel model = 1;
     bytes device_id = 2;
     int64 timestamp = 3;
-    int32 index = 4;
-    bytes data_bytes = 5;
-    repeated common.DataType data_type = 6;
+    bytes data_bytes = 4;
+    repeated common.DataType data_type = 5;
 }
 
 message DataIdModel {
     DataModel model = 1;
     bytes device_id = 2;
     int64 timestamp = 3;
-    int32 index = 4;
 }
 
 message DataTimeModel {

@@ -6,14 +6,12 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class SliceSchema(_message.Message):
-    __slots__ = ("id", "device_id", "model_id", "timestamp_begin", "timestamp_end", "index_begin", "index_end", "name", "description")
+    __slots__ = ("id", "device_id", "model_id", "timestamp_begin", "timestamp_end", "name", "description")
     ID_FIELD_NUMBER: _ClassVar[int]
     DEVICE_ID_FIELD_NUMBER: _ClassVar[int]
     MODEL_ID_FIELD_NUMBER: _ClassVar[int]
     TIMESTAMP_BEGIN_FIELD_NUMBER: _ClassVar[int]
     TIMESTAMP_END_FIELD_NUMBER: _ClassVar[int]
-    INDEX_BEGIN_FIELD_NUMBER: _ClassVar[int]
-    INDEX_END_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     id: int
@@ -21,11 +19,9 @@ class SliceSchema(_message.Message):
     model_id: bytes
     timestamp_begin: int
     timestamp_end: int
-    index_begin: int
-    index_end: int
     name: str
     description: str
-    def __init__(self, id: _Optional[int] = ..., device_id: _Optional[bytes] = ..., model_id: _Optional[bytes] = ..., timestamp_begin: _Optional[int] = ..., timestamp_end: _Optional[int] = ..., index_begin: _Optional[int] = ..., index_end: _Optional[int] = ..., name: _Optional[str] = ..., description: _Optional[str] = ...) -> None: ...
+    def __init__(self, id: _Optional[int] = ..., device_id: _Optional[bytes] = ..., model_id: _Optional[bytes] = ..., timestamp_begin: _Optional[int] = ..., timestamp_end: _Optional[int] = ..., name: _Optional[str] = ..., description: _Optional[str] = ...) -> None: ...
 
 class SliceId(_message.Message):
     __slots__ = ("id",)
@@ -60,22 +56,18 @@ class SliceDeviceModel(_message.Message):
     def __init__(self, device_id: _Optional[bytes] = ..., model_id: _Optional[bytes] = ...) -> None: ...
 
 class SliceUpdate(_message.Message):
-    __slots__ = ("id", "timestamp_begin", "timestamp_end", "index_begin", "index_end", "name", "description")
+    __slots__ = ("id", "timestamp_begin", "timestamp_end", "name", "description")
     ID_FIELD_NUMBER: _ClassVar[int]
     TIMESTAMP_BEGIN_FIELD_NUMBER: _ClassVar[int]
     TIMESTAMP_END_FIELD_NUMBER: _ClassVar[int]
-    INDEX_BEGIN_FIELD_NUMBER: _ClassVar[int]
-    INDEX_END_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     id: int
     timestamp_begin: int
     timestamp_end: int
-    index_begin: int
-    index_end: int
     name: str
     description: str
-    def __init__(self, id: _Optional[int] = ..., timestamp_begin: _Optional[int] = ..., timestamp_end: _Optional[int] = ..., index_begin: _Optional[int] = ..., index_end: _Optional[int] = ..., name: _Optional[str] = ..., description: _Optional[str] = ...) -> None: ...
+    def __init__(self, id: _Optional[int] = ..., timestamp_begin: _Optional[int] = ..., timestamp_end: _Optional[int] = ..., name: _Optional[str] = ..., description: _Optional[str] = ...) -> None: ...
 
 class SliceReadResponse(_message.Message):
     __slots__ = ("result",)

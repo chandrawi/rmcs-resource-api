@@ -7,11 +7,9 @@ pub struct DataSchema {
     pub model_id: ::prost::alloc::vec::Vec<u8>,
     #[prost(int64, tag = "3")]
     pub timestamp: i64,
-    #[prost(int32, tag = "4")]
-    pub index: i32,
-    #[prost(bytes = "vec", tag = "5")]
+    #[prost(bytes = "vec", tag = "4")]
     pub data_bytes: ::prost::alloc::vec::Vec<u8>,
-    #[prost(enumeration = "super::common::DataType", repeated, tag = "6")]
+    #[prost(enumeration = "super::common::DataType", repeated, tag = "5")]
     pub data_type: ::prost::alloc::vec::Vec<i32>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
@@ -23,8 +21,6 @@ pub struct DataId {
     pub model_id: ::prost::alloc::vec::Vec<u8>,
     #[prost(int64, tag = "3")]
     pub timestamp: i64,
-    #[prost(int32, tag = "4")]
-    pub index: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -71,9 +67,7 @@ pub struct ModelId {
 pub struct DataModel {
     #[prost(bytes = "vec", tag = "1")]
     pub id: ::prost::alloc::vec::Vec<u8>,
-    #[prost(enumeration = "super::common::DataIndexing", tag = "2")]
-    pub indexing: i32,
-    #[prost(enumeration = "super::common::DataType", repeated, tag = "3")]
+    #[prost(enumeration = "super::common::DataType", repeated, tag = "2")]
     pub types: ::prost::alloc::vec::Vec<i32>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
@@ -85,11 +79,9 @@ pub struct DataSchemaModel {
     pub device_id: ::prost::alloc::vec::Vec<u8>,
     #[prost(int64, tag = "3")]
     pub timestamp: i64,
-    #[prost(int32, tag = "4")]
-    pub index: i32,
-    #[prost(bytes = "vec", tag = "5")]
+    #[prost(bytes = "vec", tag = "4")]
     pub data_bytes: ::prost::alloc::vec::Vec<u8>,
-    #[prost(enumeration = "super::common::DataType", repeated, tag = "6")]
+    #[prost(enumeration = "super::common::DataType", repeated, tag = "5")]
     pub data_type: ::prost::alloc::vec::Vec<i32>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
@@ -101,8 +93,6 @@ pub struct DataIdModel {
     pub device_id: ::prost::alloc::vec::Vec<u8>,
     #[prost(int64, tag = "3")]
     pub timestamp: i64,
-    #[prost(int32, tag = "4")]
-    pub index: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]

@@ -3,17 +3,15 @@
 pub struct ModelSchema {
     #[prost(bytes = "vec", tag = "1")]
     pub id: ::prost::alloc::vec::Vec<u8>,
-    #[prost(enumeration = "super::common::DataIndexing", tag = "2")]
-    pub indexing: i32,
-    #[prost(string, tag = "3")]
+    #[prost(string, tag = "2")]
     pub category: ::prost::alloc::string::String,
-    #[prost(string, tag = "4")]
+    #[prost(string, tag = "3")]
     pub name: ::prost::alloc::string::String,
-    #[prost(string, tag = "5")]
+    #[prost(string, tag = "4")]
     pub description: ::prost::alloc::string::String,
-    #[prost(enumeration = "super::common::DataType", repeated, tag = "6")]
+    #[prost(enumeration = "super::common::DataType", repeated, tag = "5")]
     pub types: ::prost::alloc::vec::Vec<i32>,
-    #[prost(message, repeated, tag = "7")]
+    #[prost(message, repeated, tag = "6")]
     pub configs: ::prost::alloc::vec::Vec<ConfigSchemaVec>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
@@ -53,13 +51,11 @@ pub struct ModelNameCategory {
 pub struct ModelUpdate {
     #[prost(bytes = "vec", tag = "1")]
     pub id: ::prost::alloc::vec::Vec<u8>,
-    #[prost(enumeration = "super::common::DataIndexing", optional, tag = "2")]
-    pub indexing: ::core::option::Option<i32>,
-    #[prost(string, optional, tag = "3")]
+    #[prost(string, optional, tag = "2")]
     pub category: ::core::option::Option<::prost::alloc::string::String>,
-    #[prost(string, optional, tag = "4")]
+    #[prost(string, optional, tag = "3")]
     pub name: ::core::option::Option<::prost::alloc::string::String>,
-    #[prost(string, optional, tag = "5")]
+    #[prost(string, optional, tag = "4")]
     pub description: ::core::option::Option<::prost::alloc::string::String>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]

@@ -9,13 +9,11 @@ pub struct BufferSchema {
     pub model_id: ::prost::alloc::vec::Vec<u8>,
     #[prost(int64, tag = "4")]
     pub timestamp: i64,
-    #[prost(int32, tag = "5")]
-    pub index: i32,
-    #[prost(bytes = "vec", tag = "6")]
+    #[prost(bytes = "vec", tag = "5")]
     pub data_bytes: ::prost::alloc::vec::Vec<u8>,
-    #[prost(enumeration = "super::common::DataType", repeated, tag = "7")]
+    #[prost(enumeration = "super::common::DataType", repeated, tag = "6")]
     pub data_type: ::prost::alloc::vec::Vec<i32>,
-    #[prost(enumeration = "BufferStatus", tag = "8")]
+    #[prost(enumeration = "BufferStatus", tag = "7")]
     pub status: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
