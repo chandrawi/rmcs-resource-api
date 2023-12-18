@@ -52,6 +52,18 @@ class BufferId(_message.Message):
     id: int
     def __init__(self, id: _Optional[int] = ...) -> None: ...
 
+class BufferTime(_message.Message):
+    __slots__ = ("device_id", "model_id", "timestamp", "status")
+    DEVICE_ID_FIELD_NUMBER: _ClassVar[int]
+    MODEL_ID_FIELD_NUMBER: _ClassVar[int]
+    TIMESTAMP_FIELD_NUMBER: _ClassVar[int]
+    STATUS_FIELD_NUMBER: _ClassVar[int]
+    device_id: bytes
+    model_id: bytes
+    timestamp: int
+    status: BufferStatus
+    def __init__(self, device_id: _Optional[bytes] = ..., model_id: _Optional[bytes] = ..., timestamp: _Optional[int] = ..., status: _Optional[_Union[BufferStatus, str]] = ...) -> None: ...
+
 class BufferSelector(_message.Message):
     __slots__ = ("device_id", "model_id", "status")
     DEVICE_ID_FIELD_NUMBER: _ClassVar[int]

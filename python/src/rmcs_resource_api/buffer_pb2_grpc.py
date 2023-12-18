@@ -19,6 +19,11 @@ class BufferServiceStub(object):
                 request_serializer=rmcs__resource__api_dot_buffer__pb2.BufferId.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferReadResponse.FromString,
                 )
+        self.ReadBufferByTime = channel.unary_unary(
+                '/buffer.BufferService/ReadBufferByTime',
+                request_serializer=rmcs__resource__api_dot_buffer__pb2.BufferTime.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferReadResponse.FromString,
+                )
         self.ReadBufferFirst = channel.unary_unary(
                 '/buffer.BufferService/ReadBufferFirst',
                 request_serializer=rmcs__resource__api_dot_buffer__pb2.BufferSelector.SerializeToString,
@@ -60,6 +65,12 @@ class BufferServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def ReadBuffer(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ReadBufferByTime(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -113,6 +124,11 @@ def add_BufferServiceServicer_to_server(servicer, server):
             'ReadBuffer': grpc.unary_unary_rpc_method_handler(
                     servicer.ReadBuffer,
                     request_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferId.FromString,
+                    response_serializer=rmcs__resource__api_dot_buffer__pb2.BufferReadResponse.SerializeToString,
+            ),
+            'ReadBufferByTime': grpc.unary_unary_rpc_method_handler(
+                    servicer.ReadBufferByTime,
+                    request_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferTime.FromString,
                     response_serializer=rmcs__resource__api_dot_buffer__pb2.BufferReadResponse.SerializeToString,
             ),
             'ReadBufferFirst': grpc.unary_unary_rpc_method_handler(
@@ -173,6 +189,23 @@ class BufferService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/buffer.BufferService/ReadBuffer',
             rmcs__resource__api_dot_buffer__pb2.BufferId.SerializeToString,
+            rmcs__resource__api_dot_buffer__pb2.BufferReadResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ReadBufferByTime(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/buffer.BufferService/ReadBufferByTime',
+            rmcs__resource__api_dot_buffer__pb2.BufferTime.SerializeToString,
             rmcs__resource__api_dot_buffer__pb2.BufferReadResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

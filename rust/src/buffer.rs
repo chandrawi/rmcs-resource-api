@@ -24,6 +24,18 @@ pub struct BufferId {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+pub struct BufferTime {
+    #[prost(bytes = "vec", tag = "1")]
+    pub device_id: ::prost::alloc::vec::Vec<u8>,
+    #[prost(bytes = "vec", tag = "2")]
+    pub model_id: ::prost::alloc::vec::Vec<u8>,
+    #[prost(int64, tag = "3")]
+    pub timestamp: i64,
+    #[prost(enumeration = "BufferStatus", optional, tag = "4")]
+    pub status: ::core::option::Option<i32>,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
 pub struct BufferSelector {
     #[prost(bytes = "vec", optional, tag = "1")]
     pub device_id: ::core::option::Option<::prost::alloc::vec::Vec<u8>>,
@@ -234,6 +246,31 @@ pub mod buffer_service_client {
                 .insert(GrpcMethod::new("buffer.BufferService", "ReadBuffer"));
             self.inner.unary(req, path, codec).await
         }
+        pub async fn read_buffer_by_time(
+            &mut self,
+            request: impl tonic::IntoRequest<super::BufferTime>,
+        ) -> std::result::Result<
+            tonic::Response<super::BufferReadResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/buffer.BufferService/ReadBufferByTime",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("buffer.BufferService", "ReadBufferByTime"));
+            self.inner.unary(req, path, codec).await
+        }
         pub async fn read_buffer_first(
             &mut self,
             request: impl tonic::IntoRequest<super::BufferSelector>,
@@ -425,6 +462,13 @@ pub mod buffer_service_server {
             tonic::Response<super::BufferReadResponse>,
             tonic::Status,
         >;
+        async fn read_buffer_by_time(
+            &self,
+            request: tonic::Request<super::BufferTime>,
+        ) -> std::result::Result<
+            tonic::Response<super::BufferReadResponse>,
+            tonic::Status,
+        >;
         async fn read_buffer_first(
             &self,
             request: tonic::Request<super::BufferSelector>,
@@ -581,6 +625,50 @@ pub mod buffer_service_server {
                     let fut = async move {
                         let inner = inner.0;
                         let method = ReadBufferSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/buffer.BufferService/ReadBufferByTime" => {
+                    #[allow(non_camel_case_types)]
+                    struct ReadBufferByTimeSvc<T: BufferService>(pub Arc<T>);
+                    impl<T: BufferService> tonic::server::UnaryService<super::BufferTime>
+                    for ReadBufferByTimeSvc<T> {
+                        type Response = super::BufferReadResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::BufferTime>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                (*inner).read_buffer_by_time(request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let inner = inner.0;
+                        let method = ReadBufferByTimeSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(

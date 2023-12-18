@@ -6,6 +6,8 @@ import "rmcs_resource_api/common.proto";
 service BufferService {
     rpc ReadBuffer(BufferId) returns (BufferReadResponse);
 
+    rpc ReadBufferByTime(BufferTime) returns (BufferReadResponse);
+
     rpc ReadBufferFirst(BufferSelector) returns (BufferReadResponse);
 
     rpc ReadBufferLast(BufferSelector) returns (BufferReadResponse);
@@ -45,6 +47,13 @@ message BufferSchema {
 
 message BufferId {
     int32 id = 1;
+}
+
+message BufferTime {
+    bytes device_id = 1;
+    bytes model_id = 2;
+    int64 timestamp = 3;
+    optional BufferStatus status = 4;
 }
 
 message BufferSelector {
