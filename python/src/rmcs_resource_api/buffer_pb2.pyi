@@ -11,22 +11,46 @@ class BufferStatus(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = ()
     DEFAULT: _ClassVar[BufferStatus]
     ERROR: _ClassVar[BufferStatus]
-    CONVERT: _ClassVar[BufferStatus]
-    ANALYZE_GATEWAY: _ClassVar[BufferStatus]
-    ANALYZE_SERVER: _ClassVar[BufferStatus]
+    DELETE: _ClassVar[BufferStatus]
+    HOLD: _ClassVar[BufferStatus]
+    SEND_UPLINK: _ClassVar[BufferStatus]
+    SEND_DOWNLINK: _ClassVar[BufferStatus]
+    TRANSFER_LOCAL: _ClassVar[BufferStatus]
     TRANSFER_GATEWAY: _ClassVar[BufferStatus]
     TRANSFER_SERVER: _ClassVar[BufferStatus]
     BACKUP: _ClassVar[BufferStatus]
-    DELETE: _ClassVar[BufferStatus]
+    RESTORE: _ClassVar[BufferStatus]
+    ANALYSIS_1: _ClassVar[BufferStatus]
+    ANALYSIS_2: _ClassVar[BufferStatus]
+    ANALYSIS_3: _ClassVar[BufferStatus]
+    ANALYSIS_4: _ClassVar[BufferStatus]
+    ANALYSIS_5: _ClassVar[BufferStatus]
+    ANALYSIS_6: _ClassVar[BufferStatus]
+    ANALYSIS_7: _ClassVar[BufferStatus]
+    ANALYSIS_8: _ClassVar[BufferStatus]
+    ANALYSIS_9: _ClassVar[BufferStatus]
+    ANALYSIS_10: _ClassVar[BufferStatus]
 DEFAULT: BufferStatus
 ERROR: BufferStatus
-CONVERT: BufferStatus
-ANALYZE_GATEWAY: BufferStatus
-ANALYZE_SERVER: BufferStatus
+DELETE: BufferStatus
+HOLD: BufferStatus
+SEND_UPLINK: BufferStatus
+SEND_DOWNLINK: BufferStatus
+TRANSFER_LOCAL: BufferStatus
 TRANSFER_GATEWAY: BufferStatus
 TRANSFER_SERVER: BufferStatus
 BACKUP: BufferStatus
-DELETE: BufferStatus
+RESTORE: BufferStatus
+ANALYSIS_1: BufferStatus
+ANALYSIS_2: BufferStatus
+ANALYSIS_3: BufferStatus
+ANALYSIS_4: BufferStatus
+ANALYSIS_5: BufferStatus
+ANALYSIS_6: BufferStatus
+ANALYSIS_7: BufferStatus
+ANALYSIS_8: BufferStatus
+ANALYSIS_9: BufferStatus
+ANALYSIS_10: BufferStatus
 
 class BufferSchema(_message.Message):
     __slots__ = ("id", "device_id", "model_id", "timestamp", "data_bytes", "data_type", "status")

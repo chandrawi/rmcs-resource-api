@@ -22,21 +22,18 @@ service LogService {
 enum LogStatus {
     DEFAULT = 0;
     SUCCESS = 1;
-    ERROR_RAW = 2;
-    ERROR_MISSING = 3;
-    ERROR_CONVERSION = 4;
-    ERROR_ANALYZE = 5;
-    ERROR_NETWORK = 6;
-    FAIL_READ = 7;
-    FAIL_CREATE = 8;
-    FAIL_UPDATE = 9;
-    FAIL_DELETE = 10;
-    INVALID_TOKEN = 11;
-    INVALID_REQUEST = 12;
-    NOT_FOUND = 13;
-    METHOD_NOT_ALLOWED = 14;
-    UNKNOWN_ERROR = 15;
-    UNKNOWN_STATUS = 16;
+    ERROR_SEND = 2;
+    ERROR_TRANSFER = 3;
+    ERROR_ANALYSIS = 4;
+    ERROR_NETWORK = 5;
+    FAIL_READ = 6;
+    FAIL_CREATE = 7;
+    FAIL_UPDATE = 8;
+    FAIL_DELETE = 9;
+    INVALID_TOKEN = 10;
+    INVALID_REQUEST = 11;
+    UNKNOWN_ERROR = 12;
+    UNKNOWN_STATUS = 13;
 }
 
 message LogSchema {

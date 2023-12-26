@@ -11,10 +11,9 @@ class LogStatus(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = ()
     DEFAULT: _ClassVar[LogStatus]
     SUCCESS: _ClassVar[LogStatus]
-    ERROR_RAW: _ClassVar[LogStatus]
-    ERROR_MISSING: _ClassVar[LogStatus]
-    ERROR_CONVERSION: _ClassVar[LogStatus]
-    ERROR_ANALYZE: _ClassVar[LogStatus]
+    ERROR_SEND: _ClassVar[LogStatus]
+    ERROR_TRANSFER: _ClassVar[LogStatus]
+    ERROR_ANALYSIS: _ClassVar[LogStatus]
     ERROR_NETWORK: _ClassVar[LogStatus]
     FAIL_READ: _ClassVar[LogStatus]
     FAIL_CREATE: _ClassVar[LogStatus]
@@ -22,16 +21,13 @@ class LogStatus(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     FAIL_DELETE: _ClassVar[LogStatus]
     INVALID_TOKEN: _ClassVar[LogStatus]
     INVALID_REQUEST: _ClassVar[LogStatus]
-    NOT_FOUND: _ClassVar[LogStatus]
-    METHOD_NOT_ALLOWED: _ClassVar[LogStatus]
     UNKNOWN_ERROR: _ClassVar[LogStatus]
     UNKNOWN_STATUS: _ClassVar[LogStatus]
 DEFAULT: LogStatus
 SUCCESS: LogStatus
-ERROR_RAW: LogStatus
-ERROR_MISSING: LogStatus
-ERROR_CONVERSION: LogStatus
-ERROR_ANALYZE: LogStatus
+ERROR_SEND: LogStatus
+ERROR_TRANSFER: LogStatus
+ERROR_ANALYSIS: LogStatus
 ERROR_NETWORK: LogStatus
 FAIL_READ: LogStatus
 FAIL_CREATE: LogStatus
@@ -39,8 +35,6 @@ FAIL_UPDATE: LogStatus
 FAIL_DELETE: LogStatus
 INVALID_TOKEN: LogStatus
 INVALID_REQUEST: LogStatus
-NOT_FOUND: LogStatus
-METHOD_NOT_ALLOWED: LogStatus
 UNKNOWN_ERROR: LogStatus
 UNKNOWN_STATUS: LogStatus
 

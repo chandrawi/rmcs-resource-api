@@ -26,13 +26,25 @@ service BufferService {
 enum BufferStatus {
     DEFAULT = 0;
     ERROR = 1;
-    CONVERT = 2;
-    ANALYZE_GATEWAY = 3;
-    ANALYZE_SERVER = 4;
-    TRANSFER_GATEWAY = 5;
-    TRANSFER_SERVER = 6;
-    BACKUP = 7;
-    DELETE = 8;
+    DELETE = 2;
+    HOLD = 3;
+    SEND_UPLINK = 4;
+    SEND_DOWNLINK = 5;
+    TRANSFER_LOCAL = 6;
+    TRANSFER_GATEWAY = 7;
+    TRANSFER_SERVER = 8;
+    BACKUP = 9;
+    RESTORE = 10;
+    ANALYSIS_1 = 11;
+    ANALYSIS_2 = 12;
+    ANALYSIS_3 = 13;
+    ANALYSIS_4 = 14;
+    ANALYSIS_5 = 15;
+    ANALYSIS_6 = 16;
+    ANALYSIS_7 = 17;
+    ANALYSIS_8 = 18;
+    ANALYSIS_9 = 19;
+    ANALYSIS_10 = 20;
 }
 
 message BufferSchema {
