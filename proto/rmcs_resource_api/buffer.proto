@@ -23,30 +23,6 @@ service BufferService {
     rpc DeleteBuffer(BufferId) returns (BufferChangeResponse);
 }
 
-enum BufferStatus {
-    DEFAULT = 0;
-    ERROR = 1;
-    DELETE = 2;
-    HOLD = 3;
-    SEND_UPLINK = 4;
-    SEND_DOWNLINK = 5;
-    TRANSFER_LOCAL = 6;
-    TRANSFER_GATEWAY = 7;
-    TRANSFER_SERVER = 8;
-    BACKUP = 9;
-    RESTORE = 10;
-    ANALYSIS_1 = 11;
-    ANALYSIS_2 = 12;
-    ANALYSIS_3 = 13;
-    ANALYSIS_4 = 14;
-    ANALYSIS_5 = 15;
-    ANALYSIS_6 = 16;
-    ANALYSIS_7 = 17;
-    ANALYSIS_8 = 18;
-    ANALYSIS_9 = 19;
-    ANALYSIS_10 = 20;
-}
-
 message BufferSchema {
     int32 id = 1;
     bytes device_id = 2;
@@ -54,7 +30,7 @@ message BufferSchema {
     int64 timestamp = 4;
     bytes data_bytes = 5;
     repeated common.DataType data_type = 6;
-    BufferStatus status = 7;
+    int32 status = 7;
 }
 
 message BufferId {
@@ -65,19 +41,19 @@ message BufferTime {
     bytes device_id = 1;
     bytes model_id = 2;
     int64 timestamp = 3;
-    optional BufferStatus status = 4;
+    optional int32 status = 4;
 }
 
 message BufferSelector {
     optional bytes device_id = 1;
     optional bytes model_id = 2;
-    optional BufferStatus status = 3;
+    optional int32 status = 3;
 }
 
 message BuffersSelector {
     optional bytes device_id = 1;
     optional bytes model_id = 2;
-    optional BufferStatus status = 3;
+    optional int32 status = 3;
     uint32 number = 4;
 }
 
@@ -85,7 +61,7 @@ message BufferUpdate {
     int32 id = 1;
     optional bytes data_bytes = 6;
     repeated common.DataType data_type = 7;
-    optional BufferStatus status = 8;
+    optional int32 status = 8;
 }
 
 message BufferReadResponse {

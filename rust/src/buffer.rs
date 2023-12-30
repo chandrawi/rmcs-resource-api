@@ -13,7 +13,7 @@ pub struct BufferSchema {
     pub data_bytes: ::prost::alloc::vec::Vec<u8>,
     #[prost(enumeration = "super::common::DataType", repeated, tag = "6")]
     pub data_type: ::prost::alloc::vec::Vec<i32>,
-    #[prost(enumeration = "BufferStatus", tag = "7")]
+    #[prost(int32, tag = "7")]
     pub status: i32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
@@ -31,7 +31,7 @@ pub struct BufferTime {
     pub model_id: ::prost::alloc::vec::Vec<u8>,
     #[prost(int64, tag = "3")]
     pub timestamp: i64,
-    #[prost(enumeration = "BufferStatus", optional, tag = "4")]
+    #[prost(int32, optional, tag = "4")]
     pub status: ::core::option::Option<i32>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
@@ -41,7 +41,7 @@ pub struct BufferSelector {
     pub device_id: ::core::option::Option<::prost::alloc::vec::Vec<u8>>,
     #[prost(bytes = "vec", optional, tag = "2")]
     pub model_id: ::core::option::Option<::prost::alloc::vec::Vec<u8>>,
-    #[prost(enumeration = "BufferStatus", optional, tag = "3")]
+    #[prost(int32, optional, tag = "3")]
     pub status: ::core::option::Option<i32>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
@@ -51,7 +51,7 @@ pub struct BuffersSelector {
     pub device_id: ::core::option::Option<::prost::alloc::vec::Vec<u8>>,
     #[prost(bytes = "vec", optional, tag = "2")]
     pub model_id: ::core::option::Option<::prost::alloc::vec::Vec<u8>>,
-    #[prost(enumeration = "BufferStatus", optional, tag = "3")]
+    #[prost(int32, optional, tag = "3")]
     pub status: ::core::option::Option<i32>,
     #[prost(uint32, tag = "4")]
     pub number: u32,
@@ -65,7 +65,7 @@ pub struct BufferUpdate {
     pub data_bytes: ::core::option::Option<::prost::alloc::vec::Vec<u8>>,
     #[prost(enumeration = "super::common::DataType", repeated, tag = "7")]
     pub data_type: ::prost::alloc::vec::Vec<i32>,
-    #[prost(enumeration = "BufferStatus", optional, tag = "8")]
+    #[prost(int32, optional, tag = "8")]
     pub status: ::core::option::Option<i32>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
@@ -89,89 +89,6 @@ pub struct BufferCreateResponse {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct BufferChangeResponse {}
-#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
-#[repr(i32)]
-pub enum BufferStatus {
-    Default = 0,
-    Error = 1,
-    Delete = 2,
-    Hold = 3,
-    SendUplink = 4,
-    SendDownlink = 5,
-    TransferLocal = 6,
-    TransferGateway = 7,
-    TransferServer = 8,
-    Backup = 9,
-    Restore = 10,
-    Analysis1 = 11,
-    Analysis2 = 12,
-    Analysis3 = 13,
-    Analysis4 = 14,
-    Analysis5 = 15,
-    Analysis6 = 16,
-    Analysis7 = 17,
-    Analysis8 = 18,
-    Analysis9 = 19,
-    Analysis10 = 20,
-}
-impl BufferStatus {
-    /// String value of the enum field names used in the ProtoBuf definition.
-    ///
-    /// The values are not transformed in any way and thus are considered stable
-    /// (if the ProtoBuf definition does not change) and safe for programmatic use.
-    pub fn as_str_name(&self) -> &'static str {
-        match self {
-            BufferStatus::Default => "DEFAULT",
-            BufferStatus::Error => "ERROR",
-            BufferStatus::Delete => "DELETE",
-            BufferStatus::Hold => "HOLD",
-            BufferStatus::SendUplink => "SEND_UPLINK",
-            BufferStatus::SendDownlink => "SEND_DOWNLINK",
-            BufferStatus::TransferLocal => "TRANSFER_LOCAL",
-            BufferStatus::TransferGateway => "TRANSFER_GATEWAY",
-            BufferStatus::TransferServer => "TRANSFER_SERVER",
-            BufferStatus::Backup => "BACKUP",
-            BufferStatus::Restore => "RESTORE",
-            BufferStatus::Analysis1 => "ANALYSIS_1",
-            BufferStatus::Analysis2 => "ANALYSIS_2",
-            BufferStatus::Analysis3 => "ANALYSIS_3",
-            BufferStatus::Analysis4 => "ANALYSIS_4",
-            BufferStatus::Analysis5 => "ANALYSIS_5",
-            BufferStatus::Analysis6 => "ANALYSIS_6",
-            BufferStatus::Analysis7 => "ANALYSIS_7",
-            BufferStatus::Analysis8 => "ANALYSIS_8",
-            BufferStatus::Analysis9 => "ANALYSIS_9",
-            BufferStatus::Analysis10 => "ANALYSIS_10",
-        }
-    }
-    /// Creates an enum from field names used in the ProtoBuf definition.
-    pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
-        match value {
-            "DEFAULT" => Some(Self::Default),
-            "ERROR" => Some(Self::Error),
-            "DELETE" => Some(Self::Delete),
-            "HOLD" => Some(Self::Hold),
-            "SEND_UPLINK" => Some(Self::SendUplink),
-            "SEND_DOWNLINK" => Some(Self::SendDownlink),
-            "TRANSFER_LOCAL" => Some(Self::TransferLocal),
-            "TRANSFER_GATEWAY" => Some(Self::TransferGateway),
-            "TRANSFER_SERVER" => Some(Self::TransferServer),
-            "BACKUP" => Some(Self::Backup),
-            "RESTORE" => Some(Self::Restore),
-            "ANALYSIS_1" => Some(Self::Analysis1),
-            "ANALYSIS_2" => Some(Self::Analysis2),
-            "ANALYSIS_3" => Some(Self::Analysis3),
-            "ANALYSIS_4" => Some(Self::Analysis4),
-            "ANALYSIS_5" => Some(Self::Analysis5),
-            "ANALYSIS_6" => Some(Self::Analysis6),
-            "ANALYSIS_7" => Some(Self::Analysis7),
-            "ANALYSIS_8" => Some(Self::Analysis8),
-            "ANALYSIS_9" => Some(Self::Analysis9),
-            "ANALYSIS_10" => Some(Self::Analysis10),
-            _ => None,
-        }
-    }
-}
 /// Generated client implementations.
 pub mod buffer_service_client {
     #![allow(unused_variables, dead_code, missing_docs, clippy::let_unit_value)]

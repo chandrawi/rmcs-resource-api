@@ -19,27 +19,10 @@ service LogService {
     rpc DeleteLog(LogId) returns (LogChangeResponse);
 }
 
-enum LogStatus {
-    DEFAULT = 0;
-    SUCCESS = 1;
-    ERROR_SEND = 2;
-    ERROR_TRANSFER = 3;
-    ERROR_ANALYSIS = 4;
-    ERROR_NETWORK = 5;
-    FAIL_READ = 6;
-    FAIL_CREATE = 7;
-    FAIL_UPDATE = 8;
-    FAIL_DELETE = 9;
-    INVALID_TOKEN = 10;
-    INVALID_REQUEST = 11;
-    UNKNOWN_ERROR = 12;
-    UNKNOWN_STATUS = 13;
-}
-
 message LogSchema {
     int64 timestamp = 1;
     bytes device_id = 2;
-    LogStatus status = 3;
+    int32 status = 3;
     bytes log_bytes = 4;
     common.ConfigType log_type = 5;
 }
@@ -52,20 +35,20 @@ message LogId {
 message LogTime {
     int64 timestamp = 1;
     optional bytes device_id = 2;
-    optional LogStatus status = 3;
+    optional int32 status = 3;
 }
 
 message LogRange {
     int64 begin = 1;
     int64 end = 2;
     optional bytes device_id = 3;
-    optional LogStatus status = 4;
+    optional int32 status = 4;
 }
 
 message LogUpdate {
     int64 timestamp = 1;
     bytes device_id = 2;
-    optional LogStatus status = 3;
+    optional int32 status = 3;
     optional bytes log_bytes = 4;
     optional common.ConfigType log_type = 5;
 }

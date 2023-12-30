@@ -5,7 +5,7 @@ pub struct LogSchema {
     pub timestamp: i64,
     #[prost(bytes = "vec", tag = "2")]
     pub device_id: ::prost::alloc::vec::Vec<u8>,
-    #[prost(enumeration = "LogStatus", tag = "3")]
+    #[prost(int32, tag = "3")]
     pub status: i32,
     #[prost(bytes = "vec", tag = "4")]
     pub log_bytes: ::prost::alloc::vec::Vec<u8>,
@@ -27,7 +27,7 @@ pub struct LogTime {
     pub timestamp: i64,
     #[prost(bytes = "vec", optional, tag = "2")]
     pub device_id: ::core::option::Option<::prost::alloc::vec::Vec<u8>>,
-    #[prost(enumeration = "LogStatus", optional, tag = "3")]
+    #[prost(int32, optional, tag = "3")]
     pub status: ::core::option::Option<i32>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
@@ -39,7 +39,7 @@ pub struct LogRange {
     pub end: i64,
     #[prost(bytes = "vec", optional, tag = "3")]
     pub device_id: ::core::option::Option<::prost::alloc::vec::Vec<u8>>,
-    #[prost(enumeration = "LogStatus", optional, tag = "4")]
+    #[prost(int32, optional, tag = "4")]
     pub status: ::core::option::Option<i32>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
@@ -49,7 +49,7 @@ pub struct LogUpdate {
     pub timestamp: i64,
     #[prost(bytes = "vec", tag = "2")]
     pub device_id: ::prost::alloc::vec::Vec<u8>,
-    #[prost(enumeration = "LogStatus", optional, tag = "3")]
+    #[prost(int32, optional, tag = "3")]
     pub status: ::core::option::Option<i32>,
     #[prost(bytes = "vec", optional, tag = "4")]
     pub log_bytes: ::core::option::Option<::prost::alloc::vec::Vec<u8>>,
@@ -71,68 +71,6 @@ pub struct LogListResponse {
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct LogChangeResponse {}
-#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
-#[repr(i32)]
-pub enum LogStatus {
-    Default = 0,
-    Success = 1,
-    ErrorSend = 2,
-    ErrorTransfer = 3,
-    ErrorAnalysis = 4,
-    ErrorNetwork = 5,
-    FailRead = 6,
-    FailCreate = 7,
-    FailUpdate = 8,
-    FailDelete = 9,
-    InvalidToken = 10,
-    InvalidRequest = 11,
-    UnknownError = 12,
-    UnknownStatus = 13,
-}
-impl LogStatus {
-    /// String value of the enum field names used in the ProtoBuf definition.
-    ///
-    /// The values are not transformed in any way and thus are considered stable
-    /// (if the ProtoBuf definition does not change) and safe for programmatic use.
-    pub fn as_str_name(&self) -> &'static str {
-        match self {
-            LogStatus::Default => "DEFAULT",
-            LogStatus::Success => "SUCCESS",
-            LogStatus::ErrorSend => "ERROR_SEND",
-            LogStatus::ErrorTransfer => "ERROR_TRANSFER",
-            LogStatus::ErrorAnalysis => "ERROR_ANALYSIS",
-            LogStatus::ErrorNetwork => "ERROR_NETWORK",
-            LogStatus::FailRead => "FAIL_READ",
-            LogStatus::FailCreate => "FAIL_CREATE",
-            LogStatus::FailUpdate => "FAIL_UPDATE",
-            LogStatus::FailDelete => "FAIL_DELETE",
-            LogStatus::InvalidToken => "INVALID_TOKEN",
-            LogStatus::InvalidRequest => "INVALID_REQUEST",
-            LogStatus::UnknownError => "UNKNOWN_ERROR",
-            LogStatus::UnknownStatus => "UNKNOWN_STATUS",
-        }
-    }
-    /// Creates an enum from field names used in the ProtoBuf definition.
-    pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
-        match value {
-            "DEFAULT" => Some(Self::Default),
-            "SUCCESS" => Some(Self::Success),
-            "ERROR_SEND" => Some(Self::ErrorSend),
-            "ERROR_TRANSFER" => Some(Self::ErrorTransfer),
-            "ERROR_ANALYSIS" => Some(Self::ErrorAnalysis),
-            "ERROR_NETWORK" => Some(Self::ErrorNetwork),
-            "FAIL_READ" => Some(Self::FailRead),
-            "FAIL_CREATE" => Some(Self::FailCreate),
-            "FAIL_UPDATE" => Some(Self::FailUpdate),
-            "FAIL_DELETE" => Some(Self::FailDelete),
-            "INVALID_TOKEN" => Some(Self::InvalidToken),
-            "INVALID_REQUEST" => Some(Self::InvalidRequest),
-            "UNKNOWN_ERROR" => Some(Self::UnknownError),
-            "UNKNOWN_STATUS" => Some(Self::UnknownStatus),
-            _ => None,
-        }
-    }
-}
 /// Generated client implementations.
 pub mod log_service_client {
     #![allow(unused_variables, dead_code, missing_docs, clippy::let_unit_value)]
