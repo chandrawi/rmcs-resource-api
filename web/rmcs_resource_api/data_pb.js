@@ -546,10 +546,10 @@ proto.data.DataSchema.serializeBinaryToWriter = function(message, writer) {
 
 /**
  * optional bytes device_id = 1;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.data.DataSchema.prototype.getDeviceId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -588,10 +588,10 @@ proto.data.DataSchema.prototype.setDeviceId = function(value) {
 
 /**
  * optional bytes model_id = 2;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.data.DataSchema.prototype.getModelId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -648,10 +648,10 @@ proto.data.DataSchema.prototype.setTimestamp = function(value) {
 
 /**
  * optional bytes data_bytes = 4;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.data.DataSchema.prototype.getDataBytes = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
@@ -863,10 +863,10 @@ proto.data.DataId.serializeBinaryToWriter = function(message, writer) {
 
 /**
  * optional bytes device_id = 1;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.data.DataId.prototype.getDeviceId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -905,10 +905,10 @@ proto.data.DataId.prototype.setDeviceId = function(value) {
 
 /**
  * optional bytes model_id = 2;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.data.DataId.prototype.getModelId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -1101,10 +1101,10 @@ proto.data.DataTime.serializeBinaryToWriter = function(message, writer) {
 
 /**
  * optional bytes device_id = 1;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.data.DataTime.prototype.getDeviceId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -1143,10 +1143,10 @@ proto.data.DataTime.prototype.setDeviceId = function(value) {
 
 /**
  * optional bytes model_id = 2;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.data.DataTime.prototype.getModelId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -1351,10 +1351,10 @@ proto.data.DataRange.serializeBinaryToWriter = function(message, writer) {
 
 /**
  * optional bytes device_id = 1;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.data.DataRange.prototype.getDeviceId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -1393,10 +1393,10 @@ proto.data.DataRange.prototype.setDeviceId = function(value) {
 
 /**
  * optional bytes model_id = 2;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.data.DataRange.prototype.getModelId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -1619,10 +1619,10 @@ proto.data.DataNumber.serializeBinaryToWriter = function(message, writer) {
 
 /**
  * optional bytes device_id = 1;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.data.DataNumber.prototype.getDeviceId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -1661,10 +1661,10 @@ proto.data.DataNumber.prototype.setDeviceId = function(value) {
 
 /**
  * optional bytes model_id = 2;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.data.DataNumber.prototype.getModelId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -1851,10 +1851,10 @@ proto.data.ModelId.serializeBinaryToWriter = function(message, writer) {
 
 /**
  * optional bytes id = 1;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.data.ModelId.prototype.getId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -2026,10 +2026,10 @@ proto.data.DataModel.serializeBinaryToWriter = function(message, writer) {
 
 /**
  * optional bytes id = 1;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.data.DataModel.prototype.getId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -2313,10 +2313,10 @@ proto.data.DataSchemaModel.prototype.hasModel = function() {
 
 /**
  * optional bytes device_id = 2;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.data.DataSchemaModel.prototype.getDeviceId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -2373,10 +2373,10 @@ proto.data.DataSchemaModel.prototype.setTimestamp = function(value) {
 
 /**
  * optional bytes data_bytes = 4;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.data.DataSchemaModel.prototype.getDataBytes = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
@@ -2627,10 +2627,10 @@ proto.data.DataIdModel.prototype.hasModel = function() {
 
 /**
  * optional bytes device_id = 2;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.data.DataIdModel.prototype.getDeviceId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -2862,10 +2862,10 @@ proto.data.DataTimeModel.prototype.hasModel = function() {
 
 /**
  * optional bytes device_id = 2;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.data.DataTimeModel.prototype.getDeviceId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -3109,10 +3109,10 @@ proto.data.DataRangeModel.prototype.hasModel = function() {
 
 /**
  * optional bytes device_id = 2;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.data.DataRangeModel.prototype.getDeviceId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -3374,10 +3374,10 @@ proto.data.DataNumberModel.prototype.hasModel = function() {
 
 /**
  * optional bytes device_id = 2;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.data.DataNumberModel.prototype.getDeviceId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 

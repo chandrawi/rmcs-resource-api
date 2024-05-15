@@ -456,10 +456,10 @@ proto.buffer.BufferSchema.prototype.setId = function(value) {
 
 /**
  * optional bytes device_id = 2;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.buffer.BufferSchema.prototype.getDeviceId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -498,10 +498,10 @@ proto.buffer.BufferSchema.prototype.setDeviceId = function(value) {
 
 /**
  * optional bytes model_id = 3;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.buffer.BufferSchema.prototype.getModelId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
@@ -558,10 +558,10 @@ proto.buffer.BufferSchema.prototype.setTimestamp = function(value) {
 
 /**
  * optional bytes data_bytes = 5;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.buffer.BufferSchema.prototype.getDataBytes = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
@@ -933,10 +933,10 @@ proto.buffer.BufferTime.serializeBinaryToWriter = function(message, writer) {
 
 /**
  * optional bytes device_id = 1;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.buffer.BufferTime.prototype.getDeviceId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -975,10 +975,10 @@ proto.buffer.BufferTime.prototype.setDeviceId = function(value) {
 
 /**
  * optional bytes model_id = 2;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.buffer.BufferTime.prototype.getModelId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -1207,10 +1207,10 @@ proto.buffer.BufferSelector.serializeBinaryToWriter = function(message, writer) 
 
 /**
  * optional bytes device_id = 1;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.buffer.BufferSelector.prototype.getDeviceId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -1267,10 +1267,10 @@ proto.buffer.BufferSelector.prototype.hasDeviceId = function() {
 
 /**
  * optional bytes model_id = 2;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.buffer.BufferSelector.prototype.getModelId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -1511,10 +1511,10 @@ proto.buffer.BuffersSelector.serializeBinaryToWriter = function(message, writer)
 
 /**
  * optional bytes device_id = 1;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.buffer.BuffersSelector.prototype.getDeviceId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -1571,10 +1571,10 @@ proto.buffer.BuffersSelector.prototype.hasDeviceId = function() {
 
 /**
  * optional bytes model_id = 2;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.buffer.BuffersSelector.prototype.getModelId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -1860,10 +1860,10 @@ proto.buffer.BufferUpdate.prototype.setId = function(value) {
 
 /**
  * optional bytes data_bytes = 6;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.buffer.BufferUpdate.prototype.getDataBytes = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
 

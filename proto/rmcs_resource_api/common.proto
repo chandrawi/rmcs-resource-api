@@ -1,12 +1,6 @@
 syntax = "proto3";
 package common;
 
-enum DataIndexing {
-    TIMESTAMP = 0;
-    INDEX = 1;
-    TIMESTAMP_INDEX = 2;
-}
-
 enum DataType {
     NULLD = 0;
     I8 = 1;

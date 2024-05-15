@@ -1,34 +1,5 @@
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
 #[repr(i32)]
-pub enum DataIndexing {
-    Timestamp = 0,
-    Index = 1,
-    TimestampIndex = 2,
-}
-impl DataIndexing {
-    /// String value of the enum field names used in the ProtoBuf definition.
-    ///
-    /// The values are not transformed in any way and thus are considered stable
-    /// (if the ProtoBuf definition does not change) and safe for programmatic use.
-    pub fn as_str_name(&self) -> &'static str {
-        match self {
-            DataIndexing::Timestamp => "TIMESTAMP",
-            DataIndexing::Index => "INDEX",
-            DataIndexing::TimestampIndex => "TIMESTAMP_INDEX",
-        }
-    }
-    /// Creates an enum from field names used in the ProtoBuf definition.
-    pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
-        match value {
-            "TIMESTAMP" => Some(Self::Timestamp),
-            "INDEX" => Some(Self::Index),
-            "TIMESTAMP_INDEX" => Some(Self::TimestampIndex),
-            _ => None,
-        }
-    }
-}
-#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
-#[repr(i32)]
 pub enum DataType {
     Nulld = 0,
     I8 = 1,

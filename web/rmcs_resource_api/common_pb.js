@@ -22,17 +22,7 @@ var global =
     Function('return this')();
 
 goog.exportSymbol('proto.common.ConfigType', null, global);
-goog.exportSymbol('proto.common.DataIndexing', null, global);
 goog.exportSymbol('proto.common.DataType', null, global);
-/**
- * @enum {number}
- */
-proto.common.DataIndexing = {
-  TIMESTAMP: 0,
-  INDEX: 1,
-  TIMESTAMP_INDEX: 2
-};
-
 /**
  * @enum {number}
  */

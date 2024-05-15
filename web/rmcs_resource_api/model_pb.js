@@ -627,10 +627,10 @@ proto.model.ModelSchema.serializeBinaryToWriter = function(message, writer) {
 
 /**
  * optional bytes id = 1;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.model.ModelSchema.prototype.getId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -1070,10 +1070,10 @@ proto.model.ModelId.serializeBinaryToWriter = function(message, writer) {
 
 /**
  * optional bytes id = 1;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.model.ModelId.prototype.getId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -1680,10 +1680,10 @@ proto.model.ModelUpdate.serializeBinaryToWriter = function(message, writer) {
 
 /**
  * optional bytes id = 1;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.model.ModelUpdate.prototype.getId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -1963,10 +1963,10 @@ proto.model.ModelTypes.serializeBinaryToWriter = function(message, writer) {
 
 /**
  * optional bytes id = 1;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.model.ModelTypes.prototype.getId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -2244,10 +2244,10 @@ proto.model.ConfigSchema.prototype.setId = function(value) {
 
 /**
  * optional bytes model_id = 2;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.model.ConfigSchema.prototype.getModelId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -2322,10 +2322,10 @@ proto.model.ConfigSchema.prototype.setName = function(value) {
 
 /**
  * optional bytes config_bytes = 5;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.model.ConfigSchema.prototype.getConfigBytes = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
@@ -2744,10 +2744,10 @@ proto.model.ConfigUpdate.prototype.hasName = function() {
 
 /**
  * optional bytes config_bytes = 3;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.model.ConfigUpdate.prototype.getConfigBytes = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
@@ -3299,10 +3299,10 @@ proto.model.ModelCreateResponse.serializeBinaryToWriter = function(message, writ
 
 /**
  * optional bytes id = 1;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.model.ModelCreateResponse.prototype.getId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 

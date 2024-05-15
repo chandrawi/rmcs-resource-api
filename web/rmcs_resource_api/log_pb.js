@@ -379,10 +379,10 @@ proto.log.LogSchema.prototype.setTimestamp = function(value) {
 
 /**
  * optional bytes device_id = 2;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.log.LogSchema.prototype.getDeviceId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -439,10 +439,10 @@ proto.log.LogSchema.prototype.setStatus = function(value) {
 
 /**
  * optional bytes log_bytes = 4;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.log.LogSchema.prototype.getLogBytes = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
@@ -641,10 +641,10 @@ proto.log.LogId.prototype.setTimestamp = function(value) {
 
 /**
  * optional bytes device_id = 2;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.log.LogId.prototype.getDeviceId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -837,10 +837,10 @@ proto.log.LogTime.prototype.setTimestamp = function(value) {
 
 /**
  * optional bytes device_id = 2;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.log.LogTime.prototype.getDeviceId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -1117,10 +1117,10 @@ proto.log.LogRange.prototype.setEnd = function(value) {
 
 /**
  * optional bytes device_id = 3;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.log.LogRange.prototype.getDeviceId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
@@ -1391,10 +1391,10 @@ proto.log.LogUpdate.prototype.setTimestamp = function(value) {
 
 /**
  * optional bytes device_id = 2;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.log.LogUpdate.prototype.getDeviceId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -1469,10 +1469,10 @@ proto.log.LogUpdate.prototype.hasStatus = function() {
 
 /**
  * optional bytes log_bytes = 4;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.log.LogUpdate.prototype.getLogBytes = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 

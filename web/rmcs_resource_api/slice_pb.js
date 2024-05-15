@@ -467,10 +467,10 @@ proto.slice.SliceSchema.prototype.setId = function(value) {
 
 /**
  * optional bytes device_id = 2;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.slice.SliceSchema.prototype.getDeviceId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -509,10 +509,10 @@ proto.slice.SliceSchema.prototype.setDeviceId = function(value) {
 
 /**
  * optional bytes model_id = 3;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.slice.SliceSchema.prototype.getModelId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
@@ -995,10 +995,10 @@ proto.slice.SliceDevice.serializeBinaryToWriter = function(message, writer) {
 
 /**
  * optional bytes device_id = 1;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.slice.SliceDevice.prototype.getDeviceId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -1149,10 +1149,10 @@ proto.slice.SliceModel.serializeBinaryToWriter = function(message, writer) {
 
 /**
  * optional bytes model_id = 1;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.slice.SliceModel.prototype.getModelId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -1315,10 +1315,10 @@ proto.slice.SliceDeviceModel.serializeBinaryToWriter = function(message, writer)
 
 /**
  * optional bytes device_id = 1;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.slice.SliceDeviceModel.prototype.getDeviceId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
@@ -1357,10 +1357,10 @@ proto.slice.SliceDeviceModel.prototype.setDeviceId = function(value) {
 
 /**
  * optional bytes model_id = 2;
- * @return {string}
+ * @return {!(string|Uint8Array)}
  */
 proto.slice.SliceDeviceModel.prototype.getModelId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
