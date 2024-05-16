@@ -1689,7 +1689,7 @@ proto.buffer.BuffersSelector.prototype.setNumber = function(value) {
  * @private {!Array<number>}
  * @const
  */
-proto.buffer.BufferUpdate.repeatedFields_ = [7];
+proto.buffer.BufferUpdate.repeatedFields_ = [3];
 
 
 
@@ -1724,8 +1724,8 @@ proto.buffer.BufferUpdate.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, 0),
     dataBytes: msg.getDataBytes_asB64(),
-    dataTypeList: (f = jspb.Message.getRepeatedField(msg, 7)) == null ? undefined : f,
-    status: jspb.Message.getFieldWithDefault(msg, 8, 0)
+    dataTypeList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
+    status: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {
@@ -1766,17 +1766,17 @@ proto.buffer.BufferUpdate.deserializeBinaryFromReader = function(msg, reader) {
       var value = /** @type {number} */ (reader.readInt32());
       msg.setId(value);
       break;
-    case 6:
+    case 2:
       var value = /** @type {!Uint8Array} */ (reader.readBytes());
       msg.setDataBytes(value);
       break;
-    case 7:
+    case 3:
       var values = /** @type {!Array<!proto.common.DataType>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
       for (var i = 0; i < values.length; i++) {
         msg.addDataType(values[i]);
       }
       break;
-    case 8:
+    case 4:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setStatus(value);
       break;
@@ -1816,24 +1816,24 @@ proto.buffer.BufferUpdate.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = /** @type {!(string|Uint8Array)} */ (jspb.Message.getField(message, 6));
+  f = /** @type {!(string|Uint8Array)} */ (jspb.Message.getField(message, 2));
   if (f != null) {
     writer.writeBytes(
-      6,
+      2,
       f
     );
   }
   f = message.getDataTypeList();
   if (f.length > 0) {
     writer.writePackedEnum(
-      7,
+      3,
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 8));
+  f = /** @type {number} */ (jspb.Message.getField(message, 4));
   if (f != null) {
     writer.writeInt32(
-      8,
+      4,
       f
     );
   }
@@ -1859,16 +1859,16 @@ proto.buffer.BufferUpdate.prototype.setId = function(value) {
 
 
 /**
- * optional bytes data_bytes = 6;
+ * optional bytes data_bytes = 2;
  * @return {!(string|Uint8Array)}
  */
 proto.buffer.BufferUpdate.prototype.getDataBytes = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * optional bytes data_bytes = 6;
+ * optional bytes data_bytes = 2;
  * This is a type-conversion wrapper around `getDataBytes()`
  * @return {string}
  */
@@ -1879,7 +1879,7 @@ proto.buffer.BufferUpdate.prototype.getDataBytes_asB64 = function() {
 
 
 /**
- * optional bytes data_bytes = 6;
+ * optional bytes data_bytes = 2;
  * Note that Uint8Array is not supported on all browsers.
  * @see http://caniuse.com/Uint8Array
  * This is a type-conversion wrapper around `getDataBytes()`
@@ -1896,7 +1896,7 @@ proto.buffer.BufferUpdate.prototype.getDataBytes_asU8 = function() {
  * @return {!proto.buffer.BufferUpdate} returns this
  */
 proto.buffer.BufferUpdate.prototype.setDataBytes = function(value) {
-  return jspb.Message.setField(this, 6, value);
+  return jspb.Message.setField(this, 2, value);
 };
 
 
@@ -1905,7 +1905,7 @@ proto.buffer.BufferUpdate.prototype.setDataBytes = function(value) {
  * @return {!proto.buffer.BufferUpdate} returns this
  */
 proto.buffer.BufferUpdate.prototype.clearDataBytes = function() {
-  return jspb.Message.setField(this, 6, undefined);
+  return jspb.Message.setField(this, 2, undefined);
 };
 
 
@@ -1914,16 +1914,16 @@ proto.buffer.BufferUpdate.prototype.clearDataBytes = function() {
  * @return {boolean}
  */
 proto.buffer.BufferUpdate.prototype.hasDataBytes = function() {
-  return jspb.Message.getField(this, 6) != null;
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * repeated common.DataType data_type = 7;
+ * repeated common.DataType data_type = 3;
  * @return {!Array<!proto.common.DataType>}
  */
 proto.buffer.BufferUpdate.prototype.getDataTypeList = function() {
-  return /** @type {!Array<!proto.common.DataType>} */ (jspb.Message.getRepeatedField(this, 7));
+  return /** @type {!Array<!proto.common.DataType>} */ (jspb.Message.getRepeatedField(this, 3));
 };
 
 
@@ -1932,7 +1932,7 @@ proto.buffer.BufferUpdate.prototype.getDataTypeList = function() {
  * @return {!proto.buffer.BufferUpdate} returns this
  */
 proto.buffer.BufferUpdate.prototype.setDataTypeList = function(value) {
-  return jspb.Message.setField(this, 7, value || []);
+  return jspb.Message.setField(this, 3, value || []);
 };
 
 
@@ -1942,7 +1942,7 @@ proto.buffer.BufferUpdate.prototype.setDataTypeList = function(value) {
  * @return {!proto.buffer.BufferUpdate} returns this
  */
 proto.buffer.BufferUpdate.prototype.addDataType = function(value, opt_index) {
-  return jspb.Message.addToRepeatedField(this, 7, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
 };
 
 
@@ -1956,11 +1956,11 @@ proto.buffer.BufferUpdate.prototype.clearDataTypeList = function() {
 
 
 /**
- * optional int32 status = 8;
+ * optional int32 status = 4;
  * @return {number}
  */
 proto.buffer.BufferUpdate.prototype.getStatus = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
 
@@ -1969,7 +1969,7 @@ proto.buffer.BufferUpdate.prototype.getStatus = function() {
  * @return {!proto.buffer.BufferUpdate} returns this
  */
 proto.buffer.BufferUpdate.prototype.setStatus = function(value) {
-  return jspb.Message.setField(this, 8, value);
+  return jspb.Message.setField(this, 4, value);
 };
 
 
@@ -1978,7 +1978,7 @@ proto.buffer.BufferUpdate.prototype.setStatus = function(value) {
  * @return {!proto.buffer.BufferUpdate} returns this
  */
 proto.buffer.BufferUpdate.prototype.clearStatus = function() {
-  return jspb.Message.setField(this, 8, undefined);
+  return jspb.Message.setField(this, 4, undefined);
 };
 
 
@@ -1987,7 +1987,7 @@ proto.buffer.BufferUpdate.prototype.clearStatus = function() {
  * @return {boolean}
  */
 proto.buffer.BufferUpdate.prototype.hasStatus = function() {
-  return jspb.Message.getField(this, 8) != null;
+  return jspb.Message.getField(this, 4) != null;
 };
 
 

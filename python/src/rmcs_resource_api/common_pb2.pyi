@@ -4,12 +4,6 @@ from typing import ClassVar as _ClassVar
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
-class DataIndexing(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-    __slots__ = ()
-    TIMESTAMP: _ClassVar[DataIndexing]
-    INDEX: _ClassVar[DataIndexing]
-    TIMESTAMP_INDEX: _ClassVar[DataIndexing]
-
 class DataType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     __slots__ = ()
     NULLD: _ClassVar[DataType]
@@ -32,9 +26,6 @@ class ConfigType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     INT: _ClassVar[ConfigType]
     FLOAT: _ClassVar[ConfigType]
     STR: _ClassVar[ConfigType]
-TIMESTAMP: DataIndexing
-INDEX: DataIndexing
-TIMESTAMP_INDEX: DataIndexing
 NULLD: DataType
 I8: DataType
 I16: DataType

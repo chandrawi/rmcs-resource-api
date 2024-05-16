@@ -59,9 +59,9 @@ message BuffersSelector {
 
 message BufferUpdate {
     int32 id = 1;
-    optional bytes data_bytes = 6;
-    repeated common.DataType data_type = 7;
-    optional int32 status = 8;
+    optional bytes data_bytes = 2;
+    repeated common.DataType data_type = 3;
+    optional int32 status = 4;
 }
 
 message BufferReadResponse {

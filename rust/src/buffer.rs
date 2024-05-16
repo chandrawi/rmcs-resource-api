@@ -61,11 +61,11 @@ pub struct BuffersSelector {
 pub struct BufferUpdate {
     #[prost(int32, tag = "1")]
     pub id: i32,
-    #[prost(bytes = "vec", optional, tag = "6")]
+    #[prost(bytes = "vec", optional, tag = "2")]
     pub data_bytes: ::core::option::Option<::prost::alloc::vec::Vec<u8>>,
-    #[prost(enumeration = "super::common::DataType", repeated, tag = "7")]
+    #[prost(enumeration = "super::common::DataType", repeated, tag = "3")]
     pub data_type: ::prost::alloc::vec::Vec<i32>,
-    #[prost(int32, optional, tag = "8")]
+    #[prost(int32, optional, tag = "4")]
     pub status: ::core::option::Option<i32>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
