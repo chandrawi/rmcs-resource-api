@@ -16,27 +16,9 @@ service DataService {
 
     rpc ListDataByNumberAfter(DataNumber) returns (DataListResponse);
 
-    rpc GetDataModel(ModelId) returns (DataModelResponse);
-
-    rpc ReadDataWithModel(DataIdModel) returns (DataReadResponse);
-
-    rpc ListDataWithModelByTime(DataTimeModel) returns (DataListResponse);
-
-    rpc ListDataWithModelByLastTime(DataTimeModel) returns (DataListResponse);
-
-    rpc ListDataWithModelByRangeTime(DataRangeModel) returns (DataListResponse);
-
-    rpc ListDataWithModelByNumberBefore(DataNumberModel) returns (DataListResponse);
-
-    rpc ListDataWithModelByNumberAfter(DataNumberModel) returns (DataListResponse);
-
     rpc CreateData(DataSchema) returns (DataChangeResponse);
 
-    rpc CreateDataWithModel(DataSchemaModel) returns (DataChangeResponse);
-
     rpc DeleteData(DataId) returns (DataChangeResponse);
-
-    rpc DeleteDataWithModel(DataIdModel) returns (DataChangeResponse);
 }
 
 message DataSchema {
@@ -73,59 +55,12 @@ message DataNumber {
     uint32 number = 4;
 }
 
-message ModelId {
-    bytes id = 1;
-}
-
-message DataModel {
-    bytes id = 1;
-    repeated common.DataType types = 2;
-}
-
-message DataSchemaModel {
-    DataModel model = 1;
-    bytes device_id = 2;
-    int64 timestamp = 3;
-    bytes data_bytes = 4;
-    repeated common.DataType data_type = 5;
-}
-
-message DataIdModel {
-    DataModel model = 1;
-    bytes device_id = 2;
-    int64 timestamp = 3;
-}
-
-message DataTimeModel {
-    DataModel model = 1;
-    bytes device_id = 2;
-    int64 timestamp = 3;
-}
-
-message DataRangeModel {
-    DataModel model = 1;
-    bytes device_id = 2;
-    int64 begin = 3;
-    int64 end = 4;
-}
-
-message DataNumberModel {
-    DataModel model = 1;
-    bytes device_id = 2;
-    int64 timestamp = 3;
-    uint32 number = 4;
-}
-
 message DataReadResponse {
     DataSchema result = 1;
 }
 
 message DataListResponse {
     repeated DataSchema results = 1;
-}
-
-message DataModelResponse {
-    DataModel result = 1;
 }
 
 message DataChangeResponse {

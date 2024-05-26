@@ -12,15 +12,13 @@ service ModelService {
 
     rpc ListModelByNameCategory(ModelNameCategory) returns (ModelListResponse);
 
+    rpc ListModelByType(TypeId) returns (ModelListResponse);
+
     rpc CreateModel(ModelSchema) returns (ModelCreateResponse);
 
     rpc UpdateModel(ModelUpdate) returns (ModelChangeResponse);
 
     rpc DeleteModel(ModelId) returns (ModelChangeResponse);
-
-    rpc AddModelType(ModelTypes) returns (ModelChangeResponse);
-
-    rpc RemoveModelType(ModelId) returns (ModelChangeResponse);
 
     rpc ReadModelConfig(ConfigId) returns (ConfigReadResponse);
 
@@ -38,7 +36,7 @@ message ModelSchema {
     string category = 2;
     string name = 3;
     string description = 4;
-    repeated common.DataType types = 5;
+    repeated common.DataType data_type = 5;
     repeated ConfigSchemaVec configs = 6;
 }
 
@@ -63,16 +61,16 @@ message ModelNameCategory {
     string category = 2;
 }
 
+message TypeId {
+    bytes id = 1;
+}
+
 message ModelUpdate {
     bytes id = 1;
     optional string category = 2;
     optional string name = 3;
     optional string description = 4;
-}
-
-message ModelTypes {
-    bytes id = 1;
-    repeated common.DataType types = 6;
+    repeated common.DataType data_type = 5;
 }
 
 message ConfigSchema {
