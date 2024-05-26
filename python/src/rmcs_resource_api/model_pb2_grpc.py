@@ -59,6 +59,11 @@ class ModelServiceStub(object):
                 request_serializer=rmcs__resource__api_dot_model__pb2.ModelNameCategory.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_model__pb2.ModelListResponse.FromString,
                 _registered_method=True)
+        self.ListModelByType = channel.unary_unary(
+                '/model.ModelService/ListModelByType',
+                request_serializer=rmcs__resource__api_dot_model__pb2.TypeId.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_model__pb2.ModelListResponse.FromString,
+                _registered_method=True)
         self.CreateModel = channel.unary_unary(
                 '/model.ModelService/CreateModel',
                 request_serializer=rmcs__resource__api_dot_model__pb2.ModelSchema.SerializeToString,
@@ -71,16 +76,6 @@ class ModelServiceStub(object):
                 _registered_method=True)
         self.DeleteModel = channel.unary_unary(
                 '/model.ModelService/DeleteModel',
-                request_serializer=rmcs__resource__api_dot_model__pb2.ModelId.SerializeToString,
-                response_deserializer=rmcs__resource__api_dot_model__pb2.ModelChangeResponse.FromString,
-                _registered_method=True)
-        self.AddModelType = channel.unary_unary(
-                '/model.ModelService/AddModelType',
-                request_serializer=rmcs__resource__api_dot_model__pb2.ModelTypes.SerializeToString,
-                response_deserializer=rmcs__resource__api_dot_model__pb2.ModelChangeResponse.FromString,
-                _registered_method=True)
-        self.RemoveModelType = channel.unary_unary(
-                '/model.ModelService/RemoveModelType',
                 request_serializer=rmcs__resource__api_dot_model__pb2.ModelId.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_model__pb2.ModelChangeResponse.FromString,
                 _registered_method=True)
@@ -138,6 +133,12 @@ class ModelServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListModelByType(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def CreateModel(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -151,18 +152,6 @@ class ModelServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def DeleteModel(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def AddModelType(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def RemoveModelType(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -221,6 +210,11 @@ def add_ModelServiceServicer_to_server(servicer, server):
                     request_deserializer=rmcs__resource__api_dot_model__pb2.ModelNameCategory.FromString,
                     response_serializer=rmcs__resource__api_dot_model__pb2.ModelListResponse.SerializeToString,
             ),
+            'ListModelByType': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListModelByType,
+                    request_deserializer=rmcs__resource__api_dot_model__pb2.TypeId.FromString,
+                    response_serializer=rmcs__resource__api_dot_model__pb2.ModelListResponse.SerializeToString,
+            ),
             'CreateModel': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateModel,
                     request_deserializer=rmcs__resource__api_dot_model__pb2.ModelSchema.FromString,
@@ -233,16 +227,6 @@ def add_ModelServiceServicer_to_server(servicer, server):
             ),
             'DeleteModel': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteModel,
-                    request_deserializer=rmcs__resource__api_dot_model__pb2.ModelId.FromString,
-                    response_serializer=rmcs__resource__api_dot_model__pb2.ModelChangeResponse.SerializeToString,
-            ),
-            'AddModelType': grpc.unary_unary_rpc_method_handler(
-                    servicer.AddModelType,
-                    request_deserializer=rmcs__resource__api_dot_model__pb2.ModelTypes.FromString,
-                    response_serializer=rmcs__resource__api_dot_model__pb2.ModelChangeResponse.SerializeToString,
-            ),
-            'RemoveModelType': grpc.unary_unary_rpc_method_handler(
-                    servicer.RemoveModelType,
                     request_deserializer=rmcs__resource__api_dot_model__pb2.ModelId.FromString,
                     response_serializer=rmcs__resource__api_dot_model__pb2.ModelChangeResponse.SerializeToString,
             ),
@@ -390,6 +374,33 @@ class ModelService(object):
             _registered_method=True)
 
     @staticmethod
+    def ListModelByType(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/model.ModelService/ListModelByType',
+            rmcs__resource__api_dot_model__pb2.TypeId.SerializeToString,
+            rmcs__resource__api_dot_model__pb2.ModelListResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
     def CreateModel(request,
             target,
             options=(),
@@ -458,60 +469,6 @@ class ModelService(object):
             request,
             target,
             '/model.ModelService/DeleteModel',
-            rmcs__resource__api_dot_model__pb2.ModelId.SerializeToString,
-            rmcs__resource__api_dot_model__pb2.ModelChangeResponse.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
-    def AddModelType(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/model.ModelService/AddModelType',
-            rmcs__resource__api_dot_model__pb2.ModelTypes.SerializeToString,
-            rmcs__resource__api_dot_model__pb2.ModelChangeResponse.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
-    def RemoveModelType(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/model.ModelService/RemoveModelType',
             rmcs__resource__api_dot_model__pb2.ModelId.SerializeToString,
             rmcs__resource__api_dot_model__pb2.ModelChangeResponse.FromString,
             options,

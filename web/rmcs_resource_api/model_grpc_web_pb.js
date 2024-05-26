@@ -323,6 +323,67 @@ proto.model.ModelServicePromiseClient.prototype.listModelByNameCategory =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
+ *   !proto.model.TypeId,
+ *   !proto.model.ModelListResponse>}
+ */
+const methodDescriptor_ModelService_ListModelByType = new grpc.web.MethodDescriptor(
+  '/model.ModelService/ListModelByType',
+  grpc.web.MethodType.UNARY,
+  proto.model.TypeId,
+  proto.model.ModelListResponse,
+  /**
+   * @param {!proto.model.TypeId} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.model.ModelListResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.model.TypeId} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.model.ModelListResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.model.ModelListResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.model.ModelServiceClient.prototype.listModelByType =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/model.ModelService/ListModelByType',
+      request,
+      metadata || {},
+      methodDescriptor_ModelService_ListModelByType,
+      callback);
+};
+
+
+/**
+ * @param {!proto.model.TypeId} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.model.ModelListResponse>}
+ *     Promise that resolves to the response
+ */
+proto.model.ModelServicePromiseClient.prototype.listModelByType =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/model.ModelService/ListModelByType',
+      request,
+      metadata || {},
+      methodDescriptor_ModelService_ListModelByType);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
  *   !proto.model.ModelSchema,
  *   !proto.model.ModelCreateResponse>}
  */
@@ -500,128 +561,6 @@ proto.model.ModelServicePromiseClient.prototype.deleteModel =
       request,
       metadata || {},
       methodDescriptor_ModelService_DeleteModel);
-};
-
-
-/**
- * @const
- * @type {!grpc.web.MethodDescriptor<
- *   !proto.model.ModelTypes,
- *   !proto.model.ModelChangeResponse>}
- */
-const methodDescriptor_ModelService_AddModelType = new grpc.web.MethodDescriptor(
-  '/model.ModelService/AddModelType',
-  grpc.web.MethodType.UNARY,
-  proto.model.ModelTypes,
-  proto.model.ModelChangeResponse,
-  /**
-   * @param {!proto.model.ModelTypes} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.model.ModelChangeResponse.deserializeBinary
-);
-
-
-/**
- * @param {!proto.model.ModelTypes} request The
- *     request proto
- * @param {?Object<string, string>} metadata User defined
- *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.model.ModelChangeResponse)}
- *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.model.ModelChangeResponse>|undefined}
- *     The XHR Node Readable Stream
- */
-proto.model.ModelServiceClient.prototype.addModelType =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/model.ModelService/AddModelType',
-      request,
-      metadata || {},
-      methodDescriptor_ModelService_AddModelType,
-      callback);
-};
-
-
-/**
- * @param {!proto.model.ModelTypes} request The
- *     request proto
- * @param {?Object<string, string>=} metadata User defined
- *     call metadata
- * @return {!Promise<!proto.model.ModelChangeResponse>}
- *     Promise that resolves to the response
- */
-proto.model.ModelServicePromiseClient.prototype.addModelType =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/model.ModelService/AddModelType',
-      request,
-      metadata || {},
-      methodDescriptor_ModelService_AddModelType);
-};
-
-
-/**
- * @const
- * @type {!grpc.web.MethodDescriptor<
- *   !proto.model.ModelId,
- *   !proto.model.ModelChangeResponse>}
- */
-const methodDescriptor_ModelService_RemoveModelType = new grpc.web.MethodDescriptor(
-  '/model.ModelService/RemoveModelType',
-  grpc.web.MethodType.UNARY,
-  proto.model.ModelId,
-  proto.model.ModelChangeResponse,
-  /**
-   * @param {!proto.model.ModelId} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.model.ModelChangeResponse.deserializeBinary
-);
-
-
-/**
- * @param {!proto.model.ModelId} request The
- *     request proto
- * @param {?Object<string, string>} metadata User defined
- *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.model.ModelChangeResponse)}
- *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.model.ModelChangeResponse>|undefined}
- *     The XHR Node Readable Stream
- */
-proto.model.ModelServiceClient.prototype.removeModelType =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/model.ModelService/RemoveModelType',
-      request,
-      metadata || {},
-      methodDescriptor_ModelService_RemoveModelType,
-      callback);
-};
-
-
-/**
- * @param {!proto.model.ModelId} request The
- *     request proto
- * @param {?Object<string, string>=} metadata User defined
- *     call metadata
- * @return {!Promise<!proto.model.ModelChangeResponse>}
- *     Promise that resolves to the response
- */
-proto.model.ModelServicePromiseClient.prototype.removeModelType =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/model.ModelService/RemoveModelType',
-      request,
-      metadata || {},
-      methodDescriptor_ModelService_RemoveModelType);
 };
 
 

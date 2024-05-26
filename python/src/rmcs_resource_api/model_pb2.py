@@ -15,7 +15,7 @@ _sym_db = _symbol_database.Default()
 from rmcs_resource_api import common_pb2 as rmcs__resource__api_dot_common__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1drmcs_resource_api/model.proto\x12\x05model\x1a\x1ermcs_resource_api/common.proto\"\x98\x01\n\x0bModelSchema\x12\n\n\x02id\x18\x01 \x01(\x0c\x12\x10\n\x08\x63\x61tegory\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x1f\n\x05types\x18\x05 \x03(\x0e\x32\x10.common.DataType\x12\'\n\x07\x63onfigs\x18\x06 \x03(\x0b\x32\x16.model.ConfigSchemaVec\"7\n\x0f\x43onfigSchemaVec\x12$\n\x07\x63onfigs\x18\x01 \x03(\x0b\x32\x13.model.ConfigSchema\"\x15\n\x07ModelId\x12\n\n\x02id\x18\x01 \x01(\x0c\"\x19\n\tModelName\x12\x0c\n\x04name\x18\x01 \x01(\t\"!\n\rModelCategory\x12\x10\n\x08\x63\x61tegory\x18\x01 \x01(\t\"3\n\x11ModelNameCategory\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x10\n\x08\x63\x61tegory\x18\x02 \x01(\t\"\x83\x01\n\x0bModelUpdate\x12\n\n\x02id\x18\x01 \x01(\x0c\x12\x15\n\x08\x63\x61tegory\x18\x02 \x01(\tH\x00\x88\x01\x01\x12\x11\n\x04name\x18\x03 \x01(\tH\x01\x88\x01\x01\x12\x18\n\x0b\x64\x65scription\x18\x04 \x01(\tH\x02\x88\x01\x01\x42\x0b\n\t_categoryB\x07\n\x05_nameB\x0e\n\x0c_description\"9\n\nModelTypes\x12\n\n\x02id\x18\x01 \x01(\x0c\x12\x1f\n\x05types\x18\x06 \x03(\x0e\x32\x10.common.DataType\"\x9a\x01\n\x0c\x43onfigSchema\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x10\n\x08model_id\x18\x02 \x01(\x0c\x12\r\n\x05index\x18\x03 \x01(\x05\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x14\n\x0c\x63onfig_bytes\x18\x05 \x01(\x0c\x12\'\n\x0b\x63onfig_type\x18\x06 \x01(\x0e\x32\x12.common.ConfigType\x12\x10\n\x08\x63\x61tegory\x18\x07 \x01(\t\"\x16\n\x08\x43onfigId\x12\n\n\x02id\x18\x01 \x01(\x05\"\xc4\x01\n\x0c\x43onfigUpdate\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x11\n\x04name\x18\x02 \x01(\tH\x00\x88\x01\x01\x12\x19\n\x0c\x63onfig_bytes\x18\x03 \x01(\x0cH\x01\x88\x01\x01\x12,\n\x0b\x63onfig_type\x18\x04 \x01(\x0e\x32\x12.common.ConfigTypeH\x02\x88\x01\x01\x12\x15\n\x08\x63\x61tegory\x18\x05 \x01(\tH\x03\x88\x01\x01\x42\x07\n\x05_nameB\x0f\n\r_config_bytesB\x0e\n\x0c_config_typeB\x0b\n\t_category\"7\n\x11ModelReadResponse\x12\"\n\x06result\x18\x01 \x01(\x0b\x32\x12.model.ModelSchema\"8\n\x11ModelListResponse\x12#\n\x07results\x18\x01 \x03(\x0b\x32\x12.model.ModelSchema\"!\n\x13ModelCreateResponse\x12\n\n\x02id\x18\x01 \x01(\x0c\"\x15\n\x13ModelChangeResponse\"9\n\x12\x43onfigReadResponse\x12#\n\x06result\x18\x01 \x01(\x0b\x32\x13.model.ConfigSchema\":\n\x12\x43onfigListResponse\x12$\n\x07results\x18\x01 \x03(\x0b\x32\x13.model.ConfigSchema\"\"\n\x14\x43onfigCreateResponse\x12\n\n\x02id\x18\x01 \x01(\x05\"\x16\n\x14\x43onfigChangeResponse2\x9f\x07\n\x0cModelService\x12\x35\n\tReadModel\x12\x0e.model.ModelId\x1a\x18.model.ModelReadResponse\x12=\n\x0fListModelByName\x12\x10.model.ModelName\x1a\x18.model.ModelListResponse\x12\x45\n\x13ListModelByCategory\x12\x14.model.ModelCategory\x1a\x18.model.ModelListResponse\x12M\n\x17ListModelByNameCategory\x12\x18.model.ModelNameCategory\x1a\x18.model.ModelListResponse\x12=\n\x0b\x43reateModel\x12\x12.model.ModelSchema\x1a\x1a.model.ModelCreateResponse\x12=\n\x0bUpdateModel\x12\x12.model.ModelUpdate\x1a\x1a.model.ModelChangeResponse\x12\x39\n\x0b\x44\x65leteModel\x12\x0e.model.ModelId\x1a\x1a.model.ModelChangeResponse\x12=\n\x0c\x41\x64\x64ModelType\x12\x11.model.ModelTypes\x1a\x1a.model.ModelChangeResponse\x12=\n\x0fRemoveModelType\x12\x0e.model.ModelId\x1a\x1a.model.ModelChangeResponse\x12=\n\x0fReadModelConfig\x12\x0f.model.ConfigId\x1a\x19.model.ConfigReadResponse\x12<\n\x0fListModelConfig\x12\x0e.model.ModelId\x1a\x19.model.ConfigListResponse\x12\x45\n\x11\x43reateModelConfig\x12\x13.model.ConfigSchema\x1a\x1b.model.ConfigCreateResponse\x12\x45\n\x11UpdateModelConfig\x12\x13.model.ConfigUpdate\x1a\x1b.model.ConfigChangeResponse\x12\x41\n\x11\x44\x65leteModelConfig\x12\x0f.model.ConfigId\x1a\x1b.model.ConfigChangeResponseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1drmcs_resource_api/model.proto\x12\x05model\x1a\x1ermcs_resource_api/common.proto\"\x9c\x01\n\x0bModelSchema\x12\n\n\x02id\x18\x01 \x01(\x0c\x12\x10\n\x08\x63\x61tegory\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12#\n\tdata_type\x18\x05 \x03(\x0e\x32\x10.common.DataType\x12\'\n\x07\x63onfigs\x18\x06 \x03(\x0b\x32\x16.model.ConfigSchemaVec\"7\n\x0f\x43onfigSchemaVec\x12$\n\x07\x63onfigs\x18\x01 \x03(\x0b\x32\x13.model.ConfigSchema\"\x15\n\x07ModelId\x12\n\n\x02id\x18\x01 \x01(\x0c\"\x19\n\tModelName\x12\x0c\n\x04name\x18\x01 \x01(\t\"!\n\rModelCategory\x12\x10\n\x08\x63\x61tegory\x18\x01 \x01(\t\"3\n\x11ModelNameCategory\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x10\n\x08\x63\x61tegory\x18\x02 \x01(\t\"\x14\n\x06TypeId\x12\n\n\x02id\x18\x01 \x01(\x0c\"\xa8\x01\n\x0bModelUpdate\x12\n\n\x02id\x18\x01 \x01(\x0c\x12\x15\n\x08\x63\x61tegory\x18\x02 \x01(\tH\x00\x88\x01\x01\x12\x11\n\x04name\x18\x03 \x01(\tH\x01\x88\x01\x01\x12\x18\n\x0b\x64\x65scription\x18\x04 \x01(\tH\x02\x88\x01\x01\x12#\n\tdata_type\x18\x05 \x03(\x0e\x32\x10.common.DataTypeB\x0b\n\t_categoryB\x07\n\x05_nameB\x0e\n\x0c_description\"\x9a\x01\n\x0c\x43onfigSchema\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x10\n\x08model_id\x18\x02 \x01(\x0c\x12\r\n\x05index\x18\x03 \x01(\x05\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x14\n\x0c\x63onfig_bytes\x18\x05 \x01(\x0c\x12\'\n\x0b\x63onfig_type\x18\x06 \x01(\x0e\x32\x12.common.ConfigType\x12\x10\n\x08\x63\x61tegory\x18\x07 \x01(\t\"\x16\n\x08\x43onfigId\x12\n\n\x02id\x18\x01 \x01(\x05\"\xc4\x01\n\x0c\x43onfigUpdate\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x11\n\x04name\x18\x02 \x01(\tH\x00\x88\x01\x01\x12\x19\n\x0c\x63onfig_bytes\x18\x03 \x01(\x0cH\x01\x88\x01\x01\x12,\n\x0b\x63onfig_type\x18\x04 \x01(\x0e\x32\x12.common.ConfigTypeH\x02\x88\x01\x01\x12\x15\n\x08\x63\x61tegory\x18\x05 \x01(\tH\x03\x88\x01\x01\x42\x07\n\x05_nameB\x0f\n\r_config_bytesB\x0e\n\x0c_config_typeB\x0b\n\t_category\"7\n\x11ModelReadResponse\x12\"\n\x06result\x18\x01 \x01(\x0b\x32\x12.model.ModelSchema\"8\n\x11ModelListResponse\x12#\n\x07results\x18\x01 \x03(\x0b\x32\x12.model.ModelSchema\"!\n\x13ModelCreateResponse\x12\n\n\x02id\x18\x01 \x01(\x0c\"\x15\n\x13ModelChangeResponse\"9\n\x12\x43onfigReadResponse\x12#\n\x06result\x18\x01 \x01(\x0b\x32\x13.model.ConfigSchema\":\n\x12\x43onfigListResponse\x12$\n\x07results\x18\x01 \x03(\x0b\x32\x13.model.ConfigSchema\"\"\n\x14\x43onfigCreateResponse\x12\n\n\x02id\x18\x01 \x01(\x05\"\x16\n\x14\x43onfigChangeResponse2\xdd\x06\n\x0cModelService\x12\x35\n\tReadModel\x12\x0e.model.ModelId\x1a\x18.model.ModelReadResponse\x12=\n\x0fListModelByName\x12\x10.model.ModelName\x1a\x18.model.ModelListResponse\x12\x45\n\x13ListModelByCategory\x12\x14.model.ModelCategory\x1a\x18.model.ModelListResponse\x12M\n\x17ListModelByNameCategory\x12\x18.model.ModelNameCategory\x1a\x18.model.ModelListResponse\x12:\n\x0fListModelByType\x12\r.model.TypeId\x1a\x18.model.ModelListResponse\x12=\n\x0b\x43reateModel\x12\x12.model.ModelSchema\x1a\x1a.model.ModelCreateResponse\x12=\n\x0bUpdateModel\x12\x12.model.ModelUpdate\x1a\x1a.model.ModelChangeResponse\x12\x39\n\x0b\x44\x65leteModel\x12\x0e.model.ModelId\x1a\x1a.model.ModelChangeResponse\x12=\n\x0fReadModelConfig\x12\x0f.model.ConfigId\x1a\x19.model.ConfigReadResponse\x12<\n\x0fListModelConfig\x12\x0e.model.ModelId\x1a\x19.model.ConfigListResponse\x12\x45\n\x11\x43reateModelConfig\x12\x13.model.ConfigSchema\x1a\x1b.model.ConfigCreateResponse\x12\x45\n\x11UpdateModelConfig\x12\x13.model.ConfigUpdate\x1a\x1b.model.ConfigChangeResponse\x12\x41\n\x11\x44\x65leteModelConfig\x12\x0f.model.ConfigId\x1a\x1b.model.ConfigChangeResponseb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -23,43 +23,43 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'rmcs_resource_api.model_pb2
 if not _descriptor._USE_C_DESCRIPTORS:
   DESCRIPTOR._loaded_options = None
   _globals['_MODELSCHEMA']._serialized_start=73
-  _globals['_MODELSCHEMA']._serialized_end=225
-  _globals['_CONFIGSCHEMAVEC']._serialized_start=227
-  _globals['_CONFIGSCHEMAVEC']._serialized_end=282
-  _globals['_MODELID']._serialized_start=284
-  _globals['_MODELID']._serialized_end=305
-  _globals['_MODELNAME']._serialized_start=307
-  _globals['_MODELNAME']._serialized_end=332
-  _globals['_MODELCATEGORY']._serialized_start=334
-  _globals['_MODELCATEGORY']._serialized_end=367
-  _globals['_MODELNAMECATEGORY']._serialized_start=369
-  _globals['_MODELNAMECATEGORY']._serialized_end=420
-  _globals['_MODELUPDATE']._serialized_start=423
-  _globals['_MODELUPDATE']._serialized_end=554
-  _globals['_MODELTYPES']._serialized_start=556
-  _globals['_MODELTYPES']._serialized_end=613
-  _globals['_CONFIGSCHEMA']._serialized_start=616
-  _globals['_CONFIGSCHEMA']._serialized_end=770
-  _globals['_CONFIGID']._serialized_start=772
-  _globals['_CONFIGID']._serialized_end=794
-  _globals['_CONFIGUPDATE']._serialized_start=797
-  _globals['_CONFIGUPDATE']._serialized_end=993
-  _globals['_MODELREADRESPONSE']._serialized_start=995
-  _globals['_MODELREADRESPONSE']._serialized_end=1050
-  _globals['_MODELLISTRESPONSE']._serialized_start=1052
-  _globals['_MODELLISTRESPONSE']._serialized_end=1108
-  _globals['_MODELCREATERESPONSE']._serialized_start=1110
-  _globals['_MODELCREATERESPONSE']._serialized_end=1143
-  _globals['_MODELCHANGERESPONSE']._serialized_start=1145
-  _globals['_MODELCHANGERESPONSE']._serialized_end=1166
-  _globals['_CONFIGREADRESPONSE']._serialized_start=1168
-  _globals['_CONFIGREADRESPONSE']._serialized_end=1225
-  _globals['_CONFIGLISTRESPONSE']._serialized_start=1227
-  _globals['_CONFIGLISTRESPONSE']._serialized_end=1285
-  _globals['_CONFIGCREATERESPONSE']._serialized_start=1287
-  _globals['_CONFIGCREATERESPONSE']._serialized_end=1321
-  _globals['_CONFIGCHANGERESPONSE']._serialized_start=1323
-  _globals['_CONFIGCHANGERESPONSE']._serialized_end=1345
-  _globals['_MODELSERVICE']._serialized_start=1348
-  _globals['_MODELSERVICE']._serialized_end=2275
+  _globals['_MODELSCHEMA']._serialized_end=229
+  _globals['_CONFIGSCHEMAVEC']._serialized_start=231
+  _globals['_CONFIGSCHEMAVEC']._serialized_end=286
+  _globals['_MODELID']._serialized_start=288
+  _globals['_MODELID']._serialized_end=309
+  _globals['_MODELNAME']._serialized_start=311
+  _globals['_MODELNAME']._serialized_end=336
+  _globals['_MODELCATEGORY']._serialized_start=338
+  _globals['_MODELCATEGORY']._serialized_end=371
+  _globals['_MODELNAMECATEGORY']._serialized_start=373
+  _globals['_MODELNAMECATEGORY']._serialized_end=424
+  _globals['_TYPEID']._serialized_start=426
+  _globals['_TYPEID']._serialized_end=446
+  _globals['_MODELUPDATE']._serialized_start=449
+  _globals['_MODELUPDATE']._serialized_end=617
+  _globals['_CONFIGSCHEMA']._serialized_start=620
+  _globals['_CONFIGSCHEMA']._serialized_end=774
+  _globals['_CONFIGID']._serialized_start=776
+  _globals['_CONFIGID']._serialized_end=798
+  _globals['_CONFIGUPDATE']._serialized_start=801
+  _globals['_CONFIGUPDATE']._serialized_end=997
+  _globals['_MODELREADRESPONSE']._serialized_start=999
+  _globals['_MODELREADRESPONSE']._serialized_end=1054
+  _globals['_MODELLISTRESPONSE']._serialized_start=1056
+  _globals['_MODELLISTRESPONSE']._serialized_end=1112
+  _globals['_MODELCREATERESPONSE']._serialized_start=1114
+  _globals['_MODELCREATERESPONSE']._serialized_end=1147
+  _globals['_MODELCHANGERESPONSE']._serialized_start=1149
+  _globals['_MODELCHANGERESPONSE']._serialized_end=1170
+  _globals['_CONFIGREADRESPONSE']._serialized_start=1172
+  _globals['_CONFIGREADRESPONSE']._serialized_end=1229
+  _globals['_CONFIGLISTRESPONSE']._serialized_start=1231
+  _globals['_CONFIGLISTRESPONSE']._serialized_end=1289
+  _globals['_CONFIGCREATERESPONSE']._serialized_start=1291
+  _globals['_CONFIGCREATERESPONSE']._serialized_end=1325
+  _globals['_CONFIGCHANGERESPONSE']._serialized_start=1327
+  _globals['_CONFIGCHANGERESPONSE']._serialized_end=1349
+  _globals['_MODELSERVICE']._serialized_start=1352
+  _globals['_MODELSERVICE']._serialized_end=2213
 # @@protoc_insertion_point(module_scope)

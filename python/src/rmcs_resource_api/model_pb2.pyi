@@ -7,20 +7,20 @@ from typing import ClassVar as _ClassVar, Iterable as _Iterable, Mapping as _Map
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class ModelSchema(_message.Message):
-    __slots__ = ("id", "category", "name", "description", "types", "configs")
+    __slots__ = ("id", "category", "name", "description", "data_type", "configs")
     ID_FIELD_NUMBER: _ClassVar[int]
     CATEGORY_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
-    TYPES_FIELD_NUMBER: _ClassVar[int]
+    DATA_TYPE_FIELD_NUMBER: _ClassVar[int]
     CONFIGS_FIELD_NUMBER: _ClassVar[int]
     id: bytes
     category: str
     name: str
     description: str
-    types: _containers.RepeatedScalarFieldContainer[_common_pb2.DataType]
+    data_type: _containers.RepeatedScalarFieldContainer[_common_pb2.DataType]
     configs: _containers.RepeatedCompositeFieldContainer[ConfigSchemaVec]
-    def __init__(self, id: _Optional[bytes] = ..., category: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., types: _Optional[_Iterable[_Union[_common_pb2.DataType, str]]] = ..., configs: _Optional[_Iterable[_Union[ConfigSchemaVec, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[bytes] = ..., category: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., data_type: _Optional[_Iterable[_Union[_common_pb2.DataType, str]]] = ..., configs: _Optional[_Iterable[_Union[ConfigSchemaVec, _Mapping]]] = ...) -> None: ...
 
 class ConfigSchemaVec(_message.Message):
     __slots__ = ("configs",)
@@ -54,25 +54,25 @@ class ModelNameCategory(_message.Message):
     category: str
     def __init__(self, name: _Optional[str] = ..., category: _Optional[str] = ...) -> None: ...
 
+class TypeId(_message.Message):
+    __slots__ = ("id",)
+    ID_FIELD_NUMBER: _ClassVar[int]
+    id: bytes
+    def __init__(self, id: _Optional[bytes] = ...) -> None: ...
+
 class ModelUpdate(_message.Message):
-    __slots__ = ("id", "category", "name", "description")
+    __slots__ = ("id", "category", "name", "description", "data_type")
     ID_FIELD_NUMBER: _ClassVar[int]
     CATEGORY_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
+    DATA_TYPE_FIELD_NUMBER: _ClassVar[int]
     id: bytes
     category: str
     name: str
     description: str
-    def __init__(self, id: _Optional[bytes] = ..., category: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ...) -> None: ...
-
-class ModelTypes(_message.Message):
-    __slots__ = ("id", "types")
-    ID_FIELD_NUMBER: _ClassVar[int]
-    TYPES_FIELD_NUMBER: _ClassVar[int]
-    id: bytes
-    types: _containers.RepeatedScalarFieldContainer[_common_pb2.DataType]
-    def __init__(self, id: _Optional[bytes] = ..., types: _Optional[_Iterable[_Union[_common_pb2.DataType, str]]] = ...) -> None: ...
+    data_type: _containers.RepeatedScalarFieldContainer[_common_pb2.DataType]
+    def __init__(self, id: _Optional[bytes] = ..., category: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., data_type: _Optional[_Iterable[_Union[_common_pb2.DataType, str]]] = ...) -> None: ...
 
 class ConfigSchema(_message.Message):
     __slots__ = ("id", "model_id", "index", "name", "config_bytes", "config_type", "category")
