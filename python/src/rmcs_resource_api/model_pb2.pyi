@@ -61,18 +61,20 @@ class TypeId(_message.Message):
     def __init__(self, id: _Optional[bytes] = ...) -> None: ...
 
 class ModelUpdate(_message.Message):
-    __slots__ = ("id", "category", "name", "description", "data_type")
+    __slots__ = ("id", "category", "name", "description", "data_type", "data_type_flag")
     ID_FIELD_NUMBER: _ClassVar[int]
     CATEGORY_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     DATA_TYPE_FIELD_NUMBER: _ClassVar[int]
+    DATA_TYPE_FLAG_FIELD_NUMBER: _ClassVar[int]
     id: bytes
     category: str
     name: str
     description: str
     data_type: _containers.RepeatedScalarFieldContainer[_common_pb2.DataType]
-    def __init__(self, id: _Optional[bytes] = ..., category: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., data_type: _Optional[_Iterable[_Union[_common_pb2.DataType, str]]] = ...) -> None: ...
+    data_type_flag: bool
+    def __init__(self, id: _Optional[bytes] = ..., category: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., data_type: _Optional[_Iterable[_Union[_common_pb2.DataType, str]]] = ..., data_type_flag: bool = ...) -> None: ...
 
 class ConfigSchema(_message.Message):
     __slots__ = ("id", "model_id", "index", "name", "config_bytes", "config_type", "category")

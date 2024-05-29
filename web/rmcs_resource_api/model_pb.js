@@ -1727,7 +1727,8 @@ proto.model.ModelUpdate.toObject = function(includeInstance, msg) {
     category: jspb.Message.getFieldWithDefault(msg, 2, ""),
     name: jspb.Message.getFieldWithDefault(msg, 3, ""),
     description: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    dataTypeList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f
+    dataTypeList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
+    dataTypeFlag: jspb.Message.getBooleanFieldWithDefault(msg, 6, false)
   };
 
   if (includeInstance) {
@@ -1785,6 +1786,10 @@ proto.model.ModelUpdate.deserializeBinaryFromReader = function(msg, reader) {
       for (var i = 0; i < values.length; i++) {
         msg.addDataType(values[i]);
       }
+      break;
+    case 6:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setDataTypeFlag(value);
       break;
     default:
       reader.skipField();
@@ -1847,6 +1852,13 @@ proto.model.ModelUpdate.serializeBinaryToWriter = function(message, writer) {
   if (f.length > 0) {
     writer.writePackedEnum(
       5,
+      f
+    );
+  }
+  f = message.getDataTypeFlag();
+  if (f) {
+    writer.writeBool(
+      6,
       f
     );
   }
@@ -2037,6 +2049,24 @@ proto.model.ModelUpdate.prototype.addDataType = function(value, opt_index) {
  */
 proto.model.ModelUpdate.prototype.clearDataTypeList = function() {
   return this.setDataTypeList([]);
+};
+
+
+/**
+ * optional bool data_type_flag = 6;
+ * @return {boolean}
+ */
+proto.model.ModelUpdate.prototype.getDataTypeFlag = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.model.ModelUpdate} returns this
+ */
+proto.model.ModelUpdate.prototype.setDataTypeFlag = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 6, value);
 };
 
 

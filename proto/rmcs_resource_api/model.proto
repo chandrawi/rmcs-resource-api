@@ -71,6 +71,7 @@ message ModelUpdate {
     optional string name = 3;
     optional string description = 4;
     repeated common.DataType data_type = 5;
+    bool data_type_flag = 6;
 }
 
 message ConfigSchema {

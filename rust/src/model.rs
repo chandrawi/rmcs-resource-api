@@ -66,6 +66,8 @@ pub struct ModelUpdate {
     pub description: ::core::option::Option<::prost::alloc::string::String>,
     #[prost(enumeration = "super::common::DataType", repeated, tag = "5")]
     pub data_type: ::prost::alloc::vec::Vec<i32>,
+    #[prost(bool, tag = "6")]
+    pub data_type_flag: bool,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
