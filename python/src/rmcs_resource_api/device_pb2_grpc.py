@@ -49,6 +49,11 @@ class DeviceServiceStub(object):
                 request_serializer=rmcs__resource__api_dot_device__pb2.SerialNumber.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_device__pb2.DeviceReadResponse.FromString,
                 _registered_method=True)
+        self.ListDeviceByIds = channel.unary_unary(
+                '/device.DeviceService/ListDeviceByIds',
+                request_serializer=rmcs__resource__api_dot_device__pb2.DeviceIds.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_device__pb2.DeviceListResponse.FromString,
+                _registered_method=True)
         self.ListDeviceByGateway = channel.unary_unary(
                 '/device.DeviceService/ListDeviceByGateway',
                 request_serializer=rmcs__resource__api_dot_device__pb2.GatewayId.SerializeToString,
@@ -98,6 +103,11 @@ class DeviceServiceStub(object):
                 '/device.DeviceService/ReadGatewayBySn',
                 request_serializer=rmcs__resource__api_dot_device__pb2.SerialNumber.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_device__pb2.GatewayReadResponse.FromString,
+                _registered_method=True)
+        self.ListGatewayByIds = channel.unary_unary(
+                '/device.DeviceService/ListGatewayByIds',
+                request_serializer=rmcs__resource__api_dot_device__pb2.GatewayIds.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_device__pb2.GatewayListResponse.FromString,
                 _registered_method=True)
         self.ListGatewayByType = channel.unary_unary(
                 '/device.DeviceService/ListGatewayByType',
@@ -179,6 +189,11 @@ class DeviceServiceStub(object):
                 request_serializer=rmcs__resource__api_dot_device__pb2.TypeId.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_device__pb2.TypeReadResponse.FromString,
                 _registered_method=True)
+        self.ListTypeByIds = channel.unary_unary(
+                '/device.DeviceService/ListTypeByIds',
+                request_serializer=rmcs__resource__api_dot_device__pb2.TypeIds.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_device__pb2.TypeListResponse.FromString,
+                _registered_method=True)
         self.ListTypeByName = channel.unary_unary(
                 '/device.DeviceService/ListTypeByName',
                 request_serializer=rmcs__resource__api_dot_device__pb2.TypeName.SerializeToString,
@@ -221,6 +236,12 @@ class DeviceServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ReadDeviceBySn(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListDeviceByIds(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -281,6 +302,12 @@ class DeviceServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ReadGatewayBySn(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListGatewayByIds(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -382,6 +409,12 @@ class DeviceServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListTypeByIds(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def ListTypeByName(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -430,6 +463,11 @@ def add_DeviceServiceServicer_to_server(servicer, server):
                     servicer.ReadDeviceBySn,
                     request_deserializer=rmcs__resource__api_dot_device__pb2.SerialNumber.FromString,
                     response_serializer=rmcs__resource__api_dot_device__pb2.DeviceReadResponse.SerializeToString,
+            ),
+            'ListDeviceByIds': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListDeviceByIds,
+                    request_deserializer=rmcs__resource__api_dot_device__pb2.DeviceIds.FromString,
+                    response_serializer=rmcs__resource__api_dot_device__pb2.DeviceListResponse.SerializeToString,
             ),
             'ListDeviceByGateway': grpc.unary_unary_rpc_method_handler(
                     servicer.ListDeviceByGateway,
@@ -480,6 +518,11 @@ def add_DeviceServiceServicer_to_server(servicer, server):
                     servicer.ReadGatewayBySn,
                     request_deserializer=rmcs__resource__api_dot_device__pb2.SerialNumber.FromString,
                     response_serializer=rmcs__resource__api_dot_device__pb2.GatewayReadResponse.SerializeToString,
+            ),
+            'ListGatewayByIds': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListGatewayByIds,
+                    request_deserializer=rmcs__resource__api_dot_device__pb2.GatewayIds.FromString,
+                    response_serializer=rmcs__resource__api_dot_device__pb2.GatewayListResponse.SerializeToString,
             ),
             'ListGatewayByType': grpc.unary_unary_rpc_method_handler(
                     servicer.ListGatewayByType,
@@ -560,6 +603,11 @@ def add_DeviceServiceServicer_to_server(servicer, server):
                     servicer.ReadType,
                     request_deserializer=rmcs__resource__api_dot_device__pb2.TypeId.FromString,
                     response_serializer=rmcs__resource__api_dot_device__pb2.TypeReadResponse.SerializeToString,
+            ),
+            'ListTypeByIds': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListTypeByIds,
+                    request_deserializer=rmcs__resource__api_dot_device__pb2.TypeIds.FromString,
+                    response_serializer=rmcs__resource__api_dot_device__pb2.TypeListResponse.SerializeToString,
             ),
             'ListTypeByName': grpc.unary_unary_rpc_method_handler(
                     servicer.ListTypeByName,
@@ -645,6 +693,33 @@ class DeviceService(object):
             '/device.DeviceService/ReadDeviceBySn',
             rmcs__resource__api_dot_device__pb2.SerialNumber.SerializeToString,
             rmcs__resource__api_dot_device__pb2.DeviceReadResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListDeviceByIds(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/device.DeviceService/ListDeviceByIds',
+            rmcs__resource__api_dot_device__pb2.DeviceIds.SerializeToString,
+            rmcs__resource__api_dot_device__pb2.DeviceListResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -915,6 +990,33 @@ class DeviceService(object):
             '/device.DeviceService/ReadGatewayBySn',
             rmcs__resource__api_dot_device__pb2.SerialNumber.SerializeToString,
             rmcs__resource__api_dot_device__pb2.GatewayReadResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListGatewayByIds(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/device.DeviceService/ListGatewayByIds',
+            rmcs__resource__api_dot_device__pb2.GatewayIds.SerializeToString,
+            rmcs__resource__api_dot_device__pb2.GatewayListResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -1347,6 +1449,33 @@ class DeviceService(object):
             '/device.DeviceService/ReadType',
             rmcs__resource__api_dot_device__pb2.TypeId.SerializeToString,
             rmcs__resource__api_dot_device__pb2.TypeReadResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListTypeByIds(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/device.DeviceService/ListTypeByIds',
+            rmcs__resource__api_dot_device__pb2.TypeIds.SerializeToString,
+            rmcs__resource__api_dot_device__pb2.TypeListResponse.FromString,
             options,
             channel_credentials,
             insecure,

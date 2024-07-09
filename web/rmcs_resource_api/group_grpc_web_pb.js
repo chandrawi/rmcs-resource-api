@@ -138,6 +138,67 @@ proto.group.GroupServicePromiseClient.prototype.readGroupModel =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
+ *   !proto.group.GroupIds,
+ *   !proto.group.GroupModelListResponse>}
+ */
+const methodDescriptor_GroupService_ListGroupModelByIds = new grpc.web.MethodDescriptor(
+  '/group.GroupService/ListGroupModelByIds',
+  grpc.web.MethodType.UNARY,
+  proto.group.GroupIds,
+  proto.group.GroupModelListResponse,
+  /**
+   * @param {!proto.group.GroupIds} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.group.GroupModelListResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.group.GroupIds} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.group.GroupModelListResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.group.GroupModelListResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.group.GroupServiceClient.prototype.listGroupModelByIds =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/group.GroupService/ListGroupModelByIds',
+      request,
+      metadata || {},
+      methodDescriptor_GroupService_ListGroupModelByIds,
+      callback);
+};
+
+
+/**
+ * @param {!proto.group.GroupIds} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.group.GroupModelListResponse>}
+ *     Promise that resolves to the response
+ */
+proto.group.GroupServicePromiseClient.prototype.listGroupModelByIds =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/group.GroupService/ListGroupModelByIds',
+      request,
+      metadata || {},
+      methodDescriptor_GroupService_ListGroupModelByIds);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
  *   !proto.group.GroupName,
  *   !proto.group.GroupModelListResponse>}
  */
@@ -687,6 +748,67 @@ proto.group.GroupServicePromiseClient.prototype.readGroupDevice =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
+ *   !proto.group.GroupIds,
+ *   !proto.group.GroupDeviceListResponse>}
+ */
+const methodDescriptor_GroupService_ListGroupDeviceByIds = new grpc.web.MethodDescriptor(
+  '/group.GroupService/ListGroupDeviceByIds',
+  grpc.web.MethodType.UNARY,
+  proto.group.GroupIds,
+  proto.group.GroupDeviceListResponse,
+  /**
+   * @param {!proto.group.GroupIds} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.group.GroupDeviceListResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.group.GroupIds} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.group.GroupDeviceListResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.group.GroupDeviceListResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.group.GroupServiceClient.prototype.listGroupDeviceByIds =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/group.GroupService/ListGroupDeviceByIds',
+      request,
+      metadata || {},
+      methodDescriptor_GroupService_ListGroupDeviceByIds,
+      callback);
+};
+
+
+/**
+ * @param {!proto.group.GroupIds} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.group.GroupDeviceListResponse>}
+ *     Promise that resolves to the response
+ */
+proto.group.GroupServicePromiseClient.prototype.listGroupDeviceByIds =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/group.GroupService/ListGroupDeviceByIds',
+      request,
+      metadata || {},
+      methodDescriptor_GroupService_ListGroupDeviceByIds);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
  *   !proto.group.GroupName,
  *   !proto.group.GroupDeviceListResponse>}
  */
@@ -1230,6 +1352,67 @@ proto.group.GroupServicePromiseClient.prototype.readGroupGateway =
       request,
       metadata || {},
       methodDescriptor_GroupService_ReadGroupGateway);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.group.GroupIds,
+ *   !proto.group.GroupDeviceListResponse>}
+ */
+const methodDescriptor_GroupService_ListGroupGatewayByIds = new grpc.web.MethodDescriptor(
+  '/group.GroupService/ListGroupGatewayByIds',
+  grpc.web.MethodType.UNARY,
+  proto.group.GroupIds,
+  proto.group.GroupDeviceListResponse,
+  /**
+   * @param {!proto.group.GroupIds} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.group.GroupDeviceListResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.group.GroupIds} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.group.GroupDeviceListResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.group.GroupDeviceListResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.group.GroupServiceClient.prototype.listGroupGatewayByIds =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/group.GroupService/ListGroupGatewayByIds',
+      request,
+      metadata || {},
+      methodDescriptor_GroupService_ListGroupGatewayByIds,
+      callback);
+};
+
+
+/**
+ * @param {!proto.group.GroupIds} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.group.GroupDeviceListResponse>}
+ *     Promise that resolves to the response
+ */
+proto.group.GroupServicePromiseClient.prototype.listGroupGatewayByIds =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/group.GroupService/ListGroupGatewayByIds',
+      request,
+      metadata || {},
+      methodDescriptor_GroupService_ListGroupGatewayByIds);
 };
 
 

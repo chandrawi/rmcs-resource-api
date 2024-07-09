@@ -201,6 +201,67 @@ proto.device.DeviceServicePromiseClient.prototype.readDeviceBySn =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
+ *   !proto.device.DeviceIds,
+ *   !proto.device.DeviceListResponse>}
+ */
+const methodDescriptor_DeviceService_ListDeviceByIds = new grpc.web.MethodDescriptor(
+  '/device.DeviceService/ListDeviceByIds',
+  grpc.web.MethodType.UNARY,
+  proto.device.DeviceIds,
+  proto.device.DeviceListResponse,
+  /**
+   * @param {!proto.device.DeviceIds} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.device.DeviceListResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.device.DeviceIds} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.device.DeviceListResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.device.DeviceListResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.device.DeviceServiceClient.prototype.listDeviceByIds =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/device.DeviceService/ListDeviceByIds',
+      request,
+      metadata || {},
+      methodDescriptor_DeviceService_ListDeviceByIds,
+      callback);
+};
+
+
+/**
+ * @param {!proto.device.DeviceIds} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.device.DeviceListResponse>}
+ *     Promise that resolves to the response
+ */
+proto.device.DeviceServicePromiseClient.prototype.listDeviceByIds =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/device.DeviceService/ListDeviceByIds',
+      request,
+      metadata || {},
+      methodDescriptor_DeviceService_ListDeviceByIds);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
  *   !proto.device.GatewayId,
  *   !proto.device.DeviceListResponse>}
  */
@@ -805,6 +866,67 @@ proto.device.DeviceServicePromiseClient.prototype.readGatewayBySn =
       request,
       metadata || {},
       methodDescriptor_DeviceService_ReadGatewayBySn);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.device.GatewayIds,
+ *   !proto.device.GatewayListResponse>}
+ */
+const methodDescriptor_DeviceService_ListGatewayByIds = new grpc.web.MethodDescriptor(
+  '/device.DeviceService/ListGatewayByIds',
+  grpc.web.MethodType.UNARY,
+  proto.device.GatewayIds,
+  proto.device.GatewayListResponse,
+  /**
+   * @param {!proto.device.GatewayIds} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.device.GatewayListResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.device.GatewayIds} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.device.GatewayListResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.device.GatewayListResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.device.DeviceServiceClient.prototype.listGatewayByIds =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/device.DeviceService/ListGatewayByIds',
+      request,
+      metadata || {},
+      methodDescriptor_DeviceService_ListGatewayByIds,
+      callback);
+};
+
+
+/**
+ * @param {!proto.device.GatewayIds} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.device.GatewayListResponse>}
+ *     Promise that resolves to the response
+ */
+proto.device.DeviceServicePromiseClient.prototype.listGatewayByIds =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/device.DeviceService/ListGatewayByIds',
+      request,
+      metadata || {},
+      methodDescriptor_DeviceService_ListGatewayByIds);
 };
 
 
@@ -1781,6 +1903,67 @@ proto.device.DeviceServicePromiseClient.prototype.readType =
       request,
       metadata || {},
       methodDescriptor_DeviceService_ReadType);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.device.TypeIds,
+ *   !proto.device.TypeListResponse>}
+ */
+const methodDescriptor_DeviceService_ListTypeByIds = new grpc.web.MethodDescriptor(
+  '/device.DeviceService/ListTypeByIds',
+  grpc.web.MethodType.UNARY,
+  proto.device.TypeIds,
+  proto.device.TypeListResponse,
+  /**
+   * @param {!proto.device.TypeIds} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.device.TypeListResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.device.TypeIds} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.device.TypeListResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.device.TypeListResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.device.DeviceServiceClient.prototype.listTypeByIds =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/device.DeviceService/ListTypeByIds',
+      request,
+      metadata || {},
+      methodDescriptor_DeviceService_ListTypeByIds,
+      callback);
+};
+
+
+/**
+ * @param {!proto.device.TypeIds} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.device.TypeListResponse>}
+ *     Promise that resolves to the response
+ */
+proto.device.DeviceServicePromiseClient.prototype.listTypeByIds =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/device.DeviceService/ListTypeByIds',
+      request,
+      metadata || {},
+      methodDescriptor_DeviceService_ListTypeByIds);
 };
 
 

@@ -140,6 +140,67 @@ proto.model.ModelServicePromiseClient.prototype.readModel =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
+ *   !proto.model.ModelIds,
+ *   !proto.model.ModelListResponse>}
+ */
+const methodDescriptor_ModelService_ListModelByIds = new grpc.web.MethodDescriptor(
+  '/model.ModelService/ListModelByIds',
+  grpc.web.MethodType.UNARY,
+  proto.model.ModelIds,
+  proto.model.ModelListResponse,
+  /**
+   * @param {!proto.model.ModelIds} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.model.ModelListResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.model.ModelIds} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.model.ModelListResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.model.ModelListResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.model.ModelServiceClient.prototype.listModelByIds =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/model.ModelService/ListModelByIds',
+      request,
+      metadata || {},
+      methodDescriptor_ModelService_ListModelByIds,
+      callback);
+};
+
+
+/**
+ * @param {!proto.model.ModelIds} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.model.ModelListResponse>}
+ *     Promise that resolves to the response
+ */
+proto.model.ModelServicePromiseClient.prototype.listModelByIds =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/model.ModelService/ListModelByIds',
+      request,
+      metadata || {},
+      methodDescriptor_ModelService_ListModelByIds);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
  *   !proto.model.ModelName,
  *   !proto.model.ModelListResponse>}
  */

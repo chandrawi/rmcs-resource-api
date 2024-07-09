@@ -8,6 +8,8 @@ service DeviceService {
 
     rpc ReadDeviceBySn(SerialNumber) returns (DeviceReadResponse);
 
+    rpc ListDeviceByIds(DeviceIds) returns (DeviceListResponse);
+
     rpc ListDeviceByGateway(GatewayId) returns (DeviceListResponse);
 
     rpc ListDeviceByType(TypeId) returns (DeviceListResponse);
@@ -27,6 +29,8 @@ service DeviceService {
     rpc ReadGateway(GatewayId) returns (GatewayReadResponse);
 
     rpc ReadGatewayBySn(SerialNumber) returns (GatewayReadResponse);
+
+    rpc ListGatewayByIds(GatewayIds) returns (GatewayListResponse);
 
     rpc ListGatewayByType(TypeId) returns (GatewayListResponse);
 
@@ -59,6 +63,8 @@ service DeviceService {
     rpc DeleteGatewayConfig(ConfigId) returns (ConfigChangeResponse);
 
     rpc ReadType(TypeId) returns (TypeReadResponse);
+
+    rpc ListTypeByIds(TypeIds) returns (TypeListResponse);
 
     rpc ListTypeByName(TypeName) returns (TypeListResponse);
 
@@ -98,6 +104,14 @@ message DeviceId {
 
 message GatewayId {
     bytes id = 1;
+}
+
+message DeviceIds {
+    repeated bytes ids = 1;
+}
+
+message GatewayIds {
+    repeated bytes ids = 1;
 }
 
 message SerialNumber {
@@ -169,6 +183,10 @@ message TypeSchema {
 
 message TypeId {
     bytes id = 1;
+}
+
+message TypeIds {
+    repeated bytes ids = 1;
 }
 
 message TypeName {

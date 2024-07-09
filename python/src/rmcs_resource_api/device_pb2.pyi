@@ -52,6 +52,18 @@ class GatewayId(_message.Message):
     id: bytes
     def __init__(self, id: _Optional[bytes] = ...) -> None: ...
 
+class DeviceIds(_message.Message):
+    __slots__ = ("ids",)
+    IDS_FIELD_NUMBER: _ClassVar[int]
+    ids: _containers.RepeatedScalarFieldContainer[bytes]
+    def __init__(self, ids: _Optional[_Iterable[bytes]] = ...) -> None: ...
+
+class GatewayIds(_message.Message):
+    __slots__ = ("ids",)
+    IDS_FIELD_NUMBER: _ClassVar[int]
+    ids: _containers.RepeatedScalarFieldContainer[bytes]
+    def __init__(self, ids: _Optional[_Iterable[bytes]] = ...) -> None: ...
+
 class SerialNumber(_message.Message):
     __slots__ = ("serial_number",)
     SERIAL_NUMBER_FIELD_NUMBER: _ClassVar[int]
@@ -169,6 +181,12 @@ class TypeId(_message.Message):
     ID_FIELD_NUMBER: _ClassVar[int]
     id: bytes
     def __init__(self, id: _Optional[bytes] = ...) -> None: ...
+
+class TypeIds(_message.Message):
+    __slots__ = ("ids",)
+    IDS_FIELD_NUMBER: _ClassVar[int]
+    ids: _containers.RepeatedScalarFieldContainer[bytes]
+    def __init__(self, ids: _Optional[_Iterable[bytes]] = ...) -> None: ...
 
 class TypeName(_message.Message):
     __slots__ = ("name",)

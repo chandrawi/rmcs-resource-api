@@ -4,6 +4,8 @@ package group;
 service GroupService {
     rpc ReadGroupModel(GroupId) returns (GroupModelReadResponse);
 
+    rpc ListGroupModelByIds(GroupIds) returns (GroupModelListResponse);
+
     rpc ListGroupModelByName(GroupName) returns (GroupModelListResponse);
 
     rpc ListGroupModelByCategory(GroupCategory) returns (GroupModelListResponse);
@@ -22,6 +24,8 @@ service GroupService {
 
     rpc ReadGroupDevice(GroupId) returns (GroupDeviceReadResponse);
 
+    rpc ListGroupDeviceByIds(GroupIds) returns (GroupDeviceListResponse);
+
     rpc ListGroupDeviceByName(GroupName) returns (GroupDeviceListResponse);
 
     rpc ListGroupDeviceByCategory(GroupCategory) returns (GroupDeviceListResponse);
@@ -39,6 +43,8 @@ service GroupService {
     rpc RemoveGroupDeviceMember(GroupDevice) returns (GroupChangeResponse);
 
     rpc ReadGroupGateway(GroupId) returns (GroupDeviceReadResponse);
+
+    rpc ListGroupGatewayByIds(GroupIds) returns (GroupDeviceListResponse);
 
     rpc ListGroupGatewayByName(GroupName) returns (GroupDeviceListResponse);
 
@@ -75,6 +81,10 @@ message GroupDeviceSchema {
 
 message GroupId {
     bytes id = 1;
+}
+
+message GroupIds {
+    repeated bytes ids = 1;
 }
 
 message GroupName {

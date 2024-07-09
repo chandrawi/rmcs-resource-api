@@ -6,6 +6,8 @@ import "rmcs_resource_api/common.proto";
 service ModelService {
     rpc ReadModel(ModelId) returns (ModelReadResponse);
 
+    rpc ListModelByIds(ModelIds) returns (ModelListResponse);
+
     rpc ListModelByName(ModelName) returns (ModelListResponse);
 
     rpc ListModelByCategory(ModelCategory) returns (ModelListResponse);
@@ -46,6 +48,10 @@ message ConfigSchemaVec {
 
 message ModelId {
     bytes id = 1;
+}
+
+message ModelIds {
+    repeated bytes ids = 1;
 }
 
 message ModelName {
