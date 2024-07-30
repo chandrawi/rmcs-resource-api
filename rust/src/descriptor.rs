@@ -32,3 +32,8 @@ pub mod log {
     pub const DESCRIPTOR_SET: &[u8] =
         tonic::include_file_descriptor_set!("log_descriptor");
 }
+
+pub mod set {
+    pub const DESCRIPTOR_SET: &[u8] =
+        tonic::include_file_descriptor_set!("set_descriptor");
+}

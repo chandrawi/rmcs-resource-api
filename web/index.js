@@ -4305,10 +4305,10 @@ var model_pb = {};
 
 
 
-const grpc$6 = {};
-grpc$6.web = require$$0$1;
-const proto$7 = {};
-proto$7.model = model_pb;
+const grpc$7 = {};
+grpc$7.web = require$$0$1;
+const proto$8 = {};
+proto$8.model = model_pb;
 
 /**
  * @param {string} hostname
@@ -4318,7 +4318,7 @@ proto$7.model = model_pb;
  * @struct
  * @final
  */
-proto$7.model.ModelServiceClient =
+proto$8.model.ModelServiceClient =
     function(hostname, credentials, options) {
   if (!options) options = {};
   options.format = 'text';
@@ -4326,7 +4326,7 @@ proto$7.model.ModelServiceClient =
   /**
    * @private @const {!grpc.web.GrpcWebClientBase} The client
    */
-  this.client_ = new grpc$6.web.GrpcWebClientBase(options);
+  this.client_ = new grpc$7.web.GrpcWebClientBase(options);
 
   /**
    * @private @const {string} The hostname
@@ -4344,7 +4344,7 @@ proto$7.model.ModelServiceClient =
  * @struct
  * @final
  */
-proto$7.model.ModelServicePromiseClient =
+proto$8.model.ModelServicePromiseClient =
     function(hostname, credentials, options) {
   if (!options) options = {};
   options.format = 'text';
@@ -4352,7 +4352,7 @@ proto$7.model.ModelServicePromiseClient =
   /**
    * @private @const {!grpc.web.GrpcWebClientBase} The client
    */
-  this.client_ = new grpc$6.web.GrpcWebClientBase(options);
+  this.client_ = new grpc$7.web.GrpcWebClientBase(options);
 
   /**
    * @private @const {string} The hostname
@@ -4368,11 +4368,11 @@ proto$7.model.ModelServicePromiseClient =
  *   !proto.model.ModelId,
  *   !proto.model.ModelReadResponse>}
  */
-const methodDescriptor_ModelService_ReadModel = new grpc$6.web.MethodDescriptor(
+const methodDescriptor_ModelService_ReadModel = new grpc$7.web.MethodDescriptor(
   '/model.ModelService/ReadModel',
-  grpc$6.web.MethodType.UNARY,
-  proto$7.model.ModelId,
-  proto$7.model.ModelReadResponse,
+  grpc$7.web.MethodType.UNARY,
+  proto$8.model.ModelId,
+  proto$8.model.ModelReadResponse,
   /**
    * @param {!proto.model.ModelId} request
    * @return {!Uint8Array}
@@ -4380,7 +4380,7 @@ const methodDescriptor_ModelService_ReadModel = new grpc$6.web.MethodDescriptor(
   function(request) {
     return request.serializeBinary();
   },
-  proto$7.model.ModelReadResponse.deserializeBinary
+  proto$8.model.ModelReadResponse.deserializeBinary
 );
 
 
@@ -4394,7 +4394,7 @@ const methodDescriptor_ModelService_ReadModel = new grpc$6.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.model.ModelReadResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$7.model.ModelServiceClient.prototype.readModel =
+proto$8.model.ModelServiceClient.prototype.readModel =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/model.ModelService/ReadModel',
@@ -4413,7 +4413,7 @@ proto$7.model.ModelServiceClient.prototype.readModel =
  * @return {!Promise<!proto.model.ModelReadResponse>}
  *     Promise that resolves to the response
  */
-proto$7.model.ModelServicePromiseClient.prototype.readModel =
+proto$8.model.ModelServicePromiseClient.prototype.readModel =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/model.ModelService/ReadModel',
@@ -4429,11 +4429,11 @@ proto$7.model.ModelServicePromiseClient.prototype.readModel =
  *   !proto.model.ModelIds,
  *   !proto.model.ModelListResponse>}
  */
-const methodDescriptor_ModelService_ListModelByIds = new grpc$6.web.MethodDescriptor(
+const methodDescriptor_ModelService_ListModelByIds = new grpc$7.web.MethodDescriptor(
   '/model.ModelService/ListModelByIds',
-  grpc$6.web.MethodType.UNARY,
-  proto$7.model.ModelIds,
-  proto$7.model.ModelListResponse,
+  grpc$7.web.MethodType.UNARY,
+  proto$8.model.ModelIds,
+  proto$8.model.ModelListResponse,
   /**
    * @param {!proto.model.ModelIds} request
    * @return {!Uint8Array}
@@ -4441,7 +4441,7 @@ const methodDescriptor_ModelService_ListModelByIds = new grpc$6.web.MethodDescri
   function(request) {
     return request.serializeBinary();
   },
-  proto$7.model.ModelListResponse.deserializeBinary
+  proto$8.model.ModelListResponse.deserializeBinary
 );
 
 
@@ -4455,7 +4455,7 @@ const methodDescriptor_ModelService_ListModelByIds = new grpc$6.web.MethodDescri
  * @return {!grpc.web.ClientReadableStream<!proto.model.ModelListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$7.model.ModelServiceClient.prototype.listModelByIds =
+proto$8.model.ModelServiceClient.prototype.listModelByIds =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/model.ModelService/ListModelByIds',
@@ -4474,7 +4474,7 @@ proto$7.model.ModelServiceClient.prototype.listModelByIds =
  * @return {!Promise<!proto.model.ModelListResponse>}
  *     Promise that resolves to the response
  */
-proto$7.model.ModelServicePromiseClient.prototype.listModelByIds =
+proto$8.model.ModelServicePromiseClient.prototype.listModelByIds =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/model.ModelService/ListModelByIds',
@@ -4490,11 +4490,11 @@ proto$7.model.ModelServicePromiseClient.prototype.listModelByIds =
  *   !proto.model.ModelName,
  *   !proto.model.ModelListResponse>}
  */
-const methodDescriptor_ModelService_ListModelByName = new grpc$6.web.MethodDescriptor(
+const methodDescriptor_ModelService_ListModelByName = new grpc$7.web.MethodDescriptor(
   '/model.ModelService/ListModelByName',
-  grpc$6.web.MethodType.UNARY,
-  proto$7.model.ModelName,
-  proto$7.model.ModelListResponse,
+  grpc$7.web.MethodType.UNARY,
+  proto$8.model.ModelName,
+  proto$8.model.ModelListResponse,
   /**
    * @param {!proto.model.ModelName} request
    * @return {!Uint8Array}
@@ -4502,7 +4502,7 @@ const methodDescriptor_ModelService_ListModelByName = new grpc$6.web.MethodDescr
   function(request) {
     return request.serializeBinary();
   },
-  proto$7.model.ModelListResponse.deserializeBinary
+  proto$8.model.ModelListResponse.deserializeBinary
 );
 
 
@@ -4516,7 +4516,7 @@ const methodDescriptor_ModelService_ListModelByName = new grpc$6.web.MethodDescr
  * @return {!grpc.web.ClientReadableStream<!proto.model.ModelListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$7.model.ModelServiceClient.prototype.listModelByName =
+proto$8.model.ModelServiceClient.prototype.listModelByName =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/model.ModelService/ListModelByName',
@@ -4535,7 +4535,7 @@ proto$7.model.ModelServiceClient.prototype.listModelByName =
  * @return {!Promise<!proto.model.ModelListResponse>}
  *     Promise that resolves to the response
  */
-proto$7.model.ModelServicePromiseClient.prototype.listModelByName =
+proto$8.model.ModelServicePromiseClient.prototype.listModelByName =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/model.ModelService/ListModelByName',
@@ -4551,11 +4551,11 @@ proto$7.model.ModelServicePromiseClient.prototype.listModelByName =
  *   !proto.model.ModelCategory,
  *   !proto.model.ModelListResponse>}
  */
-const methodDescriptor_ModelService_ListModelByCategory = new grpc$6.web.MethodDescriptor(
+const methodDescriptor_ModelService_ListModelByCategory = new grpc$7.web.MethodDescriptor(
   '/model.ModelService/ListModelByCategory',
-  grpc$6.web.MethodType.UNARY,
-  proto$7.model.ModelCategory,
-  proto$7.model.ModelListResponse,
+  grpc$7.web.MethodType.UNARY,
+  proto$8.model.ModelCategory,
+  proto$8.model.ModelListResponse,
   /**
    * @param {!proto.model.ModelCategory} request
    * @return {!Uint8Array}
@@ -4563,7 +4563,7 @@ const methodDescriptor_ModelService_ListModelByCategory = new grpc$6.web.MethodD
   function(request) {
     return request.serializeBinary();
   },
-  proto$7.model.ModelListResponse.deserializeBinary
+  proto$8.model.ModelListResponse.deserializeBinary
 );
 
 
@@ -4577,7 +4577,7 @@ const methodDescriptor_ModelService_ListModelByCategory = new grpc$6.web.MethodD
  * @return {!grpc.web.ClientReadableStream<!proto.model.ModelListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$7.model.ModelServiceClient.prototype.listModelByCategory =
+proto$8.model.ModelServiceClient.prototype.listModelByCategory =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/model.ModelService/ListModelByCategory',
@@ -4596,7 +4596,7 @@ proto$7.model.ModelServiceClient.prototype.listModelByCategory =
  * @return {!Promise<!proto.model.ModelListResponse>}
  *     Promise that resolves to the response
  */
-proto$7.model.ModelServicePromiseClient.prototype.listModelByCategory =
+proto$8.model.ModelServicePromiseClient.prototype.listModelByCategory =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/model.ModelService/ListModelByCategory',
@@ -4612,11 +4612,11 @@ proto$7.model.ModelServicePromiseClient.prototype.listModelByCategory =
  *   !proto.model.ModelNameCategory,
  *   !proto.model.ModelListResponse>}
  */
-const methodDescriptor_ModelService_ListModelByNameCategory = new grpc$6.web.MethodDescriptor(
+const methodDescriptor_ModelService_ListModelByNameCategory = new grpc$7.web.MethodDescriptor(
   '/model.ModelService/ListModelByNameCategory',
-  grpc$6.web.MethodType.UNARY,
-  proto$7.model.ModelNameCategory,
-  proto$7.model.ModelListResponse,
+  grpc$7.web.MethodType.UNARY,
+  proto$8.model.ModelNameCategory,
+  proto$8.model.ModelListResponse,
   /**
    * @param {!proto.model.ModelNameCategory} request
    * @return {!Uint8Array}
@@ -4624,7 +4624,7 @@ const methodDescriptor_ModelService_ListModelByNameCategory = new grpc$6.web.Met
   function(request) {
     return request.serializeBinary();
   },
-  proto$7.model.ModelListResponse.deserializeBinary
+  proto$8.model.ModelListResponse.deserializeBinary
 );
 
 
@@ -4638,7 +4638,7 @@ const methodDescriptor_ModelService_ListModelByNameCategory = new grpc$6.web.Met
  * @return {!grpc.web.ClientReadableStream<!proto.model.ModelListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$7.model.ModelServiceClient.prototype.listModelByNameCategory =
+proto$8.model.ModelServiceClient.prototype.listModelByNameCategory =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/model.ModelService/ListModelByNameCategory',
@@ -4657,7 +4657,7 @@ proto$7.model.ModelServiceClient.prototype.listModelByNameCategory =
  * @return {!Promise<!proto.model.ModelListResponse>}
  *     Promise that resolves to the response
  */
-proto$7.model.ModelServicePromiseClient.prototype.listModelByNameCategory =
+proto$8.model.ModelServicePromiseClient.prototype.listModelByNameCategory =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/model.ModelService/ListModelByNameCategory',
@@ -4673,11 +4673,11 @@ proto$7.model.ModelServicePromiseClient.prototype.listModelByNameCategory =
  *   !proto.model.TypeId,
  *   !proto.model.ModelListResponse>}
  */
-const methodDescriptor_ModelService_ListModelByType = new grpc$6.web.MethodDescriptor(
+const methodDescriptor_ModelService_ListModelByType = new grpc$7.web.MethodDescriptor(
   '/model.ModelService/ListModelByType',
-  grpc$6.web.MethodType.UNARY,
-  proto$7.model.TypeId,
-  proto$7.model.ModelListResponse,
+  grpc$7.web.MethodType.UNARY,
+  proto$8.model.TypeId,
+  proto$8.model.ModelListResponse,
   /**
    * @param {!proto.model.TypeId} request
    * @return {!Uint8Array}
@@ -4685,7 +4685,7 @@ const methodDescriptor_ModelService_ListModelByType = new grpc$6.web.MethodDescr
   function(request) {
     return request.serializeBinary();
   },
-  proto$7.model.ModelListResponse.deserializeBinary
+  proto$8.model.ModelListResponse.deserializeBinary
 );
 
 
@@ -4699,7 +4699,7 @@ const methodDescriptor_ModelService_ListModelByType = new grpc$6.web.MethodDescr
  * @return {!grpc.web.ClientReadableStream<!proto.model.ModelListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$7.model.ModelServiceClient.prototype.listModelByType =
+proto$8.model.ModelServiceClient.prototype.listModelByType =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/model.ModelService/ListModelByType',
@@ -4718,7 +4718,7 @@ proto$7.model.ModelServiceClient.prototype.listModelByType =
  * @return {!Promise<!proto.model.ModelListResponse>}
  *     Promise that resolves to the response
  */
-proto$7.model.ModelServicePromiseClient.prototype.listModelByType =
+proto$8.model.ModelServicePromiseClient.prototype.listModelByType =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/model.ModelService/ListModelByType',
@@ -4734,11 +4734,11 @@ proto$7.model.ModelServicePromiseClient.prototype.listModelByType =
  *   !proto.model.ModelSchema,
  *   !proto.model.ModelCreateResponse>}
  */
-const methodDescriptor_ModelService_CreateModel = new grpc$6.web.MethodDescriptor(
+const methodDescriptor_ModelService_CreateModel = new grpc$7.web.MethodDescriptor(
   '/model.ModelService/CreateModel',
-  grpc$6.web.MethodType.UNARY,
-  proto$7.model.ModelSchema,
-  proto$7.model.ModelCreateResponse,
+  grpc$7.web.MethodType.UNARY,
+  proto$8.model.ModelSchema,
+  proto$8.model.ModelCreateResponse,
   /**
    * @param {!proto.model.ModelSchema} request
    * @return {!Uint8Array}
@@ -4746,7 +4746,7 @@ const methodDescriptor_ModelService_CreateModel = new grpc$6.web.MethodDescripto
   function(request) {
     return request.serializeBinary();
   },
-  proto$7.model.ModelCreateResponse.deserializeBinary
+  proto$8.model.ModelCreateResponse.deserializeBinary
 );
 
 
@@ -4760,7 +4760,7 @@ const methodDescriptor_ModelService_CreateModel = new grpc$6.web.MethodDescripto
  * @return {!grpc.web.ClientReadableStream<!proto.model.ModelCreateResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$7.model.ModelServiceClient.prototype.createModel =
+proto$8.model.ModelServiceClient.prototype.createModel =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/model.ModelService/CreateModel',
@@ -4779,7 +4779,7 @@ proto$7.model.ModelServiceClient.prototype.createModel =
  * @return {!Promise<!proto.model.ModelCreateResponse>}
  *     Promise that resolves to the response
  */
-proto$7.model.ModelServicePromiseClient.prototype.createModel =
+proto$8.model.ModelServicePromiseClient.prototype.createModel =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/model.ModelService/CreateModel',
@@ -4795,11 +4795,11 @@ proto$7.model.ModelServicePromiseClient.prototype.createModel =
  *   !proto.model.ModelUpdate,
  *   !proto.model.ModelChangeResponse>}
  */
-const methodDescriptor_ModelService_UpdateModel = new grpc$6.web.MethodDescriptor(
+const methodDescriptor_ModelService_UpdateModel = new grpc$7.web.MethodDescriptor(
   '/model.ModelService/UpdateModel',
-  grpc$6.web.MethodType.UNARY,
-  proto$7.model.ModelUpdate,
-  proto$7.model.ModelChangeResponse,
+  grpc$7.web.MethodType.UNARY,
+  proto$8.model.ModelUpdate,
+  proto$8.model.ModelChangeResponse,
   /**
    * @param {!proto.model.ModelUpdate} request
    * @return {!Uint8Array}
@@ -4807,7 +4807,7 @@ const methodDescriptor_ModelService_UpdateModel = new grpc$6.web.MethodDescripto
   function(request) {
     return request.serializeBinary();
   },
-  proto$7.model.ModelChangeResponse.deserializeBinary
+  proto$8.model.ModelChangeResponse.deserializeBinary
 );
 
 
@@ -4821,7 +4821,7 @@ const methodDescriptor_ModelService_UpdateModel = new grpc$6.web.MethodDescripto
  * @return {!grpc.web.ClientReadableStream<!proto.model.ModelChangeResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$7.model.ModelServiceClient.prototype.updateModel =
+proto$8.model.ModelServiceClient.prototype.updateModel =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/model.ModelService/UpdateModel',
@@ -4840,7 +4840,7 @@ proto$7.model.ModelServiceClient.prototype.updateModel =
  * @return {!Promise<!proto.model.ModelChangeResponse>}
  *     Promise that resolves to the response
  */
-proto$7.model.ModelServicePromiseClient.prototype.updateModel =
+proto$8.model.ModelServicePromiseClient.prototype.updateModel =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/model.ModelService/UpdateModel',
@@ -4856,11 +4856,11 @@ proto$7.model.ModelServicePromiseClient.prototype.updateModel =
  *   !proto.model.ModelId,
  *   !proto.model.ModelChangeResponse>}
  */
-const methodDescriptor_ModelService_DeleteModel = new grpc$6.web.MethodDescriptor(
+const methodDescriptor_ModelService_DeleteModel = new grpc$7.web.MethodDescriptor(
   '/model.ModelService/DeleteModel',
-  grpc$6.web.MethodType.UNARY,
-  proto$7.model.ModelId,
-  proto$7.model.ModelChangeResponse,
+  grpc$7.web.MethodType.UNARY,
+  proto$8.model.ModelId,
+  proto$8.model.ModelChangeResponse,
   /**
    * @param {!proto.model.ModelId} request
    * @return {!Uint8Array}
@@ -4868,7 +4868,7 @@ const methodDescriptor_ModelService_DeleteModel = new grpc$6.web.MethodDescripto
   function(request) {
     return request.serializeBinary();
   },
-  proto$7.model.ModelChangeResponse.deserializeBinary
+  proto$8.model.ModelChangeResponse.deserializeBinary
 );
 
 
@@ -4882,7 +4882,7 @@ const methodDescriptor_ModelService_DeleteModel = new grpc$6.web.MethodDescripto
  * @return {!grpc.web.ClientReadableStream<!proto.model.ModelChangeResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$7.model.ModelServiceClient.prototype.deleteModel =
+proto$8.model.ModelServiceClient.prototype.deleteModel =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/model.ModelService/DeleteModel',
@@ -4901,7 +4901,7 @@ proto$7.model.ModelServiceClient.prototype.deleteModel =
  * @return {!Promise<!proto.model.ModelChangeResponse>}
  *     Promise that resolves to the response
  */
-proto$7.model.ModelServicePromiseClient.prototype.deleteModel =
+proto$8.model.ModelServicePromiseClient.prototype.deleteModel =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/model.ModelService/DeleteModel',
@@ -4917,11 +4917,11 @@ proto$7.model.ModelServicePromiseClient.prototype.deleteModel =
  *   !proto.model.ConfigId,
  *   !proto.model.ConfigReadResponse>}
  */
-const methodDescriptor_ModelService_ReadModelConfig = new grpc$6.web.MethodDescriptor(
+const methodDescriptor_ModelService_ReadModelConfig = new grpc$7.web.MethodDescriptor(
   '/model.ModelService/ReadModelConfig',
-  grpc$6.web.MethodType.UNARY,
-  proto$7.model.ConfigId,
-  proto$7.model.ConfigReadResponse,
+  grpc$7.web.MethodType.UNARY,
+  proto$8.model.ConfigId,
+  proto$8.model.ConfigReadResponse,
   /**
    * @param {!proto.model.ConfigId} request
    * @return {!Uint8Array}
@@ -4929,7 +4929,7 @@ const methodDescriptor_ModelService_ReadModelConfig = new grpc$6.web.MethodDescr
   function(request) {
     return request.serializeBinary();
   },
-  proto$7.model.ConfigReadResponse.deserializeBinary
+  proto$8.model.ConfigReadResponse.deserializeBinary
 );
 
 
@@ -4943,7 +4943,7 @@ const methodDescriptor_ModelService_ReadModelConfig = new grpc$6.web.MethodDescr
  * @return {!grpc.web.ClientReadableStream<!proto.model.ConfigReadResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$7.model.ModelServiceClient.prototype.readModelConfig =
+proto$8.model.ModelServiceClient.prototype.readModelConfig =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/model.ModelService/ReadModelConfig',
@@ -4962,7 +4962,7 @@ proto$7.model.ModelServiceClient.prototype.readModelConfig =
  * @return {!Promise<!proto.model.ConfigReadResponse>}
  *     Promise that resolves to the response
  */
-proto$7.model.ModelServicePromiseClient.prototype.readModelConfig =
+proto$8.model.ModelServicePromiseClient.prototype.readModelConfig =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/model.ModelService/ReadModelConfig',
@@ -4978,11 +4978,11 @@ proto$7.model.ModelServicePromiseClient.prototype.readModelConfig =
  *   !proto.model.ModelId,
  *   !proto.model.ConfigListResponse>}
  */
-const methodDescriptor_ModelService_ListModelConfig = new grpc$6.web.MethodDescriptor(
+const methodDescriptor_ModelService_ListModelConfig = new grpc$7.web.MethodDescriptor(
   '/model.ModelService/ListModelConfig',
-  grpc$6.web.MethodType.UNARY,
-  proto$7.model.ModelId,
-  proto$7.model.ConfigListResponse,
+  grpc$7.web.MethodType.UNARY,
+  proto$8.model.ModelId,
+  proto$8.model.ConfigListResponse,
   /**
    * @param {!proto.model.ModelId} request
    * @return {!Uint8Array}
@@ -4990,7 +4990,7 @@ const methodDescriptor_ModelService_ListModelConfig = new grpc$6.web.MethodDescr
   function(request) {
     return request.serializeBinary();
   },
-  proto$7.model.ConfigListResponse.deserializeBinary
+  proto$8.model.ConfigListResponse.deserializeBinary
 );
 
 
@@ -5004,7 +5004,7 @@ const methodDescriptor_ModelService_ListModelConfig = new grpc$6.web.MethodDescr
  * @return {!grpc.web.ClientReadableStream<!proto.model.ConfigListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$7.model.ModelServiceClient.prototype.listModelConfig =
+proto$8.model.ModelServiceClient.prototype.listModelConfig =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/model.ModelService/ListModelConfig',
@@ -5023,7 +5023,7 @@ proto$7.model.ModelServiceClient.prototype.listModelConfig =
  * @return {!Promise<!proto.model.ConfigListResponse>}
  *     Promise that resolves to the response
  */
-proto$7.model.ModelServicePromiseClient.prototype.listModelConfig =
+proto$8.model.ModelServicePromiseClient.prototype.listModelConfig =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/model.ModelService/ListModelConfig',
@@ -5039,11 +5039,11 @@ proto$7.model.ModelServicePromiseClient.prototype.listModelConfig =
  *   !proto.model.ConfigSchema,
  *   !proto.model.ConfigCreateResponse>}
  */
-const methodDescriptor_ModelService_CreateModelConfig = new grpc$6.web.MethodDescriptor(
+const methodDescriptor_ModelService_CreateModelConfig = new grpc$7.web.MethodDescriptor(
   '/model.ModelService/CreateModelConfig',
-  grpc$6.web.MethodType.UNARY,
-  proto$7.model.ConfigSchema,
-  proto$7.model.ConfigCreateResponse,
+  grpc$7.web.MethodType.UNARY,
+  proto$8.model.ConfigSchema,
+  proto$8.model.ConfigCreateResponse,
   /**
    * @param {!proto.model.ConfigSchema} request
    * @return {!Uint8Array}
@@ -5051,7 +5051,7 @@ const methodDescriptor_ModelService_CreateModelConfig = new grpc$6.web.MethodDes
   function(request) {
     return request.serializeBinary();
   },
-  proto$7.model.ConfigCreateResponse.deserializeBinary
+  proto$8.model.ConfigCreateResponse.deserializeBinary
 );
 
 
@@ -5065,7 +5065,7 @@ const methodDescriptor_ModelService_CreateModelConfig = new grpc$6.web.MethodDes
  * @return {!grpc.web.ClientReadableStream<!proto.model.ConfigCreateResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$7.model.ModelServiceClient.prototype.createModelConfig =
+proto$8.model.ModelServiceClient.prototype.createModelConfig =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/model.ModelService/CreateModelConfig',
@@ -5084,7 +5084,7 @@ proto$7.model.ModelServiceClient.prototype.createModelConfig =
  * @return {!Promise<!proto.model.ConfigCreateResponse>}
  *     Promise that resolves to the response
  */
-proto$7.model.ModelServicePromiseClient.prototype.createModelConfig =
+proto$8.model.ModelServicePromiseClient.prototype.createModelConfig =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/model.ModelService/CreateModelConfig',
@@ -5100,11 +5100,11 @@ proto$7.model.ModelServicePromiseClient.prototype.createModelConfig =
  *   !proto.model.ConfigUpdate,
  *   !proto.model.ConfigChangeResponse>}
  */
-const methodDescriptor_ModelService_UpdateModelConfig = new grpc$6.web.MethodDescriptor(
+const methodDescriptor_ModelService_UpdateModelConfig = new grpc$7.web.MethodDescriptor(
   '/model.ModelService/UpdateModelConfig',
-  grpc$6.web.MethodType.UNARY,
-  proto$7.model.ConfigUpdate,
-  proto$7.model.ConfigChangeResponse,
+  grpc$7.web.MethodType.UNARY,
+  proto$8.model.ConfigUpdate,
+  proto$8.model.ConfigChangeResponse,
   /**
    * @param {!proto.model.ConfigUpdate} request
    * @return {!Uint8Array}
@@ -5112,7 +5112,7 @@ const methodDescriptor_ModelService_UpdateModelConfig = new grpc$6.web.MethodDes
   function(request) {
     return request.serializeBinary();
   },
-  proto$7.model.ConfigChangeResponse.deserializeBinary
+  proto$8.model.ConfigChangeResponse.deserializeBinary
 );
 
 
@@ -5126,7 +5126,7 @@ const methodDescriptor_ModelService_UpdateModelConfig = new grpc$6.web.MethodDes
  * @return {!grpc.web.ClientReadableStream<!proto.model.ConfigChangeResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$7.model.ModelServiceClient.prototype.updateModelConfig =
+proto$8.model.ModelServiceClient.prototype.updateModelConfig =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/model.ModelService/UpdateModelConfig',
@@ -5145,7 +5145,7 @@ proto$7.model.ModelServiceClient.prototype.updateModelConfig =
  * @return {!Promise<!proto.model.ConfigChangeResponse>}
  *     Promise that resolves to the response
  */
-proto$7.model.ModelServicePromiseClient.prototype.updateModelConfig =
+proto$8.model.ModelServicePromiseClient.prototype.updateModelConfig =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/model.ModelService/UpdateModelConfig',
@@ -5161,11 +5161,11 @@ proto$7.model.ModelServicePromiseClient.prototype.updateModelConfig =
  *   !proto.model.ConfigId,
  *   !proto.model.ConfigChangeResponse>}
  */
-const methodDescriptor_ModelService_DeleteModelConfig = new grpc$6.web.MethodDescriptor(
+const methodDescriptor_ModelService_DeleteModelConfig = new grpc$7.web.MethodDescriptor(
   '/model.ModelService/DeleteModelConfig',
-  grpc$6.web.MethodType.UNARY,
-  proto$7.model.ConfigId,
-  proto$7.model.ConfigChangeResponse,
+  grpc$7.web.MethodType.UNARY,
+  proto$8.model.ConfigId,
+  proto$8.model.ConfigChangeResponse,
   /**
    * @param {!proto.model.ConfigId} request
    * @return {!Uint8Array}
@@ -5173,7 +5173,7 @@ const methodDescriptor_ModelService_DeleteModelConfig = new grpc$6.web.MethodDes
   function(request) {
     return request.serializeBinary();
   },
-  proto$7.model.ConfigChangeResponse.deserializeBinary
+  proto$8.model.ConfigChangeResponse.deserializeBinary
 );
 
 
@@ -5187,7 +5187,7 @@ const methodDescriptor_ModelService_DeleteModelConfig = new grpc$6.web.MethodDes
  * @return {!grpc.web.ClientReadableStream<!proto.model.ConfigChangeResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$7.model.ModelServiceClient.prototype.deleteModelConfig =
+proto$8.model.ModelServiceClient.prototype.deleteModelConfig =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/model.ModelService/DeleteModelConfig',
@@ -5206,7 +5206,7 @@ proto$7.model.ModelServiceClient.prototype.deleteModelConfig =
  * @return {!Promise<!proto.model.ConfigChangeResponse>}
  *     Promise that resolves to the response
  */
-proto$7.model.ModelServicePromiseClient.prototype.deleteModelConfig =
+proto$8.model.ModelServicePromiseClient.prototype.deleteModelConfig =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/model.ModelService/DeleteModelConfig',
@@ -5216,7 +5216,7 @@ proto$7.model.ModelServicePromiseClient.prototype.deleteModelConfig =
 };
 
 
-var model_grpc_web_pb = proto$7.model;
+var model_grpc_web_pb = proto$8.model;
 
 var model_grpc_web_pb$1 = /*@__PURE__*/getDefaultExportFromCjs(model_grpc_web_pb);
 
@@ -13387,10 +13387,10 @@ var device_pb = {};
 
 
 
-const grpc$5 = {};
-grpc$5.web = require$$0$1;
-const proto$6 = {};
-proto$6.device = device_pb;
+const grpc$6 = {};
+grpc$6.web = require$$0$1;
+const proto$7 = {};
+proto$7.device = device_pb;
 
 /**
  * @param {string} hostname
@@ -13400,7 +13400,7 @@ proto$6.device = device_pb;
  * @struct
  * @final
  */
-proto$6.device.DeviceServiceClient =
+proto$7.device.DeviceServiceClient =
     function(hostname, credentials, options) {
   if (!options) options = {};
   options.format = 'text';
@@ -13408,7 +13408,7 @@ proto$6.device.DeviceServiceClient =
   /**
    * @private @const {!grpc.web.GrpcWebClientBase} The client
    */
-  this.client_ = new grpc$5.web.GrpcWebClientBase(options);
+  this.client_ = new grpc$6.web.GrpcWebClientBase(options);
 
   /**
    * @private @const {string} The hostname
@@ -13426,7 +13426,7 @@ proto$6.device.DeviceServiceClient =
  * @struct
  * @final
  */
-proto$6.device.DeviceServicePromiseClient =
+proto$7.device.DeviceServicePromiseClient =
     function(hostname, credentials, options) {
   if (!options) options = {};
   options.format = 'text';
@@ -13434,7 +13434,7 @@ proto$6.device.DeviceServicePromiseClient =
   /**
    * @private @const {!grpc.web.GrpcWebClientBase} The client
    */
-  this.client_ = new grpc$5.web.GrpcWebClientBase(options);
+  this.client_ = new grpc$6.web.GrpcWebClientBase(options);
 
   /**
    * @private @const {string} The hostname
@@ -13450,11 +13450,11 @@ proto$6.device.DeviceServicePromiseClient =
  *   !proto.device.DeviceId,
  *   !proto.device.DeviceReadResponse>}
  */
-const methodDescriptor_DeviceService_ReadDevice = new grpc$5.web.MethodDescriptor(
+const methodDescriptor_DeviceService_ReadDevice = new grpc$6.web.MethodDescriptor(
   '/device.DeviceService/ReadDevice',
-  grpc$5.web.MethodType.UNARY,
-  proto$6.device.DeviceId,
-  proto$6.device.DeviceReadResponse,
+  grpc$6.web.MethodType.UNARY,
+  proto$7.device.DeviceId,
+  proto$7.device.DeviceReadResponse,
   /**
    * @param {!proto.device.DeviceId} request
    * @return {!Uint8Array}
@@ -13462,7 +13462,7 @@ const methodDescriptor_DeviceService_ReadDevice = new grpc$5.web.MethodDescripto
   function(request) {
     return request.serializeBinary();
   },
-  proto$6.device.DeviceReadResponse.deserializeBinary
+  proto$7.device.DeviceReadResponse.deserializeBinary
 );
 
 
@@ -13476,7 +13476,7 @@ const methodDescriptor_DeviceService_ReadDevice = new grpc$5.web.MethodDescripto
  * @return {!grpc.web.ClientReadableStream<!proto.device.DeviceReadResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$6.device.DeviceServiceClient.prototype.readDevice =
+proto$7.device.DeviceServiceClient.prototype.readDevice =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/device.DeviceService/ReadDevice',
@@ -13495,7 +13495,7 @@ proto$6.device.DeviceServiceClient.prototype.readDevice =
  * @return {!Promise<!proto.device.DeviceReadResponse>}
  *     Promise that resolves to the response
  */
-proto$6.device.DeviceServicePromiseClient.prototype.readDevice =
+proto$7.device.DeviceServicePromiseClient.prototype.readDevice =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/device.DeviceService/ReadDevice',
@@ -13511,11 +13511,11 @@ proto$6.device.DeviceServicePromiseClient.prototype.readDevice =
  *   !proto.device.SerialNumber,
  *   !proto.device.DeviceReadResponse>}
  */
-const methodDescriptor_DeviceService_ReadDeviceBySn = new grpc$5.web.MethodDescriptor(
+const methodDescriptor_DeviceService_ReadDeviceBySn = new grpc$6.web.MethodDescriptor(
   '/device.DeviceService/ReadDeviceBySn',
-  grpc$5.web.MethodType.UNARY,
-  proto$6.device.SerialNumber,
-  proto$6.device.DeviceReadResponse,
+  grpc$6.web.MethodType.UNARY,
+  proto$7.device.SerialNumber,
+  proto$7.device.DeviceReadResponse,
   /**
    * @param {!proto.device.SerialNumber} request
    * @return {!Uint8Array}
@@ -13523,7 +13523,7 @@ const methodDescriptor_DeviceService_ReadDeviceBySn = new grpc$5.web.MethodDescr
   function(request) {
     return request.serializeBinary();
   },
-  proto$6.device.DeviceReadResponse.deserializeBinary
+  proto$7.device.DeviceReadResponse.deserializeBinary
 );
 
 
@@ -13537,7 +13537,7 @@ const methodDescriptor_DeviceService_ReadDeviceBySn = new grpc$5.web.MethodDescr
  * @return {!grpc.web.ClientReadableStream<!proto.device.DeviceReadResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$6.device.DeviceServiceClient.prototype.readDeviceBySn =
+proto$7.device.DeviceServiceClient.prototype.readDeviceBySn =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/device.DeviceService/ReadDeviceBySn',
@@ -13556,7 +13556,7 @@ proto$6.device.DeviceServiceClient.prototype.readDeviceBySn =
  * @return {!Promise<!proto.device.DeviceReadResponse>}
  *     Promise that resolves to the response
  */
-proto$6.device.DeviceServicePromiseClient.prototype.readDeviceBySn =
+proto$7.device.DeviceServicePromiseClient.prototype.readDeviceBySn =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/device.DeviceService/ReadDeviceBySn',
@@ -13572,11 +13572,11 @@ proto$6.device.DeviceServicePromiseClient.prototype.readDeviceBySn =
  *   !proto.device.DeviceIds,
  *   !proto.device.DeviceListResponse>}
  */
-const methodDescriptor_DeviceService_ListDeviceByIds = new grpc$5.web.MethodDescriptor(
+const methodDescriptor_DeviceService_ListDeviceByIds = new grpc$6.web.MethodDescriptor(
   '/device.DeviceService/ListDeviceByIds',
-  grpc$5.web.MethodType.UNARY,
-  proto$6.device.DeviceIds,
-  proto$6.device.DeviceListResponse,
+  grpc$6.web.MethodType.UNARY,
+  proto$7.device.DeviceIds,
+  proto$7.device.DeviceListResponse,
   /**
    * @param {!proto.device.DeviceIds} request
    * @return {!Uint8Array}
@@ -13584,7 +13584,7 @@ const methodDescriptor_DeviceService_ListDeviceByIds = new grpc$5.web.MethodDesc
   function(request) {
     return request.serializeBinary();
   },
-  proto$6.device.DeviceListResponse.deserializeBinary
+  proto$7.device.DeviceListResponse.deserializeBinary
 );
 
 
@@ -13598,7 +13598,7 @@ const methodDescriptor_DeviceService_ListDeviceByIds = new grpc$5.web.MethodDesc
  * @return {!grpc.web.ClientReadableStream<!proto.device.DeviceListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$6.device.DeviceServiceClient.prototype.listDeviceByIds =
+proto$7.device.DeviceServiceClient.prototype.listDeviceByIds =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/device.DeviceService/ListDeviceByIds',
@@ -13617,7 +13617,7 @@ proto$6.device.DeviceServiceClient.prototype.listDeviceByIds =
  * @return {!Promise<!proto.device.DeviceListResponse>}
  *     Promise that resolves to the response
  */
-proto$6.device.DeviceServicePromiseClient.prototype.listDeviceByIds =
+proto$7.device.DeviceServicePromiseClient.prototype.listDeviceByIds =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/device.DeviceService/ListDeviceByIds',
@@ -13633,11 +13633,11 @@ proto$6.device.DeviceServicePromiseClient.prototype.listDeviceByIds =
  *   !proto.device.GatewayId,
  *   !proto.device.DeviceListResponse>}
  */
-const methodDescriptor_DeviceService_ListDeviceByGateway = new grpc$5.web.MethodDescriptor(
+const methodDescriptor_DeviceService_ListDeviceByGateway = new grpc$6.web.MethodDescriptor(
   '/device.DeviceService/ListDeviceByGateway',
-  grpc$5.web.MethodType.UNARY,
-  proto$6.device.GatewayId,
-  proto$6.device.DeviceListResponse,
+  grpc$6.web.MethodType.UNARY,
+  proto$7.device.GatewayId,
+  proto$7.device.DeviceListResponse,
   /**
    * @param {!proto.device.GatewayId} request
    * @return {!Uint8Array}
@@ -13645,7 +13645,7 @@ const methodDescriptor_DeviceService_ListDeviceByGateway = new grpc$5.web.Method
   function(request) {
     return request.serializeBinary();
   },
-  proto$6.device.DeviceListResponse.deserializeBinary
+  proto$7.device.DeviceListResponse.deserializeBinary
 );
 
 
@@ -13659,7 +13659,7 @@ const methodDescriptor_DeviceService_ListDeviceByGateway = new grpc$5.web.Method
  * @return {!grpc.web.ClientReadableStream<!proto.device.DeviceListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$6.device.DeviceServiceClient.prototype.listDeviceByGateway =
+proto$7.device.DeviceServiceClient.prototype.listDeviceByGateway =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/device.DeviceService/ListDeviceByGateway',
@@ -13678,7 +13678,7 @@ proto$6.device.DeviceServiceClient.prototype.listDeviceByGateway =
  * @return {!Promise<!proto.device.DeviceListResponse>}
  *     Promise that resolves to the response
  */
-proto$6.device.DeviceServicePromiseClient.prototype.listDeviceByGateway =
+proto$7.device.DeviceServicePromiseClient.prototype.listDeviceByGateway =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/device.DeviceService/ListDeviceByGateway',
@@ -13694,11 +13694,11 @@ proto$6.device.DeviceServicePromiseClient.prototype.listDeviceByGateway =
  *   !proto.device.TypeId,
  *   !proto.device.DeviceListResponse>}
  */
-const methodDescriptor_DeviceService_ListDeviceByType = new grpc$5.web.MethodDescriptor(
+const methodDescriptor_DeviceService_ListDeviceByType = new grpc$6.web.MethodDescriptor(
   '/device.DeviceService/ListDeviceByType',
-  grpc$5.web.MethodType.UNARY,
-  proto$6.device.TypeId,
-  proto$6.device.DeviceListResponse,
+  grpc$6.web.MethodType.UNARY,
+  proto$7.device.TypeId,
+  proto$7.device.DeviceListResponse,
   /**
    * @param {!proto.device.TypeId} request
    * @return {!Uint8Array}
@@ -13706,7 +13706,7 @@ const methodDescriptor_DeviceService_ListDeviceByType = new grpc$5.web.MethodDes
   function(request) {
     return request.serializeBinary();
   },
-  proto$6.device.DeviceListResponse.deserializeBinary
+  proto$7.device.DeviceListResponse.deserializeBinary
 );
 
 
@@ -13720,7 +13720,7 @@ const methodDescriptor_DeviceService_ListDeviceByType = new grpc$5.web.MethodDes
  * @return {!grpc.web.ClientReadableStream<!proto.device.DeviceListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$6.device.DeviceServiceClient.prototype.listDeviceByType =
+proto$7.device.DeviceServiceClient.prototype.listDeviceByType =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/device.DeviceService/ListDeviceByType',
@@ -13739,7 +13739,7 @@ proto$6.device.DeviceServiceClient.prototype.listDeviceByType =
  * @return {!Promise<!proto.device.DeviceListResponse>}
  *     Promise that resolves to the response
  */
-proto$6.device.DeviceServicePromiseClient.prototype.listDeviceByType =
+proto$7.device.DeviceServicePromiseClient.prototype.listDeviceByType =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/device.DeviceService/ListDeviceByType',
@@ -13755,11 +13755,11 @@ proto$6.device.DeviceServicePromiseClient.prototype.listDeviceByType =
  *   !proto.device.DeviceName,
  *   !proto.device.DeviceListResponse>}
  */
-const methodDescriptor_DeviceService_ListDeviceByName = new grpc$5.web.MethodDescriptor(
+const methodDescriptor_DeviceService_ListDeviceByName = new grpc$6.web.MethodDescriptor(
   '/device.DeviceService/ListDeviceByName',
-  grpc$5.web.MethodType.UNARY,
-  proto$6.device.DeviceName,
-  proto$6.device.DeviceListResponse,
+  grpc$6.web.MethodType.UNARY,
+  proto$7.device.DeviceName,
+  proto$7.device.DeviceListResponse,
   /**
    * @param {!proto.device.DeviceName} request
    * @return {!Uint8Array}
@@ -13767,7 +13767,7 @@ const methodDescriptor_DeviceService_ListDeviceByName = new grpc$5.web.MethodDes
   function(request) {
     return request.serializeBinary();
   },
-  proto$6.device.DeviceListResponse.deserializeBinary
+  proto$7.device.DeviceListResponse.deserializeBinary
 );
 
 
@@ -13781,7 +13781,7 @@ const methodDescriptor_DeviceService_ListDeviceByName = new grpc$5.web.MethodDes
  * @return {!grpc.web.ClientReadableStream<!proto.device.DeviceListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$6.device.DeviceServiceClient.prototype.listDeviceByName =
+proto$7.device.DeviceServiceClient.prototype.listDeviceByName =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/device.DeviceService/ListDeviceByName',
@@ -13800,7 +13800,7 @@ proto$6.device.DeviceServiceClient.prototype.listDeviceByName =
  * @return {!Promise<!proto.device.DeviceListResponse>}
  *     Promise that resolves to the response
  */
-proto$6.device.DeviceServicePromiseClient.prototype.listDeviceByName =
+proto$7.device.DeviceServicePromiseClient.prototype.listDeviceByName =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/device.DeviceService/ListDeviceByName',
@@ -13816,11 +13816,11 @@ proto$6.device.DeviceServicePromiseClient.prototype.listDeviceByName =
  *   !proto.device.DeviceGatewayType,
  *   !proto.device.DeviceListResponse>}
  */
-const methodDescriptor_DeviceService_ListDeviceByGatewayType = new grpc$5.web.MethodDescriptor(
+const methodDescriptor_DeviceService_ListDeviceByGatewayType = new grpc$6.web.MethodDescriptor(
   '/device.DeviceService/ListDeviceByGatewayType',
-  grpc$5.web.MethodType.UNARY,
-  proto$6.device.DeviceGatewayType,
-  proto$6.device.DeviceListResponse,
+  grpc$6.web.MethodType.UNARY,
+  proto$7.device.DeviceGatewayType,
+  proto$7.device.DeviceListResponse,
   /**
    * @param {!proto.device.DeviceGatewayType} request
    * @return {!Uint8Array}
@@ -13828,7 +13828,7 @@ const methodDescriptor_DeviceService_ListDeviceByGatewayType = new grpc$5.web.Me
   function(request) {
     return request.serializeBinary();
   },
-  proto$6.device.DeviceListResponse.deserializeBinary
+  proto$7.device.DeviceListResponse.deserializeBinary
 );
 
 
@@ -13842,7 +13842,7 @@ const methodDescriptor_DeviceService_ListDeviceByGatewayType = new grpc$5.web.Me
  * @return {!grpc.web.ClientReadableStream<!proto.device.DeviceListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$6.device.DeviceServiceClient.prototype.listDeviceByGatewayType =
+proto$7.device.DeviceServiceClient.prototype.listDeviceByGatewayType =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/device.DeviceService/ListDeviceByGatewayType',
@@ -13861,7 +13861,7 @@ proto$6.device.DeviceServiceClient.prototype.listDeviceByGatewayType =
  * @return {!Promise<!proto.device.DeviceListResponse>}
  *     Promise that resolves to the response
  */
-proto$6.device.DeviceServicePromiseClient.prototype.listDeviceByGatewayType =
+proto$7.device.DeviceServicePromiseClient.prototype.listDeviceByGatewayType =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/device.DeviceService/ListDeviceByGatewayType',
@@ -13877,11 +13877,11 @@ proto$6.device.DeviceServicePromiseClient.prototype.listDeviceByGatewayType =
  *   !proto.device.DeviceGatewayName,
  *   !proto.device.DeviceListResponse>}
  */
-const methodDescriptor_DeviceService_ListDeviceByGatewayName = new grpc$5.web.MethodDescriptor(
+const methodDescriptor_DeviceService_ListDeviceByGatewayName = new grpc$6.web.MethodDescriptor(
   '/device.DeviceService/ListDeviceByGatewayName',
-  grpc$5.web.MethodType.UNARY,
-  proto$6.device.DeviceGatewayName,
-  proto$6.device.DeviceListResponse,
+  grpc$6.web.MethodType.UNARY,
+  proto$7.device.DeviceGatewayName,
+  proto$7.device.DeviceListResponse,
   /**
    * @param {!proto.device.DeviceGatewayName} request
    * @return {!Uint8Array}
@@ -13889,7 +13889,7 @@ const methodDescriptor_DeviceService_ListDeviceByGatewayName = new grpc$5.web.Me
   function(request) {
     return request.serializeBinary();
   },
-  proto$6.device.DeviceListResponse.deserializeBinary
+  proto$7.device.DeviceListResponse.deserializeBinary
 );
 
 
@@ -13903,7 +13903,7 @@ const methodDescriptor_DeviceService_ListDeviceByGatewayName = new grpc$5.web.Me
  * @return {!grpc.web.ClientReadableStream<!proto.device.DeviceListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$6.device.DeviceServiceClient.prototype.listDeviceByGatewayName =
+proto$7.device.DeviceServiceClient.prototype.listDeviceByGatewayName =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/device.DeviceService/ListDeviceByGatewayName',
@@ -13922,7 +13922,7 @@ proto$6.device.DeviceServiceClient.prototype.listDeviceByGatewayName =
  * @return {!Promise<!proto.device.DeviceListResponse>}
  *     Promise that resolves to the response
  */
-proto$6.device.DeviceServicePromiseClient.prototype.listDeviceByGatewayName =
+proto$7.device.DeviceServicePromiseClient.prototype.listDeviceByGatewayName =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/device.DeviceService/ListDeviceByGatewayName',
@@ -13938,11 +13938,11 @@ proto$6.device.DeviceServicePromiseClient.prototype.listDeviceByGatewayName =
  *   !proto.device.DeviceSchema,
  *   !proto.device.DeviceCreateResponse>}
  */
-const methodDescriptor_DeviceService_CreateDevice = new grpc$5.web.MethodDescriptor(
+const methodDescriptor_DeviceService_CreateDevice = new grpc$6.web.MethodDescriptor(
   '/device.DeviceService/CreateDevice',
-  grpc$5.web.MethodType.UNARY,
-  proto$6.device.DeviceSchema,
-  proto$6.device.DeviceCreateResponse,
+  grpc$6.web.MethodType.UNARY,
+  proto$7.device.DeviceSchema,
+  proto$7.device.DeviceCreateResponse,
   /**
    * @param {!proto.device.DeviceSchema} request
    * @return {!Uint8Array}
@@ -13950,7 +13950,7 @@ const methodDescriptor_DeviceService_CreateDevice = new grpc$5.web.MethodDescrip
   function(request) {
     return request.serializeBinary();
   },
-  proto$6.device.DeviceCreateResponse.deserializeBinary
+  proto$7.device.DeviceCreateResponse.deserializeBinary
 );
 
 
@@ -13964,7 +13964,7 @@ const methodDescriptor_DeviceService_CreateDevice = new grpc$5.web.MethodDescrip
  * @return {!grpc.web.ClientReadableStream<!proto.device.DeviceCreateResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$6.device.DeviceServiceClient.prototype.createDevice =
+proto$7.device.DeviceServiceClient.prototype.createDevice =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/device.DeviceService/CreateDevice',
@@ -13983,7 +13983,7 @@ proto$6.device.DeviceServiceClient.prototype.createDevice =
  * @return {!Promise<!proto.device.DeviceCreateResponse>}
  *     Promise that resolves to the response
  */
-proto$6.device.DeviceServicePromiseClient.prototype.createDevice =
+proto$7.device.DeviceServicePromiseClient.prototype.createDevice =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/device.DeviceService/CreateDevice',
@@ -13999,11 +13999,11 @@ proto$6.device.DeviceServicePromiseClient.prototype.createDevice =
  *   !proto.device.DeviceUpdate,
  *   !proto.device.DeviceChangeResponse>}
  */
-const methodDescriptor_DeviceService_UpdateDevice = new grpc$5.web.MethodDescriptor(
+const methodDescriptor_DeviceService_UpdateDevice = new grpc$6.web.MethodDescriptor(
   '/device.DeviceService/UpdateDevice',
-  grpc$5.web.MethodType.UNARY,
-  proto$6.device.DeviceUpdate,
-  proto$6.device.DeviceChangeResponse,
+  grpc$6.web.MethodType.UNARY,
+  proto$7.device.DeviceUpdate,
+  proto$7.device.DeviceChangeResponse,
   /**
    * @param {!proto.device.DeviceUpdate} request
    * @return {!Uint8Array}
@@ -14011,7 +14011,7 @@ const methodDescriptor_DeviceService_UpdateDevice = new grpc$5.web.MethodDescrip
   function(request) {
     return request.serializeBinary();
   },
-  proto$6.device.DeviceChangeResponse.deserializeBinary
+  proto$7.device.DeviceChangeResponse.deserializeBinary
 );
 
 
@@ -14025,7 +14025,7 @@ const methodDescriptor_DeviceService_UpdateDevice = new grpc$5.web.MethodDescrip
  * @return {!grpc.web.ClientReadableStream<!proto.device.DeviceChangeResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$6.device.DeviceServiceClient.prototype.updateDevice =
+proto$7.device.DeviceServiceClient.prototype.updateDevice =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/device.DeviceService/UpdateDevice',
@@ -14044,7 +14044,7 @@ proto$6.device.DeviceServiceClient.prototype.updateDevice =
  * @return {!Promise<!proto.device.DeviceChangeResponse>}
  *     Promise that resolves to the response
  */
-proto$6.device.DeviceServicePromiseClient.prototype.updateDevice =
+proto$7.device.DeviceServicePromiseClient.prototype.updateDevice =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/device.DeviceService/UpdateDevice',
@@ -14060,11 +14060,11 @@ proto$6.device.DeviceServicePromiseClient.prototype.updateDevice =
  *   !proto.device.DeviceId,
  *   !proto.device.DeviceChangeResponse>}
  */
-const methodDescriptor_DeviceService_DeleteDevice = new grpc$5.web.MethodDescriptor(
+const methodDescriptor_DeviceService_DeleteDevice = new grpc$6.web.MethodDescriptor(
   '/device.DeviceService/DeleteDevice',
-  grpc$5.web.MethodType.UNARY,
-  proto$6.device.DeviceId,
-  proto$6.device.DeviceChangeResponse,
+  grpc$6.web.MethodType.UNARY,
+  proto$7.device.DeviceId,
+  proto$7.device.DeviceChangeResponse,
   /**
    * @param {!proto.device.DeviceId} request
    * @return {!Uint8Array}
@@ -14072,7 +14072,7 @@ const methodDescriptor_DeviceService_DeleteDevice = new grpc$5.web.MethodDescrip
   function(request) {
     return request.serializeBinary();
   },
-  proto$6.device.DeviceChangeResponse.deserializeBinary
+  proto$7.device.DeviceChangeResponse.deserializeBinary
 );
 
 
@@ -14086,7 +14086,7 @@ const methodDescriptor_DeviceService_DeleteDevice = new grpc$5.web.MethodDescrip
  * @return {!grpc.web.ClientReadableStream<!proto.device.DeviceChangeResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$6.device.DeviceServiceClient.prototype.deleteDevice =
+proto$7.device.DeviceServiceClient.prototype.deleteDevice =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/device.DeviceService/DeleteDevice',
@@ -14105,7 +14105,7 @@ proto$6.device.DeviceServiceClient.prototype.deleteDevice =
  * @return {!Promise<!proto.device.DeviceChangeResponse>}
  *     Promise that resolves to the response
  */
-proto$6.device.DeviceServicePromiseClient.prototype.deleteDevice =
+proto$7.device.DeviceServicePromiseClient.prototype.deleteDevice =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/device.DeviceService/DeleteDevice',
@@ -14121,11 +14121,11 @@ proto$6.device.DeviceServicePromiseClient.prototype.deleteDevice =
  *   !proto.device.GatewayId,
  *   !proto.device.GatewayReadResponse>}
  */
-const methodDescriptor_DeviceService_ReadGateway = new grpc$5.web.MethodDescriptor(
+const methodDescriptor_DeviceService_ReadGateway = new grpc$6.web.MethodDescriptor(
   '/device.DeviceService/ReadGateway',
-  grpc$5.web.MethodType.UNARY,
-  proto$6.device.GatewayId,
-  proto$6.device.GatewayReadResponse,
+  grpc$6.web.MethodType.UNARY,
+  proto$7.device.GatewayId,
+  proto$7.device.GatewayReadResponse,
   /**
    * @param {!proto.device.GatewayId} request
    * @return {!Uint8Array}
@@ -14133,7 +14133,7 @@ const methodDescriptor_DeviceService_ReadGateway = new grpc$5.web.MethodDescript
   function(request) {
     return request.serializeBinary();
   },
-  proto$6.device.GatewayReadResponse.deserializeBinary
+  proto$7.device.GatewayReadResponse.deserializeBinary
 );
 
 
@@ -14147,7 +14147,7 @@ const methodDescriptor_DeviceService_ReadGateway = new grpc$5.web.MethodDescript
  * @return {!grpc.web.ClientReadableStream<!proto.device.GatewayReadResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$6.device.DeviceServiceClient.prototype.readGateway =
+proto$7.device.DeviceServiceClient.prototype.readGateway =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/device.DeviceService/ReadGateway',
@@ -14166,7 +14166,7 @@ proto$6.device.DeviceServiceClient.prototype.readGateway =
  * @return {!Promise<!proto.device.GatewayReadResponse>}
  *     Promise that resolves to the response
  */
-proto$6.device.DeviceServicePromiseClient.prototype.readGateway =
+proto$7.device.DeviceServicePromiseClient.prototype.readGateway =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/device.DeviceService/ReadGateway',
@@ -14182,11 +14182,11 @@ proto$6.device.DeviceServicePromiseClient.prototype.readGateway =
  *   !proto.device.SerialNumber,
  *   !proto.device.GatewayReadResponse>}
  */
-const methodDescriptor_DeviceService_ReadGatewayBySn = new grpc$5.web.MethodDescriptor(
+const methodDescriptor_DeviceService_ReadGatewayBySn = new grpc$6.web.MethodDescriptor(
   '/device.DeviceService/ReadGatewayBySn',
-  grpc$5.web.MethodType.UNARY,
-  proto$6.device.SerialNumber,
-  proto$6.device.GatewayReadResponse,
+  grpc$6.web.MethodType.UNARY,
+  proto$7.device.SerialNumber,
+  proto$7.device.GatewayReadResponse,
   /**
    * @param {!proto.device.SerialNumber} request
    * @return {!Uint8Array}
@@ -14194,7 +14194,7 @@ const methodDescriptor_DeviceService_ReadGatewayBySn = new grpc$5.web.MethodDesc
   function(request) {
     return request.serializeBinary();
   },
-  proto$6.device.GatewayReadResponse.deserializeBinary
+  proto$7.device.GatewayReadResponse.deserializeBinary
 );
 
 
@@ -14208,7 +14208,7 @@ const methodDescriptor_DeviceService_ReadGatewayBySn = new grpc$5.web.MethodDesc
  * @return {!grpc.web.ClientReadableStream<!proto.device.GatewayReadResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$6.device.DeviceServiceClient.prototype.readGatewayBySn =
+proto$7.device.DeviceServiceClient.prototype.readGatewayBySn =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/device.DeviceService/ReadGatewayBySn',
@@ -14227,7 +14227,7 @@ proto$6.device.DeviceServiceClient.prototype.readGatewayBySn =
  * @return {!Promise<!proto.device.GatewayReadResponse>}
  *     Promise that resolves to the response
  */
-proto$6.device.DeviceServicePromiseClient.prototype.readGatewayBySn =
+proto$7.device.DeviceServicePromiseClient.prototype.readGatewayBySn =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/device.DeviceService/ReadGatewayBySn',
@@ -14243,11 +14243,11 @@ proto$6.device.DeviceServicePromiseClient.prototype.readGatewayBySn =
  *   !proto.device.GatewayIds,
  *   !proto.device.GatewayListResponse>}
  */
-const methodDescriptor_DeviceService_ListGatewayByIds = new grpc$5.web.MethodDescriptor(
+const methodDescriptor_DeviceService_ListGatewayByIds = new grpc$6.web.MethodDescriptor(
   '/device.DeviceService/ListGatewayByIds',
-  grpc$5.web.MethodType.UNARY,
-  proto$6.device.GatewayIds,
-  proto$6.device.GatewayListResponse,
+  grpc$6.web.MethodType.UNARY,
+  proto$7.device.GatewayIds,
+  proto$7.device.GatewayListResponse,
   /**
    * @param {!proto.device.GatewayIds} request
    * @return {!Uint8Array}
@@ -14255,7 +14255,7 @@ const methodDescriptor_DeviceService_ListGatewayByIds = new grpc$5.web.MethodDes
   function(request) {
     return request.serializeBinary();
   },
-  proto$6.device.GatewayListResponse.deserializeBinary
+  proto$7.device.GatewayListResponse.deserializeBinary
 );
 
 
@@ -14269,7 +14269,7 @@ const methodDescriptor_DeviceService_ListGatewayByIds = new grpc$5.web.MethodDes
  * @return {!grpc.web.ClientReadableStream<!proto.device.GatewayListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$6.device.DeviceServiceClient.prototype.listGatewayByIds =
+proto$7.device.DeviceServiceClient.prototype.listGatewayByIds =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/device.DeviceService/ListGatewayByIds',
@@ -14288,7 +14288,7 @@ proto$6.device.DeviceServiceClient.prototype.listGatewayByIds =
  * @return {!Promise<!proto.device.GatewayListResponse>}
  *     Promise that resolves to the response
  */
-proto$6.device.DeviceServicePromiseClient.prototype.listGatewayByIds =
+proto$7.device.DeviceServicePromiseClient.prototype.listGatewayByIds =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/device.DeviceService/ListGatewayByIds',
@@ -14304,11 +14304,11 @@ proto$6.device.DeviceServicePromiseClient.prototype.listGatewayByIds =
  *   !proto.device.TypeId,
  *   !proto.device.GatewayListResponse>}
  */
-const methodDescriptor_DeviceService_ListGatewayByType = new grpc$5.web.MethodDescriptor(
+const methodDescriptor_DeviceService_ListGatewayByType = new grpc$6.web.MethodDescriptor(
   '/device.DeviceService/ListGatewayByType',
-  grpc$5.web.MethodType.UNARY,
-  proto$6.device.TypeId,
-  proto$6.device.GatewayListResponse,
+  grpc$6.web.MethodType.UNARY,
+  proto$7.device.TypeId,
+  proto$7.device.GatewayListResponse,
   /**
    * @param {!proto.device.TypeId} request
    * @return {!Uint8Array}
@@ -14316,7 +14316,7 @@ const methodDescriptor_DeviceService_ListGatewayByType = new grpc$5.web.MethodDe
   function(request) {
     return request.serializeBinary();
   },
-  proto$6.device.GatewayListResponse.deserializeBinary
+  proto$7.device.GatewayListResponse.deserializeBinary
 );
 
 
@@ -14330,7 +14330,7 @@ const methodDescriptor_DeviceService_ListGatewayByType = new grpc$5.web.MethodDe
  * @return {!grpc.web.ClientReadableStream<!proto.device.GatewayListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$6.device.DeviceServiceClient.prototype.listGatewayByType =
+proto$7.device.DeviceServiceClient.prototype.listGatewayByType =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/device.DeviceService/ListGatewayByType',
@@ -14349,7 +14349,7 @@ proto$6.device.DeviceServiceClient.prototype.listGatewayByType =
  * @return {!Promise<!proto.device.GatewayListResponse>}
  *     Promise that resolves to the response
  */
-proto$6.device.DeviceServicePromiseClient.prototype.listGatewayByType =
+proto$7.device.DeviceServicePromiseClient.prototype.listGatewayByType =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/device.DeviceService/ListGatewayByType',
@@ -14365,11 +14365,11 @@ proto$6.device.DeviceServicePromiseClient.prototype.listGatewayByType =
  *   !proto.device.GatewayName,
  *   !proto.device.GatewayListResponse>}
  */
-const methodDescriptor_DeviceService_ListGatewayByName = new grpc$5.web.MethodDescriptor(
+const methodDescriptor_DeviceService_ListGatewayByName = new grpc$6.web.MethodDescriptor(
   '/device.DeviceService/ListGatewayByName',
-  grpc$5.web.MethodType.UNARY,
-  proto$6.device.GatewayName,
-  proto$6.device.GatewayListResponse,
+  grpc$6.web.MethodType.UNARY,
+  proto$7.device.GatewayName,
+  proto$7.device.GatewayListResponse,
   /**
    * @param {!proto.device.GatewayName} request
    * @return {!Uint8Array}
@@ -14377,7 +14377,7 @@ const methodDescriptor_DeviceService_ListGatewayByName = new grpc$5.web.MethodDe
   function(request) {
     return request.serializeBinary();
   },
-  proto$6.device.GatewayListResponse.deserializeBinary
+  proto$7.device.GatewayListResponse.deserializeBinary
 );
 
 
@@ -14391,7 +14391,7 @@ const methodDescriptor_DeviceService_ListGatewayByName = new grpc$5.web.MethodDe
  * @return {!grpc.web.ClientReadableStream<!proto.device.GatewayListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$6.device.DeviceServiceClient.prototype.listGatewayByName =
+proto$7.device.DeviceServiceClient.prototype.listGatewayByName =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/device.DeviceService/ListGatewayByName',
@@ -14410,7 +14410,7 @@ proto$6.device.DeviceServiceClient.prototype.listGatewayByName =
  * @return {!Promise<!proto.device.GatewayListResponse>}
  *     Promise that resolves to the response
  */
-proto$6.device.DeviceServicePromiseClient.prototype.listGatewayByName =
+proto$7.device.DeviceServicePromiseClient.prototype.listGatewayByName =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/device.DeviceService/ListGatewayByName',
@@ -14426,11 +14426,11 @@ proto$6.device.DeviceServicePromiseClient.prototype.listGatewayByName =
  *   !proto.device.GatewaySchema,
  *   !proto.device.GatewayCreateResponse>}
  */
-const methodDescriptor_DeviceService_CreateGateway = new grpc$5.web.MethodDescriptor(
+const methodDescriptor_DeviceService_CreateGateway = new grpc$6.web.MethodDescriptor(
   '/device.DeviceService/CreateGateway',
-  grpc$5.web.MethodType.UNARY,
-  proto$6.device.GatewaySchema,
-  proto$6.device.GatewayCreateResponse,
+  grpc$6.web.MethodType.UNARY,
+  proto$7.device.GatewaySchema,
+  proto$7.device.GatewayCreateResponse,
   /**
    * @param {!proto.device.GatewaySchema} request
    * @return {!Uint8Array}
@@ -14438,7 +14438,7 @@ const methodDescriptor_DeviceService_CreateGateway = new grpc$5.web.MethodDescri
   function(request) {
     return request.serializeBinary();
   },
-  proto$6.device.GatewayCreateResponse.deserializeBinary
+  proto$7.device.GatewayCreateResponse.deserializeBinary
 );
 
 
@@ -14452,7 +14452,7 @@ const methodDescriptor_DeviceService_CreateGateway = new grpc$5.web.MethodDescri
  * @return {!grpc.web.ClientReadableStream<!proto.device.GatewayCreateResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$6.device.DeviceServiceClient.prototype.createGateway =
+proto$7.device.DeviceServiceClient.prototype.createGateway =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/device.DeviceService/CreateGateway',
@@ -14471,7 +14471,7 @@ proto$6.device.DeviceServiceClient.prototype.createGateway =
  * @return {!Promise<!proto.device.GatewayCreateResponse>}
  *     Promise that resolves to the response
  */
-proto$6.device.DeviceServicePromiseClient.prototype.createGateway =
+proto$7.device.DeviceServicePromiseClient.prototype.createGateway =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/device.DeviceService/CreateGateway',
@@ -14487,11 +14487,11 @@ proto$6.device.DeviceServicePromiseClient.prototype.createGateway =
  *   !proto.device.GatewayUpdate,
  *   !proto.device.GatewayChangeResponse>}
  */
-const methodDescriptor_DeviceService_UpdateGateway = new grpc$5.web.MethodDescriptor(
+const methodDescriptor_DeviceService_UpdateGateway = new grpc$6.web.MethodDescriptor(
   '/device.DeviceService/UpdateGateway',
-  grpc$5.web.MethodType.UNARY,
-  proto$6.device.GatewayUpdate,
-  proto$6.device.GatewayChangeResponse,
+  grpc$6.web.MethodType.UNARY,
+  proto$7.device.GatewayUpdate,
+  proto$7.device.GatewayChangeResponse,
   /**
    * @param {!proto.device.GatewayUpdate} request
    * @return {!Uint8Array}
@@ -14499,7 +14499,7 @@ const methodDescriptor_DeviceService_UpdateGateway = new grpc$5.web.MethodDescri
   function(request) {
     return request.serializeBinary();
   },
-  proto$6.device.GatewayChangeResponse.deserializeBinary
+  proto$7.device.GatewayChangeResponse.deserializeBinary
 );
 
 
@@ -14513,7 +14513,7 @@ const methodDescriptor_DeviceService_UpdateGateway = new grpc$5.web.MethodDescri
  * @return {!grpc.web.ClientReadableStream<!proto.device.GatewayChangeResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$6.device.DeviceServiceClient.prototype.updateGateway =
+proto$7.device.DeviceServiceClient.prototype.updateGateway =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/device.DeviceService/UpdateGateway',
@@ -14532,7 +14532,7 @@ proto$6.device.DeviceServiceClient.prototype.updateGateway =
  * @return {!Promise<!proto.device.GatewayChangeResponse>}
  *     Promise that resolves to the response
  */
-proto$6.device.DeviceServicePromiseClient.prototype.updateGateway =
+proto$7.device.DeviceServicePromiseClient.prototype.updateGateway =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/device.DeviceService/UpdateGateway',
@@ -14548,11 +14548,11 @@ proto$6.device.DeviceServicePromiseClient.prototype.updateGateway =
  *   !proto.device.GatewayId,
  *   !proto.device.GatewayChangeResponse>}
  */
-const methodDescriptor_DeviceService_DeleteGateway = new grpc$5.web.MethodDescriptor(
+const methodDescriptor_DeviceService_DeleteGateway = new grpc$6.web.MethodDescriptor(
   '/device.DeviceService/DeleteGateway',
-  grpc$5.web.MethodType.UNARY,
-  proto$6.device.GatewayId,
-  proto$6.device.GatewayChangeResponse,
+  grpc$6.web.MethodType.UNARY,
+  proto$7.device.GatewayId,
+  proto$7.device.GatewayChangeResponse,
   /**
    * @param {!proto.device.GatewayId} request
    * @return {!Uint8Array}
@@ -14560,7 +14560,7 @@ const methodDescriptor_DeviceService_DeleteGateway = new grpc$5.web.MethodDescri
   function(request) {
     return request.serializeBinary();
   },
-  proto$6.device.GatewayChangeResponse.deserializeBinary
+  proto$7.device.GatewayChangeResponse.deserializeBinary
 );
 
 
@@ -14574,7 +14574,7 @@ const methodDescriptor_DeviceService_DeleteGateway = new grpc$5.web.MethodDescri
  * @return {!grpc.web.ClientReadableStream<!proto.device.GatewayChangeResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$6.device.DeviceServiceClient.prototype.deleteGateway =
+proto$7.device.DeviceServiceClient.prototype.deleteGateway =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/device.DeviceService/DeleteGateway',
@@ -14593,7 +14593,7 @@ proto$6.device.DeviceServiceClient.prototype.deleteGateway =
  * @return {!Promise<!proto.device.GatewayChangeResponse>}
  *     Promise that resolves to the response
  */
-proto$6.device.DeviceServicePromiseClient.prototype.deleteGateway =
+proto$7.device.DeviceServicePromiseClient.prototype.deleteGateway =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/device.DeviceService/DeleteGateway',
@@ -14609,11 +14609,11 @@ proto$6.device.DeviceServicePromiseClient.prototype.deleteGateway =
  *   !proto.device.ConfigId,
  *   !proto.device.ConfigReadResponse>}
  */
-const methodDescriptor_DeviceService_ReadDeviceConfig = new grpc$5.web.MethodDescriptor(
+const methodDescriptor_DeviceService_ReadDeviceConfig = new grpc$6.web.MethodDescriptor(
   '/device.DeviceService/ReadDeviceConfig',
-  grpc$5.web.MethodType.UNARY,
-  proto$6.device.ConfigId,
-  proto$6.device.ConfigReadResponse,
+  grpc$6.web.MethodType.UNARY,
+  proto$7.device.ConfigId,
+  proto$7.device.ConfigReadResponse,
   /**
    * @param {!proto.device.ConfigId} request
    * @return {!Uint8Array}
@@ -14621,7 +14621,7 @@ const methodDescriptor_DeviceService_ReadDeviceConfig = new grpc$5.web.MethodDes
   function(request) {
     return request.serializeBinary();
   },
-  proto$6.device.ConfigReadResponse.deserializeBinary
+  proto$7.device.ConfigReadResponse.deserializeBinary
 );
 
 
@@ -14635,7 +14635,7 @@ const methodDescriptor_DeviceService_ReadDeviceConfig = new grpc$5.web.MethodDes
  * @return {!grpc.web.ClientReadableStream<!proto.device.ConfigReadResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$6.device.DeviceServiceClient.prototype.readDeviceConfig =
+proto$7.device.DeviceServiceClient.prototype.readDeviceConfig =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/device.DeviceService/ReadDeviceConfig',
@@ -14654,7 +14654,7 @@ proto$6.device.DeviceServiceClient.prototype.readDeviceConfig =
  * @return {!Promise<!proto.device.ConfigReadResponse>}
  *     Promise that resolves to the response
  */
-proto$6.device.DeviceServicePromiseClient.prototype.readDeviceConfig =
+proto$7.device.DeviceServicePromiseClient.prototype.readDeviceConfig =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/device.DeviceService/ReadDeviceConfig',
@@ -14670,11 +14670,11 @@ proto$6.device.DeviceServicePromiseClient.prototype.readDeviceConfig =
  *   !proto.device.DeviceId,
  *   !proto.device.ConfigListResponse>}
  */
-const methodDescriptor_DeviceService_ListDeviceConfig = new grpc$5.web.MethodDescriptor(
+const methodDescriptor_DeviceService_ListDeviceConfig = new grpc$6.web.MethodDescriptor(
   '/device.DeviceService/ListDeviceConfig',
-  grpc$5.web.MethodType.UNARY,
-  proto$6.device.DeviceId,
-  proto$6.device.ConfigListResponse,
+  grpc$6.web.MethodType.UNARY,
+  proto$7.device.DeviceId,
+  proto$7.device.ConfigListResponse,
   /**
    * @param {!proto.device.DeviceId} request
    * @return {!Uint8Array}
@@ -14682,7 +14682,7 @@ const methodDescriptor_DeviceService_ListDeviceConfig = new grpc$5.web.MethodDes
   function(request) {
     return request.serializeBinary();
   },
-  proto$6.device.ConfigListResponse.deserializeBinary
+  proto$7.device.ConfigListResponse.deserializeBinary
 );
 
 
@@ -14696,7 +14696,7 @@ const methodDescriptor_DeviceService_ListDeviceConfig = new grpc$5.web.MethodDes
  * @return {!grpc.web.ClientReadableStream<!proto.device.ConfigListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$6.device.DeviceServiceClient.prototype.listDeviceConfig =
+proto$7.device.DeviceServiceClient.prototype.listDeviceConfig =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/device.DeviceService/ListDeviceConfig',
@@ -14715,7 +14715,7 @@ proto$6.device.DeviceServiceClient.prototype.listDeviceConfig =
  * @return {!Promise<!proto.device.ConfigListResponse>}
  *     Promise that resolves to the response
  */
-proto$6.device.DeviceServicePromiseClient.prototype.listDeviceConfig =
+proto$7.device.DeviceServicePromiseClient.prototype.listDeviceConfig =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/device.DeviceService/ListDeviceConfig',
@@ -14731,11 +14731,11 @@ proto$6.device.DeviceServicePromiseClient.prototype.listDeviceConfig =
  *   !proto.device.ConfigSchema,
  *   !proto.device.ConfigCreateResponse>}
  */
-const methodDescriptor_DeviceService_CreateDeviceConfig = new grpc$5.web.MethodDescriptor(
+const methodDescriptor_DeviceService_CreateDeviceConfig = new grpc$6.web.MethodDescriptor(
   '/device.DeviceService/CreateDeviceConfig',
-  grpc$5.web.MethodType.UNARY,
-  proto$6.device.ConfigSchema,
-  proto$6.device.ConfigCreateResponse,
+  grpc$6.web.MethodType.UNARY,
+  proto$7.device.ConfigSchema,
+  proto$7.device.ConfigCreateResponse,
   /**
    * @param {!proto.device.ConfigSchema} request
    * @return {!Uint8Array}
@@ -14743,7 +14743,7 @@ const methodDescriptor_DeviceService_CreateDeviceConfig = new grpc$5.web.MethodD
   function(request) {
     return request.serializeBinary();
   },
-  proto$6.device.ConfigCreateResponse.deserializeBinary
+  proto$7.device.ConfigCreateResponse.deserializeBinary
 );
 
 
@@ -14757,7 +14757,7 @@ const methodDescriptor_DeviceService_CreateDeviceConfig = new grpc$5.web.MethodD
  * @return {!grpc.web.ClientReadableStream<!proto.device.ConfigCreateResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$6.device.DeviceServiceClient.prototype.createDeviceConfig =
+proto$7.device.DeviceServiceClient.prototype.createDeviceConfig =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/device.DeviceService/CreateDeviceConfig',
@@ -14776,7 +14776,7 @@ proto$6.device.DeviceServiceClient.prototype.createDeviceConfig =
  * @return {!Promise<!proto.device.ConfigCreateResponse>}
  *     Promise that resolves to the response
  */
-proto$6.device.DeviceServicePromiseClient.prototype.createDeviceConfig =
+proto$7.device.DeviceServicePromiseClient.prototype.createDeviceConfig =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/device.DeviceService/CreateDeviceConfig',
@@ -14792,11 +14792,11 @@ proto$6.device.DeviceServicePromiseClient.prototype.createDeviceConfig =
  *   !proto.device.ConfigUpdate,
  *   !proto.device.ConfigChangeResponse>}
  */
-const methodDescriptor_DeviceService_UpdateDeviceConfig = new grpc$5.web.MethodDescriptor(
+const methodDescriptor_DeviceService_UpdateDeviceConfig = new grpc$6.web.MethodDescriptor(
   '/device.DeviceService/UpdateDeviceConfig',
-  grpc$5.web.MethodType.UNARY,
-  proto$6.device.ConfigUpdate,
-  proto$6.device.ConfigChangeResponse,
+  grpc$6.web.MethodType.UNARY,
+  proto$7.device.ConfigUpdate,
+  proto$7.device.ConfigChangeResponse,
   /**
    * @param {!proto.device.ConfigUpdate} request
    * @return {!Uint8Array}
@@ -14804,7 +14804,7 @@ const methodDescriptor_DeviceService_UpdateDeviceConfig = new grpc$5.web.MethodD
   function(request) {
     return request.serializeBinary();
   },
-  proto$6.device.ConfigChangeResponse.deserializeBinary
+  proto$7.device.ConfigChangeResponse.deserializeBinary
 );
 
 
@@ -14818,7 +14818,7 @@ const methodDescriptor_DeviceService_UpdateDeviceConfig = new grpc$5.web.MethodD
  * @return {!grpc.web.ClientReadableStream<!proto.device.ConfigChangeResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$6.device.DeviceServiceClient.prototype.updateDeviceConfig =
+proto$7.device.DeviceServiceClient.prototype.updateDeviceConfig =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/device.DeviceService/UpdateDeviceConfig',
@@ -14837,7 +14837,7 @@ proto$6.device.DeviceServiceClient.prototype.updateDeviceConfig =
  * @return {!Promise<!proto.device.ConfigChangeResponse>}
  *     Promise that resolves to the response
  */
-proto$6.device.DeviceServicePromiseClient.prototype.updateDeviceConfig =
+proto$7.device.DeviceServicePromiseClient.prototype.updateDeviceConfig =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/device.DeviceService/UpdateDeviceConfig',
@@ -14853,11 +14853,11 @@ proto$6.device.DeviceServicePromiseClient.prototype.updateDeviceConfig =
  *   !proto.device.ConfigId,
  *   !proto.device.ConfigChangeResponse>}
  */
-const methodDescriptor_DeviceService_DeleteDeviceConfig = new grpc$5.web.MethodDescriptor(
+const methodDescriptor_DeviceService_DeleteDeviceConfig = new grpc$6.web.MethodDescriptor(
   '/device.DeviceService/DeleteDeviceConfig',
-  grpc$5.web.MethodType.UNARY,
-  proto$6.device.ConfigId,
-  proto$6.device.ConfigChangeResponse,
+  grpc$6.web.MethodType.UNARY,
+  proto$7.device.ConfigId,
+  proto$7.device.ConfigChangeResponse,
   /**
    * @param {!proto.device.ConfigId} request
    * @return {!Uint8Array}
@@ -14865,7 +14865,7 @@ const methodDescriptor_DeviceService_DeleteDeviceConfig = new grpc$5.web.MethodD
   function(request) {
     return request.serializeBinary();
   },
-  proto$6.device.ConfigChangeResponse.deserializeBinary
+  proto$7.device.ConfigChangeResponse.deserializeBinary
 );
 
 
@@ -14879,7 +14879,7 @@ const methodDescriptor_DeviceService_DeleteDeviceConfig = new grpc$5.web.MethodD
  * @return {!grpc.web.ClientReadableStream<!proto.device.ConfigChangeResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$6.device.DeviceServiceClient.prototype.deleteDeviceConfig =
+proto$7.device.DeviceServiceClient.prototype.deleteDeviceConfig =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/device.DeviceService/DeleteDeviceConfig',
@@ -14898,7 +14898,7 @@ proto$6.device.DeviceServiceClient.prototype.deleteDeviceConfig =
  * @return {!Promise<!proto.device.ConfigChangeResponse>}
  *     Promise that resolves to the response
  */
-proto$6.device.DeviceServicePromiseClient.prototype.deleteDeviceConfig =
+proto$7.device.DeviceServicePromiseClient.prototype.deleteDeviceConfig =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/device.DeviceService/DeleteDeviceConfig',
@@ -14914,11 +14914,11 @@ proto$6.device.DeviceServicePromiseClient.prototype.deleteDeviceConfig =
  *   !proto.device.ConfigId,
  *   !proto.device.ConfigReadResponse>}
  */
-const methodDescriptor_DeviceService_ReadGatewayConfig = new grpc$5.web.MethodDescriptor(
+const methodDescriptor_DeviceService_ReadGatewayConfig = new grpc$6.web.MethodDescriptor(
   '/device.DeviceService/ReadGatewayConfig',
-  grpc$5.web.MethodType.UNARY,
-  proto$6.device.ConfigId,
-  proto$6.device.ConfigReadResponse,
+  grpc$6.web.MethodType.UNARY,
+  proto$7.device.ConfigId,
+  proto$7.device.ConfigReadResponse,
   /**
    * @param {!proto.device.ConfigId} request
    * @return {!Uint8Array}
@@ -14926,7 +14926,7 @@ const methodDescriptor_DeviceService_ReadGatewayConfig = new grpc$5.web.MethodDe
   function(request) {
     return request.serializeBinary();
   },
-  proto$6.device.ConfigReadResponse.deserializeBinary
+  proto$7.device.ConfigReadResponse.deserializeBinary
 );
 
 
@@ -14940,7 +14940,7 @@ const methodDescriptor_DeviceService_ReadGatewayConfig = new grpc$5.web.MethodDe
  * @return {!grpc.web.ClientReadableStream<!proto.device.ConfigReadResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$6.device.DeviceServiceClient.prototype.readGatewayConfig =
+proto$7.device.DeviceServiceClient.prototype.readGatewayConfig =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/device.DeviceService/ReadGatewayConfig',
@@ -14959,7 +14959,7 @@ proto$6.device.DeviceServiceClient.prototype.readGatewayConfig =
  * @return {!Promise<!proto.device.ConfigReadResponse>}
  *     Promise that resolves to the response
  */
-proto$6.device.DeviceServicePromiseClient.prototype.readGatewayConfig =
+proto$7.device.DeviceServicePromiseClient.prototype.readGatewayConfig =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/device.DeviceService/ReadGatewayConfig',
@@ -14975,11 +14975,11 @@ proto$6.device.DeviceServicePromiseClient.prototype.readGatewayConfig =
  *   !proto.device.GatewayId,
  *   !proto.device.ConfigListResponse>}
  */
-const methodDescriptor_DeviceService_ListGatewayConfig = new grpc$5.web.MethodDescriptor(
+const methodDescriptor_DeviceService_ListGatewayConfig = new grpc$6.web.MethodDescriptor(
   '/device.DeviceService/ListGatewayConfig',
-  grpc$5.web.MethodType.UNARY,
-  proto$6.device.GatewayId,
-  proto$6.device.ConfigListResponse,
+  grpc$6.web.MethodType.UNARY,
+  proto$7.device.GatewayId,
+  proto$7.device.ConfigListResponse,
   /**
    * @param {!proto.device.GatewayId} request
    * @return {!Uint8Array}
@@ -14987,7 +14987,7 @@ const methodDescriptor_DeviceService_ListGatewayConfig = new grpc$5.web.MethodDe
   function(request) {
     return request.serializeBinary();
   },
-  proto$6.device.ConfigListResponse.deserializeBinary
+  proto$7.device.ConfigListResponse.deserializeBinary
 );
 
 
@@ -15001,7 +15001,7 @@ const methodDescriptor_DeviceService_ListGatewayConfig = new grpc$5.web.MethodDe
  * @return {!grpc.web.ClientReadableStream<!proto.device.ConfigListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$6.device.DeviceServiceClient.prototype.listGatewayConfig =
+proto$7.device.DeviceServiceClient.prototype.listGatewayConfig =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/device.DeviceService/ListGatewayConfig',
@@ -15020,7 +15020,7 @@ proto$6.device.DeviceServiceClient.prototype.listGatewayConfig =
  * @return {!Promise<!proto.device.ConfigListResponse>}
  *     Promise that resolves to the response
  */
-proto$6.device.DeviceServicePromiseClient.prototype.listGatewayConfig =
+proto$7.device.DeviceServicePromiseClient.prototype.listGatewayConfig =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/device.DeviceService/ListGatewayConfig',
@@ -15036,11 +15036,11 @@ proto$6.device.DeviceServicePromiseClient.prototype.listGatewayConfig =
  *   !proto.device.ConfigSchema,
  *   !proto.device.ConfigCreateResponse>}
  */
-const methodDescriptor_DeviceService_CreateGatewayConfig = new grpc$5.web.MethodDescriptor(
+const methodDescriptor_DeviceService_CreateGatewayConfig = new grpc$6.web.MethodDescriptor(
   '/device.DeviceService/CreateGatewayConfig',
-  grpc$5.web.MethodType.UNARY,
-  proto$6.device.ConfigSchema,
-  proto$6.device.ConfigCreateResponse,
+  grpc$6.web.MethodType.UNARY,
+  proto$7.device.ConfigSchema,
+  proto$7.device.ConfigCreateResponse,
   /**
    * @param {!proto.device.ConfigSchema} request
    * @return {!Uint8Array}
@@ -15048,7 +15048,7 @@ const methodDescriptor_DeviceService_CreateGatewayConfig = new grpc$5.web.Method
   function(request) {
     return request.serializeBinary();
   },
-  proto$6.device.ConfigCreateResponse.deserializeBinary
+  proto$7.device.ConfigCreateResponse.deserializeBinary
 );
 
 
@@ -15062,7 +15062,7 @@ const methodDescriptor_DeviceService_CreateGatewayConfig = new grpc$5.web.Method
  * @return {!grpc.web.ClientReadableStream<!proto.device.ConfigCreateResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$6.device.DeviceServiceClient.prototype.createGatewayConfig =
+proto$7.device.DeviceServiceClient.prototype.createGatewayConfig =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/device.DeviceService/CreateGatewayConfig',
@@ -15081,7 +15081,7 @@ proto$6.device.DeviceServiceClient.prototype.createGatewayConfig =
  * @return {!Promise<!proto.device.ConfigCreateResponse>}
  *     Promise that resolves to the response
  */
-proto$6.device.DeviceServicePromiseClient.prototype.createGatewayConfig =
+proto$7.device.DeviceServicePromiseClient.prototype.createGatewayConfig =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/device.DeviceService/CreateGatewayConfig',
@@ -15097,11 +15097,11 @@ proto$6.device.DeviceServicePromiseClient.prototype.createGatewayConfig =
  *   !proto.device.ConfigUpdate,
  *   !proto.device.ConfigChangeResponse>}
  */
-const methodDescriptor_DeviceService_UpdateGatewayConfig = new grpc$5.web.MethodDescriptor(
+const methodDescriptor_DeviceService_UpdateGatewayConfig = new grpc$6.web.MethodDescriptor(
   '/device.DeviceService/UpdateGatewayConfig',
-  grpc$5.web.MethodType.UNARY,
-  proto$6.device.ConfigUpdate,
-  proto$6.device.ConfigChangeResponse,
+  grpc$6.web.MethodType.UNARY,
+  proto$7.device.ConfigUpdate,
+  proto$7.device.ConfigChangeResponse,
   /**
    * @param {!proto.device.ConfigUpdate} request
    * @return {!Uint8Array}
@@ -15109,7 +15109,7 @@ const methodDescriptor_DeviceService_UpdateGatewayConfig = new grpc$5.web.Method
   function(request) {
     return request.serializeBinary();
   },
-  proto$6.device.ConfigChangeResponse.deserializeBinary
+  proto$7.device.ConfigChangeResponse.deserializeBinary
 );
 
 
@@ -15123,7 +15123,7 @@ const methodDescriptor_DeviceService_UpdateGatewayConfig = new grpc$5.web.Method
  * @return {!grpc.web.ClientReadableStream<!proto.device.ConfigChangeResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$6.device.DeviceServiceClient.prototype.updateGatewayConfig =
+proto$7.device.DeviceServiceClient.prototype.updateGatewayConfig =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/device.DeviceService/UpdateGatewayConfig',
@@ -15142,7 +15142,7 @@ proto$6.device.DeviceServiceClient.prototype.updateGatewayConfig =
  * @return {!Promise<!proto.device.ConfigChangeResponse>}
  *     Promise that resolves to the response
  */
-proto$6.device.DeviceServicePromiseClient.prototype.updateGatewayConfig =
+proto$7.device.DeviceServicePromiseClient.prototype.updateGatewayConfig =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/device.DeviceService/UpdateGatewayConfig',
@@ -15158,11 +15158,11 @@ proto$6.device.DeviceServicePromiseClient.prototype.updateGatewayConfig =
  *   !proto.device.ConfigId,
  *   !proto.device.ConfigChangeResponse>}
  */
-const methodDescriptor_DeviceService_DeleteGatewayConfig = new grpc$5.web.MethodDescriptor(
+const methodDescriptor_DeviceService_DeleteGatewayConfig = new grpc$6.web.MethodDescriptor(
   '/device.DeviceService/DeleteGatewayConfig',
-  grpc$5.web.MethodType.UNARY,
-  proto$6.device.ConfigId,
-  proto$6.device.ConfigChangeResponse,
+  grpc$6.web.MethodType.UNARY,
+  proto$7.device.ConfigId,
+  proto$7.device.ConfigChangeResponse,
   /**
    * @param {!proto.device.ConfigId} request
    * @return {!Uint8Array}
@@ -15170,7 +15170,7 @@ const methodDescriptor_DeviceService_DeleteGatewayConfig = new grpc$5.web.Method
   function(request) {
     return request.serializeBinary();
   },
-  proto$6.device.ConfigChangeResponse.deserializeBinary
+  proto$7.device.ConfigChangeResponse.deserializeBinary
 );
 
 
@@ -15184,7 +15184,7 @@ const methodDescriptor_DeviceService_DeleteGatewayConfig = new grpc$5.web.Method
  * @return {!grpc.web.ClientReadableStream<!proto.device.ConfigChangeResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$6.device.DeviceServiceClient.prototype.deleteGatewayConfig =
+proto$7.device.DeviceServiceClient.prototype.deleteGatewayConfig =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/device.DeviceService/DeleteGatewayConfig',
@@ -15203,7 +15203,7 @@ proto$6.device.DeviceServiceClient.prototype.deleteGatewayConfig =
  * @return {!Promise<!proto.device.ConfigChangeResponse>}
  *     Promise that resolves to the response
  */
-proto$6.device.DeviceServicePromiseClient.prototype.deleteGatewayConfig =
+proto$7.device.DeviceServicePromiseClient.prototype.deleteGatewayConfig =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/device.DeviceService/DeleteGatewayConfig',
@@ -15219,11 +15219,11 @@ proto$6.device.DeviceServicePromiseClient.prototype.deleteGatewayConfig =
  *   !proto.device.TypeId,
  *   !proto.device.TypeReadResponse>}
  */
-const methodDescriptor_DeviceService_ReadType = new grpc$5.web.MethodDescriptor(
+const methodDescriptor_DeviceService_ReadType = new grpc$6.web.MethodDescriptor(
   '/device.DeviceService/ReadType',
-  grpc$5.web.MethodType.UNARY,
-  proto$6.device.TypeId,
-  proto$6.device.TypeReadResponse,
+  grpc$6.web.MethodType.UNARY,
+  proto$7.device.TypeId,
+  proto$7.device.TypeReadResponse,
   /**
    * @param {!proto.device.TypeId} request
    * @return {!Uint8Array}
@@ -15231,7 +15231,7 @@ const methodDescriptor_DeviceService_ReadType = new grpc$5.web.MethodDescriptor(
   function(request) {
     return request.serializeBinary();
   },
-  proto$6.device.TypeReadResponse.deserializeBinary
+  proto$7.device.TypeReadResponse.deserializeBinary
 );
 
 
@@ -15245,7 +15245,7 @@ const methodDescriptor_DeviceService_ReadType = new grpc$5.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.device.TypeReadResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$6.device.DeviceServiceClient.prototype.readType =
+proto$7.device.DeviceServiceClient.prototype.readType =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/device.DeviceService/ReadType',
@@ -15264,7 +15264,7 @@ proto$6.device.DeviceServiceClient.prototype.readType =
  * @return {!Promise<!proto.device.TypeReadResponse>}
  *     Promise that resolves to the response
  */
-proto$6.device.DeviceServicePromiseClient.prototype.readType =
+proto$7.device.DeviceServicePromiseClient.prototype.readType =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/device.DeviceService/ReadType',
@@ -15280,11 +15280,11 @@ proto$6.device.DeviceServicePromiseClient.prototype.readType =
  *   !proto.device.TypeIds,
  *   !proto.device.TypeListResponse>}
  */
-const methodDescriptor_DeviceService_ListTypeByIds = new grpc$5.web.MethodDescriptor(
+const methodDescriptor_DeviceService_ListTypeByIds = new grpc$6.web.MethodDescriptor(
   '/device.DeviceService/ListTypeByIds',
-  grpc$5.web.MethodType.UNARY,
-  proto$6.device.TypeIds,
-  proto$6.device.TypeListResponse,
+  grpc$6.web.MethodType.UNARY,
+  proto$7.device.TypeIds,
+  proto$7.device.TypeListResponse,
   /**
    * @param {!proto.device.TypeIds} request
    * @return {!Uint8Array}
@@ -15292,7 +15292,7 @@ const methodDescriptor_DeviceService_ListTypeByIds = new grpc$5.web.MethodDescri
   function(request) {
     return request.serializeBinary();
   },
-  proto$6.device.TypeListResponse.deserializeBinary
+  proto$7.device.TypeListResponse.deserializeBinary
 );
 
 
@@ -15306,7 +15306,7 @@ const methodDescriptor_DeviceService_ListTypeByIds = new grpc$5.web.MethodDescri
  * @return {!grpc.web.ClientReadableStream<!proto.device.TypeListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$6.device.DeviceServiceClient.prototype.listTypeByIds =
+proto$7.device.DeviceServiceClient.prototype.listTypeByIds =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/device.DeviceService/ListTypeByIds',
@@ -15325,7 +15325,7 @@ proto$6.device.DeviceServiceClient.prototype.listTypeByIds =
  * @return {!Promise<!proto.device.TypeListResponse>}
  *     Promise that resolves to the response
  */
-proto$6.device.DeviceServicePromiseClient.prototype.listTypeByIds =
+proto$7.device.DeviceServicePromiseClient.prototype.listTypeByIds =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/device.DeviceService/ListTypeByIds',
@@ -15341,11 +15341,11 @@ proto$6.device.DeviceServicePromiseClient.prototype.listTypeByIds =
  *   !proto.device.TypeName,
  *   !proto.device.TypeListResponse>}
  */
-const methodDescriptor_DeviceService_ListTypeByName = new grpc$5.web.MethodDescriptor(
+const methodDescriptor_DeviceService_ListTypeByName = new grpc$6.web.MethodDescriptor(
   '/device.DeviceService/ListTypeByName',
-  grpc$5.web.MethodType.UNARY,
-  proto$6.device.TypeName,
-  proto$6.device.TypeListResponse,
+  grpc$6.web.MethodType.UNARY,
+  proto$7.device.TypeName,
+  proto$7.device.TypeListResponse,
   /**
    * @param {!proto.device.TypeName} request
    * @return {!Uint8Array}
@@ -15353,7 +15353,7 @@ const methodDescriptor_DeviceService_ListTypeByName = new grpc$5.web.MethodDescr
   function(request) {
     return request.serializeBinary();
   },
-  proto$6.device.TypeListResponse.deserializeBinary
+  proto$7.device.TypeListResponse.deserializeBinary
 );
 
 
@@ -15367,7 +15367,7 @@ const methodDescriptor_DeviceService_ListTypeByName = new grpc$5.web.MethodDescr
  * @return {!grpc.web.ClientReadableStream<!proto.device.TypeListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$6.device.DeviceServiceClient.prototype.listTypeByName =
+proto$7.device.DeviceServiceClient.prototype.listTypeByName =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/device.DeviceService/ListTypeByName',
@@ -15386,7 +15386,7 @@ proto$6.device.DeviceServiceClient.prototype.listTypeByName =
  * @return {!Promise<!proto.device.TypeListResponse>}
  *     Promise that resolves to the response
  */
-proto$6.device.DeviceServicePromiseClient.prototype.listTypeByName =
+proto$7.device.DeviceServicePromiseClient.prototype.listTypeByName =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/device.DeviceService/ListTypeByName',
@@ -15402,11 +15402,11 @@ proto$6.device.DeviceServicePromiseClient.prototype.listTypeByName =
  *   !proto.device.TypeSchema,
  *   !proto.device.TypeCreateResponse>}
  */
-const methodDescriptor_DeviceService_CreateType = new grpc$5.web.MethodDescriptor(
+const methodDescriptor_DeviceService_CreateType = new grpc$6.web.MethodDescriptor(
   '/device.DeviceService/CreateType',
-  grpc$5.web.MethodType.UNARY,
-  proto$6.device.TypeSchema,
-  proto$6.device.TypeCreateResponse,
+  grpc$6.web.MethodType.UNARY,
+  proto$7.device.TypeSchema,
+  proto$7.device.TypeCreateResponse,
   /**
    * @param {!proto.device.TypeSchema} request
    * @return {!Uint8Array}
@@ -15414,7 +15414,7 @@ const methodDescriptor_DeviceService_CreateType = new grpc$5.web.MethodDescripto
   function(request) {
     return request.serializeBinary();
   },
-  proto$6.device.TypeCreateResponse.deserializeBinary
+  proto$7.device.TypeCreateResponse.deserializeBinary
 );
 
 
@@ -15428,7 +15428,7 @@ const methodDescriptor_DeviceService_CreateType = new grpc$5.web.MethodDescripto
  * @return {!grpc.web.ClientReadableStream<!proto.device.TypeCreateResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$6.device.DeviceServiceClient.prototype.createType =
+proto$7.device.DeviceServiceClient.prototype.createType =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/device.DeviceService/CreateType',
@@ -15447,7 +15447,7 @@ proto$6.device.DeviceServiceClient.prototype.createType =
  * @return {!Promise<!proto.device.TypeCreateResponse>}
  *     Promise that resolves to the response
  */
-proto$6.device.DeviceServicePromiseClient.prototype.createType =
+proto$7.device.DeviceServicePromiseClient.prototype.createType =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/device.DeviceService/CreateType',
@@ -15463,11 +15463,11 @@ proto$6.device.DeviceServicePromiseClient.prototype.createType =
  *   !proto.device.TypeUpdate,
  *   !proto.device.TypeChangeResponse>}
  */
-const methodDescriptor_DeviceService_UpdateType = new grpc$5.web.MethodDescriptor(
+const methodDescriptor_DeviceService_UpdateType = new grpc$6.web.MethodDescriptor(
   '/device.DeviceService/UpdateType',
-  grpc$5.web.MethodType.UNARY,
-  proto$6.device.TypeUpdate,
-  proto$6.device.TypeChangeResponse,
+  grpc$6.web.MethodType.UNARY,
+  proto$7.device.TypeUpdate,
+  proto$7.device.TypeChangeResponse,
   /**
    * @param {!proto.device.TypeUpdate} request
    * @return {!Uint8Array}
@@ -15475,7 +15475,7 @@ const methodDescriptor_DeviceService_UpdateType = new grpc$5.web.MethodDescripto
   function(request) {
     return request.serializeBinary();
   },
-  proto$6.device.TypeChangeResponse.deserializeBinary
+  proto$7.device.TypeChangeResponse.deserializeBinary
 );
 
 
@@ -15489,7 +15489,7 @@ const methodDescriptor_DeviceService_UpdateType = new grpc$5.web.MethodDescripto
  * @return {!grpc.web.ClientReadableStream<!proto.device.TypeChangeResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$6.device.DeviceServiceClient.prototype.updateType =
+proto$7.device.DeviceServiceClient.prototype.updateType =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/device.DeviceService/UpdateType',
@@ -15508,7 +15508,7 @@ proto$6.device.DeviceServiceClient.prototype.updateType =
  * @return {!Promise<!proto.device.TypeChangeResponse>}
  *     Promise that resolves to the response
  */
-proto$6.device.DeviceServicePromiseClient.prototype.updateType =
+proto$7.device.DeviceServicePromiseClient.prototype.updateType =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/device.DeviceService/UpdateType',
@@ -15524,11 +15524,11 @@ proto$6.device.DeviceServicePromiseClient.prototype.updateType =
  *   !proto.device.TypeId,
  *   !proto.device.TypeChangeResponse>}
  */
-const methodDescriptor_DeviceService_DeleteType = new grpc$5.web.MethodDescriptor(
+const methodDescriptor_DeviceService_DeleteType = new grpc$6.web.MethodDescriptor(
   '/device.DeviceService/DeleteType',
-  grpc$5.web.MethodType.UNARY,
-  proto$6.device.TypeId,
-  proto$6.device.TypeChangeResponse,
+  grpc$6.web.MethodType.UNARY,
+  proto$7.device.TypeId,
+  proto$7.device.TypeChangeResponse,
   /**
    * @param {!proto.device.TypeId} request
    * @return {!Uint8Array}
@@ -15536,7 +15536,7 @@ const methodDescriptor_DeviceService_DeleteType = new grpc$5.web.MethodDescripto
   function(request) {
     return request.serializeBinary();
   },
-  proto$6.device.TypeChangeResponse.deserializeBinary
+  proto$7.device.TypeChangeResponse.deserializeBinary
 );
 
 
@@ -15550,7 +15550,7 @@ const methodDescriptor_DeviceService_DeleteType = new grpc$5.web.MethodDescripto
  * @return {!grpc.web.ClientReadableStream<!proto.device.TypeChangeResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$6.device.DeviceServiceClient.prototype.deleteType =
+proto$7.device.DeviceServiceClient.prototype.deleteType =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/device.DeviceService/DeleteType',
@@ -15569,7 +15569,7 @@ proto$6.device.DeviceServiceClient.prototype.deleteType =
  * @return {!Promise<!proto.device.TypeChangeResponse>}
  *     Promise that resolves to the response
  */
-proto$6.device.DeviceServicePromiseClient.prototype.deleteType =
+proto$7.device.DeviceServicePromiseClient.prototype.deleteType =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/device.DeviceService/DeleteType',
@@ -15585,11 +15585,11 @@ proto$6.device.DeviceServicePromiseClient.prototype.deleteType =
  *   !proto.device.TypeModel,
  *   !proto.device.TypeChangeResponse>}
  */
-const methodDescriptor_DeviceService_AddTypeModel = new grpc$5.web.MethodDescriptor(
+const methodDescriptor_DeviceService_AddTypeModel = new grpc$6.web.MethodDescriptor(
   '/device.DeviceService/AddTypeModel',
-  grpc$5.web.MethodType.UNARY,
-  proto$6.device.TypeModel,
-  proto$6.device.TypeChangeResponse,
+  grpc$6.web.MethodType.UNARY,
+  proto$7.device.TypeModel,
+  proto$7.device.TypeChangeResponse,
   /**
    * @param {!proto.device.TypeModel} request
    * @return {!Uint8Array}
@@ -15597,7 +15597,7 @@ const methodDescriptor_DeviceService_AddTypeModel = new grpc$5.web.MethodDescrip
   function(request) {
     return request.serializeBinary();
   },
-  proto$6.device.TypeChangeResponse.deserializeBinary
+  proto$7.device.TypeChangeResponse.deserializeBinary
 );
 
 
@@ -15611,7 +15611,7 @@ const methodDescriptor_DeviceService_AddTypeModel = new grpc$5.web.MethodDescrip
  * @return {!grpc.web.ClientReadableStream<!proto.device.TypeChangeResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$6.device.DeviceServiceClient.prototype.addTypeModel =
+proto$7.device.DeviceServiceClient.prototype.addTypeModel =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/device.DeviceService/AddTypeModel',
@@ -15630,7 +15630,7 @@ proto$6.device.DeviceServiceClient.prototype.addTypeModel =
  * @return {!Promise<!proto.device.TypeChangeResponse>}
  *     Promise that resolves to the response
  */
-proto$6.device.DeviceServicePromiseClient.prototype.addTypeModel =
+proto$7.device.DeviceServicePromiseClient.prototype.addTypeModel =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/device.DeviceService/AddTypeModel',
@@ -15646,11 +15646,11 @@ proto$6.device.DeviceServicePromiseClient.prototype.addTypeModel =
  *   !proto.device.TypeModel,
  *   !proto.device.TypeChangeResponse>}
  */
-const methodDescriptor_DeviceService_RemoveTypeModel = new grpc$5.web.MethodDescriptor(
+const methodDescriptor_DeviceService_RemoveTypeModel = new grpc$6.web.MethodDescriptor(
   '/device.DeviceService/RemoveTypeModel',
-  grpc$5.web.MethodType.UNARY,
-  proto$6.device.TypeModel,
-  proto$6.device.TypeChangeResponse,
+  grpc$6.web.MethodType.UNARY,
+  proto$7.device.TypeModel,
+  proto$7.device.TypeChangeResponse,
   /**
    * @param {!proto.device.TypeModel} request
    * @return {!Uint8Array}
@@ -15658,7 +15658,7 @@ const methodDescriptor_DeviceService_RemoveTypeModel = new grpc$5.web.MethodDesc
   function(request) {
     return request.serializeBinary();
   },
-  proto$6.device.TypeChangeResponse.deserializeBinary
+  proto$7.device.TypeChangeResponse.deserializeBinary
 );
 
 
@@ -15672,7 +15672,7 @@ const methodDescriptor_DeviceService_RemoveTypeModel = new grpc$5.web.MethodDesc
  * @return {!grpc.web.ClientReadableStream<!proto.device.TypeChangeResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$6.device.DeviceServiceClient.prototype.removeTypeModel =
+proto$7.device.DeviceServiceClient.prototype.removeTypeModel =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/device.DeviceService/RemoveTypeModel',
@@ -15691,7 +15691,7 @@ proto$6.device.DeviceServiceClient.prototype.removeTypeModel =
  * @return {!Promise<!proto.device.TypeChangeResponse>}
  *     Promise that resolves to the response
  */
-proto$6.device.DeviceServicePromiseClient.prototype.removeTypeModel =
+proto$7.device.DeviceServicePromiseClient.prototype.removeTypeModel =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/device.DeviceService/RemoveTypeModel',
@@ -15701,7 +15701,7 @@ proto$6.device.DeviceServicePromiseClient.prototype.removeTypeModel =
 };
 
 
-var device_grpc_web_pb = proto$6.device;
+var device_grpc_web_pb = proto$7.device;
 
 var device_grpc_web_pb$1 = /*@__PURE__*/getDefaultExportFromCjs(device_grpc_web_pb);
 
@@ -19096,11 +19096,11 @@ var group_pb = {};
 
 
 
-const grpc$4 = {};
-grpc$4.web = require$$0$1;
+const grpc$5 = {};
+grpc$5.web = require$$0$1;
 
-const proto$5 = {};
-proto$5.group = group_pb;
+const proto$6 = {};
+proto$6.group = group_pb;
 
 /**
  * @param {string} hostname
@@ -19110,7 +19110,7 @@ proto$5.group = group_pb;
  * @struct
  * @final
  */
-proto$5.group.GroupServiceClient =
+proto$6.group.GroupServiceClient =
     function(hostname, credentials, options) {
   if (!options) options = {};
   options.format = 'text';
@@ -19118,7 +19118,7 @@ proto$5.group.GroupServiceClient =
   /**
    * @private @const {!grpc.web.GrpcWebClientBase} The client
    */
-  this.client_ = new grpc$4.web.GrpcWebClientBase(options);
+  this.client_ = new grpc$5.web.GrpcWebClientBase(options);
 
   /**
    * @private @const {string} The hostname
@@ -19136,7 +19136,7 @@ proto$5.group.GroupServiceClient =
  * @struct
  * @final
  */
-proto$5.group.GroupServicePromiseClient =
+proto$6.group.GroupServicePromiseClient =
     function(hostname, credentials, options) {
   if (!options) options = {};
   options.format = 'text';
@@ -19144,7 +19144,7 @@ proto$5.group.GroupServicePromiseClient =
   /**
    * @private @const {!grpc.web.GrpcWebClientBase} The client
    */
-  this.client_ = new grpc$4.web.GrpcWebClientBase(options);
+  this.client_ = new grpc$5.web.GrpcWebClientBase(options);
 
   /**
    * @private @const {string} The hostname
@@ -19160,11 +19160,11 @@ proto$5.group.GroupServicePromiseClient =
  *   !proto.group.GroupId,
  *   !proto.group.GroupModelReadResponse>}
  */
-const methodDescriptor_GroupService_ReadGroupModel = new grpc$4.web.MethodDescriptor(
+const methodDescriptor_GroupService_ReadGroupModel = new grpc$5.web.MethodDescriptor(
   '/group.GroupService/ReadGroupModel',
-  grpc$4.web.MethodType.UNARY,
-  proto$5.group.GroupId,
-  proto$5.group.GroupModelReadResponse,
+  grpc$5.web.MethodType.UNARY,
+  proto$6.group.GroupId,
+  proto$6.group.GroupModelReadResponse,
   /**
    * @param {!proto.group.GroupId} request
    * @return {!Uint8Array}
@@ -19172,7 +19172,7 @@ const methodDescriptor_GroupService_ReadGroupModel = new grpc$4.web.MethodDescri
   function(request) {
     return request.serializeBinary();
   },
-  proto$5.group.GroupModelReadResponse.deserializeBinary
+  proto$6.group.GroupModelReadResponse.deserializeBinary
 );
 
 
@@ -19186,7 +19186,7 @@ const methodDescriptor_GroupService_ReadGroupModel = new grpc$4.web.MethodDescri
  * @return {!grpc.web.ClientReadableStream<!proto.group.GroupModelReadResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$5.group.GroupServiceClient.prototype.readGroupModel =
+proto$6.group.GroupServiceClient.prototype.readGroupModel =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/group.GroupService/ReadGroupModel',
@@ -19205,7 +19205,7 @@ proto$5.group.GroupServiceClient.prototype.readGroupModel =
  * @return {!Promise<!proto.group.GroupModelReadResponse>}
  *     Promise that resolves to the response
  */
-proto$5.group.GroupServicePromiseClient.prototype.readGroupModel =
+proto$6.group.GroupServicePromiseClient.prototype.readGroupModel =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/group.GroupService/ReadGroupModel',
@@ -19221,11 +19221,11 @@ proto$5.group.GroupServicePromiseClient.prototype.readGroupModel =
  *   !proto.group.GroupIds,
  *   !proto.group.GroupModelListResponse>}
  */
-const methodDescriptor_GroupService_ListGroupModelByIds = new grpc$4.web.MethodDescriptor(
+const methodDescriptor_GroupService_ListGroupModelByIds = new grpc$5.web.MethodDescriptor(
   '/group.GroupService/ListGroupModelByIds',
-  grpc$4.web.MethodType.UNARY,
-  proto$5.group.GroupIds,
-  proto$5.group.GroupModelListResponse,
+  grpc$5.web.MethodType.UNARY,
+  proto$6.group.GroupIds,
+  proto$6.group.GroupModelListResponse,
   /**
    * @param {!proto.group.GroupIds} request
    * @return {!Uint8Array}
@@ -19233,7 +19233,7 @@ const methodDescriptor_GroupService_ListGroupModelByIds = new grpc$4.web.MethodD
   function(request) {
     return request.serializeBinary();
   },
-  proto$5.group.GroupModelListResponse.deserializeBinary
+  proto$6.group.GroupModelListResponse.deserializeBinary
 );
 
 
@@ -19247,7 +19247,7 @@ const methodDescriptor_GroupService_ListGroupModelByIds = new grpc$4.web.MethodD
  * @return {!grpc.web.ClientReadableStream<!proto.group.GroupModelListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$5.group.GroupServiceClient.prototype.listGroupModelByIds =
+proto$6.group.GroupServiceClient.prototype.listGroupModelByIds =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/group.GroupService/ListGroupModelByIds',
@@ -19266,7 +19266,7 @@ proto$5.group.GroupServiceClient.prototype.listGroupModelByIds =
  * @return {!Promise<!proto.group.GroupModelListResponse>}
  *     Promise that resolves to the response
  */
-proto$5.group.GroupServicePromiseClient.prototype.listGroupModelByIds =
+proto$6.group.GroupServicePromiseClient.prototype.listGroupModelByIds =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/group.GroupService/ListGroupModelByIds',
@@ -19282,11 +19282,11 @@ proto$5.group.GroupServicePromiseClient.prototype.listGroupModelByIds =
  *   !proto.group.GroupName,
  *   !proto.group.GroupModelListResponse>}
  */
-const methodDescriptor_GroupService_ListGroupModelByName = new grpc$4.web.MethodDescriptor(
+const methodDescriptor_GroupService_ListGroupModelByName = new grpc$5.web.MethodDescriptor(
   '/group.GroupService/ListGroupModelByName',
-  grpc$4.web.MethodType.UNARY,
-  proto$5.group.GroupName,
-  proto$5.group.GroupModelListResponse,
+  grpc$5.web.MethodType.UNARY,
+  proto$6.group.GroupName,
+  proto$6.group.GroupModelListResponse,
   /**
    * @param {!proto.group.GroupName} request
    * @return {!Uint8Array}
@@ -19294,7 +19294,7 @@ const methodDescriptor_GroupService_ListGroupModelByName = new grpc$4.web.Method
   function(request) {
     return request.serializeBinary();
   },
-  proto$5.group.GroupModelListResponse.deserializeBinary
+  proto$6.group.GroupModelListResponse.deserializeBinary
 );
 
 
@@ -19308,7 +19308,7 @@ const methodDescriptor_GroupService_ListGroupModelByName = new grpc$4.web.Method
  * @return {!grpc.web.ClientReadableStream<!proto.group.GroupModelListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$5.group.GroupServiceClient.prototype.listGroupModelByName =
+proto$6.group.GroupServiceClient.prototype.listGroupModelByName =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/group.GroupService/ListGroupModelByName',
@@ -19327,7 +19327,7 @@ proto$5.group.GroupServiceClient.prototype.listGroupModelByName =
  * @return {!Promise<!proto.group.GroupModelListResponse>}
  *     Promise that resolves to the response
  */
-proto$5.group.GroupServicePromiseClient.prototype.listGroupModelByName =
+proto$6.group.GroupServicePromiseClient.prototype.listGroupModelByName =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/group.GroupService/ListGroupModelByName',
@@ -19343,11 +19343,11 @@ proto$5.group.GroupServicePromiseClient.prototype.listGroupModelByName =
  *   !proto.group.GroupCategory,
  *   !proto.group.GroupModelListResponse>}
  */
-const methodDescriptor_GroupService_ListGroupModelByCategory = new grpc$4.web.MethodDescriptor(
+const methodDescriptor_GroupService_ListGroupModelByCategory = new grpc$5.web.MethodDescriptor(
   '/group.GroupService/ListGroupModelByCategory',
-  grpc$4.web.MethodType.UNARY,
-  proto$5.group.GroupCategory,
-  proto$5.group.GroupModelListResponse,
+  grpc$5.web.MethodType.UNARY,
+  proto$6.group.GroupCategory,
+  proto$6.group.GroupModelListResponse,
   /**
    * @param {!proto.group.GroupCategory} request
    * @return {!Uint8Array}
@@ -19355,7 +19355,7 @@ const methodDescriptor_GroupService_ListGroupModelByCategory = new grpc$4.web.Me
   function(request) {
     return request.serializeBinary();
   },
-  proto$5.group.GroupModelListResponse.deserializeBinary
+  proto$6.group.GroupModelListResponse.deserializeBinary
 );
 
 
@@ -19369,7 +19369,7 @@ const methodDescriptor_GroupService_ListGroupModelByCategory = new grpc$4.web.Me
  * @return {!grpc.web.ClientReadableStream<!proto.group.GroupModelListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$5.group.GroupServiceClient.prototype.listGroupModelByCategory =
+proto$6.group.GroupServiceClient.prototype.listGroupModelByCategory =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/group.GroupService/ListGroupModelByCategory',
@@ -19388,7 +19388,7 @@ proto$5.group.GroupServiceClient.prototype.listGroupModelByCategory =
  * @return {!Promise<!proto.group.GroupModelListResponse>}
  *     Promise that resolves to the response
  */
-proto$5.group.GroupServicePromiseClient.prototype.listGroupModelByCategory =
+proto$6.group.GroupServicePromiseClient.prototype.listGroupModelByCategory =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/group.GroupService/ListGroupModelByCategory',
@@ -19404,11 +19404,11 @@ proto$5.group.GroupServicePromiseClient.prototype.listGroupModelByCategory =
  *   !proto.group.GroupNameCategory,
  *   !proto.group.GroupModelListResponse>}
  */
-const methodDescriptor_GroupService_ListGroupModelByNameCategory = new grpc$4.web.MethodDescriptor(
+const methodDescriptor_GroupService_ListGroupModelByNameCategory = new grpc$5.web.MethodDescriptor(
   '/group.GroupService/ListGroupModelByNameCategory',
-  grpc$4.web.MethodType.UNARY,
-  proto$5.group.GroupNameCategory,
-  proto$5.group.GroupModelListResponse,
+  grpc$5.web.MethodType.UNARY,
+  proto$6.group.GroupNameCategory,
+  proto$6.group.GroupModelListResponse,
   /**
    * @param {!proto.group.GroupNameCategory} request
    * @return {!Uint8Array}
@@ -19416,7 +19416,7 @@ const methodDescriptor_GroupService_ListGroupModelByNameCategory = new grpc$4.we
   function(request) {
     return request.serializeBinary();
   },
-  proto$5.group.GroupModelListResponse.deserializeBinary
+  proto$6.group.GroupModelListResponse.deserializeBinary
 );
 
 
@@ -19430,7 +19430,7 @@ const methodDescriptor_GroupService_ListGroupModelByNameCategory = new grpc$4.we
  * @return {!grpc.web.ClientReadableStream<!proto.group.GroupModelListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$5.group.GroupServiceClient.prototype.listGroupModelByNameCategory =
+proto$6.group.GroupServiceClient.prototype.listGroupModelByNameCategory =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/group.GroupService/ListGroupModelByNameCategory',
@@ -19449,7 +19449,7 @@ proto$5.group.GroupServiceClient.prototype.listGroupModelByNameCategory =
  * @return {!Promise<!proto.group.GroupModelListResponse>}
  *     Promise that resolves to the response
  */
-proto$5.group.GroupServicePromiseClient.prototype.listGroupModelByNameCategory =
+proto$6.group.GroupServicePromiseClient.prototype.listGroupModelByNameCategory =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/group.GroupService/ListGroupModelByNameCategory',
@@ -19465,11 +19465,11 @@ proto$5.group.GroupServicePromiseClient.prototype.listGroupModelByNameCategory =
  *   !proto.group.GroupModelSchema,
  *   !proto.group.GroupCreateResponse>}
  */
-const methodDescriptor_GroupService_CreateGroupModel = new grpc$4.web.MethodDescriptor(
+const methodDescriptor_GroupService_CreateGroupModel = new grpc$5.web.MethodDescriptor(
   '/group.GroupService/CreateGroupModel',
-  grpc$4.web.MethodType.UNARY,
-  proto$5.group.GroupModelSchema,
-  proto$5.group.GroupCreateResponse,
+  grpc$5.web.MethodType.UNARY,
+  proto$6.group.GroupModelSchema,
+  proto$6.group.GroupCreateResponse,
   /**
    * @param {!proto.group.GroupModelSchema} request
    * @return {!Uint8Array}
@@ -19477,7 +19477,7 @@ const methodDescriptor_GroupService_CreateGroupModel = new grpc$4.web.MethodDesc
   function(request) {
     return request.serializeBinary();
   },
-  proto$5.group.GroupCreateResponse.deserializeBinary
+  proto$6.group.GroupCreateResponse.deserializeBinary
 );
 
 
@@ -19491,7 +19491,7 @@ const methodDescriptor_GroupService_CreateGroupModel = new grpc$4.web.MethodDesc
  * @return {!grpc.web.ClientReadableStream<!proto.group.GroupCreateResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$5.group.GroupServiceClient.prototype.createGroupModel =
+proto$6.group.GroupServiceClient.prototype.createGroupModel =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/group.GroupService/CreateGroupModel',
@@ -19510,7 +19510,7 @@ proto$5.group.GroupServiceClient.prototype.createGroupModel =
  * @return {!Promise<!proto.group.GroupCreateResponse>}
  *     Promise that resolves to the response
  */
-proto$5.group.GroupServicePromiseClient.prototype.createGroupModel =
+proto$6.group.GroupServicePromiseClient.prototype.createGroupModel =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/group.GroupService/CreateGroupModel',
@@ -19526,11 +19526,11 @@ proto$5.group.GroupServicePromiseClient.prototype.createGroupModel =
  *   !proto.group.GroupUpdate,
  *   !proto.group.GroupChangeResponse>}
  */
-const methodDescriptor_GroupService_UpdateGroupModel = new grpc$4.web.MethodDescriptor(
+const methodDescriptor_GroupService_UpdateGroupModel = new grpc$5.web.MethodDescriptor(
   '/group.GroupService/UpdateGroupModel',
-  grpc$4.web.MethodType.UNARY,
-  proto$5.group.GroupUpdate,
-  proto$5.group.GroupChangeResponse,
+  grpc$5.web.MethodType.UNARY,
+  proto$6.group.GroupUpdate,
+  proto$6.group.GroupChangeResponse,
   /**
    * @param {!proto.group.GroupUpdate} request
    * @return {!Uint8Array}
@@ -19538,7 +19538,7 @@ const methodDescriptor_GroupService_UpdateGroupModel = new grpc$4.web.MethodDesc
   function(request) {
     return request.serializeBinary();
   },
-  proto$5.group.GroupChangeResponse.deserializeBinary
+  proto$6.group.GroupChangeResponse.deserializeBinary
 );
 
 
@@ -19552,7 +19552,7 @@ const methodDescriptor_GroupService_UpdateGroupModel = new grpc$4.web.MethodDesc
  * @return {!grpc.web.ClientReadableStream<!proto.group.GroupChangeResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$5.group.GroupServiceClient.prototype.updateGroupModel =
+proto$6.group.GroupServiceClient.prototype.updateGroupModel =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/group.GroupService/UpdateGroupModel',
@@ -19571,7 +19571,7 @@ proto$5.group.GroupServiceClient.prototype.updateGroupModel =
  * @return {!Promise<!proto.group.GroupChangeResponse>}
  *     Promise that resolves to the response
  */
-proto$5.group.GroupServicePromiseClient.prototype.updateGroupModel =
+proto$6.group.GroupServicePromiseClient.prototype.updateGroupModel =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/group.GroupService/UpdateGroupModel',
@@ -19587,11 +19587,11 @@ proto$5.group.GroupServicePromiseClient.prototype.updateGroupModel =
  *   !proto.group.GroupId,
  *   !proto.group.GroupChangeResponse>}
  */
-const methodDescriptor_GroupService_DeleteGroupModel = new grpc$4.web.MethodDescriptor(
+const methodDescriptor_GroupService_DeleteGroupModel = new grpc$5.web.MethodDescriptor(
   '/group.GroupService/DeleteGroupModel',
-  grpc$4.web.MethodType.UNARY,
-  proto$5.group.GroupId,
-  proto$5.group.GroupChangeResponse,
+  grpc$5.web.MethodType.UNARY,
+  proto$6.group.GroupId,
+  proto$6.group.GroupChangeResponse,
   /**
    * @param {!proto.group.GroupId} request
    * @return {!Uint8Array}
@@ -19599,7 +19599,7 @@ const methodDescriptor_GroupService_DeleteGroupModel = new grpc$4.web.MethodDesc
   function(request) {
     return request.serializeBinary();
   },
-  proto$5.group.GroupChangeResponse.deserializeBinary
+  proto$6.group.GroupChangeResponse.deserializeBinary
 );
 
 
@@ -19613,7 +19613,7 @@ const methodDescriptor_GroupService_DeleteGroupModel = new grpc$4.web.MethodDesc
  * @return {!grpc.web.ClientReadableStream<!proto.group.GroupChangeResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$5.group.GroupServiceClient.prototype.deleteGroupModel =
+proto$6.group.GroupServiceClient.prototype.deleteGroupModel =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/group.GroupService/DeleteGroupModel',
@@ -19632,7 +19632,7 @@ proto$5.group.GroupServiceClient.prototype.deleteGroupModel =
  * @return {!Promise<!proto.group.GroupChangeResponse>}
  *     Promise that resolves to the response
  */
-proto$5.group.GroupServicePromiseClient.prototype.deleteGroupModel =
+proto$6.group.GroupServicePromiseClient.prototype.deleteGroupModel =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/group.GroupService/DeleteGroupModel',
@@ -19648,11 +19648,11 @@ proto$5.group.GroupServicePromiseClient.prototype.deleteGroupModel =
  *   !proto.group.GroupModel,
  *   !proto.group.GroupChangeResponse>}
  */
-const methodDescriptor_GroupService_AddGroupModelMember = new grpc$4.web.MethodDescriptor(
+const methodDescriptor_GroupService_AddGroupModelMember = new grpc$5.web.MethodDescriptor(
   '/group.GroupService/AddGroupModelMember',
-  grpc$4.web.MethodType.UNARY,
-  proto$5.group.GroupModel,
-  proto$5.group.GroupChangeResponse,
+  grpc$5.web.MethodType.UNARY,
+  proto$6.group.GroupModel,
+  proto$6.group.GroupChangeResponse,
   /**
    * @param {!proto.group.GroupModel} request
    * @return {!Uint8Array}
@@ -19660,7 +19660,7 @@ const methodDescriptor_GroupService_AddGroupModelMember = new grpc$4.web.MethodD
   function(request) {
     return request.serializeBinary();
   },
-  proto$5.group.GroupChangeResponse.deserializeBinary
+  proto$6.group.GroupChangeResponse.deserializeBinary
 );
 
 
@@ -19674,7 +19674,7 @@ const methodDescriptor_GroupService_AddGroupModelMember = new grpc$4.web.MethodD
  * @return {!grpc.web.ClientReadableStream<!proto.group.GroupChangeResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$5.group.GroupServiceClient.prototype.addGroupModelMember =
+proto$6.group.GroupServiceClient.prototype.addGroupModelMember =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/group.GroupService/AddGroupModelMember',
@@ -19693,7 +19693,7 @@ proto$5.group.GroupServiceClient.prototype.addGroupModelMember =
  * @return {!Promise<!proto.group.GroupChangeResponse>}
  *     Promise that resolves to the response
  */
-proto$5.group.GroupServicePromiseClient.prototype.addGroupModelMember =
+proto$6.group.GroupServicePromiseClient.prototype.addGroupModelMember =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/group.GroupService/AddGroupModelMember',
@@ -19709,11 +19709,11 @@ proto$5.group.GroupServicePromiseClient.prototype.addGroupModelMember =
  *   !proto.group.GroupModel,
  *   !proto.group.GroupChangeResponse>}
  */
-const methodDescriptor_GroupService_RemoveGroupModelMember = new grpc$4.web.MethodDescriptor(
+const methodDescriptor_GroupService_RemoveGroupModelMember = new grpc$5.web.MethodDescriptor(
   '/group.GroupService/RemoveGroupModelMember',
-  grpc$4.web.MethodType.UNARY,
-  proto$5.group.GroupModel,
-  proto$5.group.GroupChangeResponse,
+  grpc$5.web.MethodType.UNARY,
+  proto$6.group.GroupModel,
+  proto$6.group.GroupChangeResponse,
   /**
    * @param {!proto.group.GroupModel} request
    * @return {!Uint8Array}
@@ -19721,7 +19721,7 @@ const methodDescriptor_GroupService_RemoveGroupModelMember = new grpc$4.web.Meth
   function(request) {
     return request.serializeBinary();
   },
-  proto$5.group.GroupChangeResponse.deserializeBinary
+  proto$6.group.GroupChangeResponse.deserializeBinary
 );
 
 
@@ -19735,7 +19735,7 @@ const methodDescriptor_GroupService_RemoveGroupModelMember = new grpc$4.web.Meth
  * @return {!grpc.web.ClientReadableStream<!proto.group.GroupChangeResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$5.group.GroupServiceClient.prototype.removeGroupModelMember =
+proto$6.group.GroupServiceClient.prototype.removeGroupModelMember =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/group.GroupService/RemoveGroupModelMember',
@@ -19754,7 +19754,7 @@ proto$5.group.GroupServiceClient.prototype.removeGroupModelMember =
  * @return {!Promise<!proto.group.GroupChangeResponse>}
  *     Promise that resolves to the response
  */
-proto$5.group.GroupServicePromiseClient.prototype.removeGroupModelMember =
+proto$6.group.GroupServicePromiseClient.prototype.removeGroupModelMember =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/group.GroupService/RemoveGroupModelMember',
@@ -19770,11 +19770,11 @@ proto$5.group.GroupServicePromiseClient.prototype.removeGroupModelMember =
  *   !proto.group.GroupId,
  *   !proto.group.GroupDeviceReadResponse>}
  */
-const methodDescriptor_GroupService_ReadGroupDevice = new grpc$4.web.MethodDescriptor(
+const methodDescriptor_GroupService_ReadGroupDevice = new grpc$5.web.MethodDescriptor(
   '/group.GroupService/ReadGroupDevice',
-  grpc$4.web.MethodType.UNARY,
-  proto$5.group.GroupId,
-  proto$5.group.GroupDeviceReadResponse,
+  grpc$5.web.MethodType.UNARY,
+  proto$6.group.GroupId,
+  proto$6.group.GroupDeviceReadResponse,
   /**
    * @param {!proto.group.GroupId} request
    * @return {!Uint8Array}
@@ -19782,7 +19782,7 @@ const methodDescriptor_GroupService_ReadGroupDevice = new grpc$4.web.MethodDescr
   function(request) {
     return request.serializeBinary();
   },
-  proto$5.group.GroupDeviceReadResponse.deserializeBinary
+  proto$6.group.GroupDeviceReadResponse.deserializeBinary
 );
 
 
@@ -19796,7 +19796,7 @@ const methodDescriptor_GroupService_ReadGroupDevice = new grpc$4.web.MethodDescr
  * @return {!grpc.web.ClientReadableStream<!proto.group.GroupDeviceReadResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$5.group.GroupServiceClient.prototype.readGroupDevice =
+proto$6.group.GroupServiceClient.prototype.readGroupDevice =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/group.GroupService/ReadGroupDevice',
@@ -19815,7 +19815,7 @@ proto$5.group.GroupServiceClient.prototype.readGroupDevice =
  * @return {!Promise<!proto.group.GroupDeviceReadResponse>}
  *     Promise that resolves to the response
  */
-proto$5.group.GroupServicePromiseClient.prototype.readGroupDevice =
+proto$6.group.GroupServicePromiseClient.prototype.readGroupDevice =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/group.GroupService/ReadGroupDevice',
@@ -19831,11 +19831,11 @@ proto$5.group.GroupServicePromiseClient.prototype.readGroupDevice =
  *   !proto.group.GroupIds,
  *   !proto.group.GroupDeviceListResponse>}
  */
-const methodDescriptor_GroupService_ListGroupDeviceByIds = new grpc$4.web.MethodDescriptor(
+const methodDescriptor_GroupService_ListGroupDeviceByIds = new grpc$5.web.MethodDescriptor(
   '/group.GroupService/ListGroupDeviceByIds',
-  grpc$4.web.MethodType.UNARY,
-  proto$5.group.GroupIds,
-  proto$5.group.GroupDeviceListResponse,
+  grpc$5.web.MethodType.UNARY,
+  proto$6.group.GroupIds,
+  proto$6.group.GroupDeviceListResponse,
   /**
    * @param {!proto.group.GroupIds} request
    * @return {!Uint8Array}
@@ -19843,7 +19843,7 @@ const methodDescriptor_GroupService_ListGroupDeviceByIds = new grpc$4.web.Method
   function(request) {
     return request.serializeBinary();
   },
-  proto$5.group.GroupDeviceListResponse.deserializeBinary
+  proto$6.group.GroupDeviceListResponse.deserializeBinary
 );
 
 
@@ -19857,7 +19857,7 @@ const methodDescriptor_GroupService_ListGroupDeviceByIds = new grpc$4.web.Method
  * @return {!grpc.web.ClientReadableStream<!proto.group.GroupDeviceListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$5.group.GroupServiceClient.prototype.listGroupDeviceByIds =
+proto$6.group.GroupServiceClient.prototype.listGroupDeviceByIds =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/group.GroupService/ListGroupDeviceByIds',
@@ -19876,7 +19876,7 @@ proto$5.group.GroupServiceClient.prototype.listGroupDeviceByIds =
  * @return {!Promise<!proto.group.GroupDeviceListResponse>}
  *     Promise that resolves to the response
  */
-proto$5.group.GroupServicePromiseClient.prototype.listGroupDeviceByIds =
+proto$6.group.GroupServicePromiseClient.prototype.listGroupDeviceByIds =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/group.GroupService/ListGroupDeviceByIds',
@@ -19892,11 +19892,11 @@ proto$5.group.GroupServicePromiseClient.prototype.listGroupDeviceByIds =
  *   !proto.group.GroupName,
  *   !proto.group.GroupDeviceListResponse>}
  */
-const methodDescriptor_GroupService_ListGroupDeviceByName = new grpc$4.web.MethodDescriptor(
+const methodDescriptor_GroupService_ListGroupDeviceByName = new grpc$5.web.MethodDescriptor(
   '/group.GroupService/ListGroupDeviceByName',
-  grpc$4.web.MethodType.UNARY,
-  proto$5.group.GroupName,
-  proto$5.group.GroupDeviceListResponse,
+  grpc$5.web.MethodType.UNARY,
+  proto$6.group.GroupName,
+  proto$6.group.GroupDeviceListResponse,
   /**
    * @param {!proto.group.GroupName} request
    * @return {!Uint8Array}
@@ -19904,7 +19904,7 @@ const methodDescriptor_GroupService_ListGroupDeviceByName = new grpc$4.web.Metho
   function(request) {
     return request.serializeBinary();
   },
-  proto$5.group.GroupDeviceListResponse.deserializeBinary
+  proto$6.group.GroupDeviceListResponse.deserializeBinary
 );
 
 
@@ -19918,7 +19918,7 @@ const methodDescriptor_GroupService_ListGroupDeviceByName = new grpc$4.web.Metho
  * @return {!grpc.web.ClientReadableStream<!proto.group.GroupDeviceListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$5.group.GroupServiceClient.prototype.listGroupDeviceByName =
+proto$6.group.GroupServiceClient.prototype.listGroupDeviceByName =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/group.GroupService/ListGroupDeviceByName',
@@ -19937,7 +19937,7 @@ proto$5.group.GroupServiceClient.prototype.listGroupDeviceByName =
  * @return {!Promise<!proto.group.GroupDeviceListResponse>}
  *     Promise that resolves to the response
  */
-proto$5.group.GroupServicePromiseClient.prototype.listGroupDeviceByName =
+proto$6.group.GroupServicePromiseClient.prototype.listGroupDeviceByName =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/group.GroupService/ListGroupDeviceByName',
@@ -19953,11 +19953,11 @@ proto$5.group.GroupServicePromiseClient.prototype.listGroupDeviceByName =
  *   !proto.group.GroupCategory,
  *   !proto.group.GroupDeviceListResponse>}
  */
-const methodDescriptor_GroupService_ListGroupDeviceByCategory = new grpc$4.web.MethodDescriptor(
+const methodDescriptor_GroupService_ListGroupDeviceByCategory = new grpc$5.web.MethodDescriptor(
   '/group.GroupService/ListGroupDeviceByCategory',
-  grpc$4.web.MethodType.UNARY,
-  proto$5.group.GroupCategory,
-  proto$5.group.GroupDeviceListResponse,
+  grpc$5.web.MethodType.UNARY,
+  proto$6.group.GroupCategory,
+  proto$6.group.GroupDeviceListResponse,
   /**
    * @param {!proto.group.GroupCategory} request
    * @return {!Uint8Array}
@@ -19965,7 +19965,7 @@ const methodDescriptor_GroupService_ListGroupDeviceByCategory = new grpc$4.web.M
   function(request) {
     return request.serializeBinary();
   },
-  proto$5.group.GroupDeviceListResponse.deserializeBinary
+  proto$6.group.GroupDeviceListResponse.deserializeBinary
 );
 
 
@@ -19979,7 +19979,7 @@ const methodDescriptor_GroupService_ListGroupDeviceByCategory = new grpc$4.web.M
  * @return {!grpc.web.ClientReadableStream<!proto.group.GroupDeviceListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$5.group.GroupServiceClient.prototype.listGroupDeviceByCategory =
+proto$6.group.GroupServiceClient.prototype.listGroupDeviceByCategory =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/group.GroupService/ListGroupDeviceByCategory',
@@ -19998,7 +19998,7 @@ proto$5.group.GroupServiceClient.prototype.listGroupDeviceByCategory =
  * @return {!Promise<!proto.group.GroupDeviceListResponse>}
  *     Promise that resolves to the response
  */
-proto$5.group.GroupServicePromiseClient.prototype.listGroupDeviceByCategory =
+proto$6.group.GroupServicePromiseClient.prototype.listGroupDeviceByCategory =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/group.GroupService/ListGroupDeviceByCategory',
@@ -20014,11 +20014,11 @@ proto$5.group.GroupServicePromiseClient.prototype.listGroupDeviceByCategory =
  *   !proto.group.GroupNameCategory,
  *   !proto.group.GroupDeviceListResponse>}
  */
-const methodDescriptor_GroupService_ListGroupDeviceByNameCategory = new grpc$4.web.MethodDescriptor(
+const methodDescriptor_GroupService_ListGroupDeviceByNameCategory = new grpc$5.web.MethodDescriptor(
   '/group.GroupService/ListGroupDeviceByNameCategory',
-  grpc$4.web.MethodType.UNARY,
-  proto$5.group.GroupNameCategory,
-  proto$5.group.GroupDeviceListResponse,
+  grpc$5.web.MethodType.UNARY,
+  proto$6.group.GroupNameCategory,
+  proto$6.group.GroupDeviceListResponse,
   /**
    * @param {!proto.group.GroupNameCategory} request
    * @return {!Uint8Array}
@@ -20026,7 +20026,7 @@ const methodDescriptor_GroupService_ListGroupDeviceByNameCategory = new grpc$4.w
   function(request) {
     return request.serializeBinary();
   },
-  proto$5.group.GroupDeviceListResponse.deserializeBinary
+  proto$6.group.GroupDeviceListResponse.deserializeBinary
 );
 
 
@@ -20040,7 +20040,7 @@ const methodDescriptor_GroupService_ListGroupDeviceByNameCategory = new grpc$4.w
  * @return {!grpc.web.ClientReadableStream<!proto.group.GroupDeviceListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$5.group.GroupServiceClient.prototype.listGroupDeviceByNameCategory =
+proto$6.group.GroupServiceClient.prototype.listGroupDeviceByNameCategory =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/group.GroupService/ListGroupDeviceByNameCategory',
@@ -20059,7 +20059,7 @@ proto$5.group.GroupServiceClient.prototype.listGroupDeviceByNameCategory =
  * @return {!Promise<!proto.group.GroupDeviceListResponse>}
  *     Promise that resolves to the response
  */
-proto$5.group.GroupServicePromiseClient.prototype.listGroupDeviceByNameCategory =
+proto$6.group.GroupServicePromiseClient.prototype.listGroupDeviceByNameCategory =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/group.GroupService/ListGroupDeviceByNameCategory',
@@ -20075,11 +20075,11 @@ proto$5.group.GroupServicePromiseClient.prototype.listGroupDeviceByNameCategory 
  *   !proto.group.GroupDeviceSchema,
  *   !proto.group.GroupCreateResponse>}
  */
-const methodDescriptor_GroupService_CreateGroupDevice = new grpc$4.web.MethodDescriptor(
+const methodDescriptor_GroupService_CreateGroupDevice = new grpc$5.web.MethodDescriptor(
   '/group.GroupService/CreateGroupDevice',
-  grpc$4.web.MethodType.UNARY,
-  proto$5.group.GroupDeviceSchema,
-  proto$5.group.GroupCreateResponse,
+  grpc$5.web.MethodType.UNARY,
+  proto$6.group.GroupDeviceSchema,
+  proto$6.group.GroupCreateResponse,
   /**
    * @param {!proto.group.GroupDeviceSchema} request
    * @return {!Uint8Array}
@@ -20087,7 +20087,7 @@ const methodDescriptor_GroupService_CreateGroupDevice = new grpc$4.web.MethodDes
   function(request) {
     return request.serializeBinary();
   },
-  proto$5.group.GroupCreateResponse.deserializeBinary
+  proto$6.group.GroupCreateResponse.deserializeBinary
 );
 
 
@@ -20101,7 +20101,7 @@ const methodDescriptor_GroupService_CreateGroupDevice = new grpc$4.web.MethodDes
  * @return {!grpc.web.ClientReadableStream<!proto.group.GroupCreateResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$5.group.GroupServiceClient.prototype.createGroupDevice =
+proto$6.group.GroupServiceClient.prototype.createGroupDevice =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/group.GroupService/CreateGroupDevice',
@@ -20120,7 +20120,7 @@ proto$5.group.GroupServiceClient.prototype.createGroupDevice =
  * @return {!Promise<!proto.group.GroupCreateResponse>}
  *     Promise that resolves to the response
  */
-proto$5.group.GroupServicePromiseClient.prototype.createGroupDevice =
+proto$6.group.GroupServicePromiseClient.prototype.createGroupDevice =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/group.GroupService/CreateGroupDevice',
@@ -20136,11 +20136,11 @@ proto$5.group.GroupServicePromiseClient.prototype.createGroupDevice =
  *   !proto.group.GroupUpdate,
  *   !proto.group.GroupChangeResponse>}
  */
-const methodDescriptor_GroupService_UpdateGroupDevice = new grpc$4.web.MethodDescriptor(
+const methodDescriptor_GroupService_UpdateGroupDevice = new grpc$5.web.MethodDescriptor(
   '/group.GroupService/UpdateGroupDevice',
-  grpc$4.web.MethodType.UNARY,
-  proto$5.group.GroupUpdate,
-  proto$5.group.GroupChangeResponse,
+  grpc$5.web.MethodType.UNARY,
+  proto$6.group.GroupUpdate,
+  proto$6.group.GroupChangeResponse,
   /**
    * @param {!proto.group.GroupUpdate} request
    * @return {!Uint8Array}
@@ -20148,7 +20148,7 @@ const methodDescriptor_GroupService_UpdateGroupDevice = new grpc$4.web.MethodDes
   function(request) {
     return request.serializeBinary();
   },
-  proto$5.group.GroupChangeResponse.deserializeBinary
+  proto$6.group.GroupChangeResponse.deserializeBinary
 );
 
 
@@ -20162,7 +20162,7 @@ const methodDescriptor_GroupService_UpdateGroupDevice = new grpc$4.web.MethodDes
  * @return {!grpc.web.ClientReadableStream<!proto.group.GroupChangeResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$5.group.GroupServiceClient.prototype.updateGroupDevice =
+proto$6.group.GroupServiceClient.prototype.updateGroupDevice =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/group.GroupService/UpdateGroupDevice',
@@ -20181,7 +20181,7 @@ proto$5.group.GroupServiceClient.prototype.updateGroupDevice =
  * @return {!Promise<!proto.group.GroupChangeResponse>}
  *     Promise that resolves to the response
  */
-proto$5.group.GroupServicePromiseClient.prototype.updateGroupDevice =
+proto$6.group.GroupServicePromiseClient.prototype.updateGroupDevice =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/group.GroupService/UpdateGroupDevice',
@@ -20197,11 +20197,11 @@ proto$5.group.GroupServicePromiseClient.prototype.updateGroupDevice =
  *   !proto.group.GroupId,
  *   !proto.group.GroupChangeResponse>}
  */
-const methodDescriptor_GroupService_DeleteGroupDevice = new grpc$4.web.MethodDescriptor(
+const methodDescriptor_GroupService_DeleteGroupDevice = new grpc$5.web.MethodDescriptor(
   '/group.GroupService/DeleteGroupDevice',
-  grpc$4.web.MethodType.UNARY,
-  proto$5.group.GroupId,
-  proto$5.group.GroupChangeResponse,
+  grpc$5.web.MethodType.UNARY,
+  proto$6.group.GroupId,
+  proto$6.group.GroupChangeResponse,
   /**
    * @param {!proto.group.GroupId} request
    * @return {!Uint8Array}
@@ -20209,7 +20209,7 @@ const methodDescriptor_GroupService_DeleteGroupDevice = new grpc$4.web.MethodDes
   function(request) {
     return request.serializeBinary();
   },
-  proto$5.group.GroupChangeResponse.deserializeBinary
+  proto$6.group.GroupChangeResponse.deserializeBinary
 );
 
 
@@ -20223,7 +20223,7 @@ const methodDescriptor_GroupService_DeleteGroupDevice = new grpc$4.web.MethodDes
  * @return {!grpc.web.ClientReadableStream<!proto.group.GroupChangeResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$5.group.GroupServiceClient.prototype.deleteGroupDevice =
+proto$6.group.GroupServiceClient.prototype.deleteGroupDevice =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/group.GroupService/DeleteGroupDevice',
@@ -20242,7 +20242,7 @@ proto$5.group.GroupServiceClient.prototype.deleteGroupDevice =
  * @return {!Promise<!proto.group.GroupChangeResponse>}
  *     Promise that resolves to the response
  */
-proto$5.group.GroupServicePromiseClient.prototype.deleteGroupDevice =
+proto$6.group.GroupServicePromiseClient.prototype.deleteGroupDevice =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/group.GroupService/DeleteGroupDevice',
@@ -20258,11 +20258,11 @@ proto$5.group.GroupServicePromiseClient.prototype.deleteGroupDevice =
  *   !proto.group.GroupDevice,
  *   !proto.group.GroupChangeResponse>}
  */
-const methodDescriptor_GroupService_AddGroupDeviceMember = new grpc$4.web.MethodDescriptor(
+const methodDescriptor_GroupService_AddGroupDeviceMember = new grpc$5.web.MethodDescriptor(
   '/group.GroupService/AddGroupDeviceMember',
-  grpc$4.web.MethodType.UNARY,
-  proto$5.group.GroupDevice,
-  proto$5.group.GroupChangeResponse,
+  grpc$5.web.MethodType.UNARY,
+  proto$6.group.GroupDevice,
+  proto$6.group.GroupChangeResponse,
   /**
    * @param {!proto.group.GroupDevice} request
    * @return {!Uint8Array}
@@ -20270,7 +20270,7 @@ const methodDescriptor_GroupService_AddGroupDeviceMember = new grpc$4.web.Method
   function(request) {
     return request.serializeBinary();
   },
-  proto$5.group.GroupChangeResponse.deserializeBinary
+  proto$6.group.GroupChangeResponse.deserializeBinary
 );
 
 
@@ -20284,7 +20284,7 @@ const methodDescriptor_GroupService_AddGroupDeviceMember = new grpc$4.web.Method
  * @return {!grpc.web.ClientReadableStream<!proto.group.GroupChangeResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$5.group.GroupServiceClient.prototype.addGroupDeviceMember =
+proto$6.group.GroupServiceClient.prototype.addGroupDeviceMember =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/group.GroupService/AddGroupDeviceMember',
@@ -20303,7 +20303,7 @@ proto$5.group.GroupServiceClient.prototype.addGroupDeviceMember =
  * @return {!Promise<!proto.group.GroupChangeResponse>}
  *     Promise that resolves to the response
  */
-proto$5.group.GroupServicePromiseClient.prototype.addGroupDeviceMember =
+proto$6.group.GroupServicePromiseClient.prototype.addGroupDeviceMember =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/group.GroupService/AddGroupDeviceMember',
@@ -20319,11 +20319,11 @@ proto$5.group.GroupServicePromiseClient.prototype.addGroupDeviceMember =
  *   !proto.group.GroupDevice,
  *   !proto.group.GroupChangeResponse>}
  */
-const methodDescriptor_GroupService_RemoveGroupDeviceMember = new grpc$4.web.MethodDescriptor(
+const methodDescriptor_GroupService_RemoveGroupDeviceMember = new grpc$5.web.MethodDescriptor(
   '/group.GroupService/RemoveGroupDeviceMember',
-  grpc$4.web.MethodType.UNARY,
-  proto$5.group.GroupDevice,
-  proto$5.group.GroupChangeResponse,
+  grpc$5.web.MethodType.UNARY,
+  proto$6.group.GroupDevice,
+  proto$6.group.GroupChangeResponse,
   /**
    * @param {!proto.group.GroupDevice} request
    * @return {!Uint8Array}
@@ -20331,7 +20331,7 @@ const methodDescriptor_GroupService_RemoveGroupDeviceMember = new grpc$4.web.Met
   function(request) {
     return request.serializeBinary();
   },
-  proto$5.group.GroupChangeResponse.deserializeBinary
+  proto$6.group.GroupChangeResponse.deserializeBinary
 );
 
 
@@ -20345,7 +20345,7 @@ const methodDescriptor_GroupService_RemoveGroupDeviceMember = new grpc$4.web.Met
  * @return {!grpc.web.ClientReadableStream<!proto.group.GroupChangeResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$5.group.GroupServiceClient.prototype.removeGroupDeviceMember =
+proto$6.group.GroupServiceClient.prototype.removeGroupDeviceMember =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/group.GroupService/RemoveGroupDeviceMember',
@@ -20364,7 +20364,7 @@ proto$5.group.GroupServiceClient.prototype.removeGroupDeviceMember =
  * @return {!Promise<!proto.group.GroupChangeResponse>}
  *     Promise that resolves to the response
  */
-proto$5.group.GroupServicePromiseClient.prototype.removeGroupDeviceMember =
+proto$6.group.GroupServicePromiseClient.prototype.removeGroupDeviceMember =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/group.GroupService/RemoveGroupDeviceMember',
@@ -20380,11 +20380,11 @@ proto$5.group.GroupServicePromiseClient.prototype.removeGroupDeviceMember =
  *   !proto.group.GroupId,
  *   !proto.group.GroupDeviceReadResponse>}
  */
-const methodDescriptor_GroupService_ReadGroupGateway = new grpc$4.web.MethodDescriptor(
+const methodDescriptor_GroupService_ReadGroupGateway = new grpc$5.web.MethodDescriptor(
   '/group.GroupService/ReadGroupGateway',
-  grpc$4.web.MethodType.UNARY,
-  proto$5.group.GroupId,
-  proto$5.group.GroupDeviceReadResponse,
+  grpc$5.web.MethodType.UNARY,
+  proto$6.group.GroupId,
+  proto$6.group.GroupDeviceReadResponse,
   /**
    * @param {!proto.group.GroupId} request
    * @return {!Uint8Array}
@@ -20392,7 +20392,7 @@ const methodDescriptor_GroupService_ReadGroupGateway = new grpc$4.web.MethodDesc
   function(request) {
     return request.serializeBinary();
   },
-  proto$5.group.GroupDeviceReadResponse.deserializeBinary
+  proto$6.group.GroupDeviceReadResponse.deserializeBinary
 );
 
 
@@ -20406,7 +20406,7 @@ const methodDescriptor_GroupService_ReadGroupGateway = new grpc$4.web.MethodDesc
  * @return {!grpc.web.ClientReadableStream<!proto.group.GroupDeviceReadResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$5.group.GroupServiceClient.prototype.readGroupGateway =
+proto$6.group.GroupServiceClient.prototype.readGroupGateway =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/group.GroupService/ReadGroupGateway',
@@ -20425,7 +20425,7 @@ proto$5.group.GroupServiceClient.prototype.readGroupGateway =
  * @return {!Promise<!proto.group.GroupDeviceReadResponse>}
  *     Promise that resolves to the response
  */
-proto$5.group.GroupServicePromiseClient.prototype.readGroupGateway =
+proto$6.group.GroupServicePromiseClient.prototype.readGroupGateway =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/group.GroupService/ReadGroupGateway',
@@ -20441,11 +20441,11 @@ proto$5.group.GroupServicePromiseClient.prototype.readGroupGateway =
  *   !proto.group.GroupIds,
  *   !proto.group.GroupDeviceListResponse>}
  */
-const methodDescriptor_GroupService_ListGroupGatewayByIds = new grpc$4.web.MethodDescriptor(
+const methodDescriptor_GroupService_ListGroupGatewayByIds = new grpc$5.web.MethodDescriptor(
   '/group.GroupService/ListGroupGatewayByIds',
-  grpc$4.web.MethodType.UNARY,
-  proto$5.group.GroupIds,
-  proto$5.group.GroupDeviceListResponse,
+  grpc$5.web.MethodType.UNARY,
+  proto$6.group.GroupIds,
+  proto$6.group.GroupDeviceListResponse,
   /**
    * @param {!proto.group.GroupIds} request
    * @return {!Uint8Array}
@@ -20453,7 +20453,7 @@ const methodDescriptor_GroupService_ListGroupGatewayByIds = new grpc$4.web.Metho
   function(request) {
     return request.serializeBinary();
   },
-  proto$5.group.GroupDeviceListResponse.deserializeBinary
+  proto$6.group.GroupDeviceListResponse.deserializeBinary
 );
 
 
@@ -20467,7 +20467,7 @@ const methodDescriptor_GroupService_ListGroupGatewayByIds = new grpc$4.web.Metho
  * @return {!grpc.web.ClientReadableStream<!proto.group.GroupDeviceListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$5.group.GroupServiceClient.prototype.listGroupGatewayByIds =
+proto$6.group.GroupServiceClient.prototype.listGroupGatewayByIds =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/group.GroupService/ListGroupGatewayByIds',
@@ -20486,7 +20486,7 @@ proto$5.group.GroupServiceClient.prototype.listGroupGatewayByIds =
  * @return {!Promise<!proto.group.GroupDeviceListResponse>}
  *     Promise that resolves to the response
  */
-proto$5.group.GroupServicePromiseClient.prototype.listGroupGatewayByIds =
+proto$6.group.GroupServicePromiseClient.prototype.listGroupGatewayByIds =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/group.GroupService/ListGroupGatewayByIds',
@@ -20502,11 +20502,11 @@ proto$5.group.GroupServicePromiseClient.prototype.listGroupGatewayByIds =
  *   !proto.group.GroupName,
  *   !proto.group.GroupDeviceListResponse>}
  */
-const methodDescriptor_GroupService_ListGroupGatewayByName = new grpc$4.web.MethodDescriptor(
+const methodDescriptor_GroupService_ListGroupGatewayByName = new grpc$5.web.MethodDescriptor(
   '/group.GroupService/ListGroupGatewayByName',
-  grpc$4.web.MethodType.UNARY,
-  proto$5.group.GroupName,
-  proto$5.group.GroupDeviceListResponse,
+  grpc$5.web.MethodType.UNARY,
+  proto$6.group.GroupName,
+  proto$6.group.GroupDeviceListResponse,
   /**
    * @param {!proto.group.GroupName} request
    * @return {!Uint8Array}
@@ -20514,7 +20514,7 @@ const methodDescriptor_GroupService_ListGroupGatewayByName = new grpc$4.web.Meth
   function(request) {
     return request.serializeBinary();
   },
-  proto$5.group.GroupDeviceListResponse.deserializeBinary
+  proto$6.group.GroupDeviceListResponse.deserializeBinary
 );
 
 
@@ -20528,7 +20528,7 @@ const methodDescriptor_GroupService_ListGroupGatewayByName = new grpc$4.web.Meth
  * @return {!grpc.web.ClientReadableStream<!proto.group.GroupDeviceListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$5.group.GroupServiceClient.prototype.listGroupGatewayByName =
+proto$6.group.GroupServiceClient.prototype.listGroupGatewayByName =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/group.GroupService/ListGroupGatewayByName',
@@ -20547,7 +20547,7 @@ proto$5.group.GroupServiceClient.prototype.listGroupGatewayByName =
  * @return {!Promise<!proto.group.GroupDeviceListResponse>}
  *     Promise that resolves to the response
  */
-proto$5.group.GroupServicePromiseClient.prototype.listGroupGatewayByName =
+proto$6.group.GroupServicePromiseClient.prototype.listGroupGatewayByName =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/group.GroupService/ListGroupGatewayByName',
@@ -20563,11 +20563,11 @@ proto$5.group.GroupServicePromiseClient.prototype.listGroupGatewayByName =
  *   !proto.group.GroupCategory,
  *   !proto.group.GroupDeviceListResponse>}
  */
-const methodDescriptor_GroupService_ListGroupGatewayByCategory = new grpc$4.web.MethodDescriptor(
+const methodDescriptor_GroupService_ListGroupGatewayByCategory = new grpc$5.web.MethodDescriptor(
   '/group.GroupService/ListGroupGatewayByCategory',
-  grpc$4.web.MethodType.UNARY,
-  proto$5.group.GroupCategory,
-  proto$5.group.GroupDeviceListResponse,
+  grpc$5.web.MethodType.UNARY,
+  proto$6.group.GroupCategory,
+  proto$6.group.GroupDeviceListResponse,
   /**
    * @param {!proto.group.GroupCategory} request
    * @return {!Uint8Array}
@@ -20575,7 +20575,7 @@ const methodDescriptor_GroupService_ListGroupGatewayByCategory = new grpc$4.web.
   function(request) {
     return request.serializeBinary();
   },
-  proto$5.group.GroupDeviceListResponse.deserializeBinary
+  proto$6.group.GroupDeviceListResponse.deserializeBinary
 );
 
 
@@ -20589,7 +20589,7 @@ const methodDescriptor_GroupService_ListGroupGatewayByCategory = new grpc$4.web.
  * @return {!grpc.web.ClientReadableStream<!proto.group.GroupDeviceListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$5.group.GroupServiceClient.prototype.listGroupGatewayByCategory =
+proto$6.group.GroupServiceClient.prototype.listGroupGatewayByCategory =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/group.GroupService/ListGroupGatewayByCategory',
@@ -20608,7 +20608,7 @@ proto$5.group.GroupServiceClient.prototype.listGroupGatewayByCategory =
  * @return {!Promise<!proto.group.GroupDeviceListResponse>}
  *     Promise that resolves to the response
  */
-proto$5.group.GroupServicePromiseClient.prototype.listGroupGatewayByCategory =
+proto$6.group.GroupServicePromiseClient.prototype.listGroupGatewayByCategory =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/group.GroupService/ListGroupGatewayByCategory',
@@ -20624,11 +20624,11 @@ proto$5.group.GroupServicePromiseClient.prototype.listGroupGatewayByCategory =
  *   !proto.group.GroupNameCategory,
  *   !proto.group.GroupDeviceListResponse>}
  */
-const methodDescriptor_GroupService_ListGroupGatewayByNameCategory = new grpc$4.web.MethodDescriptor(
+const methodDescriptor_GroupService_ListGroupGatewayByNameCategory = new grpc$5.web.MethodDescriptor(
   '/group.GroupService/ListGroupGatewayByNameCategory',
-  grpc$4.web.MethodType.UNARY,
-  proto$5.group.GroupNameCategory,
-  proto$5.group.GroupDeviceListResponse,
+  grpc$5.web.MethodType.UNARY,
+  proto$6.group.GroupNameCategory,
+  proto$6.group.GroupDeviceListResponse,
   /**
    * @param {!proto.group.GroupNameCategory} request
    * @return {!Uint8Array}
@@ -20636,7 +20636,7 @@ const methodDescriptor_GroupService_ListGroupGatewayByNameCategory = new grpc$4.
   function(request) {
     return request.serializeBinary();
   },
-  proto$5.group.GroupDeviceListResponse.deserializeBinary
+  proto$6.group.GroupDeviceListResponse.deserializeBinary
 );
 
 
@@ -20650,7 +20650,7 @@ const methodDescriptor_GroupService_ListGroupGatewayByNameCategory = new grpc$4.
  * @return {!grpc.web.ClientReadableStream<!proto.group.GroupDeviceListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$5.group.GroupServiceClient.prototype.listGroupGatewayByNameCategory =
+proto$6.group.GroupServiceClient.prototype.listGroupGatewayByNameCategory =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/group.GroupService/ListGroupGatewayByNameCategory',
@@ -20669,7 +20669,7 @@ proto$5.group.GroupServiceClient.prototype.listGroupGatewayByNameCategory =
  * @return {!Promise<!proto.group.GroupDeviceListResponse>}
  *     Promise that resolves to the response
  */
-proto$5.group.GroupServicePromiseClient.prototype.listGroupGatewayByNameCategory =
+proto$6.group.GroupServicePromiseClient.prototype.listGroupGatewayByNameCategory =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/group.GroupService/ListGroupGatewayByNameCategory',
@@ -20685,11 +20685,11 @@ proto$5.group.GroupServicePromiseClient.prototype.listGroupGatewayByNameCategory
  *   !proto.group.GroupDeviceSchema,
  *   !proto.group.GroupCreateResponse>}
  */
-const methodDescriptor_GroupService_CreateGroupGateway = new grpc$4.web.MethodDescriptor(
+const methodDescriptor_GroupService_CreateGroupGateway = new grpc$5.web.MethodDescriptor(
   '/group.GroupService/CreateGroupGateway',
-  grpc$4.web.MethodType.UNARY,
-  proto$5.group.GroupDeviceSchema,
-  proto$5.group.GroupCreateResponse,
+  grpc$5.web.MethodType.UNARY,
+  proto$6.group.GroupDeviceSchema,
+  proto$6.group.GroupCreateResponse,
   /**
    * @param {!proto.group.GroupDeviceSchema} request
    * @return {!Uint8Array}
@@ -20697,7 +20697,7 @@ const methodDescriptor_GroupService_CreateGroupGateway = new grpc$4.web.MethodDe
   function(request) {
     return request.serializeBinary();
   },
-  proto$5.group.GroupCreateResponse.deserializeBinary
+  proto$6.group.GroupCreateResponse.deserializeBinary
 );
 
 
@@ -20711,7 +20711,7 @@ const methodDescriptor_GroupService_CreateGroupGateway = new grpc$4.web.MethodDe
  * @return {!grpc.web.ClientReadableStream<!proto.group.GroupCreateResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$5.group.GroupServiceClient.prototype.createGroupGateway =
+proto$6.group.GroupServiceClient.prototype.createGroupGateway =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/group.GroupService/CreateGroupGateway',
@@ -20730,7 +20730,7 @@ proto$5.group.GroupServiceClient.prototype.createGroupGateway =
  * @return {!Promise<!proto.group.GroupCreateResponse>}
  *     Promise that resolves to the response
  */
-proto$5.group.GroupServicePromiseClient.prototype.createGroupGateway =
+proto$6.group.GroupServicePromiseClient.prototype.createGroupGateway =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/group.GroupService/CreateGroupGateway',
@@ -20746,11 +20746,11 @@ proto$5.group.GroupServicePromiseClient.prototype.createGroupGateway =
  *   !proto.group.GroupUpdate,
  *   !proto.group.GroupChangeResponse>}
  */
-const methodDescriptor_GroupService_UpdateGroupGateway = new grpc$4.web.MethodDescriptor(
+const methodDescriptor_GroupService_UpdateGroupGateway = new grpc$5.web.MethodDescriptor(
   '/group.GroupService/UpdateGroupGateway',
-  grpc$4.web.MethodType.UNARY,
-  proto$5.group.GroupUpdate,
-  proto$5.group.GroupChangeResponse,
+  grpc$5.web.MethodType.UNARY,
+  proto$6.group.GroupUpdate,
+  proto$6.group.GroupChangeResponse,
   /**
    * @param {!proto.group.GroupUpdate} request
    * @return {!Uint8Array}
@@ -20758,7 +20758,7 @@ const methodDescriptor_GroupService_UpdateGroupGateway = new grpc$4.web.MethodDe
   function(request) {
     return request.serializeBinary();
   },
-  proto$5.group.GroupChangeResponse.deserializeBinary
+  proto$6.group.GroupChangeResponse.deserializeBinary
 );
 
 
@@ -20772,7 +20772,7 @@ const methodDescriptor_GroupService_UpdateGroupGateway = new grpc$4.web.MethodDe
  * @return {!grpc.web.ClientReadableStream<!proto.group.GroupChangeResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$5.group.GroupServiceClient.prototype.updateGroupGateway =
+proto$6.group.GroupServiceClient.prototype.updateGroupGateway =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/group.GroupService/UpdateGroupGateway',
@@ -20791,7 +20791,7 @@ proto$5.group.GroupServiceClient.prototype.updateGroupGateway =
  * @return {!Promise<!proto.group.GroupChangeResponse>}
  *     Promise that resolves to the response
  */
-proto$5.group.GroupServicePromiseClient.prototype.updateGroupGateway =
+proto$6.group.GroupServicePromiseClient.prototype.updateGroupGateway =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/group.GroupService/UpdateGroupGateway',
@@ -20807,11 +20807,11 @@ proto$5.group.GroupServicePromiseClient.prototype.updateGroupGateway =
  *   !proto.group.GroupId,
  *   !proto.group.GroupChangeResponse>}
  */
-const methodDescriptor_GroupService_DeleteGroupGateway = new grpc$4.web.MethodDescriptor(
+const methodDescriptor_GroupService_DeleteGroupGateway = new grpc$5.web.MethodDescriptor(
   '/group.GroupService/DeleteGroupGateway',
-  grpc$4.web.MethodType.UNARY,
-  proto$5.group.GroupId,
-  proto$5.group.GroupChangeResponse,
+  grpc$5.web.MethodType.UNARY,
+  proto$6.group.GroupId,
+  proto$6.group.GroupChangeResponse,
   /**
    * @param {!proto.group.GroupId} request
    * @return {!Uint8Array}
@@ -20819,7 +20819,7 @@ const methodDescriptor_GroupService_DeleteGroupGateway = new grpc$4.web.MethodDe
   function(request) {
     return request.serializeBinary();
   },
-  proto$5.group.GroupChangeResponse.deserializeBinary
+  proto$6.group.GroupChangeResponse.deserializeBinary
 );
 
 
@@ -20833,7 +20833,7 @@ const methodDescriptor_GroupService_DeleteGroupGateway = new grpc$4.web.MethodDe
  * @return {!grpc.web.ClientReadableStream<!proto.group.GroupChangeResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$5.group.GroupServiceClient.prototype.deleteGroupGateway =
+proto$6.group.GroupServiceClient.prototype.deleteGroupGateway =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/group.GroupService/DeleteGroupGateway',
@@ -20852,7 +20852,7 @@ proto$5.group.GroupServiceClient.prototype.deleteGroupGateway =
  * @return {!Promise<!proto.group.GroupChangeResponse>}
  *     Promise that resolves to the response
  */
-proto$5.group.GroupServicePromiseClient.prototype.deleteGroupGateway =
+proto$6.group.GroupServicePromiseClient.prototype.deleteGroupGateway =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/group.GroupService/DeleteGroupGateway',
@@ -20868,11 +20868,11 @@ proto$5.group.GroupServicePromiseClient.prototype.deleteGroupGateway =
  *   !proto.group.GroupDevice,
  *   !proto.group.GroupChangeResponse>}
  */
-const methodDescriptor_GroupService_AddGroupGatewayMember = new grpc$4.web.MethodDescriptor(
+const methodDescriptor_GroupService_AddGroupGatewayMember = new grpc$5.web.MethodDescriptor(
   '/group.GroupService/AddGroupGatewayMember',
-  grpc$4.web.MethodType.UNARY,
-  proto$5.group.GroupDevice,
-  proto$5.group.GroupChangeResponse,
+  grpc$5.web.MethodType.UNARY,
+  proto$6.group.GroupDevice,
+  proto$6.group.GroupChangeResponse,
   /**
    * @param {!proto.group.GroupDevice} request
    * @return {!Uint8Array}
@@ -20880,7 +20880,7 @@ const methodDescriptor_GroupService_AddGroupGatewayMember = new grpc$4.web.Metho
   function(request) {
     return request.serializeBinary();
   },
-  proto$5.group.GroupChangeResponse.deserializeBinary
+  proto$6.group.GroupChangeResponse.deserializeBinary
 );
 
 
@@ -20894,7 +20894,7 @@ const methodDescriptor_GroupService_AddGroupGatewayMember = new grpc$4.web.Metho
  * @return {!grpc.web.ClientReadableStream<!proto.group.GroupChangeResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$5.group.GroupServiceClient.prototype.addGroupGatewayMember =
+proto$6.group.GroupServiceClient.prototype.addGroupGatewayMember =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/group.GroupService/AddGroupGatewayMember',
@@ -20913,7 +20913,7 @@ proto$5.group.GroupServiceClient.prototype.addGroupGatewayMember =
  * @return {!Promise<!proto.group.GroupChangeResponse>}
  *     Promise that resolves to the response
  */
-proto$5.group.GroupServicePromiseClient.prototype.addGroupGatewayMember =
+proto$6.group.GroupServicePromiseClient.prototype.addGroupGatewayMember =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/group.GroupService/AddGroupGatewayMember',
@@ -20929,11 +20929,11 @@ proto$5.group.GroupServicePromiseClient.prototype.addGroupGatewayMember =
  *   !proto.group.GroupDevice,
  *   !proto.group.GroupChangeResponse>}
  */
-const methodDescriptor_GroupService_RemoveGroupGatewayMember = new grpc$4.web.MethodDescriptor(
+const methodDescriptor_GroupService_RemoveGroupGatewayMember = new grpc$5.web.MethodDescriptor(
   '/group.GroupService/RemoveGroupGatewayMember',
-  grpc$4.web.MethodType.UNARY,
-  proto$5.group.GroupDevice,
-  proto$5.group.GroupChangeResponse,
+  grpc$5.web.MethodType.UNARY,
+  proto$6.group.GroupDevice,
+  proto$6.group.GroupChangeResponse,
   /**
    * @param {!proto.group.GroupDevice} request
    * @return {!Uint8Array}
@@ -20941,7 +20941,7 @@ const methodDescriptor_GroupService_RemoveGroupGatewayMember = new grpc$4.web.Me
   function(request) {
     return request.serializeBinary();
   },
-  proto$5.group.GroupChangeResponse.deserializeBinary
+  proto$6.group.GroupChangeResponse.deserializeBinary
 );
 
 
@@ -20955,7 +20955,7 @@ const methodDescriptor_GroupService_RemoveGroupGatewayMember = new grpc$4.web.Me
  * @return {!grpc.web.ClientReadableStream<!proto.group.GroupChangeResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$5.group.GroupServiceClient.prototype.removeGroupGatewayMember =
+proto$6.group.GroupServiceClient.prototype.removeGroupGatewayMember =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
       '/group.GroupService/RemoveGroupGatewayMember',
@@ -20974,7 +20974,7 @@ proto$5.group.GroupServiceClient.prototype.removeGroupGatewayMember =
  * @return {!Promise<!proto.group.GroupChangeResponse>}
  *     Promise that resolves to the response
  */
-proto$5.group.GroupServicePromiseClient.prototype.removeGroupGatewayMember =
+proto$6.group.GroupServicePromiseClient.prototype.removeGroupGatewayMember =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
       '/group.GroupService/RemoveGroupGatewayMember',
@@ -20984,9 +20984,6807 @@ proto$5.group.GroupServicePromiseClient.prototype.removeGroupGatewayMember =
 };
 
 
-var group_grpc_web_pb = proto$5.group;
+var group_grpc_web_pb = proto$6.group;
 
 var group_grpc_web_pb$1 = /*@__PURE__*/getDefaultExportFromCjs(group_grpc_web_pb);
+
+var set_pb = {};
+
+(function (exports) {
+	// source: rmcs_resource_api/set.proto
+	/**
+	 * @fileoverview
+	 * @enhanceable
+	 * @suppress {missingRequire} reports error on implicit type usages.
+	 * @suppress {messageConventions} JS Compiler reports an error if a variable or
+	 *     field starts with 'MSG_' and isn't a translatable message.
+	 * @public
+	 */
+	// GENERATED CODE -- DO NOT EDIT!
+	/* eslint-disable */
+	// @ts-nocheck
+
+	var jspb = require$$0;
+	var goog = jspb;
+	var global =
+	    (typeof globalThis !== 'undefined' && globalThis) ||
+	    (typeof window !== 'undefined' && window) ||
+	    (typeof global !== 'undefined' && global) ||
+	    (typeof self !== 'undefined' && self) ||
+	    (function () { return this; }).call(null) ||
+	    Function('return this')();
+
+	goog.exportSymbol('proto.set.SetChangeResponse', null, global);
+	goog.exportSymbol('proto.set.SetCreateResponse', null, global);
+	goog.exportSymbol('proto.set.SetId', null, global);
+	goog.exportSymbol('proto.set.SetIds', null, global);
+	goog.exportSymbol('proto.set.SetListResponse', null, global);
+	goog.exportSymbol('proto.set.SetMember', null, global);
+	goog.exportSymbol('proto.set.SetMemberRequest', null, global);
+	goog.exportSymbol('proto.set.SetMemberSwap', null, global);
+	goog.exportSymbol('proto.set.SetName', null, global);
+	goog.exportSymbol('proto.set.SetReadResponse', null, global);
+	goog.exportSymbol('proto.set.SetSchema', null, global);
+	goog.exportSymbol('proto.set.SetTemplateId', null, global);
+	goog.exportSymbol('proto.set.SetTemplateIds', null, global);
+	goog.exportSymbol('proto.set.SetTemplateMember', null, global);
+	goog.exportSymbol('proto.set.SetTemplateMemberRequest', null, global);
+	goog.exportSymbol('proto.set.SetTemplateMemberSwap', null, global);
+	goog.exportSymbol('proto.set.SetTemplateName', null, global);
+	goog.exportSymbol('proto.set.SetTemplateSchema', null, global);
+	goog.exportSymbol('proto.set.SetTemplateUpdate', null, global);
+	goog.exportSymbol('proto.set.SetUpdate', null, global);
+	goog.exportSymbol('proto.set.TemplateChangeResponse', null, global);
+	goog.exportSymbol('proto.set.TemplateCreateResponse', null, global);
+	goog.exportSymbol('proto.set.TemplateListResponse', null, global);
+	goog.exportSymbol('proto.set.TemplateReadResponse', null, global);
+	/**
+	 * Generated by JsPbCodeGenerator.
+	 * @param {Array=} opt_data Optional initial data array, typically from a
+	 * server response, or constructed directly in Javascript. The array is used
+	 * in place and becomes part of the constructed object. It is not cloned.
+	 * If no data is provided, the constructed object will be empty, but still
+	 * valid.
+	 * @extends {jspb.Message}
+	 * @constructor
+	 */
+	proto.set.SetSchema = function(opt_data) {
+	  jspb.Message.initialize(this, opt_data, 0, -1, proto.set.SetSchema.repeatedFields_, null);
+	};
+	goog.inherits(proto.set.SetSchema, jspb.Message);
+	if (goog.DEBUG && !COMPILED) {
+	  /**
+	   * @public
+	   * @override
+	   */
+	  proto.set.SetSchema.displayName = 'proto.set.SetSchema';
+	}
+	/**
+	 * Generated by JsPbCodeGenerator.
+	 * @param {Array=} opt_data Optional initial data array, typically from a
+	 * server response, or constructed directly in Javascript. The array is used
+	 * in place and becomes part of the constructed object. It is not cloned.
+	 * If no data is provided, the constructed object will be empty, but still
+	 * valid.
+	 * @extends {jspb.Message}
+	 * @constructor
+	 */
+	proto.set.SetMember = function(opt_data) {
+	  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+	};
+	goog.inherits(proto.set.SetMember, jspb.Message);
+	if (goog.DEBUG && !COMPILED) {
+	  /**
+	   * @public
+	   * @override
+	   */
+	  proto.set.SetMember.displayName = 'proto.set.SetMember';
+	}
+	/**
+	 * Generated by JsPbCodeGenerator.
+	 * @param {Array=} opt_data Optional initial data array, typically from a
+	 * server response, or constructed directly in Javascript. The array is used
+	 * in place and becomes part of the constructed object. It is not cloned.
+	 * If no data is provided, the constructed object will be empty, but still
+	 * valid.
+	 * @extends {jspb.Message}
+	 * @constructor
+	 */
+	proto.set.SetId = function(opt_data) {
+	  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+	};
+	goog.inherits(proto.set.SetId, jspb.Message);
+	if (goog.DEBUG && !COMPILED) {
+	  /**
+	   * @public
+	   * @override
+	   */
+	  proto.set.SetId.displayName = 'proto.set.SetId';
+	}
+	/**
+	 * Generated by JsPbCodeGenerator.
+	 * @param {Array=} opt_data Optional initial data array, typically from a
+	 * server response, or constructed directly in Javascript. The array is used
+	 * in place and becomes part of the constructed object. It is not cloned.
+	 * If no data is provided, the constructed object will be empty, but still
+	 * valid.
+	 * @extends {jspb.Message}
+	 * @constructor
+	 */
+	proto.set.SetIds = function(opt_data) {
+	  jspb.Message.initialize(this, opt_data, 0, -1, proto.set.SetIds.repeatedFields_, null);
+	};
+	goog.inherits(proto.set.SetIds, jspb.Message);
+	if (goog.DEBUG && !COMPILED) {
+	  /**
+	   * @public
+	   * @override
+	   */
+	  proto.set.SetIds.displayName = 'proto.set.SetIds';
+	}
+	/**
+	 * Generated by JsPbCodeGenerator.
+	 * @param {Array=} opt_data Optional initial data array, typically from a
+	 * server response, or constructed directly in Javascript. The array is used
+	 * in place and becomes part of the constructed object. It is not cloned.
+	 * If no data is provided, the constructed object will be empty, but still
+	 * valid.
+	 * @extends {jspb.Message}
+	 * @constructor
+	 */
+	proto.set.SetName = function(opt_data) {
+	  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+	};
+	goog.inherits(proto.set.SetName, jspb.Message);
+	if (goog.DEBUG && !COMPILED) {
+	  /**
+	   * @public
+	   * @override
+	   */
+	  proto.set.SetName.displayName = 'proto.set.SetName';
+	}
+	/**
+	 * Generated by JsPbCodeGenerator.
+	 * @param {Array=} opt_data Optional initial data array, typically from a
+	 * server response, or constructed directly in Javascript. The array is used
+	 * in place and becomes part of the constructed object. It is not cloned.
+	 * If no data is provided, the constructed object will be empty, but still
+	 * valid.
+	 * @extends {jspb.Message}
+	 * @constructor
+	 */
+	proto.set.SetUpdate = function(opt_data) {
+	  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+	};
+	goog.inherits(proto.set.SetUpdate, jspb.Message);
+	if (goog.DEBUG && !COMPILED) {
+	  /**
+	   * @public
+	   * @override
+	   */
+	  proto.set.SetUpdate.displayName = 'proto.set.SetUpdate';
+	}
+	/**
+	 * Generated by JsPbCodeGenerator.
+	 * @param {Array=} opt_data Optional initial data array, typically from a
+	 * server response, or constructed directly in Javascript. The array is used
+	 * in place and becomes part of the constructed object. It is not cloned.
+	 * If no data is provided, the constructed object will be empty, but still
+	 * valid.
+	 * @extends {jspb.Message}
+	 * @constructor
+	 */
+	proto.set.SetMemberRequest = function(opt_data) {
+	  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+	};
+	goog.inherits(proto.set.SetMemberRequest, jspb.Message);
+	if (goog.DEBUG && !COMPILED) {
+	  /**
+	   * @public
+	   * @override
+	   */
+	  proto.set.SetMemberRequest.displayName = 'proto.set.SetMemberRequest';
+	}
+	/**
+	 * Generated by JsPbCodeGenerator.
+	 * @param {Array=} opt_data Optional initial data array, typically from a
+	 * server response, or constructed directly in Javascript. The array is used
+	 * in place and becomes part of the constructed object. It is not cloned.
+	 * If no data is provided, the constructed object will be empty, but still
+	 * valid.
+	 * @extends {jspb.Message}
+	 * @constructor
+	 */
+	proto.set.SetMemberSwap = function(opt_data) {
+	  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+	};
+	goog.inherits(proto.set.SetMemberSwap, jspb.Message);
+	if (goog.DEBUG && !COMPILED) {
+	  /**
+	   * @public
+	   * @override
+	   */
+	  proto.set.SetMemberSwap.displayName = 'proto.set.SetMemberSwap';
+	}
+	/**
+	 * Generated by JsPbCodeGenerator.
+	 * @param {Array=} opt_data Optional initial data array, typically from a
+	 * server response, or constructed directly in Javascript. The array is used
+	 * in place and becomes part of the constructed object. It is not cloned.
+	 * If no data is provided, the constructed object will be empty, but still
+	 * valid.
+	 * @extends {jspb.Message}
+	 * @constructor
+	 */
+	proto.set.SetTemplateSchema = function(opt_data) {
+	  jspb.Message.initialize(this, opt_data, 0, -1, proto.set.SetTemplateSchema.repeatedFields_, null);
+	};
+	goog.inherits(proto.set.SetTemplateSchema, jspb.Message);
+	if (goog.DEBUG && !COMPILED) {
+	  /**
+	   * @public
+	   * @override
+	   */
+	  proto.set.SetTemplateSchema.displayName = 'proto.set.SetTemplateSchema';
+	}
+	/**
+	 * Generated by JsPbCodeGenerator.
+	 * @param {Array=} opt_data Optional initial data array, typically from a
+	 * server response, or constructed directly in Javascript. The array is used
+	 * in place and becomes part of the constructed object. It is not cloned.
+	 * If no data is provided, the constructed object will be empty, but still
+	 * valid.
+	 * @extends {jspb.Message}
+	 * @constructor
+	 */
+	proto.set.SetTemplateMember = function(opt_data) {
+	  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+	};
+	goog.inherits(proto.set.SetTemplateMember, jspb.Message);
+	if (goog.DEBUG && !COMPILED) {
+	  /**
+	   * @public
+	   * @override
+	   */
+	  proto.set.SetTemplateMember.displayName = 'proto.set.SetTemplateMember';
+	}
+	/**
+	 * Generated by JsPbCodeGenerator.
+	 * @param {Array=} opt_data Optional initial data array, typically from a
+	 * server response, or constructed directly in Javascript. The array is used
+	 * in place and becomes part of the constructed object. It is not cloned.
+	 * If no data is provided, the constructed object will be empty, but still
+	 * valid.
+	 * @extends {jspb.Message}
+	 * @constructor
+	 */
+	proto.set.SetTemplateId = function(opt_data) {
+	  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+	};
+	goog.inherits(proto.set.SetTemplateId, jspb.Message);
+	if (goog.DEBUG && !COMPILED) {
+	  /**
+	   * @public
+	   * @override
+	   */
+	  proto.set.SetTemplateId.displayName = 'proto.set.SetTemplateId';
+	}
+	/**
+	 * Generated by JsPbCodeGenerator.
+	 * @param {Array=} opt_data Optional initial data array, typically from a
+	 * server response, or constructed directly in Javascript. The array is used
+	 * in place and becomes part of the constructed object. It is not cloned.
+	 * If no data is provided, the constructed object will be empty, but still
+	 * valid.
+	 * @extends {jspb.Message}
+	 * @constructor
+	 */
+	proto.set.SetTemplateIds = function(opt_data) {
+	  jspb.Message.initialize(this, opt_data, 0, -1, proto.set.SetTemplateIds.repeatedFields_, null);
+	};
+	goog.inherits(proto.set.SetTemplateIds, jspb.Message);
+	if (goog.DEBUG && !COMPILED) {
+	  /**
+	   * @public
+	   * @override
+	   */
+	  proto.set.SetTemplateIds.displayName = 'proto.set.SetTemplateIds';
+	}
+	/**
+	 * Generated by JsPbCodeGenerator.
+	 * @param {Array=} opt_data Optional initial data array, typically from a
+	 * server response, or constructed directly in Javascript. The array is used
+	 * in place and becomes part of the constructed object. It is not cloned.
+	 * If no data is provided, the constructed object will be empty, but still
+	 * valid.
+	 * @extends {jspb.Message}
+	 * @constructor
+	 */
+	proto.set.SetTemplateName = function(opt_data) {
+	  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+	};
+	goog.inherits(proto.set.SetTemplateName, jspb.Message);
+	if (goog.DEBUG && !COMPILED) {
+	  /**
+	   * @public
+	   * @override
+	   */
+	  proto.set.SetTemplateName.displayName = 'proto.set.SetTemplateName';
+	}
+	/**
+	 * Generated by JsPbCodeGenerator.
+	 * @param {Array=} opt_data Optional initial data array, typically from a
+	 * server response, or constructed directly in Javascript. The array is used
+	 * in place and becomes part of the constructed object. It is not cloned.
+	 * If no data is provided, the constructed object will be empty, but still
+	 * valid.
+	 * @extends {jspb.Message}
+	 * @constructor
+	 */
+	proto.set.SetTemplateUpdate = function(opt_data) {
+	  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+	};
+	goog.inherits(proto.set.SetTemplateUpdate, jspb.Message);
+	if (goog.DEBUG && !COMPILED) {
+	  /**
+	   * @public
+	   * @override
+	   */
+	  proto.set.SetTemplateUpdate.displayName = 'proto.set.SetTemplateUpdate';
+	}
+	/**
+	 * Generated by JsPbCodeGenerator.
+	 * @param {Array=} opt_data Optional initial data array, typically from a
+	 * server response, or constructed directly in Javascript. The array is used
+	 * in place and becomes part of the constructed object. It is not cloned.
+	 * If no data is provided, the constructed object will be empty, but still
+	 * valid.
+	 * @extends {jspb.Message}
+	 * @constructor
+	 */
+	proto.set.SetTemplateMemberRequest = function(opt_data) {
+	  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+	};
+	goog.inherits(proto.set.SetTemplateMemberRequest, jspb.Message);
+	if (goog.DEBUG && !COMPILED) {
+	  /**
+	   * @public
+	   * @override
+	   */
+	  proto.set.SetTemplateMemberRequest.displayName = 'proto.set.SetTemplateMemberRequest';
+	}
+	/**
+	 * Generated by JsPbCodeGenerator.
+	 * @param {Array=} opt_data Optional initial data array, typically from a
+	 * server response, or constructed directly in Javascript. The array is used
+	 * in place and becomes part of the constructed object. It is not cloned.
+	 * If no data is provided, the constructed object will be empty, but still
+	 * valid.
+	 * @extends {jspb.Message}
+	 * @constructor
+	 */
+	proto.set.SetTemplateMemberSwap = function(opt_data) {
+	  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+	};
+	goog.inherits(proto.set.SetTemplateMemberSwap, jspb.Message);
+	if (goog.DEBUG && !COMPILED) {
+	  /**
+	   * @public
+	   * @override
+	   */
+	  proto.set.SetTemplateMemberSwap.displayName = 'proto.set.SetTemplateMemberSwap';
+	}
+	/**
+	 * Generated by JsPbCodeGenerator.
+	 * @param {Array=} opt_data Optional initial data array, typically from a
+	 * server response, or constructed directly in Javascript. The array is used
+	 * in place and becomes part of the constructed object. It is not cloned.
+	 * If no data is provided, the constructed object will be empty, but still
+	 * valid.
+	 * @extends {jspb.Message}
+	 * @constructor
+	 */
+	proto.set.SetReadResponse = function(opt_data) {
+	  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+	};
+	goog.inherits(proto.set.SetReadResponse, jspb.Message);
+	if (goog.DEBUG && !COMPILED) {
+	  /**
+	   * @public
+	   * @override
+	   */
+	  proto.set.SetReadResponse.displayName = 'proto.set.SetReadResponse';
+	}
+	/**
+	 * Generated by JsPbCodeGenerator.
+	 * @param {Array=} opt_data Optional initial data array, typically from a
+	 * server response, or constructed directly in Javascript. The array is used
+	 * in place and becomes part of the constructed object. It is not cloned.
+	 * If no data is provided, the constructed object will be empty, but still
+	 * valid.
+	 * @extends {jspb.Message}
+	 * @constructor
+	 */
+	proto.set.SetListResponse = function(opt_data) {
+	  jspb.Message.initialize(this, opt_data, 0, -1, proto.set.SetListResponse.repeatedFields_, null);
+	};
+	goog.inherits(proto.set.SetListResponse, jspb.Message);
+	if (goog.DEBUG && !COMPILED) {
+	  /**
+	   * @public
+	   * @override
+	   */
+	  proto.set.SetListResponse.displayName = 'proto.set.SetListResponse';
+	}
+	/**
+	 * Generated by JsPbCodeGenerator.
+	 * @param {Array=} opt_data Optional initial data array, typically from a
+	 * server response, or constructed directly in Javascript. The array is used
+	 * in place and becomes part of the constructed object. It is not cloned.
+	 * If no data is provided, the constructed object will be empty, but still
+	 * valid.
+	 * @extends {jspb.Message}
+	 * @constructor
+	 */
+	proto.set.SetCreateResponse = function(opt_data) {
+	  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+	};
+	goog.inherits(proto.set.SetCreateResponse, jspb.Message);
+	if (goog.DEBUG && !COMPILED) {
+	  /**
+	   * @public
+	   * @override
+	   */
+	  proto.set.SetCreateResponse.displayName = 'proto.set.SetCreateResponse';
+	}
+	/**
+	 * Generated by JsPbCodeGenerator.
+	 * @param {Array=} opt_data Optional initial data array, typically from a
+	 * server response, or constructed directly in Javascript. The array is used
+	 * in place and becomes part of the constructed object. It is not cloned.
+	 * If no data is provided, the constructed object will be empty, but still
+	 * valid.
+	 * @extends {jspb.Message}
+	 * @constructor
+	 */
+	proto.set.SetChangeResponse = function(opt_data) {
+	  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+	};
+	goog.inherits(proto.set.SetChangeResponse, jspb.Message);
+	if (goog.DEBUG && !COMPILED) {
+	  /**
+	   * @public
+	   * @override
+	   */
+	  proto.set.SetChangeResponse.displayName = 'proto.set.SetChangeResponse';
+	}
+	/**
+	 * Generated by JsPbCodeGenerator.
+	 * @param {Array=} opt_data Optional initial data array, typically from a
+	 * server response, or constructed directly in Javascript. The array is used
+	 * in place and becomes part of the constructed object. It is not cloned.
+	 * If no data is provided, the constructed object will be empty, but still
+	 * valid.
+	 * @extends {jspb.Message}
+	 * @constructor
+	 */
+	proto.set.TemplateReadResponse = function(opt_data) {
+	  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+	};
+	goog.inherits(proto.set.TemplateReadResponse, jspb.Message);
+	if (goog.DEBUG && !COMPILED) {
+	  /**
+	   * @public
+	   * @override
+	   */
+	  proto.set.TemplateReadResponse.displayName = 'proto.set.TemplateReadResponse';
+	}
+	/**
+	 * Generated by JsPbCodeGenerator.
+	 * @param {Array=} opt_data Optional initial data array, typically from a
+	 * server response, or constructed directly in Javascript. The array is used
+	 * in place and becomes part of the constructed object. It is not cloned.
+	 * If no data is provided, the constructed object will be empty, but still
+	 * valid.
+	 * @extends {jspb.Message}
+	 * @constructor
+	 */
+	proto.set.TemplateListResponse = function(opt_data) {
+	  jspb.Message.initialize(this, opt_data, 0, -1, proto.set.TemplateListResponse.repeatedFields_, null);
+	};
+	goog.inherits(proto.set.TemplateListResponse, jspb.Message);
+	if (goog.DEBUG && !COMPILED) {
+	  /**
+	   * @public
+	   * @override
+	   */
+	  proto.set.TemplateListResponse.displayName = 'proto.set.TemplateListResponse';
+	}
+	/**
+	 * Generated by JsPbCodeGenerator.
+	 * @param {Array=} opt_data Optional initial data array, typically from a
+	 * server response, or constructed directly in Javascript. The array is used
+	 * in place and becomes part of the constructed object. It is not cloned.
+	 * If no data is provided, the constructed object will be empty, but still
+	 * valid.
+	 * @extends {jspb.Message}
+	 * @constructor
+	 */
+	proto.set.TemplateCreateResponse = function(opt_data) {
+	  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+	};
+	goog.inherits(proto.set.TemplateCreateResponse, jspb.Message);
+	if (goog.DEBUG && !COMPILED) {
+	  /**
+	   * @public
+	   * @override
+	   */
+	  proto.set.TemplateCreateResponse.displayName = 'proto.set.TemplateCreateResponse';
+	}
+	/**
+	 * Generated by JsPbCodeGenerator.
+	 * @param {Array=} opt_data Optional initial data array, typically from a
+	 * server response, or constructed directly in Javascript. The array is used
+	 * in place and becomes part of the constructed object. It is not cloned.
+	 * If no data is provided, the constructed object will be empty, but still
+	 * valid.
+	 * @extends {jspb.Message}
+	 * @constructor
+	 */
+	proto.set.TemplateChangeResponse = function(opt_data) {
+	  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+	};
+	goog.inherits(proto.set.TemplateChangeResponse, jspb.Message);
+	if (goog.DEBUG && !COMPILED) {
+	  /**
+	   * @public
+	   * @override
+	   */
+	  proto.set.TemplateChangeResponse.displayName = 'proto.set.TemplateChangeResponse';
+	}
+
+	/**
+	 * List of repeated fields within this message type.
+	 * @private {!Array<number>}
+	 * @const
+	 */
+	proto.set.SetSchema.repeatedFields_ = [5];
+
+
+
+	if (jspb.Message.GENERATE_TO_OBJECT) {
+	/**
+	 * Creates an object representation of this proto.
+	 * Field names that are reserved in JavaScript and will be renamed to pb_name.
+	 * Optional fields that are not set will be set to undefined.
+	 * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+	 * For the list of reserved names please see:
+	 *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+	 * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+	 *     JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @return {!Object}
+	 */
+	proto.set.SetSchema.prototype.toObject = function(opt_includeInstance) {
+	  return proto.set.SetSchema.toObject(opt_includeInstance, this);
+	};
+
+
+	/**
+	 * Static version of the {@see toObject} method.
+	 * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+	 *     the JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @param {!proto.set.SetSchema} msg The msg instance to transform.
+	 * @return {!Object}
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.set.SetSchema.toObject = function(includeInstance, msg) {
+	  var obj = {
+	    id: msg.getId_asB64(),
+	    templateId: msg.getTemplateId_asB64(),
+	    name: jspb.Message.getFieldWithDefault(msg, 3, ""),
+	    description: jspb.Message.getFieldWithDefault(msg, 4, ""),
+	    membersList: jspb.Message.toObjectList(msg.getMembersList(),
+	    proto.set.SetMember.toObject, includeInstance)
+	  };
+
+	  if (includeInstance) {
+	    obj.$jspbMessageInstance = msg;
+	  }
+	  return obj;
+	};
+	}
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format).
+	 * @param {jspb.ByteSource} bytes The bytes to deserialize.
+	 * @return {!proto.set.SetSchema}
+	 */
+	proto.set.SetSchema.deserializeBinary = function(bytes) {
+	  var reader = new jspb.BinaryReader(bytes);
+	  var msg = new proto.set.SetSchema;
+	  return proto.set.SetSchema.deserializeBinaryFromReader(msg, reader);
+	};
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format) from the
+	 * given reader into the given message object.
+	 * @param {!proto.set.SetSchema} msg The message object to deserialize into.
+	 * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+	 * @return {!proto.set.SetSchema}
+	 */
+	proto.set.SetSchema.deserializeBinaryFromReader = function(msg, reader) {
+	  while (reader.nextField()) {
+	    if (reader.isEndGroup()) {
+	      break;
+	    }
+	    var field = reader.getFieldNumber();
+	    switch (field) {
+	    case 1:
+	      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+	      msg.setId(value);
+	      break;
+	    case 2:
+	      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+	      msg.setTemplateId(value);
+	      break;
+	    case 3:
+	      var value = /** @type {string} */ (reader.readString());
+	      msg.setName(value);
+	      break;
+	    case 4:
+	      var value = /** @type {string} */ (reader.readString());
+	      msg.setDescription(value);
+	      break;
+	    case 5:
+	      var value = new proto.set.SetMember;
+	      reader.readMessage(value,proto.set.SetMember.deserializeBinaryFromReader);
+	      msg.addMembers(value);
+	      break;
+	    default:
+	      reader.skipField();
+	      break;
+	    }
+	  }
+	  return msg;
+	};
+
+
+	/**
+	 * Serializes the message to binary data (in protobuf wire format).
+	 * @return {!Uint8Array}
+	 */
+	proto.set.SetSchema.prototype.serializeBinary = function() {
+	  var writer = new jspb.BinaryWriter();
+	  proto.set.SetSchema.serializeBinaryToWriter(this, writer);
+	  return writer.getResultBuffer();
+	};
+
+
+	/**
+	 * Serializes the given message to binary data (in protobuf wire
+	 * format), writing to the given BinaryWriter.
+	 * @param {!proto.set.SetSchema} message
+	 * @param {!jspb.BinaryWriter} writer
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.set.SetSchema.serializeBinaryToWriter = function(message, writer) {
+	  var f = undefined;
+	  f = message.getId_asU8();
+	  if (f.length > 0) {
+	    writer.writeBytes(
+	      1,
+	      f
+	    );
+	  }
+	  f = message.getTemplateId_asU8();
+	  if (f.length > 0) {
+	    writer.writeBytes(
+	      2,
+	      f
+	    );
+	  }
+	  f = message.getName();
+	  if (f.length > 0) {
+	    writer.writeString(
+	      3,
+	      f
+	    );
+	  }
+	  f = message.getDescription();
+	  if (f.length > 0) {
+	    writer.writeString(
+	      4,
+	      f
+	    );
+	  }
+	  f = message.getMembersList();
+	  if (f.length > 0) {
+	    writer.writeRepeatedMessage(
+	      5,
+	      f,
+	      proto.set.SetMember.serializeBinaryToWriter
+	    );
+	  }
+	};
+
+
+	/**
+	 * optional bytes id = 1;
+	 * @return {!(string|Uint8Array)}
+	 */
+	proto.set.SetSchema.prototype.getId = function() {
+	  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+	};
+
+
+	/**
+	 * optional bytes id = 1;
+	 * This is a type-conversion wrapper around `getId()`
+	 * @return {string}
+	 */
+	proto.set.SetSchema.prototype.getId_asB64 = function() {
+	  return /** @type {string} */ (jspb.Message.bytesAsB64(
+	      this.getId()));
+	};
+
+
+	/**
+	 * optional bytes id = 1;
+	 * Note that Uint8Array is not supported on all browsers.
+	 * @see http://caniuse.com/Uint8Array
+	 * This is a type-conversion wrapper around `getId()`
+	 * @return {!Uint8Array}
+	 */
+	proto.set.SetSchema.prototype.getId_asU8 = function() {
+	  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+	      this.getId()));
+	};
+
+
+	/**
+	 * @param {!(string|Uint8Array)} value
+	 * @return {!proto.set.SetSchema} returns this
+	 */
+	proto.set.SetSchema.prototype.setId = function(value) {
+	  return jspb.Message.setProto3BytesField(this, 1, value);
+	};
+
+
+	/**
+	 * optional bytes template_id = 2;
+	 * @return {!(string|Uint8Array)}
+	 */
+	proto.set.SetSchema.prototype.getTemplateId = function() {
+	  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+	};
+
+
+	/**
+	 * optional bytes template_id = 2;
+	 * This is a type-conversion wrapper around `getTemplateId()`
+	 * @return {string}
+	 */
+	proto.set.SetSchema.prototype.getTemplateId_asB64 = function() {
+	  return /** @type {string} */ (jspb.Message.bytesAsB64(
+	      this.getTemplateId()));
+	};
+
+
+	/**
+	 * optional bytes template_id = 2;
+	 * Note that Uint8Array is not supported on all browsers.
+	 * @see http://caniuse.com/Uint8Array
+	 * This is a type-conversion wrapper around `getTemplateId()`
+	 * @return {!Uint8Array}
+	 */
+	proto.set.SetSchema.prototype.getTemplateId_asU8 = function() {
+	  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+	      this.getTemplateId()));
+	};
+
+
+	/**
+	 * @param {!(string|Uint8Array)} value
+	 * @return {!proto.set.SetSchema} returns this
+	 */
+	proto.set.SetSchema.prototype.setTemplateId = function(value) {
+	  return jspb.Message.setProto3BytesField(this, 2, value);
+	};
+
+
+	/**
+	 * optional string name = 3;
+	 * @return {string}
+	 */
+	proto.set.SetSchema.prototype.getName = function() {
+	  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+	};
+
+
+	/**
+	 * @param {string} value
+	 * @return {!proto.set.SetSchema} returns this
+	 */
+	proto.set.SetSchema.prototype.setName = function(value) {
+	  return jspb.Message.setProto3StringField(this, 3, value);
+	};
+
+
+	/**
+	 * optional string description = 4;
+	 * @return {string}
+	 */
+	proto.set.SetSchema.prototype.getDescription = function() {
+	  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+	};
+
+
+	/**
+	 * @param {string} value
+	 * @return {!proto.set.SetSchema} returns this
+	 */
+	proto.set.SetSchema.prototype.setDescription = function(value) {
+	  return jspb.Message.setProto3StringField(this, 4, value);
+	};
+
+
+	/**
+	 * repeated SetMember members = 5;
+	 * @return {!Array<!proto.set.SetMember>}
+	 */
+	proto.set.SetSchema.prototype.getMembersList = function() {
+	  return /** @type{!Array<!proto.set.SetMember>} */ (
+	    jspb.Message.getRepeatedWrapperField(this, proto.set.SetMember, 5));
+	};
+
+
+	/**
+	 * @param {!Array<!proto.set.SetMember>} value
+	 * @return {!proto.set.SetSchema} returns this
+	*/
+	proto.set.SetSchema.prototype.setMembersList = function(value) {
+	  return jspb.Message.setRepeatedWrapperField(this, 5, value);
+	};
+
+
+	/**
+	 * @param {!proto.set.SetMember=} opt_value
+	 * @param {number=} opt_index
+	 * @return {!proto.set.SetMember}
+	 */
+	proto.set.SetSchema.prototype.addMembers = function(opt_value, opt_index) {
+	  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.set.SetMember, opt_index);
+	};
+
+
+	/**
+	 * Clears the list making it empty but non-null.
+	 * @return {!proto.set.SetSchema} returns this
+	 */
+	proto.set.SetSchema.prototype.clearMembersList = function() {
+	  return this.setMembersList([]);
+	};
+
+
+
+
+
+	if (jspb.Message.GENERATE_TO_OBJECT) {
+	/**
+	 * Creates an object representation of this proto.
+	 * Field names that are reserved in JavaScript and will be renamed to pb_name.
+	 * Optional fields that are not set will be set to undefined.
+	 * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+	 * For the list of reserved names please see:
+	 *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+	 * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+	 *     JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @return {!Object}
+	 */
+	proto.set.SetMember.prototype.toObject = function(opt_includeInstance) {
+	  return proto.set.SetMember.toObject(opt_includeInstance, this);
+	};
+
+
+	/**
+	 * Static version of the {@see toObject} method.
+	 * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+	 *     the JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @param {!proto.set.SetMember} msg The msg instance to transform.
+	 * @return {!Object}
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.set.SetMember.toObject = function(includeInstance, msg) {
+	  var obj = {
+	    deviceId: msg.getDeviceId_asB64(),
+	    modelId: msg.getModelId_asB64(),
+	    dataIndex: msg.getDataIndex_asB64()
+	  };
+
+	  if (includeInstance) {
+	    obj.$jspbMessageInstance = msg;
+	  }
+	  return obj;
+	};
+	}
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format).
+	 * @param {jspb.ByteSource} bytes The bytes to deserialize.
+	 * @return {!proto.set.SetMember}
+	 */
+	proto.set.SetMember.deserializeBinary = function(bytes) {
+	  var reader = new jspb.BinaryReader(bytes);
+	  var msg = new proto.set.SetMember;
+	  return proto.set.SetMember.deserializeBinaryFromReader(msg, reader);
+	};
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format) from the
+	 * given reader into the given message object.
+	 * @param {!proto.set.SetMember} msg The message object to deserialize into.
+	 * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+	 * @return {!proto.set.SetMember}
+	 */
+	proto.set.SetMember.deserializeBinaryFromReader = function(msg, reader) {
+	  while (reader.nextField()) {
+	    if (reader.isEndGroup()) {
+	      break;
+	    }
+	    var field = reader.getFieldNumber();
+	    switch (field) {
+	    case 1:
+	      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+	      msg.setDeviceId(value);
+	      break;
+	    case 2:
+	      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+	      msg.setModelId(value);
+	      break;
+	    case 3:
+	      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+	      msg.setDataIndex(value);
+	      break;
+	    default:
+	      reader.skipField();
+	      break;
+	    }
+	  }
+	  return msg;
+	};
+
+
+	/**
+	 * Serializes the message to binary data (in protobuf wire format).
+	 * @return {!Uint8Array}
+	 */
+	proto.set.SetMember.prototype.serializeBinary = function() {
+	  var writer = new jspb.BinaryWriter();
+	  proto.set.SetMember.serializeBinaryToWriter(this, writer);
+	  return writer.getResultBuffer();
+	};
+
+
+	/**
+	 * Serializes the given message to binary data (in protobuf wire
+	 * format), writing to the given BinaryWriter.
+	 * @param {!proto.set.SetMember} message
+	 * @param {!jspb.BinaryWriter} writer
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.set.SetMember.serializeBinaryToWriter = function(message, writer) {
+	  var f = undefined;
+	  f = message.getDeviceId_asU8();
+	  if (f.length > 0) {
+	    writer.writeBytes(
+	      1,
+	      f
+	    );
+	  }
+	  f = message.getModelId_asU8();
+	  if (f.length > 0) {
+	    writer.writeBytes(
+	      2,
+	      f
+	    );
+	  }
+	  f = message.getDataIndex_asU8();
+	  if (f.length > 0) {
+	    writer.writeBytes(
+	      3,
+	      f
+	    );
+	  }
+	};
+
+
+	/**
+	 * optional bytes device_id = 1;
+	 * @return {!(string|Uint8Array)}
+	 */
+	proto.set.SetMember.prototype.getDeviceId = function() {
+	  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+	};
+
+
+	/**
+	 * optional bytes device_id = 1;
+	 * This is a type-conversion wrapper around `getDeviceId()`
+	 * @return {string}
+	 */
+	proto.set.SetMember.prototype.getDeviceId_asB64 = function() {
+	  return /** @type {string} */ (jspb.Message.bytesAsB64(
+	      this.getDeviceId()));
+	};
+
+
+	/**
+	 * optional bytes device_id = 1;
+	 * Note that Uint8Array is not supported on all browsers.
+	 * @see http://caniuse.com/Uint8Array
+	 * This is a type-conversion wrapper around `getDeviceId()`
+	 * @return {!Uint8Array}
+	 */
+	proto.set.SetMember.prototype.getDeviceId_asU8 = function() {
+	  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+	      this.getDeviceId()));
+	};
+
+
+	/**
+	 * @param {!(string|Uint8Array)} value
+	 * @return {!proto.set.SetMember} returns this
+	 */
+	proto.set.SetMember.prototype.setDeviceId = function(value) {
+	  return jspb.Message.setProto3BytesField(this, 1, value);
+	};
+
+
+	/**
+	 * optional bytes model_id = 2;
+	 * @return {!(string|Uint8Array)}
+	 */
+	proto.set.SetMember.prototype.getModelId = function() {
+	  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+	};
+
+
+	/**
+	 * optional bytes model_id = 2;
+	 * This is a type-conversion wrapper around `getModelId()`
+	 * @return {string}
+	 */
+	proto.set.SetMember.prototype.getModelId_asB64 = function() {
+	  return /** @type {string} */ (jspb.Message.bytesAsB64(
+	      this.getModelId()));
+	};
+
+
+	/**
+	 * optional bytes model_id = 2;
+	 * Note that Uint8Array is not supported on all browsers.
+	 * @see http://caniuse.com/Uint8Array
+	 * This is a type-conversion wrapper around `getModelId()`
+	 * @return {!Uint8Array}
+	 */
+	proto.set.SetMember.prototype.getModelId_asU8 = function() {
+	  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+	      this.getModelId()));
+	};
+
+
+	/**
+	 * @param {!(string|Uint8Array)} value
+	 * @return {!proto.set.SetMember} returns this
+	 */
+	proto.set.SetMember.prototype.setModelId = function(value) {
+	  return jspb.Message.setProto3BytesField(this, 2, value);
+	};
+
+
+	/**
+	 * optional bytes data_index = 3;
+	 * @return {!(string|Uint8Array)}
+	 */
+	proto.set.SetMember.prototype.getDataIndex = function() {
+	  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+	};
+
+
+	/**
+	 * optional bytes data_index = 3;
+	 * This is a type-conversion wrapper around `getDataIndex()`
+	 * @return {string}
+	 */
+	proto.set.SetMember.prototype.getDataIndex_asB64 = function() {
+	  return /** @type {string} */ (jspb.Message.bytesAsB64(
+	      this.getDataIndex()));
+	};
+
+
+	/**
+	 * optional bytes data_index = 3;
+	 * Note that Uint8Array is not supported on all browsers.
+	 * @see http://caniuse.com/Uint8Array
+	 * This is a type-conversion wrapper around `getDataIndex()`
+	 * @return {!Uint8Array}
+	 */
+	proto.set.SetMember.prototype.getDataIndex_asU8 = function() {
+	  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+	      this.getDataIndex()));
+	};
+
+
+	/**
+	 * @param {!(string|Uint8Array)} value
+	 * @return {!proto.set.SetMember} returns this
+	 */
+	proto.set.SetMember.prototype.setDataIndex = function(value) {
+	  return jspb.Message.setProto3BytesField(this, 3, value);
+	};
+
+
+
+
+
+	if (jspb.Message.GENERATE_TO_OBJECT) {
+	/**
+	 * Creates an object representation of this proto.
+	 * Field names that are reserved in JavaScript and will be renamed to pb_name.
+	 * Optional fields that are not set will be set to undefined.
+	 * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+	 * For the list of reserved names please see:
+	 *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+	 * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+	 *     JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @return {!Object}
+	 */
+	proto.set.SetId.prototype.toObject = function(opt_includeInstance) {
+	  return proto.set.SetId.toObject(opt_includeInstance, this);
+	};
+
+
+	/**
+	 * Static version of the {@see toObject} method.
+	 * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+	 *     the JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @param {!proto.set.SetId} msg The msg instance to transform.
+	 * @return {!Object}
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.set.SetId.toObject = function(includeInstance, msg) {
+	  var obj = {
+	    id: msg.getId_asB64()
+	  };
+
+	  if (includeInstance) {
+	    obj.$jspbMessageInstance = msg;
+	  }
+	  return obj;
+	};
+	}
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format).
+	 * @param {jspb.ByteSource} bytes The bytes to deserialize.
+	 * @return {!proto.set.SetId}
+	 */
+	proto.set.SetId.deserializeBinary = function(bytes) {
+	  var reader = new jspb.BinaryReader(bytes);
+	  var msg = new proto.set.SetId;
+	  return proto.set.SetId.deserializeBinaryFromReader(msg, reader);
+	};
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format) from the
+	 * given reader into the given message object.
+	 * @param {!proto.set.SetId} msg The message object to deserialize into.
+	 * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+	 * @return {!proto.set.SetId}
+	 */
+	proto.set.SetId.deserializeBinaryFromReader = function(msg, reader) {
+	  while (reader.nextField()) {
+	    if (reader.isEndGroup()) {
+	      break;
+	    }
+	    var field = reader.getFieldNumber();
+	    switch (field) {
+	    case 1:
+	      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+	      msg.setId(value);
+	      break;
+	    default:
+	      reader.skipField();
+	      break;
+	    }
+	  }
+	  return msg;
+	};
+
+
+	/**
+	 * Serializes the message to binary data (in protobuf wire format).
+	 * @return {!Uint8Array}
+	 */
+	proto.set.SetId.prototype.serializeBinary = function() {
+	  var writer = new jspb.BinaryWriter();
+	  proto.set.SetId.serializeBinaryToWriter(this, writer);
+	  return writer.getResultBuffer();
+	};
+
+
+	/**
+	 * Serializes the given message to binary data (in protobuf wire
+	 * format), writing to the given BinaryWriter.
+	 * @param {!proto.set.SetId} message
+	 * @param {!jspb.BinaryWriter} writer
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.set.SetId.serializeBinaryToWriter = function(message, writer) {
+	  var f = undefined;
+	  f = message.getId_asU8();
+	  if (f.length > 0) {
+	    writer.writeBytes(
+	      1,
+	      f
+	    );
+	  }
+	};
+
+
+	/**
+	 * optional bytes id = 1;
+	 * @return {!(string|Uint8Array)}
+	 */
+	proto.set.SetId.prototype.getId = function() {
+	  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+	};
+
+
+	/**
+	 * optional bytes id = 1;
+	 * This is a type-conversion wrapper around `getId()`
+	 * @return {string}
+	 */
+	proto.set.SetId.prototype.getId_asB64 = function() {
+	  return /** @type {string} */ (jspb.Message.bytesAsB64(
+	      this.getId()));
+	};
+
+
+	/**
+	 * optional bytes id = 1;
+	 * Note that Uint8Array is not supported on all browsers.
+	 * @see http://caniuse.com/Uint8Array
+	 * This is a type-conversion wrapper around `getId()`
+	 * @return {!Uint8Array}
+	 */
+	proto.set.SetId.prototype.getId_asU8 = function() {
+	  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+	      this.getId()));
+	};
+
+
+	/**
+	 * @param {!(string|Uint8Array)} value
+	 * @return {!proto.set.SetId} returns this
+	 */
+	proto.set.SetId.prototype.setId = function(value) {
+	  return jspb.Message.setProto3BytesField(this, 1, value);
+	};
+
+
+
+	/**
+	 * List of repeated fields within this message type.
+	 * @private {!Array<number>}
+	 * @const
+	 */
+	proto.set.SetIds.repeatedFields_ = [1];
+
+
+
+	if (jspb.Message.GENERATE_TO_OBJECT) {
+	/**
+	 * Creates an object representation of this proto.
+	 * Field names that are reserved in JavaScript and will be renamed to pb_name.
+	 * Optional fields that are not set will be set to undefined.
+	 * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+	 * For the list of reserved names please see:
+	 *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+	 * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+	 *     JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @return {!Object}
+	 */
+	proto.set.SetIds.prototype.toObject = function(opt_includeInstance) {
+	  return proto.set.SetIds.toObject(opt_includeInstance, this);
+	};
+
+
+	/**
+	 * Static version of the {@see toObject} method.
+	 * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+	 *     the JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @param {!proto.set.SetIds} msg The msg instance to transform.
+	 * @return {!Object}
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.set.SetIds.toObject = function(includeInstance, msg) {
+	  var obj = {
+	    idsList: msg.getIdsList_asB64()
+	  };
+
+	  if (includeInstance) {
+	    obj.$jspbMessageInstance = msg;
+	  }
+	  return obj;
+	};
+	}
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format).
+	 * @param {jspb.ByteSource} bytes The bytes to deserialize.
+	 * @return {!proto.set.SetIds}
+	 */
+	proto.set.SetIds.deserializeBinary = function(bytes) {
+	  var reader = new jspb.BinaryReader(bytes);
+	  var msg = new proto.set.SetIds;
+	  return proto.set.SetIds.deserializeBinaryFromReader(msg, reader);
+	};
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format) from the
+	 * given reader into the given message object.
+	 * @param {!proto.set.SetIds} msg The message object to deserialize into.
+	 * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+	 * @return {!proto.set.SetIds}
+	 */
+	proto.set.SetIds.deserializeBinaryFromReader = function(msg, reader) {
+	  while (reader.nextField()) {
+	    if (reader.isEndGroup()) {
+	      break;
+	    }
+	    var field = reader.getFieldNumber();
+	    switch (field) {
+	    case 1:
+	      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+	      msg.addIds(value);
+	      break;
+	    default:
+	      reader.skipField();
+	      break;
+	    }
+	  }
+	  return msg;
+	};
+
+
+	/**
+	 * Serializes the message to binary data (in protobuf wire format).
+	 * @return {!Uint8Array}
+	 */
+	proto.set.SetIds.prototype.serializeBinary = function() {
+	  var writer = new jspb.BinaryWriter();
+	  proto.set.SetIds.serializeBinaryToWriter(this, writer);
+	  return writer.getResultBuffer();
+	};
+
+
+	/**
+	 * Serializes the given message to binary data (in protobuf wire
+	 * format), writing to the given BinaryWriter.
+	 * @param {!proto.set.SetIds} message
+	 * @param {!jspb.BinaryWriter} writer
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.set.SetIds.serializeBinaryToWriter = function(message, writer) {
+	  var f = undefined;
+	  f = message.getIdsList_asU8();
+	  if (f.length > 0) {
+	    writer.writeRepeatedBytes(
+	      1,
+	      f
+	    );
+	  }
+	};
+
+
+	/**
+	 * repeated bytes ids = 1;
+	 * @return {!(Array<!Uint8Array>|Array<string>)}
+	 */
+	proto.set.SetIds.prototype.getIdsList = function() {
+	  return /** @type {!(Array<!Uint8Array>|Array<string>)} */ (jspb.Message.getRepeatedField(this, 1));
+	};
+
+
+	/**
+	 * repeated bytes ids = 1;
+	 * This is a type-conversion wrapper around `getIdsList()`
+	 * @return {!Array<string>}
+	 */
+	proto.set.SetIds.prototype.getIdsList_asB64 = function() {
+	  return /** @type {!Array<string>} */ (jspb.Message.bytesListAsB64(
+	      this.getIdsList()));
+	};
+
+
+	/**
+	 * repeated bytes ids = 1;
+	 * Note that Uint8Array is not supported on all browsers.
+	 * @see http://caniuse.com/Uint8Array
+	 * This is a type-conversion wrapper around `getIdsList()`
+	 * @return {!Array<!Uint8Array>}
+	 */
+	proto.set.SetIds.prototype.getIdsList_asU8 = function() {
+	  return /** @type {!Array<!Uint8Array>} */ (jspb.Message.bytesListAsU8(
+	      this.getIdsList()));
+	};
+
+
+	/**
+	 * @param {!(Array<!Uint8Array>|Array<string>)} value
+	 * @return {!proto.set.SetIds} returns this
+	 */
+	proto.set.SetIds.prototype.setIdsList = function(value) {
+	  return jspb.Message.setField(this, 1, value || []);
+	};
+
+
+	/**
+	 * @param {!(string|Uint8Array)} value
+	 * @param {number=} opt_index
+	 * @return {!proto.set.SetIds} returns this
+	 */
+	proto.set.SetIds.prototype.addIds = function(value, opt_index) {
+	  return jspb.Message.addToRepeatedField(this, 1, value, opt_index);
+	};
+
+
+	/**
+	 * Clears the list making it empty but non-null.
+	 * @return {!proto.set.SetIds} returns this
+	 */
+	proto.set.SetIds.prototype.clearIdsList = function() {
+	  return this.setIdsList([]);
+	};
+
+
+
+
+
+	if (jspb.Message.GENERATE_TO_OBJECT) {
+	/**
+	 * Creates an object representation of this proto.
+	 * Field names that are reserved in JavaScript and will be renamed to pb_name.
+	 * Optional fields that are not set will be set to undefined.
+	 * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+	 * For the list of reserved names please see:
+	 *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+	 * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+	 *     JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @return {!Object}
+	 */
+	proto.set.SetName.prototype.toObject = function(opt_includeInstance) {
+	  return proto.set.SetName.toObject(opt_includeInstance, this);
+	};
+
+
+	/**
+	 * Static version of the {@see toObject} method.
+	 * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+	 *     the JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @param {!proto.set.SetName} msg The msg instance to transform.
+	 * @return {!Object}
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.set.SetName.toObject = function(includeInstance, msg) {
+	  var obj = {
+	    name: jspb.Message.getFieldWithDefault(msg, 1, "")
+	  };
+
+	  if (includeInstance) {
+	    obj.$jspbMessageInstance = msg;
+	  }
+	  return obj;
+	};
+	}
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format).
+	 * @param {jspb.ByteSource} bytes The bytes to deserialize.
+	 * @return {!proto.set.SetName}
+	 */
+	proto.set.SetName.deserializeBinary = function(bytes) {
+	  var reader = new jspb.BinaryReader(bytes);
+	  var msg = new proto.set.SetName;
+	  return proto.set.SetName.deserializeBinaryFromReader(msg, reader);
+	};
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format) from the
+	 * given reader into the given message object.
+	 * @param {!proto.set.SetName} msg The message object to deserialize into.
+	 * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+	 * @return {!proto.set.SetName}
+	 */
+	proto.set.SetName.deserializeBinaryFromReader = function(msg, reader) {
+	  while (reader.nextField()) {
+	    if (reader.isEndGroup()) {
+	      break;
+	    }
+	    var field = reader.getFieldNumber();
+	    switch (field) {
+	    case 1:
+	      var value = /** @type {string} */ (reader.readString());
+	      msg.setName(value);
+	      break;
+	    default:
+	      reader.skipField();
+	      break;
+	    }
+	  }
+	  return msg;
+	};
+
+
+	/**
+	 * Serializes the message to binary data (in protobuf wire format).
+	 * @return {!Uint8Array}
+	 */
+	proto.set.SetName.prototype.serializeBinary = function() {
+	  var writer = new jspb.BinaryWriter();
+	  proto.set.SetName.serializeBinaryToWriter(this, writer);
+	  return writer.getResultBuffer();
+	};
+
+
+	/**
+	 * Serializes the given message to binary data (in protobuf wire
+	 * format), writing to the given BinaryWriter.
+	 * @param {!proto.set.SetName} message
+	 * @param {!jspb.BinaryWriter} writer
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.set.SetName.serializeBinaryToWriter = function(message, writer) {
+	  var f = undefined;
+	  f = message.getName();
+	  if (f.length > 0) {
+	    writer.writeString(
+	      1,
+	      f
+	    );
+	  }
+	};
+
+
+	/**
+	 * optional string name = 1;
+	 * @return {string}
+	 */
+	proto.set.SetName.prototype.getName = function() {
+	  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+	};
+
+
+	/**
+	 * @param {string} value
+	 * @return {!proto.set.SetName} returns this
+	 */
+	proto.set.SetName.prototype.setName = function(value) {
+	  return jspb.Message.setProto3StringField(this, 1, value);
+	};
+
+
+
+
+
+	if (jspb.Message.GENERATE_TO_OBJECT) {
+	/**
+	 * Creates an object representation of this proto.
+	 * Field names that are reserved in JavaScript and will be renamed to pb_name.
+	 * Optional fields that are not set will be set to undefined.
+	 * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+	 * For the list of reserved names please see:
+	 *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+	 * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+	 *     JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @return {!Object}
+	 */
+	proto.set.SetUpdate.prototype.toObject = function(opt_includeInstance) {
+	  return proto.set.SetUpdate.toObject(opt_includeInstance, this);
+	};
+
+
+	/**
+	 * Static version of the {@see toObject} method.
+	 * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+	 *     the JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @param {!proto.set.SetUpdate} msg The msg instance to transform.
+	 * @return {!Object}
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.set.SetUpdate.toObject = function(includeInstance, msg) {
+	  var obj = {
+	    id: msg.getId_asB64(),
+	    templateId: msg.getTemplateId_asB64(),
+	    name: jspb.Message.getFieldWithDefault(msg, 3, ""),
+	    description: jspb.Message.getFieldWithDefault(msg, 4, "")
+	  };
+
+	  if (includeInstance) {
+	    obj.$jspbMessageInstance = msg;
+	  }
+	  return obj;
+	};
+	}
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format).
+	 * @param {jspb.ByteSource} bytes The bytes to deserialize.
+	 * @return {!proto.set.SetUpdate}
+	 */
+	proto.set.SetUpdate.deserializeBinary = function(bytes) {
+	  var reader = new jspb.BinaryReader(bytes);
+	  var msg = new proto.set.SetUpdate;
+	  return proto.set.SetUpdate.deserializeBinaryFromReader(msg, reader);
+	};
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format) from the
+	 * given reader into the given message object.
+	 * @param {!proto.set.SetUpdate} msg The message object to deserialize into.
+	 * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+	 * @return {!proto.set.SetUpdate}
+	 */
+	proto.set.SetUpdate.deserializeBinaryFromReader = function(msg, reader) {
+	  while (reader.nextField()) {
+	    if (reader.isEndGroup()) {
+	      break;
+	    }
+	    var field = reader.getFieldNumber();
+	    switch (field) {
+	    case 1:
+	      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+	      msg.setId(value);
+	      break;
+	    case 2:
+	      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+	      msg.setTemplateId(value);
+	      break;
+	    case 3:
+	      var value = /** @type {string} */ (reader.readString());
+	      msg.setName(value);
+	      break;
+	    case 4:
+	      var value = /** @type {string} */ (reader.readString());
+	      msg.setDescription(value);
+	      break;
+	    default:
+	      reader.skipField();
+	      break;
+	    }
+	  }
+	  return msg;
+	};
+
+
+	/**
+	 * Serializes the message to binary data (in protobuf wire format).
+	 * @return {!Uint8Array}
+	 */
+	proto.set.SetUpdate.prototype.serializeBinary = function() {
+	  var writer = new jspb.BinaryWriter();
+	  proto.set.SetUpdate.serializeBinaryToWriter(this, writer);
+	  return writer.getResultBuffer();
+	};
+
+
+	/**
+	 * Serializes the given message to binary data (in protobuf wire
+	 * format), writing to the given BinaryWriter.
+	 * @param {!proto.set.SetUpdate} message
+	 * @param {!jspb.BinaryWriter} writer
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.set.SetUpdate.serializeBinaryToWriter = function(message, writer) {
+	  var f = undefined;
+	  f = message.getId_asU8();
+	  if (f.length > 0) {
+	    writer.writeBytes(
+	      1,
+	      f
+	    );
+	  }
+	  f = /** @type {!(string|Uint8Array)} */ (jspb.Message.getField(message, 2));
+	  if (f != null) {
+	    writer.writeBytes(
+	      2,
+	      f
+	    );
+	  }
+	  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+	  if (f != null) {
+	    writer.writeString(
+	      3,
+	      f
+	    );
+	  }
+	  f = /** @type {string} */ (jspb.Message.getField(message, 4));
+	  if (f != null) {
+	    writer.writeString(
+	      4,
+	      f
+	    );
+	  }
+	};
+
+
+	/**
+	 * optional bytes id = 1;
+	 * @return {!(string|Uint8Array)}
+	 */
+	proto.set.SetUpdate.prototype.getId = function() {
+	  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+	};
+
+
+	/**
+	 * optional bytes id = 1;
+	 * This is a type-conversion wrapper around `getId()`
+	 * @return {string}
+	 */
+	proto.set.SetUpdate.prototype.getId_asB64 = function() {
+	  return /** @type {string} */ (jspb.Message.bytesAsB64(
+	      this.getId()));
+	};
+
+
+	/**
+	 * optional bytes id = 1;
+	 * Note that Uint8Array is not supported on all browsers.
+	 * @see http://caniuse.com/Uint8Array
+	 * This is a type-conversion wrapper around `getId()`
+	 * @return {!Uint8Array}
+	 */
+	proto.set.SetUpdate.prototype.getId_asU8 = function() {
+	  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+	      this.getId()));
+	};
+
+
+	/**
+	 * @param {!(string|Uint8Array)} value
+	 * @return {!proto.set.SetUpdate} returns this
+	 */
+	proto.set.SetUpdate.prototype.setId = function(value) {
+	  return jspb.Message.setProto3BytesField(this, 1, value);
+	};
+
+
+	/**
+	 * optional bytes template_id = 2;
+	 * @return {!(string|Uint8Array)}
+	 */
+	proto.set.SetUpdate.prototype.getTemplateId = function() {
+	  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+	};
+
+
+	/**
+	 * optional bytes template_id = 2;
+	 * This is a type-conversion wrapper around `getTemplateId()`
+	 * @return {string}
+	 */
+	proto.set.SetUpdate.prototype.getTemplateId_asB64 = function() {
+	  return /** @type {string} */ (jspb.Message.bytesAsB64(
+	      this.getTemplateId()));
+	};
+
+
+	/**
+	 * optional bytes template_id = 2;
+	 * Note that Uint8Array is not supported on all browsers.
+	 * @see http://caniuse.com/Uint8Array
+	 * This is a type-conversion wrapper around `getTemplateId()`
+	 * @return {!Uint8Array}
+	 */
+	proto.set.SetUpdate.prototype.getTemplateId_asU8 = function() {
+	  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+	      this.getTemplateId()));
+	};
+
+
+	/**
+	 * @param {!(string|Uint8Array)} value
+	 * @return {!proto.set.SetUpdate} returns this
+	 */
+	proto.set.SetUpdate.prototype.setTemplateId = function(value) {
+	  return jspb.Message.setField(this, 2, value);
+	};
+
+
+	/**
+	 * Clears the field making it undefined.
+	 * @return {!proto.set.SetUpdate} returns this
+	 */
+	proto.set.SetUpdate.prototype.clearTemplateId = function() {
+	  return jspb.Message.setField(this, 2, undefined);
+	};
+
+
+	/**
+	 * Returns whether this field is set.
+	 * @return {boolean}
+	 */
+	proto.set.SetUpdate.prototype.hasTemplateId = function() {
+	  return jspb.Message.getField(this, 2) != null;
+	};
+
+
+	/**
+	 * optional string name = 3;
+	 * @return {string}
+	 */
+	proto.set.SetUpdate.prototype.getName = function() {
+	  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+	};
+
+
+	/**
+	 * @param {string} value
+	 * @return {!proto.set.SetUpdate} returns this
+	 */
+	proto.set.SetUpdate.prototype.setName = function(value) {
+	  return jspb.Message.setField(this, 3, value);
+	};
+
+
+	/**
+	 * Clears the field making it undefined.
+	 * @return {!proto.set.SetUpdate} returns this
+	 */
+	proto.set.SetUpdate.prototype.clearName = function() {
+	  return jspb.Message.setField(this, 3, undefined);
+	};
+
+
+	/**
+	 * Returns whether this field is set.
+	 * @return {boolean}
+	 */
+	proto.set.SetUpdate.prototype.hasName = function() {
+	  return jspb.Message.getField(this, 3) != null;
+	};
+
+
+	/**
+	 * optional string description = 4;
+	 * @return {string}
+	 */
+	proto.set.SetUpdate.prototype.getDescription = function() {
+	  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+	};
+
+
+	/**
+	 * @param {string} value
+	 * @return {!proto.set.SetUpdate} returns this
+	 */
+	proto.set.SetUpdate.prototype.setDescription = function(value) {
+	  return jspb.Message.setField(this, 4, value);
+	};
+
+
+	/**
+	 * Clears the field making it undefined.
+	 * @return {!proto.set.SetUpdate} returns this
+	 */
+	proto.set.SetUpdate.prototype.clearDescription = function() {
+	  return jspb.Message.setField(this, 4, undefined);
+	};
+
+
+	/**
+	 * Returns whether this field is set.
+	 * @return {boolean}
+	 */
+	proto.set.SetUpdate.prototype.hasDescription = function() {
+	  return jspb.Message.getField(this, 4) != null;
+	};
+
+
+
+
+
+	if (jspb.Message.GENERATE_TO_OBJECT) {
+	/**
+	 * Creates an object representation of this proto.
+	 * Field names that are reserved in JavaScript and will be renamed to pb_name.
+	 * Optional fields that are not set will be set to undefined.
+	 * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+	 * For the list of reserved names please see:
+	 *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+	 * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+	 *     JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @return {!Object}
+	 */
+	proto.set.SetMemberRequest.prototype.toObject = function(opt_includeInstance) {
+	  return proto.set.SetMemberRequest.toObject(opt_includeInstance, this);
+	};
+
+
+	/**
+	 * Static version of the {@see toObject} method.
+	 * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+	 *     the JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @param {!proto.set.SetMemberRequest} msg The msg instance to transform.
+	 * @return {!Object}
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.set.SetMemberRequest.toObject = function(includeInstance, msg) {
+	  var obj = {
+	    setId: msg.getSetId_asB64(),
+	    deviceId: msg.getDeviceId_asB64(),
+	    modelId: msg.getModelId_asB64(),
+	    dataIndex: msg.getDataIndex_asB64()
+	  };
+
+	  if (includeInstance) {
+	    obj.$jspbMessageInstance = msg;
+	  }
+	  return obj;
+	};
+	}
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format).
+	 * @param {jspb.ByteSource} bytes The bytes to deserialize.
+	 * @return {!proto.set.SetMemberRequest}
+	 */
+	proto.set.SetMemberRequest.deserializeBinary = function(bytes) {
+	  var reader = new jspb.BinaryReader(bytes);
+	  var msg = new proto.set.SetMemberRequest;
+	  return proto.set.SetMemberRequest.deserializeBinaryFromReader(msg, reader);
+	};
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format) from the
+	 * given reader into the given message object.
+	 * @param {!proto.set.SetMemberRequest} msg The message object to deserialize into.
+	 * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+	 * @return {!proto.set.SetMemberRequest}
+	 */
+	proto.set.SetMemberRequest.deserializeBinaryFromReader = function(msg, reader) {
+	  while (reader.nextField()) {
+	    if (reader.isEndGroup()) {
+	      break;
+	    }
+	    var field = reader.getFieldNumber();
+	    switch (field) {
+	    case 1:
+	      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+	      msg.setSetId(value);
+	      break;
+	    case 2:
+	      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+	      msg.setDeviceId(value);
+	      break;
+	    case 3:
+	      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+	      msg.setModelId(value);
+	      break;
+	    case 4:
+	      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+	      msg.setDataIndex(value);
+	      break;
+	    default:
+	      reader.skipField();
+	      break;
+	    }
+	  }
+	  return msg;
+	};
+
+
+	/**
+	 * Serializes the message to binary data (in protobuf wire format).
+	 * @return {!Uint8Array}
+	 */
+	proto.set.SetMemberRequest.prototype.serializeBinary = function() {
+	  var writer = new jspb.BinaryWriter();
+	  proto.set.SetMemberRequest.serializeBinaryToWriter(this, writer);
+	  return writer.getResultBuffer();
+	};
+
+
+	/**
+	 * Serializes the given message to binary data (in protobuf wire
+	 * format), writing to the given BinaryWriter.
+	 * @param {!proto.set.SetMemberRequest} message
+	 * @param {!jspb.BinaryWriter} writer
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.set.SetMemberRequest.serializeBinaryToWriter = function(message, writer) {
+	  var f = undefined;
+	  f = message.getSetId_asU8();
+	  if (f.length > 0) {
+	    writer.writeBytes(
+	      1,
+	      f
+	    );
+	  }
+	  f = message.getDeviceId_asU8();
+	  if (f.length > 0) {
+	    writer.writeBytes(
+	      2,
+	      f
+	    );
+	  }
+	  f = message.getModelId_asU8();
+	  if (f.length > 0) {
+	    writer.writeBytes(
+	      3,
+	      f
+	    );
+	  }
+	  f = message.getDataIndex_asU8();
+	  if (f.length > 0) {
+	    writer.writeBytes(
+	      4,
+	      f
+	    );
+	  }
+	};
+
+
+	/**
+	 * optional bytes set_id = 1;
+	 * @return {!(string|Uint8Array)}
+	 */
+	proto.set.SetMemberRequest.prototype.getSetId = function() {
+	  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+	};
+
+
+	/**
+	 * optional bytes set_id = 1;
+	 * This is a type-conversion wrapper around `getSetId()`
+	 * @return {string}
+	 */
+	proto.set.SetMemberRequest.prototype.getSetId_asB64 = function() {
+	  return /** @type {string} */ (jspb.Message.bytesAsB64(
+	      this.getSetId()));
+	};
+
+
+	/**
+	 * optional bytes set_id = 1;
+	 * Note that Uint8Array is not supported on all browsers.
+	 * @see http://caniuse.com/Uint8Array
+	 * This is a type-conversion wrapper around `getSetId()`
+	 * @return {!Uint8Array}
+	 */
+	proto.set.SetMemberRequest.prototype.getSetId_asU8 = function() {
+	  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+	      this.getSetId()));
+	};
+
+
+	/**
+	 * @param {!(string|Uint8Array)} value
+	 * @return {!proto.set.SetMemberRequest} returns this
+	 */
+	proto.set.SetMemberRequest.prototype.setSetId = function(value) {
+	  return jspb.Message.setProto3BytesField(this, 1, value);
+	};
+
+
+	/**
+	 * optional bytes device_id = 2;
+	 * @return {!(string|Uint8Array)}
+	 */
+	proto.set.SetMemberRequest.prototype.getDeviceId = function() {
+	  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+	};
+
+
+	/**
+	 * optional bytes device_id = 2;
+	 * This is a type-conversion wrapper around `getDeviceId()`
+	 * @return {string}
+	 */
+	proto.set.SetMemberRequest.prototype.getDeviceId_asB64 = function() {
+	  return /** @type {string} */ (jspb.Message.bytesAsB64(
+	      this.getDeviceId()));
+	};
+
+
+	/**
+	 * optional bytes device_id = 2;
+	 * Note that Uint8Array is not supported on all browsers.
+	 * @see http://caniuse.com/Uint8Array
+	 * This is a type-conversion wrapper around `getDeviceId()`
+	 * @return {!Uint8Array}
+	 */
+	proto.set.SetMemberRequest.prototype.getDeviceId_asU8 = function() {
+	  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+	      this.getDeviceId()));
+	};
+
+
+	/**
+	 * @param {!(string|Uint8Array)} value
+	 * @return {!proto.set.SetMemberRequest} returns this
+	 */
+	proto.set.SetMemberRequest.prototype.setDeviceId = function(value) {
+	  return jspb.Message.setProto3BytesField(this, 2, value);
+	};
+
+
+	/**
+	 * optional bytes model_id = 3;
+	 * @return {!(string|Uint8Array)}
+	 */
+	proto.set.SetMemberRequest.prototype.getModelId = function() {
+	  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+	};
+
+
+	/**
+	 * optional bytes model_id = 3;
+	 * This is a type-conversion wrapper around `getModelId()`
+	 * @return {string}
+	 */
+	proto.set.SetMemberRequest.prototype.getModelId_asB64 = function() {
+	  return /** @type {string} */ (jspb.Message.bytesAsB64(
+	      this.getModelId()));
+	};
+
+
+	/**
+	 * optional bytes model_id = 3;
+	 * Note that Uint8Array is not supported on all browsers.
+	 * @see http://caniuse.com/Uint8Array
+	 * This is a type-conversion wrapper around `getModelId()`
+	 * @return {!Uint8Array}
+	 */
+	proto.set.SetMemberRequest.prototype.getModelId_asU8 = function() {
+	  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+	      this.getModelId()));
+	};
+
+
+	/**
+	 * @param {!(string|Uint8Array)} value
+	 * @return {!proto.set.SetMemberRequest} returns this
+	 */
+	proto.set.SetMemberRequest.prototype.setModelId = function(value) {
+	  return jspb.Message.setProto3BytesField(this, 3, value);
+	};
+
+
+	/**
+	 * optional bytes data_index = 4;
+	 * @return {!(string|Uint8Array)}
+	 */
+	proto.set.SetMemberRequest.prototype.getDataIndex = function() {
+	  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+	};
+
+
+	/**
+	 * optional bytes data_index = 4;
+	 * This is a type-conversion wrapper around `getDataIndex()`
+	 * @return {string}
+	 */
+	proto.set.SetMemberRequest.prototype.getDataIndex_asB64 = function() {
+	  return /** @type {string} */ (jspb.Message.bytesAsB64(
+	      this.getDataIndex()));
+	};
+
+
+	/**
+	 * optional bytes data_index = 4;
+	 * Note that Uint8Array is not supported on all browsers.
+	 * @see http://caniuse.com/Uint8Array
+	 * This is a type-conversion wrapper around `getDataIndex()`
+	 * @return {!Uint8Array}
+	 */
+	proto.set.SetMemberRequest.prototype.getDataIndex_asU8 = function() {
+	  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+	      this.getDataIndex()));
+	};
+
+
+	/**
+	 * @param {!(string|Uint8Array)} value
+	 * @return {!proto.set.SetMemberRequest} returns this
+	 */
+	proto.set.SetMemberRequest.prototype.setDataIndex = function(value) {
+	  return jspb.Message.setProto3BytesField(this, 4, value);
+	};
+
+
+
+
+
+	if (jspb.Message.GENERATE_TO_OBJECT) {
+	/**
+	 * Creates an object representation of this proto.
+	 * Field names that are reserved in JavaScript and will be renamed to pb_name.
+	 * Optional fields that are not set will be set to undefined.
+	 * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+	 * For the list of reserved names please see:
+	 *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+	 * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+	 *     JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @return {!Object}
+	 */
+	proto.set.SetMemberSwap.prototype.toObject = function(opt_includeInstance) {
+	  return proto.set.SetMemberSwap.toObject(opt_includeInstance, this);
+	};
+
+
+	/**
+	 * Static version of the {@see toObject} method.
+	 * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+	 *     the JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @param {!proto.set.SetMemberSwap} msg The msg instance to transform.
+	 * @return {!Object}
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.set.SetMemberSwap.toObject = function(includeInstance, msg) {
+	  var obj = {
+	    setId: msg.getSetId_asB64(),
+	    deviceId1: msg.getDeviceId1_asB64(),
+	    modelId1: msg.getModelId1_asB64(),
+	    deviceId2: msg.getDeviceId2_asB64(),
+	    modelId2: msg.getModelId2_asB64()
+	  };
+
+	  if (includeInstance) {
+	    obj.$jspbMessageInstance = msg;
+	  }
+	  return obj;
+	};
+	}
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format).
+	 * @param {jspb.ByteSource} bytes The bytes to deserialize.
+	 * @return {!proto.set.SetMemberSwap}
+	 */
+	proto.set.SetMemberSwap.deserializeBinary = function(bytes) {
+	  var reader = new jspb.BinaryReader(bytes);
+	  var msg = new proto.set.SetMemberSwap;
+	  return proto.set.SetMemberSwap.deserializeBinaryFromReader(msg, reader);
+	};
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format) from the
+	 * given reader into the given message object.
+	 * @param {!proto.set.SetMemberSwap} msg The message object to deserialize into.
+	 * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+	 * @return {!proto.set.SetMemberSwap}
+	 */
+	proto.set.SetMemberSwap.deserializeBinaryFromReader = function(msg, reader) {
+	  while (reader.nextField()) {
+	    if (reader.isEndGroup()) {
+	      break;
+	    }
+	    var field = reader.getFieldNumber();
+	    switch (field) {
+	    case 1:
+	      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+	      msg.setSetId(value);
+	      break;
+	    case 2:
+	      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+	      msg.setDeviceId1(value);
+	      break;
+	    case 3:
+	      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+	      msg.setModelId1(value);
+	      break;
+	    case 4:
+	      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+	      msg.setDeviceId2(value);
+	      break;
+	    case 5:
+	      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+	      msg.setModelId2(value);
+	      break;
+	    default:
+	      reader.skipField();
+	      break;
+	    }
+	  }
+	  return msg;
+	};
+
+
+	/**
+	 * Serializes the message to binary data (in protobuf wire format).
+	 * @return {!Uint8Array}
+	 */
+	proto.set.SetMemberSwap.prototype.serializeBinary = function() {
+	  var writer = new jspb.BinaryWriter();
+	  proto.set.SetMemberSwap.serializeBinaryToWriter(this, writer);
+	  return writer.getResultBuffer();
+	};
+
+
+	/**
+	 * Serializes the given message to binary data (in protobuf wire
+	 * format), writing to the given BinaryWriter.
+	 * @param {!proto.set.SetMemberSwap} message
+	 * @param {!jspb.BinaryWriter} writer
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.set.SetMemberSwap.serializeBinaryToWriter = function(message, writer) {
+	  var f = undefined;
+	  f = message.getSetId_asU8();
+	  if (f.length > 0) {
+	    writer.writeBytes(
+	      1,
+	      f
+	    );
+	  }
+	  f = message.getDeviceId1_asU8();
+	  if (f.length > 0) {
+	    writer.writeBytes(
+	      2,
+	      f
+	    );
+	  }
+	  f = message.getModelId1_asU8();
+	  if (f.length > 0) {
+	    writer.writeBytes(
+	      3,
+	      f
+	    );
+	  }
+	  f = message.getDeviceId2_asU8();
+	  if (f.length > 0) {
+	    writer.writeBytes(
+	      4,
+	      f
+	    );
+	  }
+	  f = message.getModelId2_asU8();
+	  if (f.length > 0) {
+	    writer.writeBytes(
+	      5,
+	      f
+	    );
+	  }
+	};
+
+
+	/**
+	 * optional bytes set_id = 1;
+	 * @return {!(string|Uint8Array)}
+	 */
+	proto.set.SetMemberSwap.prototype.getSetId = function() {
+	  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+	};
+
+
+	/**
+	 * optional bytes set_id = 1;
+	 * This is a type-conversion wrapper around `getSetId()`
+	 * @return {string}
+	 */
+	proto.set.SetMemberSwap.prototype.getSetId_asB64 = function() {
+	  return /** @type {string} */ (jspb.Message.bytesAsB64(
+	      this.getSetId()));
+	};
+
+
+	/**
+	 * optional bytes set_id = 1;
+	 * Note that Uint8Array is not supported on all browsers.
+	 * @see http://caniuse.com/Uint8Array
+	 * This is a type-conversion wrapper around `getSetId()`
+	 * @return {!Uint8Array}
+	 */
+	proto.set.SetMemberSwap.prototype.getSetId_asU8 = function() {
+	  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+	      this.getSetId()));
+	};
+
+
+	/**
+	 * @param {!(string|Uint8Array)} value
+	 * @return {!proto.set.SetMemberSwap} returns this
+	 */
+	proto.set.SetMemberSwap.prototype.setSetId = function(value) {
+	  return jspb.Message.setProto3BytesField(this, 1, value);
+	};
+
+
+	/**
+	 * optional bytes device_id_1 = 2;
+	 * @return {!(string|Uint8Array)}
+	 */
+	proto.set.SetMemberSwap.prototype.getDeviceId1 = function() {
+	  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+	};
+
+
+	/**
+	 * optional bytes device_id_1 = 2;
+	 * This is a type-conversion wrapper around `getDeviceId1()`
+	 * @return {string}
+	 */
+	proto.set.SetMemberSwap.prototype.getDeviceId1_asB64 = function() {
+	  return /** @type {string} */ (jspb.Message.bytesAsB64(
+	      this.getDeviceId1()));
+	};
+
+
+	/**
+	 * optional bytes device_id_1 = 2;
+	 * Note that Uint8Array is not supported on all browsers.
+	 * @see http://caniuse.com/Uint8Array
+	 * This is a type-conversion wrapper around `getDeviceId1()`
+	 * @return {!Uint8Array}
+	 */
+	proto.set.SetMemberSwap.prototype.getDeviceId1_asU8 = function() {
+	  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+	      this.getDeviceId1()));
+	};
+
+
+	/**
+	 * @param {!(string|Uint8Array)} value
+	 * @return {!proto.set.SetMemberSwap} returns this
+	 */
+	proto.set.SetMemberSwap.prototype.setDeviceId1 = function(value) {
+	  return jspb.Message.setProto3BytesField(this, 2, value);
+	};
+
+
+	/**
+	 * optional bytes model_id_1 = 3;
+	 * @return {!(string|Uint8Array)}
+	 */
+	proto.set.SetMemberSwap.prototype.getModelId1 = function() {
+	  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+	};
+
+
+	/**
+	 * optional bytes model_id_1 = 3;
+	 * This is a type-conversion wrapper around `getModelId1()`
+	 * @return {string}
+	 */
+	proto.set.SetMemberSwap.prototype.getModelId1_asB64 = function() {
+	  return /** @type {string} */ (jspb.Message.bytesAsB64(
+	      this.getModelId1()));
+	};
+
+
+	/**
+	 * optional bytes model_id_1 = 3;
+	 * Note that Uint8Array is not supported on all browsers.
+	 * @see http://caniuse.com/Uint8Array
+	 * This is a type-conversion wrapper around `getModelId1()`
+	 * @return {!Uint8Array}
+	 */
+	proto.set.SetMemberSwap.prototype.getModelId1_asU8 = function() {
+	  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+	      this.getModelId1()));
+	};
+
+
+	/**
+	 * @param {!(string|Uint8Array)} value
+	 * @return {!proto.set.SetMemberSwap} returns this
+	 */
+	proto.set.SetMemberSwap.prototype.setModelId1 = function(value) {
+	  return jspb.Message.setProto3BytesField(this, 3, value);
+	};
+
+
+	/**
+	 * optional bytes device_id_2 = 4;
+	 * @return {!(string|Uint8Array)}
+	 */
+	proto.set.SetMemberSwap.prototype.getDeviceId2 = function() {
+	  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+	};
+
+
+	/**
+	 * optional bytes device_id_2 = 4;
+	 * This is a type-conversion wrapper around `getDeviceId2()`
+	 * @return {string}
+	 */
+	proto.set.SetMemberSwap.prototype.getDeviceId2_asB64 = function() {
+	  return /** @type {string} */ (jspb.Message.bytesAsB64(
+	      this.getDeviceId2()));
+	};
+
+
+	/**
+	 * optional bytes device_id_2 = 4;
+	 * Note that Uint8Array is not supported on all browsers.
+	 * @see http://caniuse.com/Uint8Array
+	 * This is a type-conversion wrapper around `getDeviceId2()`
+	 * @return {!Uint8Array}
+	 */
+	proto.set.SetMemberSwap.prototype.getDeviceId2_asU8 = function() {
+	  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+	      this.getDeviceId2()));
+	};
+
+
+	/**
+	 * @param {!(string|Uint8Array)} value
+	 * @return {!proto.set.SetMemberSwap} returns this
+	 */
+	proto.set.SetMemberSwap.prototype.setDeviceId2 = function(value) {
+	  return jspb.Message.setProto3BytesField(this, 4, value);
+	};
+
+
+	/**
+	 * optional bytes model_id_2 = 5;
+	 * @return {!(string|Uint8Array)}
+	 */
+	proto.set.SetMemberSwap.prototype.getModelId2 = function() {
+	  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+	};
+
+
+	/**
+	 * optional bytes model_id_2 = 5;
+	 * This is a type-conversion wrapper around `getModelId2()`
+	 * @return {string}
+	 */
+	proto.set.SetMemberSwap.prototype.getModelId2_asB64 = function() {
+	  return /** @type {string} */ (jspb.Message.bytesAsB64(
+	      this.getModelId2()));
+	};
+
+
+	/**
+	 * optional bytes model_id_2 = 5;
+	 * Note that Uint8Array is not supported on all browsers.
+	 * @see http://caniuse.com/Uint8Array
+	 * This is a type-conversion wrapper around `getModelId2()`
+	 * @return {!Uint8Array}
+	 */
+	proto.set.SetMemberSwap.prototype.getModelId2_asU8 = function() {
+	  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+	      this.getModelId2()));
+	};
+
+
+	/**
+	 * @param {!(string|Uint8Array)} value
+	 * @return {!proto.set.SetMemberSwap} returns this
+	 */
+	proto.set.SetMemberSwap.prototype.setModelId2 = function(value) {
+	  return jspb.Message.setProto3BytesField(this, 5, value);
+	};
+
+
+
+	/**
+	 * List of repeated fields within this message type.
+	 * @private {!Array<number>}
+	 * @const
+	 */
+	proto.set.SetTemplateSchema.repeatedFields_ = [5];
+
+
+
+	if (jspb.Message.GENERATE_TO_OBJECT) {
+	/**
+	 * Creates an object representation of this proto.
+	 * Field names that are reserved in JavaScript and will be renamed to pb_name.
+	 * Optional fields that are not set will be set to undefined.
+	 * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+	 * For the list of reserved names please see:
+	 *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+	 * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+	 *     JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @return {!Object}
+	 */
+	proto.set.SetTemplateSchema.prototype.toObject = function(opt_includeInstance) {
+	  return proto.set.SetTemplateSchema.toObject(opt_includeInstance, this);
+	};
+
+
+	/**
+	 * Static version of the {@see toObject} method.
+	 * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+	 *     the JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @param {!proto.set.SetTemplateSchema} msg The msg instance to transform.
+	 * @return {!Object}
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.set.SetTemplateSchema.toObject = function(includeInstance, msg) {
+	  var obj = {
+	    id: msg.getId_asB64(),
+	    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+	    description: jspb.Message.getFieldWithDefault(msg, 3, ""),
+	    membersList: jspb.Message.toObjectList(msg.getMembersList(),
+	    proto.set.SetTemplateMember.toObject, includeInstance)
+	  };
+
+	  if (includeInstance) {
+	    obj.$jspbMessageInstance = msg;
+	  }
+	  return obj;
+	};
+	}
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format).
+	 * @param {jspb.ByteSource} bytes The bytes to deserialize.
+	 * @return {!proto.set.SetTemplateSchema}
+	 */
+	proto.set.SetTemplateSchema.deserializeBinary = function(bytes) {
+	  var reader = new jspb.BinaryReader(bytes);
+	  var msg = new proto.set.SetTemplateSchema;
+	  return proto.set.SetTemplateSchema.deserializeBinaryFromReader(msg, reader);
+	};
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format) from the
+	 * given reader into the given message object.
+	 * @param {!proto.set.SetTemplateSchema} msg The message object to deserialize into.
+	 * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+	 * @return {!proto.set.SetTemplateSchema}
+	 */
+	proto.set.SetTemplateSchema.deserializeBinaryFromReader = function(msg, reader) {
+	  while (reader.nextField()) {
+	    if (reader.isEndGroup()) {
+	      break;
+	    }
+	    var field = reader.getFieldNumber();
+	    switch (field) {
+	    case 1:
+	      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+	      msg.setId(value);
+	      break;
+	    case 2:
+	      var value = /** @type {string} */ (reader.readString());
+	      msg.setName(value);
+	      break;
+	    case 3:
+	      var value = /** @type {string} */ (reader.readString());
+	      msg.setDescription(value);
+	      break;
+	    case 5:
+	      var value = new proto.set.SetTemplateMember;
+	      reader.readMessage(value,proto.set.SetTemplateMember.deserializeBinaryFromReader);
+	      msg.addMembers(value);
+	      break;
+	    default:
+	      reader.skipField();
+	      break;
+	    }
+	  }
+	  return msg;
+	};
+
+
+	/**
+	 * Serializes the message to binary data (in protobuf wire format).
+	 * @return {!Uint8Array}
+	 */
+	proto.set.SetTemplateSchema.prototype.serializeBinary = function() {
+	  var writer = new jspb.BinaryWriter();
+	  proto.set.SetTemplateSchema.serializeBinaryToWriter(this, writer);
+	  return writer.getResultBuffer();
+	};
+
+
+	/**
+	 * Serializes the given message to binary data (in protobuf wire
+	 * format), writing to the given BinaryWriter.
+	 * @param {!proto.set.SetTemplateSchema} message
+	 * @param {!jspb.BinaryWriter} writer
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.set.SetTemplateSchema.serializeBinaryToWriter = function(message, writer) {
+	  var f = undefined;
+	  f = message.getId_asU8();
+	  if (f.length > 0) {
+	    writer.writeBytes(
+	      1,
+	      f
+	    );
+	  }
+	  f = message.getName();
+	  if (f.length > 0) {
+	    writer.writeString(
+	      2,
+	      f
+	    );
+	  }
+	  f = message.getDescription();
+	  if (f.length > 0) {
+	    writer.writeString(
+	      3,
+	      f
+	    );
+	  }
+	  f = message.getMembersList();
+	  if (f.length > 0) {
+	    writer.writeRepeatedMessage(
+	      5,
+	      f,
+	      proto.set.SetTemplateMember.serializeBinaryToWriter
+	    );
+	  }
+	};
+
+
+	/**
+	 * optional bytes id = 1;
+	 * @return {!(string|Uint8Array)}
+	 */
+	proto.set.SetTemplateSchema.prototype.getId = function() {
+	  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+	};
+
+
+	/**
+	 * optional bytes id = 1;
+	 * This is a type-conversion wrapper around `getId()`
+	 * @return {string}
+	 */
+	proto.set.SetTemplateSchema.prototype.getId_asB64 = function() {
+	  return /** @type {string} */ (jspb.Message.bytesAsB64(
+	      this.getId()));
+	};
+
+
+	/**
+	 * optional bytes id = 1;
+	 * Note that Uint8Array is not supported on all browsers.
+	 * @see http://caniuse.com/Uint8Array
+	 * This is a type-conversion wrapper around `getId()`
+	 * @return {!Uint8Array}
+	 */
+	proto.set.SetTemplateSchema.prototype.getId_asU8 = function() {
+	  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+	      this.getId()));
+	};
+
+
+	/**
+	 * @param {!(string|Uint8Array)} value
+	 * @return {!proto.set.SetTemplateSchema} returns this
+	 */
+	proto.set.SetTemplateSchema.prototype.setId = function(value) {
+	  return jspb.Message.setProto3BytesField(this, 1, value);
+	};
+
+
+	/**
+	 * optional string name = 2;
+	 * @return {string}
+	 */
+	proto.set.SetTemplateSchema.prototype.getName = function() {
+	  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+	};
+
+
+	/**
+	 * @param {string} value
+	 * @return {!proto.set.SetTemplateSchema} returns this
+	 */
+	proto.set.SetTemplateSchema.prototype.setName = function(value) {
+	  return jspb.Message.setProto3StringField(this, 2, value);
+	};
+
+
+	/**
+	 * optional string description = 3;
+	 * @return {string}
+	 */
+	proto.set.SetTemplateSchema.prototype.getDescription = function() {
+	  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+	};
+
+
+	/**
+	 * @param {string} value
+	 * @return {!proto.set.SetTemplateSchema} returns this
+	 */
+	proto.set.SetTemplateSchema.prototype.setDescription = function(value) {
+	  return jspb.Message.setProto3StringField(this, 3, value);
+	};
+
+
+	/**
+	 * repeated SetTemplateMember members = 5;
+	 * @return {!Array<!proto.set.SetTemplateMember>}
+	 */
+	proto.set.SetTemplateSchema.prototype.getMembersList = function() {
+	  return /** @type{!Array<!proto.set.SetTemplateMember>} */ (
+	    jspb.Message.getRepeatedWrapperField(this, proto.set.SetTemplateMember, 5));
+	};
+
+
+	/**
+	 * @param {!Array<!proto.set.SetTemplateMember>} value
+	 * @return {!proto.set.SetTemplateSchema} returns this
+	*/
+	proto.set.SetTemplateSchema.prototype.setMembersList = function(value) {
+	  return jspb.Message.setRepeatedWrapperField(this, 5, value);
+	};
+
+
+	/**
+	 * @param {!proto.set.SetTemplateMember=} opt_value
+	 * @param {number=} opt_index
+	 * @return {!proto.set.SetTemplateMember}
+	 */
+	proto.set.SetTemplateSchema.prototype.addMembers = function(opt_value, opt_index) {
+	  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.set.SetTemplateMember, opt_index);
+	};
+
+
+	/**
+	 * Clears the list making it empty but non-null.
+	 * @return {!proto.set.SetTemplateSchema} returns this
+	 */
+	proto.set.SetTemplateSchema.prototype.clearMembersList = function() {
+	  return this.setMembersList([]);
+	};
+
+
+
+
+
+	if (jspb.Message.GENERATE_TO_OBJECT) {
+	/**
+	 * Creates an object representation of this proto.
+	 * Field names that are reserved in JavaScript and will be renamed to pb_name.
+	 * Optional fields that are not set will be set to undefined.
+	 * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+	 * For the list of reserved names please see:
+	 *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+	 * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+	 *     JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @return {!Object}
+	 */
+	proto.set.SetTemplateMember.prototype.toObject = function(opt_includeInstance) {
+	  return proto.set.SetTemplateMember.toObject(opt_includeInstance, this);
+	};
+
+
+	/**
+	 * Static version of the {@see toObject} method.
+	 * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+	 *     the JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @param {!proto.set.SetTemplateMember} msg The msg instance to transform.
+	 * @return {!Object}
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.set.SetTemplateMember.toObject = function(includeInstance, msg) {
+	  var obj = {
+	    typeId: msg.getTypeId_asB64(),
+	    modelId: msg.getModelId_asB64(),
+	    dataIndex: msg.getDataIndex_asB64()
+	  };
+
+	  if (includeInstance) {
+	    obj.$jspbMessageInstance = msg;
+	  }
+	  return obj;
+	};
+	}
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format).
+	 * @param {jspb.ByteSource} bytes The bytes to deserialize.
+	 * @return {!proto.set.SetTemplateMember}
+	 */
+	proto.set.SetTemplateMember.deserializeBinary = function(bytes) {
+	  var reader = new jspb.BinaryReader(bytes);
+	  var msg = new proto.set.SetTemplateMember;
+	  return proto.set.SetTemplateMember.deserializeBinaryFromReader(msg, reader);
+	};
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format) from the
+	 * given reader into the given message object.
+	 * @param {!proto.set.SetTemplateMember} msg The message object to deserialize into.
+	 * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+	 * @return {!proto.set.SetTemplateMember}
+	 */
+	proto.set.SetTemplateMember.deserializeBinaryFromReader = function(msg, reader) {
+	  while (reader.nextField()) {
+	    if (reader.isEndGroup()) {
+	      break;
+	    }
+	    var field = reader.getFieldNumber();
+	    switch (field) {
+	    case 1:
+	      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+	      msg.setTypeId(value);
+	      break;
+	    case 2:
+	      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+	      msg.setModelId(value);
+	      break;
+	    case 3:
+	      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+	      msg.setDataIndex(value);
+	      break;
+	    default:
+	      reader.skipField();
+	      break;
+	    }
+	  }
+	  return msg;
+	};
+
+
+	/**
+	 * Serializes the message to binary data (in protobuf wire format).
+	 * @return {!Uint8Array}
+	 */
+	proto.set.SetTemplateMember.prototype.serializeBinary = function() {
+	  var writer = new jspb.BinaryWriter();
+	  proto.set.SetTemplateMember.serializeBinaryToWriter(this, writer);
+	  return writer.getResultBuffer();
+	};
+
+
+	/**
+	 * Serializes the given message to binary data (in protobuf wire
+	 * format), writing to the given BinaryWriter.
+	 * @param {!proto.set.SetTemplateMember} message
+	 * @param {!jspb.BinaryWriter} writer
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.set.SetTemplateMember.serializeBinaryToWriter = function(message, writer) {
+	  var f = undefined;
+	  f = message.getTypeId_asU8();
+	  if (f.length > 0) {
+	    writer.writeBytes(
+	      1,
+	      f
+	    );
+	  }
+	  f = message.getModelId_asU8();
+	  if (f.length > 0) {
+	    writer.writeBytes(
+	      2,
+	      f
+	    );
+	  }
+	  f = message.getDataIndex_asU8();
+	  if (f.length > 0) {
+	    writer.writeBytes(
+	      3,
+	      f
+	    );
+	  }
+	};
+
+
+	/**
+	 * optional bytes type_id = 1;
+	 * @return {!(string|Uint8Array)}
+	 */
+	proto.set.SetTemplateMember.prototype.getTypeId = function() {
+	  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+	};
+
+
+	/**
+	 * optional bytes type_id = 1;
+	 * This is a type-conversion wrapper around `getTypeId()`
+	 * @return {string}
+	 */
+	proto.set.SetTemplateMember.prototype.getTypeId_asB64 = function() {
+	  return /** @type {string} */ (jspb.Message.bytesAsB64(
+	      this.getTypeId()));
+	};
+
+
+	/**
+	 * optional bytes type_id = 1;
+	 * Note that Uint8Array is not supported on all browsers.
+	 * @see http://caniuse.com/Uint8Array
+	 * This is a type-conversion wrapper around `getTypeId()`
+	 * @return {!Uint8Array}
+	 */
+	proto.set.SetTemplateMember.prototype.getTypeId_asU8 = function() {
+	  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+	      this.getTypeId()));
+	};
+
+
+	/**
+	 * @param {!(string|Uint8Array)} value
+	 * @return {!proto.set.SetTemplateMember} returns this
+	 */
+	proto.set.SetTemplateMember.prototype.setTypeId = function(value) {
+	  return jspb.Message.setProto3BytesField(this, 1, value);
+	};
+
+
+	/**
+	 * optional bytes model_id = 2;
+	 * @return {!(string|Uint8Array)}
+	 */
+	proto.set.SetTemplateMember.prototype.getModelId = function() {
+	  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+	};
+
+
+	/**
+	 * optional bytes model_id = 2;
+	 * This is a type-conversion wrapper around `getModelId()`
+	 * @return {string}
+	 */
+	proto.set.SetTemplateMember.prototype.getModelId_asB64 = function() {
+	  return /** @type {string} */ (jspb.Message.bytesAsB64(
+	      this.getModelId()));
+	};
+
+
+	/**
+	 * optional bytes model_id = 2;
+	 * Note that Uint8Array is not supported on all browsers.
+	 * @see http://caniuse.com/Uint8Array
+	 * This is a type-conversion wrapper around `getModelId()`
+	 * @return {!Uint8Array}
+	 */
+	proto.set.SetTemplateMember.prototype.getModelId_asU8 = function() {
+	  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+	      this.getModelId()));
+	};
+
+
+	/**
+	 * @param {!(string|Uint8Array)} value
+	 * @return {!proto.set.SetTemplateMember} returns this
+	 */
+	proto.set.SetTemplateMember.prototype.setModelId = function(value) {
+	  return jspb.Message.setProto3BytesField(this, 2, value);
+	};
+
+
+	/**
+	 * optional bytes data_index = 3;
+	 * @return {!(string|Uint8Array)}
+	 */
+	proto.set.SetTemplateMember.prototype.getDataIndex = function() {
+	  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+	};
+
+
+	/**
+	 * optional bytes data_index = 3;
+	 * This is a type-conversion wrapper around `getDataIndex()`
+	 * @return {string}
+	 */
+	proto.set.SetTemplateMember.prototype.getDataIndex_asB64 = function() {
+	  return /** @type {string} */ (jspb.Message.bytesAsB64(
+	      this.getDataIndex()));
+	};
+
+
+	/**
+	 * optional bytes data_index = 3;
+	 * Note that Uint8Array is not supported on all browsers.
+	 * @see http://caniuse.com/Uint8Array
+	 * This is a type-conversion wrapper around `getDataIndex()`
+	 * @return {!Uint8Array}
+	 */
+	proto.set.SetTemplateMember.prototype.getDataIndex_asU8 = function() {
+	  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+	      this.getDataIndex()));
+	};
+
+
+	/**
+	 * @param {!(string|Uint8Array)} value
+	 * @return {!proto.set.SetTemplateMember} returns this
+	 */
+	proto.set.SetTemplateMember.prototype.setDataIndex = function(value) {
+	  return jspb.Message.setProto3BytesField(this, 3, value);
+	};
+
+
+
+
+
+	if (jspb.Message.GENERATE_TO_OBJECT) {
+	/**
+	 * Creates an object representation of this proto.
+	 * Field names that are reserved in JavaScript and will be renamed to pb_name.
+	 * Optional fields that are not set will be set to undefined.
+	 * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+	 * For the list of reserved names please see:
+	 *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+	 * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+	 *     JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @return {!Object}
+	 */
+	proto.set.SetTemplateId.prototype.toObject = function(opt_includeInstance) {
+	  return proto.set.SetTemplateId.toObject(opt_includeInstance, this);
+	};
+
+
+	/**
+	 * Static version of the {@see toObject} method.
+	 * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+	 *     the JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @param {!proto.set.SetTemplateId} msg The msg instance to transform.
+	 * @return {!Object}
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.set.SetTemplateId.toObject = function(includeInstance, msg) {
+	  var obj = {
+	    id: msg.getId_asB64()
+	  };
+
+	  if (includeInstance) {
+	    obj.$jspbMessageInstance = msg;
+	  }
+	  return obj;
+	};
+	}
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format).
+	 * @param {jspb.ByteSource} bytes The bytes to deserialize.
+	 * @return {!proto.set.SetTemplateId}
+	 */
+	proto.set.SetTemplateId.deserializeBinary = function(bytes) {
+	  var reader = new jspb.BinaryReader(bytes);
+	  var msg = new proto.set.SetTemplateId;
+	  return proto.set.SetTemplateId.deserializeBinaryFromReader(msg, reader);
+	};
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format) from the
+	 * given reader into the given message object.
+	 * @param {!proto.set.SetTemplateId} msg The message object to deserialize into.
+	 * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+	 * @return {!proto.set.SetTemplateId}
+	 */
+	proto.set.SetTemplateId.deserializeBinaryFromReader = function(msg, reader) {
+	  while (reader.nextField()) {
+	    if (reader.isEndGroup()) {
+	      break;
+	    }
+	    var field = reader.getFieldNumber();
+	    switch (field) {
+	    case 1:
+	      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+	      msg.setId(value);
+	      break;
+	    default:
+	      reader.skipField();
+	      break;
+	    }
+	  }
+	  return msg;
+	};
+
+
+	/**
+	 * Serializes the message to binary data (in protobuf wire format).
+	 * @return {!Uint8Array}
+	 */
+	proto.set.SetTemplateId.prototype.serializeBinary = function() {
+	  var writer = new jspb.BinaryWriter();
+	  proto.set.SetTemplateId.serializeBinaryToWriter(this, writer);
+	  return writer.getResultBuffer();
+	};
+
+
+	/**
+	 * Serializes the given message to binary data (in protobuf wire
+	 * format), writing to the given BinaryWriter.
+	 * @param {!proto.set.SetTemplateId} message
+	 * @param {!jspb.BinaryWriter} writer
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.set.SetTemplateId.serializeBinaryToWriter = function(message, writer) {
+	  var f = undefined;
+	  f = message.getId_asU8();
+	  if (f.length > 0) {
+	    writer.writeBytes(
+	      1,
+	      f
+	    );
+	  }
+	};
+
+
+	/**
+	 * optional bytes id = 1;
+	 * @return {!(string|Uint8Array)}
+	 */
+	proto.set.SetTemplateId.prototype.getId = function() {
+	  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+	};
+
+
+	/**
+	 * optional bytes id = 1;
+	 * This is a type-conversion wrapper around `getId()`
+	 * @return {string}
+	 */
+	proto.set.SetTemplateId.prototype.getId_asB64 = function() {
+	  return /** @type {string} */ (jspb.Message.bytesAsB64(
+	      this.getId()));
+	};
+
+
+	/**
+	 * optional bytes id = 1;
+	 * Note that Uint8Array is not supported on all browsers.
+	 * @see http://caniuse.com/Uint8Array
+	 * This is a type-conversion wrapper around `getId()`
+	 * @return {!Uint8Array}
+	 */
+	proto.set.SetTemplateId.prototype.getId_asU8 = function() {
+	  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+	      this.getId()));
+	};
+
+
+	/**
+	 * @param {!(string|Uint8Array)} value
+	 * @return {!proto.set.SetTemplateId} returns this
+	 */
+	proto.set.SetTemplateId.prototype.setId = function(value) {
+	  return jspb.Message.setProto3BytesField(this, 1, value);
+	};
+
+
+
+	/**
+	 * List of repeated fields within this message type.
+	 * @private {!Array<number>}
+	 * @const
+	 */
+	proto.set.SetTemplateIds.repeatedFields_ = [1];
+
+
+
+	if (jspb.Message.GENERATE_TO_OBJECT) {
+	/**
+	 * Creates an object representation of this proto.
+	 * Field names that are reserved in JavaScript and will be renamed to pb_name.
+	 * Optional fields that are not set will be set to undefined.
+	 * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+	 * For the list of reserved names please see:
+	 *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+	 * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+	 *     JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @return {!Object}
+	 */
+	proto.set.SetTemplateIds.prototype.toObject = function(opt_includeInstance) {
+	  return proto.set.SetTemplateIds.toObject(opt_includeInstance, this);
+	};
+
+
+	/**
+	 * Static version of the {@see toObject} method.
+	 * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+	 *     the JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @param {!proto.set.SetTemplateIds} msg The msg instance to transform.
+	 * @return {!Object}
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.set.SetTemplateIds.toObject = function(includeInstance, msg) {
+	  var obj = {
+	    idsList: msg.getIdsList_asB64()
+	  };
+
+	  if (includeInstance) {
+	    obj.$jspbMessageInstance = msg;
+	  }
+	  return obj;
+	};
+	}
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format).
+	 * @param {jspb.ByteSource} bytes The bytes to deserialize.
+	 * @return {!proto.set.SetTemplateIds}
+	 */
+	proto.set.SetTemplateIds.deserializeBinary = function(bytes) {
+	  var reader = new jspb.BinaryReader(bytes);
+	  var msg = new proto.set.SetTemplateIds;
+	  return proto.set.SetTemplateIds.deserializeBinaryFromReader(msg, reader);
+	};
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format) from the
+	 * given reader into the given message object.
+	 * @param {!proto.set.SetTemplateIds} msg The message object to deserialize into.
+	 * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+	 * @return {!proto.set.SetTemplateIds}
+	 */
+	proto.set.SetTemplateIds.deserializeBinaryFromReader = function(msg, reader) {
+	  while (reader.nextField()) {
+	    if (reader.isEndGroup()) {
+	      break;
+	    }
+	    var field = reader.getFieldNumber();
+	    switch (field) {
+	    case 1:
+	      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+	      msg.addIds(value);
+	      break;
+	    default:
+	      reader.skipField();
+	      break;
+	    }
+	  }
+	  return msg;
+	};
+
+
+	/**
+	 * Serializes the message to binary data (in protobuf wire format).
+	 * @return {!Uint8Array}
+	 */
+	proto.set.SetTemplateIds.prototype.serializeBinary = function() {
+	  var writer = new jspb.BinaryWriter();
+	  proto.set.SetTemplateIds.serializeBinaryToWriter(this, writer);
+	  return writer.getResultBuffer();
+	};
+
+
+	/**
+	 * Serializes the given message to binary data (in protobuf wire
+	 * format), writing to the given BinaryWriter.
+	 * @param {!proto.set.SetTemplateIds} message
+	 * @param {!jspb.BinaryWriter} writer
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.set.SetTemplateIds.serializeBinaryToWriter = function(message, writer) {
+	  var f = undefined;
+	  f = message.getIdsList_asU8();
+	  if (f.length > 0) {
+	    writer.writeRepeatedBytes(
+	      1,
+	      f
+	    );
+	  }
+	};
+
+
+	/**
+	 * repeated bytes ids = 1;
+	 * @return {!(Array<!Uint8Array>|Array<string>)}
+	 */
+	proto.set.SetTemplateIds.prototype.getIdsList = function() {
+	  return /** @type {!(Array<!Uint8Array>|Array<string>)} */ (jspb.Message.getRepeatedField(this, 1));
+	};
+
+
+	/**
+	 * repeated bytes ids = 1;
+	 * This is a type-conversion wrapper around `getIdsList()`
+	 * @return {!Array<string>}
+	 */
+	proto.set.SetTemplateIds.prototype.getIdsList_asB64 = function() {
+	  return /** @type {!Array<string>} */ (jspb.Message.bytesListAsB64(
+	      this.getIdsList()));
+	};
+
+
+	/**
+	 * repeated bytes ids = 1;
+	 * Note that Uint8Array is not supported on all browsers.
+	 * @see http://caniuse.com/Uint8Array
+	 * This is a type-conversion wrapper around `getIdsList()`
+	 * @return {!Array<!Uint8Array>}
+	 */
+	proto.set.SetTemplateIds.prototype.getIdsList_asU8 = function() {
+	  return /** @type {!Array<!Uint8Array>} */ (jspb.Message.bytesListAsU8(
+	      this.getIdsList()));
+	};
+
+
+	/**
+	 * @param {!(Array<!Uint8Array>|Array<string>)} value
+	 * @return {!proto.set.SetTemplateIds} returns this
+	 */
+	proto.set.SetTemplateIds.prototype.setIdsList = function(value) {
+	  return jspb.Message.setField(this, 1, value || []);
+	};
+
+
+	/**
+	 * @param {!(string|Uint8Array)} value
+	 * @param {number=} opt_index
+	 * @return {!proto.set.SetTemplateIds} returns this
+	 */
+	proto.set.SetTemplateIds.prototype.addIds = function(value, opt_index) {
+	  return jspb.Message.addToRepeatedField(this, 1, value, opt_index);
+	};
+
+
+	/**
+	 * Clears the list making it empty but non-null.
+	 * @return {!proto.set.SetTemplateIds} returns this
+	 */
+	proto.set.SetTemplateIds.prototype.clearIdsList = function() {
+	  return this.setIdsList([]);
+	};
+
+
+
+
+
+	if (jspb.Message.GENERATE_TO_OBJECT) {
+	/**
+	 * Creates an object representation of this proto.
+	 * Field names that are reserved in JavaScript and will be renamed to pb_name.
+	 * Optional fields that are not set will be set to undefined.
+	 * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+	 * For the list of reserved names please see:
+	 *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+	 * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+	 *     JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @return {!Object}
+	 */
+	proto.set.SetTemplateName.prototype.toObject = function(opt_includeInstance) {
+	  return proto.set.SetTemplateName.toObject(opt_includeInstance, this);
+	};
+
+
+	/**
+	 * Static version of the {@see toObject} method.
+	 * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+	 *     the JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @param {!proto.set.SetTemplateName} msg The msg instance to transform.
+	 * @return {!Object}
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.set.SetTemplateName.toObject = function(includeInstance, msg) {
+	  var obj = {
+	    name: jspb.Message.getFieldWithDefault(msg, 1, "")
+	  };
+
+	  if (includeInstance) {
+	    obj.$jspbMessageInstance = msg;
+	  }
+	  return obj;
+	};
+	}
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format).
+	 * @param {jspb.ByteSource} bytes The bytes to deserialize.
+	 * @return {!proto.set.SetTemplateName}
+	 */
+	proto.set.SetTemplateName.deserializeBinary = function(bytes) {
+	  var reader = new jspb.BinaryReader(bytes);
+	  var msg = new proto.set.SetTemplateName;
+	  return proto.set.SetTemplateName.deserializeBinaryFromReader(msg, reader);
+	};
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format) from the
+	 * given reader into the given message object.
+	 * @param {!proto.set.SetTemplateName} msg The message object to deserialize into.
+	 * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+	 * @return {!proto.set.SetTemplateName}
+	 */
+	proto.set.SetTemplateName.deserializeBinaryFromReader = function(msg, reader) {
+	  while (reader.nextField()) {
+	    if (reader.isEndGroup()) {
+	      break;
+	    }
+	    var field = reader.getFieldNumber();
+	    switch (field) {
+	    case 1:
+	      var value = /** @type {string} */ (reader.readString());
+	      msg.setName(value);
+	      break;
+	    default:
+	      reader.skipField();
+	      break;
+	    }
+	  }
+	  return msg;
+	};
+
+
+	/**
+	 * Serializes the message to binary data (in protobuf wire format).
+	 * @return {!Uint8Array}
+	 */
+	proto.set.SetTemplateName.prototype.serializeBinary = function() {
+	  var writer = new jspb.BinaryWriter();
+	  proto.set.SetTemplateName.serializeBinaryToWriter(this, writer);
+	  return writer.getResultBuffer();
+	};
+
+
+	/**
+	 * Serializes the given message to binary data (in protobuf wire
+	 * format), writing to the given BinaryWriter.
+	 * @param {!proto.set.SetTemplateName} message
+	 * @param {!jspb.BinaryWriter} writer
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.set.SetTemplateName.serializeBinaryToWriter = function(message, writer) {
+	  var f = undefined;
+	  f = message.getName();
+	  if (f.length > 0) {
+	    writer.writeString(
+	      1,
+	      f
+	    );
+	  }
+	};
+
+
+	/**
+	 * optional string name = 1;
+	 * @return {string}
+	 */
+	proto.set.SetTemplateName.prototype.getName = function() {
+	  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+	};
+
+
+	/**
+	 * @param {string} value
+	 * @return {!proto.set.SetTemplateName} returns this
+	 */
+	proto.set.SetTemplateName.prototype.setName = function(value) {
+	  return jspb.Message.setProto3StringField(this, 1, value);
+	};
+
+
+
+
+
+	if (jspb.Message.GENERATE_TO_OBJECT) {
+	/**
+	 * Creates an object representation of this proto.
+	 * Field names that are reserved in JavaScript and will be renamed to pb_name.
+	 * Optional fields that are not set will be set to undefined.
+	 * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+	 * For the list of reserved names please see:
+	 *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+	 * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+	 *     JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @return {!Object}
+	 */
+	proto.set.SetTemplateUpdate.prototype.toObject = function(opt_includeInstance) {
+	  return proto.set.SetTemplateUpdate.toObject(opt_includeInstance, this);
+	};
+
+
+	/**
+	 * Static version of the {@see toObject} method.
+	 * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+	 *     the JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @param {!proto.set.SetTemplateUpdate} msg The msg instance to transform.
+	 * @return {!Object}
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.set.SetTemplateUpdate.toObject = function(includeInstance, msg) {
+	  var obj = {
+	    id: msg.getId_asB64(),
+	    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+	    description: jspb.Message.getFieldWithDefault(msg, 3, "")
+	  };
+
+	  if (includeInstance) {
+	    obj.$jspbMessageInstance = msg;
+	  }
+	  return obj;
+	};
+	}
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format).
+	 * @param {jspb.ByteSource} bytes The bytes to deserialize.
+	 * @return {!proto.set.SetTemplateUpdate}
+	 */
+	proto.set.SetTemplateUpdate.deserializeBinary = function(bytes) {
+	  var reader = new jspb.BinaryReader(bytes);
+	  var msg = new proto.set.SetTemplateUpdate;
+	  return proto.set.SetTemplateUpdate.deserializeBinaryFromReader(msg, reader);
+	};
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format) from the
+	 * given reader into the given message object.
+	 * @param {!proto.set.SetTemplateUpdate} msg The message object to deserialize into.
+	 * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+	 * @return {!proto.set.SetTemplateUpdate}
+	 */
+	proto.set.SetTemplateUpdate.deserializeBinaryFromReader = function(msg, reader) {
+	  while (reader.nextField()) {
+	    if (reader.isEndGroup()) {
+	      break;
+	    }
+	    var field = reader.getFieldNumber();
+	    switch (field) {
+	    case 1:
+	      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+	      msg.setId(value);
+	      break;
+	    case 2:
+	      var value = /** @type {string} */ (reader.readString());
+	      msg.setName(value);
+	      break;
+	    case 3:
+	      var value = /** @type {string} */ (reader.readString());
+	      msg.setDescription(value);
+	      break;
+	    default:
+	      reader.skipField();
+	      break;
+	    }
+	  }
+	  return msg;
+	};
+
+
+	/**
+	 * Serializes the message to binary data (in protobuf wire format).
+	 * @return {!Uint8Array}
+	 */
+	proto.set.SetTemplateUpdate.prototype.serializeBinary = function() {
+	  var writer = new jspb.BinaryWriter();
+	  proto.set.SetTemplateUpdate.serializeBinaryToWriter(this, writer);
+	  return writer.getResultBuffer();
+	};
+
+
+	/**
+	 * Serializes the given message to binary data (in protobuf wire
+	 * format), writing to the given BinaryWriter.
+	 * @param {!proto.set.SetTemplateUpdate} message
+	 * @param {!jspb.BinaryWriter} writer
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.set.SetTemplateUpdate.serializeBinaryToWriter = function(message, writer) {
+	  var f = undefined;
+	  f = message.getId_asU8();
+	  if (f.length > 0) {
+	    writer.writeBytes(
+	      1,
+	      f
+	    );
+	  }
+	  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+	  if (f != null) {
+	    writer.writeString(
+	      2,
+	      f
+	    );
+	  }
+	  f = /** @type {string} */ (jspb.Message.getField(message, 3));
+	  if (f != null) {
+	    writer.writeString(
+	      3,
+	      f
+	    );
+	  }
+	};
+
+
+	/**
+	 * optional bytes id = 1;
+	 * @return {!(string|Uint8Array)}
+	 */
+	proto.set.SetTemplateUpdate.prototype.getId = function() {
+	  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+	};
+
+
+	/**
+	 * optional bytes id = 1;
+	 * This is a type-conversion wrapper around `getId()`
+	 * @return {string}
+	 */
+	proto.set.SetTemplateUpdate.prototype.getId_asB64 = function() {
+	  return /** @type {string} */ (jspb.Message.bytesAsB64(
+	      this.getId()));
+	};
+
+
+	/**
+	 * optional bytes id = 1;
+	 * Note that Uint8Array is not supported on all browsers.
+	 * @see http://caniuse.com/Uint8Array
+	 * This is a type-conversion wrapper around `getId()`
+	 * @return {!Uint8Array}
+	 */
+	proto.set.SetTemplateUpdate.prototype.getId_asU8 = function() {
+	  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+	      this.getId()));
+	};
+
+
+	/**
+	 * @param {!(string|Uint8Array)} value
+	 * @return {!proto.set.SetTemplateUpdate} returns this
+	 */
+	proto.set.SetTemplateUpdate.prototype.setId = function(value) {
+	  return jspb.Message.setProto3BytesField(this, 1, value);
+	};
+
+
+	/**
+	 * optional string name = 2;
+	 * @return {string}
+	 */
+	proto.set.SetTemplateUpdate.prototype.getName = function() {
+	  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+	};
+
+
+	/**
+	 * @param {string} value
+	 * @return {!proto.set.SetTemplateUpdate} returns this
+	 */
+	proto.set.SetTemplateUpdate.prototype.setName = function(value) {
+	  return jspb.Message.setField(this, 2, value);
+	};
+
+
+	/**
+	 * Clears the field making it undefined.
+	 * @return {!proto.set.SetTemplateUpdate} returns this
+	 */
+	proto.set.SetTemplateUpdate.prototype.clearName = function() {
+	  return jspb.Message.setField(this, 2, undefined);
+	};
+
+
+	/**
+	 * Returns whether this field is set.
+	 * @return {boolean}
+	 */
+	proto.set.SetTemplateUpdate.prototype.hasName = function() {
+	  return jspb.Message.getField(this, 2) != null;
+	};
+
+
+	/**
+	 * optional string description = 3;
+	 * @return {string}
+	 */
+	proto.set.SetTemplateUpdate.prototype.getDescription = function() {
+	  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+	};
+
+
+	/**
+	 * @param {string} value
+	 * @return {!proto.set.SetTemplateUpdate} returns this
+	 */
+	proto.set.SetTemplateUpdate.prototype.setDescription = function(value) {
+	  return jspb.Message.setField(this, 3, value);
+	};
+
+
+	/**
+	 * Clears the field making it undefined.
+	 * @return {!proto.set.SetTemplateUpdate} returns this
+	 */
+	proto.set.SetTemplateUpdate.prototype.clearDescription = function() {
+	  return jspb.Message.setField(this, 3, undefined);
+	};
+
+
+	/**
+	 * Returns whether this field is set.
+	 * @return {boolean}
+	 */
+	proto.set.SetTemplateUpdate.prototype.hasDescription = function() {
+	  return jspb.Message.getField(this, 3) != null;
+	};
+
+
+
+
+
+	if (jspb.Message.GENERATE_TO_OBJECT) {
+	/**
+	 * Creates an object representation of this proto.
+	 * Field names that are reserved in JavaScript and will be renamed to pb_name.
+	 * Optional fields that are not set will be set to undefined.
+	 * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+	 * For the list of reserved names please see:
+	 *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+	 * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+	 *     JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @return {!Object}
+	 */
+	proto.set.SetTemplateMemberRequest.prototype.toObject = function(opt_includeInstance) {
+	  return proto.set.SetTemplateMemberRequest.toObject(opt_includeInstance, this);
+	};
+
+
+	/**
+	 * Static version of the {@see toObject} method.
+	 * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+	 *     the JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @param {!proto.set.SetTemplateMemberRequest} msg The msg instance to transform.
+	 * @return {!Object}
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.set.SetTemplateMemberRequest.toObject = function(includeInstance, msg) {
+	  var obj = {
+	    setId: msg.getSetId_asB64(),
+	    typeId: msg.getTypeId_asB64(),
+	    modelId: msg.getModelId_asB64(),
+	    dataIndex: msg.getDataIndex_asB64(),
+	    templateIndex: jspb.Message.getFieldWithDefault(msg, 5, 0)
+	  };
+
+	  if (includeInstance) {
+	    obj.$jspbMessageInstance = msg;
+	  }
+	  return obj;
+	};
+	}
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format).
+	 * @param {jspb.ByteSource} bytes The bytes to deserialize.
+	 * @return {!proto.set.SetTemplateMemberRequest}
+	 */
+	proto.set.SetTemplateMemberRequest.deserializeBinary = function(bytes) {
+	  var reader = new jspb.BinaryReader(bytes);
+	  var msg = new proto.set.SetTemplateMemberRequest;
+	  return proto.set.SetTemplateMemberRequest.deserializeBinaryFromReader(msg, reader);
+	};
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format) from the
+	 * given reader into the given message object.
+	 * @param {!proto.set.SetTemplateMemberRequest} msg The message object to deserialize into.
+	 * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+	 * @return {!proto.set.SetTemplateMemberRequest}
+	 */
+	proto.set.SetTemplateMemberRequest.deserializeBinaryFromReader = function(msg, reader) {
+	  while (reader.nextField()) {
+	    if (reader.isEndGroup()) {
+	      break;
+	    }
+	    var field = reader.getFieldNumber();
+	    switch (field) {
+	    case 1:
+	      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+	      msg.setSetId(value);
+	      break;
+	    case 2:
+	      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+	      msg.setTypeId(value);
+	      break;
+	    case 3:
+	      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+	      msg.setModelId(value);
+	      break;
+	    case 4:
+	      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+	      msg.setDataIndex(value);
+	      break;
+	    case 5:
+	      var value = /** @type {number} */ (reader.readInt32());
+	      msg.setTemplateIndex(value);
+	      break;
+	    default:
+	      reader.skipField();
+	      break;
+	    }
+	  }
+	  return msg;
+	};
+
+
+	/**
+	 * Serializes the message to binary data (in protobuf wire format).
+	 * @return {!Uint8Array}
+	 */
+	proto.set.SetTemplateMemberRequest.prototype.serializeBinary = function() {
+	  var writer = new jspb.BinaryWriter();
+	  proto.set.SetTemplateMemberRequest.serializeBinaryToWriter(this, writer);
+	  return writer.getResultBuffer();
+	};
+
+
+	/**
+	 * Serializes the given message to binary data (in protobuf wire
+	 * format), writing to the given BinaryWriter.
+	 * @param {!proto.set.SetTemplateMemberRequest} message
+	 * @param {!jspb.BinaryWriter} writer
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.set.SetTemplateMemberRequest.serializeBinaryToWriter = function(message, writer) {
+	  var f = undefined;
+	  f = message.getSetId_asU8();
+	  if (f.length > 0) {
+	    writer.writeBytes(
+	      1,
+	      f
+	    );
+	  }
+	  f = message.getTypeId_asU8();
+	  if (f.length > 0) {
+	    writer.writeBytes(
+	      2,
+	      f
+	    );
+	  }
+	  f = message.getModelId_asU8();
+	  if (f.length > 0) {
+	    writer.writeBytes(
+	      3,
+	      f
+	    );
+	  }
+	  f = message.getDataIndex_asU8();
+	  if (f.length > 0) {
+	    writer.writeBytes(
+	      4,
+	      f
+	    );
+	  }
+	  f = message.getTemplateIndex();
+	  if (f !== 0) {
+	    writer.writeInt32(
+	      5,
+	      f
+	    );
+	  }
+	};
+
+
+	/**
+	 * optional bytes set_id = 1;
+	 * @return {!(string|Uint8Array)}
+	 */
+	proto.set.SetTemplateMemberRequest.prototype.getSetId = function() {
+	  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+	};
+
+
+	/**
+	 * optional bytes set_id = 1;
+	 * This is a type-conversion wrapper around `getSetId()`
+	 * @return {string}
+	 */
+	proto.set.SetTemplateMemberRequest.prototype.getSetId_asB64 = function() {
+	  return /** @type {string} */ (jspb.Message.bytesAsB64(
+	      this.getSetId()));
+	};
+
+
+	/**
+	 * optional bytes set_id = 1;
+	 * Note that Uint8Array is not supported on all browsers.
+	 * @see http://caniuse.com/Uint8Array
+	 * This is a type-conversion wrapper around `getSetId()`
+	 * @return {!Uint8Array}
+	 */
+	proto.set.SetTemplateMemberRequest.prototype.getSetId_asU8 = function() {
+	  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+	      this.getSetId()));
+	};
+
+
+	/**
+	 * @param {!(string|Uint8Array)} value
+	 * @return {!proto.set.SetTemplateMemberRequest} returns this
+	 */
+	proto.set.SetTemplateMemberRequest.prototype.setSetId = function(value) {
+	  return jspb.Message.setProto3BytesField(this, 1, value);
+	};
+
+
+	/**
+	 * optional bytes type_id = 2;
+	 * @return {!(string|Uint8Array)}
+	 */
+	proto.set.SetTemplateMemberRequest.prototype.getTypeId = function() {
+	  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+	};
+
+
+	/**
+	 * optional bytes type_id = 2;
+	 * This is a type-conversion wrapper around `getTypeId()`
+	 * @return {string}
+	 */
+	proto.set.SetTemplateMemberRequest.prototype.getTypeId_asB64 = function() {
+	  return /** @type {string} */ (jspb.Message.bytesAsB64(
+	      this.getTypeId()));
+	};
+
+
+	/**
+	 * optional bytes type_id = 2;
+	 * Note that Uint8Array is not supported on all browsers.
+	 * @see http://caniuse.com/Uint8Array
+	 * This is a type-conversion wrapper around `getTypeId()`
+	 * @return {!Uint8Array}
+	 */
+	proto.set.SetTemplateMemberRequest.prototype.getTypeId_asU8 = function() {
+	  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+	      this.getTypeId()));
+	};
+
+
+	/**
+	 * @param {!(string|Uint8Array)} value
+	 * @return {!proto.set.SetTemplateMemberRequest} returns this
+	 */
+	proto.set.SetTemplateMemberRequest.prototype.setTypeId = function(value) {
+	  return jspb.Message.setProto3BytesField(this, 2, value);
+	};
+
+
+	/**
+	 * optional bytes model_id = 3;
+	 * @return {!(string|Uint8Array)}
+	 */
+	proto.set.SetTemplateMemberRequest.prototype.getModelId = function() {
+	  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+	};
+
+
+	/**
+	 * optional bytes model_id = 3;
+	 * This is a type-conversion wrapper around `getModelId()`
+	 * @return {string}
+	 */
+	proto.set.SetTemplateMemberRequest.prototype.getModelId_asB64 = function() {
+	  return /** @type {string} */ (jspb.Message.bytesAsB64(
+	      this.getModelId()));
+	};
+
+
+	/**
+	 * optional bytes model_id = 3;
+	 * Note that Uint8Array is not supported on all browsers.
+	 * @see http://caniuse.com/Uint8Array
+	 * This is a type-conversion wrapper around `getModelId()`
+	 * @return {!Uint8Array}
+	 */
+	proto.set.SetTemplateMemberRequest.prototype.getModelId_asU8 = function() {
+	  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+	      this.getModelId()));
+	};
+
+
+	/**
+	 * @param {!(string|Uint8Array)} value
+	 * @return {!proto.set.SetTemplateMemberRequest} returns this
+	 */
+	proto.set.SetTemplateMemberRequest.prototype.setModelId = function(value) {
+	  return jspb.Message.setProto3BytesField(this, 3, value);
+	};
+
+
+	/**
+	 * optional bytes data_index = 4;
+	 * @return {!(string|Uint8Array)}
+	 */
+	proto.set.SetTemplateMemberRequest.prototype.getDataIndex = function() {
+	  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+	};
+
+
+	/**
+	 * optional bytes data_index = 4;
+	 * This is a type-conversion wrapper around `getDataIndex()`
+	 * @return {string}
+	 */
+	proto.set.SetTemplateMemberRequest.prototype.getDataIndex_asB64 = function() {
+	  return /** @type {string} */ (jspb.Message.bytesAsB64(
+	      this.getDataIndex()));
+	};
+
+
+	/**
+	 * optional bytes data_index = 4;
+	 * Note that Uint8Array is not supported on all browsers.
+	 * @see http://caniuse.com/Uint8Array
+	 * This is a type-conversion wrapper around `getDataIndex()`
+	 * @return {!Uint8Array}
+	 */
+	proto.set.SetTemplateMemberRequest.prototype.getDataIndex_asU8 = function() {
+	  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+	      this.getDataIndex()));
+	};
+
+
+	/**
+	 * @param {!(string|Uint8Array)} value
+	 * @return {!proto.set.SetTemplateMemberRequest} returns this
+	 */
+	proto.set.SetTemplateMemberRequest.prototype.setDataIndex = function(value) {
+	  return jspb.Message.setProto3BytesField(this, 4, value);
+	};
+
+
+	/**
+	 * optional int32 template_index = 5;
+	 * @return {number}
+	 */
+	proto.set.SetTemplateMemberRequest.prototype.getTemplateIndex = function() {
+	  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+	};
+
+
+	/**
+	 * @param {number} value
+	 * @return {!proto.set.SetTemplateMemberRequest} returns this
+	 */
+	proto.set.SetTemplateMemberRequest.prototype.setTemplateIndex = function(value) {
+	  return jspb.Message.setProto3IntField(this, 5, value);
+	};
+
+
+
+
+
+	if (jspb.Message.GENERATE_TO_OBJECT) {
+	/**
+	 * Creates an object representation of this proto.
+	 * Field names that are reserved in JavaScript and will be renamed to pb_name.
+	 * Optional fields that are not set will be set to undefined.
+	 * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+	 * For the list of reserved names please see:
+	 *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+	 * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+	 *     JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @return {!Object}
+	 */
+	proto.set.SetTemplateMemberSwap.prototype.toObject = function(opt_includeInstance) {
+	  return proto.set.SetTemplateMemberSwap.toObject(opt_includeInstance, this);
+	};
+
+
+	/**
+	 * Static version of the {@see toObject} method.
+	 * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+	 *     the JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @param {!proto.set.SetTemplateMemberSwap} msg The msg instance to transform.
+	 * @return {!Object}
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.set.SetTemplateMemberSwap.toObject = function(includeInstance, msg) {
+	  var obj = {
+	    setId: msg.getSetId_asB64(),
+	    templateIndex1: jspb.Message.getFieldWithDefault(msg, 2, 0),
+	    templateIndex2: jspb.Message.getFieldWithDefault(msg, 3, 0)
+	  };
+
+	  if (includeInstance) {
+	    obj.$jspbMessageInstance = msg;
+	  }
+	  return obj;
+	};
+	}
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format).
+	 * @param {jspb.ByteSource} bytes The bytes to deserialize.
+	 * @return {!proto.set.SetTemplateMemberSwap}
+	 */
+	proto.set.SetTemplateMemberSwap.deserializeBinary = function(bytes) {
+	  var reader = new jspb.BinaryReader(bytes);
+	  var msg = new proto.set.SetTemplateMemberSwap;
+	  return proto.set.SetTemplateMemberSwap.deserializeBinaryFromReader(msg, reader);
+	};
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format) from the
+	 * given reader into the given message object.
+	 * @param {!proto.set.SetTemplateMemberSwap} msg The message object to deserialize into.
+	 * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+	 * @return {!proto.set.SetTemplateMemberSwap}
+	 */
+	proto.set.SetTemplateMemberSwap.deserializeBinaryFromReader = function(msg, reader) {
+	  while (reader.nextField()) {
+	    if (reader.isEndGroup()) {
+	      break;
+	    }
+	    var field = reader.getFieldNumber();
+	    switch (field) {
+	    case 1:
+	      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+	      msg.setSetId(value);
+	      break;
+	    case 2:
+	      var value = /** @type {number} */ (reader.readInt32());
+	      msg.setTemplateIndex1(value);
+	      break;
+	    case 3:
+	      var value = /** @type {number} */ (reader.readInt32());
+	      msg.setTemplateIndex2(value);
+	      break;
+	    default:
+	      reader.skipField();
+	      break;
+	    }
+	  }
+	  return msg;
+	};
+
+
+	/**
+	 * Serializes the message to binary data (in protobuf wire format).
+	 * @return {!Uint8Array}
+	 */
+	proto.set.SetTemplateMemberSwap.prototype.serializeBinary = function() {
+	  var writer = new jspb.BinaryWriter();
+	  proto.set.SetTemplateMemberSwap.serializeBinaryToWriter(this, writer);
+	  return writer.getResultBuffer();
+	};
+
+
+	/**
+	 * Serializes the given message to binary data (in protobuf wire
+	 * format), writing to the given BinaryWriter.
+	 * @param {!proto.set.SetTemplateMemberSwap} message
+	 * @param {!jspb.BinaryWriter} writer
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.set.SetTemplateMemberSwap.serializeBinaryToWriter = function(message, writer) {
+	  var f = undefined;
+	  f = message.getSetId_asU8();
+	  if (f.length > 0) {
+	    writer.writeBytes(
+	      1,
+	      f
+	    );
+	  }
+	  f = message.getTemplateIndex1();
+	  if (f !== 0) {
+	    writer.writeInt32(
+	      2,
+	      f
+	    );
+	  }
+	  f = message.getTemplateIndex2();
+	  if (f !== 0) {
+	    writer.writeInt32(
+	      3,
+	      f
+	    );
+	  }
+	};
+
+
+	/**
+	 * optional bytes set_id = 1;
+	 * @return {!(string|Uint8Array)}
+	 */
+	proto.set.SetTemplateMemberSwap.prototype.getSetId = function() {
+	  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+	};
+
+
+	/**
+	 * optional bytes set_id = 1;
+	 * This is a type-conversion wrapper around `getSetId()`
+	 * @return {string}
+	 */
+	proto.set.SetTemplateMemberSwap.prototype.getSetId_asB64 = function() {
+	  return /** @type {string} */ (jspb.Message.bytesAsB64(
+	      this.getSetId()));
+	};
+
+
+	/**
+	 * optional bytes set_id = 1;
+	 * Note that Uint8Array is not supported on all browsers.
+	 * @see http://caniuse.com/Uint8Array
+	 * This is a type-conversion wrapper around `getSetId()`
+	 * @return {!Uint8Array}
+	 */
+	proto.set.SetTemplateMemberSwap.prototype.getSetId_asU8 = function() {
+	  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+	      this.getSetId()));
+	};
+
+
+	/**
+	 * @param {!(string|Uint8Array)} value
+	 * @return {!proto.set.SetTemplateMemberSwap} returns this
+	 */
+	proto.set.SetTemplateMemberSwap.prototype.setSetId = function(value) {
+	  return jspb.Message.setProto3BytesField(this, 1, value);
+	};
+
+
+	/**
+	 * optional int32 template_index_1 = 2;
+	 * @return {number}
+	 */
+	proto.set.SetTemplateMemberSwap.prototype.getTemplateIndex1 = function() {
+	  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+	};
+
+
+	/**
+	 * @param {number} value
+	 * @return {!proto.set.SetTemplateMemberSwap} returns this
+	 */
+	proto.set.SetTemplateMemberSwap.prototype.setTemplateIndex1 = function(value) {
+	  return jspb.Message.setProto3IntField(this, 2, value);
+	};
+
+
+	/**
+	 * optional int32 template_index_2 = 3;
+	 * @return {number}
+	 */
+	proto.set.SetTemplateMemberSwap.prototype.getTemplateIndex2 = function() {
+	  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+	};
+
+
+	/**
+	 * @param {number} value
+	 * @return {!proto.set.SetTemplateMemberSwap} returns this
+	 */
+	proto.set.SetTemplateMemberSwap.prototype.setTemplateIndex2 = function(value) {
+	  return jspb.Message.setProto3IntField(this, 3, value);
+	};
+
+
+
+
+
+	if (jspb.Message.GENERATE_TO_OBJECT) {
+	/**
+	 * Creates an object representation of this proto.
+	 * Field names that are reserved in JavaScript and will be renamed to pb_name.
+	 * Optional fields that are not set will be set to undefined.
+	 * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+	 * For the list of reserved names please see:
+	 *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+	 * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+	 *     JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @return {!Object}
+	 */
+	proto.set.SetReadResponse.prototype.toObject = function(opt_includeInstance) {
+	  return proto.set.SetReadResponse.toObject(opt_includeInstance, this);
+	};
+
+
+	/**
+	 * Static version of the {@see toObject} method.
+	 * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+	 *     the JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @param {!proto.set.SetReadResponse} msg The msg instance to transform.
+	 * @return {!Object}
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.set.SetReadResponse.toObject = function(includeInstance, msg) {
+	  var f, obj = {
+	    result: (f = msg.getResult()) && proto.set.SetSchema.toObject(includeInstance, f)
+	  };
+
+	  if (includeInstance) {
+	    obj.$jspbMessageInstance = msg;
+	  }
+	  return obj;
+	};
+	}
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format).
+	 * @param {jspb.ByteSource} bytes The bytes to deserialize.
+	 * @return {!proto.set.SetReadResponse}
+	 */
+	proto.set.SetReadResponse.deserializeBinary = function(bytes) {
+	  var reader = new jspb.BinaryReader(bytes);
+	  var msg = new proto.set.SetReadResponse;
+	  return proto.set.SetReadResponse.deserializeBinaryFromReader(msg, reader);
+	};
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format) from the
+	 * given reader into the given message object.
+	 * @param {!proto.set.SetReadResponse} msg The message object to deserialize into.
+	 * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+	 * @return {!proto.set.SetReadResponse}
+	 */
+	proto.set.SetReadResponse.deserializeBinaryFromReader = function(msg, reader) {
+	  while (reader.nextField()) {
+	    if (reader.isEndGroup()) {
+	      break;
+	    }
+	    var field = reader.getFieldNumber();
+	    switch (field) {
+	    case 1:
+	      var value = new proto.set.SetSchema;
+	      reader.readMessage(value,proto.set.SetSchema.deserializeBinaryFromReader);
+	      msg.setResult(value);
+	      break;
+	    default:
+	      reader.skipField();
+	      break;
+	    }
+	  }
+	  return msg;
+	};
+
+
+	/**
+	 * Serializes the message to binary data (in protobuf wire format).
+	 * @return {!Uint8Array}
+	 */
+	proto.set.SetReadResponse.prototype.serializeBinary = function() {
+	  var writer = new jspb.BinaryWriter();
+	  proto.set.SetReadResponse.serializeBinaryToWriter(this, writer);
+	  return writer.getResultBuffer();
+	};
+
+
+	/**
+	 * Serializes the given message to binary data (in protobuf wire
+	 * format), writing to the given BinaryWriter.
+	 * @param {!proto.set.SetReadResponse} message
+	 * @param {!jspb.BinaryWriter} writer
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.set.SetReadResponse.serializeBinaryToWriter = function(message, writer) {
+	  var f = undefined;
+	  f = message.getResult();
+	  if (f != null) {
+	    writer.writeMessage(
+	      1,
+	      f,
+	      proto.set.SetSchema.serializeBinaryToWriter
+	    );
+	  }
+	};
+
+
+	/**
+	 * optional SetSchema result = 1;
+	 * @return {?proto.set.SetSchema}
+	 */
+	proto.set.SetReadResponse.prototype.getResult = function() {
+	  return /** @type{?proto.set.SetSchema} */ (
+	    jspb.Message.getWrapperField(this, proto.set.SetSchema, 1));
+	};
+
+
+	/**
+	 * @param {?proto.set.SetSchema|undefined} value
+	 * @return {!proto.set.SetReadResponse} returns this
+	*/
+	proto.set.SetReadResponse.prototype.setResult = function(value) {
+	  return jspb.Message.setWrapperField(this, 1, value);
+	};
+
+
+	/**
+	 * Clears the message field making it undefined.
+	 * @return {!proto.set.SetReadResponse} returns this
+	 */
+	proto.set.SetReadResponse.prototype.clearResult = function() {
+	  return this.setResult(undefined);
+	};
+
+
+	/**
+	 * Returns whether this field is set.
+	 * @return {boolean}
+	 */
+	proto.set.SetReadResponse.prototype.hasResult = function() {
+	  return jspb.Message.getField(this, 1) != null;
+	};
+
+
+
+	/**
+	 * List of repeated fields within this message type.
+	 * @private {!Array<number>}
+	 * @const
+	 */
+	proto.set.SetListResponse.repeatedFields_ = [1];
+
+
+
+	if (jspb.Message.GENERATE_TO_OBJECT) {
+	/**
+	 * Creates an object representation of this proto.
+	 * Field names that are reserved in JavaScript and will be renamed to pb_name.
+	 * Optional fields that are not set will be set to undefined.
+	 * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+	 * For the list of reserved names please see:
+	 *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+	 * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+	 *     JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @return {!Object}
+	 */
+	proto.set.SetListResponse.prototype.toObject = function(opt_includeInstance) {
+	  return proto.set.SetListResponse.toObject(opt_includeInstance, this);
+	};
+
+
+	/**
+	 * Static version of the {@see toObject} method.
+	 * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+	 *     the JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @param {!proto.set.SetListResponse} msg The msg instance to transform.
+	 * @return {!Object}
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.set.SetListResponse.toObject = function(includeInstance, msg) {
+	  var obj = {
+	    resultsList: jspb.Message.toObjectList(msg.getResultsList(),
+	    proto.set.SetSchema.toObject, includeInstance)
+	  };
+
+	  if (includeInstance) {
+	    obj.$jspbMessageInstance = msg;
+	  }
+	  return obj;
+	};
+	}
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format).
+	 * @param {jspb.ByteSource} bytes The bytes to deserialize.
+	 * @return {!proto.set.SetListResponse}
+	 */
+	proto.set.SetListResponse.deserializeBinary = function(bytes) {
+	  var reader = new jspb.BinaryReader(bytes);
+	  var msg = new proto.set.SetListResponse;
+	  return proto.set.SetListResponse.deserializeBinaryFromReader(msg, reader);
+	};
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format) from the
+	 * given reader into the given message object.
+	 * @param {!proto.set.SetListResponse} msg The message object to deserialize into.
+	 * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+	 * @return {!proto.set.SetListResponse}
+	 */
+	proto.set.SetListResponse.deserializeBinaryFromReader = function(msg, reader) {
+	  while (reader.nextField()) {
+	    if (reader.isEndGroup()) {
+	      break;
+	    }
+	    var field = reader.getFieldNumber();
+	    switch (field) {
+	    case 1:
+	      var value = new proto.set.SetSchema;
+	      reader.readMessage(value,proto.set.SetSchema.deserializeBinaryFromReader);
+	      msg.addResults(value);
+	      break;
+	    default:
+	      reader.skipField();
+	      break;
+	    }
+	  }
+	  return msg;
+	};
+
+
+	/**
+	 * Serializes the message to binary data (in protobuf wire format).
+	 * @return {!Uint8Array}
+	 */
+	proto.set.SetListResponse.prototype.serializeBinary = function() {
+	  var writer = new jspb.BinaryWriter();
+	  proto.set.SetListResponse.serializeBinaryToWriter(this, writer);
+	  return writer.getResultBuffer();
+	};
+
+
+	/**
+	 * Serializes the given message to binary data (in protobuf wire
+	 * format), writing to the given BinaryWriter.
+	 * @param {!proto.set.SetListResponse} message
+	 * @param {!jspb.BinaryWriter} writer
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.set.SetListResponse.serializeBinaryToWriter = function(message, writer) {
+	  var f = undefined;
+	  f = message.getResultsList();
+	  if (f.length > 0) {
+	    writer.writeRepeatedMessage(
+	      1,
+	      f,
+	      proto.set.SetSchema.serializeBinaryToWriter
+	    );
+	  }
+	};
+
+
+	/**
+	 * repeated SetSchema results = 1;
+	 * @return {!Array<!proto.set.SetSchema>}
+	 */
+	proto.set.SetListResponse.prototype.getResultsList = function() {
+	  return /** @type{!Array<!proto.set.SetSchema>} */ (
+	    jspb.Message.getRepeatedWrapperField(this, proto.set.SetSchema, 1));
+	};
+
+
+	/**
+	 * @param {!Array<!proto.set.SetSchema>} value
+	 * @return {!proto.set.SetListResponse} returns this
+	*/
+	proto.set.SetListResponse.prototype.setResultsList = function(value) {
+	  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+	};
+
+
+	/**
+	 * @param {!proto.set.SetSchema=} opt_value
+	 * @param {number=} opt_index
+	 * @return {!proto.set.SetSchema}
+	 */
+	proto.set.SetListResponse.prototype.addResults = function(opt_value, opt_index) {
+	  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.set.SetSchema, opt_index);
+	};
+
+
+	/**
+	 * Clears the list making it empty but non-null.
+	 * @return {!proto.set.SetListResponse} returns this
+	 */
+	proto.set.SetListResponse.prototype.clearResultsList = function() {
+	  return this.setResultsList([]);
+	};
+
+
+
+
+
+	if (jspb.Message.GENERATE_TO_OBJECT) {
+	/**
+	 * Creates an object representation of this proto.
+	 * Field names that are reserved in JavaScript and will be renamed to pb_name.
+	 * Optional fields that are not set will be set to undefined.
+	 * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+	 * For the list of reserved names please see:
+	 *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+	 * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+	 *     JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @return {!Object}
+	 */
+	proto.set.SetCreateResponse.prototype.toObject = function(opt_includeInstance) {
+	  return proto.set.SetCreateResponse.toObject(opt_includeInstance, this);
+	};
+
+
+	/**
+	 * Static version of the {@see toObject} method.
+	 * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+	 *     the JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @param {!proto.set.SetCreateResponse} msg The msg instance to transform.
+	 * @return {!Object}
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.set.SetCreateResponse.toObject = function(includeInstance, msg) {
+	  var obj = {
+	    id: msg.getId_asB64()
+	  };
+
+	  if (includeInstance) {
+	    obj.$jspbMessageInstance = msg;
+	  }
+	  return obj;
+	};
+	}
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format).
+	 * @param {jspb.ByteSource} bytes The bytes to deserialize.
+	 * @return {!proto.set.SetCreateResponse}
+	 */
+	proto.set.SetCreateResponse.deserializeBinary = function(bytes) {
+	  var reader = new jspb.BinaryReader(bytes);
+	  var msg = new proto.set.SetCreateResponse;
+	  return proto.set.SetCreateResponse.deserializeBinaryFromReader(msg, reader);
+	};
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format) from the
+	 * given reader into the given message object.
+	 * @param {!proto.set.SetCreateResponse} msg The message object to deserialize into.
+	 * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+	 * @return {!proto.set.SetCreateResponse}
+	 */
+	proto.set.SetCreateResponse.deserializeBinaryFromReader = function(msg, reader) {
+	  while (reader.nextField()) {
+	    if (reader.isEndGroup()) {
+	      break;
+	    }
+	    var field = reader.getFieldNumber();
+	    switch (field) {
+	    case 1:
+	      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+	      msg.setId(value);
+	      break;
+	    default:
+	      reader.skipField();
+	      break;
+	    }
+	  }
+	  return msg;
+	};
+
+
+	/**
+	 * Serializes the message to binary data (in protobuf wire format).
+	 * @return {!Uint8Array}
+	 */
+	proto.set.SetCreateResponse.prototype.serializeBinary = function() {
+	  var writer = new jspb.BinaryWriter();
+	  proto.set.SetCreateResponse.serializeBinaryToWriter(this, writer);
+	  return writer.getResultBuffer();
+	};
+
+
+	/**
+	 * Serializes the given message to binary data (in protobuf wire
+	 * format), writing to the given BinaryWriter.
+	 * @param {!proto.set.SetCreateResponse} message
+	 * @param {!jspb.BinaryWriter} writer
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.set.SetCreateResponse.serializeBinaryToWriter = function(message, writer) {
+	  var f = undefined;
+	  f = message.getId_asU8();
+	  if (f.length > 0) {
+	    writer.writeBytes(
+	      1,
+	      f
+	    );
+	  }
+	};
+
+
+	/**
+	 * optional bytes id = 1;
+	 * @return {!(string|Uint8Array)}
+	 */
+	proto.set.SetCreateResponse.prototype.getId = function() {
+	  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+	};
+
+
+	/**
+	 * optional bytes id = 1;
+	 * This is a type-conversion wrapper around `getId()`
+	 * @return {string}
+	 */
+	proto.set.SetCreateResponse.prototype.getId_asB64 = function() {
+	  return /** @type {string} */ (jspb.Message.bytesAsB64(
+	      this.getId()));
+	};
+
+
+	/**
+	 * optional bytes id = 1;
+	 * Note that Uint8Array is not supported on all browsers.
+	 * @see http://caniuse.com/Uint8Array
+	 * This is a type-conversion wrapper around `getId()`
+	 * @return {!Uint8Array}
+	 */
+	proto.set.SetCreateResponse.prototype.getId_asU8 = function() {
+	  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+	      this.getId()));
+	};
+
+
+	/**
+	 * @param {!(string|Uint8Array)} value
+	 * @return {!proto.set.SetCreateResponse} returns this
+	 */
+	proto.set.SetCreateResponse.prototype.setId = function(value) {
+	  return jspb.Message.setProto3BytesField(this, 1, value);
+	};
+
+
+
+
+
+	if (jspb.Message.GENERATE_TO_OBJECT) {
+	/**
+	 * Creates an object representation of this proto.
+	 * Field names that are reserved in JavaScript and will be renamed to pb_name.
+	 * Optional fields that are not set will be set to undefined.
+	 * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+	 * For the list of reserved names please see:
+	 *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+	 * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+	 *     JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @return {!Object}
+	 */
+	proto.set.SetChangeResponse.prototype.toObject = function(opt_includeInstance) {
+	  return proto.set.SetChangeResponse.toObject(opt_includeInstance, this);
+	};
+
+
+	/**
+	 * Static version of the {@see toObject} method.
+	 * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+	 *     the JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @param {!proto.set.SetChangeResponse} msg The msg instance to transform.
+	 * @return {!Object}
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.set.SetChangeResponse.toObject = function(includeInstance, msg) {
+	  var obj = {
+
+	  };
+
+	  if (includeInstance) {
+	    obj.$jspbMessageInstance = msg;
+	  }
+	  return obj;
+	};
+	}
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format).
+	 * @param {jspb.ByteSource} bytes The bytes to deserialize.
+	 * @return {!proto.set.SetChangeResponse}
+	 */
+	proto.set.SetChangeResponse.deserializeBinary = function(bytes) {
+	  var reader = new jspb.BinaryReader(bytes);
+	  var msg = new proto.set.SetChangeResponse;
+	  return proto.set.SetChangeResponse.deserializeBinaryFromReader(msg, reader);
+	};
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format) from the
+	 * given reader into the given message object.
+	 * @param {!proto.set.SetChangeResponse} msg The message object to deserialize into.
+	 * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+	 * @return {!proto.set.SetChangeResponse}
+	 */
+	proto.set.SetChangeResponse.deserializeBinaryFromReader = function(msg, reader) {
+	  while (reader.nextField()) {
+	    if (reader.isEndGroup()) {
+	      break;
+	    }
+	    var field = reader.getFieldNumber();
+	    switch (field) {
+	    default:
+	      reader.skipField();
+	      break;
+	    }
+	  }
+	  return msg;
+	};
+
+
+	/**
+	 * Serializes the message to binary data (in protobuf wire format).
+	 * @return {!Uint8Array}
+	 */
+	proto.set.SetChangeResponse.prototype.serializeBinary = function() {
+	  var writer = new jspb.BinaryWriter();
+	  proto.set.SetChangeResponse.serializeBinaryToWriter(this, writer);
+	  return writer.getResultBuffer();
+	};
+
+
+	/**
+	 * Serializes the given message to binary data (in protobuf wire
+	 * format), writing to the given BinaryWriter.
+	 * @param {!proto.set.SetChangeResponse} message
+	 * @param {!jspb.BinaryWriter} writer
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.set.SetChangeResponse.serializeBinaryToWriter = function(message, writer) {
+	};
+
+
+
+
+
+	if (jspb.Message.GENERATE_TO_OBJECT) {
+	/**
+	 * Creates an object representation of this proto.
+	 * Field names that are reserved in JavaScript and will be renamed to pb_name.
+	 * Optional fields that are not set will be set to undefined.
+	 * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+	 * For the list of reserved names please see:
+	 *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+	 * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+	 *     JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @return {!Object}
+	 */
+	proto.set.TemplateReadResponse.prototype.toObject = function(opt_includeInstance) {
+	  return proto.set.TemplateReadResponse.toObject(opt_includeInstance, this);
+	};
+
+
+	/**
+	 * Static version of the {@see toObject} method.
+	 * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+	 *     the JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @param {!proto.set.TemplateReadResponse} msg The msg instance to transform.
+	 * @return {!Object}
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.set.TemplateReadResponse.toObject = function(includeInstance, msg) {
+	  var f, obj = {
+	    result: (f = msg.getResult()) && proto.set.SetTemplateSchema.toObject(includeInstance, f)
+	  };
+
+	  if (includeInstance) {
+	    obj.$jspbMessageInstance = msg;
+	  }
+	  return obj;
+	};
+	}
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format).
+	 * @param {jspb.ByteSource} bytes The bytes to deserialize.
+	 * @return {!proto.set.TemplateReadResponse}
+	 */
+	proto.set.TemplateReadResponse.deserializeBinary = function(bytes) {
+	  var reader = new jspb.BinaryReader(bytes);
+	  var msg = new proto.set.TemplateReadResponse;
+	  return proto.set.TemplateReadResponse.deserializeBinaryFromReader(msg, reader);
+	};
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format) from the
+	 * given reader into the given message object.
+	 * @param {!proto.set.TemplateReadResponse} msg The message object to deserialize into.
+	 * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+	 * @return {!proto.set.TemplateReadResponse}
+	 */
+	proto.set.TemplateReadResponse.deserializeBinaryFromReader = function(msg, reader) {
+	  while (reader.nextField()) {
+	    if (reader.isEndGroup()) {
+	      break;
+	    }
+	    var field = reader.getFieldNumber();
+	    switch (field) {
+	    case 1:
+	      var value = new proto.set.SetTemplateSchema;
+	      reader.readMessage(value,proto.set.SetTemplateSchema.deserializeBinaryFromReader);
+	      msg.setResult(value);
+	      break;
+	    default:
+	      reader.skipField();
+	      break;
+	    }
+	  }
+	  return msg;
+	};
+
+
+	/**
+	 * Serializes the message to binary data (in protobuf wire format).
+	 * @return {!Uint8Array}
+	 */
+	proto.set.TemplateReadResponse.prototype.serializeBinary = function() {
+	  var writer = new jspb.BinaryWriter();
+	  proto.set.TemplateReadResponse.serializeBinaryToWriter(this, writer);
+	  return writer.getResultBuffer();
+	};
+
+
+	/**
+	 * Serializes the given message to binary data (in protobuf wire
+	 * format), writing to the given BinaryWriter.
+	 * @param {!proto.set.TemplateReadResponse} message
+	 * @param {!jspb.BinaryWriter} writer
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.set.TemplateReadResponse.serializeBinaryToWriter = function(message, writer) {
+	  var f = undefined;
+	  f = message.getResult();
+	  if (f != null) {
+	    writer.writeMessage(
+	      1,
+	      f,
+	      proto.set.SetTemplateSchema.serializeBinaryToWriter
+	    );
+	  }
+	};
+
+
+	/**
+	 * optional SetTemplateSchema result = 1;
+	 * @return {?proto.set.SetTemplateSchema}
+	 */
+	proto.set.TemplateReadResponse.prototype.getResult = function() {
+	  return /** @type{?proto.set.SetTemplateSchema} */ (
+	    jspb.Message.getWrapperField(this, proto.set.SetTemplateSchema, 1));
+	};
+
+
+	/**
+	 * @param {?proto.set.SetTemplateSchema|undefined} value
+	 * @return {!proto.set.TemplateReadResponse} returns this
+	*/
+	proto.set.TemplateReadResponse.prototype.setResult = function(value) {
+	  return jspb.Message.setWrapperField(this, 1, value);
+	};
+
+
+	/**
+	 * Clears the message field making it undefined.
+	 * @return {!proto.set.TemplateReadResponse} returns this
+	 */
+	proto.set.TemplateReadResponse.prototype.clearResult = function() {
+	  return this.setResult(undefined);
+	};
+
+
+	/**
+	 * Returns whether this field is set.
+	 * @return {boolean}
+	 */
+	proto.set.TemplateReadResponse.prototype.hasResult = function() {
+	  return jspb.Message.getField(this, 1) != null;
+	};
+
+
+
+	/**
+	 * List of repeated fields within this message type.
+	 * @private {!Array<number>}
+	 * @const
+	 */
+	proto.set.TemplateListResponse.repeatedFields_ = [1];
+
+
+
+	if (jspb.Message.GENERATE_TO_OBJECT) {
+	/**
+	 * Creates an object representation of this proto.
+	 * Field names that are reserved in JavaScript and will be renamed to pb_name.
+	 * Optional fields that are not set will be set to undefined.
+	 * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+	 * For the list of reserved names please see:
+	 *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+	 * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+	 *     JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @return {!Object}
+	 */
+	proto.set.TemplateListResponse.prototype.toObject = function(opt_includeInstance) {
+	  return proto.set.TemplateListResponse.toObject(opt_includeInstance, this);
+	};
+
+
+	/**
+	 * Static version of the {@see toObject} method.
+	 * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+	 *     the JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @param {!proto.set.TemplateListResponse} msg The msg instance to transform.
+	 * @return {!Object}
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.set.TemplateListResponse.toObject = function(includeInstance, msg) {
+	  var obj = {
+	    resultsList: jspb.Message.toObjectList(msg.getResultsList(),
+	    proto.set.SetTemplateSchema.toObject, includeInstance)
+	  };
+
+	  if (includeInstance) {
+	    obj.$jspbMessageInstance = msg;
+	  }
+	  return obj;
+	};
+	}
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format).
+	 * @param {jspb.ByteSource} bytes The bytes to deserialize.
+	 * @return {!proto.set.TemplateListResponse}
+	 */
+	proto.set.TemplateListResponse.deserializeBinary = function(bytes) {
+	  var reader = new jspb.BinaryReader(bytes);
+	  var msg = new proto.set.TemplateListResponse;
+	  return proto.set.TemplateListResponse.deserializeBinaryFromReader(msg, reader);
+	};
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format) from the
+	 * given reader into the given message object.
+	 * @param {!proto.set.TemplateListResponse} msg The message object to deserialize into.
+	 * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+	 * @return {!proto.set.TemplateListResponse}
+	 */
+	proto.set.TemplateListResponse.deserializeBinaryFromReader = function(msg, reader) {
+	  while (reader.nextField()) {
+	    if (reader.isEndGroup()) {
+	      break;
+	    }
+	    var field = reader.getFieldNumber();
+	    switch (field) {
+	    case 1:
+	      var value = new proto.set.SetTemplateSchema;
+	      reader.readMessage(value,proto.set.SetTemplateSchema.deserializeBinaryFromReader);
+	      msg.addResults(value);
+	      break;
+	    default:
+	      reader.skipField();
+	      break;
+	    }
+	  }
+	  return msg;
+	};
+
+
+	/**
+	 * Serializes the message to binary data (in protobuf wire format).
+	 * @return {!Uint8Array}
+	 */
+	proto.set.TemplateListResponse.prototype.serializeBinary = function() {
+	  var writer = new jspb.BinaryWriter();
+	  proto.set.TemplateListResponse.serializeBinaryToWriter(this, writer);
+	  return writer.getResultBuffer();
+	};
+
+
+	/**
+	 * Serializes the given message to binary data (in protobuf wire
+	 * format), writing to the given BinaryWriter.
+	 * @param {!proto.set.TemplateListResponse} message
+	 * @param {!jspb.BinaryWriter} writer
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.set.TemplateListResponse.serializeBinaryToWriter = function(message, writer) {
+	  var f = undefined;
+	  f = message.getResultsList();
+	  if (f.length > 0) {
+	    writer.writeRepeatedMessage(
+	      1,
+	      f,
+	      proto.set.SetTemplateSchema.serializeBinaryToWriter
+	    );
+	  }
+	};
+
+
+	/**
+	 * repeated SetTemplateSchema results = 1;
+	 * @return {!Array<!proto.set.SetTemplateSchema>}
+	 */
+	proto.set.TemplateListResponse.prototype.getResultsList = function() {
+	  return /** @type{!Array<!proto.set.SetTemplateSchema>} */ (
+	    jspb.Message.getRepeatedWrapperField(this, proto.set.SetTemplateSchema, 1));
+	};
+
+
+	/**
+	 * @param {!Array<!proto.set.SetTemplateSchema>} value
+	 * @return {!proto.set.TemplateListResponse} returns this
+	*/
+	proto.set.TemplateListResponse.prototype.setResultsList = function(value) {
+	  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+	};
+
+
+	/**
+	 * @param {!proto.set.SetTemplateSchema=} opt_value
+	 * @param {number=} opt_index
+	 * @return {!proto.set.SetTemplateSchema}
+	 */
+	proto.set.TemplateListResponse.prototype.addResults = function(opt_value, opt_index) {
+	  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.set.SetTemplateSchema, opt_index);
+	};
+
+
+	/**
+	 * Clears the list making it empty but non-null.
+	 * @return {!proto.set.TemplateListResponse} returns this
+	 */
+	proto.set.TemplateListResponse.prototype.clearResultsList = function() {
+	  return this.setResultsList([]);
+	};
+
+
+
+
+
+	if (jspb.Message.GENERATE_TO_OBJECT) {
+	/**
+	 * Creates an object representation of this proto.
+	 * Field names that are reserved in JavaScript and will be renamed to pb_name.
+	 * Optional fields that are not set will be set to undefined.
+	 * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+	 * For the list of reserved names please see:
+	 *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+	 * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+	 *     JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @return {!Object}
+	 */
+	proto.set.TemplateCreateResponse.prototype.toObject = function(opt_includeInstance) {
+	  return proto.set.TemplateCreateResponse.toObject(opt_includeInstance, this);
+	};
+
+
+	/**
+	 * Static version of the {@see toObject} method.
+	 * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+	 *     the JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @param {!proto.set.TemplateCreateResponse} msg The msg instance to transform.
+	 * @return {!Object}
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.set.TemplateCreateResponse.toObject = function(includeInstance, msg) {
+	  var obj = {
+	    id: msg.getId_asB64()
+	  };
+
+	  if (includeInstance) {
+	    obj.$jspbMessageInstance = msg;
+	  }
+	  return obj;
+	};
+	}
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format).
+	 * @param {jspb.ByteSource} bytes The bytes to deserialize.
+	 * @return {!proto.set.TemplateCreateResponse}
+	 */
+	proto.set.TemplateCreateResponse.deserializeBinary = function(bytes) {
+	  var reader = new jspb.BinaryReader(bytes);
+	  var msg = new proto.set.TemplateCreateResponse;
+	  return proto.set.TemplateCreateResponse.deserializeBinaryFromReader(msg, reader);
+	};
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format) from the
+	 * given reader into the given message object.
+	 * @param {!proto.set.TemplateCreateResponse} msg The message object to deserialize into.
+	 * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+	 * @return {!proto.set.TemplateCreateResponse}
+	 */
+	proto.set.TemplateCreateResponse.deserializeBinaryFromReader = function(msg, reader) {
+	  while (reader.nextField()) {
+	    if (reader.isEndGroup()) {
+	      break;
+	    }
+	    var field = reader.getFieldNumber();
+	    switch (field) {
+	    case 1:
+	      var value = /** @type {!Uint8Array} */ (reader.readBytes());
+	      msg.setId(value);
+	      break;
+	    default:
+	      reader.skipField();
+	      break;
+	    }
+	  }
+	  return msg;
+	};
+
+
+	/**
+	 * Serializes the message to binary data (in protobuf wire format).
+	 * @return {!Uint8Array}
+	 */
+	proto.set.TemplateCreateResponse.prototype.serializeBinary = function() {
+	  var writer = new jspb.BinaryWriter();
+	  proto.set.TemplateCreateResponse.serializeBinaryToWriter(this, writer);
+	  return writer.getResultBuffer();
+	};
+
+
+	/**
+	 * Serializes the given message to binary data (in protobuf wire
+	 * format), writing to the given BinaryWriter.
+	 * @param {!proto.set.TemplateCreateResponse} message
+	 * @param {!jspb.BinaryWriter} writer
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.set.TemplateCreateResponse.serializeBinaryToWriter = function(message, writer) {
+	  var f = undefined;
+	  f = message.getId_asU8();
+	  if (f.length > 0) {
+	    writer.writeBytes(
+	      1,
+	      f
+	    );
+	  }
+	};
+
+
+	/**
+	 * optional bytes id = 1;
+	 * @return {!(string|Uint8Array)}
+	 */
+	proto.set.TemplateCreateResponse.prototype.getId = function() {
+	  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+	};
+
+
+	/**
+	 * optional bytes id = 1;
+	 * This is a type-conversion wrapper around `getId()`
+	 * @return {string}
+	 */
+	proto.set.TemplateCreateResponse.prototype.getId_asB64 = function() {
+	  return /** @type {string} */ (jspb.Message.bytesAsB64(
+	      this.getId()));
+	};
+
+
+	/**
+	 * optional bytes id = 1;
+	 * Note that Uint8Array is not supported on all browsers.
+	 * @see http://caniuse.com/Uint8Array
+	 * This is a type-conversion wrapper around `getId()`
+	 * @return {!Uint8Array}
+	 */
+	proto.set.TemplateCreateResponse.prototype.getId_asU8 = function() {
+	  return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
+	      this.getId()));
+	};
+
+
+	/**
+	 * @param {!(string|Uint8Array)} value
+	 * @return {!proto.set.TemplateCreateResponse} returns this
+	 */
+	proto.set.TemplateCreateResponse.prototype.setId = function(value) {
+	  return jspb.Message.setProto3BytesField(this, 1, value);
+	};
+
+
+
+
+
+	if (jspb.Message.GENERATE_TO_OBJECT) {
+	/**
+	 * Creates an object representation of this proto.
+	 * Field names that are reserved in JavaScript and will be renamed to pb_name.
+	 * Optional fields that are not set will be set to undefined.
+	 * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+	 * For the list of reserved names please see:
+	 *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+	 * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+	 *     JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @return {!Object}
+	 */
+	proto.set.TemplateChangeResponse.prototype.toObject = function(opt_includeInstance) {
+	  return proto.set.TemplateChangeResponse.toObject(opt_includeInstance, this);
+	};
+
+
+	/**
+	 * Static version of the {@see toObject} method.
+	 * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+	 *     the JSPB instance for transitional soy proto support:
+	 *     http://goto/soy-param-migration
+	 * @param {!proto.set.TemplateChangeResponse} msg The msg instance to transform.
+	 * @return {!Object}
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.set.TemplateChangeResponse.toObject = function(includeInstance, msg) {
+	  var obj = {
+
+	  };
+
+	  if (includeInstance) {
+	    obj.$jspbMessageInstance = msg;
+	  }
+	  return obj;
+	};
+	}
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format).
+	 * @param {jspb.ByteSource} bytes The bytes to deserialize.
+	 * @return {!proto.set.TemplateChangeResponse}
+	 */
+	proto.set.TemplateChangeResponse.deserializeBinary = function(bytes) {
+	  var reader = new jspb.BinaryReader(bytes);
+	  var msg = new proto.set.TemplateChangeResponse;
+	  return proto.set.TemplateChangeResponse.deserializeBinaryFromReader(msg, reader);
+	};
+
+
+	/**
+	 * Deserializes binary data (in protobuf wire format) from the
+	 * given reader into the given message object.
+	 * @param {!proto.set.TemplateChangeResponse} msg The message object to deserialize into.
+	 * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+	 * @return {!proto.set.TemplateChangeResponse}
+	 */
+	proto.set.TemplateChangeResponse.deserializeBinaryFromReader = function(msg, reader) {
+	  while (reader.nextField()) {
+	    if (reader.isEndGroup()) {
+	      break;
+	    }
+	    var field = reader.getFieldNumber();
+	    switch (field) {
+	    default:
+	      reader.skipField();
+	      break;
+	    }
+	  }
+	  return msg;
+	};
+
+
+	/**
+	 * Serializes the message to binary data (in protobuf wire format).
+	 * @return {!Uint8Array}
+	 */
+	proto.set.TemplateChangeResponse.prototype.serializeBinary = function() {
+	  var writer = new jspb.BinaryWriter();
+	  proto.set.TemplateChangeResponse.serializeBinaryToWriter(this, writer);
+	  return writer.getResultBuffer();
+	};
+
+
+	/**
+	 * Serializes the given message to binary data (in protobuf wire
+	 * format), writing to the given BinaryWriter.
+	 * @param {!proto.set.TemplateChangeResponse} message
+	 * @param {!jspb.BinaryWriter} writer
+	 * @suppress {unusedLocalVariables} f is only used for nested messages
+	 */
+	proto.set.TemplateChangeResponse.serializeBinaryToWriter = function(message, writer) {
+	};
+
+
+	goog.object.extend(exports, proto.set); 
+} (set_pb));
+
+/**
+ * @fileoverview gRPC-Web generated client stub for set
+ * @enhanceable
+ * @public
+ */
+
+// Code generated by protoc-gen-grpc-web. DO NOT EDIT.
+// versions:
+// 	protoc-gen-grpc-web v1.5.0
+// 	protoc              v5.26.1
+// source: rmcs_resource_api/set.proto
+
+
+/* eslint-disable */
+// @ts-nocheck
+
+
+
+const grpc$4 = {};
+grpc$4.web = require$$0$1;
+
+const proto$5 = {};
+proto$5.set = set_pb;
+
+/**
+ * @param {string} hostname
+ * @param {?Object} credentials
+ * @param {?grpc.web.ClientOptions} options
+ * @constructor
+ * @struct
+ * @final
+ */
+proto$5.set.SetServiceClient =
+    function(hostname, credentials, options) {
+  if (!options) options = {};
+  options.format = 'text';
+
+  /**
+   * @private @const {!grpc.web.GrpcWebClientBase} The client
+   */
+  this.client_ = new grpc$4.web.GrpcWebClientBase(options);
+
+  /**
+   * @private @const {string} The hostname
+   */
+  this.hostname_ = hostname.replace(/\/+$/, '');
+
+};
+
+
+/**
+ * @param {string} hostname
+ * @param {?Object} credentials
+ * @param {?grpc.web.ClientOptions} options
+ * @constructor
+ * @struct
+ * @final
+ */
+proto$5.set.SetServicePromiseClient =
+    function(hostname, credentials, options) {
+  if (!options) options = {};
+  options.format = 'text';
+
+  /**
+   * @private @const {!grpc.web.GrpcWebClientBase} The client
+   */
+  this.client_ = new grpc$4.web.GrpcWebClientBase(options);
+
+  /**
+   * @private @const {string} The hostname
+   */
+  this.hostname_ = hostname.replace(/\/+$/, '');
+
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.set.SetId,
+ *   !proto.set.SetReadResponse>}
+ */
+const methodDescriptor_SetService_ReadSet = new grpc$4.web.MethodDescriptor(
+  '/set.SetService/ReadSet',
+  grpc$4.web.MethodType.UNARY,
+  proto$5.set.SetId,
+  proto$5.set.SetReadResponse,
+  /**
+   * @param {!proto.set.SetId} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto$5.set.SetReadResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.set.SetId} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.set.SetReadResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.set.SetReadResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto$5.set.SetServiceClient.prototype.readSet =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/set.SetService/ReadSet',
+      request,
+      metadata || {},
+      methodDescriptor_SetService_ReadSet,
+      callback);
+};
+
+
+/**
+ * @param {!proto.set.SetId} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.set.SetReadResponse>}
+ *     Promise that resolves to the response
+ */
+proto$5.set.SetServicePromiseClient.prototype.readSet =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/set.SetService/ReadSet',
+      request,
+      metadata || {},
+      methodDescriptor_SetService_ReadSet);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.set.SetIds,
+ *   !proto.set.SetListResponse>}
+ */
+const methodDescriptor_SetService_ListSetByIds = new grpc$4.web.MethodDescriptor(
+  '/set.SetService/ListSetByIds',
+  grpc$4.web.MethodType.UNARY,
+  proto$5.set.SetIds,
+  proto$5.set.SetListResponse,
+  /**
+   * @param {!proto.set.SetIds} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto$5.set.SetListResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.set.SetIds} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.set.SetListResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.set.SetListResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto$5.set.SetServiceClient.prototype.listSetByIds =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/set.SetService/ListSetByIds',
+      request,
+      metadata || {},
+      methodDescriptor_SetService_ListSetByIds,
+      callback);
+};
+
+
+/**
+ * @param {!proto.set.SetIds} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.set.SetListResponse>}
+ *     Promise that resolves to the response
+ */
+proto$5.set.SetServicePromiseClient.prototype.listSetByIds =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/set.SetService/ListSetByIds',
+      request,
+      metadata || {},
+      methodDescriptor_SetService_ListSetByIds);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.set.SetTemplateId,
+ *   !proto.set.SetListResponse>}
+ */
+const methodDescriptor_SetService_ListSetByTemplate = new grpc$4.web.MethodDescriptor(
+  '/set.SetService/ListSetByTemplate',
+  grpc$4.web.MethodType.UNARY,
+  proto$5.set.SetTemplateId,
+  proto$5.set.SetListResponse,
+  /**
+   * @param {!proto.set.SetTemplateId} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto$5.set.SetListResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.set.SetTemplateId} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.set.SetListResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.set.SetListResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto$5.set.SetServiceClient.prototype.listSetByTemplate =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/set.SetService/ListSetByTemplate',
+      request,
+      metadata || {},
+      methodDescriptor_SetService_ListSetByTemplate,
+      callback);
+};
+
+
+/**
+ * @param {!proto.set.SetTemplateId} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.set.SetListResponse>}
+ *     Promise that resolves to the response
+ */
+proto$5.set.SetServicePromiseClient.prototype.listSetByTemplate =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/set.SetService/ListSetByTemplate',
+      request,
+      metadata || {},
+      methodDescriptor_SetService_ListSetByTemplate);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.set.SetName,
+ *   !proto.set.SetListResponse>}
+ */
+const methodDescriptor_SetService_ListSetByName = new grpc$4.web.MethodDescriptor(
+  '/set.SetService/ListSetByName',
+  grpc$4.web.MethodType.UNARY,
+  proto$5.set.SetName,
+  proto$5.set.SetListResponse,
+  /**
+   * @param {!proto.set.SetName} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto$5.set.SetListResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.set.SetName} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.set.SetListResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.set.SetListResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto$5.set.SetServiceClient.prototype.listSetByName =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/set.SetService/ListSetByName',
+      request,
+      metadata || {},
+      methodDescriptor_SetService_ListSetByName,
+      callback);
+};
+
+
+/**
+ * @param {!proto.set.SetName} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.set.SetListResponse>}
+ *     Promise that resolves to the response
+ */
+proto$5.set.SetServicePromiseClient.prototype.listSetByName =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/set.SetService/ListSetByName',
+      request,
+      metadata || {},
+      methodDescriptor_SetService_ListSetByName);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.set.SetSchema,
+ *   !proto.set.SetCreateResponse>}
+ */
+const methodDescriptor_SetService_CreateSet = new grpc$4.web.MethodDescriptor(
+  '/set.SetService/CreateSet',
+  grpc$4.web.MethodType.UNARY,
+  proto$5.set.SetSchema,
+  proto$5.set.SetCreateResponse,
+  /**
+   * @param {!proto.set.SetSchema} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto$5.set.SetCreateResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.set.SetSchema} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.set.SetCreateResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.set.SetCreateResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto$5.set.SetServiceClient.prototype.createSet =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/set.SetService/CreateSet',
+      request,
+      metadata || {},
+      methodDescriptor_SetService_CreateSet,
+      callback);
+};
+
+
+/**
+ * @param {!proto.set.SetSchema} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.set.SetCreateResponse>}
+ *     Promise that resolves to the response
+ */
+proto$5.set.SetServicePromiseClient.prototype.createSet =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/set.SetService/CreateSet',
+      request,
+      metadata || {},
+      methodDescriptor_SetService_CreateSet);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.set.SetUpdate,
+ *   !proto.set.SetChangeResponse>}
+ */
+const methodDescriptor_SetService_UpdateSet = new grpc$4.web.MethodDescriptor(
+  '/set.SetService/UpdateSet',
+  grpc$4.web.MethodType.UNARY,
+  proto$5.set.SetUpdate,
+  proto$5.set.SetChangeResponse,
+  /**
+   * @param {!proto.set.SetUpdate} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto$5.set.SetChangeResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.set.SetUpdate} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.set.SetChangeResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.set.SetChangeResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto$5.set.SetServiceClient.prototype.updateSet =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/set.SetService/UpdateSet',
+      request,
+      metadata || {},
+      methodDescriptor_SetService_UpdateSet,
+      callback);
+};
+
+
+/**
+ * @param {!proto.set.SetUpdate} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.set.SetChangeResponse>}
+ *     Promise that resolves to the response
+ */
+proto$5.set.SetServicePromiseClient.prototype.updateSet =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/set.SetService/UpdateSet',
+      request,
+      metadata || {},
+      methodDescriptor_SetService_UpdateSet);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.set.SetId,
+ *   !proto.set.SetChangeResponse>}
+ */
+const methodDescriptor_SetService_DeleteSet = new grpc$4.web.MethodDescriptor(
+  '/set.SetService/DeleteSet',
+  grpc$4.web.MethodType.UNARY,
+  proto$5.set.SetId,
+  proto$5.set.SetChangeResponse,
+  /**
+   * @param {!proto.set.SetId} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto$5.set.SetChangeResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.set.SetId} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.set.SetChangeResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.set.SetChangeResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto$5.set.SetServiceClient.prototype.deleteSet =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/set.SetService/DeleteSet',
+      request,
+      metadata || {},
+      methodDescriptor_SetService_DeleteSet,
+      callback);
+};
+
+
+/**
+ * @param {!proto.set.SetId} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.set.SetChangeResponse>}
+ *     Promise that resolves to the response
+ */
+proto$5.set.SetServicePromiseClient.prototype.deleteSet =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/set.SetService/DeleteSet',
+      request,
+      metadata || {},
+      methodDescriptor_SetService_DeleteSet);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.set.SetMemberRequest,
+ *   !proto.set.SetChangeResponse>}
+ */
+const methodDescriptor_SetService_AddSetMember = new grpc$4.web.MethodDescriptor(
+  '/set.SetService/AddSetMember',
+  grpc$4.web.MethodType.UNARY,
+  proto$5.set.SetMemberRequest,
+  proto$5.set.SetChangeResponse,
+  /**
+   * @param {!proto.set.SetMemberRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto$5.set.SetChangeResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.set.SetMemberRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.set.SetChangeResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.set.SetChangeResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto$5.set.SetServiceClient.prototype.addSetMember =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/set.SetService/AddSetMember',
+      request,
+      metadata || {},
+      methodDescriptor_SetService_AddSetMember,
+      callback);
+};
+
+
+/**
+ * @param {!proto.set.SetMemberRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.set.SetChangeResponse>}
+ *     Promise that resolves to the response
+ */
+proto$5.set.SetServicePromiseClient.prototype.addSetMember =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/set.SetService/AddSetMember',
+      request,
+      metadata || {},
+      methodDescriptor_SetService_AddSetMember);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.set.SetMemberRequest,
+ *   !proto.set.SetChangeResponse>}
+ */
+const methodDescriptor_SetService_RemoveSetMember = new grpc$4.web.MethodDescriptor(
+  '/set.SetService/RemoveSetMember',
+  grpc$4.web.MethodType.UNARY,
+  proto$5.set.SetMemberRequest,
+  proto$5.set.SetChangeResponse,
+  /**
+   * @param {!proto.set.SetMemberRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto$5.set.SetChangeResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.set.SetMemberRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.set.SetChangeResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.set.SetChangeResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto$5.set.SetServiceClient.prototype.removeSetMember =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/set.SetService/RemoveSetMember',
+      request,
+      metadata || {},
+      methodDescriptor_SetService_RemoveSetMember,
+      callback);
+};
+
+
+/**
+ * @param {!proto.set.SetMemberRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.set.SetChangeResponse>}
+ *     Promise that resolves to the response
+ */
+proto$5.set.SetServicePromiseClient.prototype.removeSetMember =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/set.SetService/RemoveSetMember',
+      request,
+      metadata || {},
+      methodDescriptor_SetService_RemoveSetMember);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.set.SetMemberSwap,
+ *   !proto.set.SetChangeResponse>}
+ */
+const methodDescriptor_SetService_SwapSetMember = new grpc$4.web.MethodDescriptor(
+  '/set.SetService/SwapSetMember',
+  grpc$4.web.MethodType.UNARY,
+  proto$5.set.SetMemberSwap,
+  proto$5.set.SetChangeResponse,
+  /**
+   * @param {!proto.set.SetMemberSwap} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto$5.set.SetChangeResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.set.SetMemberSwap} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.set.SetChangeResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.set.SetChangeResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto$5.set.SetServiceClient.prototype.swapSetMember =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/set.SetService/SwapSetMember',
+      request,
+      metadata || {},
+      methodDescriptor_SetService_SwapSetMember,
+      callback);
+};
+
+
+/**
+ * @param {!proto.set.SetMemberSwap} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.set.SetChangeResponse>}
+ *     Promise that resolves to the response
+ */
+proto$5.set.SetServicePromiseClient.prototype.swapSetMember =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/set.SetService/SwapSetMember',
+      request,
+      metadata || {},
+      methodDescriptor_SetService_SwapSetMember);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.set.SetTemplateId,
+ *   !proto.set.TemplateReadResponse>}
+ */
+const methodDescriptor_SetService_ReadSetTemplate = new grpc$4.web.MethodDescriptor(
+  '/set.SetService/ReadSetTemplate',
+  grpc$4.web.MethodType.UNARY,
+  proto$5.set.SetTemplateId,
+  proto$5.set.TemplateReadResponse,
+  /**
+   * @param {!proto.set.SetTemplateId} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto$5.set.TemplateReadResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.set.SetTemplateId} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.set.TemplateReadResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.set.TemplateReadResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto$5.set.SetServiceClient.prototype.readSetTemplate =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/set.SetService/ReadSetTemplate',
+      request,
+      metadata || {},
+      methodDescriptor_SetService_ReadSetTemplate,
+      callback);
+};
+
+
+/**
+ * @param {!proto.set.SetTemplateId} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.set.TemplateReadResponse>}
+ *     Promise that resolves to the response
+ */
+proto$5.set.SetServicePromiseClient.prototype.readSetTemplate =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/set.SetService/ReadSetTemplate',
+      request,
+      metadata || {},
+      methodDescriptor_SetService_ReadSetTemplate);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.set.SetTemplateIds,
+ *   !proto.set.TemplateListResponse>}
+ */
+const methodDescriptor_SetService_ListSetTemplateByIds = new grpc$4.web.MethodDescriptor(
+  '/set.SetService/ListSetTemplateByIds',
+  grpc$4.web.MethodType.UNARY,
+  proto$5.set.SetTemplateIds,
+  proto$5.set.TemplateListResponse,
+  /**
+   * @param {!proto.set.SetTemplateIds} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto$5.set.TemplateListResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.set.SetTemplateIds} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.set.TemplateListResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.set.TemplateListResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto$5.set.SetServiceClient.prototype.listSetTemplateByIds =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/set.SetService/ListSetTemplateByIds',
+      request,
+      metadata || {},
+      methodDescriptor_SetService_ListSetTemplateByIds,
+      callback);
+};
+
+
+/**
+ * @param {!proto.set.SetTemplateIds} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.set.TemplateListResponse>}
+ *     Promise that resolves to the response
+ */
+proto$5.set.SetServicePromiseClient.prototype.listSetTemplateByIds =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/set.SetService/ListSetTemplateByIds',
+      request,
+      metadata || {},
+      methodDescriptor_SetService_ListSetTemplateByIds);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.set.SetTemplateName,
+ *   !proto.set.TemplateListResponse>}
+ */
+const methodDescriptor_SetService_ListSetTemplateByName = new grpc$4.web.MethodDescriptor(
+  '/set.SetService/ListSetTemplateByName',
+  grpc$4.web.MethodType.UNARY,
+  proto$5.set.SetTemplateName,
+  proto$5.set.TemplateListResponse,
+  /**
+   * @param {!proto.set.SetTemplateName} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto$5.set.TemplateListResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.set.SetTemplateName} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.set.TemplateListResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.set.TemplateListResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto$5.set.SetServiceClient.prototype.listSetTemplateByName =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/set.SetService/ListSetTemplateByName',
+      request,
+      metadata || {},
+      methodDescriptor_SetService_ListSetTemplateByName,
+      callback);
+};
+
+
+/**
+ * @param {!proto.set.SetTemplateName} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.set.TemplateListResponse>}
+ *     Promise that resolves to the response
+ */
+proto$5.set.SetServicePromiseClient.prototype.listSetTemplateByName =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/set.SetService/ListSetTemplateByName',
+      request,
+      metadata || {},
+      methodDescriptor_SetService_ListSetTemplateByName);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.set.SetTemplateSchema,
+ *   !proto.set.TemplateCreateResponse>}
+ */
+const methodDescriptor_SetService_CreateSetTemplate = new grpc$4.web.MethodDescriptor(
+  '/set.SetService/CreateSetTemplate',
+  grpc$4.web.MethodType.UNARY,
+  proto$5.set.SetTemplateSchema,
+  proto$5.set.TemplateCreateResponse,
+  /**
+   * @param {!proto.set.SetTemplateSchema} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto$5.set.TemplateCreateResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.set.SetTemplateSchema} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.set.TemplateCreateResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.set.TemplateCreateResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto$5.set.SetServiceClient.prototype.createSetTemplate =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/set.SetService/CreateSetTemplate',
+      request,
+      metadata || {},
+      methodDescriptor_SetService_CreateSetTemplate,
+      callback);
+};
+
+
+/**
+ * @param {!proto.set.SetTemplateSchema} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.set.TemplateCreateResponse>}
+ *     Promise that resolves to the response
+ */
+proto$5.set.SetServicePromiseClient.prototype.createSetTemplate =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/set.SetService/CreateSetTemplate',
+      request,
+      metadata || {},
+      methodDescriptor_SetService_CreateSetTemplate);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.set.SetTemplateUpdate,
+ *   !proto.set.TemplateChangeResponse>}
+ */
+const methodDescriptor_SetService_UpdateSetTemplate = new grpc$4.web.MethodDescriptor(
+  '/set.SetService/UpdateSetTemplate',
+  grpc$4.web.MethodType.UNARY,
+  proto$5.set.SetTemplateUpdate,
+  proto$5.set.TemplateChangeResponse,
+  /**
+   * @param {!proto.set.SetTemplateUpdate} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto$5.set.TemplateChangeResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.set.SetTemplateUpdate} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.set.TemplateChangeResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.set.TemplateChangeResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto$5.set.SetServiceClient.prototype.updateSetTemplate =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/set.SetService/UpdateSetTemplate',
+      request,
+      metadata || {},
+      methodDescriptor_SetService_UpdateSetTemplate,
+      callback);
+};
+
+
+/**
+ * @param {!proto.set.SetTemplateUpdate} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.set.TemplateChangeResponse>}
+ *     Promise that resolves to the response
+ */
+proto$5.set.SetServicePromiseClient.prototype.updateSetTemplate =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/set.SetService/UpdateSetTemplate',
+      request,
+      metadata || {},
+      methodDescriptor_SetService_UpdateSetTemplate);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.set.SetTemplateId,
+ *   !proto.set.TemplateChangeResponse>}
+ */
+const methodDescriptor_SetService_DeleteSetTemplate = new grpc$4.web.MethodDescriptor(
+  '/set.SetService/DeleteSetTemplate',
+  grpc$4.web.MethodType.UNARY,
+  proto$5.set.SetTemplateId,
+  proto$5.set.TemplateChangeResponse,
+  /**
+   * @param {!proto.set.SetTemplateId} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto$5.set.TemplateChangeResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.set.SetTemplateId} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.set.TemplateChangeResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.set.TemplateChangeResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto$5.set.SetServiceClient.prototype.deleteSetTemplate =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/set.SetService/DeleteSetTemplate',
+      request,
+      metadata || {},
+      methodDescriptor_SetService_DeleteSetTemplate,
+      callback);
+};
+
+
+/**
+ * @param {!proto.set.SetTemplateId} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.set.TemplateChangeResponse>}
+ *     Promise that resolves to the response
+ */
+proto$5.set.SetServicePromiseClient.prototype.deleteSetTemplate =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/set.SetService/DeleteSetTemplate',
+      request,
+      metadata || {},
+      methodDescriptor_SetService_DeleteSetTemplate);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.set.SetTemplateMemberRequest,
+ *   !proto.set.TemplateChangeResponse>}
+ */
+const methodDescriptor_SetService_AddSetTemplateMember = new grpc$4.web.MethodDescriptor(
+  '/set.SetService/AddSetTemplateMember',
+  grpc$4.web.MethodType.UNARY,
+  proto$5.set.SetTemplateMemberRequest,
+  proto$5.set.TemplateChangeResponse,
+  /**
+   * @param {!proto.set.SetTemplateMemberRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto$5.set.TemplateChangeResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.set.SetTemplateMemberRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.set.TemplateChangeResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.set.TemplateChangeResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto$5.set.SetServiceClient.prototype.addSetTemplateMember =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/set.SetService/AddSetTemplateMember',
+      request,
+      metadata || {},
+      methodDescriptor_SetService_AddSetTemplateMember,
+      callback);
+};
+
+
+/**
+ * @param {!proto.set.SetTemplateMemberRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.set.TemplateChangeResponse>}
+ *     Promise that resolves to the response
+ */
+proto$5.set.SetServicePromiseClient.prototype.addSetTemplateMember =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/set.SetService/AddSetTemplateMember',
+      request,
+      metadata || {},
+      methodDescriptor_SetService_AddSetTemplateMember);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.set.SetTemplateMemberRequest,
+ *   !proto.set.TemplateChangeResponse>}
+ */
+const methodDescriptor_SetService_RemoveSetTemplateMember = new grpc$4.web.MethodDescriptor(
+  '/set.SetService/RemoveSetTemplateMember',
+  grpc$4.web.MethodType.UNARY,
+  proto$5.set.SetTemplateMemberRequest,
+  proto$5.set.TemplateChangeResponse,
+  /**
+   * @param {!proto.set.SetTemplateMemberRequest} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto$5.set.TemplateChangeResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.set.SetTemplateMemberRequest} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.set.TemplateChangeResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.set.TemplateChangeResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto$5.set.SetServiceClient.prototype.removeSetTemplateMember =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/set.SetService/RemoveSetTemplateMember',
+      request,
+      metadata || {},
+      methodDescriptor_SetService_RemoveSetTemplateMember,
+      callback);
+};
+
+
+/**
+ * @param {!proto.set.SetTemplateMemberRequest} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.set.TemplateChangeResponse>}
+ *     Promise that resolves to the response
+ */
+proto$5.set.SetServicePromiseClient.prototype.removeSetTemplateMember =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/set.SetService/RemoveSetTemplateMember',
+      request,
+      metadata || {},
+      methodDescriptor_SetService_RemoveSetTemplateMember);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.set.SetTemplateMemberSwap,
+ *   !proto.set.TemplateChangeResponse>}
+ */
+const methodDescriptor_SetService_SwapSetTemplateMember = new grpc$4.web.MethodDescriptor(
+  '/set.SetService/SwapSetTemplateMember',
+  grpc$4.web.MethodType.UNARY,
+  proto$5.set.SetTemplateMemberSwap,
+  proto$5.set.TemplateChangeResponse,
+  /**
+   * @param {!proto.set.SetTemplateMemberSwap} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto$5.set.TemplateChangeResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.set.SetTemplateMemberSwap} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.set.TemplateChangeResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.set.TemplateChangeResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto$5.set.SetServiceClient.prototype.swapSetTemplateMember =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/set.SetService/SwapSetTemplateMember',
+      request,
+      metadata || {},
+      methodDescriptor_SetService_SwapSetTemplateMember,
+      callback);
+};
+
+
+/**
+ * @param {!proto.set.SetTemplateMemberSwap} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.set.TemplateChangeResponse>}
+ *     Promise that resolves to the response
+ */
+proto$5.set.SetServicePromiseClient.prototype.swapSetTemplateMember =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/set.SetService/SwapSetTemplateMember',
+      request,
+      metadata || {},
+      methodDescriptor_SetService_SwapSetTemplateMember);
+};
+
+
+var set_grpc_web_pb = proto$5.set;
+
+var set_grpc_web_pb$1 = /*@__PURE__*/getDefaultExportFromCjs(set_grpc_web_pb);
 
 var data_pb = {};
 
@@ -32027,4 +38825,4 @@ var log_grpc_web_pb = proto$1.log;
 
 var log_grpc_web_pb$1 = /*@__PURE__*/getDefaultExportFromCjs(log_grpc_web_pb);
 
-export { buffer_grpc_web_pb$1 as pb_buffer, data_grpc_web_pb$1 as pb_data, device_grpc_web_pb$1 as pb_device, group_grpc_web_pb$1 as pb_group, log_grpc_web_pb$1 as pb_log, model_grpc_web_pb$1 as pb_model, slice_grpc_web_pb$1 as pb_slice };
+export { buffer_grpc_web_pb$1 as pb_buffer, data_grpc_web_pb$1 as pb_data, device_grpc_web_pb$1 as pb_device, group_grpc_web_pb$1 as pb_group, log_grpc_web_pb$1 as pb_log, model_grpc_web_pb$1 as pb_model, set_grpc_web_pb$1 as pb_set, slice_grpc_web_pb$1 as pb_slice };

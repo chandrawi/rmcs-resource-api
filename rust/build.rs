@@ -6,6 +6,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         ("../proto/rmcs_resource_api/model.proto", "model_descriptor.bin"),
         ("../proto/rmcs_resource_api/device.proto", "device_descriptor.bin"),
         ("../proto/rmcs_resource_api/group.proto", "group_descriptor.bin"),
+        ("../proto/rmcs_resource_api/set.proto", "set_descriptor.bin"),
         ("../proto/rmcs_resource_api/data.proto", "data_descriptor.bin"),
         ("../proto/rmcs_resource_api/buffer.proto", "buffer_descriptor.bin"),
         ("../proto/rmcs_resource_api/slice.proto", "slice_descriptor.bin"),
