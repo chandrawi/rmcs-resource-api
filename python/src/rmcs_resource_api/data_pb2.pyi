@@ -64,6 +64,54 @@ class DataNumber(_message.Message):
     number: int
     def __init__(self, device_id: _Optional[bytes] = ..., model_id: _Optional[bytes] = ..., timestamp: _Optional[int] = ..., number: _Optional[int] = ...) -> None: ...
 
+class DatasetSchema(_message.Message):
+    __slots__ = ("set_id", "timestamp", "data_bytes", "data_type")
+    SET_ID_FIELD_NUMBER: _ClassVar[int]
+    TIMESTAMP_FIELD_NUMBER: _ClassVar[int]
+    DATA_BYTES_FIELD_NUMBER: _ClassVar[int]
+    DATA_TYPE_FIELD_NUMBER: _ClassVar[int]
+    set_id: bytes
+    timestamp: int
+    data_bytes: bytes
+    data_type: _containers.RepeatedScalarFieldContainer[_common_pb2.DataType]
+    def __init__(self, set_id: _Optional[bytes] = ..., timestamp: _Optional[int] = ..., data_bytes: _Optional[bytes] = ..., data_type: _Optional[_Iterable[_Union[_common_pb2.DataType, str]]] = ...) -> None: ...
+
+class DatasetId(_message.Message):
+    __slots__ = ("set_id", "timestamp")
+    SET_ID_FIELD_NUMBER: _ClassVar[int]
+    TIMESTAMP_FIELD_NUMBER: _ClassVar[int]
+    set_id: bytes
+    timestamp: int
+    def __init__(self, set_id: _Optional[bytes] = ..., timestamp: _Optional[int] = ...) -> None: ...
+
+class DatasetTime(_message.Message):
+    __slots__ = ("set_id", "timestamp")
+    SET_ID_FIELD_NUMBER: _ClassVar[int]
+    TIMESTAMP_FIELD_NUMBER: _ClassVar[int]
+    set_id: bytes
+    timestamp: int
+    def __init__(self, set_id: _Optional[bytes] = ..., timestamp: _Optional[int] = ...) -> None: ...
+
+class DatasetRange(_message.Message):
+    __slots__ = ("set_id", "begin", "end")
+    SET_ID_FIELD_NUMBER: _ClassVar[int]
+    BEGIN_FIELD_NUMBER: _ClassVar[int]
+    END_FIELD_NUMBER: _ClassVar[int]
+    set_id: bytes
+    begin: int
+    end: int
+    def __init__(self, set_id: _Optional[bytes] = ..., begin: _Optional[int] = ..., end: _Optional[int] = ...) -> None: ...
+
+class DatasetNumber(_message.Message):
+    __slots__ = ("set_id", "timestamp", "number")
+    SET_ID_FIELD_NUMBER: _ClassVar[int]
+    TIMESTAMP_FIELD_NUMBER: _ClassVar[int]
+    NUMBER_FIELD_NUMBER: _ClassVar[int]
+    set_id: bytes
+    timestamp: int
+    number: int
+    def __init__(self, set_id: _Optional[bytes] = ..., timestamp: _Optional[int] = ..., number: _Optional[int] = ...) -> None: ...
+
 class DataReadResponse(_message.Message):
     __slots__ = ("result",)
     RESULT_FIELD_NUMBER: _ClassVar[int]
@@ -79,3 +127,15 @@ class DataListResponse(_message.Message):
 class DataChangeResponse(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
+
+class DatasetReadResponse(_message.Message):
+    __slots__ = ("result",)
+    RESULT_FIELD_NUMBER: _ClassVar[int]
+    result: DatasetSchema
+    def __init__(self, result: _Optional[_Union[DatasetSchema, _Mapping]] = ...) -> None: ...
+
+class DatasetListResponse(_message.Message):
+    __slots__ = ("results",)
+    RESULTS_FIELD_NUMBER: _ClassVar[int]
+    results: _containers.RepeatedCompositeFieldContainer[DatasetSchema]
+    def __init__(self, results: _Optional[_Iterable[_Union[DatasetSchema, _Mapping]]] = ...) -> None: ...

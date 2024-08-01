@@ -79,6 +79,61 @@ class DataServiceStub(object):
                 request_serializer=rmcs__resource__api_dot_data__pb2.DataId.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_data__pb2.DataChangeResponse.FromString,
                 _registered_method=True)
+        self.ListDataBySetTime = channel.unary_unary(
+                '/data.DataService/ListDataBySetTime',
+                request_serializer=rmcs__resource__api_dot_data__pb2.DatasetTime.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_data__pb2.DataListResponse.FromString,
+                _registered_method=True)
+        self.ListDataBySetLastTime = channel.unary_unary(
+                '/data.DataService/ListDataBySetLastTime',
+                request_serializer=rmcs__resource__api_dot_data__pb2.DatasetTime.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_data__pb2.DataListResponse.FromString,
+                _registered_method=True)
+        self.ListDataBySetRangeTime = channel.unary_unary(
+                '/data.DataService/ListDataBySetRangeTime',
+                request_serializer=rmcs__resource__api_dot_data__pb2.DatasetRange.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_data__pb2.DataListResponse.FromString,
+                _registered_method=True)
+        self.ListDataBySetNumberBefore = channel.unary_unary(
+                '/data.DataService/ListDataBySetNumberBefore',
+                request_serializer=rmcs__resource__api_dot_data__pb2.DatasetNumber.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_data__pb2.DataListResponse.FromString,
+                _registered_method=True)
+        self.ListDataBySetNumberAfter = channel.unary_unary(
+                '/data.DataService/ListDataBySetNumberAfter',
+                request_serializer=rmcs__resource__api_dot_data__pb2.DatasetNumber.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_data__pb2.DataListResponse.FromString,
+                _registered_method=True)
+        self.ReadDataset = channel.unary_unary(
+                '/data.DataService/ReadDataset',
+                request_serializer=rmcs__resource__api_dot_data__pb2.DatasetId.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_data__pb2.DatasetReadResponse.FromString,
+                _registered_method=True)
+        self.ListDatasetByTime = channel.unary_unary(
+                '/data.DataService/ListDatasetByTime',
+                request_serializer=rmcs__resource__api_dot_data__pb2.DatasetTime.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_data__pb2.DatasetListResponse.FromString,
+                _registered_method=True)
+        self.ListDatasetByLastTime = channel.unary_unary(
+                '/data.DataService/ListDatasetByLastTime',
+                request_serializer=rmcs__resource__api_dot_data__pb2.DatasetTime.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_data__pb2.DatasetListResponse.FromString,
+                _registered_method=True)
+        self.ListDatasetByRangeTime = channel.unary_unary(
+                '/data.DataService/ListDatasetByRangeTime',
+                request_serializer=rmcs__resource__api_dot_data__pb2.DatasetRange.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_data__pb2.DatasetListResponse.FromString,
+                _registered_method=True)
+        self.ListDatasetByNumberBefore = channel.unary_unary(
+                '/data.DataService/ListDatasetByNumberBefore',
+                request_serializer=rmcs__resource__api_dot_data__pb2.DatasetNumber.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_data__pb2.DatasetListResponse.FromString,
+                _registered_method=True)
+        self.ListDatasetByNumberAfter = channel.unary_unary(
+                '/data.DataService/ListDatasetByNumberAfter',
+                request_serializer=rmcs__resource__api_dot_data__pb2.DatasetNumber.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_data__pb2.DatasetListResponse.FromString,
+                _registered_method=True)
 
 
 class DataServiceServicer(object):
@@ -132,6 +187,72 @@ class DataServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListDataBySetTime(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListDataBySetLastTime(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListDataBySetRangeTime(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListDataBySetNumberBefore(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListDataBySetNumberAfter(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ReadDataset(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListDatasetByTime(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListDatasetByLastTime(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListDatasetByRangeTime(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListDatasetByNumberBefore(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListDatasetByNumberAfter(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_DataServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -174,6 +295,61 @@ def add_DataServiceServicer_to_server(servicer, server):
                     servicer.DeleteData,
                     request_deserializer=rmcs__resource__api_dot_data__pb2.DataId.FromString,
                     response_serializer=rmcs__resource__api_dot_data__pb2.DataChangeResponse.SerializeToString,
+            ),
+            'ListDataBySetTime': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListDataBySetTime,
+                    request_deserializer=rmcs__resource__api_dot_data__pb2.DatasetTime.FromString,
+                    response_serializer=rmcs__resource__api_dot_data__pb2.DataListResponse.SerializeToString,
+            ),
+            'ListDataBySetLastTime': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListDataBySetLastTime,
+                    request_deserializer=rmcs__resource__api_dot_data__pb2.DatasetTime.FromString,
+                    response_serializer=rmcs__resource__api_dot_data__pb2.DataListResponse.SerializeToString,
+            ),
+            'ListDataBySetRangeTime': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListDataBySetRangeTime,
+                    request_deserializer=rmcs__resource__api_dot_data__pb2.DatasetRange.FromString,
+                    response_serializer=rmcs__resource__api_dot_data__pb2.DataListResponse.SerializeToString,
+            ),
+            'ListDataBySetNumberBefore': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListDataBySetNumberBefore,
+                    request_deserializer=rmcs__resource__api_dot_data__pb2.DatasetNumber.FromString,
+                    response_serializer=rmcs__resource__api_dot_data__pb2.DataListResponse.SerializeToString,
+            ),
+            'ListDataBySetNumberAfter': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListDataBySetNumberAfter,
+                    request_deserializer=rmcs__resource__api_dot_data__pb2.DatasetNumber.FromString,
+                    response_serializer=rmcs__resource__api_dot_data__pb2.DataListResponse.SerializeToString,
+            ),
+            'ReadDataset': grpc.unary_unary_rpc_method_handler(
+                    servicer.ReadDataset,
+                    request_deserializer=rmcs__resource__api_dot_data__pb2.DatasetId.FromString,
+                    response_serializer=rmcs__resource__api_dot_data__pb2.DatasetReadResponse.SerializeToString,
+            ),
+            'ListDatasetByTime': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListDatasetByTime,
+                    request_deserializer=rmcs__resource__api_dot_data__pb2.DatasetTime.FromString,
+                    response_serializer=rmcs__resource__api_dot_data__pb2.DatasetListResponse.SerializeToString,
+            ),
+            'ListDatasetByLastTime': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListDatasetByLastTime,
+                    request_deserializer=rmcs__resource__api_dot_data__pb2.DatasetTime.FromString,
+                    response_serializer=rmcs__resource__api_dot_data__pb2.DatasetListResponse.SerializeToString,
+            ),
+            'ListDatasetByRangeTime': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListDatasetByRangeTime,
+                    request_deserializer=rmcs__resource__api_dot_data__pb2.DatasetRange.FromString,
+                    response_serializer=rmcs__resource__api_dot_data__pb2.DatasetListResponse.SerializeToString,
+            ),
+            'ListDatasetByNumberBefore': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListDatasetByNumberBefore,
+                    request_deserializer=rmcs__resource__api_dot_data__pb2.DatasetNumber.FromString,
+                    response_serializer=rmcs__resource__api_dot_data__pb2.DatasetListResponse.SerializeToString,
+            ),
+            'ListDatasetByNumberAfter': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListDatasetByNumberAfter,
+                    request_deserializer=rmcs__resource__api_dot_data__pb2.DatasetNumber.FromString,
+                    response_serializer=rmcs__resource__api_dot_data__pb2.DatasetListResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -391,6 +567,303 @@ class DataService(object):
             '/data.DataService/DeleteData',
             rmcs__resource__api_dot_data__pb2.DataId.SerializeToString,
             rmcs__resource__api_dot_data__pb2.DataChangeResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListDataBySetTime(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/data.DataService/ListDataBySetTime',
+            rmcs__resource__api_dot_data__pb2.DatasetTime.SerializeToString,
+            rmcs__resource__api_dot_data__pb2.DataListResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListDataBySetLastTime(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/data.DataService/ListDataBySetLastTime',
+            rmcs__resource__api_dot_data__pb2.DatasetTime.SerializeToString,
+            rmcs__resource__api_dot_data__pb2.DataListResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListDataBySetRangeTime(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/data.DataService/ListDataBySetRangeTime',
+            rmcs__resource__api_dot_data__pb2.DatasetRange.SerializeToString,
+            rmcs__resource__api_dot_data__pb2.DataListResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListDataBySetNumberBefore(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/data.DataService/ListDataBySetNumberBefore',
+            rmcs__resource__api_dot_data__pb2.DatasetNumber.SerializeToString,
+            rmcs__resource__api_dot_data__pb2.DataListResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListDataBySetNumberAfter(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/data.DataService/ListDataBySetNumberAfter',
+            rmcs__resource__api_dot_data__pb2.DatasetNumber.SerializeToString,
+            rmcs__resource__api_dot_data__pb2.DataListResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ReadDataset(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/data.DataService/ReadDataset',
+            rmcs__resource__api_dot_data__pb2.DatasetId.SerializeToString,
+            rmcs__resource__api_dot_data__pb2.DatasetReadResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListDatasetByTime(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/data.DataService/ListDatasetByTime',
+            rmcs__resource__api_dot_data__pb2.DatasetTime.SerializeToString,
+            rmcs__resource__api_dot_data__pb2.DatasetListResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListDatasetByLastTime(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/data.DataService/ListDatasetByLastTime',
+            rmcs__resource__api_dot_data__pb2.DatasetTime.SerializeToString,
+            rmcs__resource__api_dot_data__pb2.DatasetListResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListDatasetByRangeTime(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/data.DataService/ListDatasetByRangeTime',
+            rmcs__resource__api_dot_data__pb2.DatasetRange.SerializeToString,
+            rmcs__resource__api_dot_data__pb2.DatasetListResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListDatasetByNumberBefore(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/data.DataService/ListDatasetByNumberBefore',
+            rmcs__resource__api_dot_data__pb2.DatasetNumber.SerializeToString,
+            rmcs__resource__api_dot_data__pb2.DatasetListResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListDatasetByNumberAfter(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/data.DataService/ListDatasetByNumberAfter',
+            rmcs__resource__api_dot_data__pb2.DatasetNumber.SerializeToString,
+            rmcs__resource__api_dot_data__pb2.DatasetListResponse.FromString,
             options,
             channel_credentials,
             insecure,
