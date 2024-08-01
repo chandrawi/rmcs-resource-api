@@ -1396,7 +1396,8 @@ proto.buffer.BuffersSelector.toObject = function(includeInstance, msg) {
     deviceId: msg.getDeviceId_asB64(),
     modelId: msg.getModelId_asB64(),
     status: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    number: jspb.Message.getFieldWithDefault(msg, 4, 0)
+    number: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    offset: jspb.Message.getFieldWithDefault(msg, 5, 0)
   };
 
   if (includeInstance) {
@@ -1448,6 +1449,10 @@ proto.buffer.BuffersSelector.deserializeBinaryFromReader = function(msg, reader)
     case 4:
       var value = /** @type {number} */ (reader.readUint32());
       msg.setNumber(value);
+      break;
+    case 5:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setOffset(value);
       break;
     default:
       reader.skipField();
@@ -1503,6 +1508,13 @@ proto.buffer.BuffersSelector.serializeBinaryToWriter = function(message, writer)
   if (f !== 0) {
     writer.writeUint32(
       4,
+      f
+    );
+  }
+  f = message.getOffset();
+  if (f !== 0) {
+    writer.writeUint32(
+      5,
       f
     );
   }
@@ -1680,6 +1692,24 @@ proto.buffer.BuffersSelector.prototype.getNumber = function() {
  */
 proto.buffer.BuffersSelector.prototype.setNumber = function(value) {
   return jspb.Message.setProto3IntField(this, 4, value);
+};
+
+
+/**
+ * optional uint32 offset = 5;
+ * @return {number}
+ */
+proto.buffer.BuffersSelector.prototype.getOffset = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.buffer.BuffersSelector} returns this
+ */
+proto.buffer.BuffersSelector.prototype.setOffset = function(value) {
+  return jspb.Message.setProto3IntField(this, 5, value);
 };
 
 

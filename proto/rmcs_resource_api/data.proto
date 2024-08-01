@@ -20,27 +20,27 @@ service DataService {
 
     rpc DeleteData(DataId) returns (DataChangeResponse);
 
-    rpc ListDataBySetTime(DatasetTime) returns (DataListResponse);
+    rpc ListDataBySetTime(DataSetTime) returns (DataListResponse);
 
-    rpc ListDataBySetLastTime(DatasetTime) returns (DataListResponse);
+    rpc ListDataBySetLastTime(DataSetTime) returns (DataListResponse);
 
-    rpc ListDataBySetRangeTime(DatasetRange) returns (DataListResponse);
+    rpc ListDataBySetRangeTime(DataSetRange) returns (DataListResponse);
 
-    rpc ListDataBySetNumberBefore(DatasetNumber) returns (DataListResponse);
+    rpc ListDataBySetNumberBefore(DataSetNumber) returns (DataListResponse);
 
-    rpc ListDataBySetNumberAfter(DatasetNumber) returns (DataListResponse);
+    rpc ListDataBySetNumberAfter(DataSetNumber) returns (DataListResponse);
 
-    rpc ReadDataset(DatasetId) returns (DatasetReadResponse);
+    rpc ReadDataSet(DataSetId) returns (DataSetReadResponse);
 
-    rpc ListDatasetByTime(DatasetTime) returns (DatasetListResponse);
+    rpc ListDataSetByTime(DataSetTime) returns (DataSetListResponse);
 
-    rpc ListDatasetByLastTime(DatasetTime) returns (DatasetListResponse);
+    rpc ListDataSetByLastTime(DataSetTime) returns (DataSetListResponse);
 
-    rpc ListDatasetByRangeTime(DatasetRange) returns (DatasetListResponse);
+    rpc ListDataSetByRangeTime(DataSetRange) returns (DataSetListResponse);
 
-    rpc ListDatasetByNumberBefore(DatasetNumber) returns (DatasetListResponse);
+    rpc ListDataSetByNumberBefore(DataSetNumber) returns (DataSetListResponse);
 
-    rpc ListDatasetByNumberAfter(DatasetNumber) returns (DatasetListResponse);
+    rpc ListDataSetByNumberAfter(DataSetNumber) returns (DataSetListResponse);
 }
 
 message DataSchema {
@@ -77,30 +77,30 @@ message DataNumber {
     uint32 number = 4;
 }
 
-message DatasetSchema {
+message DataSetSchema {
     bytes set_id = 1;
     int64 timestamp = 2;
     bytes data_bytes = 3;
     repeated common.DataType data_type = 4;
 }
 
-message DatasetId {
+message DataSetId {
     bytes set_id = 1;
     int64 timestamp = 2;
 }
 
-message DatasetTime {
+message DataSetTime {
     bytes set_id = 1;
     int64 timestamp = 2;
 }
 
-message DatasetRange {
+message DataSetRange {
     bytes set_id = 1;
     int64 begin = 2;
     int64 end = 3;
 }
 
-message DatasetNumber {
+message DataSetNumber {
     bytes set_id = 1;
     int64 timestamp = 2;
     uint32 number = 3;
@@ -117,10 +117,10 @@ message DataListResponse {
 message DataChangeResponse {
 }
 
-message DatasetReadResponse {
-    DatasetSchema result = 1;
+message DataSetReadResponse {
+    DataSetSchema result = 1;
 }
 
-message DatasetListResponse {
-    repeated DatasetSchema results = 1;
+message DataSetListResponse {
+    repeated DataSetSchema results = 1;
 }

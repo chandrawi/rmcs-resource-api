@@ -387,6 +387,67 @@ proto.buffer.BufferServicePromiseClient.prototype.listBufferFirst =
  *   !proto.buffer.BuffersSelector,
  *   !proto.buffer.BufferListResponse>}
  */
+const methodDescriptor_BufferService_ListBufferFirstOffset = new grpc.web.MethodDescriptor(
+  '/buffer.BufferService/ListBufferFirstOffset',
+  grpc.web.MethodType.UNARY,
+  proto.buffer.BuffersSelector,
+  proto.buffer.BufferListResponse,
+  /**
+   * @param {!proto.buffer.BuffersSelector} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.buffer.BufferListResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.buffer.BuffersSelector} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.buffer.BufferListResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.buffer.BufferListResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.buffer.BufferServiceClient.prototype.listBufferFirstOffset =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/buffer.BufferService/ListBufferFirstOffset',
+      request,
+      metadata || {},
+      methodDescriptor_BufferService_ListBufferFirstOffset,
+      callback);
+};
+
+
+/**
+ * @param {!proto.buffer.BuffersSelector} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.buffer.BufferListResponse>}
+ *     Promise that resolves to the response
+ */
+proto.buffer.BufferServicePromiseClient.prototype.listBufferFirstOffset =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/buffer.BufferService/ListBufferFirstOffset',
+      request,
+      metadata || {},
+      methodDescriptor_BufferService_ListBufferFirstOffset);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.buffer.BuffersSelector,
+ *   !proto.buffer.BufferListResponse>}
+ */
 const methodDescriptor_BufferService_ListBufferLast = new grpc.web.MethodDescriptor(
   '/buffer.BufferService/ListBufferLast',
   grpc.web.MethodType.UNARY,
@@ -439,6 +500,67 @@ proto.buffer.BufferServicePromiseClient.prototype.listBufferLast =
       request,
       metadata || {},
       methodDescriptor_BufferService_ListBufferLast);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.buffer.BuffersSelector,
+ *   !proto.buffer.BufferListResponse>}
+ */
+const methodDescriptor_BufferService_ListBufferLastOffset = new grpc.web.MethodDescriptor(
+  '/buffer.BufferService/ListBufferLastOffset',
+  grpc.web.MethodType.UNARY,
+  proto.buffer.BuffersSelector,
+  proto.buffer.BufferListResponse,
+  /**
+   * @param {!proto.buffer.BuffersSelector} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.buffer.BufferListResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.buffer.BuffersSelector} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.buffer.BufferListResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.buffer.BufferListResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.buffer.BufferServiceClient.prototype.listBufferLastOffset =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/buffer.BufferService/ListBufferLastOffset',
+      request,
+      metadata || {},
+      methodDescriptor_BufferService_ListBufferLastOffset,
+      callback);
+};
+
+
+/**
+ * @param {!proto.buffer.BuffersSelector} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.buffer.BufferListResponse>}
+ *     Promise that resolves to the response
+ */
+proto.buffer.BufferServicePromiseClient.prototype.listBufferLastOffset =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/buffer.BufferService/ListBufferLastOffset',
+      request,
+      metadata || {},
+      methodDescriptor_BufferService_ListBufferLastOffset);
 };
 
 

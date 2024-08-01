@@ -14,7 +14,11 @@ service BufferService {
 
     rpc ListBufferFirst(BuffersSelector) returns (BufferListResponse);
 
+    rpc ListBufferFirstOffset(BuffersSelector) returns (BufferListResponse);
+
     rpc ListBufferLast(BuffersSelector) returns (BufferListResponse);
+
+    rpc ListBufferLastOffset(BuffersSelector) returns (BufferListResponse);
 
     rpc CreateBuffer(BufferSchema) returns (BufferCreateResponse);
 
@@ -55,6 +59,7 @@ message BuffersSelector {
     optional bytes model_id = 2;
     optional int32 status = 3;
     uint32 number = 4;
+    uint32 offset = 5;
 }
 
 message BufferUpdate {

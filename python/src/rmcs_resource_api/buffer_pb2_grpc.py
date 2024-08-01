@@ -64,8 +64,18 @@ class BufferServiceStub(object):
                 request_serializer=rmcs__resource__api_dot_buffer__pb2.BuffersSelector.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferListResponse.FromString,
                 _registered_method=True)
+        self.ListBufferFirstOffset = channel.unary_unary(
+                '/buffer.BufferService/ListBufferFirstOffset',
+                request_serializer=rmcs__resource__api_dot_buffer__pb2.BuffersSelector.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferListResponse.FromString,
+                _registered_method=True)
         self.ListBufferLast = channel.unary_unary(
                 '/buffer.BufferService/ListBufferLast',
+                request_serializer=rmcs__resource__api_dot_buffer__pb2.BuffersSelector.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferListResponse.FromString,
+                _registered_method=True)
+        self.ListBufferLastOffset = channel.unary_unary(
+                '/buffer.BufferService/ListBufferLastOffset',
                 request_serializer=rmcs__resource__api_dot_buffer__pb2.BuffersSelector.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferListResponse.FromString,
                 _registered_method=True)
@@ -119,7 +129,19 @@ class BufferServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListBufferFirstOffset(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def ListBufferLast(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListBufferLastOffset(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -171,8 +193,18 @@ def add_BufferServiceServicer_to_server(servicer, server):
                     request_deserializer=rmcs__resource__api_dot_buffer__pb2.BuffersSelector.FromString,
                     response_serializer=rmcs__resource__api_dot_buffer__pb2.BufferListResponse.SerializeToString,
             ),
+            'ListBufferFirstOffset': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListBufferFirstOffset,
+                    request_deserializer=rmcs__resource__api_dot_buffer__pb2.BuffersSelector.FromString,
+                    response_serializer=rmcs__resource__api_dot_buffer__pb2.BufferListResponse.SerializeToString,
+            ),
             'ListBufferLast': grpc.unary_unary_rpc_method_handler(
                     servicer.ListBufferLast,
+                    request_deserializer=rmcs__resource__api_dot_buffer__pb2.BuffersSelector.FromString,
+                    response_serializer=rmcs__resource__api_dot_buffer__pb2.BufferListResponse.SerializeToString,
+            ),
+            'ListBufferLastOffset': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListBufferLastOffset,
                     request_deserializer=rmcs__resource__api_dot_buffer__pb2.BuffersSelector.FromString,
                     response_serializer=rmcs__resource__api_dot_buffer__pb2.BufferListResponse.SerializeToString,
             ),
@@ -337,6 +369,33 @@ class BufferService(object):
             _registered_method=True)
 
     @staticmethod
+    def ListBufferFirstOffset(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/buffer.BufferService/ListBufferFirstOffset',
+            rmcs__resource__api_dot_buffer__pb2.BuffersSelector.SerializeToString,
+            rmcs__resource__api_dot_buffer__pb2.BufferListResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
     def ListBufferLast(request,
             target,
             options=(),
@@ -351,6 +410,33 @@ class BufferService(object):
             request,
             target,
             '/buffer.BufferService/ListBufferLast',
+            rmcs__resource__api_dot_buffer__pb2.BuffersSelector.SerializeToString,
+            rmcs__resource__api_dot_buffer__pb2.BufferListResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListBufferLastOffset(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/buffer.BufferService/ListBufferLastOffset',
             rmcs__resource__api_dot_buffer__pb2.BuffersSelector.SerializeToString,
             rmcs__resource__api_dot_buffer__pb2.BufferListResponse.FromString,
             options,

@@ -53,16 +53,18 @@ class BufferSelector(_message.Message):
     def __init__(self, device_id: _Optional[bytes] = ..., model_id: _Optional[bytes] = ..., status: _Optional[int] = ...) -> None: ...
 
 class BuffersSelector(_message.Message):
-    __slots__ = ("device_id", "model_id", "status", "number")
+    __slots__ = ("device_id", "model_id", "status", "number", "offset")
     DEVICE_ID_FIELD_NUMBER: _ClassVar[int]
     MODEL_ID_FIELD_NUMBER: _ClassVar[int]
     STATUS_FIELD_NUMBER: _ClassVar[int]
     NUMBER_FIELD_NUMBER: _ClassVar[int]
+    OFFSET_FIELD_NUMBER: _ClassVar[int]
     device_id: bytes
     model_id: bytes
     status: int
     number: int
-    def __init__(self, device_id: _Optional[bytes] = ..., model_id: _Optional[bytes] = ..., status: _Optional[int] = ..., number: _Optional[int] = ...) -> None: ...
+    offset: int
+    def __init__(self, device_id: _Optional[bytes] = ..., model_id: _Optional[bytes] = ..., status: _Optional[int] = ..., number: _Optional[int] = ..., offset: _Optional[int] = ...) -> None: ...
 
 class BufferUpdate(_message.Message):
     __slots__ = ("id", "data_bytes", "data_type", "status")

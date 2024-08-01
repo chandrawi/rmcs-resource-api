@@ -56,6 +56,8 @@ pub struct BuffersSelector {
     pub status: ::core::option::Option<i32>,
     #[prost(uint32, tag = "4")]
     pub number: u32,
+    #[prost(uint32, tag = "5")]
+    pub offset: u32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -300,6 +302,33 @@ pub mod buffer_service_client {
                 .insert(GrpcMethod::new("buffer.BufferService", "ListBufferFirst"));
             self.inner.unary(req, path, codec).await
         }
+        pub async fn list_buffer_first_offset(
+            &mut self,
+            request: impl tonic::IntoRequest<super::BuffersSelector>,
+        ) -> std::result::Result<
+            tonic::Response<super::BufferListResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/buffer.BufferService/ListBufferFirstOffset",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new("buffer.BufferService", "ListBufferFirstOffset"),
+                );
+            self.inner.unary(req, path, codec).await
+        }
         pub async fn list_buffer_last(
             &mut self,
             request: impl tonic::IntoRequest<super::BuffersSelector>,
@@ -323,6 +352,31 @@ pub mod buffer_service_client {
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("buffer.BufferService", "ListBufferLast"));
+            self.inner.unary(req, path, codec).await
+        }
+        pub async fn list_buffer_last_offset(
+            &mut self,
+            request: impl tonic::IntoRequest<super::BuffersSelector>,
+        ) -> std::result::Result<
+            tonic::Response<super::BufferListResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/buffer.BufferService/ListBufferLastOffset",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("buffer.BufferService", "ListBufferLastOffset"));
             self.inner.unary(req, path, codec).await
         }
         pub async fn create_buffer(
@@ -444,7 +498,21 @@ pub mod buffer_service_server {
             tonic::Response<super::BufferListResponse>,
             tonic::Status,
         >;
+        async fn list_buffer_first_offset(
+            &self,
+            request: tonic::Request<super::BuffersSelector>,
+        ) -> std::result::Result<
+            tonic::Response<super::BufferListResponse>,
+            tonic::Status,
+        >;
         async fn list_buffer_last(
+            &self,
+            request: tonic::Request<super::BuffersSelector>,
+        ) -> std::result::Result<
+            tonic::Response<super::BufferListResponse>,
+            tonic::Status,
+        >;
+        async fn list_buffer_last_offset(
             &self,
             request: tonic::Request<super::BuffersSelector>,
         ) -> std::result::Result<
@@ -774,6 +842,55 @@ pub mod buffer_service_server {
                     };
                     Box::pin(fut)
                 }
+                "/buffer.BufferService/ListBufferFirstOffset" => {
+                    #[allow(non_camel_case_types)]
+                    struct ListBufferFirstOffsetSvc<T: BufferService>(pub Arc<T>);
+                    impl<
+                        T: BufferService,
+                    > tonic::server::UnaryService<super::BuffersSelector>
+                    for ListBufferFirstOffsetSvc<T> {
+                        type Response = super::BufferListResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::BuffersSelector>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as BufferService>::list_buffer_first_offset(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = ListBufferFirstOffsetSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
                 "/buffer.BufferService/ListBufferLast" => {
                     #[allow(non_camel_case_types)]
                     struct ListBufferLastSvc<T: BufferService>(pub Arc<T>);
@@ -805,6 +922,55 @@ pub mod buffer_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListBufferLastSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/buffer.BufferService/ListBufferLastOffset" => {
+                    #[allow(non_camel_case_types)]
+                    struct ListBufferLastOffsetSvc<T: BufferService>(pub Arc<T>);
+                    impl<
+                        T: BufferService,
+                    > tonic::server::UnaryService<super::BuffersSelector>
+                    for ListBufferLastOffsetSvc<T> {
+                        type Response = super::BufferListResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::BuffersSelector>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as BufferService>::list_buffer_last_offset(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = ListBufferLastOffsetSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
