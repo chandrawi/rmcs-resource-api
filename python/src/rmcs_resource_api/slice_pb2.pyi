@@ -29,31 +29,59 @@ class SliceId(_message.Message):
     id: int
     def __init__(self, id: _Optional[int] = ...) -> None: ...
 
-class SliceName(_message.Message):
-    __slots__ = ("name",)
+class SliceTime(_message.Message):
+    __slots__ = ("device_id", "model_id", "timestamp")
+    DEVICE_ID_FIELD_NUMBER: _ClassVar[int]
+    MODEL_ID_FIELD_NUMBER: _ClassVar[int]
+    TIMESTAMP_FIELD_NUMBER: _ClassVar[int]
+    device_id: bytes
+    model_id: bytes
+    timestamp: int
+    def __init__(self, device_id: _Optional[bytes] = ..., model_id: _Optional[bytes] = ..., timestamp: _Optional[int] = ...) -> None: ...
+
+class SliceRange(_message.Message):
+    __slots__ = ("device_id", "model_id", "begin", "end")
+    DEVICE_ID_FIELD_NUMBER: _ClassVar[int]
+    MODEL_ID_FIELD_NUMBER: _ClassVar[int]
+    BEGIN_FIELD_NUMBER: _ClassVar[int]
+    END_FIELD_NUMBER: _ClassVar[int]
+    device_id: bytes
+    model_id: bytes
+    begin: int
+    end: int
+    def __init__(self, device_id: _Optional[bytes] = ..., model_id: _Optional[bytes] = ..., begin: _Optional[int] = ..., end: _Optional[int] = ...) -> None: ...
+
+class SliceNameTime(_message.Message):
+    __slots__ = ("name", "timestamp")
     NAME_FIELD_NUMBER: _ClassVar[int]
+    TIMESTAMP_FIELD_NUMBER: _ClassVar[int]
     name: str
-    def __init__(self, name: _Optional[str] = ...) -> None: ...
+    timestamp: int
+    def __init__(self, name: _Optional[str] = ..., timestamp: _Optional[int] = ...) -> None: ...
 
-class SliceDevice(_message.Message):
-    __slots__ = ("device_id",)
+class SliceNameRange(_message.Message):
+    __slots__ = ("name", "begin", "end")
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    BEGIN_FIELD_NUMBER: _ClassVar[int]
+    END_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    begin: int
+    end: int
+    def __init__(self, name: _Optional[str] = ..., begin: _Optional[int] = ..., end: _Optional[int] = ...) -> None: ...
+
+class SliceOption(_message.Message):
+    __slots__ = ("device_id", "model_id", "name", "begin", "end")
     DEVICE_ID_FIELD_NUMBER: _ClassVar[int]
-    device_id: bytes
-    def __init__(self, device_id: _Optional[bytes] = ...) -> None: ...
-
-class SliceModel(_message.Message):
-    __slots__ = ("model_id",)
     MODEL_ID_FIELD_NUMBER: _ClassVar[int]
-    model_id: bytes
-    def __init__(self, model_id: _Optional[bytes] = ...) -> None: ...
-
-class SliceDeviceModel(_message.Message):
-    __slots__ = ("device_id", "model_id")
-    DEVICE_ID_FIELD_NUMBER: _ClassVar[int]
-    MODEL_ID_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    BEGIN_FIELD_NUMBER: _ClassVar[int]
+    END_FIELD_NUMBER: _ClassVar[int]
     device_id: bytes
     model_id: bytes
-    def __init__(self, device_id: _Optional[bytes] = ..., model_id: _Optional[bytes] = ...) -> None: ...
+    name: str
+    begin: int
+    end: int
+    def __init__(self, device_id: _Optional[bytes] = ..., model_id: _Optional[bytes] = ..., name: _Optional[str] = ..., begin: _Optional[int] = ..., end: _Optional[int] = ...) -> None: ...
 
 class SliceUpdate(_message.Message):
     __slots__ = ("id", "timestamp_begin", "timestamp_end", "name", "description")
@@ -68,6 +96,52 @@ class SliceUpdate(_message.Message):
     name: str
     description: str
     def __init__(self, id: _Optional[int] = ..., timestamp_begin: _Optional[int] = ..., timestamp_end: _Optional[int] = ..., name: _Optional[str] = ..., description: _Optional[str] = ...) -> None: ...
+
+class SliceSetSchema(_message.Message):
+    __slots__ = ("id", "set_id", "timestamp_begin", "timestamp_end", "name", "description")
+    ID_FIELD_NUMBER: _ClassVar[int]
+    SET_ID_FIELD_NUMBER: _ClassVar[int]
+    TIMESTAMP_BEGIN_FIELD_NUMBER: _ClassVar[int]
+    TIMESTAMP_END_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
+    id: int
+    set_id: bytes
+    timestamp_begin: int
+    timestamp_end: int
+    name: str
+    description: str
+    def __init__(self, id: _Optional[int] = ..., set_id: _Optional[bytes] = ..., timestamp_begin: _Optional[int] = ..., timestamp_end: _Optional[int] = ..., name: _Optional[str] = ..., description: _Optional[str] = ...) -> None: ...
+
+class SliceSetTime(_message.Message):
+    __slots__ = ("set_id", "timestamp")
+    SET_ID_FIELD_NUMBER: _ClassVar[int]
+    TIMESTAMP_FIELD_NUMBER: _ClassVar[int]
+    set_id: bytes
+    timestamp: int
+    def __init__(self, set_id: _Optional[bytes] = ..., timestamp: _Optional[int] = ...) -> None: ...
+
+class SliceSetRange(_message.Message):
+    __slots__ = ("set_id", "begin", "end")
+    SET_ID_FIELD_NUMBER: _ClassVar[int]
+    BEGIN_FIELD_NUMBER: _ClassVar[int]
+    END_FIELD_NUMBER: _ClassVar[int]
+    set_id: bytes
+    begin: int
+    end: int
+    def __init__(self, set_id: _Optional[bytes] = ..., begin: _Optional[int] = ..., end: _Optional[int] = ...) -> None: ...
+
+class SliceSetOption(_message.Message):
+    __slots__ = ("set_id", "name", "begin", "end")
+    SET_ID_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    BEGIN_FIELD_NUMBER: _ClassVar[int]
+    END_FIELD_NUMBER: _ClassVar[int]
+    set_id: bytes
+    name: str
+    begin: int
+    end: int
+    def __init__(self, set_id: _Optional[bytes] = ..., name: _Optional[str] = ..., begin: _Optional[int] = ..., end: _Optional[int] = ...) -> None: ...
 
 class SliceReadResponse(_message.Message):
     __slots__ = ("result",)
@@ -90,3 +164,15 @@ class SliceCreateResponse(_message.Message):
 class SliceChangeResponse(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
+
+class SliceSetReadResponse(_message.Message):
+    __slots__ = ("result",)
+    RESULT_FIELD_NUMBER: _ClassVar[int]
+    result: SliceSetSchema
+    def __init__(self, result: _Optional[_Union[SliceSetSchema, _Mapping]] = ...) -> None: ...
+
+class SliceSetListResponse(_message.Message):
+    __slots__ = ("results",)
+    RESULTS_FIELD_NUMBER: _ClassVar[int]
+    results: _containers.RepeatedCompositeFieldContainer[SliceSetSchema]
+    def __init__(self, results: _Optional[_Iterable[_Union[SliceSetSchema, _Mapping]]] = ...) -> None: ...

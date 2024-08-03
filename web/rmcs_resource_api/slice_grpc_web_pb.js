@@ -138,16 +138,16 @@ proto.slice.SliceServicePromiseClient.prototype.readSlice =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.slice.SliceName,
+ *   !proto.slice.SliceTime,
  *   !proto.slice.SliceListResponse>}
  */
-const methodDescriptor_SliceService_ListSliceByName = new grpc.web.MethodDescriptor(
-  '/slice.SliceService/ListSliceByName',
+const methodDescriptor_SliceService_ListSliceByTime = new grpc.web.MethodDescriptor(
+  '/slice.SliceService/ListSliceByTime',
   grpc.web.MethodType.UNARY,
-  proto.slice.SliceName,
+  proto.slice.SliceTime,
   proto.slice.SliceListResponse,
   /**
-   * @param {!proto.slice.SliceName} request
+   * @param {!proto.slice.SliceTime} request
    * @return {!Uint8Array}
    */
   function(request) {
@@ -158,7 +158,7 @@ const methodDescriptor_SliceService_ListSliceByName = new grpc.web.MethodDescrip
 
 
 /**
- * @param {!proto.slice.SliceName} request The
+ * @param {!proto.slice.SliceTime} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
@@ -167,48 +167,48 @@ const methodDescriptor_SliceService_ListSliceByName = new grpc.web.MethodDescrip
  * @return {!grpc.web.ClientReadableStream<!proto.slice.SliceListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.slice.SliceServiceClient.prototype.listSliceByName =
+proto.slice.SliceServiceClient.prototype.listSliceByTime =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/slice.SliceService/ListSliceByName',
+      '/slice.SliceService/ListSliceByTime',
       request,
       metadata || {},
-      methodDescriptor_SliceService_ListSliceByName,
+      methodDescriptor_SliceService_ListSliceByTime,
       callback);
 };
 
 
 /**
- * @param {!proto.slice.SliceName} request The
+ * @param {!proto.slice.SliceTime} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.slice.SliceListResponse>}
  *     Promise that resolves to the response
  */
-proto.slice.SliceServicePromiseClient.prototype.listSliceByName =
+proto.slice.SliceServicePromiseClient.prototype.listSliceByTime =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/slice.SliceService/ListSliceByName',
+      '/slice.SliceService/ListSliceByTime',
       request,
       metadata || {},
-      methodDescriptor_SliceService_ListSliceByName);
+      methodDescriptor_SliceService_ListSliceByTime);
 };
 
 
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.slice.SliceDevice,
+ *   !proto.slice.SliceRange,
  *   !proto.slice.SliceListResponse>}
  */
-const methodDescriptor_SliceService_ListSliceByDevice = new grpc.web.MethodDescriptor(
-  '/slice.SliceService/ListSliceByDevice',
+const methodDescriptor_SliceService_ListSliceByRangeTime = new grpc.web.MethodDescriptor(
+  '/slice.SliceService/ListSliceByRangeTime',
   grpc.web.MethodType.UNARY,
-  proto.slice.SliceDevice,
+  proto.slice.SliceRange,
   proto.slice.SliceListResponse,
   /**
-   * @param {!proto.slice.SliceDevice} request
+   * @param {!proto.slice.SliceRange} request
    * @return {!Uint8Array}
    */
   function(request) {
@@ -219,7 +219,7 @@ const methodDescriptor_SliceService_ListSliceByDevice = new grpc.web.MethodDescr
 
 
 /**
- * @param {!proto.slice.SliceDevice} request The
+ * @param {!proto.slice.SliceRange} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
@@ -228,48 +228,48 @@ const methodDescriptor_SliceService_ListSliceByDevice = new grpc.web.MethodDescr
  * @return {!grpc.web.ClientReadableStream<!proto.slice.SliceListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.slice.SliceServiceClient.prototype.listSliceByDevice =
+proto.slice.SliceServiceClient.prototype.listSliceByRangeTime =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/slice.SliceService/ListSliceByDevice',
+      '/slice.SliceService/ListSliceByRangeTime',
       request,
       metadata || {},
-      methodDescriptor_SliceService_ListSliceByDevice,
+      methodDescriptor_SliceService_ListSliceByRangeTime,
       callback);
 };
 
 
 /**
- * @param {!proto.slice.SliceDevice} request The
+ * @param {!proto.slice.SliceRange} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.slice.SliceListResponse>}
  *     Promise that resolves to the response
  */
-proto.slice.SliceServicePromiseClient.prototype.listSliceByDevice =
+proto.slice.SliceServicePromiseClient.prototype.listSliceByRangeTime =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/slice.SliceService/ListSliceByDevice',
+      '/slice.SliceService/ListSliceByRangeTime',
       request,
       metadata || {},
-      methodDescriptor_SliceService_ListSliceByDevice);
+      methodDescriptor_SliceService_ListSliceByRangeTime);
 };
 
 
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.slice.SliceModel,
+ *   !proto.slice.SliceNameTime,
  *   !proto.slice.SliceListResponse>}
  */
-const methodDescriptor_SliceService_ListSliceByModel = new grpc.web.MethodDescriptor(
-  '/slice.SliceService/ListSliceByModel',
+const methodDescriptor_SliceService_ListSliceByNameTime = new grpc.web.MethodDescriptor(
+  '/slice.SliceService/ListSliceByNameTime',
   grpc.web.MethodType.UNARY,
-  proto.slice.SliceModel,
+  proto.slice.SliceNameTime,
   proto.slice.SliceListResponse,
   /**
-   * @param {!proto.slice.SliceModel} request
+   * @param {!proto.slice.SliceNameTime} request
    * @return {!Uint8Array}
    */
   function(request) {
@@ -280,7 +280,7 @@ const methodDescriptor_SliceService_ListSliceByModel = new grpc.web.MethodDescri
 
 
 /**
- * @param {!proto.slice.SliceModel} request The
+ * @param {!proto.slice.SliceNameTime} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
@@ -289,48 +289,48 @@ const methodDescriptor_SliceService_ListSliceByModel = new grpc.web.MethodDescri
  * @return {!grpc.web.ClientReadableStream<!proto.slice.SliceListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.slice.SliceServiceClient.prototype.listSliceByModel =
+proto.slice.SliceServiceClient.prototype.listSliceByNameTime =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/slice.SliceService/ListSliceByModel',
+      '/slice.SliceService/ListSliceByNameTime',
       request,
       metadata || {},
-      methodDescriptor_SliceService_ListSliceByModel,
+      methodDescriptor_SliceService_ListSliceByNameTime,
       callback);
 };
 
 
 /**
- * @param {!proto.slice.SliceModel} request The
+ * @param {!proto.slice.SliceNameTime} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.slice.SliceListResponse>}
  *     Promise that resolves to the response
  */
-proto.slice.SliceServicePromiseClient.prototype.listSliceByModel =
+proto.slice.SliceServicePromiseClient.prototype.listSliceByNameTime =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/slice.SliceService/ListSliceByModel',
+      '/slice.SliceService/ListSliceByNameTime',
       request,
       metadata || {},
-      methodDescriptor_SliceService_ListSliceByModel);
+      methodDescriptor_SliceService_ListSliceByNameTime);
 };
 
 
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.slice.SliceDeviceModel,
+ *   !proto.slice.SliceNameRange,
  *   !proto.slice.SliceListResponse>}
  */
-const methodDescriptor_SliceService_ListSliceByDeviceModel = new grpc.web.MethodDescriptor(
-  '/slice.SliceService/ListSliceByDeviceModel',
+const methodDescriptor_SliceService_ListSliceByNameRangeTime = new grpc.web.MethodDescriptor(
+  '/slice.SliceService/ListSliceByNameRangeTime',
   grpc.web.MethodType.UNARY,
-  proto.slice.SliceDeviceModel,
+  proto.slice.SliceNameRange,
   proto.slice.SliceListResponse,
   /**
-   * @param {!proto.slice.SliceDeviceModel} request
+   * @param {!proto.slice.SliceNameRange} request
    * @return {!Uint8Array}
    */
   function(request) {
@@ -341,7 +341,7 @@ const methodDescriptor_SliceService_ListSliceByDeviceModel = new grpc.web.Method
 
 
 /**
- * @param {!proto.slice.SliceDeviceModel} request The
+ * @param {!proto.slice.SliceNameRange} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
@@ -350,32 +350,93 @@ const methodDescriptor_SliceService_ListSliceByDeviceModel = new grpc.web.Method
  * @return {!grpc.web.ClientReadableStream<!proto.slice.SliceListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.slice.SliceServiceClient.prototype.listSliceByDeviceModel =
+proto.slice.SliceServiceClient.prototype.listSliceByNameRangeTime =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/slice.SliceService/ListSliceByDeviceModel',
+      '/slice.SliceService/ListSliceByNameRangeTime',
       request,
       metadata || {},
-      methodDescriptor_SliceService_ListSliceByDeviceModel,
+      methodDescriptor_SliceService_ListSliceByNameRangeTime,
       callback);
 };
 
 
 /**
- * @param {!proto.slice.SliceDeviceModel} request The
+ * @param {!proto.slice.SliceNameRange} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.slice.SliceListResponse>}
  *     Promise that resolves to the response
  */
-proto.slice.SliceServicePromiseClient.prototype.listSliceByDeviceModel =
+proto.slice.SliceServicePromiseClient.prototype.listSliceByNameRangeTime =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/slice.SliceService/ListSliceByDeviceModel',
+      '/slice.SliceService/ListSliceByNameRangeTime',
       request,
       metadata || {},
-      methodDescriptor_SliceService_ListSliceByDeviceModel);
+      methodDescriptor_SliceService_ListSliceByNameRangeTime);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.slice.SliceOption,
+ *   !proto.slice.SliceListResponse>}
+ */
+const methodDescriptor_SliceService_ListSliceOption = new grpc.web.MethodDescriptor(
+  '/slice.SliceService/ListSliceOption',
+  grpc.web.MethodType.UNARY,
+  proto.slice.SliceOption,
+  proto.slice.SliceListResponse,
+  /**
+   * @param {!proto.slice.SliceOption} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.slice.SliceListResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.slice.SliceOption} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.slice.SliceListResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.slice.SliceListResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.slice.SliceServiceClient.prototype.listSliceOption =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/slice.SliceService/ListSliceOption',
+      request,
+      metadata || {},
+      methodDescriptor_SliceService_ListSliceOption,
+      callback);
+};
+
+
+/**
+ * @param {!proto.slice.SliceOption} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.slice.SliceListResponse>}
+ *     Promise that resolves to the response
+ */
+proto.slice.SliceServicePromiseClient.prototype.listSliceOption =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/slice.SliceService/ListSliceOption',
+      request,
+      metadata || {},
+      methodDescriptor_SliceService_ListSliceOption);
 };
 
 
@@ -559,6 +620,555 @@ proto.slice.SliceServicePromiseClient.prototype.deleteSlice =
       request,
       metadata || {},
       methodDescriptor_SliceService_DeleteSlice);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.slice.SliceId,
+ *   !proto.slice.SliceSetReadResponse>}
+ */
+const methodDescriptor_SliceService_ReadSliceSet = new grpc.web.MethodDescriptor(
+  '/slice.SliceService/ReadSliceSet',
+  grpc.web.MethodType.UNARY,
+  proto.slice.SliceId,
+  proto.slice.SliceSetReadResponse,
+  /**
+   * @param {!proto.slice.SliceId} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.slice.SliceSetReadResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.slice.SliceId} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.slice.SliceSetReadResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.slice.SliceSetReadResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.slice.SliceServiceClient.prototype.readSliceSet =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/slice.SliceService/ReadSliceSet',
+      request,
+      metadata || {},
+      methodDescriptor_SliceService_ReadSliceSet,
+      callback);
+};
+
+
+/**
+ * @param {!proto.slice.SliceId} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.slice.SliceSetReadResponse>}
+ *     Promise that resolves to the response
+ */
+proto.slice.SliceServicePromiseClient.prototype.readSliceSet =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/slice.SliceService/ReadSliceSet',
+      request,
+      metadata || {},
+      methodDescriptor_SliceService_ReadSliceSet);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.slice.SliceSetTime,
+ *   !proto.slice.SliceSetListResponse>}
+ */
+const methodDescriptor_SliceService_ListSliceSetByTime = new grpc.web.MethodDescriptor(
+  '/slice.SliceService/ListSliceSetByTime',
+  grpc.web.MethodType.UNARY,
+  proto.slice.SliceSetTime,
+  proto.slice.SliceSetListResponse,
+  /**
+   * @param {!proto.slice.SliceSetTime} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.slice.SliceSetListResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.slice.SliceSetTime} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.slice.SliceSetListResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.slice.SliceSetListResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.slice.SliceServiceClient.prototype.listSliceSetByTime =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/slice.SliceService/ListSliceSetByTime',
+      request,
+      metadata || {},
+      methodDescriptor_SliceService_ListSliceSetByTime,
+      callback);
+};
+
+
+/**
+ * @param {!proto.slice.SliceSetTime} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.slice.SliceSetListResponse>}
+ *     Promise that resolves to the response
+ */
+proto.slice.SliceServicePromiseClient.prototype.listSliceSetByTime =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/slice.SliceService/ListSliceSetByTime',
+      request,
+      metadata || {},
+      methodDescriptor_SliceService_ListSliceSetByTime);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.slice.SliceSetRange,
+ *   !proto.slice.SliceSetListResponse>}
+ */
+const methodDescriptor_SliceService_ListSliceSetByRangeTime = new grpc.web.MethodDescriptor(
+  '/slice.SliceService/ListSliceSetByRangeTime',
+  grpc.web.MethodType.UNARY,
+  proto.slice.SliceSetRange,
+  proto.slice.SliceSetListResponse,
+  /**
+   * @param {!proto.slice.SliceSetRange} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.slice.SliceSetListResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.slice.SliceSetRange} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.slice.SliceSetListResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.slice.SliceSetListResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.slice.SliceServiceClient.prototype.listSliceSetByRangeTime =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/slice.SliceService/ListSliceSetByRangeTime',
+      request,
+      metadata || {},
+      methodDescriptor_SliceService_ListSliceSetByRangeTime,
+      callback);
+};
+
+
+/**
+ * @param {!proto.slice.SliceSetRange} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.slice.SliceSetListResponse>}
+ *     Promise that resolves to the response
+ */
+proto.slice.SliceServicePromiseClient.prototype.listSliceSetByRangeTime =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/slice.SliceService/ListSliceSetByRangeTime',
+      request,
+      metadata || {},
+      methodDescriptor_SliceService_ListSliceSetByRangeTime);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.slice.SliceNameTime,
+ *   !proto.slice.SliceSetListResponse>}
+ */
+const methodDescriptor_SliceService_ListSliceSetByNameTime = new grpc.web.MethodDescriptor(
+  '/slice.SliceService/ListSliceSetByNameTime',
+  grpc.web.MethodType.UNARY,
+  proto.slice.SliceNameTime,
+  proto.slice.SliceSetListResponse,
+  /**
+   * @param {!proto.slice.SliceNameTime} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.slice.SliceSetListResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.slice.SliceNameTime} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.slice.SliceSetListResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.slice.SliceSetListResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.slice.SliceServiceClient.prototype.listSliceSetByNameTime =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/slice.SliceService/ListSliceSetByNameTime',
+      request,
+      metadata || {},
+      methodDescriptor_SliceService_ListSliceSetByNameTime,
+      callback);
+};
+
+
+/**
+ * @param {!proto.slice.SliceNameTime} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.slice.SliceSetListResponse>}
+ *     Promise that resolves to the response
+ */
+proto.slice.SliceServicePromiseClient.prototype.listSliceSetByNameTime =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/slice.SliceService/ListSliceSetByNameTime',
+      request,
+      metadata || {},
+      methodDescriptor_SliceService_ListSliceSetByNameTime);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.slice.SliceNameRange,
+ *   !proto.slice.SliceSetListResponse>}
+ */
+const methodDescriptor_SliceService_ListSliceSetByNameRangeTime = new grpc.web.MethodDescriptor(
+  '/slice.SliceService/ListSliceSetByNameRangeTime',
+  grpc.web.MethodType.UNARY,
+  proto.slice.SliceNameRange,
+  proto.slice.SliceSetListResponse,
+  /**
+   * @param {!proto.slice.SliceNameRange} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.slice.SliceSetListResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.slice.SliceNameRange} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.slice.SliceSetListResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.slice.SliceSetListResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.slice.SliceServiceClient.prototype.listSliceSetByNameRangeTime =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/slice.SliceService/ListSliceSetByNameRangeTime',
+      request,
+      metadata || {},
+      methodDescriptor_SliceService_ListSliceSetByNameRangeTime,
+      callback);
+};
+
+
+/**
+ * @param {!proto.slice.SliceNameRange} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.slice.SliceSetListResponse>}
+ *     Promise that resolves to the response
+ */
+proto.slice.SliceServicePromiseClient.prototype.listSliceSetByNameRangeTime =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/slice.SliceService/ListSliceSetByNameRangeTime',
+      request,
+      metadata || {},
+      methodDescriptor_SliceService_ListSliceSetByNameRangeTime);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.slice.SliceSetOption,
+ *   !proto.slice.SliceSetListResponse>}
+ */
+const methodDescriptor_SliceService_ListSliceSetOption = new grpc.web.MethodDescriptor(
+  '/slice.SliceService/ListSliceSetOption',
+  grpc.web.MethodType.UNARY,
+  proto.slice.SliceSetOption,
+  proto.slice.SliceSetListResponse,
+  /**
+   * @param {!proto.slice.SliceSetOption} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.slice.SliceSetListResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.slice.SliceSetOption} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.slice.SliceSetListResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.slice.SliceSetListResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.slice.SliceServiceClient.prototype.listSliceSetOption =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/slice.SliceService/ListSliceSetOption',
+      request,
+      metadata || {},
+      methodDescriptor_SliceService_ListSliceSetOption,
+      callback);
+};
+
+
+/**
+ * @param {!proto.slice.SliceSetOption} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.slice.SliceSetListResponse>}
+ *     Promise that resolves to the response
+ */
+proto.slice.SliceServicePromiseClient.prototype.listSliceSetOption =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/slice.SliceService/ListSliceSetOption',
+      request,
+      metadata || {},
+      methodDescriptor_SliceService_ListSliceSetOption);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.slice.SliceSetSchema,
+ *   !proto.slice.SliceCreateResponse>}
+ */
+const methodDescriptor_SliceService_CreateSliceSet = new grpc.web.MethodDescriptor(
+  '/slice.SliceService/CreateSliceSet',
+  grpc.web.MethodType.UNARY,
+  proto.slice.SliceSetSchema,
+  proto.slice.SliceCreateResponse,
+  /**
+   * @param {!proto.slice.SliceSetSchema} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.slice.SliceCreateResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.slice.SliceSetSchema} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.slice.SliceCreateResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.slice.SliceCreateResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.slice.SliceServiceClient.prototype.createSliceSet =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/slice.SliceService/CreateSliceSet',
+      request,
+      metadata || {},
+      methodDescriptor_SliceService_CreateSliceSet,
+      callback);
+};
+
+
+/**
+ * @param {!proto.slice.SliceSetSchema} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.slice.SliceCreateResponse>}
+ *     Promise that resolves to the response
+ */
+proto.slice.SliceServicePromiseClient.prototype.createSliceSet =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/slice.SliceService/CreateSliceSet',
+      request,
+      metadata || {},
+      methodDescriptor_SliceService_CreateSliceSet);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.slice.SliceUpdate,
+ *   !proto.slice.SliceChangeResponse>}
+ */
+const methodDescriptor_SliceService_UpdateSliceSet = new grpc.web.MethodDescriptor(
+  '/slice.SliceService/UpdateSliceSet',
+  grpc.web.MethodType.UNARY,
+  proto.slice.SliceUpdate,
+  proto.slice.SliceChangeResponse,
+  /**
+   * @param {!proto.slice.SliceUpdate} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.slice.SliceChangeResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.slice.SliceUpdate} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.slice.SliceChangeResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.slice.SliceChangeResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.slice.SliceServiceClient.prototype.updateSliceSet =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/slice.SliceService/UpdateSliceSet',
+      request,
+      metadata || {},
+      methodDescriptor_SliceService_UpdateSliceSet,
+      callback);
+};
+
+
+/**
+ * @param {!proto.slice.SliceUpdate} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.slice.SliceChangeResponse>}
+ *     Promise that resolves to the response
+ */
+proto.slice.SliceServicePromiseClient.prototype.updateSliceSet =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/slice.SliceService/UpdateSliceSet',
+      request,
+      metadata || {},
+      methodDescriptor_SliceService_UpdateSliceSet);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.slice.SliceId,
+ *   !proto.slice.SliceChangeResponse>}
+ */
+const methodDescriptor_SliceService_DeleteSliceSet = new grpc.web.MethodDescriptor(
+  '/slice.SliceService/DeleteSliceSet',
+  grpc.web.MethodType.UNARY,
+  proto.slice.SliceId,
+  proto.slice.SliceChangeResponse,
+  /**
+   * @param {!proto.slice.SliceId} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.slice.SliceChangeResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.slice.SliceId} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.slice.SliceChangeResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.slice.SliceChangeResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.slice.SliceServiceClient.prototype.deleteSliceSet =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/slice.SliceService/DeleteSliceSet',
+      request,
+      metadata || {},
+      methodDescriptor_SliceService_DeleteSliceSet,
+      callback);
+};
+
+
+/**
+ * @param {!proto.slice.SliceId} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.slice.SliceChangeResponse>}
+ *     Promise that resolves to the response
+ */
+proto.slice.SliceServicePromiseClient.prototype.deleteSliceSet =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/slice.SliceService/DeleteSliceSet',
+      request,
+      metadata || {},
+      methodDescriptor_SliceService_DeleteSliceSet);
 };
 
 

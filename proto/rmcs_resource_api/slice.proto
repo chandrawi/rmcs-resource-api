@@ -4,19 +4,39 @@ package slice;
 service SliceService {
     rpc ReadSlice(SliceId) returns (SliceReadResponse);
 
-    rpc ListSliceByName(SliceName) returns (SliceListResponse);
+    rpc ListSliceByTime(SliceTime) returns (SliceListResponse);
 
-    rpc ListSliceByDevice(SliceDevice) returns (SliceListResponse);
+    rpc ListSliceByRangeTime(SliceRange) returns (SliceListResponse);
 
-    rpc ListSliceByModel(SliceModel) returns (SliceListResponse);
+    rpc ListSliceByNameTime(SliceNameTime) returns (SliceListResponse);
 
-    rpc ListSliceByDeviceModel(SliceDeviceModel) returns (SliceListResponse);
+    rpc ListSliceByNameRangeTime(SliceNameRange) returns (SliceListResponse);
+
+    rpc ListSliceOption(SliceOption) returns (SliceListResponse);
 
     rpc CreateSlice(SliceSchema) returns (SliceCreateResponse);
 
     rpc UpdateSlice(SliceUpdate) returns (SliceChangeResponse);
 
     rpc DeleteSlice(SliceId) returns (SliceChangeResponse);
+
+    rpc ReadSliceSet(SliceId) returns (SliceSetReadResponse);
+
+    rpc ListSliceSetByTime(SliceSetTime) returns (SliceSetListResponse);
+
+    rpc ListSliceSetByRangeTime(SliceSetRange) returns (SliceSetListResponse);
+
+    rpc ListSliceSetByNameTime(SliceNameTime) returns (SliceSetListResponse);
+
+    rpc ListSliceSetByNameRangeTime(SliceNameRange) returns (SliceSetListResponse);
+
+    rpc ListSliceSetOption(SliceSetOption) returns (SliceSetListResponse);
+
+    rpc CreateSliceSet(SliceSetSchema) returns (SliceCreateResponse);
+
+    rpc UpdateSliceSet(SliceUpdate) returns (SliceChangeResponse);
+
+    rpc DeleteSliceSet(SliceId) returns (SliceChangeResponse);
 }
 
 message SliceSchema {
@@ -33,21 +53,36 @@ message SliceId {
     int32 id = 1;
 }
 
-message SliceName {
-    string name = 1;
-}
-
-message SliceDevice {
-    bytes device_id = 1;
-}
-
-message SliceModel {
-    bytes model_id = 1;
-}
-
-message SliceDeviceModel {
+message SliceTime {
     bytes device_id = 1;
     bytes model_id = 2;
+    int64 timestamp = 3;
+}
+
+message SliceRange {
+    bytes device_id = 1;
+    bytes model_id = 2;
+    int64 begin = 3;
+    int64 end = 4;
+}
+
+message SliceNameTime {
+    string name = 1;
+    int64 timestamp = 2;
+}
+
+message SliceNameRange {
+    string name = 1;
+    int64 begin = 2;
+    int64 end = 3;
+}
+
+message SliceOption {
+    optional bytes device_id = 1;
+    optional bytes model_id = 2;
+    optional string name = 3;
+    optional int64 begin = 4;
+    optional int64 end = 5;
 }
 
 message SliceUpdate {
@@ -56,6 +91,33 @@ message SliceUpdate {
     optional int64 timestamp_end = 3;
     optional string name = 4;
     optional string description = 5;
+}
+
+message SliceSetSchema {
+    int32 id = 1;
+    bytes set_id = 2;
+    int64 timestamp_begin = 3;
+    int64 timestamp_end = 4;
+    string name = 5;
+    string description = 6;
+}
+
+message SliceSetTime {
+    bytes set_id = 1;
+    int64 timestamp = 2;
+}
+
+message SliceSetRange {
+    bytes set_id = 1;
+    int64 begin = 2;
+    int64 end = 3;
+}
+
+message SliceSetOption {
+    optional bytes set_id = 1;
+    optional string name = 2;
+    optional int64 begin = 3;
+    optional int64 end = 4;
 }
 
 message SliceReadResponse {
@@ -71,4 +133,12 @@ message SliceCreateResponse {
 }
 
 message SliceChangeResponse {
+}
+
+message SliceSetReadResponse {
+    SliceSetSchema result = 1;
+}
+
+message SliceSetListResponse {
+    repeated SliceSetSchema results = 1;
 }
