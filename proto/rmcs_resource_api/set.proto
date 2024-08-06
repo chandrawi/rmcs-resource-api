@@ -10,6 +10,8 @@ service SetService {
 
     rpc ListSetByName(SetName) returns (SetListResponse);
 
+    rpc ListSetOption(SetOption) returns (SetListResponse);
+
     rpc CreateSet(SetSchema) returns (SetCreateResponse);
 
     rpc UpdateSet(SetUpdate) returns (SetChangeResponse);
@@ -27,6 +29,8 @@ service SetService {
     rpc ListSetTemplateByIds(SetTemplateIds) returns (TemplateListResponse);
 
     rpc ListSetTemplateByName(SetTemplateName) returns (TemplateListResponse);
+
+    rpc ListSetTemplateOption(SetTemplateOption) returns (TemplateListResponse);
 
     rpc CreateSetTemplate(SetTemplateSchema) returns (TemplateCreateResponse);
 
@@ -65,6 +69,11 @@ message SetIds {
 
 message SetName {
     string name = 1;
+}
+
+message SetOption {
+    optional bytes template_id = 1;
+    optional string name = 2;
 }
 
 message SetUpdate {
@@ -112,6 +121,10 @@ message SetTemplateIds {
 
 message SetTemplateName {
     string name = 1;
+}
+
+message SetTemplateOption {
+    optional string name = 1;
 }
 
 message SetTemplateUpdate {

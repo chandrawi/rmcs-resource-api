@@ -10,7 +10,7 @@ service GroupService {
 
     rpc ListGroupModelByCategory(GroupCategory) returns (GroupModelListResponse);
 
-    rpc ListGroupModelByNameCategory(GroupNameCategory) returns (GroupModelListResponse);
+    rpc ListGroupModelOption(GroupOption) returns (GroupModelListResponse);
 
     rpc CreateGroupModel(GroupModelSchema) returns (GroupCreateResponse);
 
@@ -30,7 +30,7 @@ service GroupService {
 
     rpc ListGroupDeviceByCategory(GroupCategory) returns (GroupDeviceListResponse);
 
-    rpc ListGroupDeviceByNameCategory(GroupNameCategory) returns (GroupDeviceListResponse);
+    rpc ListGroupDeviceOption(GroupOption) returns (GroupDeviceListResponse);
 
     rpc CreateGroupDevice(GroupDeviceSchema) returns (GroupCreateResponse);
 
@@ -50,7 +50,7 @@ service GroupService {
 
     rpc ListGroupGatewayByCategory(GroupCategory) returns (GroupDeviceListResponse);
 
-    rpc ListGroupGatewayByNameCategory(GroupNameCategory) returns (GroupDeviceListResponse);
+    rpc ListGroupGatewayOption(GroupOption) returns (GroupDeviceListResponse);
 
     rpc CreateGroupGateway(GroupDeviceSchema) returns (GroupCreateResponse);
 
@@ -95,9 +95,9 @@ message GroupCategory {
     string category = 1;
 }
 
-message GroupNameCategory {
-    string name = 1;
-    string category = 2;
+message GroupOption {
+    optional string name = 1;
+    optional string category = 2;
 }
 
 message GroupUpdate {

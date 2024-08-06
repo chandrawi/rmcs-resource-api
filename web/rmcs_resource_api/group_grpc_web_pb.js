@@ -321,16 +321,16 @@ proto.group.GroupServicePromiseClient.prototype.listGroupModelByCategory =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.group.GroupNameCategory,
+ *   !proto.group.GroupOption,
  *   !proto.group.GroupModelListResponse>}
  */
-const methodDescriptor_GroupService_ListGroupModelByNameCategory = new grpc.web.MethodDescriptor(
-  '/group.GroupService/ListGroupModelByNameCategory',
+const methodDescriptor_GroupService_ListGroupModelOption = new grpc.web.MethodDescriptor(
+  '/group.GroupService/ListGroupModelOption',
   grpc.web.MethodType.UNARY,
-  proto.group.GroupNameCategory,
+  proto.group.GroupOption,
   proto.group.GroupModelListResponse,
   /**
-   * @param {!proto.group.GroupNameCategory} request
+   * @param {!proto.group.GroupOption} request
    * @return {!Uint8Array}
    */
   function(request) {
@@ -341,7 +341,7 @@ const methodDescriptor_GroupService_ListGroupModelByNameCategory = new grpc.web.
 
 
 /**
- * @param {!proto.group.GroupNameCategory} request The
+ * @param {!proto.group.GroupOption} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
@@ -350,32 +350,32 @@ const methodDescriptor_GroupService_ListGroupModelByNameCategory = new grpc.web.
  * @return {!grpc.web.ClientReadableStream<!proto.group.GroupModelListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.group.GroupServiceClient.prototype.listGroupModelByNameCategory =
+proto.group.GroupServiceClient.prototype.listGroupModelOption =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/group.GroupService/ListGroupModelByNameCategory',
+      '/group.GroupService/ListGroupModelOption',
       request,
       metadata || {},
-      methodDescriptor_GroupService_ListGroupModelByNameCategory,
+      methodDescriptor_GroupService_ListGroupModelOption,
       callback);
 };
 
 
 /**
- * @param {!proto.group.GroupNameCategory} request The
+ * @param {!proto.group.GroupOption} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.group.GroupModelListResponse>}
  *     Promise that resolves to the response
  */
-proto.group.GroupServicePromiseClient.prototype.listGroupModelByNameCategory =
+proto.group.GroupServicePromiseClient.prototype.listGroupModelOption =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/group.GroupService/ListGroupModelByNameCategory',
+      '/group.GroupService/ListGroupModelOption',
       request,
       metadata || {},
-      methodDescriptor_GroupService_ListGroupModelByNameCategory);
+      methodDescriptor_GroupService_ListGroupModelOption);
 };
 
 
@@ -931,16 +931,16 @@ proto.group.GroupServicePromiseClient.prototype.listGroupDeviceByCategory =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.group.GroupNameCategory,
+ *   !proto.group.GroupOption,
  *   !proto.group.GroupDeviceListResponse>}
  */
-const methodDescriptor_GroupService_ListGroupDeviceByNameCategory = new grpc.web.MethodDescriptor(
-  '/group.GroupService/ListGroupDeviceByNameCategory',
+const methodDescriptor_GroupService_ListGroupDeviceOption = new grpc.web.MethodDescriptor(
+  '/group.GroupService/ListGroupDeviceOption',
   grpc.web.MethodType.UNARY,
-  proto.group.GroupNameCategory,
+  proto.group.GroupOption,
   proto.group.GroupDeviceListResponse,
   /**
-   * @param {!proto.group.GroupNameCategory} request
+   * @param {!proto.group.GroupOption} request
    * @return {!Uint8Array}
    */
   function(request) {
@@ -951,7 +951,7 @@ const methodDescriptor_GroupService_ListGroupDeviceByNameCategory = new grpc.web
 
 
 /**
- * @param {!proto.group.GroupNameCategory} request The
+ * @param {!proto.group.GroupOption} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
@@ -960,32 +960,32 @@ const methodDescriptor_GroupService_ListGroupDeviceByNameCategory = new grpc.web
  * @return {!grpc.web.ClientReadableStream<!proto.group.GroupDeviceListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.group.GroupServiceClient.prototype.listGroupDeviceByNameCategory =
+proto.group.GroupServiceClient.prototype.listGroupDeviceOption =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/group.GroupService/ListGroupDeviceByNameCategory',
+      '/group.GroupService/ListGroupDeviceOption',
       request,
       metadata || {},
-      methodDescriptor_GroupService_ListGroupDeviceByNameCategory,
+      methodDescriptor_GroupService_ListGroupDeviceOption,
       callback);
 };
 
 
 /**
- * @param {!proto.group.GroupNameCategory} request The
+ * @param {!proto.group.GroupOption} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.group.GroupDeviceListResponse>}
  *     Promise that resolves to the response
  */
-proto.group.GroupServicePromiseClient.prototype.listGroupDeviceByNameCategory =
+proto.group.GroupServicePromiseClient.prototype.listGroupDeviceOption =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/group.GroupService/ListGroupDeviceByNameCategory',
+      '/group.GroupService/ListGroupDeviceOption',
       request,
       metadata || {},
-      methodDescriptor_GroupService_ListGroupDeviceByNameCategory);
+      methodDescriptor_GroupService_ListGroupDeviceOption);
 };
 
 
@@ -1541,16 +1541,16 @@ proto.group.GroupServicePromiseClient.prototype.listGroupGatewayByCategory =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.group.GroupNameCategory,
+ *   !proto.group.GroupOption,
  *   !proto.group.GroupDeviceListResponse>}
  */
-const methodDescriptor_GroupService_ListGroupGatewayByNameCategory = new grpc.web.MethodDescriptor(
-  '/group.GroupService/ListGroupGatewayByNameCategory',
+const methodDescriptor_GroupService_ListGroupGatewayOption = new grpc.web.MethodDescriptor(
+  '/group.GroupService/ListGroupGatewayOption',
   grpc.web.MethodType.UNARY,
-  proto.group.GroupNameCategory,
+  proto.group.GroupOption,
   proto.group.GroupDeviceListResponse,
   /**
-   * @param {!proto.group.GroupNameCategory} request
+   * @param {!proto.group.GroupOption} request
    * @return {!Uint8Array}
    */
   function(request) {
@@ -1561,7 +1561,7 @@ const methodDescriptor_GroupService_ListGroupGatewayByNameCategory = new grpc.we
 
 
 /**
- * @param {!proto.group.GroupNameCategory} request The
+ * @param {!proto.group.GroupOption} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
@@ -1570,32 +1570,32 @@ const methodDescriptor_GroupService_ListGroupGatewayByNameCategory = new grpc.we
  * @return {!grpc.web.ClientReadableStream<!proto.group.GroupDeviceListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.group.GroupServiceClient.prototype.listGroupGatewayByNameCategory =
+proto.group.GroupServiceClient.prototype.listGroupGatewayOption =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/group.GroupService/ListGroupGatewayByNameCategory',
+      '/group.GroupService/ListGroupGatewayOption',
       request,
       metadata || {},
-      methodDescriptor_GroupService_ListGroupGatewayByNameCategory,
+      methodDescriptor_GroupService_ListGroupGatewayOption,
       callback);
 };
 
 
 /**
- * @param {!proto.group.GroupNameCategory} request The
+ * @param {!proto.group.GroupOption} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.group.GroupDeviceListResponse>}
  *     Promise that resolves to the response
  */
-proto.group.GroupServicePromiseClient.prototype.listGroupGatewayByNameCategory =
+proto.group.GroupServicePromiseClient.prototype.listGroupGatewayOption =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/group.GroupService/ListGroupGatewayByNameCategory',
+      '/group.GroupService/ListGroupGatewayOption',
       request,
       metadata || {},
-      methodDescriptor_GroupService_ListGroupGatewayByNameCategory);
+      methodDescriptor_GroupService_ListGroupGatewayOption);
 };
 
 

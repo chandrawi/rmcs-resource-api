@@ -16,9 +16,7 @@ service DeviceService {
 
     rpc ListDeviceByName(DeviceName) returns (DeviceListResponse);
 
-    rpc ListDeviceByGatewayType(DeviceGatewayType) returns (DeviceListResponse);
-
-    rpc ListDeviceByGatewayName(DeviceGatewayName) returns (DeviceListResponse);
+    rpc ListDeviceOption(DeviceOption) returns (DeviceListResponse);
 
     rpc CreateDevice(DeviceSchema) returns (DeviceCreateResponse);
 
@@ -35,6 +33,8 @@ service DeviceService {
     rpc ListGatewayByType(TypeId) returns (GatewayListResponse);
 
     rpc ListGatewayByName(GatewayName) returns (GatewayListResponse);
+
+    rpc ListGatewayOption(GatewayOption) returns (GatewayListResponse);
 
     rpc CreateGateway(GatewaySchema) returns (GatewayCreateResponse);
 
@@ -67,6 +67,8 @@ service DeviceService {
     rpc ListTypeByIds(TypeIds) returns (TypeListResponse);
 
     rpc ListTypeByName(TypeName) returns (TypeListResponse);
+
+    rpc ListTypeOption(TypeOption) returns (TypeListResponse);
 
     rpc CreateType(TypeSchema) returns (TypeCreateResponse);
 
@@ -126,14 +128,15 @@ message GatewayName {
     string name = 1;
 }
 
-message DeviceGatewayType {
-    bytes gateway_id = 1;
-    bytes type_id = 2;
+message DeviceOption {
+    optional bytes gateway_id = 1;
+    optional bytes type_id = 2;
+    optional string name = 3;
 }
 
-message DeviceGatewayName {
-    bytes gateway_id = 1;
-    string name = 2;
+message GatewayOption {
+    optional bytes type_id = 1;
+    optional string name = 2;
 }
 
 message DeviceUpdate {
@@ -191,6 +194,10 @@ message TypeIds {
 
 message TypeName {
     string name = 1;
+}
+
+message TypeOption {
+    optional string name = 1;
 }
 
 message TypeUpdate {

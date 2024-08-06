@@ -82,21 +82,23 @@ class GatewayName(_message.Message):
     name: str
     def __init__(self, name: _Optional[str] = ...) -> None: ...
 
-class DeviceGatewayType(_message.Message):
-    __slots__ = ("gateway_id", "type_id")
+class DeviceOption(_message.Message):
+    __slots__ = ("gateway_id", "type_id", "name")
     GATEWAY_ID_FIELD_NUMBER: _ClassVar[int]
     TYPE_ID_FIELD_NUMBER: _ClassVar[int]
-    gateway_id: bytes
-    type_id: bytes
-    def __init__(self, gateway_id: _Optional[bytes] = ..., type_id: _Optional[bytes] = ...) -> None: ...
-
-class DeviceGatewayName(_message.Message):
-    __slots__ = ("gateway_id", "name")
-    GATEWAY_ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     gateway_id: bytes
+    type_id: bytes
     name: str
-    def __init__(self, gateway_id: _Optional[bytes] = ..., name: _Optional[str] = ...) -> None: ...
+    def __init__(self, gateway_id: _Optional[bytes] = ..., type_id: _Optional[bytes] = ..., name: _Optional[str] = ...) -> None: ...
+
+class GatewayOption(_message.Message):
+    __slots__ = ("type_id", "name")
+    TYPE_ID_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    type_id: bytes
+    name: str
+    def __init__(self, type_id: _Optional[bytes] = ..., name: _Optional[str] = ...) -> None: ...
 
 class DeviceUpdate(_message.Message):
     __slots__ = ("id", "gateway_id", "serial_number", "name", "description", "type_id")
@@ -189,6 +191,12 @@ class TypeIds(_message.Message):
     def __init__(self, ids: _Optional[_Iterable[bytes]] = ...) -> None: ...
 
 class TypeName(_message.Message):
+    __slots__ = ("name",)
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    def __init__(self, name: _Optional[str] = ...) -> None: ...
+
+class TypeOption(_message.Message):
     __slots__ = ("name",)
     NAME_FIELD_NUMBER: _ClassVar[int]
     name: str

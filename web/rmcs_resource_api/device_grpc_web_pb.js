@@ -445,16 +445,16 @@ proto.device.DeviceServicePromiseClient.prototype.listDeviceByName =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.device.DeviceGatewayType,
+ *   !proto.device.DeviceOption,
  *   !proto.device.DeviceListResponse>}
  */
-const methodDescriptor_DeviceService_ListDeviceByGatewayType = new grpc.web.MethodDescriptor(
-  '/device.DeviceService/ListDeviceByGatewayType',
+const methodDescriptor_DeviceService_ListDeviceOption = new grpc.web.MethodDescriptor(
+  '/device.DeviceService/ListDeviceOption',
   grpc.web.MethodType.UNARY,
-  proto.device.DeviceGatewayType,
+  proto.device.DeviceOption,
   proto.device.DeviceListResponse,
   /**
-   * @param {!proto.device.DeviceGatewayType} request
+   * @param {!proto.device.DeviceOption} request
    * @return {!Uint8Array}
    */
   function(request) {
@@ -465,7 +465,7 @@ const methodDescriptor_DeviceService_ListDeviceByGatewayType = new grpc.web.Meth
 
 
 /**
- * @param {!proto.device.DeviceGatewayType} request The
+ * @param {!proto.device.DeviceOption} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
@@ -474,93 +474,32 @@ const methodDescriptor_DeviceService_ListDeviceByGatewayType = new grpc.web.Meth
  * @return {!grpc.web.ClientReadableStream<!proto.device.DeviceListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.device.DeviceServiceClient.prototype.listDeviceByGatewayType =
+proto.device.DeviceServiceClient.prototype.listDeviceOption =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/device.DeviceService/ListDeviceByGatewayType',
+      '/device.DeviceService/ListDeviceOption',
       request,
       metadata || {},
-      methodDescriptor_DeviceService_ListDeviceByGatewayType,
+      methodDescriptor_DeviceService_ListDeviceOption,
       callback);
 };
 
 
 /**
- * @param {!proto.device.DeviceGatewayType} request The
+ * @param {!proto.device.DeviceOption} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.device.DeviceListResponse>}
  *     Promise that resolves to the response
  */
-proto.device.DeviceServicePromiseClient.prototype.listDeviceByGatewayType =
+proto.device.DeviceServicePromiseClient.prototype.listDeviceOption =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/device.DeviceService/ListDeviceByGatewayType',
+      '/device.DeviceService/ListDeviceOption',
       request,
       metadata || {},
-      methodDescriptor_DeviceService_ListDeviceByGatewayType);
-};
-
-
-/**
- * @const
- * @type {!grpc.web.MethodDescriptor<
- *   !proto.device.DeviceGatewayName,
- *   !proto.device.DeviceListResponse>}
- */
-const methodDescriptor_DeviceService_ListDeviceByGatewayName = new grpc.web.MethodDescriptor(
-  '/device.DeviceService/ListDeviceByGatewayName',
-  grpc.web.MethodType.UNARY,
-  proto.device.DeviceGatewayName,
-  proto.device.DeviceListResponse,
-  /**
-   * @param {!proto.device.DeviceGatewayName} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.device.DeviceListResponse.deserializeBinary
-);
-
-
-/**
- * @param {!proto.device.DeviceGatewayName} request The
- *     request proto
- * @param {?Object<string, string>} metadata User defined
- *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.device.DeviceListResponse)}
- *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.device.DeviceListResponse>|undefined}
- *     The XHR Node Readable Stream
- */
-proto.device.DeviceServiceClient.prototype.listDeviceByGatewayName =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/device.DeviceService/ListDeviceByGatewayName',
-      request,
-      metadata || {},
-      methodDescriptor_DeviceService_ListDeviceByGatewayName,
-      callback);
-};
-
-
-/**
- * @param {!proto.device.DeviceGatewayName} request The
- *     request proto
- * @param {?Object<string, string>=} metadata User defined
- *     call metadata
- * @return {!Promise<!proto.device.DeviceListResponse>}
- *     Promise that resolves to the response
- */
-proto.device.DeviceServicePromiseClient.prototype.listDeviceByGatewayName =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/device.DeviceService/ListDeviceByGatewayName',
-      request,
-      metadata || {},
-      methodDescriptor_DeviceService_ListDeviceByGatewayName);
+      methodDescriptor_DeviceService_ListDeviceOption);
 };
 
 
@@ -1049,6 +988,67 @@ proto.device.DeviceServicePromiseClient.prototype.listGatewayByName =
       request,
       metadata || {},
       methodDescriptor_DeviceService_ListGatewayByName);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.device.GatewayOption,
+ *   !proto.device.GatewayListResponse>}
+ */
+const methodDescriptor_DeviceService_ListGatewayOption = new grpc.web.MethodDescriptor(
+  '/device.DeviceService/ListGatewayOption',
+  grpc.web.MethodType.UNARY,
+  proto.device.GatewayOption,
+  proto.device.GatewayListResponse,
+  /**
+   * @param {!proto.device.GatewayOption} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.device.GatewayListResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.device.GatewayOption} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.device.GatewayListResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.device.GatewayListResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.device.DeviceServiceClient.prototype.listGatewayOption =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/device.DeviceService/ListGatewayOption',
+      request,
+      metadata || {},
+      methodDescriptor_DeviceService_ListGatewayOption,
+      callback);
+};
+
+
+/**
+ * @param {!proto.device.GatewayOption} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.device.GatewayListResponse>}
+ *     Promise that resolves to the response
+ */
+proto.device.DeviceServicePromiseClient.prototype.listGatewayOption =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/device.DeviceService/ListGatewayOption',
+      request,
+      metadata || {},
+      methodDescriptor_DeviceService_ListGatewayOption);
 };
 
 
@@ -2025,6 +2025,67 @@ proto.device.DeviceServicePromiseClient.prototype.listTypeByName =
       request,
       metadata || {},
       methodDescriptor_DeviceService_ListTypeByName);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.device.TypeOption,
+ *   !proto.device.TypeListResponse>}
+ */
+const methodDescriptor_DeviceService_ListTypeOption = new grpc.web.MethodDescriptor(
+  '/device.DeviceService/ListTypeOption',
+  grpc.web.MethodType.UNARY,
+  proto.device.TypeOption,
+  proto.device.TypeListResponse,
+  /**
+   * @param {!proto.device.TypeOption} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.device.TypeListResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.device.TypeOption} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.device.TypeListResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.device.TypeListResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.device.DeviceServiceClient.prototype.listTypeOption =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/device.DeviceService/ListTypeOption',
+      request,
+      metadata || {},
+      methodDescriptor_DeviceService_ListTypeOption,
+      callback);
+};
+
+
+/**
+ * @param {!proto.device.TypeOption} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.device.TypeListResponse>}
+ *     Promise that resolves to the response
+ */
+proto.device.DeviceServicePromiseClient.prototype.listTypeOption =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/device.DeviceService/ListTypeOption',
+      request,
+      metadata || {},
+      methodDescriptor_DeviceService_ListTypeOption);
 };
 
 

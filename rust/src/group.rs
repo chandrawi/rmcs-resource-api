@@ -53,11 +53,11 @@ pub struct GroupCategory {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct GroupNameCategory {
-    #[prost(string, tag = "1")]
-    pub name: ::prost::alloc::string::String,
-    #[prost(string, tag = "2")]
-    pub category: ::prost::alloc::string::String,
+pub struct GroupOption {
+    #[prost(string, optional, tag = "1")]
+    pub name: ::core::option::Option<::prost::alloc::string::String>,
+    #[prost(string, optional, tag = "2")]
+    pub category: ::core::option::Option<::prost::alloc::string::String>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -307,9 +307,9 @@ pub mod group_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        pub async fn list_group_model_by_name_category(
+        pub async fn list_group_model_option(
             &mut self,
-            request: impl tonic::IntoRequest<super::GroupNameCategory>,
+            request: impl tonic::IntoRequest<super::GroupOption>,
         ) -> std::result::Result<
             tonic::Response<super::GroupModelListResponse>,
             tonic::Status,
@@ -325,13 +325,11 @@ pub mod group_service_client {
                 })?;
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
-                "/group.GroupService/ListGroupModelByNameCategory",
+                "/group.GroupService/ListGroupModelOption",
             );
             let mut req = request.into_request();
             req.extensions_mut()
-                .insert(
-                    GrpcMethod::new("group.GroupService", "ListGroupModelByNameCategory"),
-                );
+                .insert(GrpcMethod::new("group.GroupService", "ListGroupModelOption"));
             self.inner.unary(req, path, codec).await
         }
         pub async fn create_group_model(
@@ -561,9 +559,9 @@ pub mod group_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        pub async fn list_group_device_by_name_category(
+        pub async fn list_group_device_option(
             &mut self,
-            request: impl tonic::IntoRequest<super::GroupNameCategory>,
+            request: impl tonic::IntoRequest<super::GroupOption>,
         ) -> std::result::Result<
             tonic::Response<super::GroupDeviceListResponse>,
             tonic::Status,
@@ -579,16 +577,11 @@ pub mod group_service_client {
                 })?;
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
-                "/group.GroupService/ListGroupDeviceByNameCategory",
+                "/group.GroupService/ListGroupDeviceOption",
             );
             let mut req = request.into_request();
             req.extensions_mut()
-                .insert(
-                    GrpcMethod::new(
-                        "group.GroupService",
-                        "ListGroupDeviceByNameCategory",
-                    ),
-                );
+                .insert(GrpcMethod::new("group.GroupService", "ListGroupDeviceOption"));
             self.inner.unary(req, path, codec).await
         }
         pub async fn create_group_device(
@@ -820,9 +813,9 @@ pub mod group_service_client {
                 );
             self.inner.unary(req, path, codec).await
         }
-        pub async fn list_group_gateway_by_name_category(
+        pub async fn list_group_gateway_option(
             &mut self,
-            request: impl tonic::IntoRequest<super::GroupNameCategory>,
+            request: impl tonic::IntoRequest<super::GroupOption>,
         ) -> std::result::Result<
             tonic::Response<super::GroupDeviceListResponse>,
             tonic::Status,
@@ -838,16 +831,11 @@ pub mod group_service_client {
                 })?;
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
-                "/group.GroupService/ListGroupGatewayByNameCategory",
+                "/group.GroupService/ListGroupGatewayOption",
             );
             let mut req = request.into_request();
             req.extensions_mut()
-                .insert(
-                    GrpcMethod::new(
-                        "group.GroupService",
-                        "ListGroupGatewayByNameCategory",
-                    ),
-                );
+                .insert(GrpcMethod::new("group.GroupService", "ListGroupGatewayOption"));
             self.inner.unary(req, path, codec).await
         }
         pub async fn create_group_gateway(
@@ -1014,9 +1002,9 @@ pub mod group_service_server {
             tonic::Response<super::GroupModelListResponse>,
             tonic::Status,
         >;
-        async fn list_group_model_by_name_category(
+        async fn list_group_model_option(
             &self,
-            request: tonic::Request<super::GroupNameCategory>,
+            request: tonic::Request<super::GroupOption>,
         ) -> std::result::Result<
             tonic::Response<super::GroupModelListResponse>,
             tonic::Status,
@@ -1084,9 +1072,9 @@ pub mod group_service_server {
             tonic::Response<super::GroupDeviceListResponse>,
             tonic::Status,
         >;
-        async fn list_group_device_by_name_category(
+        async fn list_group_device_option(
             &self,
-            request: tonic::Request<super::GroupNameCategory>,
+            request: tonic::Request<super::GroupOption>,
         ) -> std::result::Result<
             tonic::Response<super::GroupDeviceListResponse>,
             tonic::Status,
@@ -1154,9 +1142,9 @@ pub mod group_service_server {
             tonic::Response<super::GroupDeviceListResponse>,
             tonic::Status,
         >;
-        async fn list_group_gateway_by_name_category(
+        async fn list_group_gateway_option(
             &self,
-            request: tonic::Request<super::GroupNameCategory>,
+            request: tonic::Request<super::GroupOption>,
         ) -> std::result::Result<
             tonic::Response<super::GroupDeviceListResponse>,
             tonic::Status,
@@ -1459,13 +1447,11 @@ pub mod group_service_server {
                     };
                     Box::pin(fut)
                 }
-                "/group.GroupService/ListGroupModelByNameCategory" => {
+                "/group.GroupService/ListGroupModelOption" => {
                     #[allow(non_camel_case_types)]
-                    struct ListGroupModelByNameCategorySvc<T: GroupService>(pub Arc<T>);
-                    impl<
-                        T: GroupService,
-                    > tonic::server::UnaryService<super::GroupNameCategory>
-                    for ListGroupModelByNameCategorySvc<T> {
+                    struct ListGroupModelOptionSvc<T: GroupService>(pub Arc<T>);
+                    impl<T: GroupService> tonic::server::UnaryService<super::GroupOption>
+                    for ListGroupModelOptionSvc<T> {
                         type Response = super::GroupModelListResponse;
                         type Future = BoxFuture<
                             tonic::Response<Self::Response>,
@@ -1473,11 +1459,11 @@ pub mod group_service_server {
                         >;
                         fn call(
                             &mut self,
-                            request: tonic::Request<super::GroupNameCategory>,
+                            request: tonic::Request<super::GroupOption>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                <T as GroupService>::list_group_model_by_name_category(
+                                <T as GroupService>::list_group_model_option(
                                         &inner,
                                         request,
                                     )
@@ -1492,7 +1478,7 @@ pub mod group_service_server {
                     let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
-                        let method = ListGroupModelByNameCategorySvc(inner);
+                        let method = ListGroupModelOptionSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
@@ -1920,13 +1906,11 @@ pub mod group_service_server {
                     };
                     Box::pin(fut)
                 }
-                "/group.GroupService/ListGroupDeviceByNameCategory" => {
+                "/group.GroupService/ListGroupDeviceOption" => {
                     #[allow(non_camel_case_types)]
-                    struct ListGroupDeviceByNameCategorySvc<T: GroupService>(pub Arc<T>);
-                    impl<
-                        T: GroupService,
-                    > tonic::server::UnaryService<super::GroupNameCategory>
-                    for ListGroupDeviceByNameCategorySvc<T> {
+                    struct ListGroupDeviceOptionSvc<T: GroupService>(pub Arc<T>);
+                    impl<T: GroupService> tonic::server::UnaryService<super::GroupOption>
+                    for ListGroupDeviceOptionSvc<T> {
                         type Response = super::GroupDeviceListResponse;
                         type Future = BoxFuture<
                             tonic::Response<Self::Response>,
@@ -1934,11 +1918,11 @@ pub mod group_service_server {
                         >;
                         fn call(
                             &mut self,
-                            request: tonic::Request<super::GroupNameCategory>,
+                            request: tonic::Request<super::GroupOption>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                <T as GroupService>::list_group_device_by_name_category(
+                                <T as GroupService>::list_group_device_option(
                                         &inner,
                                         request,
                                     )
@@ -1953,7 +1937,7 @@ pub mod group_service_server {
                     let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
-                        let method = ListGroupDeviceByNameCategorySvc(inner);
+                        let method = ListGroupDeviceOptionSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
@@ -2384,15 +2368,11 @@ pub mod group_service_server {
                     };
                     Box::pin(fut)
                 }
-                "/group.GroupService/ListGroupGatewayByNameCategory" => {
+                "/group.GroupService/ListGroupGatewayOption" => {
                     #[allow(non_camel_case_types)]
-                    struct ListGroupGatewayByNameCategorySvc<T: GroupService>(
-                        pub Arc<T>,
-                    );
-                    impl<
-                        T: GroupService,
-                    > tonic::server::UnaryService<super::GroupNameCategory>
-                    for ListGroupGatewayByNameCategorySvc<T> {
+                    struct ListGroupGatewayOptionSvc<T: GroupService>(pub Arc<T>);
+                    impl<T: GroupService> tonic::server::UnaryService<super::GroupOption>
+                    for ListGroupGatewayOptionSvc<T> {
                         type Response = super::GroupDeviceListResponse;
                         type Future = BoxFuture<
                             tonic::Response<Self::Response>,
@@ -2400,11 +2380,11 @@ pub mod group_service_server {
                         >;
                         fn call(
                             &mut self,
-                            request: tonic::Request<super::GroupNameCategory>,
+                            request: tonic::Request<super::GroupOption>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                <T as GroupService>::list_group_gateway_by_name_category(
+                                <T as GroupService>::list_group_gateway_option(
                                         &inner,
                                         request,
                                     )
@@ -2419,7 +2399,7 @@ pub mod group_service_server {
                     let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
-                        let method = ListGroupGatewayByNameCategorySvc(inner);
+                        let method = ListGroupGatewayOptionSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(

@@ -8,13 +8,13 @@ service ModelService {
 
     rpc ListModelByIds(ModelIds) returns (ModelListResponse);
 
+    rpc ListModelByType(TypeId) returns (ModelListResponse);
+
     rpc ListModelByName(ModelName) returns (ModelListResponse);
 
     rpc ListModelByCategory(ModelCategory) returns (ModelListResponse);
 
-    rpc ListModelByNameCategory(ModelNameCategory) returns (ModelListResponse);
-
-    rpc ListModelByType(TypeId) returns (ModelListResponse);
+    rpc ListModelOption(ModelOption) returns (ModelListResponse);
 
     rpc CreateModel(ModelSchema) returns (ModelCreateResponse);
 
@@ -54,6 +54,10 @@ message ModelIds {
     repeated bytes ids = 1;
 }
 
+message TypeId {
+    bytes id = 1;
+}
+
 message ModelName {
     string name = 1;
 }
@@ -62,13 +66,10 @@ message ModelCategory {
     string category = 1;
 }
 
-message ModelNameCategory {
-    string name = 1;
-    string category = 2;
-}
-
-message TypeId {
-    bytes id = 1;
+message ModelOption {
+    optional bytes type_id = 1;
+    optional string name = 2;
+    optional string category = 3;
 }
 
 message ModelUpdate {

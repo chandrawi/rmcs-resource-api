@@ -201,6 +201,67 @@ proto.model.ModelServicePromiseClient.prototype.listModelByIds =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
+ *   !proto.model.TypeId,
+ *   !proto.model.ModelListResponse>}
+ */
+const methodDescriptor_ModelService_ListModelByType = new grpc.web.MethodDescriptor(
+  '/model.ModelService/ListModelByType',
+  grpc.web.MethodType.UNARY,
+  proto.model.TypeId,
+  proto.model.ModelListResponse,
+  /**
+   * @param {!proto.model.TypeId} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.model.ModelListResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.model.TypeId} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.model.ModelListResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.model.ModelListResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.model.ModelServiceClient.prototype.listModelByType =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/model.ModelService/ListModelByType',
+      request,
+      metadata || {},
+      methodDescriptor_ModelService_ListModelByType,
+      callback);
+};
+
+
+/**
+ * @param {!proto.model.TypeId} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.model.ModelListResponse>}
+ *     Promise that resolves to the response
+ */
+proto.model.ModelServicePromiseClient.prototype.listModelByType =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/model.ModelService/ListModelByType',
+      request,
+      metadata || {},
+      methodDescriptor_ModelService_ListModelByType);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
  *   !proto.model.ModelName,
  *   !proto.model.ModelListResponse>}
  */
@@ -323,16 +384,16 @@ proto.model.ModelServicePromiseClient.prototype.listModelByCategory =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.model.ModelNameCategory,
+ *   !proto.model.ModelOption,
  *   !proto.model.ModelListResponse>}
  */
-const methodDescriptor_ModelService_ListModelByNameCategory = new grpc.web.MethodDescriptor(
-  '/model.ModelService/ListModelByNameCategory',
+const methodDescriptor_ModelService_ListModelOption = new grpc.web.MethodDescriptor(
+  '/model.ModelService/ListModelOption',
   grpc.web.MethodType.UNARY,
-  proto.model.ModelNameCategory,
+  proto.model.ModelOption,
   proto.model.ModelListResponse,
   /**
-   * @param {!proto.model.ModelNameCategory} request
+   * @param {!proto.model.ModelOption} request
    * @return {!Uint8Array}
    */
   function(request) {
@@ -343,7 +404,7 @@ const methodDescriptor_ModelService_ListModelByNameCategory = new grpc.web.Metho
 
 
 /**
- * @param {!proto.model.ModelNameCategory} request The
+ * @param {!proto.model.ModelOption} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
@@ -352,93 +413,32 @@ const methodDescriptor_ModelService_ListModelByNameCategory = new grpc.web.Metho
  * @return {!grpc.web.ClientReadableStream<!proto.model.ModelListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.model.ModelServiceClient.prototype.listModelByNameCategory =
+proto.model.ModelServiceClient.prototype.listModelOption =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/model.ModelService/ListModelByNameCategory',
+      '/model.ModelService/ListModelOption',
       request,
       metadata || {},
-      methodDescriptor_ModelService_ListModelByNameCategory,
+      methodDescriptor_ModelService_ListModelOption,
       callback);
 };
 
 
 /**
- * @param {!proto.model.ModelNameCategory} request The
+ * @param {!proto.model.ModelOption} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.model.ModelListResponse>}
  *     Promise that resolves to the response
  */
-proto.model.ModelServicePromiseClient.prototype.listModelByNameCategory =
+proto.model.ModelServicePromiseClient.prototype.listModelOption =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/model.ModelService/ListModelByNameCategory',
+      '/model.ModelService/ListModelOption',
       request,
       metadata || {},
-      methodDescriptor_ModelService_ListModelByNameCategory);
-};
-
-
-/**
- * @const
- * @type {!grpc.web.MethodDescriptor<
- *   !proto.model.TypeId,
- *   !proto.model.ModelListResponse>}
- */
-const methodDescriptor_ModelService_ListModelByType = new grpc.web.MethodDescriptor(
-  '/model.ModelService/ListModelByType',
-  grpc.web.MethodType.UNARY,
-  proto.model.TypeId,
-  proto.model.ModelListResponse,
-  /**
-   * @param {!proto.model.TypeId} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto.model.ModelListResponse.deserializeBinary
-);
-
-
-/**
- * @param {!proto.model.TypeId} request The
- *     request proto
- * @param {?Object<string, string>} metadata User defined
- *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.model.ModelListResponse)}
- *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.model.ModelListResponse>|undefined}
- *     The XHR Node Readable Stream
- */
-proto.model.ModelServiceClient.prototype.listModelByType =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/model.ModelService/ListModelByType',
-      request,
-      metadata || {},
-      methodDescriptor_ModelService_ListModelByType,
-      callback);
-};
-
-
-/**
- * @param {!proto.model.TypeId} request The
- *     request proto
- * @param {?Object<string, string>=} metadata User defined
- *     call metadata
- * @return {!Promise<!proto.model.ModelListResponse>}
- *     Promise that resolves to the response
- */
-proto.model.ModelServicePromiseClient.prototype.listModelByType =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/model.ModelService/ListModelByType',
-      request,
-      metadata || {},
-      methodDescriptor_ModelService_ListModelByType);
+      methodDescriptor_ModelService_ListModelOption);
 };
 
 

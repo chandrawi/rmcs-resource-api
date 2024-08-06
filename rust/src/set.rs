@@ -43,6 +43,14 @@ pub struct SetName {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+pub struct SetOption {
+    #[prost(bytes = "vec", optional, tag = "1")]
+    pub template_id: ::core::option::Option<::prost::alloc::vec::Vec<u8>>,
+    #[prost(string, optional, tag = "2")]
+    pub name: ::core::option::Option<::prost::alloc::string::String>,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
 pub struct SetUpdate {
     #[prost(bytes = "vec", tag = "1")]
     pub id: ::prost::alloc::vec::Vec<u8>,
@@ -118,6 +126,12 @@ pub struct SetTemplateIds {
 pub struct SetTemplateName {
     #[prost(string, tag = "1")]
     pub name: ::prost::alloc::string::String,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct SetTemplateOption {
+    #[prost(string, optional, tag = "1")]
+    pub name: ::core::option::Option<::prost::alloc::string::String>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -377,6 +391,31 @@ pub mod set_service_client {
                 .insert(GrpcMethod::new("set.SetService", "ListSetByName"));
             self.inner.unary(req, path, codec).await
         }
+        pub async fn list_set_option(
+            &mut self,
+            request: impl tonic::IntoRequest<super::SetOption>,
+        ) -> std::result::Result<
+            tonic::Response<super::SetListResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/set.SetService/ListSetOption",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("set.SetService", "ListSetOption"));
+            self.inner.unary(req, path, codec).await
+        }
         pub async fn create_set(
             &mut self,
             request: impl tonic::IntoRequest<super::SetSchema>,
@@ -593,6 +632,31 @@ pub mod set_service_client {
                 .insert(GrpcMethod::new("set.SetService", "ListSetTemplateByName"));
             self.inner.unary(req, path, codec).await
         }
+        pub async fn list_set_template_option(
+            &mut self,
+            request: impl tonic::IntoRequest<super::SetTemplateOption>,
+        ) -> std::result::Result<
+            tonic::Response<super::TemplateListResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/set.SetService/ListSetTemplateOption",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("set.SetService", "ListSetTemplateOption"));
+            self.inner.unary(req, path, codec).await
+        }
         pub async fn create_set_template(
             &mut self,
             request: impl tonic::IntoRequest<super::SetTemplateSchema>,
@@ -768,6 +832,10 @@ pub mod set_service_server {
             &self,
             request: tonic::Request<super::SetName>,
         ) -> std::result::Result<tonic::Response<super::SetListResponse>, tonic::Status>;
+        async fn list_set_option(
+            &self,
+            request: tonic::Request<super::SetOption>,
+        ) -> std::result::Result<tonic::Response<super::SetListResponse>, tonic::Status>;
         async fn create_set(
             &self,
             request: tonic::Request<super::SetSchema>,
@@ -827,6 +895,13 @@ pub mod set_service_server {
         async fn list_set_template_by_name(
             &self,
             request: tonic::Request<super::SetTemplateName>,
+        ) -> std::result::Result<
+            tonic::Response<super::TemplateListResponse>,
+            tonic::Status,
+        >;
+        async fn list_set_template_option(
+            &self,
+            request: tonic::Request<super::SetTemplateOption>,
         ) -> std::result::Result<
             tonic::Response<super::TemplateListResponse>,
             tonic::Status,
@@ -1108,6 +1183,49 @@ pub mod set_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListSetByNameSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/set.SetService/ListSetOption" => {
+                    #[allow(non_camel_case_types)]
+                    struct ListSetOptionSvc<T: SetService>(pub Arc<T>);
+                    impl<T: SetService> tonic::server::UnaryService<super::SetOption>
+                    for ListSetOptionSvc<T> {
+                        type Response = super::SetListResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::SetOption>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as SetService>::list_set_option(&inner, request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = ListSetOptionSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
@@ -1508,6 +1626,52 @@ pub mod set_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListSetTemplateByNameSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/set.SetService/ListSetTemplateOption" => {
+                    #[allow(non_camel_case_types)]
+                    struct ListSetTemplateOptionSvc<T: SetService>(pub Arc<T>);
+                    impl<
+                        T: SetService,
+                    > tonic::server::UnaryService<super::SetTemplateOption>
+                    for ListSetTemplateOptionSvc<T> {
+                        type Response = super::TemplateListResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::SetTemplateOption>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as SetService>::list_set_template_option(&inner, request)
+                                    .await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = ListSetTemplateOptionSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(

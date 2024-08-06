@@ -57,7 +57,7 @@ class GroupCategory(_message.Message):
     category: str
     def __init__(self, category: _Optional[str] = ...) -> None: ...
 
-class GroupNameCategory(_message.Message):
+class GroupOption(_message.Message):
     __slots__ = ("name", "category")
     NAME_FIELD_NUMBER: _ClassVar[int]
     CATEGORY_FIELD_NUMBER: _ClassVar[int]

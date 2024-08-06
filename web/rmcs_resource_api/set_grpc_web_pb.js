@@ -321,6 +321,67 @@ proto.set.SetServicePromiseClient.prototype.listSetByName =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
+ *   !proto.set.SetOption,
+ *   !proto.set.SetListResponse>}
+ */
+const methodDescriptor_SetService_ListSetOption = new grpc.web.MethodDescriptor(
+  '/set.SetService/ListSetOption',
+  grpc.web.MethodType.UNARY,
+  proto.set.SetOption,
+  proto.set.SetListResponse,
+  /**
+   * @param {!proto.set.SetOption} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.set.SetListResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.set.SetOption} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.set.SetListResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.set.SetListResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.set.SetServiceClient.prototype.listSetOption =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/set.SetService/ListSetOption',
+      request,
+      metadata || {},
+      methodDescriptor_SetService_ListSetOption,
+      callback);
+};
+
+
+/**
+ * @param {!proto.set.SetOption} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.set.SetListResponse>}
+ *     Promise that resolves to the response
+ */
+proto.set.SetServicePromiseClient.prototype.listSetOption =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/set.SetService/ListSetOption',
+      request,
+      metadata || {},
+      methodDescriptor_SetService_ListSetOption);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
  *   !proto.set.SetSchema,
  *   !proto.set.SetCreateResponse>}
  */
@@ -864,6 +925,67 @@ proto.set.SetServicePromiseClient.prototype.listSetTemplateByName =
       request,
       metadata || {},
       methodDescriptor_SetService_ListSetTemplateByName);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.set.SetTemplateOption,
+ *   !proto.set.TemplateListResponse>}
+ */
+const methodDescriptor_SetService_ListSetTemplateOption = new grpc.web.MethodDescriptor(
+  '/set.SetService/ListSetTemplateOption',
+  grpc.web.MethodType.UNARY,
+  proto.set.SetTemplateOption,
+  proto.set.TemplateListResponse,
+  /**
+   * @param {!proto.set.SetTemplateOption} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.set.TemplateListResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.set.SetTemplateOption} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.set.TemplateListResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.set.TemplateListResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.set.SetServiceClient.prototype.listSetTemplateOption =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/set.SetService/ListSetTemplateOption',
+      request,
+      metadata || {},
+      methodDescriptor_SetService_ListSetTemplateOption,
+      callback);
+};
+
+
+/**
+ * @param {!proto.set.SetTemplateOption} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.set.TemplateListResponse>}
+ *     Promise that resolves to the response
+ */
+proto.set.SetServicePromiseClient.prototype.listSetTemplateOption =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/set.SetService/ListSetTemplateOption',
+      request,
+      metadata || {},
+      methodDescriptor_SetService_ListSetTemplateOption);
 };
 
 

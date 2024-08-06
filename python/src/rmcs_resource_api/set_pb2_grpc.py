@@ -59,6 +59,11 @@ class SetServiceStub(object):
                 request_serializer=rmcs__resource__api_dot_set__pb2.SetName.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_set__pb2.SetListResponse.FromString,
                 _registered_method=True)
+        self.ListSetOption = channel.unary_unary(
+                '/set.SetService/ListSetOption',
+                request_serializer=rmcs__resource__api_dot_set__pb2.SetOption.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_set__pb2.SetListResponse.FromString,
+                _registered_method=True)
         self.CreateSet = channel.unary_unary(
                 '/set.SetService/CreateSet',
                 request_serializer=rmcs__resource__api_dot_set__pb2.SetSchema.SerializeToString,
@@ -102,6 +107,11 @@ class SetServiceStub(object):
         self.ListSetTemplateByName = channel.unary_unary(
                 '/set.SetService/ListSetTemplateByName',
                 request_serializer=rmcs__resource__api_dot_set__pb2.SetTemplateName.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_set__pb2.TemplateListResponse.FromString,
+                _registered_method=True)
+        self.ListSetTemplateOption = channel.unary_unary(
+                '/set.SetService/ListSetTemplateOption',
+                request_serializer=rmcs__resource__api_dot_set__pb2.SetTemplateOption.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_set__pb2.TemplateListResponse.FromString,
                 _registered_method=True)
         self.CreateSetTemplate = channel.unary_unary(
@@ -163,6 +173,12 @@ class SetServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListSetOption(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def CreateSet(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -212,6 +228,12 @@ class SetServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListSetTemplateByName(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListSetTemplateOption(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -276,6 +298,11 @@ def add_SetServiceServicer_to_server(servicer, server):
                     request_deserializer=rmcs__resource__api_dot_set__pb2.SetName.FromString,
                     response_serializer=rmcs__resource__api_dot_set__pb2.SetListResponse.SerializeToString,
             ),
+            'ListSetOption': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListSetOption,
+                    request_deserializer=rmcs__resource__api_dot_set__pb2.SetOption.FromString,
+                    response_serializer=rmcs__resource__api_dot_set__pb2.SetListResponse.SerializeToString,
+            ),
             'CreateSet': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateSet,
                     request_deserializer=rmcs__resource__api_dot_set__pb2.SetSchema.FromString,
@@ -319,6 +346,11 @@ def add_SetServiceServicer_to_server(servicer, server):
             'ListSetTemplateByName': grpc.unary_unary_rpc_method_handler(
                     servicer.ListSetTemplateByName,
                     request_deserializer=rmcs__resource__api_dot_set__pb2.SetTemplateName.FromString,
+                    response_serializer=rmcs__resource__api_dot_set__pb2.TemplateListResponse.SerializeToString,
+            ),
+            'ListSetTemplateOption': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListSetTemplateOption,
+                    request_deserializer=rmcs__resource__api_dot_set__pb2.SetTemplateOption.FromString,
                     response_serializer=rmcs__resource__api_dot_set__pb2.TemplateListResponse.SerializeToString,
             ),
             'CreateSetTemplate': grpc.unary_unary_rpc_method_handler(
@@ -458,6 +490,33 @@ class SetService(object):
             target,
             '/set.SetService/ListSetByName',
             rmcs__resource__api_dot_set__pb2.SetName.SerializeToString,
+            rmcs__resource__api_dot_set__pb2.SetListResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListSetOption(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/set.SetService/ListSetOption',
+            rmcs__resource__api_dot_set__pb2.SetOption.SerializeToString,
             rmcs__resource__api_dot_set__pb2.SetListResponse.FromString,
             options,
             channel_credentials,
@@ -701,6 +760,33 @@ class SetService(object):
             target,
             '/set.SetService/ListSetTemplateByName',
             rmcs__resource__api_dot_set__pb2.SetTemplateName.SerializeToString,
+            rmcs__resource__api_dot_set__pb2.TemplateListResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListSetTemplateOption(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/set.SetService/ListSetTemplateOption',
+            rmcs__resource__api_dot_set__pb2.SetTemplateOption.SerializeToString,
             rmcs__resource__api_dot_set__pb2.TemplateListResponse.FromString,
             options,
             channel_credentials,

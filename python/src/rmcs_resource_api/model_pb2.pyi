@@ -40,6 +40,12 @@ class ModelIds(_message.Message):
     ids: _containers.RepeatedScalarFieldContainer[bytes]
     def __init__(self, ids: _Optional[_Iterable[bytes]] = ...) -> None: ...
 
+class TypeId(_message.Message):
+    __slots__ = ("id",)
+    ID_FIELD_NUMBER: _ClassVar[int]
+    id: bytes
+    def __init__(self, id: _Optional[bytes] = ...) -> None: ...
+
 class ModelName(_message.Message):
     __slots__ = ("name",)
     NAME_FIELD_NUMBER: _ClassVar[int]
@@ -52,19 +58,15 @@ class ModelCategory(_message.Message):
     category: str
     def __init__(self, category: _Optional[str] = ...) -> None: ...
 
-class ModelNameCategory(_message.Message):
-    __slots__ = ("name", "category")
+class ModelOption(_message.Message):
+    __slots__ = ("type_id", "name", "category")
+    TYPE_ID_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     CATEGORY_FIELD_NUMBER: _ClassVar[int]
+    type_id: bytes
     name: str
     category: str
-    def __init__(self, name: _Optional[str] = ..., category: _Optional[str] = ...) -> None: ...
-
-class TypeId(_message.Message):
-    __slots__ = ("id",)
-    ID_FIELD_NUMBER: _ClassVar[int]
-    id: bytes
-    def __init__(self, id: _Optional[bytes] = ...) -> None: ...
+    def __init__(self, type_id: _Optional[bytes] = ..., name: _Optional[str] = ..., category: _Optional[str] = ...) -> None: ...
 
 class ModelUpdate(_message.Message):
     __slots__ = ("id", "category", "name", "description", "data_type", "data_type_flag")

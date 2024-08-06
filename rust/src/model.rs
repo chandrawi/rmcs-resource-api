@@ -35,6 +35,12 @@ pub struct ModelIds {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+pub struct TypeId {
+    #[prost(bytes = "vec", tag = "1")]
+    pub id: ::prost::alloc::vec::Vec<u8>,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ModelName {
     #[prost(string, tag = "1")]
     pub name: ::prost::alloc::string::String,
@@ -47,17 +53,13 @@ pub struct ModelCategory {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct ModelNameCategory {
-    #[prost(string, tag = "1")]
-    pub name: ::prost::alloc::string::String,
-    #[prost(string, tag = "2")]
-    pub category: ::prost::alloc::string::String,
-}
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct TypeId {
-    #[prost(bytes = "vec", tag = "1")]
-    pub id: ::prost::alloc::vec::Vec<u8>,
+pub struct ModelOption {
+    #[prost(bytes = "vec", optional, tag = "1")]
+    pub type_id: ::core::option::Option<::prost::alloc::vec::Vec<u8>>,
+    #[prost(string, optional, tag = "2")]
+    pub name: ::core::option::Option<::prost::alloc::string::String>,
+    #[prost(string, optional, tag = "3")]
+    pub category: ::core::option::Option<::prost::alloc::string::String>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -290,6 +292,31 @@ pub mod model_service_client {
                 .insert(GrpcMethod::new("model.ModelService", "ListModelByIds"));
             self.inner.unary(req, path, codec).await
         }
+        pub async fn list_model_by_type(
+            &mut self,
+            request: impl tonic::IntoRequest<super::TypeId>,
+        ) -> std::result::Result<
+            tonic::Response<super::ModelListResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/model.ModelService/ListModelByType",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("model.ModelService", "ListModelByType"));
+            self.inner.unary(req, path, codec).await
+        }
         pub async fn list_model_by_name(
             &mut self,
             request: impl tonic::IntoRequest<super::ModelName>,
@@ -340,9 +367,9 @@ pub mod model_service_client {
                 .insert(GrpcMethod::new("model.ModelService", "ListModelByCategory"));
             self.inner.unary(req, path, codec).await
         }
-        pub async fn list_model_by_name_category(
+        pub async fn list_model_option(
             &mut self,
-            request: impl tonic::IntoRequest<super::ModelNameCategory>,
+            request: impl tonic::IntoRequest<super::ModelOption>,
         ) -> std::result::Result<
             tonic::Response<super::ModelListResponse>,
             tonic::Status,
@@ -358,38 +385,11 @@ pub mod model_service_client {
                 })?;
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
-                "/model.ModelService/ListModelByNameCategory",
+                "/model.ModelService/ListModelOption",
             );
             let mut req = request.into_request();
             req.extensions_mut()
-                .insert(
-                    GrpcMethod::new("model.ModelService", "ListModelByNameCategory"),
-                );
-            self.inner.unary(req, path, codec).await
-        }
-        pub async fn list_model_by_type(
-            &mut self,
-            request: impl tonic::IntoRequest<super::TypeId>,
-        ) -> std::result::Result<
-            tonic::Response<super::ModelListResponse>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
-            let codec = tonic::codec::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/model.ModelService/ListModelByType",
-            );
-            let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(GrpcMethod::new("model.ModelService", "ListModelByType"));
+                .insert(GrpcMethod::new("model.ModelService", "ListModelOption"));
             self.inner.unary(req, path, codec).await
         }
         pub async fn create_model(
@@ -615,6 +615,13 @@ pub mod model_service_server {
             tonic::Response<super::ModelListResponse>,
             tonic::Status,
         >;
+        async fn list_model_by_type(
+            &self,
+            request: tonic::Request<super::TypeId>,
+        ) -> std::result::Result<
+            tonic::Response<super::ModelListResponse>,
+            tonic::Status,
+        >;
         async fn list_model_by_name(
             &self,
             request: tonic::Request<super::ModelName>,
@@ -629,16 +636,9 @@ pub mod model_service_server {
             tonic::Response<super::ModelListResponse>,
             tonic::Status,
         >;
-        async fn list_model_by_name_category(
+        async fn list_model_option(
             &self,
-            request: tonic::Request<super::ModelNameCategory>,
-        ) -> std::result::Result<
-            tonic::Response<super::ModelListResponse>,
-            tonic::Status,
-        >;
-        async fn list_model_by_type(
-            &self,
-            request: tonic::Request<super::TypeId>,
+            request: tonic::Request<super::ModelOption>,
         ) -> std::result::Result<
             tonic::Response<super::ModelListResponse>,
             tonic::Status,
@@ -863,6 +863,50 @@ pub mod model_service_server {
                     };
                     Box::pin(fut)
                 }
+                "/model.ModelService/ListModelByType" => {
+                    #[allow(non_camel_case_types)]
+                    struct ListModelByTypeSvc<T: ModelService>(pub Arc<T>);
+                    impl<T: ModelService> tonic::server::UnaryService<super::TypeId>
+                    for ListModelByTypeSvc<T> {
+                        type Response = super::ModelListResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::TypeId>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as ModelService>::list_model_by_type(&inner, request)
+                                    .await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = ListModelByTypeSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
                 "/model.ModelService/ListModelByName" => {
                     #[allow(non_camel_case_types)]
                     struct ListModelByNameSvc<T: ModelService>(pub Arc<T>);
@@ -953,13 +997,11 @@ pub mod model_service_server {
                     };
                     Box::pin(fut)
                 }
-                "/model.ModelService/ListModelByNameCategory" => {
+                "/model.ModelService/ListModelOption" => {
                     #[allow(non_camel_case_types)]
-                    struct ListModelByNameCategorySvc<T: ModelService>(pub Arc<T>);
-                    impl<
-                        T: ModelService,
-                    > tonic::server::UnaryService<super::ModelNameCategory>
-                    for ListModelByNameCategorySvc<T> {
+                    struct ListModelOptionSvc<T: ModelService>(pub Arc<T>);
+                    impl<T: ModelService> tonic::server::UnaryService<super::ModelOption>
+                    for ListModelOptionSvc<T> {
                         type Response = super::ModelListResponse;
                         type Future = BoxFuture<
                             tonic::Response<Self::Response>,
@@ -967,14 +1009,11 @@ pub mod model_service_server {
                         >;
                         fn call(
                             &mut self,
-                            request: tonic::Request<super::ModelNameCategory>,
+                            request: tonic::Request<super::ModelOption>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                <T as ModelService>::list_model_by_name_category(
-                                        &inner,
-                                        request,
-                                    )
+                                <T as ModelService>::list_model_option(&inner, request)
                                     .await
                             };
                             Box::pin(fut)
@@ -986,51 +1025,7 @@ pub mod model_service_server {
                     let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
-                        let method = ListModelByNameCategorySvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
-                        let mut grpc = tonic::server::Grpc::new(codec)
-                            .apply_compression_config(
-                                accept_compression_encodings,
-                                send_compression_encodings,
-                            )
-                            .apply_max_message_size_config(
-                                max_decoding_message_size,
-                                max_encoding_message_size,
-                            );
-                        let res = grpc.unary(method, req).await;
-                        Ok(res)
-                    };
-                    Box::pin(fut)
-                }
-                "/model.ModelService/ListModelByType" => {
-                    #[allow(non_camel_case_types)]
-                    struct ListModelByTypeSvc<T: ModelService>(pub Arc<T>);
-                    impl<T: ModelService> tonic::server::UnaryService<super::TypeId>
-                    for ListModelByTypeSvc<T> {
-                        type Response = super::ModelListResponse;
-                        type Future = BoxFuture<
-                            tonic::Response<Self::Response>,
-                            tonic::Status,
-                        >;
-                        fn call(
-                            &mut self,
-                            request: tonic::Request<super::TypeId>,
-                        ) -> Self::Future {
-                            let inner = Arc::clone(&self.0);
-                            let fut = async move {
-                                <T as ModelService>::list_model_by_type(&inner, request)
-                                    .await
-                            };
-                            Box::pin(fut)
-                        }
-                    }
-                    let accept_compression_encodings = self.accept_compression_encodings;
-                    let send_compression_encodings = self.send_compression_encodings;
-                    let max_decoding_message_size = self.max_decoding_message_size;
-                    let max_encoding_message_size = self.max_encoding_message_size;
-                    let inner = self.inner.clone();
-                    let fut = async move {
-                        let method = ListModelByTypeSvc(inner);
+                        let method = ListModelOptionSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(

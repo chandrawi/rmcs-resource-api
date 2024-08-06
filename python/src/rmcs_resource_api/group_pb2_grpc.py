@@ -59,9 +59,9 @@ class GroupServiceStub(object):
                 request_serializer=rmcs__resource__api_dot_group__pb2.GroupCategory.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_group__pb2.GroupModelListResponse.FromString,
                 _registered_method=True)
-        self.ListGroupModelByNameCategory = channel.unary_unary(
-                '/group.GroupService/ListGroupModelByNameCategory',
-                request_serializer=rmcs__resource__api_dot_group__pb2.GroupNameCategory.SerializeToString,
+        self.ListGroupModelOption = channel.unary_unary(
+                '/group.GroupService/ListGroupModelOption',
+                request_serializer=rmcs__resource__api_dot_group__pb2.GroupOption.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_group__pb2.GroupModelListResponse.FromString,
                 _registered_method=True)
         self.CreateGroupModel = channel.unary_unary(
@@ -109,9 +109,9 @@ class GroupServiceStub(object):
                 request_serializer=rmcs__resource__api_dot_group__pb2.GroupCategory.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_group__pb2.GroupDeviceListResponse.FromString,
                 _registered_method=True)
-        self.ListGroupDeviceByNameCategory = channel.unary_unary(
-                '/group.GroupService/ListGroupDeviceByNameCategory',
-                request_serializer=rmcs__resource__api_dot_group__pb2.GroupNameCategory.SerializeToString,
+        self.ListGroupDeviceOption = channel.unary_unary(
+                '/group.GroupService/ListGroupDeviceOption',
+                request_serializer=rmcs__resource__api_dot_group__pb2.GroupOption.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_group__pb2.GroupDeviceListResponse.FromString,
                 _registered_method=True)
         self.CreateGroupDevice = channel.unary_unary(
@@ -159,9 +159,9 @@ class GroupServiceStub(object):
                 request_serializer=rmcs__resource__api_dot_group__pb2.GroupCategory.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_group__pb2.GroupDeviceListResponse.FromString,
                 _registered_method=True)
-        self.ListGroupGatewayByNameCategory = channel.unary_unary(
-                '/group.GroupService/ListGroupGatewayByNameCategory',
-                request_serializer=rmcs__resource__api_dot_group__pb2.GroupNameCategory.SerializeToString,
+        self.ListGroupGatewayOption = channel.unary_unary(
+                '/group.GroupService/ListGroupGatewayOption',
+                request_serializer=rmcs__resource__api_dot_group__pb2.GroupOption.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_group__pb2.GroupDeviceListResponse.FromString,
                 _registered_method=True)
         self.CreateGroupGateway = channel.unary_unary(
@@ -218,7 +218,7 @@ class GroupServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListGroupModelByNameCategory(self, request, context):
+    def ListGroupModelOption(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -278,7 +278,7 @@ class GroupServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListGroupDeviceByNameCategory(self, request, context):
+    def ListGroupDeviceOption(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -338,7 +338,7 @@ class GroupServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListGroupGatewayByNameCategory(self, request, context):
+    def ListGroupGatewayOption(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -397,9 +397,9 @@ def add_GroupServiceServicer_to_server(servicer, server):
                     request_deserializer=rmcs__resource__api_dot_group__pb2.GroupCategory.FromString,
                     response_serializer=rmcs__resource__api_dot_group__pb2.GroupModelListResponse.SerializeToString,
             ),
-            'ListGroupModelByNameCategory': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListGroupModelByNameCategory,
-                    request_deserializer=rmcs__resource__api_dot_group__pb2.GroupNameCategory.FromString,
+            'ListGroupModelOption': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListGroupModelOption,
+                    request_deserializer=rmcs__resource__api_dot_group__pb2.GroupOption.FromString,
                     response_serializer=rmcs__resource__api_dot_group__pb2.GroupModelListResponse.SerializeToString,
             ),
             'CreateGroupModel': grpc.unary_unary_rpc_method_handler(
@@ -447,9 +447,9 @@ def add_GroupServiceServicer_to_server(servicer, server):
                     request_deserializer=rmcs__resource__api_dot_group__pb2.GroupCategory.FromString,
                     response_serializer=rmcs__resource__api_dot_group__pb2.GroupDeviceListResponse.SerializeToString,
             ),
-            'ListGroupDeviceByNameCategory': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListGroupDeviceByNameCategory,
-                    request_deserializer=rmcs__resource__api_dot_group__pb2.GroupNameCategory.FromString,
+            'ListGroupDeviceOption': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListGroupDeviceOption,
+                    request_deserializer=rmcs__resource__api_dot_group__pb2.GroupOption.FromString,
                     response_serializer=rmcs__resource__api_dot_group__pb2.GroupDeviceListResponse.SerializeToString,
             ),
             'CreateGroupDevice': grpc.unary_unary_rpc_method_handler(
@@ -497,9 +497,9 @@ def add_GroupServiceServicer_to_server(servicer, server):
                     request_deserializer=rmcs__resource__api_dot_group__pb2.GroupCategory.FromString,
                     response_serializer=rmcs__resource__api_dot_group__pb2.GroupDeviceListResponse.SerializeToString,
             ),
-            'ListGroupGatewayByNameCategory': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListGroupGatewayByNameCategory,
-                    request_deserializer=rmcs__resource__api_dot_group__pb2.GroupNameCategory.FromString,
+            'ListGroupGatewayOption': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListGroupGatewayOption,
+                    request_deserializer=rmcs__resource__api_dot_group__pb2.GroupOption.FromString,
                     response_serializer=rmcs__resource__api_dot_group__pb2.GroupDeviceListResponse.SerializeToString,
             ),
             'CreateGroupGateway': grpc.unary_unary_rpc_method_handler(
@@ -646,7 +646,7 @@ class GroupService(object):
             _registered_method=True)
 
     @staticmethod
-    def ListGroupModelByNameCategory(request,
+    def ListGroupModelOption(request,
             target,
             options=(),
             channel_credentials=None,
@@ -659,8 +659,8 @@ class GroupService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/group.GroupService/ListGroupModelByNameCategory',
-            rmcs__resource__api_dot_group__pb2.GroupNameCategory.SerializeToString,
+            '/group.GroupService/ListGroupModelOption',
+            rmcs__resource__api_dot_group__pb2.GroupOption.SerializeToString,
             rmcs__resource__api_dot_group__pb2.GroupModelListResponse.FromString,
             options,
             channel_credentials,
@@ -916,7 +916,7 @@ class GroupService(object):
             _registered_method=True)
 
     @staticmethod
-    def ListGroupDeviceByNameCategory(request,
+    def ListGroupDeviceOption(request,
             target,
             options=(),
             channel_credentials=None,
@@ -929,8 +929,8 @@ class GroupService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/group.GroupService/ListGroupDeviceByNameCategory',
-            rmcs__resource__api_dot_group__pb2.GroupNameCategory.SerializeToString,
+            '/group.GroupService/ListGroupDeviceOption',
+            rmcs__resource__api_dot_group__pb2.GroupOption.SerializeToString,
             rmcs__resource__api_dot_group__pb2.GroupDeviceListResponse.FromString,
             options,
             channel_credentials,
@@ -1186,7 +1186,7 @@ class GroupService(object):
             _registered_method=True)
 
     @staticmethod
-    def ListGroupGatewayByNameCategory(request,
+    def ListGroupGatewayOption(request,
             target,
             options=(),
             channel_credentials=None,
@@ -1199,8 +1199,8 @@ class GroupService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/group.GroupService/ListGroupGatewayByNameCategory',
-            rmcs__resource__api_dot_group__pb2.GroupNameCategory.SerializeToString,
+            '/group.GroupService/ListGroupGatewayOption',
+            rmcs__resource__api_dot_group__pb2.GroupOption.SerializeToString,
             rmcs__resource__api_dot_group__pb2.GroupDeviceListResponse.FromString,
             options,
             channel_credentials,

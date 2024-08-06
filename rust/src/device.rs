@@ -77,19 +77,21 @@ pub struct GatewayName {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct DeviceGatewayType {
-    #[prost(bytes = "vec", tag = "1")]
-    pub gateway_id: ::prost::alloc::vec::Vec<u8>,
-    #[prost(bytes = "vec", tag = "2")]
-    pub type_id: ::prost::alloc::vec::Vec<u8>,
+pub struct DeviceOption {
+    #[prost(bytes = "vec", optional, tag = "1")]
+    pub gateway_id: ::core::option::Option<::prost::alloc::vec::Vec<u8>>,
+    #[prost(bytes = "vec", optional, tag = "2")]
+    pub type_id: ::core::option::Option<::prost::alloc::vec::Vec<u8>>,
+    #[prost(string, optional, tag = "3")]
+    pub name: ::core::option::Option<::prost::alloc::string::String>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct DeviceGatewayName {
-    #[prost(bytes = "vec", tag = "1")]
-    pub gateway_id: ::prost::alloc::vec::Vec<u8>,
-    #[prost(string, tag = "2")]
-    pub name: ::prost::alloc::string::String,
+pub struct GatewayOption {
+    #[prost(bytes = "vec", optional, tag = "1")]
+    pub type_id: ::core::option::Option<::prost::alloc::vec::Vec<u8>>,
+    #[prost(string, optional, tag = "2")]
+    pub name: ::core::option::Option<::prost::alloc::string::String>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -186,6 +188,12 @@ pub struct TypeIds {
 pub struct TypeName {
     #[prost(string, tag = "1")]
     pub name: ::prost::alloc::string::String,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct TypeOption {
+    #[prost(string, optional, tag = "1")]
+    pub name: ::core::option::Option<::prost::alloc::string::String>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -524,9 +532,9 @@ pub mod device_service_client {
                 .insert(GrpcMethod::new("device.DeviceService", "ListDeviceByName"));
             self.inner.unary(req, path, codec).await
         }
-        pub async fn list_device_by_gateway_type(
+        pub async fn list_device_option(
             &mut self,
-            request: impl tonic::IntoRequest<super::DeviceGatewayType>,
+            request: impl tonic::IntoRequest<super::DeviceOption>,
         ) -> std::result::Result<
             tonic::Response<super::DeviceListResponse>,
             tonic::Status,
@@ -542,40 +550,11 @@ pub mod device_service_client {
                 })?;
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
-                "/device.DeviceService/ListDeviceByGatewayType",
+                "/device.DeviceService/ListDeviceOption",
             );
             let mut req = request.into_request();
             req.extensions_mut()
-                .insert(
-                    GrpcMethod::new("device.DeviceService", "ListDeviceByGatewayType"),
-                );
-            self.inner.unary(req, path, codec).await
-        }
-        pub async fn list_device_by_gateway_name(
-            &mut self,
-            request: impl tonic::IntoRequest<super::DeviceGatewayName>,
-        ) -> std::result::Result<
-            tonic::Response<super::DeviceListResponse>,
-            tonic::Status,
-        > {
-            self.inner
-                .ready()
-                .await
-                .map_err(|e| {
-                    tonic::Status::new(
-                        tonic::Code::Unknown,
-                        format!("Service was not ready: {}", e.into()),
-                    )
-                })?;
-            let codec = tonic::codec::ProstCodec::default();
-            let path = http::uri::PathAndQuery::from_static(
-                "/device.DeviceService/ListDeviceByGatewayName",
-            );
-            let mut req = request.into_request();
-            req.extensions_mut()
-                .insert(
-                    GrpcMethod::new("device.DeviceService", "ListDeviceByGatewayName"),
-                );
+                .insert(GrpcMethod::new("device.DeviceService", "ListDeviceOption"));
             self.inner.unary(req, path, codec).await
         }
         pub async fn create_device(
@@ -776,6 +755,31 @@ pub mod device_service_client {
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("device.DeviceService", "ListGatewayByName"));
+            self.inner.unary(req, path, codec).await
+        }
+        pub async fn list_gateway_option(
+            &mut self,
+            request: impl tonic::IntoRequest<super::GatewayOption>,
+        ) -> std::result::Result<
+            tonic::Response<super::GatewayListResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/device.DeviceService/ListGatewayOption",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("device.DeviceService", "ListGatewayOption"));
             self.inner.unary(req, path, codec).await
         }
         pub async fn create_gateway(
@@ -1178,6 +1182,31 @@ pub mod device_service_client {
                 .insert(GrpcMethod::new("device.DeviceService", "ListTypeByName"));
             self.inner.unary(req, path, codec).await
         }
+        pub async fn list_type_option(
+            &mut self,
+            request: impl tonic::IntoRequest<super::TypeOption>,
+        ) -> std::result::Result<
+            tonic::Response<super::TypeListResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/device.DeviceService/ListTypeOption",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("device.DeviceService", "ListTypeOption"));
+            self.inner.unary(req, path, codec).await
+        }
         pub async fn create_type(
             &mut self,
             request: impl tonic::IntoRequest<super::TypeSchema>,
@@ -1354,16 +1383,9 @@ pub mod device_service_server {
             tonic::Response<super::DeviceListResponse>,
             tonic::Status,
         >;
-        async fn list_device_by_gateway_type(
+        async fn list_device_option(
             &self,
-            request: tonic::Request<super::DeviceGatewayType>,
-        ) -> std::result::Result<
-            tonic::Response<super::DeviceListResponse>,
-            tonic::Status,
-        >;
-        async fn list_device_by_gateway_name(
-            &self,
-            request: tonic::Request<super::DeviceGatewayName>,
+            request: tonic::Request<super::DeviceOption>,
         ) -> std::result::Result<
             tonic::Response<super::DeviceListResponse>,
             tonic::Status,
@@ -1420,6 +1442,13 @@ pub mod device_service_server {
         async fn list_gateway_by_name(
             &self,
             request: tonic::Request<super::GatewayName>,
+        ) -> std::result::Result<
+            tonic::Response<super::GatewayListResponse>,
+            tonic::Status,
+        >;
+        async fn list_gateway_option(
+            &self,
+            request: tonic::Request<super::GatewayOption>,
         ) -> std::result::Result<
             tonic::Response<super::GatewayListResponse>,
             tonic::Status,
@@ -1532,6 +1561,13 @@ pub mod device_service_server {
         async fn list_type_by_name(
             &self,
             request: tonic::Request<super::TypeName>,
+        ) -> std::result::Result<
+            tonic::Response<super::TypeListResponse>,
+            tonic::Status,
+        >;
+        async fn list_type_option(
+            &self,
+            request: tonic::Request<super::TypeOption>,
         ) -> std::result::Result<
             tonic::Response<super::TypeListResponse>,
             tonic::Status,
@@ -1916,13 +1952,13 @@ pub mod device_service_server {
                     };
                     Box::pin(fut)
                 }
-                "/device.DeviceService/ListDeviceByGatewayType" => {
+                "/device.DeviceService/ListDeviceOption" => {
                     #[allow(non_camel_case_types)]
-                    struct ListDeviceByGatewayTypeSvc<T: DeviceService>(pub Arc<T>);
+                    struct ListDeviceOptionSvc<T: DeviceService>(pub Arc<T>);
                     impl<
                         T: DeviceService,
-                    > tonic::server::UnaryService<super::DeviceGatewayType>
-                    for ListDeviceByGatewayTypeSvc<T> {
+                    > tonic::server::UnaryService<super::DeviceOption>
+                    for ListDeviceOptionSvc<T> {
                         type Response = super::DeviceListResponse;
                         type Future = BoxFuture<
                             tonic::Response<Self::Response>,
@@ -1930,14 +1966,11 @@ pub mod device_service_server {
                         >;
                         fn call(
                             &mut self,
-                            request: tonic::Request<super::DeviceGatewayType>,
+                            request: tonic::Request<super::DeviceOption>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                <T as DeviceService>::list_device_by_gateway_type(
-                                        &inner,
-                                        request,
-                                    )
+                                <T as DeviceService>::list_device_option(&inner, request)
                                     .await
                             };
                             Box::pin(fut)
@@ -1949,56 +1982,7 @@ pub mod device_service_server {
                     let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
-                        let method = ListDeviceByGatewayTypeSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
-                        let mut grpc = tonic::server::Grpc::new(codec)
-                            .apply_compression_config(
-                                accept_compression_encodings,
-                                send_compression_encodings,
-                            )
-                            .apply_max_message_size_config(
-                                max_decoding_message_size,
-                                max_encoding_message_size,
-                            );
-                        let res = grpc.unary(method, req).await;
-                        Ok(res)
-                    };
-                    Box::pin(fut)
-                }
-                "/device.DeviceService/ListDeviceByGatewayName" => {
-                    #[allow(non_camel_case_types)]
-                    struct ListDeviceByGatewayNameSvc<T: DeviceService>(pub Arc<T>);
-                    impl<
-                        T: DeviceService,
-                    > tonic::server::UnaryService<super::DeviceGatewayName>
-                    for ListDeviceByGatewayNameSvc<T> {
-                        type Response = super::DeviceListResponse;
-                        type Future = BoxFuture<
-                            tonic::Response<Self::Response>,
-                            tonic::Status,
-                        >;
-                        fn call(
-                            &mut self,
-                            request: tonic::Request<super::DeviceGatewayName>,
-                        ) -> Self::Future {
-                            let inner = Arc::clone(&self.0);
-                            let fut = async move {
-                                <T as DeviceService>::list_device_by_gateway_name(
-                                        &inner,
-                                        request,
-                                    )
-                                    .await
-                            };
-                            Box::pin(fut)
-                        }
-                    }
-                    let accept_compression_encodings = self.accept_compression_encodings;
-                    let send_compression_encodings = self.send_compression_encodings;
-                    let max_decoding_message_size = self.max_decoding_message_size;
-                    let max_encoding_message_size = self.max_encoding_message_size;
-                    let inner = self.inner.clone();
-                    let fut = async move {
-                        let method = ListDeviceByGatewayNameSvc(inner);
+                        let method = ListDeviceOptionSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
@@ -2355,6 +2339,52 @@ pub mod device_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListGatewayByNameSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/device.DeviceService/ListGatewayOption" => {
+                    #[allow(non_camel_case_types)]
+                    struct ListGatewayOptionSvc<T: DeviceService>(pub Arc<T>);
+                    impl<
+                        T: DeviceService,
+                    > tonic::server::UnaryService<super::GatewayOption>
+                    for ListGatewayOptionSvc<T> {
+                        type Response = super::GatewayListResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::GatewayOption>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as DeviceService>::list_gateway_option(&inner, request)
+                                    .await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = ListGatewayOptionSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
@@ -3067,6 +3097,50 @@ pub mod device_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListTypeByNameSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/device.DeviceService/ListTypeOption" => {
+                    #[allow(non_camel_case_types)]
+                    struct ListTypeOptionSvc<T: DeviceService>(pub Arc<T>);
+                    impl<T: DeviceService> tonic::server::UnaryService<super::TypeOption>
+                    for ListTypeOptionSvc<T> {
+                        type Response = super::TypeListResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::TypeOption>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as DeviceService>::list_type_option(&inner, request)
+                                    .await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = ListTypeOptionSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(

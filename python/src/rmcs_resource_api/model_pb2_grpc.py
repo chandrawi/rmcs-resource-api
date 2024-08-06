@@ -49,6 +49,11 @@ class ModelServiceStub(object):
                 request_serializer=rmcs__resource__api_dot_model__pb2.ModelIds.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_model__pb2.ModelListResponse.FromString,
                 _registered_method=True)
+        self.ListModelByType = channel.unary_unary(
+                '/model.ModelService/ListModelByType',
+                request_serializer=rmcs__resource__api_dot_model__pb2.TypeId.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_model__pb2.ModelListResponse.FromString,
+                _registered_method=True)
         self.ListModelByName = channel.unary_unary(
                 '/model.ModelService/ListModelByName',
                 request_serializer=rmcs__resource__api_dot_model__pb2.ModelName.SerializeToString,
@@ -59,14 +64,9 @@ class ModelServiceStub(object):
                 request_serializer=rmcs__resource__api_dot_model__pb2.ModelCategory.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_model__pb2.ModelListResponse.FromString,
                 _registered_method=True)
-        self.ListModelByNameCategory = channel.unary_unary(
-                '/model.ModelService/ListModelByNameCategory',
-                request_serializer=rmcs__resource__api_dot_model__pb2.ModelNameCategory.SerializeToString,
-                response_deserializer=rmcs__resource__api_dot_model__pb2.ModelListResponse.FromString,
-                _registered_method=True)
-        self.ListModelByType = channel.unary_unary(
-                '/model.ModelService/ListModelByType',
-                request_serializer=rmcs__resource__api_dot_model__pb2.TypeId.SerializeToString,
+        self.ListModelOption = channel.unary_unary(
+                '/model.ModelService/ListModelOption',
+                request_serializer=rmcs__resource__api_dot_model__pb2.ModelOption.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_model__pb2.ModelListResponse.FromString,
                 _registered_method=True)
         self.CreateModel = channel.unary_unary(
@@ -126,6 +126,12 @@ class ModelServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListModelByType(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def ListModelByName(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -138,13 +144,7 @@ class ModelServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListModelByNameCategory(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def ListModelByType(self, request, context):
+    def ListModelOption(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -211,6 +211,11 @@ def add_ModelServiceServicer_to_server(servicer, server):
                     request_deserializer=rmcs__resource__api_dot_model__pb2.ModelIds.FromString,
                     response_serializer=rmcs__resource__api_dot_model__pb2.ModelListResponse.SerializeToString,
             ),
+            'ListModelByType': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListModelByType,
+                    request_deserializer=rmcs__resource__api_dot_model__pb2.TypeId.FromString,
+                    response_serializer=rmcs__resource__api_dot_model__pb2.ModelListResponse.SerializeToString,
+            ),
             'ListModelByName': grpc.unary_unary_rpc_method_handler(
                     servicer.ListModelByName,
                     request_deserializer=rmcs__resource__api_dot_model__pb2.ModelName.FromString,
@@ -221,14 +226,9 @@ def add_ModelServiceServicer_to_server(servicer, server):
                     request_deserializer=rmcs__resource__api_dot_model__pb2.ModelCategory.FromString,
                     response_serializer=rmcs__resource__api_dot_model__pb2.ModelListResponse.SerializeToString,
             ),
-            'ListModelByNameCategory': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListModelByNameCategory,
-                    request_deserializer=rmcs__resource__api_dot_model__pb2.ModelNameCategory.FromString,
-                    response_serializer=rmcs__resource__api_dot_model__pb2.ModelListResponse.SerializeToString,
-            ),
-            'ListModelByType': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListModelByType,
-                    request_deserializer=rmcs__resource__api_dot_model__pb2.TypeId.FromString,
+            'ListModelOption': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListModelOption,
+                    request_deserializer=rmcs__resource__api_dot_model__pb2.ModelOption.FromString,
                     response_serializer=rmcs__resource__api_dot_model__pb2.ModelListResponse.SerializeToString,
             ),
             'CreateModel': grpc.unary_unary_rpc_method_handler(
@@ -336,6 +336,33 @@ class ModelService(object):
             _registered_method=True)
 
     @staticmethod
+    def ListModelByType(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/model.ModelService/ListModelByType',
+            rmcs__resource__api_dot_model__pb2.TypeId.SerializeToString,
+            rmcs__resource__api_dot_model__pb2.ModelListResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
     def ListModelByName(request,
             target,
             options=(),
@@ -390,7 +417,7 @@ class ModelService(object):
             _registered_method=True)
 
     @staticmethod
-    def ListModelByNameCategory(request,
+    def ListModelOption(request,
             target,
             options=(),
             channel_credentials=None,
@@ -403,35 +430,8 @@ class ModelService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/model.ModelService/ListModelByNameCategory',
-            rmcs__resource__api_dot_model__pb2.ModelNameCategory.SerializeToString,
-            rmcs__resource__api_dot_model__pb2.ModelListResponse.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
-    def ListModelByType(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/model.ModelService/ListModelByType',
-            rmcs__resource__api_dot_model__pb2.TypeId.SerializeToString,
+            '/model.ModelService/ListModelOption',
+            rmcs__resource__api_dot_model__pb2.ModelOption.SerializeToString,
             rmcs__resource__api_dot_model__pb2.ModelListResponse.FromString,
             options,
             channel_credentials,

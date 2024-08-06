@@ -47,6 +47,14 @@ class SetName(_message.Message):
     name: str
     def __init__(self, name: _Optional[str] = ...) -> None: ...
 
+class SetOption(_message.Message):
+    __slots__ = ("template_id", "name")
+    TEMPLATE_ID_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    template_id: bytes
+    name: str
+    def __init__(self, template_id: _Optional[bytes] = ..., name: _Optional[str] = ...) -> None: ...
+
 class SetUpdate(_message.Message):
     __slots__ = ("id", "template_id", "name", "description")
     ID_FIELD_NUMBER: _ClassVar[int]
@@ -120,6 +128,12 @@ class SetTemplateIds(_message.Message):
     def __init__(self, ids: _Optional[_Iterable[bytes]] = ...) -> None: ...
 
 class SetTemplateName(_message.Message):
+    __slots__ = ("name",)
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    def __init__(self, name: _Optional[str] = ...) -> None: ...
+
+class SetTemplateOption(_message.Message):
     __slots__ = ("name",)
     NAME_FIELD_NUMBER: _ClassVar[int]
     name: str
