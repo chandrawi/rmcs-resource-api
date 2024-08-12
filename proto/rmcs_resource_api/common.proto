@@ -17,11 +17,6 @@ enum DataType {
     F64 = 13;
     BOOL = 15;
     CHAR = 16;
-}
-
-enum ConfigType {
-    NULLC = 0;
-    INT = 1;
-    FLOAT = 2;
-    STR = 3;
+    STRING = 17;
+    BYTES = 18;
 }

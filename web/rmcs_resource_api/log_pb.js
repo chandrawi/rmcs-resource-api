@@ -289,7 +289,7 @@ proto.log.LogSchema.deserializeBinaryFromReader = function(msg, reader) {
       msg.setLogBytes(value);
       break;
     case 5:
-      var value = /** @type {!proto.common.ConfigType} */ (reader.readEnum());
+      var value = /** @type {!proto.common.DataType} */ (reader.readEnum());
       msg.setLogType(value);
       break;
     default:
@@ -480,16 +480,16 @@ proto.log.LogSchema.prototype.setLogBytes = function(value) {
 
 
 /**
- * optional common.ConfigType log_type = 5;
- * @return {!proto.common.ConfigType}
+ * optional common.DataType log_type = 5;
+ * @return {!proto.common.DataType}
  */
 proto.log.LogSchema.prototype.getLogType = function() {
-  return /** @type {!proto.common.ConfigType} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+  return /** @type {!proto.common.DataType} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
 
 /**
- * @param {!proto.common.ConfigType} value
+ * @param {!proto.common.DataType} value
  * @return {!proto.log.LogSchema} returns this
  */
 proto.log.LogSchema.prototype.setLogType = function(value) {
@@ -1301,7 +1301,7 @@ proto.log.LogUpdate.deserializeBinaryFromReader = function(msg, reader) {
       msg.setLogBytes(value);
       break;
     case 5:
-      var value = /** @type {!proto.common.ConfigType} */ (reader.readEnum());
+      var value = /** @type {!proto.common.DataType} */ (reader.readEnum());
       msg.setLogType(value);
       break;
     default:
@@ -1361,7 +1361,7 @@ proto.log.LogUpdate.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = /** @type {!proto.common.ConfigType} */ (jspb.Message.getField(message, 5));
+  f = /** @type {!proto.common.DataType} */ (jspb.Message.getField(message, 5));
   if (f != null) {
     writer.writeEnum(
       5,
@@ -1528,16 +1528,16 @@ proto.log.LogUpdate.prototype.hasLogBytes = function() {
 
 
 /**
- * optional common.ConfigType log_type = 5;
- * @return {!proto.common.ConfigType}
+ * optional common.DataType log_type = 5;
+ * @return {!proto.common.DataType}
  */
 proto.log.LogUpdate.prototype.getLogType = function() {
-  return /** @type {!proto.common.ConfigType} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+  return /** @type {!proto.common.DataType} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
 
 /**
- * @param {!proto.common.ConfigType} value
+ * @param {!proto.common.DataType} value
  * @return {!proto.log.LogUpdate} returns this
  */
 proto.log.LogUpdate.prototype.setLogType = function(value) {

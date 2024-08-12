@@ -21,7 +21,6 @@ var global =
     (function () { return this; }).call(null) ||
     Function('return this')();
 
-goog.exportSymbol('proto.common.ConfigType', null, global);
 goog.exportSymbol('proto.common.DataType', null, global);
 /**
  * @enum {number}
@@ -41,17 +40,9 @@ proto.common.DataType = {
   F32: 12,
   F64: 13,
   BOOL: 15,
-  CHAR: 16
-};
-
-/**
- * @enum {number}
- */
-proto.common.ConfigType = {
-  NULLC: 0,
-  INT: 1,
-  FLOAT: 2,
-  STR: 3
+  CHAR: 16,
+  STRING: 17,
+  BYTES: 18
 };
 
 goog.object.extend(exports, proto.common);

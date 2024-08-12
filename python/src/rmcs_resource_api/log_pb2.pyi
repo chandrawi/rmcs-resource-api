@@ -17,8 +17,8 @@ class LogSchema(_message.Message):
     device_id: bytes
     status: int
     log_bytes: bytes
-    log_type: _common_pb2.ConfigType
-    def __init__(self, timestamp: _Optional[int] = ..., device_id: _Optional[bytes] = ..., status: _Optional[int] = ..., log_bytes: _Optional[bytes] = ..., log_type: _Optional[_Union[_common_pb2.ConfigType, str]] = ...) -> None: ...
+    log_type: _common_pb2.DataType
+    def __init__(self, timestamp: _Optional[int] = ..., device_id: _Optional[bytes] = ..., status: _Optional[int] = ..., log_bytes: _Optional[bytes] = ..., log_type: _Optional[_Union[_common_pb2.DataType, str]] = ...) -> None: ...
 
 class LogId(_message.Message):
     __slots__ = ("timestamp", "device_id")
@@ -61,8 +61,8 @@ class LogUpdate(_message.Message):
     device_id: bytes
     status: int
     log_bytes: bytes
-    log_type: _common_pb2.ConfigType
-    def __init__(self, timestamp: _Optional[int] = ..., device_id: _Optional[bytes] = ..., status: _Optional[int] = ..., log_bytes: _Optional[bytes] = ..., log_type: _Optional[_Union[_common_pb2.ConfigType, str]] = ...) -> None: ...
+    log_type: _common_pb2.DataType
+    def __init__(self, timestamp: _Optional[int] = ..., device_id: _Optional[bytes] = ..., status: _Optional[int] = ..., log_bytes: _Optional[bytes] = ..., log_type: _Optional[_Union[_common_pb2.DataType, str]] = ...) -> None: ...
 
 class LogReadResponse(_message.Message):
     __slots__ = ("result",)

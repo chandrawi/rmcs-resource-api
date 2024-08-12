@@ -4118,7 +4118,7 @@ proto.device.ConfigSchema.deserializeBinaryFromReader = function(msg, reader) {
       msg.setConfigBytes(value);
       break;
     case 5:
-      var value = /** @type {!proto.common.ConfigType} */ (reader.readEnum());
+      var value = /** @type {!proto.common.DataType} */ (reader.readEnum());
       msg.setConfigType(value);
       break;
     case 6:
@@ -4320,16 +4320,16 @@ proto.device.ConfigSchema.prototype.setConfigBytes = function(value) {
 
 
 /**
- * optional common.ConfigType config_type = 5;
- * @return {!proto.common.ConfigType}
+ * optional common.DataType config_type = 5;
+ * @return {!proto.common.DataType}
  */
 proto.device.ConfigSchema.prototype.getConfigType = function() {
-  return /** @type {!proto.common.ConfigType} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+  return /** @type {!proto.common.DataType} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
 
 /**
- * @param {!proto.common.ConfigType} value
+ * @param {!proto.common.DataType} value
  * @return {!proto.device.ConfigSchema} returns this
  */
 proto.device.ConfigSchema.prototype.setConfigType = function(value) {
@@ -4571,7 +4571,7 @@ proto.device.ConfigUpdate.deserializeBinaryFromReader = function(msg, reader) {
       msg.setConfigBytes(value);
       break;
     case 4:
-      var value = /** @type {!proto.common.ConfigType} */ (reader.readEnum());
+      var value = /** @type {!proto.common.DataType} */ (reader.readEnum());
       msg.setConfigType(value);
       break;
     case 5:
@@ -4628,7 +4628,7 @@ proto.device.ConfigUpdate.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = /** @type {!proto.common.ConfigType} */ (jspb.Message.getField(message, 4));
+  f = /** @type {!proto.common.DataType} */ (jspb.Message.getField(message, 4));
   if (f != null) {
     writer.writeEnum(
       4,
@@ -4760,16 +4760,16 @@ proto.device.ConfigUpdate.prototype.hasConfigBytes = function() {
 
 
 /**
- * optional common.ConfigType config_type = 4;
- * @return {!proto.common.ConfigType}
+ * optional common.DataType config_type = 4;
+ * @return {!proto.common.DataType}
  */
 proto.device.ConfigUpdate.prototype.getConfigType = function() {
-  return /** @type {!proto.common.ConfigType} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+  return /** @type {!proto.common.DataType} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
 
 /**
- * @param {!proto.common.ConfigType} value
+ * @param {!proto.common.DataType} value
  * @return {!proto.device.ConfigUpdate} returns this
  */
 proto.device.ConfigUpdate.prototype.setConfigType = function(value) {

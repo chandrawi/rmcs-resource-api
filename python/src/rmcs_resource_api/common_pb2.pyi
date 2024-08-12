@@ -21,13 +21,8 @@ class DataType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     F64: _ClassVar[DataType]
     BOOL: _ClassVar[DataType]
     CHAR: _ClassVar[DataType]
-
-class ConfigType(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
-    __slots__ = ()
-    NULLC: _ClassVar[ConfigType]
-    INT: _ClassVar[ConfigType]
-    FLOAT: _ClassVar[ConfigType]
-    STR: _ClassVar[ConfigType]
+    STRING: _ClassVar[DataType]
+    BYTES: _ClassVar[DataType]
 NULLD: DataType
 I8: DataType
 I16: DataType
@@ -43,7 +38,5 @@ F32: DataType
 F64: DataType
 BOOL: DataType
 CHAR: DataType
-NULLC: ConfigType
-INT: ConfigType
-FLOAT: ConfigType
-STR: ConfigType
+STRING: DataType
+BYTES: DataType

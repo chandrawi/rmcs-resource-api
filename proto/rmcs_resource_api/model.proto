@@ -87,7 +87,7 @@ message ConfigSchema {
     int32 index = 3;
     string name = 4;
     bytes config_bytes = 5;
-    common.ConfigType config_type = 6;
+    common.DataType config_type = 6;
     string category = 7;
 }
 
@@ -99,7 +99,7 @@ message ConfigUpdate {
     int32 id = 1;
     optional string name = 2;
     optional bytes config_bytes = 3;
-    optional common.ConfigType config_type = 4;
+    optional common.DataType config_type = 4;
     optional string category = 5;
 }
 

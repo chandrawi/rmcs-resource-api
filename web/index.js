@@ -31,7 +31,6 @@ var common_pb = {};
 	    (function () { return this; }).call(null) ||
 	    Function('return this')();
 
-	goog.exportSymbol('proto.common.ConfigType', null, global);
 	goog.exportSymbol('proto.common.DataType', null, global);
 	/**
 	 * @enum {number}
@@ -51,17 +50,9 @@ var common_pb = {};
 	  F32: 12,
 	  F64: 13,
 	  BOOL: 15,
-	  CHAR: 16
-	};
-
-	/**
-	 * @enum {number}
-	 */
-	proto.common.ConfigType = {
-	  NULLC: 0,
-	  INT: 1,
-	  FLOAT: 2,
-	  STR: 3
+	  CHAR: 16,
+	  STRING: 17,
+	  BYTES: 18
 	};
 
 	goog.object.extend(exports, proto.common); 
@@ -2548,7 +2539,7 @@ var model_pb = {};
 	      msg.setConfigBytes(value);
 	      break;
 	    case 6:
-	      var value = /** @type {!proto.common.ConfigType} */ (reader.readEnum());
+	      var value = /** @type {!proto.common.DataType} */ (reader.readEnum());
 	      msg.setConfigType(value);
 	      break;
 	    case 7:
@@ -2775,16 +2766,16 @@ var model_pb = {};
 
 
 	/**
-	 * optional common.ConfigType config_type = 6;
-	 * @return {!proto.common.ConfigType}
+	 * optional common.DataType config_type = 6;
+	 * @return {!proto.common.DataType}
 	 */
 	proto.model.ConfigSchema.prototype.getConfigType = function() {
-	  return /** @type {!proto.common.ConfigType} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+	  return /** @type {!proto.common.DataType} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
 	};
 
 
 	/**
-	 * @param {!proto.common.ConfigType} value
+	 * @param {!proto.common.DataType} value
 	 * @return {!proto.model.ConfigSchema} returns this
 	 */
 	proto.model.ConfigSchema.prototype.setConfigType = function(value) {
@@ -3026,7 +3017,7 @@ var model_pb = {};
 	      msg.setConfigBytes(value);
 	      break;
 	    case 4:
-	      var value = /** @type {!proto.common.ConfigType} */ (reader.readEnum());
+	      var value = /** @type {!proto.common.DataType} */ (reader.readEnum());
 	      msg.setConfigType(value);
 	      break;
 	    case 5:
@@ -3083,7 +3074,7 @@ var model_pb = {};
 	      f
 	    );
 	  }
-	  f = /** @type {!proto.common.ConfigType} */ (jspb.Message.getField(message, 4));
+	  f = /** @type {!proto.common.DataType} */ (jspb.Message.getField(message, 4));
 	  if (f != null) {
 	    writer.writeEnum(
 	      4,
@@ -3215,16 +3206,16 @@ var model_pb = {};
 
 
 	/**
-	 * optional common.ConfigType config_type = 4;
-	 * @return {!proto.common.ConfigType}
+	 * optional common.DataType config_type = 4;
+	 * @return {!proto.common.DataType}
 	 */
 	proto.model.ConfigUpdate.prototype.getConfigType = function() {
-	  return /** @type {!proto.common.ConfigType} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+	  return /** @type {!proto.common.DataType} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 	};
 
 
 	/**
-	 * @param {!proto.common.ConfigType} value
+	 * @param {!proto.common.DataType} value
 	 * @return {!proto.model.ConfigUpdate} returns this
 	 */
 	proto.model.ConfigUpdate.prototype.setConfigType = function(value) {
@@ -9451,7 +9442,7 @@ var device_pb = {};
 	      msg.setConfigBytes(value);
 	      break;
 	    case 5:
-	      var value = /** @type {!proto.common.ConfigType} */ (reader.readEnum());
+	      var value = /** @type {!proto.common.DataType} */ (reader.readEnum());
 	      msg.setConfigType(value);
 	      break;
 	    case 6:
@@ -9653,16 +9644,16 @@ var device_pb = {};
 
 
 	/**
-	 * optional common.ConfigType config_type = 5;
-	 * @return {!proto.common.ConfigType}
+	 * optional common.DataType config_type = 5;
+	 * @return {!proto.common.DataType}
 	 */
 	proto.device.ConfigSchema.prototype.getConfigType = function() {
-	  return /** @type {!proto.common.ConfigType} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+	  return /** @type {!proto.common.DataType} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 	};
 
 
 	/**
-	 * @param {!proto.common.ConfigType} value
+	 * @param {!proto.common.DataType} value
 	 * @return {!proto.device.ConfigSchema} returns this
 	 */
 	proto.device.ConfigSchema.prototype.setConfigType = function(value) {
@@ -9904,7 +9895,7 @@ var device_pb = {};
 	      msg.setConfigBytes(value);
 	      break;
 	    case 4:
-	      var value = /** @type {!proto.common.ConfigType} */ (reader.readEnum());
+	      var value = /** @type {!proto.common.DataType} */ (reader.readEnum());
 	      msg.setConfigType(value);
 	      break;
 	    case 5:
@@ -9961,7 +9952,7 @@ var device_pb = {};
 	      f
 	    );
 	  }
-	  f = /** @type {!proto.common.ConfigType} */ (jspb.Message.getField(message, 4));
+	  f = /** @type {!proto.common.DataType} */ (jspb.Message.getField(message, 4));
 	  if (f != null) {
 	    writer.writeEnum(
 	      4,
@@ -10093,16 +10084,16 @@ var device_pb = {};
 
 
 	/**
-	 * optional common.ConfigType config_type = 4;
-	 * @return {!proto.common.ConfigType}
+	 * optional common.DataType config_type = 4;
+	 * @return {!proto.common.DataType}
 	 */
 	proto.device.ConfigUpdate.prototype.getConfigType = function() {
-	  return /** @type {!proto.common.ConfigType} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+	  return /** @type {!proto.common.DataType} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 	};
 
 
 	/**
-	 * @param {!proto.common.ConfigType} value
+	 * @param {!proto.common.DataType} value
 	 * @return {!proto.device.ConfigUpdate} returns this
 	 */
 	proto.device.ConfigUpdate.prototype.setConfigType = function(value) {
@@ -43967,7 +43958,7 @@ var log_pb = {};
 	      msg.setLogBytes(value);
 	      break;
 	    case 5:
-	      var value = /** @type {!proto.common.ConfigType} */ (reader.readEnum());
+	      var value = /** @type {!proto.common.DataType} */ (reader.readEnum());
 	      msg.setLogType(value);
 	      break;
 	    default:
@@ -44158,16 +44149,16 @@ var log_pb = {};
 
 
 	/**
-	 * optional common.ConfigType log_type = 5;
-	 * @return {!proto.common.ConfigType}
+	 * optional common.DataType log_type = 5;
+	 * @return {!proto.common.DataType}
 	 */
 	proto.log.LogSchema.prototype.getLogType = function() {
-	  return /** @type {!proto.common.ConfigType} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+	  return /** @type {!proto.common.DataType} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 	};
 
 
 	/**
-	 * @param {!proto.common.ConfigType} value
+	 * @param {!proto.common.DataType} value
 	 * @return {!proto.log.LogSchema} returns this
 	 */
 	proto.log.LogSchema.prototype.setLogType = function(value) {
@@ -44979,7 +44970,7 @@ var log_pb = {};
 	      msg.setLogBytes(value);
 	      break;
 	    case 5:
-	      var value = /** @type {!proto.common.ConfigType} */ (reader.readEnum());
+	      var value = /** @type {!proto.common.DataType} */ (reader.readEnum());
 	      msg.setLogType(value);
 	      break;
 	    default:
@@ -45039,7 +45030,7 @@ var log_pb = {};
 	      f
 	    );
 	  }
-	  f = /** @type {!proto.common.ConfigType} */ (jspb.Message.getField(message, 5));
+	  f = /** @type {!proto.common.DataType} */ (jspb.Message.getField(message, 5));
 	  if (f != null) {
 	    writer.writeEnum(
 	      5,
@@ -45206,16 +45197,16 @@ var log_pb = {};
 
 
 	/**
-	 * optional common.ConfigType log_type = 5;
-	 * @return {!proto.common.ConfigType}
+	 * optional common.DataType log_type = 5;
+	 * @return {!proto.common.DataType}
 	 */
 	proto.log.LogUpdate.prototype.getLogType = function() {
-	  return /** @type {!proto.common.ConfigType} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+	  return /** @type {!proto.common.DataType} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 	};
 
 
 	/**
-	 * @param {!proto.common.ConfigType} value
+	 * @param {!proto.common.DataType} value
 	 * @return {!proto.log.LogUpdate} returns this
 	 */
 	proto.log.LogUpdate.prototype.setLogType = function(value) {

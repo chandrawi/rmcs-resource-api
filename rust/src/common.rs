@@ -17,6 +17,8 @@ pub enum DataType {
     F64 = 13,
     Bool = 15,
     Char = 16,
+    String = 17,
+    Bytes = 18,
 }
 impl DataType {
     /// String value of the enum field names used in the ProtoBuf definition.
@@ -40,6 +42,8 @@ impl DataType {
             DataType::F64 => "F64",
             DataType::Bool => "BOOL",
             DataType::Char => "CHAR",
+            DataType::String => "STRING",
+            DataType::Bytes => "BYTES",
         }
     }
     /// Creates an enum from field names used in the ProtoBuf definition.
@@ -60,38 +64,8 @@ impl DataType {
             "F64" => Some(Self::F64),
             "BOOL" => Some(Self::Bool),
             "CHAR" => Some(Self::Char),
-            _ => None,
-        }
-    }
-}
-#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
-#[repr(i32)]
-pub enum ConfigType {
-    Nullc = 0,
-    Int = 1,
-    Float = 2,
-    Str = 3,
-}
-impl ConfigType {
-    /// String value of the enum field names used in the ProtoBuf definition.
-    ///
-    /// The values are not transformed in any way and thus are considered stable
-    /// (if the ProtoBuf definition does not change) and safe for programmatic use.
-    pub fn as_str_name(&self) -> &'static str {
-        match self {
-            ConfigType::Nullc => "NULLC",
-            ConfigType::Int => "INT",
-            ConfigType::Float => "FLOAT",
-            ConfigType::Str => "STR",
-        }
-    }
-    /// Creates an enum from field names used in the ProtoBuf definition.
-    pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
-        match value {
-            "NULLC" => Some(Self::Nullc),
-            "INT" => Some(Self::Int),
-            "FLOAT" => Some(Self::Float),
-            "STR" => Some(Self::Str),
+            "STRING" => Some(Self::String),
+            "BYTES" => Some(Self::Bytes),
             _ => None,
         }
     }
