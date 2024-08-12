@@ -5,7 +5,7 @@ import warnings
 
 from rmcs_resource_api import data_pb2 as rmcs__resource__api_dot_data__pb2
 
-GRPC_GENERATED_VERSION = '1.63.0'
+GRPC_GENERATED_VERSION = '1.64.1'
 GRPC_VERSION = grpc.__version__
 EXPECTED_ERROR_RELEASE = '1.65.0'
 SCHEDULED_RELEASE_DATE = 'June 25, 2024'
@@ -78,6 +78,21 @@ class DataServiceStub(object):
                 '/data.DataService/DeleteData',
                 request_serializer=rmcs__resource__api_dot_data__pb2.DataId.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_data__pb2.DataChangeResponse.FromString,
+                _registered_method=True)
+        self.CountData = channel.unary_unary(
+                '/data.DataService/CountData',
+                request_serializer=rmcs__resource__api_dot_data__pb2.DataCount.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_data__pb2.DataCountResponse.FromString,
+                _registered_method=True)
+        self.CountDataByLastTime = channel.unary_unary(
+                '/data.DataService/CountDataByLastTime',
+                request_serializer=rmcs__resource__api_dot_data__pb2.DataCount.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_data__pb2.DataCountResponse.FromString,
+                _registered_method=True)
+        self.CountDataByRangeTime = channel.unary_unary(
+                '/data.DataService/CountDataByRangeTime',
+                request_serializer=rmcs__resource__api_dot_data__pb2.DataCount.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_data__pb2.DataCountResponse.FromString,
                 _registered_method=True)
         self.ListDataBySetTime = channel.unary_unary(
                 '/data.DataService/ListDataBySetTime',
@@ -182,6 +197,24 @@ class DataServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def DeleteData(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CountData(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CountDataByLastTime(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CountDataByRangeTime(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -296,6 +329,21 @@ def add_DataServiceServicer_to_server(servicer, server):
                     request_deserializer=rmcs__resource__api_dot_data__pb2.DataId.FromString,
                     response_serializer=rmcs__resource__api_dot_data__pb2.DataChangeResponse.SerializeToString,
             ),
+            'CountData': grpc.unary_unary_rpc_method_handler(
+                    servicer.CountData,
+                    request_deserializer=rmcs__resource__api_dot_data__pb2.DataCount.FromString,
+                    response_serializer=rmcs__resource__api_dot_data__pb2.DataCountResponse.SerializeToString,
+            ),
+            'CountDataByLastTime': grpc.unary_unary_rpc_method_handler(
+                    servicer.CountDataByLastTime,
+                    request_deserializer=rmcs__resource__api_dot_data__pb2.DataCount.FromString,
+                    response_serializer=rmcs__resource__api_dot_data__pb2.DataCountResponse.SerializeToString,
+            ),
+            'CountDataByRangeTime': grpc.unary_unary_rpc_method_handler(
+                    servicer.CountDataByRangeTime,
+                    request_deserializer=rmcs__resource__api_dot_data__pb2.DataCount.FromString,
+                    response_serializer=rmcs__resource__api_dot_data__pb2.DataCountResponse.SerializeToString,
+            ),
             'ListDataBySetTime': grpc.unary_unary_rpc_method_handler(
                     servicer.ListDataBySetTime,
                     request_deserializer=rmcs__resource__api_dot_data__pb2.DataSetTime.FromString,
@@ -355,6 +403,7 @@ def add_DataServiceServicer_to_server(servicer, server):
     generic_handler = grpc.method_handlers_generic_handler(
             'data.DataService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
+    server.add_registered_method_handlers('data.DataService', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
@@ -567,6 +616,87 @@ class DataService(object):
             '/data.DataService/DeleteData',
             rmcs__resource__api_dot_data__pb2.DataId.SerializeToString,
             rmcs__resource__api_dot_data__pb2.DataChangeResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def CountData(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/data.DataService/CountData',
+            rmcs__resource__api_dot_data__pb2.DataCount.SerializeToString,
+            rmcs__resource__api_dot_data__pb2.DataCountResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def CountDataByLastTime(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/data.DataService/CountDataByLastTime',
+            rmcs__resource__api_dot_data__pb2.DataCount.SerializeToString,
+            rmcs__resource__api_dot_data__pb2.DataCountResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def CountDataByRangeTime(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/data.DataService/CountDataByRangeTime',
+            rmcs__resource__api_dot_data__pb2.DataCount.SerializeToString,
+            rmcs__resource__api_dot_data__pb2.DataCountResponse.FromString,
             options,
             channel_credentials,
             insecure,

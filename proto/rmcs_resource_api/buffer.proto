@@ -25,6 +25,8 @@ service BufferService {
     rpc UpdateBuffer(BufferUpdate) returns (BufferChangeResponse);
 
     rpc DeleteBuffer(BufferId) returns (BufferChangeResponse);
+
+    rpc CountBuffer(BufferCount) returns (BufferCountResponse);
 }
 
 message BufferSchema {
@@ -69,6 +71,12 @@ message BufferUpdate {
     optional int32 status = 4;
 }
 
+message BufferCount {
+    optional bytes device_id = 1;
+    optional bytes model_id = 2;
+    optional int32 status = 3;
+}
+
 message BufferReadResponse {
     BufferSchema result = 1;
 }
@@ -82,4 +90,8 @@ message BufferCreateResponse {
 }
 
 message BufferChangeResponse {
+}
+
+message BufferCountResponse {
+    uint32 count = 1;
 }

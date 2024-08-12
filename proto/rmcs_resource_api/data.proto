@@ -20,6 +20,12 @@ service DataService {
 
     rpc DeleteData(DataId) returns (DataChangeResponse);
 
+    rpc CountData(DataCount) returns (DataCountResponse);
+
+    rpc CountDataByLastTime(DataCount) returns (DataCountResponse);
+
+    rpc CountDataByRangeTime(DataCount) returns (DataCountResponse);
+
     rpc ListDataBySetTime(DataSetTime) returns (DataListResponse);
 
     rpc ListDataBySetLastTime(DataSetTime) returns (DataListResponse);
@@ -106,6 +112,14 @@ message DataSetNumber {
     uint32 number = 3;
 }
 
+message DataCount {
+    bytes device_id = 1;
+    bytes model_id = 2;
+    optional int64 timestamp = 3;
+    optional int64 begin = 4;
+    optional int64 end = 5;
+}
+
 message DataReadResponse {
     DataSchema result = 1;
 }
@@ -115,6 +129,10 @@ message DataListResponse {
 }
 
 message DataChangeResponse {
+}
+
+message DataCountResponse {
+    uint32 count = 1;
 }
 
 message DataSetReadResponse {

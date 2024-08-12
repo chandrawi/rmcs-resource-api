@@ -567,6 +567,189 @@ proto.data.DataServicePromiseClient.prototype.deleteData =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
+ *   !proto.data.DataCount,
+ *   !proto.data.DataCountResponse>}
+ */
+const methodDescriptor_DataService_CountData = new grpc.web.MethodDescriptor(
+  '/data.DataService/CountData',
+  grpc.web.MethodType.UNARY,
+  proto.data.DataCount,
+  proto.data.DataCountResponse,
+  /**
+   * @param {!proto.data.DataCount} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.data.DataCountResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.data.DataCount} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.data.DataCountResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.data.DataCountResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.data.DataServiceClient.prototype.countData =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/data.DataService/CountData',
+      request,
+      metadata || {},
+      methodDescriptor_DataService_CountData,
+      callback);
+};
+
+
+/**
+ * @param {!proto.data.DataCount} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.data.DataCountResponse>}
+ *     Promise that resolves to the response
+ */
+proto.data.DataServicePromiseClient.prototype.countData =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/data.DataService/CountData',
+      request,
+      metadata || {},
+      methodDescriptor_DataService_CountData);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.data.DataCount,
+ *   !proto.data.DataCountResponse>}
+ */
+const methodDescriptor_DataService_CountDataByLastTime = new grpc.web.MethodDescriptor(
+  '/data.DataService/CountDataByLastTime',
+  grpc.web.MethodType.UNARY,
+  proto.data.DataCount,
+  proto.data.DataCountResponse,
+  /**
+   * @param {!proto.data.DataCount} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.data.DataCountResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.data.DataCount} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.data.DataCountResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.data.DataCountResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.data.DataServiceClient.prototype.countDataByLastTime =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/data.DataService/CountDataByLastTime',
+      request,
+      metadata || {},
+      methodDescriptor_DataService_CountDataByLastTime,
+      callback);
+};
+
+
+/**
+ * @param {!proto.data.DataCount} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.data.DataCountResponse>}
+ *     Promise that resolves to the response
+ */
+proto.data.DataServicePromiseClient.prototype.countDataByLastTime =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/data.DataService/CountDataByLastTime',
+      request,
+      metadata || {},
+      methodDescriptor_DataService_CountDataByLastTime);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.data.DataCount,
+ *   !proto.data.DataCountResponse>}
+ */
+const methodDescriptor_DataService_CountDataByRangeTime = new grpc.web.MethodDescriptor(
+  '/data.DataService/CountDataByRangeTime',
+  grpc.web.MethodType.UNARY,
+  proto.data.DataCount,
+  proto.data.DataCountResponse,
+  /**
+   * @param {!proto.data.DataCount} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.data.DataCountResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.data.DataCount} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.data.DataCountResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.data.DataCountResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.data.DataServiceClient.prototype.countDataByRangeTime =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/data.DataService/CountDataByRangeTime',
+      request,
+      metadata || {},
+      methodDescriptor_DataService_CountDataByRangeTime,
+      callback);
+};
+
+
+/**
+ * @param {!proto.data.DataCount} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.data.DataCountResponse>}
+ *     Promise that resolves to the response
+ */
+proto.data.DataServicePromiseClient.prototype.countDataByRangeTime =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/data.DataService/CountDataByRangeTime',
+      request,
+      metadata || {},
+      methodDescriptor_DataService_CountDataByRangeTime);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
  *   !proto.data.DataSetTime,
  *   !proto.data.DataListResponse>}
  */

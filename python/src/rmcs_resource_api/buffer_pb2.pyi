@@ -78,6 +78,16 @@ class BufferUpdate(_message.Message):
     status: int
     def __init__(self, id: _Optional[int] = ..., data_bytes: _Optional[bytes] = ..., data_type: _Optional[_Iterable[_Union[_common_pb2.DataType, str]]] = ..., status: _Optional[int] = ...) -> None: ...
 
+class BufferCount(_message.Message):
+    __slots__ = ("device_id", "model_id", "status")
+    DEVICE_ID_FIELD_NUMBER: _ClassVar[int]
+    MODEL_ID_FIELD_NUMBER: _ClassVar[int]
+    STATUS_FIELD_NUMBER: _ClassVar[int]
+    device_id: bytes
+    model_id: bytes
+    status: int
+    def __init__(self, device_id: _Optional[bytes] = ..., model_id: _Optional[bytes] = ..., status: _Optional[int] = ...) -> None: ...
+
 class BufferReadResponse(_message.Message):
     __slots__ = ("result",)
     RESULT_FIELD_NUMBER: _ClassVar[int]
@@ -99,3 +109,9 @@ class BufferCreateResponse(_message.Message):
 class BufferChangeResponse(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
+
+class BufferCountResponse(_message.Message):
+    __slots__ = ("count",)
+    COUNT_FIELD_NUMBER: _ClassVar[int]
+    count: int
+    def __init__(self, count: _Optional[int] = ...) -> None: ...

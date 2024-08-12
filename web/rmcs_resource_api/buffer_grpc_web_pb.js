@@ -747,5 +747,66 @@ proto.buffer.BufferServicePromiseClient.prototype.deleteBuffer =
 };
 
 
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.buffer.BufferCount,
+ *   !proto.buffer.BufferCountResponse>}
+ */
+const methodDescriptor_BufferService_CountBuffer = new grpc.web.MethodDescriptor(
+  '/buffer.BufferService/CountBuffer',
+  grpc.web.MethodType.UNARY,
+  proto.buffer.BufferCount,
+  proto.buffer.BufferCountResponse,
+  /**
+   * @param {!proto.buffer.BufferCount} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.buffer.BufferCountResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.buffer.BufferCount} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.buffer.BufferCountResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.buffer.BufferCountResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.buffer.BufferServiceClient.prototype.countBuffer =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/buffer.BufferService/CountBuffer',
+      request,
+      metadata || {},
+      methodDescriptor_BufferService_CountBuffer,
+      callback);
+};
+
+
+/**
+ * @param {!proto.buffer.BufferCount} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.buffer.BufferCountResponse>}
+ *     Promise that resolves to the response
+ */
+proto.buffer.BufferServicePromiseClient.prototype.countBuffer =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/buffer.BufferService/CountBuffer',
+      request,
+      metadata || {},
+      methodDescriptor_BufferService_CountBuffer);
+};
+
+
 module.exports = proto.buffer;
 
