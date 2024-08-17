@@ -16,6 +16,12 @@ service DataService {
 
     rpc ListDataByNumberAfter(DataNumber) returns (DataListResponse);
 
+    rpc ReadDataTimestamp(DataId) returns (TimestampReadResponse);
+
+    rpc ListDataTimestampByLastTime(DataTime) returns (TimestampListResponse);
+
+    rpc ListDataTimestampByRangeTime(DataRange) returns (TimestampListResponse);
+
     rpc CreateData(DataSchema) returns (DataChangeResponse);
 
     rpc DeleteData(DataId) returns (DataChangeResponse);
@@ -47,6 +53,12 @@ service DataService {
     rpc ListDataSetByNumberBefore(DataSetNumber) returns (DataSetListResponse);
 
     rpc ListDataSetByNumberAfter(DataSetNumber) returns (DataSetListResponse);
+
+    rpc ReadDataSetTimestamp(DataSetId) returns (TimestampReadResponse);
+
+    rpc ListDataSetTimestampByLastTime(DataSetTime) returns (TimestampListResponse);
+
+    rpc ListDataSetTimestampByRangeTime(DataSetRange) returns (TimestampListResponse);
 }
 
 message DataSchema {
@@ -126,6 +138,14 @@ message DataReadResponse {
 
 message DataListResponse {
     repeated DataSchema results = 1;
+}
+
+message TimestampReadResponse {
+    int64 timestamp = 1;
+}
+
+message TimestampListResponse {
+    repeated int64 timestamps = 1;
 }
 
 message DataChangeResponse {

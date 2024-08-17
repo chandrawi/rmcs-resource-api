@@ -133,6 +133,18 @@ pub struct DataListResponse {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, Copy, PartialEq, ::prost::Message)]
+pub struct TimestampReadResponse {
+    #[prost(int64, tag = "1")]
+    pub timestamp: i64,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct TimestampListResponse {
+    #[prost(int64, repeated, tag = "1")]
+    pub timestamps: ::prost::alloc::vec::Vec<i64>,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, Copy, PartialEq, ::prost::Message)]
 pub struct DataChangeResponse {}
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, Copy, PartialEq, ::prost::Message)]
@@ -384,6 +396,85 @@ pub mod data_service_client {
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("data.DataService", "ListDataByNumberAfter"));
+            self.inner.unary(req, path, codec).await
+        }
+        pub async fn read_data_timestamp(
+            &mut self,
+            request: impl tonic::IntoRequest<super::DataId>,
+        ) -> std::result::Result<
+            tonic::Response<super::TimestampReadResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/data.DataService/ReadDataTimestamp",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("data.DataService", "ReadDataTimestamp"));
+            self.inner.unary(req, path, codec).await
+        }
+        pub async fn list_data_timestamp_by_last_time(
+            &mut self,
+            request: impl tonic::IntoRequest<super::DataTime>,
+        ) -> std::result::Result<
+            tonic::Response<super::TimestampListResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/data.DataService/ListDataTimestampByLastTime",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new("data.DataService", "ListDataTimestampByLastTime"),
+                );
+            self.inner.unary(req, path, codec).await
+        }
+        pub async fn list_data_timestamp_by_range_time(
+            &mut self,
+            request: impl tonic::IntoRequest<super::DataRange>,
+        ) -> std::result::Result<
+            tonic::Response<super::TimestampListResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/data.DataService/ListDataTimestampByRangeTime",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new("data.DataService", "ListDataTimestampByRangeTime"),
+                );
             self.inner.unary(req, path, codec).await
         }
         pub async fn create_data(
@@ -790,6 +881,88 @@ pub mod data_service_client {
                 .insert(GrpcMethod::new("data.DataService", "ListDataSetByNumberAfter"));
             self.inner.unary(req, path, codec).await
         }
+        pub async fn read_data_set_timestamp(
+            &mut self,
+            request: impl tonic::IntoRequest<super::DataSetId>,
+        ) -> std::result::Result<
+            tonic::Response<super::TimestampReadResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/data.DataService/ReadDataSetTimestamp",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("data.DataService", "ReadDataSetTimestamp"));
+            self.inner.unary(req, path, codec).await
+        }
+        pub async fn list_data_set_timestamp_by_last_time(
+            &mut self,
+            request: impl tonic::IntoRequest<super::DataSetTime>,
+        ) -> std::result::Result<
+            tonic::Response<super::TimestampListResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/data.DataService/ListDataSetTimestampByLastTime",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new("data.DataService", "ListDataSetTimestampByLastTime"),
+                );
+            self.inner.unary(req, path, codec).await
+        }
+        pub async fn list_data_set_timestamp_by_range_time(
+            &mut self,
+            request: impl tonic::IntoRequest<super::DataSetRange>,
+        ) -> std::result::Result<
+            tonic::Response<super::TimestampListResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/data.DataService/ListDataSetTimestampByRangeTime",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(
+                    GrpcMethod::new(
+                        "data.DataService",
+                        "ListDataSetTimestampByRangeTime",
+                    ),
+                );
+            self.inner.unary(req, path, codec).await
+        }
     }
 }
 /// Generated server implementations.
@@ -839,6 +1012,27 @@ pub mod data_service_server {
             request: tonic::Request<super::DataNumber>,
         ) -> std::result::Result<
             tonic::Response<super::DataListResponse>,
+            tonic::Status,
+        >;
+        async fn read_data_timestamp(
+            &self,
+            request: tonic::Request<super::DataId>,
+        ) -> std::result::Result<
+            tonic::Response<super::TimestampReadResponse>,
+            tonic::Status,
+        >;
+        async fn list_data_timestamp_by_last_time(
+            &self,
+            request: tonic::Request<super::DataTime>,
+        ) -> std::result::Result<
+            tonic::Response<super::TimestampListResponse>,
+            tonic::Status,
+        >;
+        async fn list_data_timestamp_by_range_time(
+            &self,
+            request: tonic::Request<super::DataRange>,
+        ) -> std::result::Result<
+            tonic::Response<super::TimestampListResponse>,
             tonic::Status,
         >;
         async fn create_data(
@@ -951,6 +1145,27 @@ pub mod data_service_server {
             request: tonic::Request<super::DataSetNumber>,
         ) -> std::result::Result<
             tonic::Response<super::DataSetListResponse>,
+            tonic::Status,
+        >;
+        async fn read_data_set_timestamp(
+            &self,
+            request: tonic::Request<super::DataSetId>,
+        ) -> std::result::Result<
+            tonic::Response<super::TimestampReadResponse>,
+            tonic::Status,
+        >;
+        async fn list_data_set_timestamp_by_last_time(
+            &self,
+            request: tonic::Request<super::DataSetTime>,
+        ) -> std::result::Result<
+            tonic::Response<super::TimestampListResponse>,
+            tonic::Status,
+        >;
+        async fn list_data_set_timestamp_by_range_time(
+            &self,
+            request: tonic::Request<super::DataSetRange>,
+        ) -> std::result::Result<
+            tonic::Response<super::TimestampListResponse>,
             tonic::Status,
         >;
     }
@@ -1283,6 +1498,144 @@ pub mod data_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListDataByNumberAfterSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/data.DataService/ReadDataTimestamp" => {
+                    #[allow(non_camel_case_types)]
+                    struct ReadDataTimestampSvc<T: DataService>(pub Arc<T>);
+                    impl<T: DataService> tonic::server::UnaryService<super::DataId>
+                    for ReadDataTimestampSvc<T> {
+                        type Response = super::TimestampReadResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::DataId>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as DataService>::read_data_timestamp(&inner, request)
+                                    .await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = ReadDataTimestampSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/data.DataService/ListDataTimestampByLastTime" => {
+                    #[allow(non_camel_case_types)]
+                    struct ListDataTimestampByLastTimeSvc<T: DataService>(pub Arc<T>);
+                    impl<T: DataService> tonic::server::UnaryService<super::DataTime>
+                    for ListDataTimestampByLastTimeSvc<T> {
+                        type Response = super::TimestampListResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::DataTime>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as DataService>::list_data_timestamp_by_last_time(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = ListDataTimestampByLastTimeSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/data.DataService/ListDataTimestampByRangeTime" => {
+                    #[allow(non_camel_case_types)]
+                    struct ListDataTimestampByRangeTimeSvc<T: DataService>(pub Arc<T>);
+                    impl<T: DataService> tonic::server::UnaryService<super::DataRange>
+                    for ListDataTimestampByRangeTimeSvc<T> {
+                        type Response = super::TimestampListResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::DataRange>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as DataService>::list_data_timestamp_by_range_time(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = ListDataTimestampByRangeTimeSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
@@ -2018,6 +2371,146 @@ pub mod data_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListDataSetByNumberAfterSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/data.DataService/ReadDataSetTimestamp" => {
+                    #[allow(non_camel_case_types)]
+                    struct ReadDataSetTimestampSvc<T: DataService>(pub Arc<T>);
+                    impl<T: DataService> tonic::server::UnaryService<super::DataSetId>
+                    for ReadDataSetTimestampSvc<T> {
+                        type Response = super::TimestampReadResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::DataSetId>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as DataService>::read_data_set_timestamp(&inner, request)
+                                    .await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = ReadDataSetTimestampSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/data.DataService/ListDataSetTimestampByLastTime" => {
+                    #[allow(non_camel_case_types)]
+                    struct ListDataSetTimestampByLastTimeSvc<T: DataService>(pub Arc<T>);
+                    impl<T: DataService> tonic::server::UnaryService<super::DataSetTime>
+                    for ListDataSetTimestampByLastTimeSvc<T> {
+                        type Response = super::TimestampListResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::DataSetTime>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as DataService>::list_data_set_timestamp_by_last_time(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = ListDataSetTimestampByLastTimeSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/data.DataService/ListDataSetTimestampByRangeTime" => {
+                    #[allow(non_camel_case_types)]
+                    struct ListDataSetTimestampByRangeTimeSvc<T: DataService>(
+                        pub Arc<T>,
+                    );
+                    impl<T: DataService> tonic::server::UnaryService<super::DataSetRange>
+                    for ListDataSetTimestampByRangeTimeSvc<T> {
+                        type Response = super::TimestampListResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::DataSetRange>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as DataService>::list_data_set_timestamp_by_range_time(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = ListDataSetTimestampByRangeTimeSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(

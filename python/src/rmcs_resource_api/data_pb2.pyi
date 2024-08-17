@@ -138,6 +138,18 @@ class DataListResponse(_message.Message):
     results: _containers.RepeatedCompositeFieldContainer[DataSchema]
     def __init__(self, results: _Optional[_Iterable[_Union[DataSchema, _Mapping]]] = ...) -> None: ...
 
+class TimestampReadResponse(_message.Message):
+    __slots__ = ("timestamp",)
+    TIMESTAMP_FIELD_NUMBER: _ClassVar[int]
+    timestamp: int
+    def __init__(self, timestamp: _Optional[int] = ...) -> None: ...
+
+class TimestampListResponse(_message.Message):
+    __slots__ = ("timestamps",)
+    TIMESTAMPS_FIELD_NUMBER: _ClassVar[int]
+    timestamps: _containers.RepeatedScalarFieldContainer[int]
+    def __init__(self, timestamps: _Optional[_Iterable[int]] = ...) -> None: ...
+
 class DataChangeResponse(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
