@@ -412,11 +412,11 @@ proto.group.GroupModelSchema.prototype.toObject = function(opt_includeInstance) 
  */
 proto.group.GroupModelSchema.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: msg.getId_asB64(),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    category: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    modelsList: msg.getModelsList_asB64()
+id: msg.getId_asB64(),
+name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+category: jspb.Message.getFieldWithDefault(msg, 3, ""),
+description: jspb.Message.getFieldWithDefault(msg, 4, ""),
+modelsList: msg.getModelsList_asB64()
   };
 
   if (includeInstance) {
@@ -736,11 +736,11 @@ proto.group.GroupDeviceSchema.prototype.toObject = function(opt_includeInstance)
  */
 proto.group.GroupDeviceSchema.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: msg.getId_asB64(),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    category: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    devicesList: msg.getDevicesList_asB64()
+id: msg.getId_asB64(),
+name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+category: jspb.Message.getFieldWithDefault(msg, 3, ""),
+description: jspb.Message.getFieldWithDefault(msg, 4, ""),
+devicesList: msg.getDevicesList_asB64()
   };
 
   if (includeInstance) {
@@ -1053,7 +1053,7 @@ proto.group.GroupId.prototype.toObject = function(opt_includeInstance) {
  */
 proto.group.GroupId.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: msg.getId_asB64()
+id: msg.getId_asB64()
   };
 
   if (includeInstance) {
@@ -1214,7 +1214,7 @@ proto.group.GroupIds.prototype.toObject = function(opt_includeInstance) {
  */
 proto.group.GroupIds.toObject = function(includeInstance, msg) {
   var f, obj = {
-    idsList: msg.getIdsList_asB64()
+idsList: msg.getIdsList_asB64()
   };
 
   if (includeInstance) {
@@ -1387,7 +1387,7 @@ proto.group.GroupName.prototype.toObject = function(opt_includeInstance) {
  */
 proto.group.GroupName.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, "")
+name: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1517,7 +1517,7 @@ proto.group.GroupCategory.prototype.toObject = function(opt_includeInstance) {
  */
 proto.group.GroupCategory.toObject = function(includeInstance, msg) {
   var f, obj = {
-    category: jspb.Message.getFieldWithDefault(msg, 1, "")
+category: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1647,8 +1647,8 @@ proto.group.GroupOption.prototype.toObject = function(opt_includeInstance) {
  */
 proto.group.GroupOption.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    category: jspb.Message.getFieldWithDefault(msg, 2, "")
+name: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+category: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1843,10 +1843,10 @@ proto.group.GroupUpdate.prototype.toObject = function(opt_includeInstance) {
  */
 proto.group.GroupUpdate.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: msg.getId_asB64(),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    category: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 4, "")
+id: msg.getId_asB64(),
+name: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+category: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+description: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -2141,8 +2141,8 @@ proto.group.GroupModel.prototype.toObject = function(opt_includeInstance) {
  */
 proto.group.GroupModel.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: msg.getId_asB64(),
-    modelId: msg.getModelId_asB64()
+id: msg.getId_asB64(),
+modelId: msg.getModelId_asB64()
   };
 
   if (includeInstance) {
@@ -2349,8 +2349,8 @@ proto.group.GroupDevice.prototype.toObject = function(opt_includeInstance) {
  */
 proto.group.GroupDevice.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: msg.getId_asB64(),
-    deviceId: msg.getDeviceId_asB64()
+id: msg.getId_asB64(),
+deviceId: msg.getDeviceId_asB64()
   };
 
   if (includeInstance) {
@@ -2557,7 +2557,7 @@ proto.group.GroupModelReadResponse.prototype.toObject = function(opt_includeInst
  */
 proto.group.GroupModelReadResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    result: (f = msg.getResult()) && proto.group.GroupModelSchema.toObject(includeInstance, f)
+result: (f = msg.getResult()) && proto.group.GroupModelSchema.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2715,7 +2715,7 @@ proto.group.GroupModelListResponse.prototype.toObject = function(opt_includeInst
  */
 proto.group.GroupModelListResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    resultsList: jspb.Message.toObjectList(msg.getResultsList(),
+resultsList: jspb.Message.toObjectList(msg.getResultsList(),
     proto.group.GroupModelSchema.toObject, includeInstance)
   };
 
@@ -2868,7 +2868,7 @@ proto.group.GroupDeviceReadResponse.prototype.toObject = function(opt_includeIns
  */
 proto.group.GroupDeviceReadResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    result: (f = msg.getResult()) && proto.group.GroupDeviceSchema.toObject(includeInstance, f)
+result: (f = msg.getResult()) && proto.group.GroupDeviceSchema.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3026,7 +3026,7 @@ proto.group.GroupDeviceListResponse.prototype.toObject = function(opt_includeIns
  */
 proto.group.GroupDeviceListResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    resultsList: jspb.Message.toObjectList(msg.getResultsList(),
+resultsList: jspb.Message.toObjectList(msg.getResultsList(),
     proto.group.GroupDeviceSchema.toObject, includeInstance)
   };
 
@@ -3179,7 +3179,7 @@ proto.group.GroupCreateResponse.prototype.toObject = function(opt_includeInstanc
  */
 proto.group.GroupCreateResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: msg.getId_asB64()
+id: msg.getId_asB64()
   };
 
   if (includeInstance) {

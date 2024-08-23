@@ -502,12 +502,12 @@ proto.model.ModelSchema.prototype.toObject = function(opt_includeInstance) {
  */
 proto.model.ModelSchema.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: msg.getId_asB64(),
-    category: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    dataTypeList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
-    configsList: jspb.Message.toObjectList(msg.getConfigsList(),
+id: msg.getId_asB64(),
+category: jspb.Message.getFieldWithDefault(msg, 2, ""),
+name: jspb.Message.getFieldWithDefault(msg, 3, ""),
+description: jspb.Message.getFieldWithDefault(msg, 4, ""),
+dataTypeList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
+configsList: jspb.Message.toObjectList(msg.getConfigsList(),
     proto.model.ConfigSchemaVec.toObject, includeInstance)
   };
 
@@ -857,7 +857,7 @@ proto.model.ConfigSchemaVec.prototype.toObject = function(opt_includeInstance) {
  */
 proto.model.ConfigSchemaVec.toObject = function(includeInstance, msg) {
   var f, obj = {
-    configsList: jspb.Message.toObjectList(msg.getConfigsList(),
+configsList: jspb.Message.toObjectList(msg.getConfigsList(),
     proto.model.ConfigSchema.toObject, includeInstance)
   };
 
@@ -1010,7 +1010,7 @@ proto.model.ModelId.prototype.toObject = function(opt_includeInstance) {
  */
 proto.model.ModelId.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: msg.getId_asB64()
+id: msg.getId_asB64()
   };
 
   if (includeInstance) {
@@ -1171,7 +1171,7 @@ proto.model.ModelIds.prototype.toObject = function(opt_includeInstance) {
  */
 proto.model.ModelIds.toObject = function(includeInstance, msg) {
   var f, obj = {
-    idsList: msg.getIdsList_asB64()
+idsList: msg.getIdsList_asB64()
   };
 
   if (includeInstance) {
@@ -1344,7 +1344,7 @@ proto.model.TypeId.prototype.toObject = function(opt_includeInstance) {
  */
 proto.model.TypeId.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: msg.getId_asB64()
+id: msg.getId_asB64()
   };
 
   if (includeInstance) {
@@ -1498,7 +1498,7 @@ proto.model.ModelName.prototype.toObject = function(opt_includeInstance) {
  */
 proto.model.ModelName.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, "")
+name: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1628,7 +1628,7 @@ proto.model.ModelCategory.prototype.toObject = function(opt_includeInstance) {
  */
 proto.model.ModelCategory.toObject = function(includeInstance, msg) {
   var f, obj = {
-    category: jspb.Message.getFieldWithDefault(msg, 1, "")
+category: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1758,9 +1758,9 @@ proto.model.ModelOption.prototype.toObject = function(opt_includeInstance) {
  */
 proto.model.ModelOption.toObject = function(includeInstance, msg) {
   var f, obj = {
-    typeId: msg.getTypeId_asB64(),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    category: jspb.Message.getFieldWithDefault(msg, 3, "")
+typeId: msg.getTypeId_asB64(),
+name: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+category: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -2033,12 +2033,12 @@ proto.model.ModelUpdate.prototype.toObject = function(opt_includeInstance) {
  */
 proto.model.ModelUpdate.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: msg.getId_asB64(),
-    category: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    dataTypeList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
-    dataTypeFlag: jspb.Message.getBooleanFieldWithDefault(msg, 6, false)
+id: msg.getId_asB64(),
+category: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+name: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+description: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+dataTypeList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
+dataTypeFlag: jspb.Message.getBooleanFieldWithDefault(msg, 6, false)
   };
 
   if (includeInstance) {
@@ -2412,13 +2412,13 @@ proto.model.ConfigSchema.prototype.toObject = function(opt_includeInstance) {
  */
 proto.model.ConfigSchema.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    modelId: msg.getModelId_asB64(),
-    index: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    name: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    configBytes: msg.getConfigBytes_asB64(),
-    configType: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    category: jspb.Message.getFieldWithDefault(msg, 7, "")
+id: jspb.Message.getFieldWithDefault(msg, 1, 0),
+modelId: msg.getModelId_asB64(),
+index: jspb.Message.getFieldWithDefault(msg, 3, 0),
+name: jspb.Message.getFieldWithDefault(msg, 4, ""),
+configBytes: msg.getConfigBytes_asB64(),
+configType: jspb.Message.getFieldWithDefault(msg, 6, 0),
+category: jspb.Message.getFieldWithDefault(msg, 7, "")
   };
 
   if (includeInstance) {
@@ -2770,7 +2770,7 @@ proto.model.ConfigId.prototype.toObject = function(opt_includeInstance) {
  */
 proto.model.ConfigId.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, 0)
+id: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -2900,11 +2900,11 @@ proto.model.ConfigUpdate.prototype.toObject = function(opt_includeInstance) {
  */
 proto.model.ConfigUpdate.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    configBytes: msg.getConfigBytes_asB64(),
-    configType: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    category: jspb.Message.getFieldWithDefault(msg, 5, "")
+id: jspb.Message.getFieldWithDefault(msg, 1, 0),
+name: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+configBytes: msg.getConfigBytes_asB64(),
+configType: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+category: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -3246,7 +3246,7 @@ proto.model.ModelReadResponse.prototype.toObject = function(opt_includeInstance)
  */
 proto.model.ModelReadResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    result: (f = msg.getResult()) && proto.model.ModelSchema.toObject(includeInstance, f)
+result: (f = msg.getResult()) && proto.model.ModelSchema.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3404,7 +3404,7 @@ proto.model.ModelListResponse.prototype.toObject = function(opt_includeInstance)
  */
 proto.model.ModelListResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    resultsList: jspb.Message.toObjectList(msg.getResultsList(),
+resultsList: jspb.Message.toObjectList(msg.getResultsList(),
     proto.model.ModelSchema.toObject, includeInstance)
   };
 
@@ -3557,7 +3557,7 @@ proto.model.ModelCreateResponse.prototype.toObject = function(opt_includeInstanc
  */
 proto.model.ModelCreateResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: msg.getId_asB64()
+id: msg.getId_asB64()
   };
 
   if (includeInstance) {
@@ -3812,7 +3812,7 @@ proto.model.ConfigReadResponse.prototype.toObject = function(opt_includeInstance
  */
 proto.model.ConfigReadResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    result: (f = msg.getResult()) && proto.model.ConfigSchema.toObject(includeInstance, f)
+result: (f = msg.getResult()) && proto.model.ConfigSchema.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3970,7 +3970,7 @@ proto.model.ConfigListResponse.prototype.toObject = function(opt_includeInstance
  */
 proto.model.ConfigListResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    resultsList: jspb.Message.toObjectList(msg.getResultsList(),
+resultsList: jspb.Message.toObjectList(msg.getResultsList(),
     proto.model.ConfigSchema.toObject, includeInstance)
   };
 
@@ -4123,7 +4123,7 @@ proto.model.ConfigCreateResponse.prototype.toObject = function(opt_includeInstan
  */
 proto.model.ConfigCreateResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, 0)
+id: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {

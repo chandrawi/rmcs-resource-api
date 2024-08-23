@@ -231,11 +231,11 @@ proto.log.LogSchema.prototype.toObject = function(opt_includeInstance) {
  */
 proto.log.LogSchema.toObject = function(includeInstance, msg) {
   var f, obj = {
-    timestamp: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    deviceId: msg.getDeviceId_asB64(),
-    status: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    logBytes: msg.getLogBytes_asB64(),
-    logType: jspb.Message.getFieldWithDefault(msg, 5, 0)
+timestamp: jspb.Message.getFieldWithDefault(msg, 1, 0),
+deviceId: msg.getDeviceId_asB64(),
+status: jspb.Message.getFieldWithDefault(msg, 3, 0),
+logBytes: msg.getLogBytes_asB64(),
+logType: jspb.Message.getFieldWithDefault(msg, 5, 0)
   };
 
   if (includeInstance) {
@@ -529,8 +529,8 @@ proto.log.LogId.prototype.toObject = function(opt_includeInstance) {
  */
 proto.log.LogId.toObject = function(includeInstance, msg) {
   var f, obj = {
-    timestamp: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    deviceId: msg.getDeviceId_asB64()
+timestamp: jspb.Message.getFieldWithDefault(msg, 1, 0),
+deviceId: msg.getDeviceId_asB64()
   };
 
   if (includeInstance) {
@@ -713,9 +713,9 @@ proto.log.LogTime.prototype.toObject = function(opt_includeInstance) {
  */
 proto.log.LogTime.toObject = function(includeInstance, msg) {
   var f, obj = {
-    timestamp: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    deviceId: msg.getDeviceId_asB64(),
-    status: jspb.Message.getFieldWithDefault(msg, 3, 0)
+timestamp: jspb.Message.getFieldWithDefault(msg, 1, 0),
+deviceId: msg.getDeviceId_asB64(),
+status: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -963,10 +963,10 @@ proto.log.LogRange.prototype.toObject = function(opt_includeInstance) {
  */
 proto.log.LogRange.toObject = function(includeInstance, msg) {
   var f, obj = {
-    begin: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    end: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    deviceId: msg.getDeviceId_asB64(),
-    status: jspb.Message.getFieldWithDefault(msg, 4, 0)
+begin: jspb.Message.getFieldWithDefault(msg, 1, 0),
+end: jspb.Message.getFieldWithDefault(msg, 2, 0),
+deviceId: msg.getDeviceId_asB64(),
+status: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1243,11 +1243,11 @@ proto.log.LogUpdate.prototype.toObject = function(opt_includeInstance) {
  */
 proto.log.LogUpdate.toObject = function(includeInstance, msg) {
   var f, obj = {
-    timestamp: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    deviceId: msg.getDeviceId_asB64(),
-    status: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    logBytes: msg.getLogBytes_asB64(),
-    logType: jspb.Message.getFieldWithDefault(msg, 5, 0)
+timestamp: jspb.Message.getFieldWithDefault(msg, 1, 0),
+deviceId: msg.getDeviceId_asB64(),
+status: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+logBytes: msg.getLogBytes_asB64(),
+logType: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1595,7 +1595,7 @@ proto.log.LogReadResponse.prototype.toObject = function(opt_includeInstance) {
  */
 proto.log.LogReadResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    result: (f = msg.getResult()) && proto.log.LogSchema.toObject(includeInstance, f)
+result: (f = msg.getResult()) && proto.log.LogSchema.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1753,7 +1753,7 @@ proto.log.LogListResponse.prototype.toObject = function(opt_includeInstance) {
  */
 proto.log.LogListResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    resultsList: jspb.Message.toObjectList(msg.getResultsList(),
+resultsList: jspb.Message.toObjectList(msg.getResultsList(),
     proto.log.LogSchema.toObject, includeInstance)
   };
 

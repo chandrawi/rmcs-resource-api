@@ -565,12 +565,12 @@ var model_pb = {};
 	 */
 	proto.model.ModelSchema.toObject = function(includeInstance, msg) {
 	  var f, obj = {
-	    id: msg.getId_asB64(),
-	    category: jspb.Message.getFieldWithDefault(msg, 2, ""),
-	    name: jspb.Message.getFieldWithDefault(msg, 3, ""),
-	    description: jspb.Message.getFieldWithDefault(msg, 4, ""),
-	    dataTypeList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
-	    configsList: jspb.Message.toObjectList(msg.getConfigsList(),
+	id: msg.getId_asB64(),
+	category: jspb.Message.getFieldWithDefault(msg, 2, ""),
+	name: jspb.Message.getFieldWithDefault(msg, 3, ""),
+	description: jspb.Message.getFieldWithDefault(msg, 4, ""),
+	dataTypeList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
+	configsList: jspb.Message.toObjectList(msg.getConfigsList(),
 	    proto.model.ConfigSchemaVec.toObject, includeInstance)
 	  };
 
@@ -920,7 +920,7 @@ var model_pb = {};
 	 */
 	proto.model.ConfigSchemaVec.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    configsList: jspb.Message.toObjectList(msg.getConfigsList(),
+	configsList: jspb.Message.toObjectList(msg.getConfigsList(),
 	    proto.model.ConfigSchema.toObject, includeInstance)
 	  };
 
@@ -1073,7 +1073,7 @@ var model_pb = {};
 	 */
 	proto.model.ModelId.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    id: msg.getId_asB64()
+	id: msg.getId_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -1234,7 +1234,7 @@ var model_pb = {};
 	 */
 	proto.model.ModelIds.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    idsList: msg.getIdsList_asB64()
+	idsList: msg.getIdsList_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -1407,7 +1407,7 @@ var model_pb = {};
 	 */
 	proto.model.TypeId.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    id: msg.getId_asB64()
+	id: msg.getId_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -1561,7 +1561,7 @@ var model_pb = {};
 	 */
 	proto.model.ModelName.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    name: jspb.Message.getFieldWithDefault(msg, 1, "")
+	name: jspb.Message.getFieldWithDefault(msg, 1, "")
 	  };
 
 	  if (includeInstance) {
@@ -1691,7 +1691,7 @@ var model_pb = {};
 	 */
 	proto.model.ModelCategory.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    category: jspb.Message.getFieldWithDefault(msg, 1, "")
+	category: jspb.Message.getFieldWithDefault(msg, 1, "")
 	  };
 
 	  if (includeInstance) {
@@ -1820,10 +1820,10 @@ var model_pb = {};
 	 * @suppress {unusedLocalVariables} f is only used for nested messages
 	 */
 	proto.model.ModelOption.toObject = function(includeInstance, msg) {
-	  var obj = {
-	    typeId: msg.getTypeId_asB64(),
-	    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-	    category: jspb.Message.getFieldWithDefault(msg, 3, "")
+	  var f, obj = {
+	typeId: msg.getTypeId_asB64(),
+	name: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+	category: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
 	  };
 
 	  if (includeInstance) {
@@ -2096,12 +2096,12 @@ var model_pb = {};
 	 */
 	proto.model.ModelUpdate.toObject = function(includeInstance, msg) {
 	  var f, obj = {
-	    id: msg.getId_asB64(),
-	    category: jspb.Message.getFieldWithDefault(msg, 2, ""),
-	    name: jspb.Message.getFieldWithDefault(msg, 3, ""),
-	    description: jspb.Message.getFieldWithDefault(msg, 4, ""),
-	    dataTypeList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
-	    dataTypeFlag: jspb.Message.getBooleanFieldWithDefault(msg, 6, false)
+	id: msg.getId_asB64(),
+	category: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+	name: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+	description: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+	dataTypeList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
+	dataTypeFlag: jspb.Message.getBooleanFieldWithDefault(msg, 6, false)
 	  };
 
 	  if (includeInstance) {
@@ -2475,13 +2475,13 @@ var model_pb = {};
 	 */
 	proto.model.ConfigSchema.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
-	    modelId: msg.getModelId_asB64(),
-	    index: jspb.Message.getFieldWithDefault(msg, 3, 0),
-	    name: jspb.Message.getFieldWithDefault(msg, 4, ""),
-	    configBytes: msg.getConfigBytes_asB64(),
-	    configType: jspb.Message.getFieldWithDefault(msg, 6, 0),
-	    category: jspb.Message.getFieldWithDefault(msg, 7, "")
+	id: jspb.Message.getFieldWithDefault(msg, 1, 0),
+	modelId: msg.getModelId_asB64(),
+	index: jspb.Message.getFieldWithDefault(msg, 3, 0),
+	name: jspb.Message.getFieldWithDefault(msg, 4, ""),
+	configBytes: msg.getConfigBytes_asB64(),
+	configType: jspb.Message.getFieldWithDefault(msg, 6, 0),
+	category: jspb.Message.getFieldWithDefault(msg, 7, "")
 	  };
 
 	  if (includeInstance) {
@@ -2833,7 +2833,7 @@ var model_pb = {};
 	 */
 	proto.model.ConfigId.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    id: jspb.Message.getFieldWithDefault(msg, 1, 0)
+	id: jspb.Message.getFieldWithDefault(msg, 1, 0)
 	  };
 
 	  if (includeInstance) {
@@ -2962,12 +2962,12 @@ var model_pb = {};
 	 * @suppress {unusedLocalVariables} f is only used for nested messages
 	 */
 	proto.model.ConfigUpdate.toObject = function(includeInstance, msg) {
-	  var obj = {
-	    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
-	    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-	    configBytes: msg.getConfigBytes_asB64(),
-	    configType: jspb.Message.getFieldWithDefault(msg, 4, 0),
-	    category: jspb.Message.getFieldWithDefault(msg, 5, "")
+	  var f, obj = {
+	id: jspb.Message.getFieldWithDefault(msg, 1, 0),
+	name: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+	configBytes: msg.getConfigBytes_asB64(),
+	configType: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+	category: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
 	  };
 
 	  if (includeInstance) {
@@ -3309,7 +3309,7 @@ var model_pb = {};
 	 */
 	proto.model.ModelReadResponse.toObject = function(includeInstance, msg) {
 	  var f, obj = {
-	    result: (f = msg.getResult()) && proto.model.ModelSchema.toObject(includeInstance, f)
+	result: (f = msg.getResult()) && proto.model.ModelSchema.toObject(includeInstance, f)
 	  };
 
 	  if (includeInstance) {
@@ -3467,7 +3467,7 @@ var model_pb = {};
 	 */
 	proto.model.ModelListResponse.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    resultsList: jspb.Message.toObjectList(msg.getResultsList(),
+	resultsList: jspb.Message.toObjectList(msg.getResultsList(),
 	    proto.model.ModelSchema.toObject, includeInstance)
 	  };
 
@@ -3620,7 +3620,7 @@ var model_pb = {};
 	 */
 	proto.model.ModelCreateResponse.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    id: msg.getId_asB64()
+	id: msg.getId_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -3874,7 +3874,7 @@ var model_pb = {};
 	 */
 	proto.model.ConfigReadResponse.toObject = function(includeInstance, msg) {
 	  var f, obj = {
-	    result: (f = msg.getResult()) && proto.model.ConfigSchema.toObject(includeInstance, f)
+	result: (f = msg.getResult()) && proto.model.ConfigSchema.toObject(includeInstance, f)
 	  };
 
 	  if (includeInstance) {
@@ -4032,7 +4032,7 @@ var model_pb = {};
 	 */
 	proto.model.ConfigListResponse.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    resultsList: jspb.Message.toObjectList(msg.getResultsList(),
+	resultsList: jspb.Message.toObjectList(msg.getResultsList(),
 	    proto.model.ConfigSchema.toObject, includeInstance)
 	  };
 
@@ -4185,7 +4185,7 @@ var model_pb = {};
 	 */
 	proto.model.ConfigCreateResponse.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    id: jspb.Message.getFieldWithDefault(msg, 1, 0)
+	id: jspb.Message.getFieldWithDefault(msg, 1, 0)
 	  };
 
 	  if (includeInstance) {
@@ -4395,7 +4395,7 @@ var model_pb = {};
 // Code generated by protoc-gen-grpc-web. DO NOT EDIT.
 // versions:
 // 	protoc-gen-grpc-web v1.5.0
-// 	protoc              v5.26.1
+// 	protoc              v5.27.3
 // source: rmcs_resource_api/model.proto
 
 
@@ -6244,13 +6244,13 @@ var device_pb = {};
 	 */
 	proto.device.DeviceSchema.toObject = function(includeInstance, msg) {
 	  var f, obj = {
-	    id: msg.getId_asB64(),
-	    gatewayId: msg.getGatewayId_asB64(),
-	    serialNumber: jspb.Message.getFieldWithDefault(msg, 3, ""),
-	    name: jspb.Message.getFieldWithDefault(msg, 4, ""),
-	    description: jspb.Message.getFieldWithDefault(msg, 5, ""),
-	    deviceType: (f = msg.getDeviceType()) && proto.device.TypeSchema.toObject(includeInstance, f),
-	    configsList: jspb.Message.toObjectList(msg.getConfigsList(),
+	id: msg.getId_asB64(),
+	gatewayId: msg.getGatewayId_asB64(),
+	serialNumber: jspb.Message.getFieldWithDefault(msg, 3, ""),
+	name: jspb.Message.getFieldWithDefault(msg, 4, ""),
+	description: jspb.Message.getFieldWithDefault(msg, 5, ""),
+	deviceType: (f = msg.getDeviceType()) && proto.device.TypeSchema.toObject(includeInstance, f),
+	configsList: jspb.Message.toObjectList(msg.getConfigsList(),
 	    proto.device.ConfigSchema.toObject, includeInstance)
 	  };
 
@@ -6653,12 +6653,12 @@ var device_pb = {};
 	 */
 	proto.device.GatewaySchema.toObject = function(includeInstance, msg) {
 	  var f, obj = {
-	    id: msg.getId_asB64(),
-	    serialNumber: jspb.Message.getFieldWithDefault(msg, 2, ""),
-	    name: jspb.Message.getFieldWithDefault(msg, 3, ""),
-	    description: jspb.Message.getFieldWithDefault(msg, 4, ""),
-	    gatewayType: (f = msg.getGatewayType()) && proto.device.TypeSchema.toObject(includeInstance, f),
-	    configsList: jspb.Message.toObjectList(msg.getConfigsList(),
+	id: msg.getId_asB64(),
+	serialNumber: jspb.Message.getFieldWithDefault(msg, 2, ""),
+	name: jspb.Message.getFieldWithDefault(msg, 3, ""),
+	description: jspb.Message.getFieldWithDefault(msg, 4, ""),
+	gatewayType: (f = msg.getGatewayType()) && proto.device.TypeSchema.toObject(includeInstance, f),
+	configsList: jspb.Message.toObjectList(msg.getConfigsList(),
 	    proto.device.ConfigSchema.toObject, includeInstance)
 	  };
 
@@ -7001,7 +7001,7 @@ var device_pb = {};
 	 */
 	proto.device.DeviceId.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    id: msg.getId_asB64()
+	id: msg.getId_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -7155,7 +7155,7 @@ var device_pb = {};
 	 */
 	proto.device.GatewayId.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    id: msg.getId_asB64()
+	id: msg.getId_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -7316,7 +7316,7 @@ var device_pb = {};
 	 */
 	proto.device.DeviceIds.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    idsList: msg.getIdsList_asB64()
+	idsList: msg.getIdsList_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -7496,7 +7496,7 @@ var device_pb = {};
 	 */
 	proto.device.GatewayIds.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    idsList: msg.getIdsList_asB64()
+	idsList: msg.getIdsList_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -7669,7 +7669,7 @@ var device_pb = {};
 	 */
 	proto.device.SerialNumber.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    serialNumber: jspb.Message.getFieldWithDefault(msg, 1, "")
+	serialNumber: jspb.Message.getFieldWithDefault(msg, 1, "")
 	  };
 
 	  if (includeInstance) {
@@ -7799,7 +7799,7 @@ var device_pb = {};
 	 */
 	proto.device.DeviceName.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    name: jspb.Message.getFieldWithDefault(msg, 1, "")
+	name: jspb.Message.getFieldWithDefault(msg, 1, "")
 	  };
 
 	  if (includeInstance) {
@@ -7929,7 +7929,7 @@ var device_pb = {};
 	 */
 	proto.device.GatewayName.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    name: jspb.Message.getFieldWithDefault(msg, 1, "")
+	name: jspb.Message.getFieldWithDefault(msg, 1, "")
 	  };
 
 	  if (includeInstance) {
@@ -8058,10 +8058,10 @@ var device_pb = {};
 	 * @suppress {unusedLocalVariables} f is only used for nested messages
 	 */
 	proto.device.DeviceOption.toObject = function(includeInstance, msg) {
-	  var obj = {
-	    gatewayId: msg.getGatewayId_asB64(),
-	    typeId: msg.getTypeId_asB64(),
-	    name: jspb.Message.getFieldWithDefault(msg, 3, "")
+	  var f, obj = {
+	gatewayId: msg.getGatewayId_asB64(),
+	typeId: msg.getTypeId_asB64(),
+	name: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
 	  };
 
 	  if (includeInstance) {
@@ -8350,9 +8350,9 @@ var device_pb = {};
 	 * @suppress {unusedLocalVariables} f is only used for nested messages
 	 */
 	proto.device.GatewayOption.toObject = function(includeInstance, msg) {
-	  var obj = {
-	    typeId: msg.getTypeId_asB64(),
-	    name: jspb.Message.getFieldWithDefault(msg, 2, "")
+	  var f, obj = {
+	typeId: msg.getTypeId_asB64(),
+	name: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f
 	  };
 
 	  if (includeInstance) {
@@ -8570,13 +8570,13 @@ var device_pb = {};
 	 * @suppress {unusedLocalVariables} f is only used for nested messages
 	 */
 	proto.device.DeviceUpdate.toObject = function(includeInstance, msg) {
-	  var obj = {
-	    id: msg.getId_asB64(),
-	    gatewayId: msg.getGatewayId_asB64(),
-	    serialNumber: jspb.Message.getFieldWithDefault(msg, 3, ""),
-	    name: jspb.Message.getFieldWithDefault(msg, 4, ""),
-	    description: jspb.Message.getFieldWithDefault(msg, 5, ""),
-	    typeId: msg.getTypeId_asB64()
+	  var f, obj = {
+	id: msg.getId_asB64(),
+	gatewayId: msg.getGatewayId_asB64(),
+	serialNumber: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+	name: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+	description: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+	typeId: msg.getTypeId_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -9012,12 +9012,12 @@ var device_pb = {};
 	 * @suppress {unusedLocalVariables} f is only used for nested messages
 	 */
 	proto.device.GatewayUpdate.toObject = function(includeInstance, msg) {
-	  var obj = {
-	    id: msg.getId_asB64(),
-	    serialNumber: jspb.Message.getFieldWithDefault(msg, 2, ""),
-	    name: jspb.Message.getFieldWithDefault(msg, 3, ""),
-	    description: jspb.Message.getFieldWithDefault(msg, 4, ""),
-	    typeId: msg.getTypeId_asB64()
+	  var f, obj = {
+	id: msg.getId_asB64(),
+	serialNumber: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+	name: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+	description: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+	typeId: msg.getTypeId_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -9383,12 +9383,12 @@ var device_pb = {};
 	 */
 	proto.device.ConfigSchema.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
-	    deviceId: msg.getDeviceId_asB64(),
-	    name: jspb.Message.getFieldWithDefault(msg, 3, ""),
-	    configBytes: msg.getConfigBytes_asB64(),
-	    configType: jspb.Message.getFieldWithDefault(msg, 5, 0),
-	    category: jspb.Message.getFieldWithDefault(msg, 6, "")
+	id: jspb.Message.getFieldWithDefault(msg, 1, 0),
+	deviceId: msg.getDeviceId_asB64(),
+	name: jspb.Message.getFieldWithDefault(msg, 3, ""),
+	configBytes: msg.getConfigBytes_asB64(),
+	configType: jspb.Message.getFieldWithDefault(msg, 5, 0),
+	category: jspb.Message.getFieldWithDefault(msg, 6, "")
 	  };
 
 	  if (includeInstance) {
@@ -9711,7 +9711,7 @@ var device_pb = {};
 	 */
 	proto.device.ConfigId.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    id: jspb.Message.getFieldWithDefault(msg, 1, 0)
+	id: jspb.Message.getFieldWithDefault(msg, 1, 0)
 	  };
 
 	  if (includeInstance) {
@@ -9840,12 +9840,12 @@ var device_pb = {};
 	 * @suppress {unusedLocalVariables} f is only used for nested messages
 	 */
 	proto.device.ConfigUpdate.toObject = function(includeInstance, msg) {
-	  var obj = {
-	    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
-	    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-	    configBytes: msg.getConfigBytes_asB64(),
-	    configType: jspb.Message.getFieldWithDefault(msg, 4, 0),
-	    category: jspb.Message.getFieldWithDefault(msg, 5, "")
+	  var f, obj = {
+	id: jspb.Message.getFieldWithDefault(msg, 1, 0),
+	name: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+	configBytes: msg.getConfigBytes_asB64(),
+	configType: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+	category: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
 	  };
 
 	  if (includeInstance) {
@@ -10194,10 +10194,10 @@ var device_pb = {};
 	 */
 	proto.device.TypeSchema.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    id: msg.getId_asB64(),
-	    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-	    description: jspb.Message.getFieldWithDefault(msg, 3, ""),
-	    modelsList: msg.getModelsList_asB64()
+	id: msg.getId_asB64(),
+	name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+	description: jspb.Message.getFieldWithDefault(msg, 3, ""),
+	modelsList: msg.getModelsList_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -10481,7 +10481,7 @@ var device_pb = {};
 	 */
 	proto.device.TypeId.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    id: msg.getId_asB64()
+	id: msg.getId_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -10642,7 +10642,7 @@ var device_pb = {};
 	 */
 	proto.device.TypeIds.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    idsList: msg.getIdsList_asB64()
+	idsList: msg.getIdsList_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -10815,7 +10815,7 @@ var device_pb = {};
 	 */
 	proto.device.TypeName.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    name: jspb.Message.getFieldWithDefault(msg, 1, "")
+	name: jspb.Message.getFieldWithDefault(msg, 1, "")
 	  };
 
 	  if (includeInstance) {
@@ -10944,8 +10944,8 @@ var device_pb = {};
 	 * @suppress {unusedLocalVariables} f is only used for nested messages
 	 */
 	proto.device.TypeOption.toObject = function(includeInstance, msg) {
-	  var obj = {
-	    name: jspb.Message.getFieldWithDefault(msg, 1, "")
+	  var f, obj = {
+	name: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f
 	  };
 
 	  if (includeInstance) {
@@ -11092,10 +11092,10 @@ var device_pb = {};
 	 * @suppress {unusedLocalVariables} f is only used for nested messages
 	 */
 	proto.device.TypeUpdate.toObject = function(includeInstance, msg) {
-	  var obj = {
-	    id: msg.getId_asB64(),
-	    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-	    description: jspb.Message.getFieldWithDefault(msg, 3, "")
+	  var f, obj = {
+	id: msg.getId_asB64(),
+	name: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+	description: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
 	  };
 
 	  if (includeInstance) {
@@ -11343,8 +11343,8 @@ var device_pb = {};
 	 */
 	proto.device.TypeModel.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    id: msg.getId_asB64(),
-	    modelId: msg.getModelId_asB64()
+	id: msg.getId_asB64(),
+	modelId: msg.getModelId_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -11551,7 +11551,7 @@ var device_pb = {};
 	 */
 	proto.device.DeviceReadResponse.toObject = function(includeInstance, msg) {
 	  var f, obj = {
-	    result: (f = msg.getResult()) && proto.device.DeviceSchema.toObject(includeInstance, f)
+	result: (f = msg.getResult()) && proto.device.DeviceSchema.toObject(includeInstance, f)
 	  };
 
 	  if (includeInstance) {
@@ -11709,7 +11709,7 @@ var device_pb = {};
 	 */
 	proto.device.DeviceListResponse.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    resultsList: jspb.Message.toObjectList(msg.getResultsList(),
+	resultsList: jspb.Message.toObjectList(msg.getResultsList(),
 	    proto.device.DeviceSchema.toObject, includeInstance)
 	  };
 
@@ -11862,7 +11862,7 @@ var device_pb = {};
 	 */
 	proto.device.DeviceCreateResponse.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    id: msg.getId_asB64()
+	id: msg.getId_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -12116,7 +12116,7 @@ var device_pb = {};
 	 */
 	proto.device.GatewayReadResponse.toObject = function(includeInstance, msg) {
 	  var f, obj = {
-	    result: (f = msg.getResult()) && proto.device.GatewaySchema.toObject(includeInstance, f)
+	result: (f = msg.getResult()) && proto.device.GatewaySchema.toObject(includeInstance, f)
 	  };
 
 	  if (includeInstance) {
@@ -12274,7 +12274,7 @@ var device_pb = {};
 	 */
 	proto.device.GatewayListResponse.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    resultsList: jspb.Message.toObjectList(msg.getResultsList(),
+	resultsList: jspb.Message.toObjectList(msg.getResultsList(),
 	    proto.device.GatewaySchema.toObject, includeInstance)
 	  };
 
@@ -12427,7 +12427,7 @@ var device_pb = {};
 	 */
 	proto.device.GatewayCreateResponse.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    id: msg.getId_asB64()
+	id: msg.getId_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -12681,7 +12681,7 @@ var device_pb = {};
 	 */
 	proto.device.ConfigReadResponse.toObject = function(includeInstance, msg) {
 	  var f, obj = {
-	    result: (f = msg.getResult()) && proto.device.ConfigSchema.toObject(includeInstance, f)
+	result: (f = msg.getResult()) && proto.device.ConfigSchema.toObject(includeInstance, f)
 	  };
 
 	  if (includeInstance) {
@@ -12839,7 +12839,7 @@ var device_pb = {};
 	 */
 	proto.device.ConfigListResponse.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    resultsList: jspb.Message.toObjectList(msg.getResultsList(),
+	resultsList: jspb.Message.toObjectList(msg.getResultsList(),
 	    proto.device.ConfigSchema.toObject, includeInstance)
 	  };
 
@@ -12992,7 +12992,7 @@ var device_pb = {};
 	 */
 	proto.device.ConfigCreateResponse.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    id: jspb.Message.getFieldWithDefault(msg, 1, 0)
+	id: jspb.Message.getFieldWithDefault(msg, 1, 0)
 	  };
 
 	  if (includeInstance) {
@@ -13222,7 +13222,7 @@ var device_pb = {};
 	 */
 	proto.device.TypeReadResponse.toObject = function(includeInstance, msg) {
 	  var f, obj = {
-	    result: (f = msg.getResult()) && proto.device.TypeSchema.toObject(includeInstance, f)
+	result: (f = msg.getResult()) && proto.device.TypeSchema.toObject(includeInstance, f)
 	  };
 
 	  if (includeInstance) {
@@ -13380,7 +13380,7 @@ var device_pb = {};
 	 */
 	proto.device.TypeListResponse.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    resultsList: jspb.Message.toObjectList(msg.getResultsList(),
+	resultsList: jspb.Message.toObjectList(msg.getResultsList(),
 	    proto.device.TypeSchema.toObject, includeInstance)
 	  };
 
@@ -13533,7 +13533,7 @@ var device_pb = {};
 	 */
 	proto.device.TypeCreateResponse.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    id: msg.getId_asB64()
+	id: msg.getId_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -13767,7 +13767,7 @@ var device_pb = {};
 // Code generated by protoc-gen-grpc-web. DO NOT EDIT.
 // versions:
 // 	protoc-gen-grpc-web v1.5.0
-// 	protoc              v5.26.1
+// 	protoc              v5.27.3
 // source: rmcs_resource_api/device.proto
 
 
@@ -16572,11 +16572,11 @@ var group_pb = {};
 	 */
 	proto.group.GroupModelSchema.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    id: msg.getId_asB64(),
-	    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-	    category: jspb.Message.getFieldWithDefault(msg, 3, ""),
-	    description: jspb.Message.getFieldWithDefault(msg, 4, ""),
-	    modelsList: msg.getModelsList_asB64()
+	id: msg.getId_asB64(),
+	name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+	category: jspb.Message.getFieldWithDefault(msg, 3, ""),
+	description: jspb.Message.getFieldWithDefault(msg, 4, ""),
+	modelsList: msg.getModelsList_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -16896,11 +16896,11 @@ var group_pb = {};
 	 */
 	proto.group.GroupDeviceSchema.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    id: msg.getId_asB64(),
-	    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-	    category: jspb.Message.getFieldWithDefault(msg, 3, ""),
-	    description: jspb.Message.getFieldWithDefault(msg, 4, ""),
-	    devicesList: msg.getDevicesList_asB64()
+	id: msg.getId_asB64(),
+	name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+	category: jspb.Message.getFieldWithDefault(msg, 3, ""),
+	description: jspb.Message.getFieldWithDefault(msg, 4, ""),
+	devicesList: msg.getDevicesList_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -17213,7 +17213,7 @@ var group_pb = {};
 	 */
 	proto.group.GroupId.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    id: msg.getId_asB64()
+	id: msg.getId_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -17374,7 +17374,7 @@ var group_pb = {};
 	 */
 	proto.group.GroupIds.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    idsList: msg.getIdsList_asB64()
+	idsList: msg.getIdsList_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -17547,7 +17547,7 @@ var group_pb = {};
 	 */
 	proto.group.GroupName.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    name: jspb.Message.getFieldWithDefault(msg, 1, "")
+	name: jspb.Message.getFieldWithDefault(msg, 1, "")
 	  };
 
 	  if (includeInstance) {
@@ -17677,7 +17677,7 @@ var group_pb = {};
 	 */
 	proto.group.GroupCategory.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    category: jspb.Message.getFieldWithDefault(msg, 1, "")
+	category: jspb.Message.getFieldWithDefault(msg, 1, "")
 	  };
 
 	  if (includeInstance) {
@@ -17806,9 +17806,9 @@ var group_pb = {};
 	 * @suppress {unusedLocalVariables} f is only used for nested messages
 	 */
 	proto.group.GroupOption.toObject = function(includeInstance, msg) {
-	  var obj = {
-	    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-	    category: jspb.Message.getFieldWithDefault(msg, 2, "")
+	  var f, obj = {
+	name: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+	category: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f
 	  };
 
 	  if (includeInstance) {
@@ -18002,11 +18002,11 @@ var group_pb = {};
 	 * @suppress {unusedLocalVariables} f is only used for nested messages
 	 */
 	proto.group.GroupUpdate.toObject = function(includeInstance, msg) {
-	  var obj = {
-	    id: msg.getId_asB64(),
-	    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-	    category: jspb.Message.getFieldWithDefault(msg, 3, ""),
-	    description: jspb.Message.getFieldWithDefault(msg, 4, "")
+	  var f, obj = {
+	id: msg.getId_asB64(),
+	name: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+	category: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+	description: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
 	  };
 
 	  if (includeInstance) {
@@ -18301,8 +18301,8 @@ var group_pb = {};
 	 */
 	proto.group.GroupModel.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    id: msg.getId_asB64(),
-	    modelId: msg.getModelId_asB64()
+	id: msg.getId_asB64(),
+	modelId: msg.getModelId_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -18509,8 +18509,8 @@ var group_pb = {};
 	 */
 	proto.group.GroupDevice.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    id: msg.getId_asB64(),
-	    deviceId: msg.getDeviceId_asB64()
+	id: msg.getId_asB64(),
+	deviceId: msg.getDeviceId_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -18717,7 +18717,7 @@ var group_pb = {};
 	 */
 	proto.group.GroupModelReadResponse.toObject = function(includeInstance, msg) {
 	  var f, obj = {
-	    result: (f = msg.getResult()) && proto.group.GroupModelSchema.toObject(includeInstance, f)
+	result: (f = msg.getResult()) && proto.group.GroupModelSchema.toObject(includeInstance, f)
 	  };
 
 	  if (includeInstance) {
@@ -18875,7 +18875,7 @@ var group_pb = {};
 	 */
 	proto.group.GroupModelListResponse.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    resultsList: jspb.Message.toObjectList(msg.getResultsList(),
+	resultsList: jspb.Message.toObjectList(msg.getResultsList(),
 	    proto.group.GroupModelSchema.toObject, includeInstance)
 	  };
 
@@ -19028,7 +19028,7 @@ var group_pb = {};
 	 */
 	proto.group.GroupDeviceReadResponse.toObject = function(includeInstance, msg) {
 	  var f, obj = {
-	    result: (f = msg.getResult()) && proto.group.GroupDeviceSchema.toObject(includeInstance, f)
+	result: (f = msg.getResult()) && proto.group.GroupDeviceSchema.toObject(includeInstance, f)
 	  };
 
 	  if (includeInstance) {
@@ -19186,7 +19186,7 @@ var group_pb = {};
 	 */
 	proto.group.GroupDeviceListResponse.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    resultsList: jspb.Message.toObjectList(msg.getResultsList(),
+	resultsList: jspb.Message.toObjectList(msg.getResultsList(),
 	    proto.group.GroupDeviceSchema.toObject, includeInstance)
 	  };
 
@@ -19339,7 +19339,7 @@ var group_pb = {};
 	 */
 	proto.group.GroupCreateResponse.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    id: msg.getId_asB64()
+	id: msg.getId_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -19573,7 +19573,7 @@ var group_pb = {};
 // Code generated by protoc-gen-grpc-web. DO NOT EDIT.
 // versions:
 // 	protoc-gen-grpc-web v1.5.0
-// 	protoc              v5.26.1
+// 	protoc              v5.27.3
 // source: rmcs_resource_api/group.proto
 
 
@@ -22111,11 +22111,11 @@ var set_pb = {};
 	 */
 	proto.set.SetSchema.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    id: msg.getId_asB64(),
-	    templateId: msg.getTemplateId_asB64(),
-	    name: jspb.Message.getFieldWithDefault(msg, 3, ""),
-	    description: jspb.Message.getFieldWithDefault(msg, 4, ""),
-	    membersList: jspb.Message.toObjectList(msg.getMembersList(),
+	id: msg.getId_asB64(),
+	templateId: msg.getTemplateId_asB64(),
+	name: jspb.Message.getFieldWithDefault(msg, 3, ""),
+	description: jspb.Message.getFieldWithDefault(msg, 4, ""),
+	membersList: jspb.Message.toObjectList(msg.getMembersList(),
 	    proto.set.SetMember.toObject, includeInstance)
 	  };
 
@@ -22432,9 +22432,9 @@ var set_pb = {};
 	 */
 	proto.set.SetMember.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    deviceId: msg.getDeviceId_asB64(),
-	    modelId: msg.getModelId_asB64(),
-	    dataIndex: msg.getDataIndex_asB64()
+	deviceId: msg.getDeviceId_asB64(),
+	modelId: msg.getModelId_asB64(),
+	dataIndex: msg.getDataIndex_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -22694,7 +22694,7 @@ var set_pb = {};
 	 */
 	proto.set.SetId.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    id: msg.getId_asB64()
+	id: msg.getId_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -22855,7 +22855,7 @@ var set_pb = {};
 	 */
 	proto.set.SetIds.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    idsList: msg.getIdsList_asB64()
+	idsList: msg.getIdsList_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -23028,7 +23028,7 @@ var set_pb = {};
 	 */
 	proto.set.SetName.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    name: jspb.Message.getFieldWithDefault(msg, 1, "")
+	name: jspb.Message.getFieldWithDefault(msg, 1, "")
 	  };
 
 	  if (includeInstance) {
@@ -23157,9 +23157,9 @@ var set_pb = {};
 	 * @suppress {unusedLocalVariables} f is only used for nested messages
 	 */
 	proto.set.SetOption.toObject = function(includeInstance, msg) {
-	  var obj = {
-	    templateId: msg.getTemplateId_asB64(),
-	    name: jspb.Message.getFieldWithDefault(msg, 2, "")
+	  var f, obj = {
+	templateId: msg.getTemplateId_asB64(),
+	name: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f
 	  };
 
 	  if (includeInstance) {
@@ -23377,11 +23377,11 @@ var set_pb = {};
 	 * @suppress {unusedLocalVariables} f is only used for nested messages
 	 */
 	proto.set.SetUpdate.toObject = function(includeInstance, msg) {
-	  var obj = {
-	    id: msg.getId_asB64(),
-	    templateId: msg.getTemplateId_asB64(),
-	    name: jspb.Message.getFieldWithDefault(msg, 3, ""),
-	    description: jspb.Message.getFieldWithDefault(msg, 4, "")
+	  var f, obj = {
+	id: msg.getId_asB64(),
+	templateId: msg.getTemplateId_asB64(),
+	name: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+	description: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
 	  };
 
 	  if (includeInstance) {
@@ -23700,10 +23700,10 @@ var set_pb = {};
 	 */
 	proto.set.SetMemberRequest.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    setId: msg.getSetId_asB64(),
-	    deviceId: msg.getDeviceId_asB64(),
-	    modelId: msg.getModelId_asB64(),
-	    dataIndex: msg.getDataIndex_asB64()
+	setId: msg.getSetId_asB64(),
+	deviceId: msg.getDeviceId_asB64(),
+	modelId: msg.getModelId_asB64(),
+	dataIndex: msg.getDataIndex_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -24016,11 +24016,11 @@ var set_pb = {};
 	 */
 	proto.set.SetMemberSwap.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    setId: msg.getSetId_asB64(),
-	    deviceId1: msg.getDeviceId1_asB64(),
-	    modelId1: msg.getModelId1_asB64(),
-	    deviceId2: msg.getDeviceId2_asB64(),
-	    modelId2: msg.getModelId2_asB64()
+	setId: msg.getSetId_asB64(),
+	deviceId1: msg.getDeviceId1_asB64(),
+	modelId1: msg.getModelId1_asB64(),
+	deviceId2: msg.getDeviceId2_asB64(),
+	modelId2: msg.getModelId2_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -24393,10 +24393,10 @@ var set_pb = {};
 	 */
 	proto.set.SetTemplateSchema.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    id: msg.getId_asB64(),
-	    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-	    description: jspb.Message.getFieldWithDefault(msg, 3, ""),
-	    membersList: jspb.Message.toObjectList(msg.getMembersList(),
+	id: msg.getId_asB64(),
+	name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+	description: jspb.Message.getFieldWithDefault(msg, 3, ""),
+	membersList: jspb.Message.toObjectList(msg.getMembersList(),
 	    proto.set.SetTemplateMember.toObject, includeInstance)
 	  };
 
@@ -24660,9 +24660,9 @@ var set_pb = {};
 	 */
 	proto.set.SetTemplateMember.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    typeId: msg.getTypeId_asB64(),
-	    modelId: msg.getModelId_asB64(),
-	    dataIndex: msg.getDataIndex_asB64()
+	typeId: msg.getTypeId_asB64(),
+	modelId: msg.getModelId_asB64(),
+	dataIndex: msg.getDataIndex_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -24922,7 +24922,7 @@ var set_pb = {};
 	 */
 	proto.set.SetTemplateId.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    id: msg.getId_asB64()
+	id: msg.getId_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -25083,7 +25083,7 @@ var set_pb = {};
 	 */
 	proto.set.SetTemplateIds.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    idsList: msg.getIdsList_asB64()
+	idsList: msg.getIdsList_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -25256,7 +25256,7 @@ var set_pb = {};
 	 */
 	proto.set.SetTemplateName.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    name: jspb.Message.getFieldWithDefault(msg, 1, "")
+	name: jspb.Message.getFieldWithDefault(msg, 1, "")
 	  };
 
 	  if (includeInstance) {
@@ -25385,8 +25385,8 @@ var set_pb = {};
 	 * @suppress {unusedLocalVariables} f is only used for nested messages
 	 */
 	proto.set.SetTemplateOption.toObject = function(includeInstance, msg) {
-	  var obj = {
-	    name: jspb.Message.getFieldWithDefault(msg, 1, "")
+	  var f, obj = {
+	name: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f
 	  };
 
 	  if (includeInstance) {
@@ -25533,10 +25533,10 @@ var set_pb = {};
 	 * @suppress {unusedLocalVariables} f is only used for nested messages
 	 */
 	proto.set.SetTemplateUpdate.toObject = function(includeInstance, msg) {
-	  var obj = {
-	    id: msg.getId_asB64(),
-	    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-	    description: jspb.Message.getFieldWithDefault(msg, 3, "")
+	  var f, obj = {
+	id: msg.getId_asB64(),
+	name: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+	description: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
 	  };
 
 	  if (includeInstance) {
@@ -25784,11 +25784,11 @@ var set_pb = {};
 	 */
 	proto.set.SetTemplateMemberRequest.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    setId: msg.getSetId_asB64(),
-	    typeId: msg.getTypeId_asB64(),
-	    modelId: msg.getModelId_asB64(),
-	    dataIndex: msg.getDataIndex_asB64(),
-	    templateIndex: jspb.Message.getFieldWithDefault(msg, 5, 0)
+	setId: msg.getSetId_asB64(),
+	typeId: msg.getTypeId_asB64(),
+	modelId: msg.getModelId_asB64(),
+	dataIndex: msg.getDataIndex_asB64(),
+	templateIndex: jspb.Message.getFieldWithDefault(msg, 5, 0)
 	  };
 
 	  if (includeInstance) {
@@ -26130,9 +26130,9 @@ var set_pb = {};
 	 */
 	proto.set.SetTemplateMemberSwap.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    setId: msg.getSetId_asB64(),
-	    templateIndex1: jspb.Message.getFieldWithDefault(msg, 2, 0),
-	    templateIndex2: jspb.Message.getFieldWithDefault(msg, 3, 0)
+	setId: msg.getSetId_asB64(),
+	templateIndex1: jspb.Message.getFieldWithDefault(msg, 2, 0),
+	templateIndex2: jspb.Message.getFieldWithDefault(msg, 3, 0)
 	  };
 
 	  if (includeInstance) {
@@ -26344,7 +26344,7 @@ var set_pb = {};
 	 */
 	proto.set.SetReadResponse.toObject = function(includeInstance, msg) {
 	  var f, obj = {
-	    result: (f = msg.getResult()) && proto.set.SetSchema.toObject(includeInstance, f)
+	result: (f = msg.getResult()) && proto.set.SetSchema.toObject(includeInstance, f)
 	  };
 
 	  if (includeInstance) {
@@ -26502,7 +26502,7 @@ var set_pb = {};
 	 */
 	proto.set.SetListResponse.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    resultsList: jspb.Message.toObjectList(msg.getResultsList(),
+	resultsList: jspb.Message.toObjectList(msg.getResultsList(),
 	    proto.set.SetSchema.toObject, includeInstance)
 	  };
 
@@ -26655,7 +26655,7 @@ var set_pb = {};
 	 */
 	proto.set.SetCreateResponse.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    id: msg.getId_asB64()
+	id: msg.getId_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -26909,7 +26909,7 @@ var set_pb = {};
 	 */
 	proto.set.TemplateReadResponse.toObject = function(includeInstance, msg) {
 	  var f, obj = {
-	    result: (f = msg.getResult()) && proto.set.SetTemplateSchema.toObject(includeInstance, f)
+	result: (f = msg.getResult()) && proto.set.SetTemplateSchema.toObject(includeInstance, f)
 	  };
 
 	  if (includeInstance) {
@@ -27067,7 +27067,7 @@ var set_pb = {};
 	 */
 	proto.set.TemplateListResponse.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    resultsList: jspb.Message.toObjectList(msg.getResultsList(),
+	resultsList: jspb.Message.toObjectList(msg.getResultsList(),
 	    proto.set.SetTemplateSchema.toObject, includeInstance)
 	  };
 
@@ -27220,7 +27220,7 @@ var set_pb = {};
 	 */
 	proto.set.TemplateCreateResponse.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    id: msg.getId_asB64()
+	id: msg.getId_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -27454,7 +27454,7 @@ var set_pb = {};
 // Code generated by protoc-gen-grpc-web. DO NOT EDIT.
 // versions:
 // 	protoc-gen-grpc-web v1.5.0
-// 	protoc              v5.26.1
+// 	protoc              v5.27.3
 // source: rmcs_resource_api/set.proto
 
 
@@ -29291,11 +29291,11 @@ var data_pb = {};
 	 */
 	proto.data.DataSchema.toObject = function(includeInstance, msg) {
 	  var f, obj = {
-	    deviceId: msg.getDeviceId_asB64(),
-	    modelId: msg.getModelId_asB64(),
-	    timestamp: jspb.Message.getFieldWithDefault(msg, 3, 0),
-	    dataBytes: msg.getDataBytes_asB64(),
-	    dataTypeList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f
+	deviceId: msg.getDeviceId_asB64(),
+	modelId: msg.getModelId_asB64(),
+	timestamp: jspb.Message.getFieldWithDefault(msg, 3, 0),
+	dataBytes: msg.getDataBytes_asB64(),
+	dataTypeList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f
 	  };
 
 	  if (includeInstance) {
@@ -29634,9 +29634,9 @@ var data_pb = {};
 	 */
 	proto.data.DataId.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    deviceId: msg.getDeviceId_asB64(),
-	    modelId: msg.getModelId_asB64(),
-	    timestamp: jspb.Message.getFieldWithDefault(msg, 3, 0)
+	deviceId: msg.getDeviceId_asB64(),
+	modelId: msg.getModelId_asB64(),
+	timestamp: jspb.Message.getFieldWithDefault(msg, 3, 0)
 	  };
 
 	  if (includeInstance) {
@@ -29872,9 +29872,9 @@ var data_pb = {};
 	 */
 	proto.data.DataTime.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    deviceId: msg.getDeviceId_asB64(),
-	    modelId: msg.getModelId_asB64(),
-	    timestamp: jspb.Message.getFieldWithDefault(msg, 3, 0)
+	deviceId: msg.getDeviceId_asB64(),
+	modelId: msg.getModelId_asB64(),
+	timestamp: jspb.Message.getFieldWithDefault(msg, 3, 0)
 	  };
 
 	  if (includeInstance) {
@@ -30110,10 +30110,10 @@ var data_pb = {};
 	 */
 	proto.data.DataRange.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    deviceId: msg.getDeviceId_asB64(),
-	    modelId: msg.getModelId_asB64(),
-	    begin: jspb.Message.getFieldWithDefault(msg, 3, 0),
-	    end: jspb.Message.getFieldWithDefault(msg, 4, 0)
+	deviceId: msg.getDeviceId_asB64(),
+	modelId: msg.getModelId_asB64(),
+	begin: jspb.Message.getFieldWithDefault(msg, 3, 0),
+	end: jspb.Message.getFieldWithDefault(msg, 4, 0)
 	  };
 
 	  if (includeInstance) {
@@ -30378,10 +30378,10 @@ var data_pb = {};
 	 */
 	proto.data.DataNumber.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    deviceId: msg.getDeviceId_asB64(),
-	    modelId: msg.getModelId_asB64(),
-	    timestamp: jspb.Message.getFieldWithDefault(msg, 3, 0),
-	    number: jspb.Message.getFieldWithDefault(msg, 4, 0)
+	deviceId: msg.getDeviceId_asB64(),
+	modelId: msg.getModelId_asB64(),
+	timestamp: jspb.Message.getFieldWithDefault(msg, 3, 0),
+	number: jspb.Message.getFieldWithDefault(msg, 4, 0)
 	  };
 
 	  if (includeInstance) {
@@ -30653,10 +30653,10 @@ var data_pb = {};
 	 */
 	proto.data.DataSetSchema.toObject = function(includeInstance, msg) {
 	  var f, obj = {
-	    setId: msg.getSetId_asB64(),
-	    timestamp: jspb.Message.getFieldWithDefault(msg, 2, 0),
-	    dataBytes: msg.getDataBytes_asB64(),
-	    dataTypeList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f
+	setId: msg.getSetId_asB64(),
+	timestamp: jspb.Message.getFieldWithDefault(msg, 2, 0),
+	dataBytes: msg.getDataBytes_asB64(),
+	dataTypeList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f
 	  };
 
 	  if (includeInstance) {
@@ -30942,8 +30942,8 @@ var data_pb = {};
 	 */
 	proto.data.DataSetId.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    setId: msg.getSetId_asB64(),
-	    timestamp: jspb.Message.getFieldWithDefault(msg, 2, 0)
+	setId: msg.getSetId_asB64(),
+	timestamp: jspb.Message.getFieldWithDefault(msg, 2, 0)
 	  };
 
 	  if (includeInstance) {
@@ -31126,8 +31126,8 @@ var data_pb = {};
 	 */
 	proto.data.DataSetTime.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    setId: msg.getSetId_asB64(),
-	    timestamp: jspb.Message.getFieldWithDefault(msg, 2, 0)
+	setId: msg.getSetId_asB64(),
+	timestamp: jspb.Message.getFieldWithDefault(msg, 2, 0)
 	  };
 
 	  if (includeInstance) {
@@ -31310,9 +31310,9 @@ var data_pb = {};
 	 */
 	proto.data.DataSetRange.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    setId: msg.getSetId_asB64(),
-	    begin: jspb.Message.getFieldWithDefault(msg, 2, 0),
-	    end: jspb.Message.getFieldWithDefault(msg, 3, 0)
+	setId: msg.getSetId_asB64(),
+	begin: jspb.Message.getFieldWithDefault(msg, 2, 0),
+	end: jspb.Message.getFieldWithDefault(msg, 3, 0)
 	  };
 
 	  if (includeInstance) {
@@ -31524,9 +31524,9 @@ var data_pb = {};
 	 */
 	proto.data.DataSetNumber.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    setId: msg.getSetId_asB64(),
-	    timestamp: jspb.Message.getFieldWithDefault(msg, 2, 0),
-	    number: jspb.Message.getFieldWithDefault(msg, 3, 0)
+	setId: msg.getSetId_asB64(),
+	timestamp: jspb.Message.getFieldWithDefault(msg, 2, 0),
+	number: jspb.Message.getFieldWithDefault(msg, 3, 0)
 	  };
 
 	  if (includeInstance) {
@@ -31737,12 +31737,12 @@ var data_pb = {};
 	 * @suppress {unusedLocalVariables} f is only used for nested messages
 	 */
 	proto.data.DataCount.toObject = function(includeInstance, msg) {
-	  var obj = {
-	    deviceId: msg.getDeviceId_asB64(),
-	    modelId: msg.getModelId_asB64(),
-	    timestamp: jspb.Message.getFieldWithDefault(msg, 3, 0),
-	    begin: jspb.Message.getFieldWithDefault(msg, 4, 0),
-	    end: jspb.Message.getFieldWithDefault(msg, 5, 0)
+	  var f, obj = {
+	deviceId: msg.getDeviceId_asB64(),
+	modelId: msg.getModelId_asB64(),
+	timestamp: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+	begin: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+	end: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
 	  };
 
 	  if (includeInstance) {
@@ -32090,7 +32090,7 @@ var data_pb = {};
 	 */
 	proto.data.DataReadResponse.toObject = function(includeInstance, msg) {
 	  var f, obj = {
-	    result: (f = msg.getResult()) && proto.data.DataSchema.toObject(includeInstance, f)
+	result: (f = msg.getResult()) && proto.data.DataSchema.toObject(includeInstance, f)
 	  };
 
 	  if (includeInstance) {
@@ -32248,7 +32248,7 @@ var data_pb = {};
 	 */
 	proto.data.DataListResponse.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    resultsList: jspb.Message.toObjectList(msg.getResultsList(),
+	resultsList: jspb.Message.toObjectList(msg.getResultsList(),
 	    proto.data.DataSchema.toObject, includeInstance)
 	  };
 
@@ -32401,7 +32401,7 @@ var data_pb = {};
 	 */
 	proto.data.TimestampReadResponse.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    timestamp: jspb.Message.getFieldWithDefault(msg, 1, 0)
+	timestamp: jspb.Message.getFieldWithDefault(msg, 1, 0)
 	  };
 
 	  if (includeInstance) {
@@ -32538,7 +32538,7 @@ var data_pb = {};
 	 */
 	proto.data.TimestampListResponse.toObject = function(includeInstance, msg) {
 	  var f, obj = {
-	    timestampsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+	timestampsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
 	  };
 
 	  if (includeInstance) {
@@ -32789,7 +32789,7 @@ var data_pb = {};
 	 */
 	proto.data.DataCountResponse.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    count: jspb.Message.getFieldWithDefault(msg, 1, 0)
+	count: jspb.Message.getFieldWithDefault(msg, 1, 0)
 	  };
 
 	  if (includeInstance) {
@@ -32919,7 +32919,7 @@ var data_pb = {};
 	 */
 	proto.data.DataSetReadResponse.toObject = function(includeInstance, msg) {
 	  var f, obj = {
-	    result: (f = msg.getResult()) && proto.data.DataSetSchema.toObject(includeInstance, f)
+	result: (f = msg.getResult()) && proto.data.DataSetSchema.toObject(includeInstance, f)
 	  };
 
 	  if (includeInstance) {
@@ -33077,7 +33077,7 @@ var data_pb = {};
 	 */
 	proto.data.DataSetListResponse.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    resultsList: jspb.Message.toObjectList(msg.getResultsList(),
+	resultsList: jspb.Message.toObjectList(msg.getResultsList(),
 	    proto.data.DataSetSchema.toObject, includeInstance)
 	  };
 
@@ -33210,7 +33210,7 @@ var data_pb = {};
 // Code generated by protoc-gen-grpc-web. DO NOT EDIT.
 // versions:
 // 	protoc-gen-grpc-web v1.5.0
-// 	protoc              v5.26.1
+// 	protoc              v5.27.3
 // source: rmcs_resource_api/data.proto
 
 
@@ -33334,67 +33334,6 @@ proto$4.data.DataServicePromiseClient.prototype.readData =
       request,
       metadata || {},
       methodDescriptor_DataService_ReadData);
-};
-
-
-/**
- * @const
- * @type {!grpc.web.MethodDescriptor<
- *   !proto.data.DataTime,
- *   !proto.data.DataListResponse>}
- */
-const methodDescriptor_DataService_ListDataByTime = new grpc$3.web.MethodDescriptor(
-  '/data.DataService/ListDataByTime',
-  grpc$3.web.MethodType.UNARY,
-  proto$4.data.DataTime,
-  proto$4.data.DataListResponse,
-  /**
-   * @param {!proto.data.DataTime} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto$4.data.DataListResponse.deserializeBinary
-);
-
-
-/**
- * @param {!proto.data.DataTime} request The
- *     request proto
- * @param {?Object<string, string>} metadata User defined
- *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.data.DataListResponse)}
- *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.data.DataListResponse>|undefined}
- *     The XHR Node Readable Stream
- */
-proto$4.data.DataServiceClient.prototype.listDataByTime =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/data.DataService/ListDataByTime',
-      request,
-      metadata || {},
-      methodDescriptor_DataService_ListDataByTime,
-      callback);
-};
-
-
-/**
- * @param {!proto.data.DataTime} request The
- *     request proto
- * @param {?Object<string, string>=} metadata User defined
- *     call metadata
- * @return {!Promise<!proto.data.DataListResponse>}
- *     Promise that resolves to the response
- */
-proto$4.data.DataServicePromiseClient.prototype.listDataByTime =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/data.DataService/ListDataByTime',
-      request,
-      metadata || {},
-      methodDescriptor_DataService_ListDataByTime);
 };
 
 
@@ -33639,494 +33578,6 @@ proto$4.data.DataServicePromiseClient.prototype.listDataByNumberAfter =
       request,
       metadata || {},
       methodDescriptor_DataService_ListDataByNumberAfter);
-};
-
-
-/**
- * @const
- * @type {!grpc.web.MethodDescriptor<
- *   !proto.data.DataId,
- *   !proto.data.TimestampReadResponse>}
- */
-const methodDescriptor_DataService_ReadDataTimestamp = new grpc$3.web.MethodDescriptor(
-  '/data.DataService/ReadDataTimestamp',
-  grpc$3.web.MethodType.UNARY,
-  proto$4.data.DataId,
-  proto$4.data.TimestampReadResponse,
-  /**
-   * @param {!proto.data.DataId} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto$4.data.TimestampReadResponse.deserializeBinary
-);
-
-
-/**
- * @param {!proto.data.DataId} request The
- *     request proto
- * @param {?Object<string, string>} metadata User defined
- *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.data.TimestampReadResponse)}
- *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.data.TimestampReadResponse>|undefined}
- *     The XHR Node Readable Stream
- */
-proto$4.data.DataServiceClient.prototype.readDataTimestamp =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/data.DataService/ReadDataTimestamp',
-      request,
-      metadata || {},
-      methodDescriptor_DataService_ReadDataTimestamp,
-      callback);
-};
-
-
-/**
- * @param {!proto.data.DataId} request The
- *     request proto
- * @param {?Object<string, string>=} metadata User defined
- *     call metadata
- * @return {!Promise<!proto.data.TimestampReadResponse>}
- *     Promise that resolves to the response
- */
-proto$4.data.DataServicePromiseClient.prototype.readDataTimestamp =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/data.DataService/ReadDataTimestamp',
-      request,
-      metadata || {},
-      methodDescriptor_DataService_ReadDataTimestamp);
-};
-
-
-/**
- * @const
- * @type {!grpc.web.MethodDescriptor<
- *   !proto.data.DataTime,
- *   !proto.data.TimestampListResponse>}
- */
-const methodDescriptor_DataService_ListDataTimestampByLastTime = new grpc$3.web.MethodDescriptor(
-  '/data.DataService/ListDataTimestampByLastTime',
-  grpc$3.web.MethodType.UNARY,
-  proto$4.data.DataTime,
-  proto$4.data.TimestampListResponse,
-  /**
-   * @param {!proto.data.DataTime} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto$4.data.TimestampListResponse.deserializeBinary
-);
-
-
-/**
- * @param {!proto.data.DataTime} request The
- *     request proto
- * @param {?Object<string, string>} metadata User defined
- *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.data.TimestampListResponse)}
- *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.data.TimestampListResponse>|undefined}
- *     The XHR Node Readable Stream
- */
-proto$4.data.DataServiceClient.prototype.listDataTimestampByLastTime =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/data.DataService/ListDataTimestampByLastTime',
-      request,
-      metadata || {},
-      methodDescriptor_DataService_ListDataTimestampByLastTime,
-      callback);
-};
-
-
-/**
- * @param {!proto.data.DataTime} request The
- *     request proto
- * @param {?Object<string, string>=} metadata User defined
- *     call metadata
- * @return {!Promise<!proto.data.TimestampListResponse>}
- *     Promise that resolves to the response
- */
-proto$4.data.DataServicePromiseClient.prototype.listDataTimestampByLastTime =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/data.DataService/ListDataTimestampByLastTime',
-      request,
-      metadata || {},
-      methodDescriptor_DataService_ListDataTimestampByLastTime);
-};
-
-
-/**
- * @const
- * @type {!grpc.web.MethodDescriptor<
- *   !proto.data.DataRange,
- *   !proto.data.TimestampListResponse>}
- */
-const methodDescriptor_DataService_ListDataTimestampByRangeTime = new grpc$3.web.MethodDescriptor(
-  '/data.DataService/ListDataTimestampByRangeTime',
-  grpc$3.web.MethodType.UNARY,
-  proto$4.data.DataRange,
-  proto$4.data.TimestampListResponse,
-  /**
-   * @param {!proto.data.DataRange} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto$4.data.TimestampListResponse.deserializeBinary
-);
-
-
-/**
- * @param {!proto.data.DataRange} request The
- *     request proto
- * @param {?Object<string, string>} metadata User defined
- *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.data.TimestampListResponse)}
- *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.data.TimestampListResponse>|undefined}
- *     The XHR Node Readable Stream
- */
-proto$4.data.DataServiceClient.prototype.listDataTimestampByRangeTime =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/data.DataService/ListDataTimestampByRangeTime',
-      request,
-      metadata || {},
-      methodDescriptor_DataService_ListDataTimestampByRangeTime,
-      callback);
-};
-
-
-/**
- * @param {!proto.data.DataRange} request The
- *     request proto
- * @param {?Object<string, string>=} metadata User defined
- *     call metadata
- * @return {!Promise<!proto.data.TimestampListResponse>}
- *     Promise that resolves to the response
- */
-proto$4.data.DataServicePromiseClient.prototype.listDataTimestampByRangeTime =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/data.DataService/ListDataTimestampByRangeTime',
-      request,
-      metadata || {},
-      methodDescriptor_DataService_ListDataTimestampByRangeTime);
-};
-
-
-/**
- * @const
- * @type {!grpc.web.MethodDescriptor<
- *   !proto.data.DataSchema,
- *   !proto.data.DataChangeResponse>}
- */
-const methodDescriptor_DataService_CreateData = new grpc$3.web.MethodDescriptor(
-  '/data.DataService/CreateData',
-  grpc$3.web.MethodType.UNARY,
-  proto$4.data.DataSchema,
-  proto$4.data.DataChangeResponse,
-  /**
-   * @param {!proto.data.DataSchema} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto$4.data.DataChangeResponse.deserializeBinary
-);
-
-
-/**
- * @param {!proto.data.DataSchema} request The
- *     request proto
- * @param {?Object<string, string>} metadata User defined
- *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.data.DataChangeResponse)}
- *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.data.DataChangeResponse>|undefined}
- *     The XHR Node Readable Stream
- */
-proto$4.data.DataServiceClient.prototype.createData =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/data.DataService/CreateData',
-      request,
-      metadata || {},
-      methodDescriptor_DataService_CreateData,
-      callback);
-};
-
-
-/**
- * @param {!proto.data.DataSchema} request The
- *     request proto
- * @param {?Object<string, string>=} metadata User defined
- *     call metadata
- * @return {!Promise<!proto.data.DataChangeResponse>}
- *     Promise that resolves to the response
- */
-proto$4.data.DataServicePromiseClient.prototype.createData =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/data.DataService/CreateData',
-      request,
-      metadata || {},
-      methodDescriptor_DataService_CreateData);
-};
-
-
-/**
- * @const
- * @type {!grpc.web.MethodDescriptor<
- *   !proto.data.DataId,
- *   !proto.data.DataChangeResponse>}
- */
-const methodDescriptor_DataService_DeleteData = new grpc$3.web.MethodDescriptor(
-  '/data.DataService/DeleteData',
-  grpc$3.web.MethodType.UNARY,
-  proto$4.data.DataId,
-  proto$4.data.DataChangeResponse,
-  /**
-   * @param {!proto.data.DataId} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto$4.data.DataChangeResponse.deserializeBinary
-);
-
-
-/**
- * @param {!proto.data.DataId} request The
- *     request proto
- * @param {?Object<string, string>} metadata User defined
- *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.data.DataChangeResponse)}
- *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.data.DataChangeResponse>|undefined}
- *     The XHR Node Readable Stream
- */
-proto$4.data.DataServiceClient.prototype.deleteData =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/data.DataService/DeleteData',
-      request,
-      metadata || {},
-      methodDescriptor_DataService_DeleteData,
-      callback);
-};
-
-
-/**
- * @param {!proto.data.DataId} request The
- *     request proto
- * @param {?Object<string, string>=} metadata User defined
- *     call metadata
- * @return {!Promise<!proto.data.DataChangeResponse>}
- *     Promise that resolves to the response
- */
-proto$4.data.DataServicePromiseClient.prototype.deleteData =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/data.DataService/DeleteData',
-      request,
-      metadata || {},
-      methodDescriptor_DataService_DeleteData);
-};
-
-
-/**
- * @const
- * @type {!grpc.web.MethodDescriptor<
- *   !proto.data.DataCount,
- *   !proto.data.DataCountResponse>}
- */
-const methodDescriptor_DataService_CountData = new grpc$3.web.MethodDescriptor(
-  '/data.DataService/CountData',
-  grpc$3.web.MethodType.UNARY,
-  proto$4.data.DataCount,
-  proto$4.data.DataCountResponse,
-  /**
-   * @param {!proto.data.DataCount} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto$4.data.DataCountResponse.deserializeBinary
-);
-
-
-/**
- * @param {!proto.data.DataCount} request The
- *     request proto
- * @param {?Object<string, string>} metadata User defined
- *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.data.DataCountResponse)}
- *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.data.DataCountResponse>|undefined}
- *     The XHR Node Readable Stream
- */
-proto$4.data.DataServiceClient.prototype.countData =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/data.DataService/CountData',
-      request,
-      metadata || {},
-      methodDescriptor_DataService_CountData,
-      callback);
-};
-
-
-/**
- * @param {!proto.data.DataCount} request The
- *     request proto
- * @param {?Object<string, string>=} metadata User defined
- *     call metadata
- * @return {!Promise<!proto.data.DataCountResponse>}
- *     Promise that resolves to the response
- */
-proto$4.data.DataServicePromiseClient.prototype.countData =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/data.DataService/CountData',
-      request,
-      metadata || {},
-      methodDescriptor_DataService_CountData);
-};
-
-
-/**
- * @const
- * @type {!grpc.web.MethodDescriptor<
- *   !proto.data.DataCount,
- *   !proto.data.DataCountResponse>}
- */
-const methodDescriptor_DataService_CountDataByLastTime = new grpc$3.web.MethodDescriptor(
-  '/data.DataService/CountDataByLastTime',
-  grpc$3.web.MethodType.UNARY,
-  proto$4.data.DataCount,
-  proto$4.data.DataCountResponse,
-  /**
-   * @param {!proto.data.DataCount} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto$4.data.DataCountResponse.deserializeBinary
-);
-
-
-/**
- * @param {!proto.data.DataCount} request The
- *     request proto
- * @param {?Object<string, string>} metadata User defined
- *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.data.DataCountResponse)}
- *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.data.DataCountResponse>|undefined}
- *     The XHR Node Readable Stream
- */
-proto$4.data.DataServiceClient.prototype.countDataByLastTime =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/data.DataService/CountDataByLastTime',
-      request,
-      metadata || {},
-      methodDescriptor_DataService_CountDataByLastTime,
-      callback);
-};
-
-
-/**
- * @param {!proto.data.DataCount} request The
- *     request proto
- * @param {?Object<string, string>=} metadata User defined
- *     call metadata
- * @return {!Promise<!proto.data.DataCountResponse>}
- *     Promise that resolves to the response
- */
-proto$4.data.DataServicePromiseClient.prototype.countDataByLastTime =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/data.DataService/CountDataByLastTime',
-      request,
-      metadata || {},
-      methodDescriptor_DataService_CountDataByLastTime);
-};
-
-
-/**
- * @const
- * @type {!grpc.web.MethodDescriptor<
- *   !proto.data.DataCount,
- *   !proto.data.DataCountResponse>}
- */
-const methodDescriptor_DataService_CountDataByRangeTime = new grpc$3.web.MethodDescriptor(
-  '/data.DataService/CountDataByRangeTime',
-  grpc$3.web.MethodType.UNARY,
-  proto$4.data.DataCount,
-  proto$4.data.DataCountResponse,
-  /**
-   * @param {!proto.data.DataCount} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto$4.data.DataCountResponse.deserializeBinary
-);
-
-
-/**
- * @param {!proto.data.DataCount} request The
- *     request proto
- * @param {?Object<string, string>} metadata User defined
- *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.data.DataCountResponse)}
- *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.data.DataCountResponse>|undefined}
- *     The XHR Node Readable Stream
- */
-proto$4.data.DataServiceClient.prototype.countDataByRangeTime =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/data.DataService/CountDataByRangeTime',
-      request,
-      metadata || {},
-      methodDescriptor_DataService_CountDataByRangeTime,
-      callback);
-};
-
-
-/**
- * @param {!proto.data.DataCount} request The
- *     request proto
- * @param {?Object<string, string>=} metadata User defined
- *     call metadata
- * @return {!Promise<!proto.data.DataCountResponse>}
- *     Promise that resolves to the response
- */
-proto$4.data.DataServicePromiseClient.prototype.countDataByRangeTime =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/data.DataService/CountDataByRangeTime',
-      request,
-      metadata || {},
-      methodDescriptor_DataService_CountDataByRangeTime);
 };
 
 
@@ -34502,67 +33953,6 @@ proto$4.data.DataServicePromiseClient.prototype.readDataSet =
  *   !proto.data.DataSetTime,
  *   !proto.data.DataSetListResponse>}
  */
-const methodDescriptor_DataService_ListDataSetByTime = new grpc$3.web.MethodDescriptor(
-  '/data.DataService/ListDataSetByTime',
-  grpc$3.web.MethodType.UNARY,
-  proto$4.data.DataSetTime,
-  proto$4.data.DataSetListResponse,
-  /**
-   * @param {!proto.data.DataSetTime} request
-   * @return {!Uint8Array}
-   */
-  function(request) {
-    return request.serializeBinary();
-  },
-  proto$4.data.DataSetListResponse.deserializeBinary
-);
-
-
-/**
- * @param {!proto.data.DataSetTime} request The
- *     request proto
- * @param {?Object<string, string>} metadata User defined
- *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.data.DataSetListResponse)}
- *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.data.DataSetListResponse>|undefined}
- *     The XHR Node Readable Stream
- */
-proto$4.data.DataServiceClient.prototype.listDataSetByTime =
-    function(request, metadata, callback) {
-  return this.client_.rpcCall(this.hostname_ +
-      '/data.DataService/ListDataSetByTime',
-      request,
-      metadata || {},
-      methodDescriptor_DataService_ListDataSetByTime,
-      callback);
-};
-
-
-/**
- * @param {!proto.data.DataSetTime} request The
- *     request proto
- * @param {?Object<string, string>=} metadata User defined
- *     call metadata
- * @return {!Promise<!proto.data.DataSetListResponse>}
- *     Promise that resolves to the response
- */
-proto$4.data.DataServicePromiseClient.prototype.listDataSetByTime =
-    function(request, metadata) {
-  return this.client_.unaryCall(this.hostname_ +
-      '/data.DataService/ListDataSetByTime',
-      request,
-      metadata || {},
-      methodDescriptor_DataService_ListDataSetByTime);
-};
-
-
-/**
- * @const
- * @type {!grpc.web.MethodDescriptor<
- *   !proto.data.DataSetTime,
- *   !proto.data.DataSetListResponse>}
- */
 const methodDescriptor_DataService_ListDataSetByLastTime = new grpc$3.web.MethodDescriptor(
   '/data.DataService/ListDataSetByLastTime',
   grpc$3.web.MethodType.UNARY,
@@ -34804,11 +34194,316 @@ proto$4.data.DataServicePromiseClient.prototype.listDataSetByNumberAfter =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
+ *   !proto.data.DataSchema,
+ *   !proto.data.DataChangeResponse>}
+ */
+const methodDescriptor_DataService_CreateData = new grpc$3.web.MethodDescriptor(
+  '/data.DataService/CreateData',
+  grpc$3.web.MethodType.UNARY,
+  proto$4.data.DataSchema,
+  proto$4.data.DataChangeResponse,
+  /**
+   * @param {!proto.data.DataSchema} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto$4.data.DataChangeResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.data.DataSchema} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.data.DataChangeResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.data.DataChangeResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto$4.data.DataServiceClient.prototype.createData =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/data.DataService/CreateData',
+      request,
+      metadata || {},
+      methodDescriptor_DataService_CreateData,
+      callback);
+};
+
+
+/**
+ * @param {!proto.data.DataSchema} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.data.DataChangeResponse>}
+ *     Promise that resolves to the response
+ */
+proto$4.data.DataServicePromiseClient.prototype.createData =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/data.DataService/CreateData',
+      request,
+      metadata || {},
+      methodDescriptor_DataService_CreateData);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.data.DataId,
+ *   !proto.data.DataChangeResponse>}
+ */
+const methodDescriptor_DataService_DeleteData = new grpc$3.web.MethodDescriptor(
+  '/data.DataService/DeleteData',
+  grpc$3.web.MethodType.UNARY,
+  proto$4.data.DataId,
+  proto$4.data.DataChangeResponse,
+  /**
+   * @param {!proto.data.DataId} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto$4.data.DataChangeResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.data.DataId} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.data.DataChangeResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.data.DataChangeResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto$4.data.DataServiceClient.prototype.deleteData =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/data.DataService/DeleteData',
+      request,
+      metadata || {},
+      methodDescriptor_DataService_DeleteData,
+      callback);
+};
+
+
+/**
+ * @param {!proto.data.DataId} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.data.DataChangeResponse>}
+ *     Promise that resolves to the response
+ */
+proto$4.data.DataServicePromiseClient.prototype.deleteData =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/data.DataService/DeleteData',
+      request,
+      metadata || {},
+      methodDescriptor_DataService_DeleteData);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.data.DataId,
+ *   !proto.data.TimestampReadResponse>}
+ */
+const methodDescriptor_DataService_ReadDataTimestamp = new grpc$3.web.MethodDescriptor(
+  '/data.DataService/ReadDataTimestamp',
+  grpc$3.web.MethodType.UNARY,
+  proto$4.data.DataId,
+  proto$4.data.TimestampReadResponse,
+  /**
+   * @param {!proto.data.DataId} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto$4.data.TimestampReadResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.data.DataId} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.data.TimestampReadResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.data.TimestampReadResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto$4.data.DataServiceClient.prototype.readDataTimestamp =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/data.DataService/ReadDataTimestamp',
+      request,
+      metadata || {},
+      methodDescriptor_DataService_ReadDataTimestamp,
+      callback);
+};
+
+
+/**
+ * @param {!proto.data.DataId} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.data.TimestampReadResponse>}
+ *     Promise that resolves to the response
+ */
+proto$4.data.DataServicePromiseClient.prototype.readDataTimestamp =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/data.DataService/ReadDataTimestamp',
+      request,
+      metadata || {},
+      methodDescriptor_DataService_ReadDataTimestamp);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.data.DataTime,
+ *   !proto.data.TimestampListResponse>}
+ */
+const methodDescriptor_DataService_ListDataTimestampByLastTime = new grpc$3.web.MethodDescriptor(
+  '/data.DataService/ListDataTimestampByLastTime',
+  grpc$3.web.MethodType.UNARY,
+  proto$4.data.DataTime,
+  proto$4.data.TimestampListResponse,
+  /**
+   * @param {!proto.data.DataTime} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto$4.data.TimestampListResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.data.DataTime} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.data.TimestampListResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.data.TimestampListResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto$4.data.DataServiceClient.prototype.listDataTimestampByLastTime =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/data.DataService/ListDataTimestampByLastTime',
+      request,
+      metadata || {},
+      methodDescriptor_DataService_ListDataTimestampByLastTime,
+      callback);
+};
+
+
+/**
+ * @param {!proto.data.DataTime} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.data.TimestampListResponse>}
+ *     Promise that resolves to the response
+ */
+proto$4.data.DataServicePromiseClient.prototype.listDataTimestampByLastTime =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/data.DataService/ListDataTimestampByLastTime',
+      request,
+      metadata || {},
+      methodDescriptor_DataService_ListDataTimestampByLastTime);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.data.DataRange,
+ *   !proto.data.TimestampListResponse>}
+ */
+const methodDescriptor_DataService_ListDataTimestampByRangeTime = new grpc$3.web.MethodDescriptor(
+  '/data.DataService/ListDataTimestampByRangeTime',
+  grpc$3.web.MethodType.UNARY,
+  proto$4.data.DataRange,
+  proto$4.data.TimestampListResponse,
+  /**
+   * @param {!proto.data.DataRange} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto$4.data.TimestampListResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.data.DataRange} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.data.TimestampListResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.data.TimestampListResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto$4.data.DataServiceClient.prototype.listDataTimestampByRangeTime =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/data.DataService/ListDataTimestampByRangeTime',
+      request,
+      metadata || {},
+      methodDescriptor_DataService_ListDataTimestampByRangeTime,
+      callback);
+};
+
+
+/**
+ * @param {!proto.data.DataRange} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.data.TimestampListResponse>}
+ *     Promise that resolves to the response
+ */
+proto$4.data.DataServicePromiseClient.prototype.listDataTimestampByRangeTime =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/data.DataService/ListDataTimestampByRangeTime',
+      request,
+      metadata || {},
+      methodDescriptor_DataService_ListDataTimestampByRangeTime);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
  *   !proto.data.DataSetId,
  *   !proto.data.TimestampReadResponse>}
  */
-const methodDescriptor_DataService_ReadDataSetTimestamp = new grpc$3.web.MethodDescriptor(
-  '/data.DataService/ReadDataSetTimestamp',
+const methodDescriptor_DataService_ReadDataTimestampBySet = new grpc$3.web.MethodDescriptor(
+  '/data.DataService/ReadDataTimestampBySet',
   grpc$3.web.MethodType.UNARY,
   proto$4.data.DataSetId,
   proto$4.data.TimestampReadResponse,
@@ -34833,13 +34528,13 @@ const methodDescriptor_DataService_ReadDataSetTimestamp = new grpc$3.web.MethodD
  * @return {!grpc.web.ClientReadableStream<!proto.data.TimestampReadResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$4.data.DataServiceClient.prototype.readDataSetTimestamp =
+proto$4.data.DataServiceClient.prototype.readDataTimestampBySet =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/data.DataService/ReadDataSetTimestamp',
+      '/data.DataService/ReadDataTimestampBySet',
       request,
       metadata || {},
-      methodDescriptor_DataService_ReadDataSetTimestamp,
+      methodDescriptor_DataService_ReadDataTimestampBySet,
       callback);
 };
 
@@ -34852,13 +34547,13 @@ proto$4.data.DataServiceClient.prototype.readDataSetTimestamp =
  * @return {!Promise<!proto.data.TimestampReadResponse>}
  *     Promise that resolves to the response
  */
-proto$4.data.DataServicePromiseClient.prototype.readDataSetTimestamp =
+proto$4.data.DataServicePromiseClient.prototype.readDataTimestampBySet =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/data.DataService/ReadDataSetTimestamp',
+      '/data.DataService/ReadDataTimestampBySet',
       request,
       metadata || {},
-      methodDescriptor_DataService_ReadDataSetTimestamp);
+      methodDescriptor_DataService_ReadDataTimestampBySet);
 };
 
 
@@ -34868,8 +34563,8 @@ proto$4.data.DataServicePromiseClient.prototype.readDataSetTimestamp =
  *   !proto.data.DataSetTime,
  *   !proto.data.TimestampListResponse>}
  */
-const methodDescriptor_DataService_ListDataSetTimestampByLastTime = new grpc$3.web.MethodDescriptor(
-  '/data.DataService/ListDataSetTimestampByLastTime',
+const methodDescriptor_DataService_ListDataTimestampBySetLastTime = new grpc$3.web.MethodDescriptor(
+  '/data.DataService/ListDataTimestampBySetLastTime',
   grpc$3.web.MethodType.UNARY,
   proto$4.data.DataSetTime,
   proto$4.data.TimestampListResponse,
@@ -34894,13 +34589,13 @@ const methodDescriptor_DataService_ListDataSetTimestampByLastTime = new grpc$3.w
  * @return {!grpc.web.ClientReadableStream<!proto.data.TimestampListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$4.data.DataServiceClient.prototype.listDataSetTimestampByLastTime =
+proto$4.data.DataServiceClient.prototype.listDataTimestampBySetLastTime =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/data.DataService/ListDataSetTimestampByLastTime',
+      '/data.DataService/ListDataTimestampBySetLastTime',
       request,
       metadata || {},
-      methodDescriptor_DataService_ListDataSetTimestampByLastTime,
+      methodDescriptor_DataService_ListDataTimestampBySetLastTime,
       callback);
 };
 
@@ -34913,13 +34608,13 @@ proto$4.data.DataServiceClient.prototype.listDataSetTimestampByLastTime =
  * @return {!Promise<!proto.data.TimestampListResponse>}
  *     Promise that resolves to the response
  */
-proto$4.data.DataServicePromiseClient.prototype.listDataSetTimestampByLastTime =
+proto$4.data.DataServicePromiseClient.prototype.listDataTimestampBySetLastTime =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/data.DataService/ListDataSetTimestampByLastTime',
+      '/data.DataService/ListDataTimestampBySetLastTime',
       request,
       metadata || {},
-      methodDescriptor_DataService_ListDataSetTimestampByLastTime);
+      methodDescriptor_DataService_ListDataTimestampBySetLastTime);
 };
 
 
@@ -34929,8 +34624,8 @@ proto$4.data.DataServicePromiseClient.prototype.listDataSetTimestampByLastTime =
  *   !proto.data.DataSetRange,
  *   !proto.data.TimestampListResponse>}
  */
-const methodDescriptor_DataService_ListDataSetTimestampByRangeTime = new grpc$3.web.MethodDescriptor(
-  '/data.DataService/ListDataSetTimestampByRangeTime',
+const methodDescriptor_DataService_ListDataTimestampBySetRangeTime = new grpc$3.web.MethodDescriptor(
+  '/data.DataService/ListDataTimestampBySetRangeTime',
   grpc$3.web.MethodType.UNARY,
   proto$4.data.DataSetRange,
   proto$4.data.TimestampListResponse,
@@ -34955,13 +34650,13 @@ const methodDescriptor_DataService_ListDataSetTimestampByRangeTime = new grpc$3.
  * @return {!grpc.web.ClientReadableStream<!proto.data.TimestampListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto$4.data.DataServiceClient.prototype.listDataSetTimestampByRangeTime =
+proto$4.data.DataServiceClient.prototype.listDataTimestampBySetRangeTime =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/data.DataService/ListDataSetTimestampByRangeTime',
+      '/data.DataService/ListDataTimestampBySetRangeTime',
       request,
       metadata || {},
-      methodDescriptor_DataService_ListDataSetTimestampByRangeTime,
+      methodDescriptor_DataService_ListDataTimestampBySetRangeTime,
       callback);
 };
 
@@ -34974,13 +34669,196 @@ proto$4.data.DataServiceClient.prototype.listDataSetTimestampByRangeTime =
  * @return {!Promise<!proto.data.TimestampListResponse>}
  *     Promise that resolves to the response
  */
-proto$4.data.DataServicePromiseClient.prototype.listDataSetTimestampByRangeTime =
+proto$4.data.DataServicePromiseClient.prototype.listDataTimestampBySetRangeTime =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/data.DataService/ListDataSetTimestampByRangeTime',
+      '/data.DataService/ListDataTimestampBySetRangeTime',
       request,
       metadata || {},
-      methodDescriptor_DataService_ListDataSetTimestampByRangeTime);
+      methodDescriptor_DataService_ListDataTimestampBySetRangeTime);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.data.DataCount,
+ *   !proto.data.DataCountResponse>}
+ */
+const methodDescriptor_DataService_CountData = new grpc$3.web.MethodDescriptor(
+  '/data.DataService/CountData',
+  grpc$3.web.MethodType.UNARY,
+  proto$4.data.DataCount,
+  proto$4.data.DataCountResponse,
+  /**
+   * @param {!proto.data.DataCount} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto$4.data.DataCountResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.data.DataCount} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.data.DataCountResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.data.DataCountResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto$4.data.DataServiceClient.prototype.countData =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/data.DataService/CountData',
+      request,
+      metadata || {},
+      methodDescriptor_DataService_CountData,
+      callback);
+};
+
+
+/**
+ * @param {!proto.data.DataCount} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.data.DataCountResponse>}
+ *     Promise that resolves to the response
+ */
+proto$4.data.DataServicePromiseClient.prototype.countData =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/data.DataService/CountData',
+      request,
+      metadata || {},
+      methodDescriptor_DataService_CountData);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.data.DataCount,
+ *   !proto.data.DataCountResponse>}
+ */
+const methodDescriptor_DataService_CountDataByLastTime = new grpc$3.web.MethodDescriptor(
+  '/data.DataService/CountDataByLastTime',
+  grpc$3.web.MethodType.UNARY,
+  proto$4.data.DataCount,
+  proto$4.data.DataCountResponse,
+  /**
+   * @param {!proto.data.DataCount} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto$4.data.DataCountResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.data.DataCount} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.data.DataCountResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.data.DataCountResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto$4.data.DataServiceClient.prototype.countDataByLastTime =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/data.DataService/CountDataByLastTime',
+      request,
+      metadata || {},
+      methodDescriptor_DataService_CountDataByLastTime,
+      callback);
+};
+
+
+/**
+ * @param {!proto.data.DataCount} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.data.DataCountResponse>}
+ *     Promise that resolves to the response
+ */
+proto$4.data.DataServicePromiseClient.prototype.countDataByLastTime =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/data.DataService/CountDataByLastTime',
+      request,
+      metadata || {},
+      methodDescriptor_DataService_CountDataByLastTime);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.data.DataCount,
+ *   !proto.data.DataCountResponse>}
+ */
+const methodDescriptor_DataService_CountDataByRangeTime = new grpc$3.web.MethodDescriptor(
+  '/data.DataService/CountDataByRangeTime',
+  grpc$3.web.MethodType.UNARY,
+  proto$4.data.DataCount,
+  proto$4.data.DataCountResponse,
+  /**
+   * @param {!proto.data.DataCount} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto$4.data.DataCountResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.data.DataCount} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.data.DataCountResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.data.DataCountResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto$4.data.DataServiceClient.prototype.countDataByRangeTime =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/data.DataService/CountDataByRangeTime',
+      request,
+      metadata || {},
+      methodDescriptor_DataService_CountDataByRangeTime,
+      callback);
+};
+
+
+/**
+ * @param {!proto.data.DataCount} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.data.DataCountResponse>}
+ *     Promise that resolves to the response
+ */
+proto$4.data.DataServicePromiseClient.prototype.countDataByRangeTime =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/data.DataService/CountDataByRangeTime',
+      request,
+      metadata || {},
+      methodDescriptor_DataService_CountDataByRangeTime);
 };
 
 
@@ -35319,13 +35197,13 @@ var buffer_pb = {};
 	 */
 	proto.buffer.BufferSchema.toObject = function(includeInstance, msg) {
 	  var f, obj = {
-	    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
-	    deviceId: msg.getDeviceId_asB64(),
-	    modelId: msg.getModelId_asB64(),
-	    timestamp: jspb.Message.getFieldWithDefault(msg, 4, 0),
-	    dataBytes: msg.getDataBytes_asB64(),
-	    dataTypeList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
-	    status: jspb.Message.getFieldWithDefault(msg, 7, 0)
+	id: jspb.Message.getFieldWithDefault(msg, 1, 0),
+	deviceId: msg.getDeviceId_asB64(),
+	modelId: msg.getModelId_asB64(),
+	timestamp: jspb.Message.getFieldWithDefault(msg, 4, 0),
+	dataBytes: msg.getDataBytes_asB64(),
+	dataTypeList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
+	status: jspb.Message.getFieldWithDefault(msg, 7, 0)
 	  };
 
 	  if (includeInstance) {
@@ -35722,7 +35600,7 @@ var buffer_pb = {};
 	 */
 	proto.buffer.BufferId.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    id: jspb.Message.getFieldWithDefault(msg, 1, 0)
+	id: jspb.Message.getFieldWithDefault(msg, 1, 0)
 	  };
 
 	  if (includeInstance) {
@@ -35851,11 +35729,11 @@ var buffer_pb = {};
 	 * @suppress {unusedLocalVariables} f is only used for nested messages
 	 */
 	proto.buffer.BufferTime.toObject = function(includeInstance, msg) {
-	  var obj = {
-	    deviceId: msg.getDeviceId_asB64(),
-	    modelId: msg.getModelId_asB64(),
-	    timestamp: jspb.Message.getFieldWithDefault(msg, 3, 0),
-	    status: jspb.Message.getFieldWithDefault(msg, 4, 0)
+	  var f, obj = {
+	deviceId: msg.getDeviceId_asB64(),
+	modelId: msg.getModelId_asB64(),
+	timestamp: jspb.Message.getFieldWithDefault(msg, 3, 0),
+	status: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
 	  };
 
 	  if (includeInstance) {
@@ -36137,10 +36015,10 @@ var buffer_pb = {};
 	 * @suppress {unusedLocalVariables} f is only used for nested messages
 	 */
 	proto.buffer.BufferSelector.toObject = function(includeInstance, msg) {
-	  var obj = {
-	    deviceId: msg.getDeviceId_asB64(),
-	    modelId: msg.getModelId_asB64(),
-	    status: jspb.Message.getFieldWithDefault(msg, 3, 0)
+	  var f, obj = {
+	deviceId: msg.getDeviceId_asB64(),
+	modelId: msg.getModelId_asB64(),
+	status: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
 	  };
 
 	  if (includeInstance) {
@@ -36429,12 +36307,12 @@ var buffer_pb = {};
 	 * @suppress {unusedLocalVariables} f is only used for nested messages
 	 */
 	proto.buffer.BuffersSelector.toObject = function(includeInstance, msg) {
-	  var obj = {
-	    deviceId: msg.getDeviceId_asB64(),
-	    modelId: msg.getModelId_asB64(),
-	    status: jspb.Message.getFieldWithDefault(msg, 3, 0),
-	    number: jspb.Message.getFieldWithDefault(msg, 4, 0),
-	    offset: jspb.Message.getFieldWithDefault(msg, 5, 0)
+	  var f, obj = {
+	deviceId: msg.getDeviceId_asB64(),
+	modelId: msg.getModelId_asB64(),
+	status: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+	number: jspb.Message.getFieldWithDefault(msg, 4, 0),
+	offset: jspb.Message.getFieldWithDefault(msg, 5, 0)
 	  };
 
 	  if (includeInstance) {
@@ -36789,10 +36667,10 @@ var buffer_pb = {};
 	 */
 	proto.buffer.BufferUpdate.toObject = function(includeInstance, msg) {
 	  var f, obj = {
-	    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
-	    dataBytes: msg.getDataBytes_asB64(),
-	    dataTypeList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
-	    status: jspb.Message.getFieldWithDefault(msg, 4, 0)
+	id: jspb.Message.getFieldWithDefault(msg, 1, 0),
+	dataBytes: msg.getDataBytes_asB64(),
+	dataTypeList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
+	status: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
 	  };
 
 	  if (includeInstance) {
@@ -37089,10 +36967,10 @@ var buffer_pb = {};
 	 * @suppress {unusedLocalVariables} f is only used for nested messages
 	 */
 	proto.buffer.BufferCount.toObject = function(includeInstance, msg) {
-	  var obj = {
-	    deviceId: msg.getDeviceId_asB64(),
-	    modelId: msg.getModelId_asB64(),
-	    status: jspb.Message.getFieldWithDefault(msg, 3, 0)
+	  var f, obj = {
+	deviceId: msg.getDeviceId_asB64(),
+	modelId: msg.getModelId_asB64(),
+	status: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
 	  };
 
 	  if (includeInstance) {
@@ -37382,7 +37260,7 @@ var buffer_pb = {};
 	 */
 	proto.buffer.BufferReadResponse.toObject = function(includeInstance, msg) {
 	  var f, obj = {
-	    result: (f = msg.getResult()) && proto.buffer.BufferSchema.toObject(includeInstance, f)
+	result: (f = msg.getResult()) && proto.buffer.BufferSchema.toObject(includeInstance, f)
 	  };
 
 	  if (includeInstance) {
@@ -37540,7 +37418,7 @@ var buffer_pb = {};
 	 */
 	proto.buffer.BufferListResponse.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    resultsList: jspb.Message.toObjectList(msg.getResultsList(),
+	resultsList: jspb.Message.toObjectList(msg.getResultsList(),
 	    proto.buffer.BufferSchema.toObject, includeInstance)
 	  };
 
@@ -37693,7 +37571,7 @@ var buffer_pb = {};
 	 */
 	proto.buffer.BufferCreateResponse.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    id: jspb.Message.getFieldWithDefault(msg, 1, 0)
+	id: jspb.Message.getFieldWithDefault(msg, 1, 0)
 	  };
 
 	  if (includeInstance) {
@@ -37923,7 +37801,7 @@ var buffer_pb = {};
 	 */
 	proto.buffer.BufferCountResponse.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    count: jspb.Message.getFieldWithDefault(msg, 1, 0)
+	count: jspb.Message.getFieldWithDefault(msg, 1, 0)
 	  };
 
 	  if (includeInstance) {
@@ -38033,7 +37911,7 @@ var buffer_pb = {};
 // Code generated by protoc-gen-grpc-web. DO NOT EDIT.
 // versions:
 // 	protoc-gen-grpc-web v1.5.0
-// 	protoc              v5.26.1
+// 	protoc              v5.27.3
 // source: rmcs_resource_api/buffer.proto
 
 
@@ -39289,13 +39167,13 @@ var slice_pb = {};
 	 */
 	proto.slice.SliceSchema.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
-	    deviceId: msg.getDeviceId_asB64(),
-	    modelId: msg.getModelId_asB64(),
-	    timestampBegin: jspb.Message.getFieldWithDefault(msg, 4, 0),
-	    timestampEnd: jspb.Message.getFieldWithDefault(msg, 5, 0),
-	    name: jspb.Message.getFieldWithDefault(msg, 6, ""),
-	    description: jspb.Message.getFieldWithDefault(msg, 7, "")
+	id: jspb.Message.getFieldWithDefault(msg, 1, 0),
+	deviceId: msg.getDeviceId_asB64(),
+	modelId: msg.getModelId_asB64(),
+	timestampBegin: jspb.Message.getFieldWithDefault(msg, 4, 0),
+	timestampEnd: jspb.Message.getFieldWithDefault(msg, 5, 0),
+	name: jspb.Message.getFieldWithDefault(msg, 6, ""),
+	description: jspb.Message.getFieldWithDefault(msg, 7, "")
 	  };
 
 	  if (includeInstance) {
@@ -39647,7 +39525,7 @@ var slice_pb = {};
 	 */
 	proto.slice.SliceId.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    id: jspb.Message.getFieldWithDefault(msg, 1, 0)
+	id: jspb.Message.getFieldWithDefault(msg, 1, 0)
 	  };
 
 	  if (includeInstance) {
@@ -39777,9 +39655,9 @@ var slice_pb = {};
 	 */
 	proto.slice.SliceTime.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    deviceId: msg.getDeviceId_asB64(),
-	    modelId: msg.getModelId_asB64(),
-	    timestamp: jspb.Message.getFieldWithDefault(msg, 3, 0)
+	deviceId: msg.getDeviceId_asB64(),
+	modelId: msg.getModelId_asB64(),
+	timestamp: jspb.Message.getFieldWithDefault(msg, 3, 0)
 	  };
 
 	  if (includeInstance) {
@@ -40015,10 +39893,10 @@ var slice_pb = {};
 	 */
 	proto.slice.SliceRange.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    deviceId: msg.getDeviceId_asB64(),
-	    modelId: msg.getModelId_asB64(),
-	    begin: jspb.Message.getFieldWithDefault(msg, 3, 0),
-	    end: jspb.Message.getFieldWithDefault(msg, 4, 0)
+	deviceId: msg.getDeviceId_asB64(),
+	modelId: msg.getModelId_asB64(),
+	begin: jspb.Message.getFieldWithDefault(msg, 3, 0),
+	end: jspb.Message.getFieldWithDefault(msg, 4, 0)
 	  };
 
 	  if (includeInstance) {
@@ -40283,8 +40161,8 @@ var slice_pb = {};
 	 */
 	proto.slice.SliceNameTime.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-	    timestamp: jspb.Message.getFieldWithDefault(msg, 2, 0)
+	name: jspb.Message.getFieldWithDefault(msg, 1, ""),
+	timestamp: jspb.Message.getFieldWithDefault(msg, 2, 0)
 	  };
 
 	  if (includeInstance) {
@@ -40443,9 +40321,9 @@ var slice_pb = {};
 	 */
 	proto.slice.SliceNameRange.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-	    begin: jspb.Message.getFieldWithDefault(msg, 2, 0),
-	    end: jspb.Message.getFieldWithDefault(msg, 3, 0)
+	name: jspb.Message.getFieldWithDefault(msg, 1, ""),
+	begin: jspb.Message.getFieldWithDefault(msg, 2, 0),
+	end: jspb.Message.getFieldWithDefault(msg, 3, 0)
 	  };
 
 	  if (includeInstance) {
@@ -40632,12 +40510,12 @@ var slice_pb = {};
 	 * @suppress {unusedLocalVariables} f is only used for nested messages
 	 */
 	proto.slice.SliceOption.toObject = function(includeInstance, msg) {
-	  var obj = {
-	    deviceId: msg.getDeviceId_asB64(),
-	    modelId: msg.getModelId_asB64(),
-	    name: jspb.Message.getFieldWithDefault(msg, 3, ""),
-	    begin: jspb.Message.getFieldWithDefault(msg, 4, 0),
-	    end: jspb.Message.getFieldWithDefault(msg, 5, 0)
+	  var f, obj = {
+	deviceId: msg.getDeviceId_asB64(),
+	modelId: msg.getModelId_asB64(),
+	name: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+	begin: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+	end: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
 	  };
 
 	  if (includeInstance) {
@@ -41020,12 +40898,12 @@ var slice_pb = {};
 	 * @suppress {unusedLocalVariables} f is only used for nested messages
 	 */
 	proto.slice.SliceUpdate.toObject = function(includeInstance, msg) {
-	  var obj = {
-	    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
-	    timestampBegin: jspb.Message.getFieldWithDefault(msg, 2, 0),
-	    timestampEnd: jspb.Message.getFieldWithDefault(msg, 3, 0),
-	    name: jspb.Message.getFieldWithDefault(msg, 4, ""),
-	    description: jspb.Message.getFieldWithDefault(msg, 5, "")
+	  var f, obj = {
+	id: jspb.Message.getFieldWithDefault(msg, 1, 0),
+	timestampBegin: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+	timestampEnd: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+	name: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+	description: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
 	  };
 
 	  if (includeInstance) {
@@ -41343,12 +41221,12 @@ var slice_pb = {};
 	 */
 	proto.slice.SliceSetSchema.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
-	    setId: msg.getSetId_asB64(),
-	    timestampBegin: jspb.Message.getFieldWithDefault(msg, 3, 0),
-	    timestampEnd: jspb.Message.getFieldWithDefault(msg, 4, 0),
-	    name: jspb.Message.getFieldWithDefault(msg, 5, ""),
-	    description: jspb.Message.getFieldWithDefault(msg, 6, "")
+	id: jspb.Message.getFieldWithDefault(msg, 1, 0),
+	setId: msg.getSetId_asB64(),
+	timestampBegin: jspb.Message.getFieldWithDefault(msg, 3, 0),
+	timestampEnd: jspb.Message.getFieldWithDefault(msg, 4, 0),
+	name: jspb.Message.getFieldWithDefault(msg, 5, ""),
+	description: jspb.Message.getFieldWithDefault(msg, 6, "")
 	  };
 
 	  if (includeInstance) {
@@ -41647,8 +41525,8 @@ var slice_pb = {};
 	 */
 	proto.slice.SliceSetTime.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    setId: msg.getSetId_asB64(),
-	    timestamp: jspb.Message.getFieldWithDefault(msg, 2, 0)
+	setId: msg.getSetId_asB64(),
+	timestamp: jspb.Message.getFieldWithDefault(msg, 2, 0)
 	  };
 
 	  if (includeInstance) {
@@ -41831,9 +41709,9 @@ var slice_pb = {};
 	 */
 	proto.slice.SliceSetRange.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    setId: msg.getSetId_asB64(),
-	    begin: jspb.Message.getFieldWithDefault(msg, 2, 0),
-	    end: jspb.Message.getFieldWithDefault(msg, 3, 0)
+	setId: msg.getSetId_asB64(),
+	begin: jspb.Message.getFieldWithDefault(msg, 2, 0),
+	end: jspb.Message.getFieldWithDefault(msg, 3, 0)
 	  };
 
 	  if (includeInstance) {
@@ -42044,11 +41922,11 @@ var slice_pb = {};
 	 * @suppress {unusedLocalVariables} f is only used for nested messages
 	 */
 	proto.slice.SliceSetOption.toObject = function(includeInstance, msg) {
-	  var obj = {
-	    setId: msg.getSetId_asB64(),
-	    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-	    begin: jspb.Message.getFieldWithDefault(msg, 3, 0),
-	    end: jspb.Message.getFieldWithDefault(msg, 4, 0)
+	  var f, obj = {
+	setId: msg.getSetId_asB64(),
+	name: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+	begin: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+	end: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
 	  };
 
 	  if (includeInstance) {
@@ -42361,7 +42239,7 @@ var slice_pb = {};
 	 */
 	proto.slice.SliceReadResponse.toObject = function(includeInstance, msg) {
 	  var f, obj = {
-	    result: (f = msg.getResult()) && proto.slice.SliceSchema.toObject(includeInstance, f)
+	result: (f = msg.getResult()) && proto.slice.SliceSchema.toObject(includeInstance, f)
 	  };
 
 	  if (includeInstance) {
@@ -42519,7 +42397,7 @@ var slice_pb = {};
 	 */
 	proto.slice.SliceListResponse.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    resultsList: jspb.Message.toObjectList(msg.getResultsList(),
+	resultsList: jspb.Message.toObjectList(msg.getResultsList(),
 	    proto.slice.SliceSchema.toObject, includeInstance)
 	  };
 
@@ -42672,7 +42550,7 @@ var slice_pb = {};
 	 */
 	proto.slice.SliceCreateResponse.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    id: jspb.Message.getFieldWithDefault(msg, 1, 0)
+	id: jspb.Message.getFieldWithDefault(msg, 1, 0)
 	  };
 
 	  if (includeInstance) {
@@ -42902,7 +42780,7 @@ var slice_pb = {};
 	 */
 	proto.slice.SliceSetReadResponse.toObject = function(includeInstance, msg) {
 	  var f, obj = {
-	    result: (f = msg.getResult()) && proto.slice.SliceSetSchema.toObject(includeInstance, f)
+	result: (f = msg.getResult()) && proto.slice.SliceSetSchema.toObject(includeInstance, f)
 	  };
 
 	  if (includeInstance) {
@@ -43060,7 +42938,7 @@ var slice_pb = {};
 	 */
 	proto.slice.SliceSetListResponse.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    resultsList: jspb.Message.toObjectList(msg.getResultsList(),
+	resultsList: jspb.Message.toObjectList(msg.getResultsList(),
 	    proto.slice.SliceSetSchema.toObject, includeInstance)
 	  };
 
@@ -43193,7 +43071,7 @@ var slice_pb = {};
 // Code generated by protoc-gen-grpc-web. DO NOT EDIT.
 // versions:
 // 	protoc-gen-grpc-web v1.5.0
-// 	protoc              v5.26.1
+// 	protoc              v5.27.3
 // source: rmcs_resource_api/slice.proto
 
 
@@ -44598,11 +44476,11 @@ var log_pb = {};
 	 */
 	proto.log.LogSchema.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    timestamp: jspb.Message.getFieldWithDefault(msg, 1, 0),
-	    deviceId: msg.getDeviceId_asB64(),
-	    status: jspb.Message.getFieldWithDefault(msg, 3, 0),
-	    logBytes: msg.getLogBytes_asB64(),
-	    logType: jspb.Message.getFieldWithDefault(msg, 5, 0)
+	timestamp: jspb.Message.getFieldWithDefault(msg, 1, 0),
+	deviceId: msg.getDeviceId_asB64(),
+	status: jspb.Message.getFieldWithDefault(msg, 3, 0),
+	logBytes: msg.getLogBytes_asB64(),
+	logType: jspb.Message.getFieldWithDefault(msg, 5, 0)
 	  };
 
 	  if (includeInstance) {
@@ -44896,8 +44774,8 @@ var log_pb = {};
 	 */
 	proto.log.LogId.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    timestamp: jspb.Message.getFieldWithDefault(msg, 1, 0),
-	    deviceId: msg.getDeviceId_asB64()
+	timestamp: jspb.Message.getFieldWithDefault(msg, 1, 0),
+	deviceId: msg.getDeviceId_asB64()
 	  };
 
 	  if (includeInstance) {
@@ -45079,10 +44957,10 @@ var log_pb = {};
 	 * @suppress {unusedLocalVariables} f is only used for nested messages
 	 */
 	proto.log.LogTime.toObject = function(includeInstance, msg) {
-	  var obj = {
-	    timestamp: jspb.Message.getFieldWithDefault(msg, 1, 0),
-	    deviceId: msg.getDeviceId_asB64(),
-	    status: jspb.Message.getFieldWithDefault(msg, 3, 0)
+	  var f, obj = {
+	timestamp: jspb.Message.getFieldWithDefault(msg, 1, 0),
+	deviceId: msg.getDeviceId_asB64(),
+	status: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
 	  };
 
 	  if (includeInstance) {
@@ -45329,11 +45207,11 @@ var log_pb = {};
 	 * @suppress {unusedLocalVariables} f is only used for nested messages
 	 */
 	proto.log.LogRange.toObject = function(includeInstance, msg) {
-	  var obj = {
-	    begin: jspb.Message.getFieldWithDefault(msg, 1, 0),
-	    end: jspb.Message.getFieldWithDefault(msg, 2, 0),
-	    deviceId: msg.getDeviceId_asB64(),
-	    status: jspb.Message.getFieldWithDefault(msg, 4, 0)
+	  var f, obj = {
+	begin: jspb.Message.getFieldWithDefault(msg, 1, 0),
+	end: jspb.Message.getFieldWithDefault(msg, 2, 0),
+	deviceId: msg.getDeviceId_asB64(),
+	status: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
 	  };
 
 	  if (includeInstance) {
@@ -45609,12 +45487,12 @@ var log_pb = {};
 	 * @suppress {unusedLocalVariables} f is only used for nested messages
 	 */
 	proto.log.LogUpdate.toObject = function(includeInstance, msg) {
-	  var obj = {
-	    timestamp: jspb.Message.getFieldWithDefault(msg, 1, 0),
-	    deviceId: msg.getDeviceId_asB64(),
-	    status: jspb.Message.getFieldWithDefault(msg, 3, 0),
-	    logBytes: msg.getLogBytes_asB64(),
-	    logType: jspb.Message.getFieldWithDefault(msg, 5, 0)
+	  var f, obj = {
+	timestamp: jspb.Message.getFieldWithDefault(msg, 1, 0),
+	deviceId: msg.getDeviceId_asB64(),
+	status: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+	logBytes: msg.getLogBytes_asB64(),
+	logType: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
 	  };
 
 	  if (includeInstance) {
@@ -45962,7 +45840,7 @@ var log_pb = {};
 	 */
 	proto.log.LogReadResponse.toObject = function(includeInstance, msg) {
 	  var f, obj = {
-	    result: (f = msg.getResult()) && proto.log.LogSchema.toObject(includeInstance, f)
+	result: (f = msg.getResult()) && proto.log.LogSchema.toObject(includeInstance, f)
 	  };
 
 	  if (includeInstance) {
@@ -46120,7 +45998,7 @@ var log_pb = {};
 	 */
 	proto.log.LogListResponse.toObject = function(includeInstance, msg) {
 	  var obj = {
-	    resultsList: jspb.Message.toObjectList(msg.getResultsList(),
+	resultsList: jspb.Message.toObjectList(msg.getResultsList(),
 	    proto.log.LogSchema.toObject, includeInstance)
 	  };
 
@@ -46353,7 +46231,7 @@ var log_pb = {};
 // Code generated by protoc-gen-grpc-web. DO NOT EDIT.
 // versions:
 // 	protoc-gen-grpc-web v1.5.0
-// 	protoc              v5.26.1
+// 	protoc              v5.27.3
 // source: rmcs_resource_api/log.proto
 
 

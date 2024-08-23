@@ -449,13 +449,13 @@ proto.slice.SliceSchema.prototype.toObject = function(opt_includeInstance) {
  */
 proto.slice.SliceSchema.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    deviceId: msg.getDeviceId_asB64(),
-    modelId: msg.getModelId_asB64(),
-    timestampBegin: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    timestampEnd: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    name: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 7, "")
+id: jspb.Message.getFieldWithDefault(msg, 1, 0),
+deviceId: msg.getDeviceId_asB64(),
+modelId: msg.getModelId_asB64(),
+timestampBegin: jspb.Message.getFieldWithDefault(msg, 4, 0),
+timestampEnd: jspb.Message.getFieldWithDefault(msg, 5, 0),
+name: jspb.Message.getFieldWithDefault(msg, 6, ""),
+description: jspb.Message.getFieldWithDefault(msg, 7, "")
   };
 
   if (includeInstance) {
@@ -807,7 +807,7 @@ proto.slice.SliceId.prototype.toObject = function(opt_includeInstance) {
  */
 proto.slice.SliceId.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, 0)
+id: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -937,9 +937,9 @@ proto.slice.SliceTime.prototype.toObject = function(opt_includeInstance) {
  */
 proto.slice.SliceTime.toObject = function(includeInstance, msg) {
   var f, obj = {
-    deviceId: msg.getDeviceId_asB64(),
-    modelId: msg.getModelId_asB64(),
-    timestamp: jspb.Message.getFieldWithDefault(msg, 3, 0)
+deviceId: msg.getDeviceId_asB64(),
+modelId: msg.getModelId_asB64(),
+timestamp: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -1175,10 +1175,10 @@ proto.slice.SliceRange.prototype.toObject = function(opt_includeInstance) {
  */
 proto.slice.SliceRange.toObject = function(includeInstance, msg) {
   var f, obj = {
-    deviceId: msg.getDeviceId_asB64(),
-    modelId: msg.getModelId_asB64(),
-    begin: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    end: jspb.Message.getFieldWithDefault(msg, 4, 0)
+deviceId: msg.getDeviceId_asB64(),
+modelId: msg.getModelId_asB64(),
+begin: jspb.Message.getFieldWithDefault(msg, 3, 0),
+end: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {
@@ -1443,8 +1443,8 @@ proto.slice.SliceNameTime.prototype.toObject = function(opt_includeInstance) {
  */
 proto.slice.SliceNameTime.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    timestamp: jspb.Message.getFieldWithDefault(msg, 2, 0)
+name: jspb.Message.getFieldWithDefault(msg, 1, ""),
+timestamp: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -1603,9 +1603,9 @@ proto.slice.SliceNameRange.prototype.toObject = function(opt_includeInstance) {
  */
 proto.slice.SliceNameRange.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    begin: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    end: jspb.Message.getFieldWithDefault(msg, 3, 0)
+name: jspb.Message.getFieldWithDefault(msg, 1, ""),
+begin: jspb.Message.getFieldWithDefault(msg, 2, 0),
+end: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -1793,11 +1793,11 @@ proto.slice.SliceOption.prototype.toObject = function(opt_includeInstance) {
  */
 proto.slice.SliceOption.toObject = function(includeInstance, msg) {
   var f, obj = {
-    deviceId: msg.getDeviceId_asB64(),
-    modelId: msg.getModelId_asB64(),
-    name: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    begin: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    end: jspb.Message.getFieldWithDefault(msg, 5, 0)
+deviceId: msg.getDeviceId_asB64(),
+modelId: msg.getModelId_asB64(),
+name: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+begin: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+end: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -2181,11 +2181,11 @@ proto.slice.SliceUpdate.prototype.toObject = function(opt_includeInstance) {
  */
 proto.slice.SliceUpdate.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    timestampBegin: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    timestampEnd: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    name: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 5, "")
+id: jspb.Message.getFieldWithDefault(msg, 1, 0),
+timestampBegin: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+timestampEnd: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+name: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+description: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -2503,12 +2503,12 @@ proto.slice.SliceSetSchema.prototype.toObject = function(opt_includeInstance) {
  */
 proto.slice.SliceSetSchema.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    setId: msg.getSetId_asB64(),
-    timestampBegin: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    timestampEnd: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    name: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 6, "")
+id: jspb.Message.getFieldWithDefault(msg, 1, 0),
+setId: msg.getSetId_asB64(),
+timestampBegin: jspb.Message.getFieldWithDefault(msg, 3, 0),
+timestampEnd: jspb.Message.getFieldWithDefault(msg, 4, 0),
+name: jspb.Message.getFieldWithDefault(msg, 5, ""),
+description: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
   if (includeInstance) {
@@ -2807,8 +2807,8 @@ proto.slice.SliceSetTime.prototype.toObject = function(opt_includeInstance) {
  */
 proto.slice.SliceSetTime.toObject = function(includeInstance, msg) {
   var f, obj = {
-    setId: msg.getSetId_asB64(),
-    timestamp: jspb.Message.getFieldWithDefault(msg, 2, 0)
+setId: msg.getSetId_asB64(),
+timestamp: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -2991,9 +2991,9 @@ proto.slice.SliceSetRange.prototype.toObject = function(opt_includeInstance) {
  */
 proto.slice.SliceSetRange.toObject = function(includeInstance, msg) {
   var f, obj = {
-    setId: msg.getSetId_asB64(),
-    begin: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    end: jspb.Message.getFieldWithDefault(msg, 3, 0)
+setId: msg.getSetId_asB64(),
+begin: jspb.Message.getFieldWithDefault(msg, 2, 0),
+end: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -3205,10 +3205,10 @@ proto.slice.SliceSetOption.prototype.toObject = function(opt_includeInstance) {
  */
 proto.slice.SliceSetOption.toObject = function(includeInstance, msg) {
   var f, obj = {
-    setId: msg.getSetId_asB64(),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    begin: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    end: jspb.Message.getFieldWithDefault(msg, 4, 0)
+setId: msg.getSetId_asB64(),
+name: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+begin: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+end: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -3521,7 +3521,7 @@ proto.slice.SliceReadResponse.prototype.toObject = function(opt_includeInstance)
  */
 proto.slice.SliceReadResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    result: (f = msg.getResult()) && proto.slice.SliceSchema.toObject(includeInstance, f)
+result: (f = msg.getResult()) && proto.slice.SliceSchema.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3679,7 +3679,7 @@ proto.slice.SliceListResponse.prototype.toObject = function(opt_includeInstance)
  */
 proto.slice.SliceListResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    resultsList: jspb.Message.toObjectList(msg.getResultsList(),
+resultsList: jspb.Message.toObjectList(msg.getResultsList(),
     proto.slice.SliceSchema.toObject, includeInstance)
   };
 
@@ -3832,7 +3832,7 @@ proto.slice.SliceCreateResponse.prototype.toObject = function(opt_includeInstanc
  */
 proto.slice.SliceCreateResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, 0)
+id: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -4063,7 +4063,7 @@ proto.slice.SliceSetReadResponse.prototype.toObject = function(opt_includeInstan
  */
 proto.slice.SliceSetReadResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    result: (f = msg.getResult()) && proto.slice.SliceSetSchema.toObject(includeInstance, f)
+result: (f = msg.getResult()) && proto.slice.SliceSetSchema.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4221,7 +4221,7 @@ proto.slice.SliceSetListResponse.prototype.toObject = function(opt_includeInstan
  */
 proto.slice.SliceSetListResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    resultsList: jspb.Message.toObjectList(msg.getResultsList(),
+resultsList: jspb.Message.toObjectList(msg.getResultsList(),
     proto.slice.SliceSetSchema.toObject, includeInstance)
   };
 

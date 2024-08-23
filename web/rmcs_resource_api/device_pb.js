@@ -920,13 +920,13 @@ proto.device.DeviceSchema.prototype.toObject = function(opt_includeInstance) {
  */
 proto.device.DeviceSchema.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: msg.getId_asB64(),
-    gatewayId: msg.getGatewayId_asB64(),
-    serialNumber: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    deviceType: (f = msg.getDeviceType()) && proto.device.TypeSchema.toObject(includeInstance, f),
-    configsList: jspb.Message.toObjectList(msg.getConfigsList(),
+id: msg.getId_asB64(),
+gatewayId: msg.getGatewayId_asB64(),
+serialNumber: jspb.Message.getFieldWithDefault(msg, 3, ""),
+name: jspb.Message.getFieldWithDefault(msg, 4, ""),
+description: jspb.Message.getFieldWithDefault(msg, 5, ""),
+deviceType: (f = msg.getDeviceType()) && proto.device.TypeSchema.toObject(includeInstance, f),
+configsList: jspb.Message.toObjectList(msg.getConfigsList(),
     proto.device.ConfigSchema.toObject, includeInstance)
   };
 
@@ -1329,12 +1329,12 @@ proto.device.GatewaySchema.prototype.toObject = function(opt_includeInstance) {
  */
 proto.device.GatewaySchema.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: msg.getId_asB64(),
-    serialNumber: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    gatewayType: (f = msg.getGatewayType()) && proto.device.TypeSchema.toObject(includeInstance, f),
-    configsList: jspb.Message.toObjectList(msg.getConfigsList(),
+id: msg.getId_asB64(),
+serialNumber: jspb.Message.getFieldWithDefault(msg, 2, ""),
+name: jspb.Message.getFieldWithDefault(msg, 3, ""),
+description: jspb.Message.getFieldWithDefault(msg, 4, ""),
+gatewayType: (f = msg.getGatewayType()) && proto.device.TypeSchema.toObject(includeInstance, f),
+configsList: jspb.Message.toObjectList(msg.getConfigsList(),
     proto.device.ConfigSchema.toObject, includeInstance)
   };
 
@@ -1677,7 +1677,7 @@ proto.device.DeviceId.prototype.toObject = function(opt_includeInstance) {
  */
 proto.device.DeviceId.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: msg.getId_asB64()
+id: msg.getId_asB64()
   };
 
   if (includeInstance) {
@@ -1831,7 +1831,7 @@ proto.device.GatewayId.prototype.toObject = function(opt_includeInstance) {
  */
 proto.device.GatewayId.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: msg.getId_asB64()
+id: msg.getId_asB64()
   };
 
   if (includeInstance) {
@@ -1992,7 +1992,7 @@ proto.device.DeviceIds.prototype.toObject = function(opt_includeInstance) {
  */
 proto.device.DeviceIds.toObject = function(includeInstance, msg) {
   var f, obj = {
-    idsList: msg.getIdsList_asB64()
+idsList: msg.getIdsList_asB64()
   };
 
   if (includeInstance) {
@@ -2172,7 +2172,7 @@ proto.device.GatewayIds.prototype.toObject = function(opt_includeInstance) {
  */
 proto.device.GatewayIds.toObject = function(includeInstance, msg) {
   var f, obj = {
-    idsList: msg.getIdsList_asB64()
+idsList: msg.getIdsList_asB64()
   };
 
   if (includeInstance) {
@@ -2345,7 +2345,7 @@ proto.device.SerialNumber.prototype.toObject = function(opt_includeInstance) {
  */
 proto.device.SerialNumber.toObject = function(includeInstance, msg) {
   var f, obj = {
-    serialNumber: jspb.Message.getFieldWithDefault(msg, 1, "")
+serialNumber: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -2475,7 +2475,7 @@ proto.device.DeviceName.prototype.toObject = function(opt_includeInstance) {
  */
 proto.device.DeviceName.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, "")
+name: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -2605,7 +2605,7 @@ proto.device.GatewayName.prototype.toObject = function(opt_includeInstance) {
  */
 proto.device.GatewayName.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, "")
+name: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -2735,9 +2735,9 @@ proto.device.DeviceOption.prototype.toObject = function(opt_includeInstance) {
  */
 proto.device.DeviceOption.toObject = function(includeInstance, msg) {
   var f, obj = {
-    gatewayId: msg.getGatewayId_asB64(),
-    typeId: msg.getTypeId_asB64(),
-    name: jspb.Message.getFieldWithDefault(msg, 3, "")
+gatewayId: msg.getGatewayId_asB64(),
+typeId: msg.getTypeId_asB64(),
+name: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -3027,8 +3027,8 @@ proto.device.GatewayOption.prototype.toObject = function(opt_includeInstance) {
  */
 proto.device.GatewayOption.toObject = function(includeInstance, msg) {
   var f, obj = {
-    typeId: msg.getTypeId_asB64(),
-    name: jspb.Message.getFieldWithDefault(msg, 2, "")
+typeId: msg.getTypeId_asB64(),
+name: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -3247,12 +3247,12 @@ proto.device.DeviceUpdate.prototype.toObject = function(opt_includeInstance) {
  */
 proto.device.DeviceUpdate.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: msg.getId_asB64(),
-    gatewayId: msg.getGatewayId_asB64(),
-    serialNumber: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    typeId: msg.getTypeId_asB64()
+id: msg.getId_asB64(),
+gatewayId: msg.getGatewayId_asB64(),
+serialNumber: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+name: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+description: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+typeId: msg.getTypeId_asB64()
   };
 
   if (includeInstance) {
@@ -3689,11 +3689,11 @@ proto.device.GatewayUpdate.prototype.toObject = function(opt_includeInstance) {
  */
 proto.device.GatewayUpdate.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: msg.getId_asB64(),
-    serialNumber: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    name: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    typeId: msg.getTypeId_asB64()
+id: msg.getId_asB64(),
+serialNumber: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+name: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+description: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+typeId: msg.getTypeId_asB64()
   };
 
   if (includeInstance) {
@@ -4059,12 +4059,12 @@ proto.device.ConfigSchema.prototype.toObject = function(opt_includeInstance) {
  */
 proto.device.ConfigSchema.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    deviceId: msg.getDeviceId_asB64(),
-    name: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    configBytes: msg.getConfigBytes_asB64(),
-    configType: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    category: jspb.Message.getFieldWithDefault(msg, 6, "")
+id: jspb.Message.getFieldWithDefault(msg, 1, 0),
+deviceId: msg.getDeviceId_asB64(),
+name: jspb.Message.getFieldWithDefault(msg, 3, ""),
+configBytes: msg.getConfigBytes_asB64(),
+configType: jspb.Message.getFieldWithDefault(msg, 5, 0),
+category: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
   if (includeInstance) {
@@ -4387,7 +4387,7 @@ proto.device.ConfigId.prototype.toObject = function(opt_includeInstance) {
  */
 proto.device.ConfigId.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, 0)
+id: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -4517,11 +4517,11 @@ proto.device.ConfigUpdate.prototype.toObject = function(opt_includeInstance) {
  */
 proto.device.ConfigUpdate.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    configBytes: msg.getConfigBytes_asB64(),
-    configType: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    category: jspb.Message.getFieldWithDefault(msg, 5, "")
+id: jspb.Message.getFieldWithDefault(msg, 1, 0),
+name: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+configBytes: msg.getConfigBytes_asB64(),
+configType: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+category: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -4870,10 +4870,10 @@ proto.device.TypeSchema.prototype.toObject = function(opt_includeInstance) {
  */
 proto.device.TypeSchema.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: msg.getId_asB64(),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    modelsList: msg.getModelsList_asB64()
+id: msg.getId_asB64(),
+name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+description: jspb.Message.getFieldWithDefault(msg, 3, ""),
+modelsList: msg.getModelsList_asB64()
   };
 
   if (includeInstance) {
@@ -5157,7 +5157,7 @@ proto.device.TypeId.prototype.toObject = function(opt_includeInstance) {
  */
 proto.device.TypeId.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: msg.getId_asB64()
+id: msg.getId_asB64()
   };
 
   if (includeInstance) {
@@ -5318,7 +5318,7 @@ proto.device.TypeIds.prototype.toObject = function(opt_includeInstance) {
  */
 proto.device.TypeIds.toObject = function(includeInstance, msg) {
   var f, obj = {
-    idsList: msg.getIdsList_asB64()
+idsList: msg.getIdsList_asB64()
   };
 
   if (includeInstance) {
@@ -5491,7 +5491,7 @@ proto.device.TypeName.prototype.toObject = function(opt_includeInstance) {
  */
 proto.device.TypeName.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, "")
+name: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -5621,7 +5621,7 @@ proto.device.TypeOption.prototype.toObject = function(opt_includeInstance) {
  */
 proto.device.TypeOption.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, "")
+name: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -5769,9 +5769,9 @@ proto.device.TypeUpdate.prototype.toObject = function(opt_includeInstance) {
  */
 proto.device.TypeUpdate.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: msg.getId_asB64(),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 3, "")
+id: msg.getId_asB64(),
+name: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+description: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -6019,8 +6019,8 @@ proto.device.TypeModel.prototype.toObject = function(opt_includeInstance) {
  */
 proto.device.TypeModel.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: msg.getId_asB64(),
-    modelId: msg.getModelId_asB64()
+id: msg.getId_asB64(),
+modelId: msg.getModelId_asB64()
   };
 
   if (includeInstance) {
@@ -6227,7 +6227,7 @@ proto.device.DeviceReadResponse.prototype.toObject = function(opt_includeInstanc
  */
 proto.device.DeviceReadResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    result: (f = msg.getResult()) && proto.device.DeviceSchema.toObject(includeInstance, f)
+result: (f = msg.getResult()) && proto.device.DeviceSchema.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -6385,7 +6385,7 @@ proto.device.DeviceListResponse.prototype.toObject = function(opt_includeInstanc
  */
 proto.device.DeviceListResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    resultsList: jspb.Message.toObjectList(msg.getResultsList(),
+resultsList: jspb.Message.toObjectList(msg.getResultsList(),
     proto.device.DeviceSchema.toObject, includeInstance)
   };
 
@@ -6538,7 +6538,7 @@ proto.device.DeviceCreateResponse.prototype.toObject = function(opt_includeInsta
  */
 proto.device.DeviceCreateResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: msg.getId_asB64()
+id: msg.getId_asB64()
   };
 
   if (includeInstance) {
@@ -6793,7 +6793,7 @@ proto.device.GatewayReadResponse.prototype.toObject = function(opt_includeInstan
  */
 proto.device.GatewayReadResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    result: (f = msg.getResult()) && proto.device.GatewaySchema.toObject(includeInstance, f)
+result: (f = msg.getResult()) && proto.device.GatewaySchema.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -6951,7 +6951,7 @@ proto.device.GatewayListResponse.prototype.toObject = function(opt_includeInstan
  */
 proto.device.GatewayListResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    resultsList: jspb.Message.toObjectList(msg.getResultsList(),
+resultsList: jspb.Message.toObjectList(msg.getResultsList(),
     proto.device.GatewaySchema.toObject, includeInstance)
   };
 
@@ -7104,7 +7104,7 @@ proto.device.GatewayCreateResponse.prototype.toObject = function(opt_includeInst
  */
 proto.device.GatewayCreateResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: msg.getId_asB64()
+id: msg.getId_asB64()
   };
 
   if (includeInstance) {
@@ -7359,7 +7359,7 @@ proto.device.ConfigReadResponse.prototype.toObject = function(opt_includeInstanc
  */
 proto.device.ConfigReadResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    result: (f = msg.getResult()) && proto.device.ConfigSchema.toObject(includeInstance, f)
+result: (f = msg.getResult()) && proto.device.ConfigSchema.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -7517,7 +7517,7 @@ proto.device.ConfigListResponse.prototype.toObject = function(opt_includeInstanc
  */
 proto.device.ConfigListResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    resultsList: jspb.Message.toObjectList(msg.getResultsList(),
+resultsList: jspb.Message.toObjectList(msg.getResultsList(),
     proto.device.ConfigSchema.toObject, includeInstance)
   };
 
@@ -7670,7 +7670,7 @@ proto.device.ConfigCreateResponse.prototype.toObject = function(opt_includeInsta
  */
 proto.device.ConfigCreateResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, 0)
+id: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -7901,7 +7901,7 @@ proto.device.TypeReadResponse.prototype.toObject = function(opt_includeInstance)
  */
 proto.device.TypeReadResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    result: (f = msg.getResult()) && proto.device.TypeSchema.toObject(includeInstance, f)
+result: (f = msg.getResult()) && proto.device.TypeSchema.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -8059,7 +8059,7 @@ proto.device.TypeListResponse.prototype.toObject = function(opt_includeInstance)
  */
 proto.device.TypeListResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    resultsList: jspb.Message.toObjectList(msg.getResultsList(),
+resultsList: jspb.Message.toObjectList(msg.getResultsList(),
     proto.device.TypeSchema.toObject, includeInstance)
   };
 
@@ -8212,7 +8212,7 @@ proto.device.TypeCreateResponse.prototype.toObject = function(opt_includeInstanc
  */
 proto.device.TypeCreateResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: msg.getId_asB64()
+id: msg.getId_asB64()
   };
 
   if (includeInstance) {

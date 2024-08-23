@@ -480,11 +480,11 @@ proto.data.DataSchema.prototype.toObject = function(opt_includeInstance) {
  */
 proto.data.DataSchema.toObject = function(includeInstance, msg) {
   var f, obj = {
-    deviceId: msg.getDeviceId_asB64(),
-    modelId: msg.getModelId_asB64(),
-    timestamp: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    dataBytes: msg.getDataBytes_asB64(),
-    dataTypeList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f
+deviceId: msg.getDeviceId_asB64(),
+modelId: msg.getModelId_asB64(),
+timestamp: jspb.Message.getFieldWithDefault(msg, 3, 0),
+dataBytes: msg.getDataBytes_asB64(),
+dataTypeList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -823,9 +823,9 @@ proto.data.DataId.prototype.toObject = function(opt_includeInstance) {
  */
 proto.data.DataId.toObject = function(includeInstance, msg) {
   var f, obj = {
-    deviceId: msg.getDeviceId_asB64(),
-    modelId: msg.getModelId_asB64(),
-    timestamp: jspb.Message.getFieldWithDefault(msg, 3, 0)
+deviceId: msg.getDeviceId_asB64(),
+modelId: msg.getModelId_asB64(),
+timestamp: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -1061,9 +1061,9 @@ proto.data.DataTime.prototype.toObject = function(opt_includeInstance) {
  */
 proto.data.DataTime.toObject = function(includeInstance, msg) {
   var f, obj = {
-    deviceId: msg.getDeviceId_asB64(),
-    modelId: msg.getModelId_asB64(),
-    timestamp: jspb.Message.getFieldWithDefault(msg, 3, 0)
+deviceId: msg.getDeviceId_asB64(),
+modelId: msg.getModelId_asB64(),
+timestamp: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -1299,10 +1299,10 @@ proto.data.DataRange.prototype.toObject = function(opt_includeInstance) {
  */
 proto.data.DataRange.toObject = function(includeInstance, msg) {
   var f, obj = {
-    deviceId: msg.getDeviceId_asB64(),
-    modelId: msg.getModelId_asB64(),
-    begin: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    end: jspb.Message.getFieldWithDefault(msg, 4, 0)
+deviceId: msg.getDeviceId_asB64(),
+modelId: msg.getModelId_asB64(),
+begin: jspb.Message.getFieldWithDefault(msg, 3, 0),
+end: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {
@@ -1567,10 +1567,10 @@ proto.data.DataNumber.prototype.toObject = function(opt_includeInstance) {
  */
 proto.data.DataNumber.toObject = function(includeInstance, msg) {
   var f, obj = {
-    deviceId: msg.getDeviceId_asB64(),
-    modelId: msg.getModelId_asB64(),
-    timestamp: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    number: jspb.Message.getFieldWithDefault(msg, 4, 0)
+deviceId: msg.getDeviceId_asB64(),
+modelId: msg.getModelId_asB64(),
+timestamp: jspb.Message.getFieldWithDefault(msg, 3, 0),
+number: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {
@@ -1842,10 +1842,10 @@ proto.data.DataSetSchema.prototype.toObject = function(opt_includeInstance) {
  */
 proto.data.DataSetSchema.toObject = function(includeInstance, msg) {
   var f, obj = {
-    setId: msg.getSetId_asB64(),
-    timestamp: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    dataBytes: msg.getDataBytes_asB64(),
-    dataTypeList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f
+setId: msg.getSetId_asB64(),
+timestamp: jspb.Message.getFieldWithDefault(msg, 2, 0),
+dataBytes: msg.getDataBytes_asB64(),
+dataTypeList: (f = jspb.Message.getRepeatedField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -2131,8 +2131,8 @@ proto.data.DataSetId.prototype.toObject = function(opt_includeInstance) {
  */
 proto.data.DataSetId.toObject = function(includeInstance, msg) {
   var f, obj = {
-    setId: msg.getSetId_asB64(),
-    timestamp: jspb.Message.getFieldWithDefault(msg, 2, 0)
+setId: msg.getSetId_asB64(),
+timestamp: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -2315,8 +2315,8 @@ proto.data.DataSetTime.prototype.toObject = function(opt_includeInstance) {
  */
 proto.data.DataSetTime.toObject = function(includeInstance, msg) {
   var f, obj = {
-    setId: msg.getSetId_asB64(),
-    timestamp: jspb.Message.getFieldWithDefault(msg, 2, 0)
+setId: msg.getSetId_asB64(),
+timestamp: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -2499,9 +2499,9 @@ proto.data.DataSetRange.prototype.toObject = function(opt_includeInstance) {
  */
 proto.data.DataSetRange.toObject = function(includeInstance, msg) {
   var f, obj = {
-    setId: msg.getSetId_asB64(),
-    begin: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    end: jspb.Message.getFieldWithDefault(msg, 3, 0)
+setId: msg.getSetId_asB64(),
+begin: jspb.Message.getFieldWithDefault(msg, 2, 0),
+end: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -2713,9 +2713,9 @@ proto.data.DataSetNumber.prototype.toObject = function(opt_includeInstance) {
  */
 proto.data.DataSetNumber.toObject = function(includeInstance, msg) {
   var f, obj = {
-    setId: msg.getSetId_asB64(),
-    timestamp: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    number: jspb.Message.getFieldWithDefault(msg, 3, 0)
+setId: msg.getSetId_asB64(),
+timestamp: jspb.Message.getFieldWithDefault(msg, 2, 0),
+number: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -2927,11 +2927,11 @@ proto.data.DataCount.prototype.toObject = function(opt_includeInstance) {
  */
 proto.data.DataCount.toObject = function(includeInstance, msg) {
   var f, obj = {
-    deviceId: msg.getDeviceId_asB64(),
-    modelId: msg.getModelId_asB64(),
-    timestamp: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    begin: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    end: jspb.Message.getFieldWithDefault(msg, 5, 0)
+deviceId: msg.getDeviceId_asB64(),
+modelId: msg.getModelId_asB64(),
+timestamp: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+begin: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+end: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -3279,7 +3279,7 @@ proto.data.DataReadResponse.prototype.toObject = function(opt_includeInstance) {
  */
 proto.data.DataReadResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    result: (f = msg.getResult()) && proto.data.DataSchema.toObject(includeInstance, f)
+result: (f = msg.getResult()) && proto.data.DataSchema.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3437,7 +3437,7 @@ proto.data.DataListResponse.prototype.toObject = function(opt_includeInstance) {
  */
 proto.data.DataListResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    resultsList: jspb.Message.toObjectList(msg.getResultsList(),
+resultsList: jspb.Message.toObjectList(msg.getResultsList(),
     proto.data.DataSchema.toObject, includeInstance)
   };
 
@@ -3590,7 +3590,7 @@ proto.data.TimestampReadResponse.prototype.toObject = function(opt_includeInstan
  */
 proto.data.TimestampReadResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    timestamp: jspb.Message.getFieldWithDefault(msg, 1, 0)
+timestamp: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -3727,7 +3727,7 @@ proto.data.TimestampListResponse.prototype.toObject = function(opt_includeInstan
  */
 proto.data.TimestampListResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    timestampsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
+timestampsList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -3979,7 +3979,7 @@ proto.data.DataCountResponse.prototype.toObject = function(opt_includeInstance) 
  */
 proto.data.DataCountResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    count: jspb.Message.getFieldWithDefault(msg, 1, 0)
+count: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -4109,7 +4109,7 @@ proto.data.DataSetReadResponse.prototype.toObject = function(opt_includeInstance
  */
 proto.data.DataSetReadResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    result: (f = msg.getResult()) && proto.data.DataSetSchema.toObject(includeInstance, f)
+result: (f = msg.getResult()) && proto.data.DataSetSchema.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -4267,7 +4267,7 @@ proto.data.DataSetListResponse.prototype.toObject = function(opt_includeInstance
  */
 proto.data.DataSetListResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    resultsList: jspb.Message.toObjectList(msg.getResultsList(),
+resultsList: jspb.Message.toObjectList(msg.getResultsList(),
     proto.data.DataSetSchema.toObject, includeInstance)
   };
 

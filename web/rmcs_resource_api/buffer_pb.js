@@ -326,13 +326,13 @@ proto.buffer.BufferSchema.prototype.toObject = function(opt_includeInstance) {
  */
 proto.buffer.BufferSchema.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    deviceId: msg.getDeviceId_asB64(),
-    modelId: msg.getModelId_asB64(),
-    timestamp: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    dataBytes: msg.getDataBytes_asB64(),
-    dataTypeList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
-    status: jspb.Message.getFieldWithDefault(msg, 7, 0)
+id: jspb.Message.getFieldWithDefault(msg, 1, 0),
+deviceId: msg.getDeviceId_asB64(),
+modelId: msg.getModelId_asB64(),
+timestamp: jspb.Message.getFieldWithDefault(msg, 4, 0),
+dataBytes: msg.getDataBytes_asB64(),
+dataTypeList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
+status: jspb.Message.getFieldWithDefault(msg, 7, 0)
   };
 
   if (includeInstance) {
@@ -729,7 +729,7 @@ proto.buffer.BufferId.prototype.toObject = function(opt_includeInstance) {
  */
 proto.buffer.BufferId.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, 0)
+id: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -859,10 +859,10 @@ proto.buffer.BufferTime.prototype.toObject = function(opt_includeInstance) {
  */
 proto.buffer.BufferTime.toObject = function(includeInstance, msg) {
   var f, obj = {
-    deviceId: msg.getDeviceId_asB64(),
-    modelId: msg.getModelId_asB64(),
-    timestamp: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    status: jspb.Message.getFieldWithDefault(msg, 4, 0)
+deviceId: msg.getDeviceId_asB64(),
+modelId: msg.getModelId_asB64(),
+timestamp: jspb.Message.getFieldWithDefault(msg, 3, 0),
+status: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1145,9 +1145,9 @@ proto.buffer.BufferSelector.prototype.toObject = function(opt_includeInstance) {
  */
 proto.buffer.BufferSelector.toObject = function(includeInstance, msg) {
   var f, obj = {
-    deviceId: msg.getDeviceId_asB64(),
-    modelId: msg.getModelId_asB64(),
-    status: jspb.Message.getFieldWithDefault(msg, 3, 0)
+deviceId: msg.getDeviceId_asB64(),
+modelId: msg.getModelId_asB64(),
+status: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1437,11 +1437,11 @@ proto.buffer.BuffersSelector.prototype.toObject = function(opt_includeInstance) 
  */
 proto.buffer.BuffersSelector.toObject = function(includeInstance, msg) {
   var f, obj = {
-    deviceId: msg.getDeviceId_asB64(),
-    modelId: msg.getModelId_asB64(),
-    status: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    number: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    offset: jspb.Message.getFieldWithDefault(msg, 5, 0)
+deviceId: msg.getDeviceId_asB64(),
+modelId: msg.getModelId_asB64(),
+status: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+number: jspb.Message.getFieldWithDefault(msg, 4, 0),
+offset: jspb.Message.getFieldWithDefault(msg, 5, 0)
   };
 
   if (includeInstance) {
@@ -1796,10 +1796,10 @@ proto.buffer.BufferUpdate.prototype.toObject = function(opt_includeInstance) {
  */
 proto.buffer.BufferUpdate.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    dataBytes: msg.getDataBytes_asB64(),
-    dataTypeList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
-    status: jspb.Message.getFieldWithDefault(msg, 4, 0)
+id: jspb.Message.getFieldWithDefault(msg, 1, 0),
+dataBytes: msg.getDataBytes_asB64(),
+dataTypeList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
+status: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -2097,9 +2097,9 @@ proto.buffer.BufferCount.prototype.toObject = function(opt_includeInstance) {
  */
 proto.buffer.BufferCount.toObject = function(includeInstance, msg) {
   var f, obj = {
-    deviceId: msg.getDeviceId_asB64(),
-    modelId: msg.getModelId_asB64(),
-    status: jspb.Message.getFieldWithDefault(msg, 3, 0)
+deviceId: msg.getDeviceId_asB64(),
+modelId: msg.getModelId_asB64(),
+status: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -2389,7 +2389,7 @@ proto.buffer.BufferReadResponse.prototype.toObject = function(opt_includeInstanc
  */
 proto.buffer.BufferReadResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    result: (f = msg.getResult()) && proto.buffer.BufferSchema.toObject(includeInstance, f)
+result: (f = msg.getResult()) && proto.buffer.BufferSchema.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -2547,7 +2547,7 @@ proto.buffer.BufferListResponse.prototype.toObject = function(opt_includeInstanc
  */
 proto.buffer.BufferListResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    resultsList: jspb.Message.toObjectList(msg.getResultsList(),
+resultsList: jspb.Message.toObjectList(msg.getResultsList(),
     proto.buffer.BufferSchema.toObject, includeInstance)
   };
 
@@ -2700,7 +2700,7 @@ proto.buffer.BufferCreateResponse.prototype.toObject = function(opt_includeInsta
  */
 proto.buffer.BufferCreateResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, 0)
+id: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -2931,7 +2931,7 @@ proto.buffer.BufferCountResponse.prototype.toObject = function(opt_includeInstan
  */
 proto.buffer.BufferCountResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    count: jspb.Message.getFieldWithDefault(msg, 1, 0)
+count: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {

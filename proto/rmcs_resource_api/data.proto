@@ -6,8 +6,6 @@ import "rmcs_resource_api/common.proto";
 service DataService {
     rpc ReadData(DataId) returns (DataReadResponse);
 
-    rpc ListDataByTime(DataTime) returns (DataListResponse);
-
     rpc ListDataByLastTime(DataTime) returns (DataListResponse);
 
     rpc ListDataByRangeTime(DataRange) returns (DataListResponse);
@@ -15,22 +13,6 @@ service DataService {
     rpc ListDataByNumberBefore(DataNumber) returns (DataListResponse);
 
     rpc ListDataByNumberAfter(DataNumber) returns (DataListResponse);
-
-    rpc ReadDataTimestamp(DataId) returns (TimestampReadResponse);
-
-    rpc ListDataTimestampByLastTime(DataTime) returns (TimestampListResponse);
-
-    rpc ListDataTimestampByRangeTime(DataRange) returns (TimestampListResponse);
-
-    rpc CreateData(DataSchema) returns (DataChangeResponse);
-
-    rpc DeleteData(DataId) returns (DataChangeResponse);
-
-    rpc CountData(DataCount) returns (DataCountResponse);
-
-    rpc CountDataByLastTime(DataCount) returns (DataCountResponse);
-
-    rpc CountDataByRangeTime(DataCount) returns (DataCountResponse);
 
     rpc ListDataBySetTime(DataSetTime) returns (DataListResponse);
 
@@ -44,8 +26,6 @@ service DataService {
 
     rpc ReadDataSet(DataSetId) returns (DataSetReadResponse);
 
-    rpc ListDataSetByTime(DataSetTime) returns (DataSetListResponse);
-
     rpc ListDataSetByLastTime(DataSetTime) returns (DataSetListResponse);
 
     rpc ListDataSetByRangeTime(DataSetRange) returns (DataSetListResponse);
@@ -54,11 +34,27 @@ service DataService {
 
     rpc ListDataSetByNumberAfter(DataSetNumber) returns (DataSetListResponse);
 
-    rpc ReadDataSetTimestamp(DataSetId) returns (TimestampReadResponse);
+    rpc CreateData(DataSchema) returns (DataChangeResponse);
 
-    rpc ListDataSetTimestampByLastTime(DataSetTime) returns (TimestampListResponse);
+    rpc DeleteData(DataId) returns (DataChangeResponse);
 
-    rpc ListDataSetTimestampByRangeTime(DataSetRange) returns (TimestampListResponse);
+    rpc ReadDataTimestamp(DataId) returns (TimestampReadResponse);
+
+    rpc ListDataTimestampByLastTime(DataTime) returns (TimestampListResponse);
+
+    rpc ListDataTimestampByRangeTime(DataRange) returns (TimestampListResponse);
+
+    rpc ReadDataTimestampBySet(DataSetId) returns (TimestampReadResponse);
+
+    rpc ListDataTimestampBySetLastTime(DataSetTime) returns (TimestampListResponse);
+
+    rpc ListDataTimestampBySetRangeTime(DataSetRange) returns (TimestampListResponse);
+
+    rpc CountData(DataCount) returns (DataCountResponse);
+
+    rpc CountDataByLastTime(DataCount) returns (DataCountResponse);
+
+    rpc CountDataByRangeTime(DataCount) returns (DataCountResponse);
 }
 
 message DataSchema {

@@ -632,11 +632,11 @@ proto.set.SetSchema.prototype.toObject = function(opt_includeInstance) {
  */
 proto.set.SetSchema.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: msg.getId_asB64(),
-    templateId: msg.getTemplateId_asB64(),
-    name: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    membersList: jspb.Message.toObjectList(msg.getMembersList(),
+id: msg.getId_asB64(),
+templateId: msg.getTemplateId_asB64(),
+name: jspb.Message.getFieldWithDefault(msg, 3, ""),
+description: jspb.Message.getFieldWithDefault(msg, 4, ""),
+membersList: jspb.Message.toObjectList(msg.getMembersList(),
     proto.set.SetMember.toObject, includeInstance)
   };
 
@@ -953,9 +953,9 @@ proto.set.SetMember.prototype.toObject = function(opt_includeInstance) {
  */
 proto.set.SetMember.toObject = function(includeInstance, msg) {
   var f, obj = {
-    deviceId: msg.getDeviceId_asB64(),
-    modelId: msg.getModelId_asB64(),
-    dataIndex: msg.getDataIndex_asB64()
+deviceId: msg.getDeviceId_asB64(),
+modelId: msg.getModelId_asB64(),
+dataIndex: msg.getDataIndex_asB64()
   };
 
   if (includeInstance) {
@@ -1215,7 +1215,7 @@ proto.set.SetId.prototype.toObject = function(opt_includeInstance) {
  */
 proto.set.SetId.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: msg.getId_asB64()
+id: msg.getId_asB64()
   };
 
   if (includeInstance) {
@@ -1376,7 +1376,7 @@ proto.set.SetIds.prototype.toObject = function(opt_includeInstance) {
  */
 proto.set.SetIds.toObject = function(includeInstance, msg) {
   var f, obj = {
-    idsList: msg.getIdsList_asB64()
+idsList: msg.getIdsList_asB64()
   };
 
   if (includeInstance) {
@@ -1549,7 +1549,7 @@ proto.set.SetName.prototype.toObject = function(opt_includeInstance) {
  */
 proto.set.SetName.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, "")
+name: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -1679,8 +1679,8 @@ proto.set.SetOption.prototype.toObject = function(opt_includeInstance) {
  */
 proto.set.SetOption.toObject = function(includeInstance, msg) {
   var f, obj = {
-    templateId: msg.getTemplateId_asB64(),
-    name: jspb.Message.getFieldWithDefault(msg, 2, "")
+templateId: msg.getTemplateId_asB64(),
+name: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1899,10 +1899,10 @@ proto.set.SetUpdate.prototype.toObject = function(opt_includeInstance) {
  */
 proto.set.SetUpdate.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: msg.getId_asB64(),
-    templateId: msg.getTemplateId_asB64(),
-    name: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 4, "")
+id: msg.getId_asB64(),
+templateId: msg.getTemplateId_asB64(),
+name: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+description: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -2221,10 +2221,10 @@ proto.set.SetMemberRequest.prototype.toObject = function(opt_includeInstance) {
  */
 proto.set.SetMemberRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    setId: msg.getSetId_asB64(),
-    deviceId: msg.getDeviceId_asB64(),
-    modelId: msg.getModelId_asB64(),
-    dataIndex: msg.getDataIndex_asB64()
+setId: msg.getSetId_asB64(),
+deviceId: msg.getDeviceId_asB64(),
+modelId: msg.getModelId_asB64(),
+dataIndex: msg.getDataIndex_asB64()
   };
 
   if (includeInstance) {
@@ -2537,11 +2537,11 @@ proto.set.SetMemberSwap.prototype.toObject = function(opt_includeInstance) {
  */
 proto.set.SetMemberSwap.toObject = function(includeInstance, msg) {
   var f, obj = {
-    setId: msg.getSetId_asB64(),
-    deviceId1: msg.getDeviceId1_asB64(),
-    modelId1: msg.getModelId1_asB64(),
-    deviceId2: msg.getDeviceId2_asB64(),
-    modelId2: msg.getModelId2_asB64()
+setId: msg.getSetId_asB64(),
+deviceId1: msg.getDeviceId1_asB64(),
+modelId1: msg.getModelId1_asB64(),
+deviceId2: msg.getDeviceId2_asB64(),
+modelId2: msg.getModelId2_asB64()
   };
 
   if (includeInstance) {
@@ -2914,10 +2914,10 @@ proto.set.SetTemplateSchema.prototype.toObject = function(opt_includeInstance) {
  */
 proto.set.SetTemplateSchema.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: msg.getId_asB64(),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    membersList: jspb.Message.toObjectList(msg.getMembersList(),
+id: msg.getId_asB64(),
+name: jspb.Message.getFieldWithDefault(msg, 2, ""),
+description: jspb.Message.getFieldWithDefault(msg, 3, ""),
+membersList: jspb.Message.toObjectList(msg.getMembersList(),
     proto.set.SetTemplateMember.toObject, includeInstance)
   };
 
@@ -3181,9 +3181,9 @@ proto.set.SetTemplateMember.prototype.toObject = function(opt_includeInstance) {
  */
 proto.set.SetTemplateMember.toObject = function(includeInstance, msg) {
   var f, obj = {
-    typeId: msg.getTypeId_asB64(),
-    modelId: msg.getModelId_asB64(),
-    dataIndex: msg.getDataIndex_asB64()
+typeId: msg.getTypeId_asB64(),
+modelId: msg.getModelId_asB64(),
+dataIndex: msg.getDataIndex_asB64()
   };
 
   if (includeInstance) {
@@ -3443,7 +3443,7 @@ proto.set.SetTemplateId.prototype.toObject = function(opt_includeInstance) {
  */
 proto.set.SetTemplateId.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: msg.getId_asB64()
+id: msg.getId_asB64()
   };
 
   if (includeInstance) {
@@ -3604,7 +3604,7 @@ proto.set.SetTemplateIds.prototype.toObject = function(opt_includeInstance) {
  */
 proto.set.SetTemplateIds.toObject = function(includeInstance, msg) {
   var f, obj = {
-    idsList: msg.getIdsList_asB64()
+idsList: msg.getIdsList_asB64()
   };
 
   if (includeInstance) {
@@ -3777,7 +3777,7 @@ proto.set.SetTemplateName.prototype.toObject = function(opt_includeInstance) {
  */
 proto.set.SetTemplateName.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, "")
+name: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -3907,7 +3907,7 @@ proto.set.SetTemplateOption.prototype.toObject = function(opt_includeInstance) {
  */
 proto.set.SetTemplateOption.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: jspb.Message.getFieldWithDefault(msg, 1, "")
+name: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -4055,9 +4055,9 @@ proto.set.SetTemplateUpdate.prototype.toObject = function(opt_includeInstance) {
  */
 proto.set.SetTemplateUpdate.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: msg.getId_asB64(),
-    name: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 3, "")
+id: msg.getId_asB64(),
+name: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+description: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -4305,11 +4305,11 @@ proto.set.SetTemplateMemberRequest.prototype.toObject = function(opt_includeInst
  */
 proto.set.SetTemplateMemberRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    setId: msg.getSetId_asB64(),
-    typeId: msg.getTypeId_asB64(),
-    modelId: msg.getModelId_asB64(),
-    dataIndex: msg.getDataIndex_asB64(),
-    templateIndex: jspb.Message.getFieldWithDefault(msg, 5, 0)
+setId: msg.getSetId_asB64(),
+typeId: msg.getTypeId_asB64(),
+modelId: msg.getModelId_asB64(),
+dataIndex: msg.getDataIndex_asB64(),
+templateIndex: jspb.Message.getFieldWithDefault(msg, 5, 0)
   };
 
   if (includeInstance) {
@@ -4651,9 +4651,9 @@ proto.set.SetTemplateMemberSwap.prototype.toObject = function(opt_includeInstanc
  */
 proto.set.SetTemplateMemberSwap.toObject = function(includeInstance, msg) {
   var f, obj = {
-    setId: msg.getSetId_asB64(),
-    templateIndex1: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    templateIndex2: jspb.Message.getFieldWithDefault(msg, 3, 0)
+setId: msg.getSetId_asB64(),
+templateIndex1: jspb.Message.getFieldWithDefault(msg, 2, 0),
+templateIndex2: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -4865,7 +4865,7 @@ proto.set.SetReadResponse.prototype.toObject = function(opt_includeInstance) {
  */
 proto.set.SetReadResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    result: (f = msg.getResult()) && proto.set.SetSchema.toObject(includeInstance, f)
+result: (f = msg.getResult()) && proto.set.SetSchema.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -5023,7 +5023,7 @@ proto.set.SetListResponse.prototype.toObject = function(opt_includeInstance) {
  */
 proto.set.SetListResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    resultsList: jspb.Message.toObjectList(msg.getResultsList(),
+resultsList: jspb.Message.toObjectList(msg.getResultsList(),
     proto.set.SetSchema.toObject, includeInstance)
   };
 
@@ -5176,7 +5176,7 @@ proto.set.SetCreateResponse.prototype.toObject = function(opt_includeInstance) {
  */
 proto.set.SetCreateResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: msg.getId_asB64()
+id: msg.getId_asB64()
   };
 
   if (includeInstance) {
@@ -5431,7 +5431,7 @@ proto.set.TemplateReadResponse.prototype.toObject = function(opt_includeInstance
  */
 proto.set.TemplateReadResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    result: (f = msg.getResult()) && proto.set.SetTemplateSchema.toObject(includeInstance, f)
+result: (f = msg.getResult()) && proto.set.SetTemplateSchema.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -5589,7 +5589,7 @@ proto.set.TemplateListResponse.prototype.toObject = function(opt_includeInstance
  */
 proto.set.TemplateListResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    resultsList: jspb.Message.toObjectList(msg.getResultsList(),
+resultsList: jspb.Message.toObjectList(msg.getResultsList(),
     proto.set.SetTemplateSchema.toObject, includeInstance)
   };
 
@@ -5742,7 +5742,7 @@ proto.set.TemplateCreateResponse.prototype.toObject = function(opt_includeInstan
  */
 proto.set.TemplateCreateResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: msg.getId_asB64()
+id: msg.getId_asB64()
   };
 
   if (includeInstance) {
