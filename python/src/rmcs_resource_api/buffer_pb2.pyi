@@ -42,6 +42,34 @@ class BufferTime(_message.Message):
     status: int
     def __init__(self, device_id: _Optional[bytes] = ..., model_id: _Optional[bytes] = ..., timestamp: _Optional[int] = ..., status: _Optional[int] = ...) -> None: ...
 
+class BufferRange(_message.Message):
+    __slots__ = ("device_id", "model_id", "begin", "end", "status")
+    DEVICE_ID_FIELD_NUMBER: _ClassVar[int]
+    MODEL_ID_FIELD_NUMBER: _ClassVar[int]
+    BEGIN_FIELD_NUMBER: _ClassVar[int]
+    END_FIELD_NUMBER: _ClassVar[int]
+    STATUS_FIELD_NUMBER: _ClassVar[int]
+    device_id: bytes
+    model_id: bytes
+    begin: int
+    end: int
+    status: int
+    def __init__(self, device_id: _Optional[bytes] = ..., model_id: _Optional[bytes] = ..., begin: _Optional[int] = ..., end: _Optional[int] = ..., status: _Optional[int] = ...) -> None: ...
+
+class BufferNumber(_message.Message):
+    __slots__ = ("device_id", "model_id", "timestamp", "number", "status")
+    DEVICE_ID_FIELD_NUMBER: _ClassVar[int]
+    MODEL_ID_FIELD_NUMBER: _ClassVar[int]
+    TIMESTAMP_FIELD_NUMBER: _ClassVar[int]
+    NUMBER_FIELD_NUMBER: _ClassVar[int]
+    STATUS_FIELD_NUMBER: _ClassVar[int]
+    device_id: bytes
+    model_id: bytes
+    timestamp: int
+    number: int
+    status: int
+    def __init__(self, device_id: _Optional[bytes] = ..., model_id: _Optional[bytes] = ..., timestamp: _Optional[int] = ..., number: _Optional[int] = ..., status: _Optional[int] = ...) -> None: ...
+
 class BufferSelector(_message.Message):
     __slots__ = ("device_id", "model_id", "status")
     DEVICE_ID_FIELD_NUMBER: _ClassVar[int]
