@@ -14,6 +14,16 @@ service DataService {
 
     rpc ListDataByNumberAfter(DataNumber) returns (DataListResponse);
 
+    rpc ListDataByIdsTime(DataIdsTime) returns (DataListResponse);
+
+    rpc ListDataByIdsLastTime(DataIdsTime) returns (DataListResponse);
+
+    rpc ListDataByIdsRangeTime(DataIdsRange) returns (DataListResponse);
+
+    rpc ListDataByIdsNumberBefore(DataIdsNumber) returns (DataListResponse);
+
+    rpc ListDataByIdsNumberAfter(DataIdsNumber) returns (DataListResponse);
+
     rpc ListDataBySetTime(DataSetTime) returns (DataListResponse);
 
     rpc ListDataBySetLastTime(DataSetTime) returns (DataListResponse);
@@ -96,6 +106,26 @@ message DataSetSchema {
     int64 timestamp = 2;
     bytes data_bytes = 3;
     repeated common.DataType data_type = 4;
+}
+
+message DataIdsTime {
+    repeated bytes device_ids = 1;
+    repeated bytes model_ids = 2;
+    int64 timestamp = 3;
+}
+
+message DataIdsRange {
+    repeated bytes device_ids = 1;
+    repeated bytes model_ids = 2;
+    int64 begin = 3;
+    int64 end = 4;
+}
+
+message DataIdsNumber {
+    repeated bytes device_ids = 1;
+    repeated bytes model_ids = 2;
+    int64 timestamp = 3;
+    uint32 number = 4;
 }
 
 message DataSetId {

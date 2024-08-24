@@ -76,6 +76,40 @@ class DataSetSchema(_message.Message):
     data_type: _containers.RepeatedScalarFieldContainer[_common_pb2.DataType]
     def __init__(self, set_id: _Optional[bytes] = ..., timestamp: _Optional[int] = ..., data_bytes: _Optional[bytes] = ..., data_type: _Optional[_Iterable[_Union[_common_pb2.DataType, str]]] = ...) -> None: ...
 
+class DataIdsTime(_message.Message):
+    __slots__ = ("device_ids", "model_ids", "timestamp")
+    DEVICE_IDS_FIELD_NUMBER: _ClassVar[int]
+    MODEL_IDS_FIELD_NUMBER: _ClassVar[int]
+    TIMESTAMP_FIELD_NUMBER: _ClassVar[int]
+    device_ids: _containers.RepeatedScalarFieldContainer[bytes]
+    model_ids: _containers.RepeatedScalarFieldContainer[bytes]
+    timestamp: int
+    def __init__(self, device_ids: _Optional[_Iterable[bytes]] = ..., model_ids: _Optional[_Iterable[bytes]] = ..., timestamp: _Optional[int] = ...) -> None: ...
+
+class DataIdsRange(_message.Message):
+    __slots__ = ("device_ids", "model_ids", "begin", "end")
+    DEVICE_IDS_FIELD_NUMBER: _ClassVar[int]
+    MODEL_IDS_FIELD_NUMBER: _ClassVar[int]
+    BEGIN_FIELD_NUMBER: _ClassVar[int]
+    END_FIELD_NUMBER: _ClassVar[int]
+    device_ids: _containers.RepeatedScalarFieldContainer[bytes]
+    model_ids: _containers.RepeatedScalarFieldContainer[bytes]
+    begin: int
+    end: int
+    def __init__(self, device_ids: _Optional[_Iterable[bytes]] = ..., model_ids: _Optional[_Iterable[bytes]] = ..., begin: _Optional[int] = ..., end: _Optional[int] = ...) -> None: ...
+
+class DataIdsNumber(_message.Message):
+    __slots__ = ("device_ids", "model_ids", "timestamp", "number")
+    DEVICE_IDS_FIELD_NUMBER: _ClassVar[int]
+    MODEL_IDS_FIELD_NUMBER: _ClassVar[int]
+    TIMESTAMP_FIELD_NUMBER: _ClassVar[int]
+    NUMBER_FIELD_NUMBER: _ClassVar[int]
+    device_ids: _containers.RepeatedScalarFieldContainer[bytes]
+    model_ids: _containers.RepeatedScalarFieldContainer[bytes]
+    timestamp: int
+    number: int
+    def __init__(self, device_ids: _Optional[_Iterable[bytes]] = ..., model_ids: _Optional[_Iterable[bytes]] = ..., timestamp: _Optional[int] = ..., number: _Optional[int] = ...) -> None: ...
+
 class DataSetId(_message.Message):
     __slots__ = ("set_id", "timestamp")
     SET_ID_FIELD_NUMBER: _ClassVar[int]

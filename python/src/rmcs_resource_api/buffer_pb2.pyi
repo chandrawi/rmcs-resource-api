@@ -94,6 +94,60 @@ class BuffersSelector(_message.Message):
     offset: int
     def __init__(self, device_id: _Optional[bytes] = ..., model_id: _Optional[bytes] = ..., status: _Optional[int] = ..., number: _Optional[int] = ..., offset: _Optional[int] = ...) -> None: ...
 
+class BufferIdsTime(_message.Message):
+    __slots__ = ("device_ids", "model_ids", "timestamp", "status")
+    DEVICE_IDS_FIELD_NUMBER: _ClassVar[int]
+    MODEL_IDS_FIELD_NUMBER: _ClassVar[int]
+    TIMESTAMP_FIELD_NUMBER: _ClassVar[int]
+    STATUS_FIELD_NUMBER: _ClassVar[int]
+    device_ids: _containers.RepeatedScalarFieldContainer[bytes]
+    model_ids: _containers.RepeatedScalarFieldContainer[bytes]
+    timestamp: int
+    status: int
+    def __init__(self, device_ids: _Optional[_Iterable[bytes]] = ..., model_ids: _Optional[_Iterable[bytes]] = ..., timestamp: _Optional[int] = ..., status: _Optional[int] = ...) -> None: ...
+
+class BufferIdsRange(_message.Message):
+    __slots__ = ("device_ids", "model_ids", "begin", "end", "status")
+    DEVICE_IDS_FIELD_NUMBER: _ClassVar[int]
+    MODEL_IDS_FIELD_NUMBER: _ClassVar[int]
+    BEGIN_FIELD_NUMBER: _ClassVar[int]
+    END_FIELD_NUMBER: _ClassVar[int]
+    STATUS_FIELD_NUMBER: _ClassVar[int]
+    device_ids: _containers.RepeatedScalarFieldContainer[bytes]
+    model_ids: _containers.RepeatedScalarFieldContainer[bytes]
+    begin: int
+    end: int
+    status: int
+    def __init__(self, device_ids: _Optional[_Iterable[bytes]] = ..., model_ids: _Optional[_Iterable[bytes]] = ..., begin: _Optional[int] = ..., end: _Optional[int] = ..., status: _Optional[int] = ...) -> None: ...
+
+class BufferIdsNumber(_message.Message):
+    __slots__ = ("device_ids", "model_ids", "timestamp", "number", "status")
+    DEVICE_IDS_FIELD_NUMBER: _ClassVar[int]
+    MODEL_IDS_FIELD_NUMBER: _ClassVar[int]
+    TIMESTAMP_FIELD_NUMBER: _ClassVar[int]
+    NUMBER_FIELD_NUMBER: _ClassVar[int]
+    STATUS_FIELD_NUMBER: _ClassVar[int]
+    device_ids: _containers.RepeatedScalarFieldContainer[bytes]
+    model_ids: _containers.RepeatedScalarFieldContainer[bytes]
+    timestamp: int
+    number: int
+    status: int
+    def __init__(self, device_ids: _Optional[_Iterable[bytes]] = ..., model_ids: _Optional[_Iterable[bytes]] = ..., timestamp: _Optional[int] = ..., number: _Optional[int] = ..., status: _Optional[int] = ...) -> None: ...
+
+class BuffersIdsSelector(_message.Message):
+    __slots__ = ("device_ids", "model_ids", "status", "number", "offset")
+    DEVICE_IDS_FIELD_NUMBER: _ClassVar[int]
+    MODEL_IDS_FIELD_NUMBER: _ClassVar[int]
+    STATUS_FIELD_NUMBER: _ClassVar[int]
+    NUMBER_FIELD_NUMBER: _ClassVar[int]
+    OFFSET_FIELD_NUMBER: _ClassVar[int]
+    device_ids: _containers.RepeatedScalarFieldContainer[bytes]
+    model_ids: _containers.RepeatedScalarFieldContainer[bytes]
+    status: int
+    number: int
+    offset: int
+    def __init__(self, device_ids: _Optional[_Iterable[bytes]] = ..., model_ids: _Optional[_Iterable[bytes]] = ..., status: _Optional[int] = ..., number: _Optional[int] = ..., offset: _Optional[int] = ...) -> None: ...
+
 class BufferSetTime(_message.Message):
     __slots__ = ("set_id", "timestamp", "status")
     SET_ID_FIELD_NUMBER: _ClassVar[int]
