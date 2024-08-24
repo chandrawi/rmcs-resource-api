@@ -94,6 +94,52 @@ class BuffersSelector(_message.Message):
     offset: int
     def __init__(self, device_id: _Optional[bytes] = ..., model_id: _Optional[bytes] = ..., status: _Optional[int] = ..., number: _Optional[int] = ..., offset: _Optional[int] = ...) -> None: ...
 
+class BufferSetTime(_message.Message):
+    __slots__ = ("set_id", "timestamp", "status")
+    SET_ID_FIELD_NUMBER: _ClassVar[int]
+    TIMESTAMP_FIELD_NUMBER: _ClassVar[int]
+    STATUS_FIELD_NUMBER: _ClassVar[int]
+    set_id: bytes
+    timestamp: int
+    status: int
+    def __init__(self, set_id: _Optional[bytes] = ..., timestamp: _Optional[int] = ..., status: _Optional[int] = ...) -> None: ...
+
+class BufferSetRange(_message.Message):
+    __slots__ = ("set_id", "begin", "end", "status")
+    SET_ID_FIELD_NUMBER: _ClassVar[int]
+    BEGIN_FIELD_NUMBER: _ClassVar[int]
+    END_FIELD_NUMBER: _ClassVar[int]
+    STATUS_FIELD_NUMBER: _ClassVar[int]
+    set_id: bytes
+    begin: int
+    end: int
+    status: int
+    def __init__(self, set_id: _Optional[bytes] = ..., begin: _Optional[int] = ..., end: _Optional[int] = ..., status: _Optional[int] = ...) -> None: ...
+
+class BufferSetNumber(_message.Message):
+    __slots__ = ("set_id", "timestamp", "number", "status")
+    SET_ID_FIELD_NUMBER: _ClassVar[int]
+    TIMESTAMP_FIELD_NUMBER: _ClassVar[int]
+    NUMBER_FIELD_NUMBER: _ClassVar[int]
+    STATUS_FIELD_NUMBER: _ClassVar[int]
+    set_id: bytes
+    timestamp: int
+    number: int
+    status: int
+    def __init__(self, set_id: _Optional[bytes] = ..., timestamp: _Optional[int] = ..., number: _Optional[int] = ..., status: _Optional[int] = ...) -> None: ...
+
+class BuffersSetSelector(_message.Message):
+    __slots__ = ("set_id", "status", "number", "offset")
+    SET_ID_FIELD_NUMBER: _ClassVar[int]
+    STATUS_FIELD_NUMBER: _ClassVar[int]
+    NUMBER_FIELD_NUMBER: _ClassVar[int]
+    OFFSET_FIELD_NUMBER: _ClassVar[int]
+    set_id: bytes
+    status: int
+    number: int
+    offset: int
+    def __init__(self, set_id: _Optional[bytes] = ..., status: _Optional[int] = ..., number: _Optional[int] = ..., offset: _Optional[int] = ...) -> None: ...
+
 class BufferUpdate(_message.Message):
     __slots__ = ("id", "data_bytes", "data_type", "status")
     ID_FIELD_NUMBER: _ClassVar[int]

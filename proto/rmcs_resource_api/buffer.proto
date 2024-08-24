@@ -28,6 +28,24 @@ service BufferService {
 
     rpc ListBufferLastOffset(BuffersSelector) returns (BufferListResponse);
 
+    rpc ListBufferBySetTime(BufferSetTime) returns (BufferListResponse);
+
+    rpc ListBufferBySetLastTime(BufferSetTime) returns (BufferListResponse);
+
+    rpc ListBufferBySetRangeTime(BufferSetRange) returns (BufferListResponse);
+
+    rpc ListBufferBySetNumberBefore(BufferSetNumber) returns (BufferListResponse);
+
+    rpc ListBufferBySetNumberAfter(BufferSetNumber) returns (BufferListResponse);
+
+    rpc ListBufferFirstBySet(BuffersSetSelector) returns (BufferListResponse);
+
+    rpc ListBufferFirstOffsetBySet(BuffersSetSelector) returns (BufferListResponse);
+
+    rpc ListBufferLastBySet(BuffersSetSelector) returns (BufferListResponse);
+
+    rpc ListBufferLastOffsetBySet(BuffersSetSelector) returns (BufferListResponse);
+
     rpc CreateBuffer(BufferSchema) returns (BufferCreateResponse);
 
     rpc UpdateBuffer(BufferUpdate) returns (BufferChangeResponse);
@@ -86,6 +104,33 @@ message BuffersSelector {
     optional int32 status = 3;
     uint32 number = 4;
     uint32 offset = 5;
+}
+
+message BufferSetTime {
+    bytes set_id = 1;
+    int64 timestamp = 2;
+    optional int32 status = 3;
+}
+
+message BufferSetRange {
+    bytes set_id = 1;
+    int64 begin = 2;
+    int64 end = 3;
+    optional int32 status = 4;
+}
+
+message BufferSetNumber {
+    bytes set_id = 1;
+    int64 timestamp = 2;
+    uint32 number = 3;
+    optional int32 status = 4;
+}
+
+message BuffersSetSelector {
+    bytes set_id = 1;
+    optional int32 status = 2;
+    uint32 number = 3;
+    uint32 offset = 4;
 }
 
 message BufferUpdate {

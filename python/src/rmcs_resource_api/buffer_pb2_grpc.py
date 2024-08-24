@@ -94,6 +94,51 @@ class BufferServiceStub(object):
                 request_serializer=rmcs__resource__api_dot_buffer__pb2.BuffersSelector.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferListResponse.FromString,
                 _registered_method=True)
+        self.ListBufferBySetTime = channel.unary_unary(
+                '/buffer.BufferService/ListBufferBySetTime',
+                request_serializer=rmcs__resource__api_dot_buffer__pb2.BufferSetTime.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferListResponse.FromString,
+                _registered_method=True)
+        self.ListBufferBySetLastTime = channel.unary_unary(
+                '/buffer.BufferService/ListBufferBySetLastTime',
+                request_serializer=rmcs__resource__api_dot_buffer__pb2.BufferSetTime.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferListResponse.FromString,
+                _registered_method=True)
+        self.ListBufferBySetRangeTime = channel.unary_unary(
+                '/buffer.BufferService/ListBufferBySetRangeTime',
+                request_serializer=rmcs__resource__api_dot_buffer__pb2.BufferSetRange.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferListResponse.FromString,
+                _registered_method=True)
+        self.ListBufferBySetNumberBefore = channel.unary_unary(
+                '/buffer.BufferService/ListBufferBySetNumberBefore',
+                request_serializer=rmcs__resource__api_dot_buffer__pb2.BufferSetNumber.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferListResponse.FromString,
+                _registered_method=True)
+        self.ListBufferBySetNumberAfter = channel.unary_unary(
+                '/buffer.BufferService/ListBufferBySetNumberAfter',
+                request_serializer=rmcs__resource__api_dot_buffer__pb2.BufferSetNumber.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferListResponse.FromString,
+                _registered_method=True)
+        self.ListBufferFirstBySet = channel.unary_unary(
+                '/buffer.BufferService/ListBufferFirstBySet',
+                request_serializer=rmcs__resource__api_dot_buffer__pb2.BuffersSetSelector.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferListResponse.FromString,
+                _registered_method=True)
+        self.ListBufferFirstOffsetBySet = channel.unary_unary(
+                '/buffer.BufferService/ListBufferFirstOffsetBySet',
+                request_serializer=rmcs__resource__api_dot_buffer__pb2.BuffersSetSelector.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferListResponse.FromString,
+                _registered_method=True)
+        self.ListBufferLastBySet = channel.unary_unary(
+                '/buffer.BufferService/ListBufferLastBySet',
+                request_serializer=rmcs__resource__api_dot_buffer__pb2.BuffersSetSelector.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferListResponse.FromString,
+                _registered_method=True)
+        self.ListBufferLastOffsetBySet = channel.unary_unary(
+                '/buffer.BufferService/ListBufferLastOffsetBySet',
+                request_serializer=rmcs__resource__api_dot_buffer__pb2.BuffersSetSelector.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferListResponse.FromString,
+                _registered_method=True)
         self.CreateBuffer = channel.unary_unary(
                 '/buffer.BufferService/CreateBuffer',
                 request_serializer=rmcs__resource__api_dot_buffer__pb2.BufferSchema.SerializeToString,
@@ -191,6 +236,60 @@ class BufferServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListBufferBySetTime(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListBufferBySetLastTime(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListBufferBySetRangeTime(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListBufferBySetNumberBefore(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListBufferBySetNumberAfter(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListBufferFirstBySet(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListBufferFirstOffsetBySet(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListBufferLastBySet(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListBufferLastOffsetBySet(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def CreateBuffer(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -276,6 +375,51 @@ def add_BufferServiceServicer_to_server(servicer, server):
             'ListBufferLastOffset': grpc.unary_unary_rpc_method_handler(
                     servicer.ListBufferLastOffset,
                     request_deserializer=rmcs__resource__api_dot_buffer__pb2.BuffersSelector.FromString,
+                    response_serializer=rmcs__resource__api_dot_buffer__pb2.BufferListResponse.SerializeToString,
+            ),
+            'ListBufferBySetTime': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListBufferBySetTime,
+                    request_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferSetTime.FromString,
+                    response_serializer=rmcs__resource__api_dot_buffer__pb2.BufferListResponse.SerializeToString,
+            ),
+            'ListBufferBySetLastTime': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListBufferBySetLastTime,
+                    request_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferSetTime.FromString,
+                    response_serializer=rmcs__resource__api_dot_buffer__pb2.BufferListResponse.SerializeToString,
+            ),
+            'ListBufferBySetRangeTime': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListBufferBySetRangeTime,
+                    request_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferSetRange.FromString,
+                    response_serializer=rmcs__resource__api_dot_buffer__pb2.BufferListResponse.SerializeToString,
+            ),
+            'ListBufferBySetNumberBefore': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListBufferBySetNumberBefore,
+                    request_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferSetNumber.FromString,
+                    response_serializer=rmcs__resource__api_dot_buffer__pb2.BufferListResponse.SerializeToString,
+            ),
+            'ListBufferBySetNumberAfter': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListBufferBySetNumberAfter,
+                    request_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferSetNumber.FromString,
+                    response_serializer=rmcs__resource__api_dot_buffer__pb2.BufferListResponse.SerializeToString,
+            ),
+            'ListBufferFirstBySet': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListBufferFirstBySet,
+                    request_deserializer=rmcs__resource__api_dot_buffer__pb2.BuffersSetSelector.FromString,
+                    response_serializer=rmcs__resource__api_dot_buffer__pb2.BufferListResponse.SerializeToString,
+            ),
+            'ListBufferFirstOffsetBySet': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListBufferFirstOffsetBySet,
+                    request_deserializer=rmcs__resource__api_dot_buffer__pb2.BuffersSetSelector.FromString,
+                    response_serializer=rmcs__resource__api_dot_buffer__pb2.BufferListResponse.SerializeToString,
+            ),
+            'ListBufferLastBySet': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListBufferLastBySet,
+                    request_deserializer=rmcs__resource__api_dot_buffer__pb2.BuffersSetSelector.FromString,
+                    response_serializer=rmcs__resource__api_dot_buffer__pb2.BufferListResponse.SerializeToString,
+            ),
+            'ListBufferLastOffsetBySet': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListBufferLastOffsetBySet,
+                    request_deserializer=rmcs__resource__api_dot_buffer__pb2.BuffersSetSelector.FromString,
                     response_serializer=rmcs__resource__api_dot_buffer__pb2.BufferListResponse.SerializeToString,
             ),
             'CreateBuffer': grpc.unary_unary_rpc_method_handler(
@@ -622,6 +766,249 @@ class BufferService(object):
             target,
             '/buffer.BufferService/ListBufferLastOffset',
             rmcs__resource__api_dot_buffer__pb2.BuffersSelector.SerializeToString,
+            rmcs__resource__api_dot_buffer__pb2.BufferListResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListBufferBySetTime(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/buffer.BufferService/ListBufferBySetTime',
+            rmcs__resource__api_dot_buffer__pb2.BufferSetTime.SerializeToString,
+            rmcs__resource__api_dot_buffer__pb2.BufferListResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListBufferBySetLastTime(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/buffer.BufferService/ListBufferBySetLastTime',
+            rmcs__resource__api_dot_buffer__pb2.BufferSetTime.SerializeToString,
+            rmcs__resource__api_dot_buffer__pb2.BufferListResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListBufferBySetRangeTime(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/buffer.BufferService/ListBufferBySetRangeTime',
+            rmcs__resource__api_dot_buffer__pb2.BufferSetRange.SerializeToString,
+            rmcs__resource__api_dot_buffer__pb2.BufferListResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListBufferBySetNumberBefore(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/buffer.BufferService/ListBufferBySetNumberBefore',
+            rmcs__resource__api_dot_buffer__pb2.BufferSetNumber.SerializeToString,
+            rmcs__resource__api_dot_buffer__pb2.BufferListResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListBufferBySetNumberAfter(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/buffer.BufferService/ListBufferBySetNumberAfter',
+            rmcs__resource__api_dot_buffer__pb2.BufferSetNumber.SerializeToString,
+            rmcs__resource__api_dot_buffer__pb2.BufferListResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListBufferFirstBySet(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/buffer.BufferService/ListBufferFirstBySet',
+            rmcs__resource__api_dot_buffer__pb2.BuffersSetSelector.SerializeToString,
+            rmcs__resource__api_dot_buffer__pb2.BufferListResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListBufferFirstOffsetBySet(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/buffer.BufferService/ListBufferFirstOffsetBySet',
+            rmcs__resource__api_dot_buffer__pb2.BuffersSetSelector.SerializeToString,
+            rmcs__resource__api_dot_buffer__pb2.BufferListResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListBufferLastBySet(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/buffer.BufferService/ListBufferLastBySet',
+            rmcs__resource__api_dot_buffer__pb2.BuffersSetSelector.SerializeToString,
+            rmcs__resource__api_dot_buffer__pb2.BufferListResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListBufferLastOffsetBySet(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/buffer.BufferService/ListBufferLastOffsetBySet',
+            rmcs__resource__api_dot_buffer__pb2.BuffersSetSelector.SerializeToString,
             rmcs__resource__api_dot_buffer__pb2.BufferListResponse.FromString,
             options,
             channel_credentials,
