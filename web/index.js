@@ -5,59 +5,6 @@ function getDefaultExportFromCjs (x) {
 	return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
 }
 
-var common_pb = {};
-
-(function (exports) {
-	// source: rmcs_resource_api/common.proto
-	/**
-	 * @fileoverview
-	 * @enhanceable
-	 * @suppress {missingRequire} reports error on implicit type usages.
-	 * @suppress {messageConventions} JS Compiler reports an error if a variable or
-	 *     field starts with 'MSG_' and isn't a translatable message.
-	 * @public
-	 */
-	// GENERATED CODE -- DO NOT EDIT!
-	/* eslint-disable */
-	// @ts-nocheck
-
-	var jspb = require$$0;
-	var goog = jspb;
-	var global =
-	    (typeof globalThis !== 'undefined' && globalThis) ||
-	    (typeof window !== 'undefined' && window) ||
-	    (typeof global !== 'undefined' && global) ||
-	    (typeof self !== 'undefined' && self) ||
-	    (function () { return this; }).call(null) ||
-	    Function('return this')();
-
-	goog.exportSymbol('proto.common.DataType', null, global);
-	/**
-	 * @enum {number}
-	 */
-	proto.common.DataType = {
-	  NULLD: 0,
-	  I8: 1,
-	  I16: 2,
-	  I32: 3,
-	  I64: 4,
-	  I128: 5,
-	  U8: 6,
-	  U16: 7,
-	  U32: 8,
-	  U64: 9,
-	  U128: 10,
-	  F32: 12,
-	  F64: 13,
-	  BOOL: 15,
-	  CHAR: 16,
-	  STRING: 17,
-	  BYTES: 18
-	};
-
-	goog.object.extend(exports, proto.common); 
-} (common_pb));
-
 var model_pb = {};
 
 (function (exports) {
@@ -84,8 +31,6 @@ var model_pb = {};
 	    (function () { return this; }).call(null) ||
 	    Function('return this')();
 
-	var rmcs_resource_api_common_pb = common_pb;
-	goog.object.extend(proto, rmcs_resource_api_common_pb);
 	goog.exportSymbol('proto.model.ConfigChangeResponse', null, global);
 	goog.exportSymbol('proto.model.ConfigCreateResponse', null, global);
 	goog.exportSymbol('proto.model.ConfigId', null, global);
@@ -625,7 +570,7 @@ var model_pb = {};
 	      msg.setDescription(value);
 	      break;
 	    case 5:
-	      var values = /** @type {!Array<!proto.common.DataType>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
+	      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedUint32() : [reader.readUint32()]);
 	      for (var i = 0; i < values.length; i++) {
 	        msg.addDataType(values[i]);
 	      }
@@ -694,7 +639,7 @@ var model_pb = {};
 	  }
 	  f = message.getDataTypeList();
 	  if (f.length > 0) {
-	    writer.writePackedEnum(
+	    writer.writePackedUint32(
 	      5,
 	      f
 	    );
@@ -807,16 +752,16 @@ var model_pb = {};
 
 
 	/**
-	 * repeated common.DataType data_type = 5;
-	 * @return {!Array<!proto.common.DataType>}
+	 * repeated uint32 data_type = 5;
+	 * @return {!Array<number>}
 	 */
 	proto.model.ModelSchema.prototype.getDataTypeList = function() {
-	  return /** @type {!Array<!proto.common.DataType>} */ (jspb.Message.getRepeatedField(this, 5));
+	  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 5));
 	};
 
 
 	/**
-	 * @param {!Array<!proto.common.DataType>} value
+	 * @param {!Array<number>} value
 	 * @return {!proto.model.ModelSchema} returns this
 	 */
 	proto.model.ModelSchema.prototype.setDataTypeList = function(value) {
@@ -825,7 +770,7 @@ var model_pb = {};
 
 
 	/**
-	 * @param {!proto.common.DataType} value
+	 * @param {number} value
 	 * @param {number=} opt_index
 	 * @return {!proto.model.ModelSchema} returns this
 	 */
@@ -2155,7 +2100,7 @@ var model_pb = {};
 	      msg.setDescription(value);
 	      break;
 	    case 5:
-	      var values = /** @type {!Array<!proto.common.DataType>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
+	      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedUint32() : [reader.readUint32()]);
 	      for (var i = 0; i < values.length; i++) {
 	        msg.addDataType(values[i]);
 	      }
@@ -2223,7 +2168,7 @@ var model_pb = {};
 	  }
 	  f = message.getDataTypeList();
 	  if (f.length > 0) {
-	    writer.writePackedEnum(
+	    writer.writePackedUint32(
 	      5,
 	      f
 	    );
@@ -2389,16 +2334,16 @@ var model_pb = {};
 
 
 	/**
-	 * repeated common.DataType data_type = 5;
-	 * @return {!Array<!proto.common.DataType>}
+	 * repeated uint32 data_type = 5;
+	 * @return {!Array<number>}
 	 */
 	proto.model.ModelUpdate.prototype.getDataTypeList = function() {
-	  return /** @type {!Array<!proto.common.DataType>} */ (jspb.Message.getRepeatedField(this, 5));
+	  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 5));
 	};
 
 
 	/**
-	 * @param {!Array<!proto.common.DataType>} value
+	 * @param {!Array<number>} value
 	 * @return {!proto.model.ModelUpdate} returns this
 	 */
 	proto.model.ModelUpdate.prototype.setDataTypeList = function(value) {
@@ -2407,7 +2352,7 @@ var model_pb = {};
 
 
 	/**
-	 * @param {!proto.common.DataType} value
+	 * @param {number} value
 	 * @param {number=} opt_index
 	 * @return {!proto.model.ModelUpdate} returns this
 	 */
@@ -2539,7 +2484,7 @@ var model_pb = {};
 	      msg.setConfigBytes(value);
 	      break;
 	    case 6:
-	      var value = /** @type {!proto.common.DataType} */ (reader.readEnum());
+	      var value = /** @type {number} */ (reader.readUint32());
 	      msg.setConfigType(value);
 	      break;
 	    case 7:
@@ -2611,8 +2556,8 @@ var model_pb = {};
 	    );
 	  }
 	  f = message.getConfigType();
-	  if (f !== 0.0) {
-	    writer.writeEnum(
+	  if (f !== 0) {
+	    writer.writeUint32(
 	      6,
 	      f
 	    );
@@ -2766,20 +2711,20 @@ var model_pb = {};
 
 
 	/**
-	 * optional common.DataType config_type = 6;
-	 * @return {!proto.common.DataType}
+	 * optional uint32 config_type = 6;
+	 * @return {number}
 	 */
 	proto.model.ConfigSchema.prototype.getConfigType = function() {
-	  return /** @type {!proto.common.DataType} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+	  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
 	};
 
 
 	/**
-	 * @param {!proto.common.DataType} value
+	 * @param {number} value
 	 * @return {!proto.model.ConfigSchema} returns this
 	 */
 	proto.model.ConfigSchema.prototype.setConfigType = function(value) {
-	  return jspb.Message.setProto3EnumField(this, 6, value);
+	  return jspb.Message.setProto3IntField(this, 6, value);
 	};
 
 
@@ -3017,7 +2962,7 @@ var model_pb = {};
 	      msg.setConfigBytes(value);
 	      break;
 	    case 4:
-	      var value = /** @type {!proto.common.DataType} */ (reader.readEnum());
+	      var value = /** @type {number} */ (reader.readUint32());
 	      msg.setConfigType(value);
 	      break;
 	    case 5:
@@ -3074,9 +3019,9 @@ var model_pb = {};
 	      f
 	    );
 	  }
-	  f = /** @type {!proto.common.DataType} */ (jspb.Message.getField(message, 4));
+	  f = /** @type {number} */ (jspb.Message.getField(message, 4));
 	  if (f != null) {
-	    writer.writeEnum(
+	    writer.writeUint32(
 	      4,
 	      f
 	    );
@@ -3206,16 +3151,16 @@ var model_pb = {};
 
 
 	/**
-	 * optional common.DataType config_type = 4;
-	 * @return {!proto.common.DataType}
+	 * optional uint32 config_type = 4;
+	 * @return {number}
 	 */
 	proto.model.ConfigUpdate.prototype.getConfigType = function() {
-	  return /** @type {!proto.common.DataType} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+	  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 	};
 
 
 	/**
-	 * @param {!proto.common.DataType} value
+	 * @param {number} value
 	 * @return {!proto.model.ConfigUpdate} returns this
 	 */
 	proto.model.ConfigUpdate.prototype.setConfigType = function(value) {
@@ -4406,6 +4351,7 @@ var model_pb = {};
 
 const grpc$7 = {};
 grpc$7.web = require$$0$1;
+
 const proto$8 = {};
 proto$8.model = model_pb;
 
@@ -5345,8 +5291,6 @@ var device_pb = {};
 	    (function () { return this; }).call(null) ||
 	    Function('return this')();
 
-	var rmcs_resource_api_common_pb = common_pb;
-	goog.object.extend(proto, rmcs_resource_api_common_pb);
 	goog.exportSymbol('proto.device.ConfigChangeResponse', null, global);
 	goog.exportSymbol('proto.device.ConfigCreateResponse', null, global);
 	goog.exportSymbol('proto.device.ConfigId', null, global);
@@ -9442,7 +9386,7 @@ var device_pb = {};
 	      msg.setConfigBytes(value);
 	      break;
 	    case 5:
-	      var value = /** @type {!proto.common.DataType} */ (reader.readEnum());
+	      var value = /** @type {number} */ (reader.readUint32());
 	      msg.setConfigType(value);
 	      break;
 	    case 6:
@@ -9507,8 +9451,8 @@ var device_pb = {};
 	    );
 	  }
 	  f = message.getConfigType();
-	  if (f !== 0.0) {
-	    writer.writeEnum(
+	  if (f !== 0) {
+	    writer.writeUint32(
 	      5,
 	      f
 	    );
@@ -9644,20 +9588,20 @@ var device_pb = {};
 
 
 	/**
-	 * optional common.DataType config_type = 5;
-	 * @return {!proto.common.DataType}
+	 * optional uint32 config_type = 5;
+	 * @return {number}
 	 */
 	proto.device.ConfigSchema.prototype.getConfigType = function() {
-	  return /** @type {!proto.common.DataType} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+	  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 	};
 
 
 	/**
-	 * @param {!proto.common.DataType} value
+	 * @param {number} value
 	 * @return {!proto.device.ConfigSchema} returns this
 	 */
 	proto.device.ConfigSchema.prototype.setConfigType = function(value) {
-	  return jspb.Message.setProto3EnumField(this, 5, value);
+	  return jspb.Message.setProto3IntField(this, 5, value);
 	};
 
 
@@ -9895,7 +9839,7 @@ var device_pb = {};
 	      msg.setConfigBytes(value);
 	      break;
 	    case 4:
-	      var value = /** @type {!proto.common.DataType} */ (reader.readEnum());
+	      var value = /** @type {number} */ (reader.readUint32());
 	      msg.setConfigType(value);
 	      break;
 	    case 5:
@@ -9952,9 +9896,9 @@ var device_pb = {};
 	      f
 	    );
 	  }
-	  f = /** @type {!proto.common.DataType} */ (jspb.Message.getField(message, 4));
+	  f = /** @type {number} */ (jspb.Message.getField(message, 4));
 	  if (f != null) {
-	    writer.writeEnum(
+	    writer.writeUint32(
 	      4,
 	      f
 	    );
@@ -10084,16 +10028,16 @@ var device_pb = {};
 
 
 	/**
-	 * optional common.DataType config_type = 4;
-	 * @return {!proto.common.DataType}
+	 * optional uint32 config_type = 4;
+	 * @return {number}
 	 */
 	proto.device.ConfigUpdate.prototype.getConfigType = function() {
-	  return /** @type {!proto.common.DataType} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+	  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 	};
 
 
 	/**
-	 * @param {!proto.common.DataType} value
+	 * @param {number} value
 	 * @return {!proto.device.ConfigUpdate} returns this
 	 */
 	proto.device.ConfigUpdate.prototype.setConfigType = function(value) {
@@ -13778,6 +13722,7 @@ var device_pb = {};
 
 const grpc$6 = {};
 grpc$6.web = require$$0$1;
+
 const proto$7 = {};
 proto$7.device = device_pb;
 
@@ -28832,8 +28777,6 @@ var data_pb = {};
 	    (function () { return this; }).call(null) ||
 	    Function('return this')();
 
-	var rmcs_resource_api_common_pb = common_pb;
-	goog.object.extend(proto, rmcs_resource_api_common_pb);
 	goog.exportSymbol('proto.data.DataChangeResponse', null, global);
 	goog.exportSymbol('proto.data.DataCountResponse', null, global);
 	goog.exportSymbol('proto.data.DataId', null, global);
@@ -29415,7 +29358,7 @@ var data_pb = {};
 	      msg.setDataBytes(value);
 	      break;
 	    case 5:
-	      var values = /** @type {!Array<!proto.common.DataType>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
+	      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedUint32() : [reader.readUint32()]);
 	      for (var i = 0; i < values.length; i++) {
 	        msg.addDataType(values[i]);
 	      }
@@ -29479,7 +29422,7 @@ var data_pb = {};
 	  }
 	  f = message.getDataTypeList();
 	  if (f.length > 0) {
-	    writer.writePackedEnum(
+	    writer.writePackedUint32(
 	      5,
 	      f
 	    );
@@ -29632,16 +29575,16 @@ var data_pb = {};
 
 
 	/**
-	 * repeated common.DataType data_type = 5;
-	 * @return {!Array<!proto.common.DataType>}
+	 * repeated uint32 data_type = 5;
+	 * @return {!Array<number>}
 	 */
 	proto.data.DataSchema.prototype.getDataTypeList = function() {
-	  return /** @type {!Array<!proto.common.DataType>} */ (jspb.Message.getRepeatedField(this, 5));
+	  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 5));
 	};
 
 
 	/**
-	 * @param {!Array<!proto.common.DataType>} value
+	 * @param {!Array<number>} value
 	 * @return {!proto.data.DataSchema} returns this
 	 */
 	proto.data.DataSchema.prototype.setDataTypeList = function(value) {
@@ -29650,7 +29593,7 @@ var data_pb = {};
 
 
 	/**
-	 * @param {!proto.common.DataType} value
+	 * @param {number} value
 	 * @param {number=} opt_index
 	 * @return {!proto.data.DataSchema} returns this
 	 */
@@ -30772,7 +30715,7 @@ var data_pb = {};
 	      msg.setDataBytes(value);
 	      break;
 	    case 4:
-	      var values = /** @type {!Array<!proto.common.DataType>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
+	      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedUint32() : [reader.readUint32()]);
 	      for (var i = 0; i < values.length; i++) {
 	        msg.addDataType(values[i]);
 	      }
@@ -30829,7 +30772,7 @@ var data_pb = {};
 	  }
 	  f = message.getDataTypeList();
 	  if (f.length > 0) {
-	    writer.writePackedEnum(
+	    writer.writePackedUint32(
 	      4,
 	      f
 	    );
@@ -30940,16 +30883,16 @@ var data_pb = {};
 
 
 	/**
-	 * repeated common.DataType data_type = 4;
-	 * @return {!Array<!proto.common.DataType>}
+	 * repeated uint32 data_type = 4;
+	 * @return {!Array<number>}
 	 */
 	proto.data.DataSetSchema.prototype.getDataTypeList = function() {
-	  return /** @type {!Array<!proto.common.DataType>} */ (jspb.Message.getRepeatedField(this, 4));
+	  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 4));
 	};
 
 
 	/**
-	 * @param {!Array<!proto.common.DataType>} value
+	 * @param {!Array<number>} value
 	 * @return {!proto.data.DataSetSchema} returns this
 	 */
 	proto.data.DataSetSchema.prototype.setDataTypeList = function(value) {
@@ -30958,7 +30901,7 @@ var data_pb = {};
 
 
 	/**
-	 * @param {!proto.common.DataType} value
+	 * @param {number} value
 	 * @param {number=} opt_index
 	 * @return {!proto.data.DataSetSchema} returns this
 	 */
@@ -34127,6 +34070,7 @@ var data_pb = {};
 
 const grpc$3 = {};
 grpc$3.web = require$$0$1;
+
 const proto$4 = {};
 proto$4.data = data_pb;
 
@@ -36652,8 +36596,6 @@ var buffer_pb = {};
 	    (function () { return this; }).call(null) ||
 	    Function('return this')();
 
-	var rmcs_resource_api_common_pb = common_pb;
-	goog.object.extend(proto, rmcs_resource_api_common_pb);
 	goog.exportSymbol('proto.buffer.BufferChangeResponse', null, global);
 	goog.exportSymbol('proto.buffer.BufferCountResponse', null, global);
 	goog.exportSymbol('proto.buffer.BufferCreateResponse', null, global);
@@ -37307,7 +37249,7 @@ var buffer_pb = {};
 	      msg.setDataBytes(value);
 	      break;
 	    case 6:
-	      var values = /** @type {!Array<!proto.common.DataType>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
+	      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedUint32() : [reader.readUint32()]);
 	      for (var i = 0; i < values.length; i++) {
 	        msg.addDataType(values[i]);
 	      }
@@ -37382,7 +37324,7 @@ var buffer_pb = {};
 	  }
 	  f = message.getDataTypeList();
 	  if (f.length > 0) {
-	    writer.writePackedEnum(
+	    writer.writePackedUint32(
 	      6,
 	      f
 	    );
@@ -37560,16 +37502,16 @@ var buffer_pb = {};
 
 
 	/**
-	 * repeated common.DataType data_type = 6;
-	 * @return {!Array<!proto.common.DataType>}
+	 * repeated uint32 data_type = 6;
+	 * @return {!Array<number>}
 	 */
 	proto.buffer.BufferSchema.prototype.getDataTypeList = function() {
-	  return /** @type {!Array<!proto.common.DataType>} */ (jspb.Message.getRepeatedField(this, 6));
+	  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 6));
 	};
 
 
 	/**
-	 * @param {!Array<!proto.common.DataType>} value
+	 * @param {!Array<number>} value
 	 * @return {!proto.buffer.BufferSchema} returns this
 	 */
 	proto.buffer.BufferSchema.prototype.setDataTypeList = function(value) {
@@ -37578,7 +37520,7 @@ var buffer_pb = {};
 
 
 	/**
-	 * @param {!proto.common.DataType} value
+	 * @param {number} value
 	 * @param {number=} opt_index
 	 * @return {!proto.buffer.BufferSchema} returns this
 	 */
@@ -42329,7 +42271,7 @@ var buffer_pb = {};
 	      msg.setDataBytes(value);
 	      break;
 	    case 3:
-	      var values = /** @type {!Array<!proto.common.DataType>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
+	      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedUint32() : [reader.readUint32()]);
 	      for (var i = 0; i < values.length; i++) {
 	        msg.addDataType(values[i]);
 	      }
@@ -42383,7 +42325,7 @@ var buffer_pb = {};
 	  }
 	  f = message.getDataTypeList();
 	  if (f.length > 0) {
-	    writer.writePackedEnum(
+	    writer.writePackedUint32(
 	      3,
 	      f
 	    );
@@ -42477,16 +42419,16 @@ var buffer_pb = {};
 
 
 	/**
-	 * repeated common.DataType data_type = 3;
-	 * @return {!Array<!proto.common.DataType>}
+	 * repeated uint32 data_type = 3;
+	 * @return {!Array<number>}
 	 */
 	proto.buffer.BufferUpdate.prototype.getDataTypeList = function() {
-	  return /** @type {!Array<!proto.common.DataType>} */ (jspb.Message.getRepeatedField(this, 3));
+	  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 3));
 	};
 
 
 	/**
-	 * @param {!Array<!proto.common.DataType>} value
+	 * @param {!Array<number>} value
 	 * @return {!proto.buffer.BufferUpdate} returns this
 	 */
 	proto.buffer.BufferUpdate.prototype.setDataTypeList = function(value) {
@@ -42495,7 +42437,7 @@ var buffer_pb = {};
 
 
 	/**
-	 * @param {!proto.common.DataType} value
+	 * @param {number} value
 	 * @param {number=} opt_index
 	 * @return {!proto.buffer.BufferUpdate} returns this
 	 */
@@ -43531,6 +43473,7 @@ var buffer_pb = {};
 
 const grpc$2 = {};
 grpc$2.web = require$$0$1;
+
 const proto$3 = {};
 proto$3.buffer = buffer_pb;
 
@@ -51827,8 +51770,6 @@ var log_pb = {};
 	    (function () { return this; }).call(null) ||
 	    Function('return this')();
 
-	var rmcs_resource_api_common_pb = common_pb;
-	goog.object.extend(proto, rmcs_resource_api_common_pb);
 	goog.exportSymbol('proto.log.LogChangeResponse', null, global);
 	goog.exportSymbol('proto.log.LogId', null, global);
 	goog.exportSymbol('proto.log.LogListResponse', null, global);
@@ -52095,7 +52036,7 @@ var log_pb = {};
 	      msg.setLogBytes(value);
 	      break;
 	    case 5:
-	      var value = /** @type {!proto.common.DataType} */ (reader.readEnum());
+	      var value = /** @type {number} */ (reader.readUint32());
 	      msg.setLogType(value);
 	      break;
 	    default:
@@ -52156,8 +52097,8 @@ var log_pb = {};
 	    );
 	  }
 	  f = message.getLogType();
-	  if (f !== 0.0) {
-	    writer.writeEnum(
+	  if (f !== 0) {
+	    writer.writeUint32(
 	      5,
 	      f
 	    );
@@ -52286,20 +52227,20 @@ var log_pb = {};
 
 
 	/**
-	 * optional common.DataType log_type = 5;
-	 * @return {!proto.common.DataType}
+	 * optional uint32 log_type = 5;
+	 * @return {number}
 	 */
 	proto.log.LogSchema.prototype.getLogType = function() {
-	  return /** @type {!proto.common.DataType} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+	  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 	};
 
 
 	/**
-	 * @param {!proto.common.DataType} value
+	 * @param {number} value
 	 * @return {!proto.log.LogSchema} returns this
 	 */
 	proto.log.LogSchema.prototype.setLogType = function(value) {
-	  return jspb.Message.setProto3EnumField(this, 5, value);
+	  return jspb.Message.setProto3IntField(this, 5, value);
 	};
 
 
@@ -53107,7 +53048,7 @@ var log_pb = {};
 	      msg.setLogBytes(value);
 	      break;
 	    case 5:
-	      var value = /** @type {!proto.common.DataType} */ (reader.readEnum());
+	      var value = /** @type {number} */ (reader.readUint32());
 	      msg.setLogType(value);
 	      break;
 	    default:
@@ -53167,9 +53108,9 @@ var log_pb = {};
 	      f
 	    );
 	  }
-	  f = /** @type {!proto.common.DataType} */ (jspb.Message.getField(message, 5));
+	  f = /** @type {number} */ (jspb.Message.getField(message, 5));
 	  if (f != null) {
-	    writer.writeEnum(
+	    writer.writeUint32(
 	      5,
 	      f
 	    );
@@ -53334,16 +53275,16 @@ var log_pb = {};
 
 
 	/**
-	 * optional common.DataType log_type = 5;
-	 * @return {!proto.common.DataType}
+	 * optional uint32 log_type = 5;
+	 * @return {number}
 	 */
 	proto.log.LogUpdate.prototype.getLogType = function() {
-	  return /** @type {!proto.common.DataType} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+	  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 	};
 
 
 	/**
-	 * @param {!proto.common.DataType} value
+	 * @param {number} value
 	 * @return {!proto.log.LogUpdate} returns this
 	 */
 	proto.log.LogUpdate.prototype.setLogType = function(value) {
@@ -53803,6 +53744,7 @@ var log_pb = {};
 
 const grpc = {};
 grpc.web = require$$0$1;
+
 const proto$1 = {};
 proto$1.log = log_pb;
 

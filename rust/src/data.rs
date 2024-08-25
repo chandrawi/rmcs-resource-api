@@ -10,8 +10,8 @@ pub struct DataSchema {
     pub timestamp: i64,
     #[prost(bytes = "vec", tag = "4")]
     pub data_bytes: ::prost::alloc::vec::Vec<u8>,
-    #[prost(enumeration = "super::common::DataType", repeated, tag = "5")]
-    pub data_type: ::prost::alloc::vec::Vec<i32>,
+    #[prost(uint32, repeated, tag = "5")]
+    pub data_type: ::prost::alloc::vec::Vec<u32>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -66,8 +66,8 @@ pub struct DataSetSchema {
     pub timestamp: i64,
     #[prost(bytes = "vec", tag = "3")]
     pub data_bytes: ::prost::alloc::vec::Vec<u8>,
-    #[prost(enumeration = "super::common::DataType", repeated, tag = "4")]
-    pub data_type: ::prost::alloc::vec::Vec<i32>,
+    #[prost(uint32, repeated, tag = "4")]
+    pub data_type: ::prost::alloc::vec::Vec<u32>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]

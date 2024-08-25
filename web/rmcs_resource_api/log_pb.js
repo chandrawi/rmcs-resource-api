@@ -21,8 +21,6 @@ var global =
     (function () { return this; }).call(null) ||
     Function('return this')();
 
-var rmcs_resource_api_common_pb = require('../rmcs_resource_api/common_pb.js');
-goog.object.extend(proto, rmcs_resource_api_common_pb);
 goog.exportSymbol('proto.log.LogChangeResponse', null, global);
 goog.exportSymbol('proto.log.LogId', null, global);
 goog.exportSymbol('proto.log.LogListResponse', null, global);
@@ -289,7 +287,7 @@ proto.log.LogSchema.deserializeBinaryFromReader = function(msg, reader) {
       msg.setLogBytes(value);
       break;
     case 5:
-      var value = /** @type {!proto.common.DataType} */ (reader.readEnum());
+      var value = /** @type {number} */ (reader.readUint32());
       msg.setLogType(value);
       break;
     default:
@@ -350,8 +348,8 @@ proto.log.LogSchema.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getLogType();
-  if (f !== 0.0) {
-    writer.writeEnum(
+  if (f !== 0) {
+    writer.writeUint32(
       5,
       f
     );
@@ -480,20 +478,20 @@ proto.log.LogSchema.prototype.setLogBytes = function(value) {
 
 
 /**
- * optional common.DataType log_type = 5;
- * @return {!proto.common.DataType}
+ * optional uint32 log_type = 5;
+ * @return {number}
  */
 proto.log.LogSchema.prototype.getLogType = function() {
-  return /** @type {!proto.common.DataType} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
 
 /**
- * @param {!proto.common.DataType} value
+ * @param {number} value
  * @return {!proto.log.LogSchema} returns this
  */
 proto.log.LogSchema.prototype.setLogType = function(value) {
-  return jspb.Message.setProto3EnumField(this, 5, value);
+  return jspb.Message.setProto3IntField(this, 5, value);
 };
 
 
@@ -1301,7 +1299,7 @@ proto.log.LogUpdate.deserializeBinaryFromReader = function(msg, reader) {
       msg.setLogBytes(value);
       break;
     case 5:
-      var value = /** @type {!proto.common.DataType} */ (reader.readEnum());
+      var value = /** @type {number} */ (reader.readUint32());
       msg.setLogType(value);
       break;
     default:
@@ -1361,9 +1359,9 @@ proto.log.LogUpdate.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = /** @type {!proto.common.DataType} */ (jspb.Message.getField(message, 5));
+  f = /** @type {number} */ (jspb.Message.getField(message, 5));
   if (f != null) {
-    writer.writeEnum(
+    writer.writeUint32(
       5,
       f
     );
@@ -1528,16 +1526,16 @@ proto.log.LogUpdate.prototype.hasLogBytes = function() {
 
 
 /**
- * optional common.DataType log_type = 5;
- * @return {!proto.common.DataType}
+ * optional uint32 log_type = 5;
+ * @return {number}
  */
 proto.log.LogUpdate.prototype.getLogType = function() {
-  return /** @type {!proto.common.DataType} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
 
 /**
- * @param {!proto.common.DataType} value
+ * @param {number} value
  * @return {!proto.log.LogUpdate} returns this
  */
 proto.log.LogUpdate.prototype.setLogType = function(value) {

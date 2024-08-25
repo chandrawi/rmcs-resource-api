@@ -21,8 +21,6 @@ var global =
     (function () { return this; }).call(null) ||
     Function('return this')();
 
-var rmcs_resource_api_common_pb = require('../rmcs_resource_api/common_pb.js');
-goog.object.extend(proto, rmcs_resource_api_common_pb);
 goog.exportSymbol('proto.buffer.BufferChangeResponse', null, global);
 goog.exportSymbol('proto.buffer.BufferCountResponse', null, global);
 goog.exportSymbol('proto.buffer.BufferCreateResponse', null, global);
@@ -676,7 +674,7 @@ proto.buffer.BufferSchema.deserializeBinaryFromReader = function(msg, reader) {
       msg.setDataBytes(value);
       break;
     case 6:
-      var values = /** @type {!Array<!proto.common.DataType>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedUint32() : [reader.readUint32()]);
       for (var i = 0; i < values.length; i++) {
         msg.addDataType(values[i]);
       }
@@ -751,7 +749,7 @@ proto.buffer.BufferSchema.serializeBinaryToWriter = function(message, writer) {
   }
   f = message.getDataTypeList();
   if (f.length > 0) {
-    writer.writePackedEnum(
+    writer.writePackedUint32(
       6,
       f
     );
@@ -929,16 +927,16 @@ proto.buffer.BufferSchema.prototype.setDataBytes = function(value) {
 
 
 /**
- * repeated common.DataType data_type = 6;
- * @return {!Array<!proto.common.DataType>}
+ * repeated uint32 data_type = 6;
+ * @return {!Array<number>}
  */
 proto.buffer.BufferSchema.prototype.getDataTypeList = function() {
-  return /** @type {!Array<!proto.common.DataType>} */ (jspb.Message.getRepeatedField(this, 6));
+  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 6));
 };
 
 
 /**
- * @param {!Array<!proto.common.DataType>} value
+ * @param {!Array<number>} value
  * @return {!proto.buffer.BufferSchema} returns this
  */
 proto.buffer.BufferSchema.prototype.setDataTypeList = function(value) {
@@ -947,7 +945,7 @@ proto.buffer.BufferSchema.prototype.setDataTypeList = function(value) {
 
 
 /**
- * @param {!proto.common.DataType} value
+ * @param {number} value
  * @param {number=} opt_index
  * @return {!proto.buffer.BufferSchema} returns this
  */
@@ -5698,7 +5696,7 @@ proto.buffer.BufferUpdate.deserializeBinaryFromReader = function(msg, reader) {
       msg.setDataBytes(value);
       break;
     case 3:
-      var values = /** @type {!Array<!proto.common.DataType>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedUint32() : [reader.readUint32()]);
       for (var i = 0; i < values.length; i++) {
         msg.addDataType(values[i]);
       }
@@ -5752,7 +5750,7 @@ proto.buffer.BufferUpdate.serializeBinaryToWriter = function(message, writer) {
   }
   f = message.getDataTypeList();
   if (f.length > 0) {
-    writer.writePackedEnum(
+    writer.writePackedUint32(
       3,
       f
     );
@@ -5846,16 +5844,16 @@ proto.buffer.BufferUpdate.prototype.hasDataBytes = function() {
 
 
 /**
- * repeated common.DataType data_type = 3;
- * @return {!Array<!proto.common.DataType>}
+ * repeated uint32 data_type = 3;
+ * @return {!Array<number>}
  */
 proto.buffer.BufferUpdate.prototype.getDataTypeList = function() {
-  return /** @type {!Array<!proto.common.DataType>} */ (jspb.Message.getRepeatedField(this, 3));
+  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 3));
 };
 
 
 /**
- * @param {!Array<!proto.common.DataType>} value
+ * @param {!Array<number>} value
  * @return {!proto.buffer.BufferUpdate} returns this
  */
 proto.buffer.BufferUpdate.prototype.setDataTypeList = function(value) {
@@ -5864,7 +5862,7 @@ proto.buffer.BufferUpdate.prototype.setDataTypeList = function(value) {
 
 
 /**
- * @param {!proto.common.DataType} value
+ * @param {number} value
  * @param {number=} opt_index
  * @return {!proto.buffer.BufferUpdate} returns this
  */

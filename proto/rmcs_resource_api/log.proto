@@ -1,8 +1,6 @@
 syntax = "proto3";
 package log;
 
-import "rmcs_resource_api/common.proto";
-
 service LogService {
     rpc ReadLog(LogId) returns (LogReadResponse);
 
@@ -24,7 +22,7 @@ message LogSchema {
     bytes device_id = 2;
     int32 status = 3;
     bytes log_bytes = 4;
-    common.DataType log_type = 5;
+    uint32 log_type = 5;
 }
 
 message LogId {
@@ -50,7 +48,7 @@ message LogUpdate {
     bytes device_id = 2;
     optional int32 status = 3;
     optional bytes log_bytes = 4;
-    optional common.DataType log_type = 5;
+    optional uint32 log_type = 5;
 }
 
 message LogReadResponse {

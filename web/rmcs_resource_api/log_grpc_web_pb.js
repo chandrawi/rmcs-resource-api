@@ -19,8 +19,6 @@
 const grpc = {};
 grpc.web = require('grpc-web');
 
-
-var rmcs_resource_api_common_pb = require('../rmcs_resource_api/common_pb.js')
 const proto = {};
 proto.log = require('./log_pb.js');
 

@@ -1,4 +1,3 @@
-from rmcs_resource_api import common_pb2 as _common_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -20,9 +19,9 @@ class BufferSchema(_message.Message):
     model_id: bytes
     timestamp: int
     data_bytes: bytes
-    data_type: _containers.RepeatedScalarFieldContainer[_common_pb2.DataType]
+    data_type: _containers.RepeatedScalarFieldContainer[int]
     status: int
-    def __init__(self, id: _Optional[int] = ..., device_id: _Optional[bytes] = ..., model_id: _Optional[bytes] = ..., timestamp: _Optional[int] = ..., data_bytes: _Optional[bytes] = ..., data_type: _Optional[_Iterable[_Union[_common_pb2.DataType, str]]] = ..., status: _Optional[int] = ...) -> None: ...
+    def __init__(self, id: _Optional[int] = ..., device_id: _Optional[bytes] = ..., model_id: _Optional[bytes] = ..., timestamp: _Optional[int] = ..., data_bytes: _Optional[bytes] = ..., data_type: _Optional[_Iterable[int]] = ..., status: _Optional[int] = ...) -> None: ...
 
 class BufferId(_message.Message):
     __slots__ = ("id",)
@@ -220,9 +219,9 @@ class BufferUpdate(_message.Message):
     STATUS_FIELD_NUMBER: _ClassVar[int]
     id: int
     data_bytes: bytes
-    data_type: _containers.RepeatedScalarFieldContainer[_common_pb2.DataType]
+    data_type: _containers.RepeatedScalarFieldContainer[int]
     status: int
-    def __init__(self, id: _Optional[int] = ..., data_bytes: _Optional[bytes] = ..., data_type: _Optional[_Iterable[_Union[_common_pb2.DataType, str]]] = ..., status: _Optional[int] = ...) -> None: ...
+    def __init__(self, id: _Optional[int] = ..., data_bytes: _Optional[bytes] = ..., data_type: _Optional[_Iterable[int]] = ..., status: _Optional[int] = ...) -> None: ...
 
 class BufferReadResponse(_message.Message):
     __slots__ = ("result",)

@@ -134,8 +134,8 @@ pub struct ConfigSchema {
     pub name: ::prost::alloc::string::String,
     #[prost(bytes = "vec", tag = "4")]
     pub config_bytes: ::prost::alloc::vec::Vec<u8>,
-    #[prost(enumeration = "super::common::DataType", tag = "5")]
-    pub config_type: i32,
+    #[prost(uint32, tag = "5")]
+    pub config_type: u32,
     #[prost(string, tag = "6")]
     pub category: ::prost::alloc::string::String,
 }
@@ -154,8 +154,8 @@ pub struct ConfigUpdate {
     pub name: ::core::option::Option<::prost::alloc::string::String>,
     #[prost(bytes = "vec", optional, tag = "3")]
     pub config_bytes: ::core::option::Option<::prost::alloc::vec::Vec<u8>>,
-    #[prost(enumeration = "super::common::DataType", optional, tag = "4")]
-    pub config_type: ::core::option::Option<i32>,
+    #[prost(uint32, optional, tag = "4")]
+    pub config_type: ::core::option::Option<u32>,
     #[prost(string, optional, tag = "5")]
     pub category: ::core::option::Option<::prost::alloc::string::String>,
 }

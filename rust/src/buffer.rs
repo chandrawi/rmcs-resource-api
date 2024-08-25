@@ -12,8 +12,8 @@ pub struct BufferSchema {
     pub timestamp: i64,
     #[prost(bytes = "vec", tag = "5")]
     pub data_bytes: ::prost::alloc::vec::Vec<u8>,
-    #[prost(enumeration = "super::common::DataType", repeated, tag = "6")]
-    pub data_type: ::prost::alloc::vec::Vec<i32>,
+    #[prost(uint32, repeated, tag = "6")]
+    pub data_type: ::prost::alloc::vec::Vec<u32>,
     #[prost(int32, tag = "7")]
     pub status: i32,
 }
@@ -212,8 +212,8 @@ pub struct BufferUpdate {
     pub id: i32,
     #[prost(bytes = "vec", optional, tag = "2")]
     pub data_bytes: ::core::option::Option<::prost::alloc::vec::Vec<u8>>,
-    #[prost(enumeration = "super::common::DataType", repeated, tag = "3")]
-    pub data_type: ::prost::alloc::vec::Vec<i32>,
+    #[prost(uint32, repeated, tag = "3")]
+    pub data_type: ::prost::alloc::vec::Vec<u32>,
     #[prost(int32, optional, tag = "4")]
     pub status: ::core::option::Option<i32>,
 }

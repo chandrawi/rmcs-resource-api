@@ -1,4 +1,3 @@
-from rmcs_resource_api import common_pb2 as _common_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -17,8 +16,8 @@ class LogSchema(_message.Message):
     device_id: bytes
     status: int
     log_bytes: bytes
-    log_type: _common_pb2.DataType
-    def __init__(self, timestamp: _Optional[int] = ..., device_id: _Optional[bytes] = ..., status: _Optional[int] = ..., log_bytes: _Optional[bytes] = ..., log_type: _Optional[_Union[_common_pb2.DataType, str]] = ...) -> None: ...
+    log_type: int
+    def __init__(self, timestamp: _Optional[int] = ..., device_id: _Optional[bytes] = ..., status: _Optional[int] = ..., log_bytes: _Optional[bytes] = ..., log_type: _Optional[int] = ...) -> None: ...
 
 class LogId(_message.Message):
     __slots__ = ("timestamp", "device_id")
@@ -61,8 +60,8 @@ class LogUpdate(_message.Message):
     device_id: bytes
     status: int
     log_bytes: bytes
-    log_type: _common_pb2.DataType
-    def __init__(self, timestamp: _Optional[int] = ..., device_id: _Optional[bytes] = ..., status: _Optional[int] = ..., log_bytes: _Optional[bytes] = ..., log_type: _Optional[_Union[_common_pb2.DataType, str]] = ...) -> None: ...
+    log_type: int
+    def __init__(self, timestamp: _Optional[int] = ..., device_id: _Optional[bytes] = ..., status: _Optional[int] = ..., log_bytes: _Optional[bytes] = ..., log_type: _Optional[int] = ...) -> None: ...
 
 class LogReadResponse(_message.Message):
     __slots__ = ("result",)

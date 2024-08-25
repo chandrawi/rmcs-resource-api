@@ -1,4 +1,3 @@
-from rmcs_resource_api import common_pb2 as _common_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -17,8 +16,8 @@ class DataSchema(_message.Message):
     model_id: bytes
     timestamp: int
     data_bytes: bytes
-    data_type: _containers.RepeatedScalarFieldContainer[_common_pb2.DataType]
-    def __init__(self, device_id: _Optional[bytes] = ..., model_id: _Optional[bytes] = ..., timestamp: _Optional[int] = ..., data_bytes: _Optional[bytes] = ..., data_type: _Optional[_Iterable[_Union[_common_pb2.DataType, str]]] = ...) -> None: ...
+    data_type: _containers.RepeatedScalarFieldContainer[int]
+    def __init__(self, device_id: _Optional[bytes] = ..., model_id: _Optional[bytes] = ..., timestamp: _Optional[int] = ..., data_bytes: _Optional[bytes] = ..., data_type: _Optional[_Iterable[int]] = ...) -> None: ...
 
 class DataId(_message.Message):
     __slots__ = ("device_id", "model_id", "timestamp")
@@ -73,8 +72,8 @@ class DataSetSchema(_message.Message):
     set_id: bytes
     timestamp: int
     data_bytes: bytes
-    data_type: _containers.RepeatedScalarFieldContainer[_common_pb2.DataType]
-    def __init__(self, set_id: _Optional[bytes] = ..., timestamp: _Optional[int] = ..., data_bytes: _Optional[bytes] = ..., data_type: _Optional[_Iterable[_Union[_common_pb2.DataType, str]]] = ...) -> None: ...
+    data_type: _containers.RepeatedScalarFieldContainer[int]
+    def __init__(self, set_id: _Optional[bytes] = ..., timestamp: _Optional[int] = ..., data_bytes: _Optional[bytes] = ..., data_type: _Optional[_Iterable[int]] = ...) -> None: ...
 
 class DataIds(_message.Message):
     __slots__ = ("device_ids", "model_ids", "timestamp")

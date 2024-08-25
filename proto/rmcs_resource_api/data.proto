@@ -1,8 +1,6 @@
 syntax = "proto3";
 package data;
 
-import "rmcs_resource_api/common.proto";
-
 service DataService {
     rpc ReadData(DataId) returns (DataReadResponse);
 
@@ -90,7 +88,7 @@ message DataSchema {
     bytes model_id = 2;
     int64 timestamp = 3;
     bytes data_bytes = 4;
-    repeated common.DataType data_type = 5;
+    repeated uint32 data_type = 5;
 }
 
 message DataId {
@@ -123,7 +121,7 @@ message DataSetSchema {
     bytes set_id = 1;
     int64 timestamp = 2;
     bytes data_bytes = 3;
-    repeated common.DataType data_type = 4;
+    repeated uint32 data_type = 4;
 }
 
 message DataIds {

@@ -21,8 +21,6 @@ var global =
     (function () { return this; }).call(null) ||
     Function('return this')();
 
-var rmcs_resource_api_common_pb = require('../rmcs_resource_api/common_pb.js');
-goog.object.extend(proto, rmcs_resource_api_common_pb);
 goog.exportSymbol('proto.model.ConfigChangeResponse', null, global);
 goog.exportSymbol('proto.model.ConfigCreateResponse', null, global);
 goog.exportSymbol('proto.model.ConfigId', null, global);
@@ -562,7 +560,7 @@ proto.model.ModelSchema.deserializeBinaryFromReader = function(msg, reader) {
       msg.setDescription(value);
       break;
     case 5:
-      var values = /** @type {!Array<!proto.common.DataType>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedUint32() : [reader.readUint32()]);
       for (var i = 0; i < values.length; i++) {
         msg.addDataType(values[i]);
       }
@@ -631,7 +629,7 @@ proto.model.ModelSchema.serializeBinaryToWriter = function(message, writer) {
   }
   f = message.getDataTypeList();
   if (f.length > 0) {
-    writer.writePackedEnum(
+    writer.writePackedUint32(
       5,
       f
     );
@@ -744,16 +742,16 @@ proto.model.ModelSchema.prototype.setDescription = function(value) {
 
 
 /**
- * repeated common.DataType data_type = 5;
- * @return {!Array<!proto.common.DataType>}
+ * repeated uint32 data_type = 5;
+ * @return {!Array<number>}
  */
 proto.model.ModelSchema.prototype.getDataTypeList = function() {
-  return /** @type {!Array<!proto.common.DataType>} */ (jspb.Message.getRepeatedField(this, 5));
+  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 5));
 };
 
 
 /**
- * @param {!Array<!proto.common.DataType>} value
+ * @param {!Array<number>} value
  * @return {!proto.model.ModelSchema} returns this
  */
 proto.model.ModelSchema.prototype.setDataTypeList = function(value) {
@@ -762,7 +760,7 @@ proto.model.ModelSchema.prototype.setDataTypeList = function(value) {
 
 
 /**
- * @param {!proto.common.DataType} value
+ * @param {number} value
  * @param {number=} opt_index
  * @return {!proto.model.ModelSchema} returns this
  */
@@ -2092,7 +2090,7 @@ proto.model.ModelUpdate.deserializeBinaryFromReader = function(msg, reader) {
       msg.setDescription(value);
       break;
     case 5:
-      var values = /** @type {!Array<!proto.common.DataType>} */ (reader.isDelimited() ? reader.readPackedEnum() : [reader.readEnum()]);
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedUint32() : [reader.readUint32()]);
       for (var i = 0; i < values.length; i++) {
         msg.addDataType(values[i]);
       }
@@ -2160,7 +2158,7 @@ proto.model.ModelUpdate.serializeBinaryToWriter = function(message, writer) {
   }
   f = message.getDataTypeList();
   if (f.length > 0) {
-    writer.writePackedEnum(
+    writer.writePackedUint32(
       5,
       f
     );
@@ -2326,16 +2324,16 @@ proto.model.ModelUpdate.prototype.hasDescription = function() {
 
 
 /**
- * repeated common.DataType data_type = 5;
- * @return {!Array<!proto.common.DataType>}
+ * repeated uint32 data_type = 5;
+ * @return {!Array<number>}
  */
 proto.model.ModelUpdate.prototype.getDataTypeList = function() {
-  return /** @type {!Array<!proto.common.DataType>} */ (jspb.Message.getRepeatedField(this, 5));
+  return /** @type {!Array<number>} */ (jspb.Message.getRepeatedField(this, 5));
 };
 
 
 /**
- * @param {!Array<!proto.common.DataType>} value
+ * @param {!Array<number>} value
  * @return {!proto.model.ModelUpdate} returns this
  */
 proto.model.ModelUpdate.prototype.setDataTypeList = function(value) {
@@ -2344,7 +2342,7 @@ proto.model.ModelUpdate.prototype.setDataTypeList = function(value) {
 
 
 /**
- * @param {!proto.common.DataType} value
+ * @param {number} value
  * @param {number=} opt_index
  * @return {!proto.model.ModelUpdate} returns this
  */
@@ -2476,7 +2474,7 @@ proto.model.ConfigSchema.deserializeBinaryFromReader = function(msg, reader) {
       msg.setConfigBytes(value);
       break;
     case 6:
-      var value = /** @type {!proto.common.DataType} */ (reader.readEnum());
+      var value = /** @type {number} */ (reader.readUint32());
       msg.setConfigType(value);
       break;
     case 7:
@@ -2548,8 +2546,8 @@ proto.model.ConfigSchema.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getConfigType();
-  if (f !== 0.0) {
-    writer.writeEnum(
+  if (f !== 0) {
+    writer.writeUint32(
       6,
       f
     );
@@ -2703,20 +2701,20 @@ proto.model.ConfigSchema.prototype.setConfigBytes = function(value) {
 
 
 /**
- * optional common.DataType config_type = 6;
- * @return {!proto.common.DataType}
+ * optional uint32 config_type = 6;
+ * @return {number}
  */
 proto.model.ConfigSchema.prototype.getConfigType = function() {
-  return /** @type {!proto.common.DataType} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
 };
 
 
 /**
- * @param {!proto.common.DataType} value
+ * @param {number} value
  * @return {!proto.model.ConfigSchema} returns this
  */
 proto.model.ConfigSchema.prototype.setConfigType = function(value) {
-  return jspb.Message.setProto3EnumField(this, 6, value);
+  return jspb.Message.setProto3IntField(this, 6, value);
 };
 
 
@@ -2954,7 +2952,7 @@ proto.model.ConfigUpdate.deserializeBinaryFromReader = function(msg, reader) {
       msg.setConfigBytes(value);
       break;
     case 4:
-      var value = /** @type {!proto.common.DataType} */ (reader.readEnum());
+      var value = /** @type {number} */ (reader.readUint32());
       msg.setConfigType(value);
       break;
     case 5:
@@ -3011,9 +3009,9 @@ proto.model.ConfigUpdate.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = /** @type {!proto.common.DataType} */ (jspb.Message.getField(message, 4));
+  f = /** @type {number} */ (jspb.Message.getField(message, 4));
   if (f != null) {
-    writer.writeEnum(
+    writer.writeUint32(
       4,
       f
     );
@@ -3143,16 +3141,16 @@ proto.model.ConfigUpdate.prototype.hasConfigBytes = function() {
 
 
 /**
- * optional common.DataType config_type = 4;
- * @return {!proto.common.DataType}
+ * optional uint32 config_type = 4;
+ * @return {number}
  */
 proto.model.ConfigUpdate.prototype.getConfigType = function() {
-  return /** @type {!proto.common.DataType} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
 
 /**
- * @param {!proto.common.DataType} value
+ * @param {number} value
  * @return {!proto.model.ConfigUpdate} returns this
  */
 proto.model.ConfigUpdate.prototype.setConfigType = function(value) {

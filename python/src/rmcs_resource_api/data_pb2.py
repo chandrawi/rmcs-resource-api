@@ -22,60 +22,59 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
-from rmcs_resource_api import common_pb2 as rmcs__resource__api_dot_common__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1crmcs_resource_api/data.proto\x12\x04\x64\x61ta\x1a\x1ermcs_resource_api/common.proto\"}\n\nDataSchema\x12\x11\n\tdevice_id\x18\x01 \x01(\x0c\x12\x10\n\x08model_id\x18\x02 \x01(\x0c\x12\x11\n\ttimestamp\x18\x03 \x01(\x03\x12\x12\n\ndata_bytes\x18\x04 \x01(\x0c\x12#\n\tdata_type\x18\x05 \x03(\x0e\x32\x10.common.DataType\"@\n\x06\x44\x61taId\x12\x11\n\tdevice_id\x18\x01 \x01(\x0c\x12\x10\n\x08model_id\x18\x02 \x01(\x0c\x12\x11\n\ttimestamp\x18\x03 \x01(\x03\"B\n\x08\x44\x61taTime\x12\x11\n\tdevice_id\x18\x01 \x01(\x0c\x12\x10\n\x08model_id\x18\x02 \x01(\x0c\x12\x11\n\ttimestamp\x18\x03 \x01(\x03\"L\n\tDataRange\x12\x11\n\tdevice_id\x18\x01 \x01(\x0c\x12\x10\n\x08model_id\x18\x02 \x01(\x0c\x12\r\n\x05\x62\x65gin\x18\x03 \x01(\x03\x12\x0b\n\x03\x65nd\x18\x04 \x01(\x03\"T\n\nDataNumber\x12\x11\n\tdevice_id\x18\x01 \x01(\x0c\x12\x10\n\x08model_id\x18\x02 \x01(\x0c\x12\x11\n\ttimestamp\x18\x03 \x01(\x03\x12\x0e\n\x06number\x18\x04 \x01(\r\"k\n\rDataSetSchema\x12\x0e\n\x06set_id\x18\x01 \x01(\x0c\x12\x11\n\ttimestamp\x18\x02 \x01(\x03\x12\x12\n\ndata_bytes\x18\x03 \x01(\x0c\x12#\n\tdata_type\x18\x04 \x03(\x0e\x32\x10.common.DataType\"C\n\x07\x44\x61taIds\x12\x12\n\ndevice_ids\x18\x01 \x03(\x0c\x12\x11\n\tmodel_ids\x18\x02 \x03(\x0c\x12\x11\n\ttimestamp\x18\x03 \x01(\x03\"G\n\x0b\x44\x61taIdsTime\x12\x12\n\ndevice_ids\x18\x01 \x03(\x0c\x12\x11\n\tmodel_ids\x18\x02 \x03(\x0c\x12\x11\n\ttimestamp\x18\x03 \x01(\x03\"Q\n\x0c\x44\x61taIdsRange\x12\x12\n\ndevice_ids\x18\x01 \x03(\x0c\x12\x11\n\tmodel_ids\x18\x02 \x03(\x0c\x12\r\n\x05\x62\x65gin\x18\x03 \x01(\x03\x12\x0b\n\x03\x65nd\x18\x04 \x01(\x03\"Y\n\rDataIdsNumber\x12\x12\n\ndevice_ids\x18\x01 \x03(\x0c\x12\x11\n\tmodel_ids\x18\x02 \x03(\x0c\x12\x11\n\ttimestamp\x18\x03 \x01(\x03\x12\x0e\n\x06number\x18\x04 \x01(\r\".\n\tDataSetId\x12\x0e\n\x06set_id\x18\x01 \x01(\x0c\x12\x11\n\ttimestamp\x18\x02 \x01(\x03\"0\n\x0b\x44\x61taSetTime\x12\x0e\n\x06set_id\x18\x01 \x01(\x0c\x12\x11\n\ttimestamp\x18\x02 \x01(\x03\":\n\x0c\x44\x61taSetRange\x12\x0e\n\x06set_id\x18\x01 \x01(\x0c\x12\r\n\x05\x62\x65gin\x18\x02 \x01(\x03\x12\x0b\n\x03\x65nd\x18\x03 \x01(\x03\"B\n\rDataSetNumber\x12\x0e\n\x06set_id\x18\x01 \x01(\x0c\x12\x11\n\ttimestamp\x18\x02 \x01(\x03\x12\x0e\n\x06number\x18\x03 \x01(\r\"4\n\x10\x44\x61taReadResponse\x12 \n\x06result\x18\x01 \x01(\x0b\x32\x10.data.DataSchema\"5\n\x10\x44\x61taListResponse\x12!\n\x07results\x18\x01 \x03(\x0b\x32\x10.data.DataSchema\":\n\x13\x44\x61taSetReadResponse\x12#\n\x06result\x18\x01 \x01(\x0b\x32\x13.data.DataSetSchema\";\n\x13\x44\x61taSetListResponse\x12$\n\x07results\x18\x01 \x03(\x0b\x32\x13.data.DataSetSchema\"\x14\n\x12\x44\x61taChangeResponse\"*\n\x15TimestampReadResponse\x12\x11\n\ttimestamp\x18\x01 \x01(\x03\"+\n\x15TimestampListResponse\x12\x12\n\ntimestamps\x18\x01 \x03(\x03\"\"\n\x11\x44\x61taCountResponse\x12\r\n\x05\x63ount\x18\x01 \x01(\r2\xd6\x15\n\x0b\x44\x61taService\x12\x30\n\x08ReadData\x12\x0c.data.DataId\x1a\x16.data.DataReadResponse\x12<\n\x12ListDataByLastTime\x12\x0e.data.DataTime\x1a\x16.data.DataListResponse\x12>\n\x13ListDataByRangeTime\x12\x0f.data.DataRange\x1a\x16.data.DataListResponse\x12\x42\n\x16ListDataByNumberBefore\x12\x10.data.DataNumber\x1a\x16.data.DataListResponse\x12\x41\n\x15ListDataByNumberAfter\x12\x10.data.DataNumber\x1a\x16.data.DataListResponse\x12>\n\x11ListDataByIdsTime\x12\x11.data.DataIdsTime\x1a\x16.data.DataListResponse\x12\x42\n\x15ListDataByIdsLastTime\x12\x11.data.DataIdsTime\x1a\x16.data.DataListResponse\x12\x44\n\x16ListDataByIdsRangeTime\x12\x12.data.DataIdsRange\x1a\x16.data.DataListResponse\x12H\n\x19ListDataByIdsNumberBefore\x12\x13.data.DataIdsNumber\x1a\x16.data.DataListResponse\x12G\n\x18ListDataByIdsNumberAfter\x12\x13.data.DataIdsNumber\x1a\x16.data.DataListResponse\x12>\n\x11ListDataBySetTime\x12\x11.data.DataSetTime\x1a\x16.data.DataListResponse\x12\x42\n\x15ListDataBySetLastTime\x12\x11.data.DataSetTime\x1a\x16.data.DataListResponse\x12\x44\n\x16ListDataBySetRangeTime\x12\x12.data.DataSetRange\x1a\x16.data.DataListResponse\x12H\n\x19ListDataBySetNumberBefore\x12\x13.data.DataSetNumber\x1a\x16.data.DataListResponse\x12G\n\x18ListDataBySetNumberAfter\x12\x13.data.DataSetNumber\x1a\x16.data.DataListResponse\x12\x39\n\x0bReadDataSet\x12\x0f.data.DataSetId\x1a\x19.data.DataSetReadResponse\x12\x45\n\x15ListDataSetByLastTime\x12\x11.data.DataSetTime\x1a\x19.data.DataSetListResponse\x12G\n\x16ListDataSetByRangeTime\x12\x12.data.DataSetRange\x1a\x19.data.DataSetListResponse\x12K\n\x19ListDataSetByNumberBefore\x12\x13.data.DataSetNumber\x1a\x19.data.DataSetListResponse\x12J\n\x18ListDataSetByNumberAfter\x12\x13.data.DataSetNumber\x1a\x19.data.DataSetListResponse\x12\x38\n\nCreateData\x12\x10.data.DataSchema\x1a\x18.data.DataChangeResponse\x12\x34\n\nDeleteData\x12\x0c.data.DataId\x1a\x18.data.DataChangeResponse\x12>\n\x11ReadDataTimestamp\x12\x0c.data.DataId\x1a\x1b.data.TimestampReadResponse\x12J\n\x1bListDataTimestampByLastTime\x12\x0e.data.DataTime\x1a\x1b.data.TimestampListResponse\x12L\n\x1cListDataTimestampByRangeTime\x12\x0f.data.DataRange\x1a\x1b.data.TimestampListResponse\x12\x44\n\x16ReadDataTimestampByIds\x12\r.data.DataIds\x1a\x1b.data.TimestampReadResponse\x12P\n\x1eListDataTimestampByIdsLastTime\x12\x11.data.DataIdsTime\x1a\x1b.data.TimestampListResponse\x12R\n\x1fListDataTimestampByIdsRangeTime\x12\x12.data.DataIdsRange\x1a\x1b.data.TimestampListResponse\x12\x46\n\x16ReadDataTimestampBySet\x12\x0f.data.DataSetId\x1a\x1b.data.TimestampReadResponse\x12P\n\x1eListDataTimestampBySetLastTime\x12\x11.data.DataSetTime\x1a\x1b.data.TimestampListResponse\x12R\n\x1fListDataTimestampBySetRangeTime\x12\x12.data.DataSetRange\x1a\x1b.data.TimestampListResponse\x12\x34\n\tCountData\x12\x0e.data.DataTime\x1a\x17.data.DataCountResponse\x12>\n\x13\x43ountDataByLastTime\x12\x0e.data.DataTime\x1a\x17.data.DataCountResponse\x12@\n\x14\x43ountDataByRangeTime\x12\x0f.data.DataRange\x1a\x17.data.DataCountResponse\x12<\n\x0e\x43ountDataByIds\x12\x11.data.DataIdsTime\x1a\x17.data.DataCountResponse\x12\x44\n\x16\x43ountDataByIdsLastTime\x12\x11.data.DataIdsTime\x1a\x17.data.DataCountResponse\x12\x46\n\x17\x43ountDataByIdsRangeTime\x12\x12.data.DataIdsRange\x1a\x17.data.DataCountResponse\x12<\n\x0e\x43ountDataBySet\x12\x11.data.DataSetTime\x1a\x17.data.DataCountResponse\x12\x44\n\x16\x43ountDataBySetLastTime\x12\x11.data.DataSetTime\x1a\x17.data.DataCountResponse\x12\x46\n\x17\x43ountDataBySetRangeTime\x12\x12.data.DataSetRange\x1a\x17.data.DataCountResponseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1crmcs_resource_api/data.proto\x12\x04\x64\x61ta\"k\n\nDataSchema\x12\x11\n\tdevice_id\x18\x01 \x01(\x0c\x12\x10\n\x08model_id\x18\x02 \x01(\x0c\x12\x11\n\ttimestamp\x18\x03 \x01(\x03\x12\x12\n\ndata_bytes\x18\x04 \x01(\x0c\x12\x11\n\tdata_type\x18\x05 \x03(\r\"@\n\x06\x44\x61taId\x12\x11\n\tdevice_id\x18\x01 \x01(\x0c\x12\x10\n\x08model_id\x18\x02 \x01(\x0c\x12\x11\n\ttimestamp\x18\x03 \x01(\x03\"B\n\x08\x44\x61taTime\x12\x11\n\tdevice_id\x18\x01 \x01(\x0c\x12\x10\n\x08model_id\x18\x02 \x01(\x0c\x12\x11\n\ttimestamp\x18\x03 \x01(\x03\"L\n\tDataRange\x12\x11\n\tdevice_id\x18\x01 \x01(\x0c\x12\x10\n\x08model_id\x18\x02 \x01(\x0c\x12\r\n\x05\x62\x65gin\x18\x03 \x01(\x03\x12\x0b\n\x03\x65nd\x18\x04 \x01(\x03\"T\n\nDataNumber\x12\x11\n\tdevice_id\x18\x01 \x01(\x0c\x12\x10\n\x08model_id\x18\x02 \x01(\x0c\x12\x11\n\ttimestamp\x18\x03 \x01(\x03\x12\x0e\n\x06number\x18\x04 \x01(\r\"Y\n\rDataSetSchema\x12\x0e\n\x06set_id\x18\x01 \x01(\x0c\x12\x11\n\ttimestamp\x18\x02 \x01(\x03\x12\x12\n\ndata_bytes\x18\x03 \x01(\x0c\x12\x11\n\tdata_type\x18\x04 \x03(\r\"C\n\x07\x44\x61taIds\x12\x12\n\ndevice_ids\x18\x01 \x03(\x0c\x12\x11\n\tmodel_ids\x18\x02 \x03(\x0c\x12\x11\n\ttimestamp\x18\x03 \x01(\x03\"G\n\x0b\x44\x61taIdsTime\x12\x12\n\ndevice_ids\x18\x01 \x03(\x0c\x12\x11\n\tmodel_ids\x18\x02 \x03(\x0c\x12\x11\n\ttimestamp\x18\x03 \x01(\x03\"Q\n\x0c\x44\x61taIdsRange\x12\x12\n\ndevice_ids\x18\x01 \x03(\x0c\x12\x11\n\tmodel_ids\x18\x02 \x03(\x0c\x12\r\n\x05\x62\x65gin\x18\x03 \x01(\x03\x12\x0b\n\x03\x65nd\x18\x04 \x01(\x03\"Y\n\rDataIdsNumber\x12\x12\n\ndevice_ids\x18\x01 \x03(\x0c\x12\x11\n\tmodel_ids\x18\x02 \x03(\x0c\x12\x11\n\ttimestamp\x18\x03 \x01(\x03\x12\x0e\n\x06number\x18\x04 \x01(\r\".\n\tDataSetId\x12\x0e\n\x06set_id\x18\x01 \x01(\x0c\x12\x11\n\ttimestamp\x18\x02 \x01(\x03\"0\n\x0b\x44\x61taSetTime\x12\x0e\n\x06set_id\x18\x01 \x01(\x0c\x12\x11\n\ttimestamp\x18\x02 \x01(\x03\":\n\x0c\x44\x61taSetRange\x12\x0e\n\x06set_id\x18\x01 \x01(\x0c\x12\r\n\x05\x62\x65gin\x18\x02 \x01(\x03\x12\x0b\n\x03\x65nd\x18\x03 \x01(\x03\"B\n\rDataSetNumber\x12\x0e\n\x06set_id\x18\x01 \x01(\x0c\x12\x11\n\ttimestamp\x18\x02 \x01(\x03\x12\x0e\n\x06number\x18\x03 \x01(\r\"4\n\x10\x44\x61taReadResponse\x12 \n\x06result\x18\x01 \x01(\x0b\x32\x10.data.DataSchema\"5\n\x10\x44\x61taListResponse\x12!\n\x07results\x18\x01 \x03(\x0b\x32\x10.data.DataSchema\":\n\x13\x44\x61taSetReadResponse\x12#\n\x06result\x18\x01 \x01(\x0b\x32\x13.data.DataSetSchema\";\n\x13\x44\x61taSetListResponse\x12$\n\x07results\x18\x01 \x03(\x0b\x32\x13.data.DataSetSchema\"\x14\n\x12\x44\x61taChangeResponse\"*\n\x15TimestampReadResponse\x12\x11\n\ttimestamp\x18\x01 \x01(\x03\"+\n\x15TimestampListResponse\x12\x12\n\ntimestamps\x18\x01 \x03(\x03\"\"\n\x11\x44\x61taCountResponse\x12\r\n\x05\x63ount\x18\x01 \x01(\r2\xd6\x15\n\x0b\x44\x61taService\x12\x30\n\x08ReadData\x12\x0c.data.DataId\x1a\x16.data.DataReadResponse\x12<\n\x12ListDataByLastTime\x12\x0e.data.DataTime\x1a\x16.data.DataListResponse\x12>\n\x13ListDataByRangeTime\x12\x0f.data.DataRange\x1a\x16.data.DataListResponse\x12\x42\n\x16ListDataByNumberBefore\x12\x10.data.DataNumber\x1a\x16.data.DataListResponse\x12\x41\n\x15ListDataByNumberAfter\x12\x10.data.DataNumber\x1a\x16.data.DataListResponse\x12>\n\x11ListDataByIdsTime\x12\x11.data.DataIdsTime\x1a\x16.data.DataListResponse\x12\x42\n\x15ListDataByIdsLastTime\x12\x11.data.DataIdsTime\x1a\x16.data.DataListResponse\x12\x44\n\x16ListDataByIdsRangeTime\x12\x12.data.DataIdsRange\x1a\x16.data.DataListResponse\x12H\n\x19ListDataByIdsNumberBefore\x12\x13.data.DataIdsNumber\x1a\x16.data.DataListResponse\x12G\n\x18ListDataByIdsNumberAfter\x12\x13.data.DataIdsNumber\x1a\x16.data.DataListResponse\x12>\n\x11ListDataBySetTime\x12\x11.data.DataSetTime\x1a\x16.data.DataListResponse\x12\x42\n\x15ListDataBySetLastTime\x12\x11.data.DataSetTime\x1a\x16.data.DataListResponse\x12\x44\n\x16ListDataBySetRangeTime\x12\x12.data.DataSetRange\x1a\x16.data.DataListResponse\x12H\n\x19ListDataBySetNumberBefore\x12\x13.data.DataSetNumber\x1a\x16.data.DataListResponse\x12G\n\x18ListDataBySetNumberAfter\x12\x13.data.DataSetNumber\x1a\x16.data.DataListResponse\x12\x39\n\x0bReadDataSet\x12\x0f.data.DataSetId\x1a\x19.data.DataSetReadResponse\x12\x45\n\x15ListDataSetByLastTime\x12\x11.data.DataSetTime\x1a\x19.data.DataSetListResponse\x12G\n\x16ListDataSetByRangeTime\x12\x12.data.DataSetRange\x1a\x19.data.DataSetListResponse\x12K\n\x19ListDataSetByNumberBefore\x12\x13.data.DataSetNumber\x1a\x19.data.DataSetListResponse\x12J\n\x18ListDataSetByNumberAfter\x12\x13.data.DataSetNumber\x1a\x19.data.DataSetListResponse\x12\x38\n\nCreateData\x12\x10.data.DataSchema\x1a\x18.data.DataChangeResponse\x12\x34\n\nDeleteData\x12\x0c.data.DataId\x1a\x18.data.DataChangeResponse\x12>\n\x11ReadDataTimestamp\x12\x0c.data.DataId\x1a\x1b.data.TimestampReadResponse\x12J\n\x1bListDataTimestampByLastTime\x12\x0e.data.DataTime\x1a\x1b.data.TimestampListResponse\x12L\n\x1cListDataTimestampByRangeTime\x12\x0f.data.DataRange\x1a\x1b.data.TimestampListResponse\x12\x44\n\x16ReadDataTimestampByIds\x12\r.data.DataIds\x1a\x1b.data.TimestampReadResponse\x12P\n\x1eListDataTimestampByIdsLastTime\x12\x11.data.DataIdsTime\x1a\x1b.data.TimestampListResponse\x12R\n\x1fListDataTimestampByIdsRangeTime\x12\x12.data.DataIdsRange\x1a\x1b.data.TimestampListResponse\x12\x46\n\x16ReadDataTimestampBySet\x12\x0f.data.DataSetId\x1a\x1b.data.TimestampReadResponse\x12P\n\x1eListDataTimestampBySetLastTime\x12\x11.data.DataSetTime\x1a\x1b.data.TimestampListResponse\x12R\n\x1fListDataTimestampBySetRangeTime\x12\x12.data.DataSetRange\x1a\x1b.data.TimestampListResponse\x12\x34\n\tCountData\x12\x0e.data.DataTime\x1a\x17.data.DataCountResponse\x12>\n\x13\x43ountDataByLastTime\x12\x0e.data.DataTime\x1a\x17.data.DataCountResponse\x12@\n\x14\x43ountDataByRangeTime\x12\x0f.data.DataRange\x1a\x17.data.DataCountResponse\x12<\n\x0e\x43ountDataByIds\x12\x11.data.DataIdsTime\x1a\x17.data.DataCountResponse\x12\x44\n\x16\x43ountDataByIdsLastTime\x12\x11.data.DataIdsTime\x1a\x17.data.DataCountResponse\x12\x46\n\x17\x43ountDataByIdsRangeTime\x12\x12.data.DataIdsRange\x1a\x17.data.DataCountResponse\x12<\n\x0e\x43ountDataBySet\x12\x11.data.DataSetTime\x1a\x17.data.DataCountResponse\x12\x44\n\x16\x43ountDataBySetLastTime\x12\x11.data.DataSetTime\x1a\x17.data.DataCountResponse\x12\x46\n\x17\x43ountDataBySetRangeTime\x12\x12.data.DataSetRange\x1a\x17.data.DataCountResponseb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'rmcs_resource_api.data_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   DESCRIPTOR._loaded_options = None
-  _globals['_DATASCHEMA']._serialized_start=70
-  _globals['_DATASCHEMA']._serialized_end=195
-  _globals['_DATAID']._serialized_start=197
-  _globals['_DATAID']._serialized_end=261
-  _globals['_DATATIME']._serialized_start=263
-  _globals['_DATATIME']._serialized_end=329
-  _globals['_DATARANGE']._serialized_start=331
-  _globals['_DATARANGE']._serialized_end=407
-  _globals['_DATANUMBER']._serialized_start=409
-  _globals['_DATANUMBER']._serialized_end=493
-  _globals['_DATASETSCHEMA']._serialized_start=495
-  _globals['_DATASETSCHEMA']._serialized_end=602
-  _globals['_DATAIDS']._serialized_start=604
-  _globals['_DATAIDS']._serialized_end=671
-  _globals['_DATAIDSTIME']._serialized_start=673
-  _globals['_DATAIDSTIME']._serialized_end=744
-  _globals['_DATAIDSRANGE']._serialized_start=746
-  _globals['_DATAIDSRANGE']._serialized_end=827
-  _globals['_DATAIDSNUMBER']._serialized_start=829
-  _globals['_DATAIDSNUMBER']._serialized_end=918
-  _globals['_DATASETID']._serialized_start=920
-  _globals['_DATASETID']._serialized_end=966
-  _globals['_DATASETTIME']._serialized_start=968
-  _globals['_DATASETTIME']._serialized_end=1016
-  _globals['_DATASETRANGE']._serialized_start=1018
-  _globals['_DATASETRANGE']._serialized_end=1076
-  _globals['_DATASETNUMBER']._serialized_start=1078
-  _globals['_DATASETNUMBER']._serialized_end=1144
-  _globals['_DATAREADRESPONSE']._serialized_start=1146
-  _globals['_DATAREADRESPONSE']._serialized_end=1198
-  _globals['_DATALISTRESPONSE']._serialized_start=1200
-  _globals['_DATALISTRESPONSE']._serialized_end=1253
-  _globals['_DATASETREADRESPONSE']._serialized_start=1255
-  _globals['_DATASETREADRESPONSE']._serialized_end=1313
-  _globals['_DATASETLISTRESPONSE']._serialized_start=1315
-  _globals['_DATASETLISTRESPONSE']._serialized_end=1374
-  _globals['_DATACHANGERESPONSE']._serialized_start=1376
-  _globals['_DATACHANGERESPONSE']._serialized_end=1396
-  _globals['_TIMESTAMPREADRESPONSE']._serialized_start=1398
-  _globals['_TIMESTAMPREADRESPONSE']._serialized_end=1440
-  _globals['_TIMESTAMPLISTRESPONSE']._serialized_start=1442
-  _globals['_TIMESTAMPLISTRESPONSE']._serialized_end=1485
-  _globals['_DATACOUNTRESPONSE']._serialized_start=1487
-  _globals['_DATACOUNTRESPONSE']._serialized_end=1521
-  _globals['_DATASERVICE']._serialized_start=1524
-  _globals['_DATASERVICE']._serialized_end=4298
+  _globals['_DATASCHEMA']._serialized_start=38
+  _globals['_DATASCHEMA']._serialized_end=145
+  _globals['_DATAID']._serialized_start=147
+  _globals['_DATAID']._serialized_end=211
+  _globals['_DATATIME']._serialized_start=213
+  _globals['_DATATIME']._serialized_end=279
+  _globals['_DATARANGE']._serialized_start=281
+  _globals['_DATARANGE']._serialized_end=357
+  _globals['_DATANUMBER']._serialized_start=359
+  _globals['_DATANUMBER']._serialized_end=443
+  _globals['_DATASETSCHEMA']._serialized_start=445
+  _globals['_DATASETSCHEMA']._serialized_end=534
+  _globals['_DATAIDS']._serialized_start=536
+  _globals['_DATAIDS']._serialized_end=603
+  _globals['_DATAIDSTIME']._serialized_start=605
+  _globals['_DATAIDSTIME']._serialized_end=676
+  _globals['_DATAIDSRANGE']._serialized_start=678
+  _globals['_DATAIDSRANGE']._serialized_end=759
+  _globals['_DATAIDSNUMBER']._serialized_start=761
+  _globals['_DATAIDSNUMBER']._serialized_end=850
+  _globals['_DATASETID']._serialized_start=852
+  _globals['_DATASETID']._serialized_end=898
+  _globals['_DATASETTIME']._serialized_start=900
+  _globals['_DATASETTIME']._serialized_end=948
+  _globals['_DATASETRANGE']._serialized_start=950
+  _globals['_DATASETRANGE']._serialized_end=1008
+  _globals['_DATASETNUMBER']._serialized_start=1010
+  _globals['_DATASETNUMBER']._serialized_end=1076
+  _globals['_DATAREADRESPONSE']._serialized_start=1078
+  _globals['_DATAREADRESPONSE']._serialized_end=1130
+  _globals['_DATALISTRESPONSE']._serialized_start=1132
+  _globals['_DATALISTRESPONSE']._serialized_end=1185
+  _globals['_DATASETREADRESPONSE']._serialized_start=1187
+  _globals['_DATASETREADRESPONSE']._serialized_end=1245
+  _globals['_DATASETLISTRESPONSE']._serialized_start=1247
+  _globals['_DATASETLISTRESPONSE']._serialized_end=1306
+  _globals['_DATACHANGERESPONSE']._serialized_start=1308
+  _globals['_DATACHANGERESPONSE']._serialized_end=1328
+  _globals['_TIMESTAMPREADRESPONSE']._serialized_start=1330
+  _globals['_TIMESTAMPREADRESPONSE']._serialized_end=1372
+  _globals['_TIMESTAMPLISTRESPONSE']._serialized_start=1374
+  _globals['_TIMESTAMPLISTRESPONSE']._serialized_end=1417
+  _globals['_DATACOUNTRESPONSE']._serialized_start=1419
+  _globals['_DATACOUNTRESPONSE']._serialized_end=1453
+  _globals['_DATASERVICE']._serialized_start=1456
+  _globals['_DATASERVICE']._serialized_end=4230
 # @@protoc_insertion_point(module_scope)

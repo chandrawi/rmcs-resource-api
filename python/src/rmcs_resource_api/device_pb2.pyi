@@ -1,4 +1,3 @@
-from rmcs_resource_api import common_pb2 as _common_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -142,9 +141,9 @@ class ConfigSchema(_message.Message):
     device_id: bytes
     name: str
     config_bytes: bytes
-    config_type: _common_pb2.DataType
+    config_type: int
     category: str
-    def __init__(self, id: _Optional[int] = ..., device_id: _Optional[bytes] = ..., name: _Optional[str] = ..., config_bytes: _Optional[bytes] = ..., config_type: _Optional[_Union[_common_pb2.DataType, str]] = ..., category: _Optional[str] = ...) -> None: ...
+    def __init__(self, id: _Optional[int] = ..., device_id: _Optional[bytes] = ..., name: _Optional[str] = ..., config_bytes: _Optional[bytes] = ..., config_type: _Optional[int] = ..., category: _Optional[str] = ...) -> None: ...
 
 class ConfigId(_message.Message):
     __slots__ = ("id",)
@@ -162,9 +161,9 @@ class ConfigUpdate(_message.Message):
     id: int
     name: str
     config_bytes: bytes
-    config_type: _common_pb2.DataType
+    config_type: int
     category: str
-    def __init__(self, id: _Optional[int] = ..., name: _Optional[str] = ..., config_bytes: _Optional[bytes] = ..., config_type: _Optional[_Union[_common_pb2.DataType, str]] = ..., category: _Optional[str] = ...) -> None: ...
+    def __init__(self, id: _Optional[int] = ..., name: _Optional[str] = ..., config_bytes: _Optional[bytes] = ..., config_type: _Optional[int] = ..., category: _Optional[str] = ...) -> None: ...
 
 class TypeSchema(_message.Message):
     __slots__ = ("id", "name", "description", "models")

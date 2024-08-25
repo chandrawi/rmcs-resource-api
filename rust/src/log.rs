@@ -10,8 +10,8 @@ pub struct LogSchema {
     pub status: i32,
     #[prost(bytes = "vec", tag = "4")]
     pub log_bytes: ::prost::alloc::vec::Vec<u8>,
-    #[prost(enumeration = "super::common::DataType", tag = "5")]
-    pub log_type: i32,
+    #[prost(uint32, tag = "5")]
+    pub log_type: u32,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -54,8 +54,8 @@ pub struct LogUpdate {
     pub status: ::core::option::Option<i32>,
     #[prost(bytes = "vec", optional, tag = "4")]
     pub log_bytes: ::core::option::Option<::prost::alloc::vec::Vec<u8>>,
-    #[prost(enumeration = "super::common::DataType", optional, tag = "5")]
-    pub log_type: ::core::option::Option<i32>,
+    #[prost(uint32, optional, tag = "5")]
+    pub log_type: ::core::option::Option<u32>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]

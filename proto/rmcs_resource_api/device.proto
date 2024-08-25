@@ -1,8 +1,6 @@
 syntax = "proto3";
 package device;
 
-import "rmcs_resource_api/common.proto";
-
 service DeviceService {
     rpc ReadDevice(DeviceId) returns (DeviceReadResponse);
 
@@ -161,7 +159,7 @@ message ConfigSchema {
     bytes device_id = 2;
     string name = 3;
     bytes config_bytes = 4;
-    common.DataType config_type = 5;
+    uint32 config_type = 5;
     string category = 6;
 }
 
@@ -173,7 +171,7 @@ message ConfigUpdate {
     int32 id = 1;
     optional string name = 2;
     optional bytes config_bytes = 3;
-    optional common.DataType config_type = 4;
+    optional uint32 config_type = 4;
     optional string category = 5;
 }
 

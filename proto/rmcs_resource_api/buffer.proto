@@ -1,8 +1,6 @@
 syntax = "proto3";
 package buffer;
 
-import "rmcs_resource_api/common.proto";
-
 service BufferService {
     rpc ReadBuffer(BufferId) returns (BufferReadResponse);
 
@@ -99,7 +97,7 @@ message BufferSchema {
     bytes model_id = 3;
     int64 timestamp = 4;
     bytes data_bytes = 5;
-    repeated common.DataType data_type = 6;
+    repeated uint32 data_type = 6;
     int32 status = 7;
 }
 
@@ -216,7 +214,7 @@ message BuffersSetSelector {
 message BufferUpdate {
     int32 id = 1;
     optional bytes data_bytes = 2;
-    repeated common.DataType data_type = 3;
+    repeated uint32 data_type = 3;
     optional int32 status = 4;
 }
 
