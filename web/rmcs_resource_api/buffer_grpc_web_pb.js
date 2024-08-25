@@ -2580,16 +2580,16 @@ proto.buffer.BufferServicePromiseClient.prototype.listBufferTimestampLastBySet =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.buffer.BufferCount,
+ *   !proto.buffer.BufferSelector,
  *   !proto.buffer.BufferCountResponse>}
  */
 const methodDescriptor_BufferService_CountBuffer = new grpc.web.MethodDescriptor(
   '/buffer.BufferService/CountBuffer',
   grpc.web.MethodType.UNARY,
-  proto.buffer.BufferCount,
+  proto.buffer.BufferSelector,
   proto.buffer.BufferCountResponse,
   /**
-   * @param {!proto.buffer.BufferCount} request
+   * @param {!proto.buffer.BufferSelector} request
    * @return {!Uint8Array}
    */
   function(request) {
@@ -2600,7 +2600,7 @@ const methodDescriptor_BufferService_CountBuffer = new grpc.web.MethodDescriptor
 
 
 /**
- * @param {!proto.buffer.BufferCount} request The
+ * @param {!proto.buffer.BufferSelector} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
@@ -2621,7 +2621,7 @@ proto.buffer.BufferServiceClient.prototype.countBuffer =
 
 
 /**
- * @param {!proto.buffer.BufferCount} request The
+ * @param {!proto.buffer.BufferSelector} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
@@ -2635,6 +2635,128 @@ proto.buffer.BufferServicePromiseClient.prototype.countBuffer =
       request,
       metadata || {},
       methodDescriptor_BufferService_CountBuffer);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.buffer.BufferIdsSelector,
+ *   !proto.buffer.BufferCountResponse>}
+ */
+const methodDescriptor_BufferService_CountBufferByIds = new grpc.web.MethodDescriptor(
+  '/buffer.BufferService/CountBufferByIds',
+  grpc.web.MethodType.UNARY,
+  proto.buffer.BufferIdsSelector,
+  proto.buffer.BufferCountResponse,
+  /**
+   * @param {!proto.buffer.BufferIdsSelector} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.buffer.BufferCountResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.buffer.BufferIdsSelector} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.buffer.BufferCountResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.buffer.BufferCountResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.buffer.BufferServiceClient.prototype.countBufferByIds =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/buffer.BufferService/CountBufferByIds',
+      request,
+      metadata || {},
+      methodDescriptor_BufferService_CountBufferByIds,
+      callback);
+};
+
+
+/**
+ * @param {!proto.buffer.BufferIdsSelector} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.buffer.BufferCountResponse>}
+ *     Promise that resolves to the response
+ */
+proto.buffer.BufferServicePromiseClient.prototype.countBufferByIds =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/buffer.BufferService/CountBufferByIds',
+      request,
+      metadata || {},
+      methodDescriptor_BufferService_CountBufferByIds);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.buffer.BufferSetSelector,
+ *   !proto.buffer.BufferCountResponse>}
+ */
+const methodDescriptor_BufferService_CountBufferBySet = new grpc.web.MethodDescriptor(
+  '/buffer.BufferService/CountBufferBySet',
+  grpc.web.MethodType.UNARY,
+  proto.buffer.BufferSetSelector,
+  proto.buffer.BufferCountResponse,
+  /**
+   * @param {!proto.buffer.BufferSetSelector} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.buffer.BufferCountResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.buffer.BufferSetSelector} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.buffer.BufferCountResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.buffer.BufferCountResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.buffer.BufferServiceClient.prototype.countBufferBySet =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/buffer.BufferService/CountBufferBySet',
+      request,
+      metadata || {},
+      methodDescriptor_BufferService_CountBufferBySet,
+      callback);
+};
+
+
+/**
+ * @param {!proto.buffer.BufferSetSelector} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.buffer.BufferCountResponse>}
+ *     Promise that resolves to the response
+ */
+proto.buffer.BufferServicePromiseClient.prototype.countBufferBySet =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/buffer.BufferService/CountBufferBySet',
+      request,
+      metadata || {},
+      methodDescriptor_BufferService_CountBufferBySet);
 };
 
 

@@ -156,20 +156,6 @@ class DataSetNumber(_message.Message):
     number: int
     def __init__(self, set_id: _Optional[bytes] = ..., timestamp: _Optional[int] = ..., number: _Optional[int] = ...) -> None: ...
 
-class DataCount(_message.Message):
-    __slots__ = ("device_id", "model_id", "timestamp", "begin", "end")
-    DEVICE_ID_FIELD_NUMBER: _ClassVar[int]
-    MODEL_ID_FIELD_NUMBER: _ClassVar[int]
-    TIMESTAMP_FIELD_NUMBER: _ClassVar[int]
-    BEGIN_FIELD_NUMBER: _ClassVar[int]
-    END_FIELD_NUMBER: _ClassVar[int]
-    device_id: bytes
-    model_id: bytes
-    timestamp: int
-    begin: int
-    end: int
-    def __init__(self, device_id: _Optional[bytes] = ..., model_id: _Optional[bytes] = ..., timestamp: _Optional[int] = ..., begin: _Optional[int] = ..., end: _Optional[int] = ...) -> None: ...
-
 class DataReadResponse(_message.Message):
     __slots__ = ("result",)
     RESULT_FIELD_NUMBER: _ClassVar[int]

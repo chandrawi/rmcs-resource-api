@@ -129,6 +129,16 @@ pub struct BufferIdsNumber {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+pub struct BufferIdsSelector {
+    #[prost(bytes = "vec", repeated, tag = "1")]
+    pub device_ids: ::prost::alloc::vec::Vec<::prost::alloc::vec::Vec<u8>>,
+    #[prost(bytes = "vec", repeated, tag = "2")]
+    pub model_ids: ::prost::alloc::vec::Vec<::prost::alloc::vec::Vec<u8>>,
+    #[prost(int32, optional, tag = "3")]
+    pub status: ::core::option::Option<i32>,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
 pub struct BuffersIdsSelector {
     #[prost(bytes = "vec", repeated, tag = "1")]
     pub device_ids: ::prost::alloc::vec::Vec<::prost::alloc::vec::Vec<u8>>,
@@ -177,6 +187,14 @@ pub struct BufferSetNumber {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+pub struct BufferSetSelector {
+    #[prost(bytes = "vec", tag = "1")]
+    pub set_id: ::prost::alloc::vec::Vec<u8>,
+    #[prost(int32, optional, tag = "2")]
+    pub status: ::core::option::Option<i32>,
+}
+#[allow(clippy::derive_partial_eq_without_eq)]
+#[derive(Clone, PartialEq, ::prost::Message)]
 pub struct BuffersSetSelector {
     #[prost(bytes = "vec", tag = "1")]
     pub set_id: ::prost::alloc::vec::Vec<u8>,
@@ -197,16 +215,6 @@ pub struct BufferUpdate {
     #[prost(enumeration = "super::common::DataType", repeated, tag = "3")]
     pub data_type: ::prost::alloc::vec::Vec<i32>,
     #[prost(int32, optional, tag = "4")]
-    pub status: ::core::option::Option<i32>,
-}
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct BufferCount {
-    #[prost(bytes = "vec", optional, tag = "1")]
-    pub device_id: ::core::option::Option<::prost::alloc::vec::Vec<u8>>,
-    #[prost(bytes = "vec", optional, tag = "2")]
-    pub model_id: ::core::option::Option<::prost::alloc::vec::Vec<u8>>,
-    #[prost(int32, optional, tag = "3")]
     pub status: ::core::option::Option<i32>,
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
@@ -1426,7 +1434,7 @@ pub mod buffer_service_client {
         }
         pub async fn count_buffer(
             &mut self,
-            request: impl tonic::IntoRequest<super::BufferCount>,
+            request: impl tonic::IntoRequest<super::BufferSelector>,
         ) -> std::result::Result<
             tonic::Response<super::BufferCountResponse>,
             tonic::Status,
@@ -1447,6 +1455,56 @@ pub mod buffer_service_client {
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("buffer.BufferService", "CountBuffer"));
+            self.inner.unary(req, path, codec).await
+        }
+        pub async fn count_buffer_by_ids(
+            &mut self,
+            request: impl tonic::IntoRequest<super::BufferIdsSelector>,
+        ) -> std::result::Result<
+            tonic::Response<super::BufferCountResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/buffer.BufferService/CountBufferByIds",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("buffer.BufferService", "CountBufferByIds"));
+            self.inner.unary(req, path, codec).await
+        }
+        pub async fn count_buffer_by_set(
+            &mut self,
+            request: impl tonic::IntoRequest<super::BufferSetSelector>,
+        ) -> std::result::Result<
+            tonic::Response<super::BufferCountResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/buffer.BufferService/CountBufferBySet",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("buffer.BufferService", "CountBufferBySet"));
             self.inner.unary(req, path, codec).await
         }
     }
@@ -1747,7 +1805,21 @@ pub mod buffer_service_server {
         >;
         async fn count_buffer(
             &self,
-            request: tonic::Request<super::BufferCount>,
+            request: tonic::Request<super::BufferSelector>,
+        ) -> std::result::Result<
+            tonic::Response<super::BufferCountResponse>,
+            tonic::Status,
+        >;
+        async fn count_buffer_by_ids(
+            &self,
+            request: tonic::Request<super::BufferIdsSelector>,
+        ) -> std::result::Result<
+            tonic::Response<super::BufferCountResponse>,
+            tonic::Status,
+        >;
+        async fn count_buffer_by_set(
+            &self,
+            request: tonic::Request<super::BufferSetSelector>,
         ) -> std::result::Result<
             tonic::Response<super::BufferCountResponse>,
             tonic::Status,
@@ -3808,7 +3880,7 @@ pub mod buffer_service_server {
                     struct CountBufferSvc<T: BufferService>(pub Arc<T>);
                     impl<
                         T: BufferService,
-                    > tonic::server::UnaryService<super::BufferCount>
+                    > tonic::server::UnaryService<super::BufferSelector>
                     for CountBufferSvc<T> {
                         type Response = super::BufferCountResponse;
                         type Future = BoxFuture<
@@ -3817,7 +3889,7 @@ pub mod buffer_service_server {
                         >;
                         fn call(
                             &mut self,
-                            request: tonic::Request<super::BufferCount>,
+                            request: tonic::Request<super::BufferSelector>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
@@ -3833,6 +3905,98 @@ pub mod buffer_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = CountBufferSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/buffer.BufferService/CountBufferByIds" => {
+                    #[allow(non_camel_case_types)]
+                    struct CountBufferByIdsSvc<T: BufferService>(pub Arc<T>);
+                    impl<
+                        T: BufferService,
+                    > tonic::server::UnaryService<super::BufferIdsSelector>
+                    for CountBufferByIdsSvc<T> {
+                        type Response = super::BufferCountResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::BufferIdsSelector>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as BufferService>::count_buffer_by_ids(&inner, request)
+                                    .await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = CountBufferByIdsSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/buffer.BufferService/CountBufferBySet" => {
+                    #[allow(non_camel_case_types)]
+                    struct CountBufferBySetSvc<T: BufferService>(pub Arc<T>);
+                    impl<
+                        T: BufferService,
+                    > tonic::server::UnaryService<super::BufferSetSelector>
+                    for CountBufferBySetSvc<T> {
+                        type Response = super::BufferCountResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::BufferSetSelector>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as BufferService>::count_buffer_by_set(&inner, request)
+                                    .await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = CountBufferBySetSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(

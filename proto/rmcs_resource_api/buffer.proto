@@ -86,7 +86,11 @@ service BufferService {
 
     rpc ListBufferTimestampLastBySet(BuffersSetSelector) returns (TimestampListResponse);
 
-    rpc CountBuffer(BufferCount) returns (BufferCountResponse);
+    rpc CountBuffer(BufferSelector) returns (BufferCountResponse);
+
+    rpc CountBufferByIds(BufferIdsSelector) returns (BufferCountResponse);
+
+    rpc CountBufferBySet(BufferSetSelector) returns (BufferCountResponse);
 }
 
 message BufferSchema {
@@ -163,6 +167,12 @@ message BufferIdsNumber {
     optional int32 status = 5;
 }
 
+message BufferIdsSelector {
+    repeated bytes device_ids = 1;
+    repeated bytes model_ids = 2;
+    optional int32 status = 3;
+}
+
 message BuffersIdsSelector {
     repeated bytes device_ids = 1;
     repeated bytes model_ids = 2;
@@ -191,6 +201,11 @@ message BufferSetNumber {
     optional int32 status = 4;
 }
 
+message BufferSetSelector {
+    bytes set_id = 1;
+    optional int32 status = 2;
+}
+
 message BuffersSetSelector {
     bytes set_id = 1;
     optional int32 status = 2;
@@ -203,12 +218,6 @@ message BufferUpdate {
     optional bytes data_bytes = 2;
     repeated common.DataType data_type = 3;
     optional int32 status = 4;
-}
-
-message BufferCount {
-    optional bytes device_id = 1;
-    optional bytes model_id = 2;
-    optional int32 status = 3;
 }
 
 message BufferReadResponse {

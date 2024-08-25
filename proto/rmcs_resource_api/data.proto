@@ -66,11 +66,23 @@ service DataService {
 
     rpc ListDataTimestampBySetRangeTime(DataSetRange) returns (TimestampListResponse);
 
-    rpc CountData(DataCount) returns (DataCountResponse);
+    rpc CountData(DataTime) returns (DataCountResponse);
 
-    rpc CountDataByLastTime(DataCount) returns (DataCountResponse);
+    rpc CountDataByLastTime(DataTime) returns (DataCountResponse);
 
-    rpc CountDataByRangeTime(DataCount) returns (DataCountResponse);
+    rpc CountDataByRangeTime(DataRange) returns (DataCountResponse);
+
+    rpc CountDataByIds(DataIdsTime) returns (DataCountResponse);
+
+    rpc CountDataByIdsLastTime(DataIdsTime) returns (DataCountResponse);
+
+    rpc CountDataByIdsRangeTime(DataIdsRange) returns (DataCountResponse);
+
+    rpc CountDataBySet(DataSetTime) returns (DataCountResponse);
+
+    rpc CountDataBySetLastTime(DataSetTime) returns (DataCountResponse);
+
+    rpc CountDataBySetRangeTime(DataSetRange) returns (DataCountResponse);
 }
 
 message DataSchema {
@@ -160,14 +172,6 @@ message DataSetNumber {
     bytes set_id = 1;
     int64 timestamp = 2;
     uint32 number = 3;
-}
-
-message DataCount {
-    bytes device_id = 1;
-    bytes model_id = 2;
-    optional int64 timestamp = 3;
-    optional int64 begin = 4;
-    optional int64 end = 5;
 }
 
 message DataReadResponse {

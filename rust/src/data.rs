@@ -151,20 +151,6 @@ pub struct DataSetNumber {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct DataCount {
-    #[prost(bytes = "vec", tag = "1")]
-    pub device_id: ::prost::alloc::vec::Vec<u8>,
-    #[prost(bytes = "vec", tag = "2")]
-    pub model_id: ::prost::alloc::vec::Vec<u8>,
-    #[prost(int64, optional, tag = "3")]
-    pub timestamp: ::core::option::Option<i64>,
-    #[prost(int64, optional, tag = "4")]
-    pub begin: ::core::option::Option<i64>,
-    #[prost(int64, optional, tag = "5")]
-    pub end: ::core::option::Option<i64>,
-}
-#[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message)]
 pub struct DataReadResponse {
     #[prost(message, optional, tag = "1")]
     pub result: ::core::option::Option<DataSchema>,
@@ -1093,7 +1079,7 @@ pub mod data_service_client {
         }
         pub async fn count_data(
             &mut self,
-            request: impl tonic::IntoRequest<super::DataCount>,
+            request: impl tonic::IntoRequest<super::DataTime>,
         ) -> std::result::Result<
             tonic::Response<super::DataCountResponse>,
             tonic::Status,
@@ -1118,7 +1104,7 @@ pub mod data_service_client {
         }
         pub async fn count_data_by_last_time(
             &mut self,
-            request: impl tonic::IntoRequest<super::DataCount>,
+            request: impl tonic::IntoRequest<super::DataTime>,
         ) -> std::result::Result<
             tonic::Response<super::DataCountResponse>,
             tonic::Status,
@@ -1143,7 +1129,7 @@ pub mod data_service_client {
         }
         pub async fn count_data_by_range_time(
             &mut self,
-            request: impl tonic::IntoRequest<super::DataCount>,
+            request: impl tonic::IntoRequest<super::DataRange>,
         ) -> std::result::Result<
             tonic::Response<super::DataCountResponse>,
             tonic::Status,
@@ -1164,6 +1150,156 @@ pub mod data_service_client {
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("data.DataService", "CountDataByRangeTime"));
+            self.inner.unary(req, path, codec).await
+        }
+        pub async fn count_data_by_ids(
+            &mut self,
+            request: impl tonic::IntoRequest<super::DataIdsTime>,
+        ) -> std::result::Result<
+            tonic::Response<super::DataCountResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/data.DataService/CountDataByIds",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("data.DataService", "CountDataByIds"));
+            self.inner.unary(req, path, codec).await
+        }
+        pub async fn count_data_by_ids_last_time(
+            &mut self,
+            request: impl tonic::IntoRequest<super::DataIdsTime>,
+        ) -> std::result::Result<
+            tonic::Response<super::DataCountResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/data.DataService/CountDataByIdsLastTime",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("data.DataService", "CountDataByIdsLastTime"));
+            self.inner.unary(req, path, codec).await
+        }
+        pub async fn count_data_by_ids_range_time(
+            &mut self,
+            request: impl tonic::IntoRequest<super::DataIdsRange>,
+        ) -> std::result::Result<
+            tonic::Response<super::DataCountResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/data.DataService/CountDataByIdsRangeTime",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("data.DataService", "CountDataByIdsRangeTime"));
+            self.inner.unary(req, path, codec).await
+        }
+        pub async fn count_data_by_set(
+            &mut self,
+            request: impl tonic::IntoRequest<super::DataSetTime>,
+        ) -> std::result::Result<
+            tonic::Response<super::DataCountResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/data.DataService/CountDataBySet",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("data.DataService", "CountDataBySet"));
+            self.inner.unary(req, path, codec).await
+        }
+        pub async fn count_data_by_set_last_time(
+            &mut self,
+            request: impl tonic::IntoRequest<super::DataSetTime>,
+        ) -> std::result::Result<
+            tonic::Response<super::DataCountResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/data.DataService/CountDataBySetLastTime",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("data.DataService", "CountDataBySetLastTime"));
+            self.inner.unary(req, path, codec).await
+        }
+        pub async fn count_data_by_set_range_time(
+            &mut self,
+            request: impl tonic::IntoRequest<super::DataSetRange>,
+        ) -> std::result::Result<
+            tonic::Response<super::DataCountResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::new(
+                        tonic::Code::Unknown,
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/data.DataService/CountDataBySetRangeTime",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("data.DataService", "CountDataBySetRangeTime"));
             self.inner.unary(req, path, codec).await
         }
     }
@@ -1394,21 +1530,63 @@ pub mod data_service_server {
         >;
         async fn count_data(
             &self,
-            request: tonic::Request<super::DataCount>,
+            request: tonic::Request<super::DataTime>,
         ) -> std::result::Result<
             tonic::Response<super::DataCountResponse>,
             tonic::Status,
         >;
         async fn count_data_by_last_time(
             &self,
-            request: tonic::Request<super::DataCount>,
+            request: tonic::Request<super::DataTime>,
         ) -> std::result::Result<
             tonic::Response<super::DataCountResponse>,
             tonic::Status,
         >;
         async fn count_data_by_range_time(
             &self,
-            request: tonic::Request<super::DataCount>,
+            request: tonic::Request<super::DataRange>,
+        ) -> std::result::Result<
+            tonic::Response<super::DataCountResponse>,
+            tonic::Status,
+        >;
+        async fn count_data_by_ids(
+            &self,
+            request: tonic::Request<super::DataIdsTime>,
+        ) -> std::result::Result<
+            tonic::Response<super::DataCountResponse>,
+            tonic::Status,
+        >;
+        async fn count_data_by_ids_last_time(
+            &self,
+            request: tonic::Request<super::DataIdsTime>,
+        ) -> std::result::Result<
+            tonic::Response<super::DataCountResponse>,
+            tonic::Status,
+        >;
+        async fn count_data_by_ids_range_time(
+            &self,
+            request: tonic::Request<super::DataIdsRange>,
+        ) -> std::result::Result<
+            tonic::Response<super::DataCountResponse>,
+            tonic::Status,
+        >;
+        async fn count_data_by_set(
+            &self,
+            request: tonic::Request<super::DataSetTime>,
+        ) -> std::result::Result<
+            tonic::Response<super::DataCountResponse>,
+            tonic::Status,
+        >;
+        async fn count_data_by_set_last_time(
+            &self,
+            request: tonic::Request<super::DataSetTime>,
+        ) -> std::result::Result<
+            tonic::Response<super::DataCountResponse>,
+            tonic::Status,
+        >;
+        async fn count_data_by_set_range_time(
+            &self,
+            request: tonic::Request<super::DataSetRange>,
         ) -> std::result::Result<
             tonic::Response<super::DataCountResponse>,
             tonic::Status,
@@ -2935,7 +3113,7 @@ pub mod data_service_server {
                 "/data.DataService/CountData" => {
                     #[allow(non_camel_case_types)]
                     struct CountDataSvc<T: DataService>(pub Arc<T>);
-                    impl<T: DataService> tonic::server::UnaryService<super::DataCount>
+                    impl<T: DataService> tonic::server::UnaryService<super::DataTime>
                     for CountDataSvc<T> {
                         type Response = super::DataCountResponse;
                         type Future = BoxFuture<
@@ -2944,7 +3122,7 @@ pub mod data_service_server {
                         >;
                         fn call(
                             &mut self,
-                            request: tonic::Request<super::DataCount>,
+                            request: tonic::Request<super::DataTime>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
@@ -2978,7 +3156,7 @@ pub mod data_service_server {
                 "/data.DataService/CountDataByLastTime" => {
                     #[allow(non_camel_case_types)]
                     struct CountDataByLastTimeSvc<T: DataService>(pub Arc<T>);
-                    impl<T: DataService> tonic::server::UnaryService<super::DataCount>
+                    impl<T: DataService> tonic::server::UnaryService<super::DataTime>
                     for CountDataByLastTimeSvc<T> {
                         type Response = super::DataCountResponse;
                         type Future = BoxFuture<
@@ -2987,7 +3165,7 @@ pub mod data_service_server {
                         >;
                         fn call(
                             &mut self,
-                            request: tonic::Request<super::DataCount>,
+                            request: tonic::Request<super::DataTime>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
@@ -3022,7 +3200,7 @@ pub mod data_service_server {
                 "/data.DataService/CountDataByRangeTime" => {
                     #[allow(non_camel_case_types)]
                     struct CountDataByRangeTimeSvc<T: DataService>(pub Arc<T>);
-                    impl<T: DataService> tonic::server::UnaryService<super::DataCount>
+                    impl<T: DataService> tonic::server::UnaryService<super::DataRange>
                     for CountDataByRangeTimeSvc<T> {
                         type Response = super::DataCountResponse;
                         type Future = BoxFuture<
@@ -3031,7 +3209,7 @@ pub mod data_service_server {
                         >;
                         fn call(
                             &mut self,
-                            request: tonic::Request<super::DataCount>,
+                            request: tonic::Request<super::DataRange>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
@@ -3051,6 +3229,280 @@ pub mod data_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = CountDataByRangeTimeSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/data.DataService/CountDataByIds" => {
+                    #[allow(non_camel_case_types)]
+                    struct CountDataByIdsSvc<T: DataService>(pub Arc<T>);
+                    impl<T: DataService> tonic::server::UnaryService<super::DataIdsTime>
+                    for CountDataByIdsSvc<T> {
+                        type Response = super::DataCountResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::DataIdsTime>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as DataService>::count_data_by_ids(&inner, request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = CountDataByIdsSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/data.DataService/CountDataByIdsLastTime" => {
+                    #[allow(non_camel_case_types)]
+                    struct CountDataByIdsLastTimeSvc<T: DataService>(pub Arc<T>);
+                    impl<T: DataService> tonic::server::UnaryService<super::DataIdsTime>
+                    for CountDataByIdsLastTimeSvc<T> {
+                        type Response = super::DataCountResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::DataIdsTime>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as DataService>::count_data_by_ids_last_time(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = CountDataByIdsLastTimeSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/data.DataService/CountDataByIdsRangeTime" => {
+                    #[allow(non_camel_case_types)]
+                    struct CountDataByIdsRangeTimeSvc<T: DataService>(pub Arc<T>);
+                    impl<T: DataService> tonic::server::UnaryService<super::DataIdsRange>
+                    for CountDataByIdsRangeTimeSvc<T> {
+                        type Response = super::DataCountResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::DataIdsRange>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as DataService>::count_data_by_ids_range_time(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = CountDataByIdsRangeTimeSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/data.DataService/CountDataBySet" => {
+                    #[allow(non_camel_case_types)]
+                    struct CountDataBySetSvc<T: DataService>(pub Arc<T>);
+                    impl<T: DataService> tonic::server::UnaryService<super::DataSetTime>
+                    for CountDataBySetSvc<T> {
+                        type Response = super::DataCountResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::DataSetTime>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as DataService>::count_data_by_set(&inner, request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = CountDataBySetSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/data.DataService/CountDataBySetLastTime" => {
+                    #[allow(non_camel_case_types)]
+                    struct CountDataBySetLastTimeSvc<T: DataService>(pub Arc<T>);
+                    impl<T: DataService> tonic::server::UnaryService<super::DataSetTime>
+                    for CountDataBySetLastTimeSvc<T> {
+                        type Response = super::DataCountResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::DataSetTime>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as DataService>::count_data_by_set_last_time(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = CountDataBySetLastTimeSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/data.DataService/CountDataBySetRangeTime" => {
+                    #[allow(non_camel_case_types)]
+                    struct CountDataBySetRangeTimeSvc<T: DataService>(pub Arc<T>);
+                    impl<T: DataService> tonic::server::UnaryService<super::DataSetRange>
+                    for CountDataBySetRangeTimeSvc<T> {
+                        type Response = super::DataCountResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::DataSetRange>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as DataService>::count_data_by_set_range_time(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = CountDataBySetRangeTimeSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(

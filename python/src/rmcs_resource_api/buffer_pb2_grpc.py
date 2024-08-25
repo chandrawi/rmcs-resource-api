@@ -241,7 +241,17 @@ class BufferServiceStub(object):
                 _registered_method=True)
         self.CountBuffer = channel.unary_unary(
                 '/buffer.BufferService/CountBuffer',
-                request_serializer=rmcs__resource__api_dot_buffer__pb2.BufferCount.SerializeToString,
+                request_serializer=rmcs__resource__api_dot_buffer__pb2.BufferSelector.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferCountResponse.FromString,
+                _registered_method=True)
+        self.CountBufferByIds = channel.unary_unary(
+                '/buffer.BufferService/CountBufferByIds',
+                request_serializer=rmcs__resource__api_dot_buffer__pb2.BufferIdsSelector.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferCountResponse.FromString,
+                _registered_method=True)
+        self.CountBufferBySet = channel.unary_unary(
+                '/buffer.BufferService/CountBufferBySet',
+                request_serializer=rmcs__resource__api_dot_buffer__pb2.BufferSetSelector.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferCountResponse.FromString,
                 _registered_method=True)
 
@@ -501,6 +511,18 @@ class BufferServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def CountBufferByIds(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CountBufferBySet(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_BufferServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -711,7 +733,17 @@ def add_BufferServiceServicer_to_server(servicer, server):
             ),
             'CountBuffer': grpc.unary_unary_rpc_method_handler(
                     servicer.CountBuffer,
-                    request_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferCount.FromString,
+                    request_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferSelector.FromString,
+                    response_serializer=rmcs__resource__api_dot_buffer__pb2.BufferCountResponse.SerializeToString,
+            ),
+            'CountBufferByIds': grpc.unary_unary_rpc_method_handler(
+                    servicer.CountBufferByIds,
+                    request_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferIdsSelector.FromString,
+                    response_serializer=rmcs__resource__api_dot_buffer__pb2.BufferCountResponse.SerializeToString,
+            ),
+            'CountBufferBySet': grpc.unary_unary_rpc_method_handler(
+                    servicer.CountBufferBySet,
+                    request_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferSetSelector.FromString,
                     response_serializer=rmcs__resource__api_dot_buffer__pb2.BufferCountResponse.SerializeToString,
             ),
     }
@@ -1847,7 +1879,61 @@ class BufferService(object):
             request,
             target,
             '/buffer.BufferService/CountBuffer',
-            rmcs__resource__api_dot_buffer__pb2.BufferCount.SerializeToString,
+            rmcs__resource__api_dot_buffer__pb2.BufferSelector.SerializeToString,
+            rmcs__resource__api_dot_buffer__pb2.BufferCountResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def CountBufferByIds(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/buffer.BufferService/CountBufferByIds',
+            rmcs__resource__api_dot_buffer__pb2.BufferIdsSelector.SerializeToString,
+            rmcs__resource__api_dot_buffer__pb2.BufferCountResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def CountBufferBySet(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/buffer.BufferService/CountBufferBySet',
+            rmcs__resource__api_dot_buffer__pb2.BufferSetSelector.SerializeToString,
             rmcs__resource__api_dot_buffer__pb2.BufferCountResponse.FromString,
             options,
             channel_credentials,

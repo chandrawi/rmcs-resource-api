@@ -134,6 +134,16 @@ class BufferIdsNumber(_message.Message):
     status: int
     def __init__(self, device_ids: _Optional[_Iterable[bytes]] = ..., model_ids: _Optional[_Iterable[bytes]] = ..., timestamp: _Optional[int] = ..., number: _Optional[int] = ..., status: _Optional[int] = ...) -> None: ...
 
+class BufferIdsSelector(_message.Message):
+    __slots__ = ("device_ids", "model_ids", "status")
+    DEVICE_IDS_FIELD_NUMBER: _ClassVar[int]
+    MODEL_IDS_FIELD_NUMBER: _ClassVar[int]
+    STATUS_FIELD_NUMBER: _ClassVar[int]
+    device_ids: _containers.RepeatedScalarFieldContainer[bytes]
+    model_ids: _containers.RepeatedScalarFieldContainer[bytes]
+    status: int
+    def __init__(self, device_ids: _Optional[_Iterable[bytes]] = ..., model_ids: _Optional[_Iterable[bytes]] = ..., status: _Optional[int] = ...) -> None: ...
+
 class BuffersIdsSelector(_message.Message):
     __slots__ = ("device_ids", "model_ids", "status", "number", "offset")
     DEVICE_IDS_FIELD_NUMBER: _ClassVar[int]
@@ -182,6 +192,14 @@ class BufferSetNumber(_message.Message):
     status: int
     def __init__(self, set_id: _Optional[bytes] = ..., timestamp: _Optional[int] = ..., number: _Optional[int] = ..., status: _Optional[int] = ...) -> None: ...
 
+class BufferSetSelector(_message.Message):
+    __slots__ = ("set_id", "status")
+    SET_ID_FIELD_NUMBER: _ClassVar[int]
+    STATUS_FIELD_NUMBER: _ClassVar[int]
+    set_id: bytes
+    status: int
+    def __init__(self, set_id: _Optional[bytes] = ..., status: _Optional[int] = ...) -> None: ...
+
 class BuffersSetSelector(_message.Message):
     __slots__ = ("set_id", "status", "number", "offset")
     SET_ID_FIELD_NUMBER: _ClassVar[int]
@@ -205,16 +223,6 @@ class BufferUpdate(_message.Message):
     data_type: _containers.RepeatedScalarFieldContainer[_common_pb2.DataType]
     status: int
     def __init__(self, id: _Optional[int] = ..., data_bytes: _Optional[bytes] = ..., data_type: _Optional[_Iterable[_Union[_common_pb2.DataType, str]]] = ..., status: _Optional[int] = ...) -> None: ...
-
-class BufferCount(_message.Message):
-    __slots__ = ("device_id", "model_id", "status")
-    DEVICE_ID_FIELD_NUMBER: _ClassVar[int]
-    MODEL_ID_FIELD_NUMBER: _ClassVar[int]
-    STATUS_FIELD_NUMBER: _ClassVar[int]
-    device_id: bytes
-    model_id: bytes
-    status: int
-    def __init__(self, device_id: _Optional[bytes] = ..., model_id: _Optional[bytes] = ..., status: _Optional[int] = ...) -> None: ...
 
 class BufferReadResponse(_message.Message):
     __slots__ = ("result",)
