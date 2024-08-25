@@ -238,6 +238,18 @@ class BufferChangeResponse(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
+class TimestampReadResponse(_message.Message):
+    __slots__ = ("timestamp",)
+    TIMESTAMP_FIELD_NUMBER: _ClassVar[int]
+    timestamp: int
+    def __init__(self, timestamp: _Optional[int] = ...) -> None: ...
+
+class TimestampListResponse(_message.Message):
+    __slots__ = ("timestamps",)
+    TIMESTAMPS_FIELD_NUMBER: _ClassVar[int]
+    timestamps: _containers.RepeatedScalarFieldContainer[int]
+    def __init__(self, timestamps: _Optional[_Iterable[int]] = ...) -> None: ...
+
 class BufferCountResponse(_message.Message):
     __slots__ = ("count",)
     COUNT_FIELD_NUMBER: _ClassVar[int]

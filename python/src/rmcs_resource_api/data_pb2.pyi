@@ -76,6 +76,16 @@ class DataSetSchema(_message.Message):
     data_type: _containers.RepeatedScalarFieldContainer[_common_pb2.DataType]
     def __init__(self, set_id: _Optional[bytes] = ..., timestamp: _Optional[int] = ..., data_bytes: _Optional[bytes] = ..., data_type: _Optional[_Iterable[_Union[_common_pb2.DataType, str]]] = ...) -> None: ...
 
+class DataIds(_message.Message):
+    __slots__ = ("device_ids", "model_ids", "timestamp")
+    DEVICE_IDS_FIELD_NUMBER: _ClassVar[int]
+    MODEL_IDS_FIELD_NUMBER: _ClassVar[int]
+    TIMESTAMP_FIELD_NUMBER: _ClassVar[int]
+    device_ids: _containers.RepeatedScalarFieldContainer[bytes]
+    model_ids: _containers.RepeatedScalarFieldContainer[bytes]
+    timestamp: int
+    def __init__(self, device_ids: _Optional[_Iterable[bytes]] = ..., model_ids: _Optional[_Iterable[bytes]] = ..., timestamp: _Optional[int] = ...) -> None: ...
+
 class DataIdsTime(_message.Message):
     __slots__ = ("device_ids", "model_ids", "timestamp")
     DEVICE_IDS_FIELD_NUMBER: _ClassVar[int]
@@ -172,6 +182,22 @@ class DataListResponse(_message.Message):
     results: _containers.RepeatedCompositeFieldContainer[DataSchema]
     def __init__(self, results: _Optional[_Iterable[_Union[DataSchema, _Mapping]]] = ...) -> None: ...
 
+class DataSetReadResponse(_message.Message):
+    __slots__ = ("result",)
+    RESULT_FIELD_NUMBER: _ClassVar[int]
+    result: DataSetSchema
+    def __init__(self, result: _Optional[_Union[DataSetSchema, _Mapping]] = ...) -> None: ...
+
+class DataSetListResponse(_message.Message):
+    __slots__ = ("results",)
+    RESULTS_FIELD_NUMBER: _ClassVar[int]
+    results: _containers.RepeatedCompositeFieldContainer[DataSetSchema]
+    def __init__(self, results: _Optional[_Iterable[_Union[DataSetSchema, _Mapping]]] = ...) -> None: ...
+
+class DataChangeResponse(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
+
 class TimestampReadResponse(_message.Message):
     __slots__ = ("timestamp",)
     TIMESTAMP_FIELD_NUMBER: _ClassVar[int]
@@ -184,24 +210,8 @@ class TimestampListResponse(_message.Message):
     timestamps: _containers.RepeatedScalarFieldContainer[int]
     def __init__(self, timestamps: _Optional[_Iterable[int]] = ...) -> None: ...
 
-class DataChangeResponse(_message.Message):
-    __slots__ = ()
-    def __init__(self) -> None: ...
-
 class DataCountResponse(_message.Message):
     __slots__ = ("count",)
     COUNT_FIELD_NUMBER: _ClassVar[int]
     count: int
     def __init__(self, count: _Optional[int] = ...) -> None: ...
-
-class DataSetReadResponse(_message.Message):
-    __slots__ = ("result",)
-    RESULT_FIELD_NUMBER: _ClassVar[int]
-    result: DataSetSchema
-    def __init__(self, result: _Optional[_Union[DataSetSchema, _Mapping]] = ...) -> None: ...
-
-class DataSetListResponse(_message.Message):
-    __slots__ = ("results",)
-    RESULTS_FIELD_NUMBER: _ClassVar[int]
-    results: _containers.RepeatedCompositeFieldContainer[DataSetSchema]
-    def __init__(self, results: _Optional[_Iterable[_Union[DataSetSchema, _Mapping]]] = ...) -> None: ...

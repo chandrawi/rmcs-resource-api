@@ -1604,6 +1604,189 @@ proto.data.DataServicePromiseClient.prototype.listDataTimestampByRangeTime =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
+ *   !proto.data.DataIds,
+ *   !proto.data.TimestampReadResponse>}
+ */
+const methodDescriptor_DataService_ReadDataTimestampByIds = new grpc.web.MethodDescriptor(
+  '/data.DataService/ReadDataTimestampByIds',
+  grpc.web.MethodType.UNARY,
+  proto.data.DataIds,
+  proto.data.TimestampReadResponse,
+  /**
+   * @param {!proto.data.DataIds} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.data.TimestampReadResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.data.DataIds} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.data.TimestampReadResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.data.TimestampReadResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.data.DataServiceClient.prototype.readDataTimestampByIds =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/data.DataService/ReadDataTimestampByIds',
+      request,
+      metadata || {},
+      methodDescriptor_DataService_ReadDataTimestampByIds,
+      callback);
+};
+
+
+/**
+ * @param {!proto.data.DataIds} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.data.TimestampReadResponse>}
+ *     Promise that resolves to the response
+ */
+proto.data.DataServicePromiseClient.prototype.readDataTimestampByIds =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/data.DataService/ReadDataTimestampByIds',
+      request,
+      metadata || {},
+      methodDescriptor_DataService_ReadDataTimestampByIds);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.data.DataIdsTime,
+ *   !proto.data.TimestampListResponse>}
+ */
+const methodDescriptor_DataService_ListDataTimestampByIdsLastTime = new grpc.web.MethodDescriptor(
+  '/data.DataService/ListDataTimestampByIdsLastTime',
+  grpc.web.MethodType.UNARY,
+  proto.data.DataIdsTime,
+  proto.data.TimestampListResponse,
+  /**
+   * @param {!proto.data.DataIdsTime} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.data.TimestampListResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.data.DataIdsTime} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.data.TimestampListResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.data.TimestampListResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.data.DataServiceClient.prototype.listDataTimestampByIdsLastTime =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/data.DataService/ListDataTimestampByIdsLastTime',
+      request,
+      metadata || {},
+      methodDescriptor_DataService_ListDataTimestampByIdsLastTime,
+      callback);
+};
+
+
+/**
+ * @param {!proto.data.DataIdsTime} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.data.TimestampListResponse>}
+ *     Promise that resolves to the response
+ */
+proto.data.DataServicePromiseClient.prototype.listDataTimestampByIdsLastTime =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/data.DataService/ListDataTimestampByIdsLastTime',
+      request,
+      metadata || {},
+      methodDescriptor_DataService_ListDataTimestampByIdsLastTime);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.data.DataIdsRange,
+ *   !proto.data.TimestampListResponse>}
+ */
+const methodDescriptor_DataService_ListDataTimestampByIdsRangeTime = new grpc.web.MethodDescriptor(
+  '/data.DataService/ListDataTimestampByIdsRangeTime',
+  grpc.web.MethodType.UNARY,
+  proto.data.DataIdsRange,
+  proto.data.TimestampListResponse,
+  /**
+   * @param {!proto.data.DataIdsRange} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.data.TimestampListResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.data.DataIdsRange} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.data.TimestampListResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.data.TimestampListResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.data.DataServiceClient.prototype.listDataTimestampByIdsRangeTime =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/data.DataService/ListDataTimestampByIdsRangeTime',
+      request,
+      metadata || {},
+      methodDescriptor_DataService_ListDataTimestampByIdsRangeTime,
+      callback);
+};
+
+
+/**
+ * @param {!proto.data.DataIdsRange} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.data.TimestampListResponse>}
+ *     Promise that resolves to the response
+ */
+proto.data.DataServicePromiseClient.prototype.listDataTimestampByIdsRangeTime =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/data.DataService/ListDataTimestampByIdsRangeTime',
+      request,
+      metadata || {},
+      methodDescriptor_DataService_ListDataTimestampByIdsRangeTime);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
  *   !proto.data.DataSetId,
  *   !proto.data.TimestampReadResponse>}
  */

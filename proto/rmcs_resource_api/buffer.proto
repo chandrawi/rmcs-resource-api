@@ -70,6 +70,22 @@ service BufferService {
 
     rpc DeleteBuffer(BufferId) returns (BufferChangeResponse);
 
+    rpc ReadBufferTimestampFirst(BufferSelector) returns (TimestampReadResponse);
+
+    rpc ReadBufferTimestampLast(BufferSelector) returns (TimestampReadResponse);
+
+    rpc ListBufferTimestampFirst(BuffersSelector) returns (TimestampListResponse);
+
+    rpc ListBufferTimestampLast(BuffersSelector) returns (TimestampListResponse);
+
+    rpc ListBufferTimestampFirstByIds(BuffersIdsSelector) returns (TimestampListResponse);
+
+    rpc ListBufferTimestampLastByIds(BuffersIdsSelector) returns (TimestampListResponse);
+
+    rpc ListBufferTimestampFirstBySet(BuffersSetSelector) returns (TimestampListResponse);
+
+    rpc ListBufferTimestampLastBySet(BuffersSetSelector) returns (TimestampListResponse);
+
     rpc CountBuffer(BufferCount) returns (BufferCountResponse);
 }
 
@@ -208,6 +224,14 @@ message BufferCreateResponse {
 }
 
 message BufferChangeResponse {
+}
+
+message TimestampReadResponse {
+    int64 timestamp = 1;
+}
+
+message TimestampListResponse {
+    repeated int64 timestamps = 1;
 }
 
 message BufferCountResponse {

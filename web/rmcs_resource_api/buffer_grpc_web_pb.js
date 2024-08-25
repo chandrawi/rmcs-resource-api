@@ -2092,6 +2092,494 @@ proto.buffer.BufferServicePromiseClient.prototype.deleteBuffer =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
+ *   !proto.buffer.BufferSelector,
+ *   !proto.buffer.TimestampReadResponse>}
+ */
+const methodDescriptor_BufferService_ReadBufferTimestampFirst = new grpc.web.MethodDescriptor(
+  '/buffer.BufferService/ReadBufferTimestampFirst',
+  grpc.web.MethodType.UNARY,
+  proto.buffer.BufferSelector,
+  proto.buffer.TimestampReadResponse,
+  /**
+   * @param {!proto.buffer.BufferSelector} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.buffer.TimestampReadResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.buffer.BufferSelector} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.buffer.TimestampReadResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.buffer.TimestampReadResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.buffer.BufferServiceClient.prototype.readBufferTimestampFirst =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/buffer.BufferService/ReadBufferTimestampFirst',
+      request,
+      metadata || {},
+      methodDescriptor_BufferService_ReadBufferTimestampFirst,
+      callback);
+};
+
+
+/**
+ * @param {!proto.buffer.BufferSelector} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.buffer.TimestampReadResponse>}
+ *     Promise that resolves to the response
+ */
+proto.buffer.BufferServicePromiseClient.prototype.readBufferTimestampFirst =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/buffer.BufferService/ReadBufferTimestampFirst',
+      request,
+      metadata || {},
+      methodDescriptor_BufferService_ReadBufferTimestampFirst);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.buffer.BufferSelector,
+ *   !proto.buffer.TimestampReadResponse>}
+ */
+const methodDescriptor_BufferService_ReadBufferTimestampLast = new grpc.web.MethodDescriptor(
+  '/buffer.BufferService/ReadBufferTimestampLast',
+  grpc.web.MethodType.UNARY,
+  proto.buffer.BufferSelector,
+  proto.buffer.TimestampReadResponse,
+  /**
+   * @param {!proto.buffer.BufferSelector} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.buffer.TimestampReadResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.buffer.BufferSelector} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.buffer.TimestampReadResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.buffer.TimestampReadResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.buffer.BufferServiceClient.prototype.readBufferTimestampLast =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/buffer.BufferService/ReadBufferTimestampLast',
+      request,
+      metadata || {},
+      methodDescriptor_BufferService_ReadBufferTimestampLast,
+      callback);
+};
+
+
+/**
+ * @param {!proto.buffer.BufferSelector} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.buffer.TimestampReadResponse>}
+ *     Promise that resolves to the response
+ */
+proto.buffer.BufferServicePromiseClient.prototype.readBufferTimestampLast =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/buffer.BufferService/ReadBufferTimestampLast',
+      request,
+      metadata || {},
+      methodDescriptor_BufferService_ReadBufferTimestampLast);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.buffer.BuffersSelector,
+ *   !proto.buffer.TimestampListResponse>}
+ */
+const methodDescriptor_BufferService_ListBufferTimestampFirst = new grpc.web.MethodDescriptor(
+  '/buffer.BufferService/ListBufferTimestampFirst',
+  grpc.web.MethodType.UNARY,
+  proto.buffer.BuffersSelector,
+  proto.buffer.TimestampListResponse,
+  /**
+   * @param {!proto.buffer.BuffersSelector} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.buffer.TimestampListResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.buffer.BuffersSelector} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.buffer.TimestampListResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.buffer.TimestampListResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.buffer.BufferServiceClient.prototype.listBufferTimestampFirst =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/buffer.BufferService/ListBufferTimestampFirst',
+      request,
+      metadata || {},
+      methodDescriptor_BufferService_ListBufferTimestampFirst,
+      callback);
+};
+
+
+/**
+ * @param {!proto.buffer.BuffersSelector} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.buffer.TimestampListResponse>}
+ *     Promise that resolves to the response
+ */
+proto.buffer.BufferServicePromiseClient.prototype.listBufferTimestampFirst =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/buffer.BufferService/ListBufferTimestampFirst',
+      request,
+      metadata || {},
+      methodDescriptor_BufferService_ListBufferTimestampFirst);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.buffer.BuffersSelector,
+ *   !proto.buffer.TimestampListResponse>}
+ */
+const methodDescriptor_BufferService_ListBufferTimestampLast = new grpc.web.MethodDescriptor(
+  '/buffer.BufferService/ListBufferTimestampLast',
+  grpc.web.MethodType.UNARY,
+  proto.buffer.BuffersSelector,
+  proto.buffer.TimestampListResponse,
+  /**
+   * @param {!proto.buffer.BuffersSelector} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.buffer.TimestampListResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.buffer.BuffersSelector} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.buffer.TimestampListResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.buffer.TimestampListResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.buffer.BufferServiceClient.prototype.listBufferTimestampLast =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/buffer.BufferService/ListBufferTimestampLast',
+      request,
+      metadata || {},
+      methodDescriptor_BufferService_ListBufferTimestampLast,
+      callback);
+};
+
+
+/**
+ * @param {!proto.buffer.BuffersSelector} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.buffer.TimestampListResponse>}
+ *     Promise that resolves to the response
+ */
+proto.buffer.BufferServicePromiseClient.prototype.listBufferTimestampLast =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/buffer.BufferService/ListBufferTimestampLast',
+      request,
+      metadata || {},
+      methodDescriptor_BufferService_ListBufferTimestampLast);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.buffer.BuffersIdsSelector,
+ *   !proto.buffer.TimestampListResponse>}
+ */
+const methodDescriptor_BufferService_ListBufferTimestampFirstByIds = new grpc.web.MethodDescriptor(
+  '/buffer.BufferService/ListBufferTimestampFirstByIds',
+  grpc.web.MethodType.UNARY,
+  proto.buffer.BuffersIdsSelector,
+  proto.buffer.TimestampListResponse,
+  /**
+   * @param {!proto.buffer.BuffersIdsSelector} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.buffer.TimestampListResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.buffer.BuffersIdsSelector} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.buffer.TimestampListResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.buffer.TimestampListResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.buffer.BufferServiceClient.prototype.listBufferTimestampFirstByIds =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/buffer.BufferService/ListBufferTimestampFirstByIds',
+      request,
+      metadata || {},
+      methodDescriptor_BufferService_ListBufferTimestampFirstByIds,
+      callback);
+};
+
+
+/**
+ * @param {!proto.buffer.BuffersIdsSelector} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.buffer.TimestampListResponse>}
+ *     Promise that resolves to the response
+ */
+proto.buffer.BufferServicePromiseClient.prototype.listBufferTimestampFirstByIds =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/buffer.BufferService/ListBufferTimestampFirstByIds',
+      request,
+      metadata || {},
+      methodDescriptor_BufferService_ListBufferTimestampFirstByIds);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.buffer.BuffersIdsSelector,
+ *   !proto.buffer.TimestampListResponse>}
+ */
+const methodDescriptor_BufferService_ListBufferTimestampLastByIds = new grpc.web.MethodDescriptor(
+  '/buffer.BufferService/ListBufferTimestampLastByIds',
+  grpc.web.MethodType.UNARY,
+  proto.buffer.BuffersIdsSelector,
+  proto.buffer.TimestampListResponse,
+  /**
+   * @param {!proto.buffer.BuffersIdsSelector} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.buffer.TimestampListResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.buffer.BuffersIdsSelector} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.buffer.TimestampListResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.buffer.TimestampListResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.buffer.BufferServiceClient.prototype.listBufferTimestampLastByIds =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/buffer.BufferService/ListBufferTimestampLastByIds',
+      request,
+      metadata || {},
+      methodDescriptor_BufferService_ListBufferTimestampLastByIds,
+      callback);
+};
+
+
+/**
+ * @param {!proto.buffer.BuffersIdsSelector} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.buffer.TimestampListResponse>}
+ *     Promise that resolves to the response
+ */
+proto.buffer.BufferServicePromiseClient.prototype.listBufferTimestampLastByIds =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/buffer.BufferService/ListBufferTimestampLastByIds',
+      request,
+      metadata || {},
+      methodDescriptor_BufferService_ListBufferTimestampLastByIds);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.buffer.BuffersSetSelector,
+ *   !proto.buffer.TimestampListResponse>}
+ */
+const methodDescriptor_BufferService_ListBufferTimestampFirstBySet = new grpc.web.MethodDescriptor(
+  '/buffer.BufferService/ListBufferTimestampFirstBySet',
+  grpc.web.MethodType.UNARY,
+  proto.buffer.BuffersSetSelector,
+  proto.buffer.TimestampListResponse,
+  /**
+   * @param {!proto.buffer.BuffersSetSelector} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.buffer.TimestampListResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.buffer.BuffersSetSelector} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.buffer.TimestampListResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.buffer.TimestampListResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.buffer.BufferServiceClient.prototype.listBufferTimestampFirstBySet =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/buffer.BufferService/ListBufferTimestampFirstBySet',
+      request,
+      metadata || {},
+      methodDescriptor_BufferService_ListBufferTimestampFirstBySet,
+      callback);
+};
+
+
+/**
+ * @param {!proto.buffer.BuffersSetSelector} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.buffer.TimestampListResponse>}
+ *     Promise that resolves to the response
+ */
+proto.buffer.BufferServicePromiseClient.prototype.listBufferTimestampFirstBySet =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/buffer.BufferService/ListBufferTimestampFirstBySet',
+      request,
+      metadata || {},
+      methodDescriptor_BufferService_ListBufferTimestampFirstBySet);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.buffer.BuffersSetSelector,
+ *   !proto.buffer.TimestampListResponse>}
+ */
+const methodDescriptor_BufferService_ListBufferTimestampLastBySet = new grpc.web.MethodDescriptor(
+  '/buffer.BufferService/ListBufferTimestampLastBySet',
+  grpc.web.MethodType.UNARY,
+  proto.buffer.BuffersSetSelector,
+  proto.buffer.TimestampListResponse,
+  /**
+   * @param {!proto.buffer.BuffersSetSelector} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.buffer.TimestampListResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.buffer.BuffersSetSelector} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.buffer.TimestampListResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.buffer.TimestampListResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.buffer.BufferServiceClient.prototype.listBufferTimestampLastBySet =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/buffer.BufferService/ListBufferTimestampLastBySet',
+      request,
+      metadata || {},
+      methodDescriptor_BufferService_ListBufferTimestampLastBySet,
+      callback);
+};
+
+
+/**
+ * @param {!proto.buffer.BuffersSetSelector} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.buffer.TimestampListResponse>}
+ *     Promise that resolves to the response
+ */
+proto.buffer.BufferServicePromiseClient.prototype.listBufferTimestampLastBySet =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/buffer.BufferService/ListBufferTimestampLastBySet',
+      request,
+      metadata || {},
+      methodDescriptor_BufferService_ListBufferTimestampLastBySet);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
  *   !proto.buffer.BufferCount,
  *   !proto.buffer.BufferCountResponse>}
  */

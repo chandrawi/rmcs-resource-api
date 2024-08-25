@@ -54,6 +54,12 @@ service DataService {
 
     rpc ListDataTimestampByRangeTime(DataRange) returns (TimestampListResponse);
 
+    rpc ReadDataTimestampByIds(DataIds) returns (TimestampReadResponse);
+
+    rpc ListDataTimestampByIdsLastTime(DataIdsTime) returns (TimestampListResponse);
+
+    rpc ListDataTimestampByIdsRangeTime(DataIdsRange) returns (TimestampListResponse);
+
     rpc ReadDataTimestampBySet(DataSetId) returns (TimestampReadResponse);
 
     rpc ListDataTimestampBySetLastTime(DataSetTime) returns (TimestampListResponse);
@@ -106,6 +112,12 @@ message DataSetSchema {
     int64 timestamp = 2;
     bytes data_bytes = 3;
     repeated common.DataType data_type = 4;
+}
+
+message DataIds {
+    repeated bytes device_ids = 1;
+    repeated bytes model_ids = 2;
+    int64 timestamp = 3;
 }
 
 message DataIdsTime {
@@ -166,6 +178,17 @@ message DataListResponse {
     repeated DataSchema results = 1;
 }
 
+message DataSetReadResponse {
+    DataSetSchema result = 1;
+}
+
+message DataSetListResponse {
+    repeated DataSetSchema results = 1;
+}
+
+message DataChangeResponse {
+}
+
 message TimestampReadResponse {
     int64 timestamp = 1;
 }
@@ -174,17 +197,6 @@ message TimestampListResponse {
     repeated int64 timestamps = 1;
 }
 
-message DataChangeResponse {
-}
-
 message DataCountResponse {
     uint32 count = 1;
-}
-
-message DataSetReadResponse {
-    DataSetSchema result = 1;
-}
-
-message DataSetListResponse {
-    repeated DataSetSchema results = 1;
 }
