@@ -84,14 +84,14 @@ message SetUpdate {
 }
 
 message SetMemberRequest {
-    bytes set_id = 1;
+    bytes id = 1;
     bytes device_id = 2;
     bytes model_id = 3;
     bytes data_index = 4;
 }
 
 message SetMemberSwap {
-    bytes set_id = 1;
+    bytes id = 1;
     bytes device_id_1 = 2;
     bytes model_id_1 = 3;
     bytes device_id_2 = 4;
@@ -134,7 +134,7 @@ message SetTemplateUpdate {
 }
 
 message SetTemplateMemberRequest {
-    bytes set_id = 1;
+    bytes id = 1;
     bytes type_id = 2;
     bytes model_id = 3;
     bytes data_index = 4;
@@ -142,7 +142,7 @@ message SetTemplateMemberRequest {
 }
 
 message SetTemplateMemberSwap {
-    bytes set_id = 1;
+    bytes id = 1;
     int32 template_index_1 = 2;
     int32 template_index_2 = 3;
 }

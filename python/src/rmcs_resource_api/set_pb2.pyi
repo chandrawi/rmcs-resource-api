@@ -68,30 +68,30 @@ class SetUpdate(_message.Message):
     def __init__(self, id: _Optional[bytes] = ..., template_id: _Optional[bytes] = ..., name: _Optional[str] = ..., description: _Optional[str] = ...) -> None: ...
 
 class SetMemberRequest(_message.Message):
-    __slots__ = ("set_id", "device_id", "model_id", "data_index")
-    SET_ID_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ("id", "device_id", "model_id", "data_index")
+    ID_FIELD_NUMBER: _ClassVar[int]
     DEVICE_ID_FIELD_NUMBER: _ClassVar[int]
     MODEL_ID_FIELD_NUMBER: _ClassVar[int]
     DATA_INDEX_FIELD_NUMBER: _ClassVar[int]
-    set_id: bytes
+    id: bytes
     device_id: bytes
     model_id: bytes
     data_index: bytes
-    def __init__(self, set_id: _Optional[bytes] = ..., device_id: _Optional[bytes] = ..., model_id: _Optional[bytes] = ..., data_index: _Optional[bytes] = ...) -> None: ...
+    def __init__(self, id: _Optional[bytes] = ..., device_id: _Optional[bytes] = ..., model_id: _Optional[bytes] = ..., data_index: _Optional[bytes] = ...) -> None: ...
 
 class SetMemberSwap(_message.Message):
-    __slots__ = ("set_id", "device_id_1", "model_id_1", "device_id_2", "model_id_2")
-    SET_ID_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ("id", "device_id_1", "model_id_1", "device_id_2", "model_id_2")
+    ID_FIELD_NUMBER: _ClassVar[int]
     DEVICE_ID_1_FIELD_NUMBER: _ClassVar[int]
     MODEL_ID_1_FIELD_NUMBER: _ClassVar[int]
     DEVICE_ID_2_FIELD_NUMBER: _ClassVar[int]
     MODEL_ID_2_FIELD_NUMBER: _ClassVar[int]
-    set_id: bytes
+    id: bytes
     device_id_1: bytes
     model_id_1: bytes
     device_id_2: bytes
     model_id_2: bytes
-    def __init__(self, set_id: _Optional[bytes] = ..., device_id_1: _Optional[bytes] = ..., model_id_1: _Optional[bytes] = ..., device_id_2: _Optional[bytes] = ..., model_id_2: _Optional[bytes] = ...) -> None: ...
+    def __init__(self, id: _Optional[bytes] = ..., device_id_1: _Optional[bytes] = ..., model_id_1: _Optional[bytes] = ..., device_id_2: _Optional[bytes] = ..., model_id_2: _Optional[bytes] = ...) -> None: ...
 
 class SetTemplateSchema(_message.Message):
     __slots__ = ("id", "name", "description", "members")
@@ -150,28 +150,28 @@ class SetTemplateUpdate(_message.Message):
     def __init__(self, id: _Optional[bytes] = ..., name: _Optional[str] = ..., description: _Optional[str] = ...) -> None: ...
 
 class SetTemplateMemberRequest(_message.Message):
-    __slots__ = ("set_id", "type_id", "model_id", "data_index", "template_index")
-    SET_ID_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ("id", "type_id", "model_id", "data_index", "template_index")
+    ID_FIELD_NUMBER: _ClassVar[int]
     TYPE_ID_FIELD_NUMBER: _ClassVar[int]
     MODEL_ID_FIELD_NUMBER: _ClassVar[int]
     DATA_INDEX_FIELD_NUMBER: _ClassVar[int]
     TEMPLATE_INDEX_FIELD_NUMBER: _ClassVar[int]
-    set_id: bytes
+    id: bytes
     type_id: bytes
     model_id: bytes
     data_index: bytes
     template_index: int
-    def __init__(self, set_id: _Optional[bytes] = ..., type_id: _Optional[bytes] = ..., model_id: _Optional[bytes] = ..., data_index: _Optional[bytes] = ..., template_index: _Optional[int] = ...) -> None: ...
+    def __init__(self, id: _Optional[bytes] = ..., type_id: _Optional[bytes] = ..., model_id: _Optional[bytes] = ..., data_index: _Optional[bytes] = ..., template_index: _Optional[int] = ...) -> None: ...
 
 class SetTemplateMemberSwap(_message.Message):
-    __slots__ = ("set_id", "template_index_1", "template_index_2")
-    SET_ID_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ("id", "template_index_1", "template_index_2")
+    ID_FIELD_NUMBER: _ClassVar[int]
     TEMPLATE_INDEX_1_FIELD_NUMBER: _ClassVar[int]
     TEMPLATE_INDEX_2_FIELD_NUMBER: _ClassVar[int]
-    set_id: bytes
+    id: bytes
     template_index_1: int
     template_index_2: int
-    def __init__(self, set_id: _Optional[bytes] = ..., template_index_1: _Optional[int] = ..., template_index_2: _Optional[int] = ...) -> None: ...
+    def __init__(self, id: _Optional[bytes] = ..., template_index_1: _Optional[int] = ..., template_index_2: _Optional[int] = ...) -> None: ...
 
 class SetReadResponse(_message.Message):
     __slots__ = ("result",)

@@ -2221,7 +2221,7 @@ proto.set.SetMemberRequest.prototype.toObject = function(opt_includeInstance) {
  */
 proto.set.SetMemberRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-setId: msg.getSetId_asB64(),
+id: msg.getId_asB64(),
 deviceId: msg.getDeviceId_asB64(),
 modelId: msg.getModelId_asB64(),
 dataIndex: msg.getDataIndex_asB64()
@@ -2263,7 +2263,7 @@ proto.set.SetMemberRequest.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {!Uint8Array} */ (reader.readBytes());
-      msg.setSetId(value);
+      msg.setId(value);
       break;
     case 2:
       var value = /** @type {!Uint8Array} */ (reader.readBytes());
@@ -2306,7 +2306,7 @@ proto.set.SetMemberRequest.prototype.serializeBinary = function() {
  */
 proto.set.SetMemberRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getSetId_asU8();
+  f = message.getId_asU8();
   if (f.length > 0) {
     writer.writeBytes(
       1,
@@ -2338,35 +2338,35 @@ proto.set.SetMemberRequest.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional bytes set_id = 1;
+ * optional bytes id = 1;
  * @return {!(string|Uint8Array)}
  */
-proto.set.SetMemberRequest.prototype.getSetId = function() {
+proto.set.SetMemberRequest.prototype.getId = function() {
   return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * optional bytes set_id = 1;
- * This is a type-conversion wrapper around `getSetId()`
+ * optional bytes id = 1;
+ * This is a type-conversion wrapper around `getId()`
  * @return {string}
  */
-proto.set.SetMemberRequest.prototype.getSetId_asB64 = function() {
+proto.set.SetMemberRequest.prototype.getId_asB64 = function() {
   return /** @type {string} */ (jspb.Message.bytesAsB64(
-      this.getSetId()));
+      this.getId()));
 };
 
 
 /**
- * optional bytes set_id = 1;
+ * optional bytes id = 1;
  * Note that Uint8Array is not supported on all browsers.
  * @see http://caniuse.com/Uint8Array
- * This is a type-conversion wrapper around `getSetId()`
+ * This is a type-conversion wrapper around `getId()`
  * @return {!Uint8Array}
  */
-proto.set.SetMemberRequest.prototype.getSetId_asU8 = function() {
+proto.set.SetMemberRequest.prototype.getId_asU8 = function() {
   return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
-      this.getSetId()));
+      this.getId()));
 };
 
 
@@ -2374,7 +2374,7 @@ proto.set.SetMemberRequest.prototype.getSetId_asU8 = function() {
  * @param {!(string|Uint8Array)} value
  * @return {!proto.set.SetMemberRequest} returns this
  */
-proto.set.SetMemberRequest.prototype.setSetId = function(value) {
+proto.set.SetMemberRequest.prototype.setId = function(value) {
   return jspb.Message.setProto3BytesField(this, 1, value);
 };
 
@@ -2537,7 +2537,7 @@ proto.set.SetMemberSwap.prototype.toObject = function(opt_includeInstance) {
  */
 proto.set.SetMemberSwap.toObject = function(includeInstance, msg) {
   var f, obj = {
-setId: msg.getSetId_asB64(),
+id: msg.getId_asB64(),
 deviceId1: msg.getDeviceId1_asB64(),
 modelId1: msg.getModelId1_asB64(),
 deviceId2: msg.getDeviceId2_asB64(),
@@ -2580,7 +2580,7 @@ proto.set.SetMemberSwap.deserializeBinaryFromReader = function(msg, reader) {
     switch (field) {
     case 1:
       var value = /** @type {!Uint8Array} */ (reader.readBytes());
-      msg.setSetId(value);
+      msg.setId(value);
       break;
     case 2:
       var value = /** @type {!Uint8Array} */ (reader.readBytes());
@@ -2627,7 +2627,7 @@ proto.set.SetMemberSwap.prototype.serializeBinary = function() {
  */
 proto.set.SetMemberSwap.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getSetId_asU8();
+  f = message.getId_asU8();
   if (f.length > 0) {
     writer.writeBytes(
       1,
@@ -2666,35 +2666,35 @@ proto.set.SetMemberSwap.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional bytes set_id = 1;
+ * optional bytes id = 1;
  * @return {!(string|Uint8Array)}
  */
-proto.set.SetMemberSwap.prototype.getSetId = function() {
+proto.set.SetMemberSwap.prototype.getId = function() {
   return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * optional bytes set_id = 1;
- * This is a type-conversion wrapper around `getSetId()`
+ * optional bytes id = 1;
+ * This is a type-conversion wrapper around `getId()`
  * @return {string}
  */
-proto.set.SetMemberSwap.prototype.getSetId_asB64 = function() {
+proto.set.SetMemberSwap.prototype.getId_asB64 = function() {
   return /** @type {string} */ (jspb.Message.bytesAsB64(
-      this.getSetId()));
+      this.getId()));
 };
 
 
 /**
- * optional bytes set_id = 1;
+ * optional bytes id = 1;
  * Note that Uint8Array is not supported on all browsers.
  * @see http://caniuse.com/Uint8Array
- * This is a type-conversion wrapper around `getSetId()`
+ * This is a type-conversion wrapper around `getId()`
  * @return {!Uint8Array}
  */
-proto.set.SetMemberSwap.prototype.getSetId_asU8 = function() {
+proto.set.SetMemberSwap.prototype.getId_asU8 = function() {
   return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
-      this.getSetId()));
+      this.getId()));
 };
 
 
@@ -2702,7 +2702,7 @@ proto.set.SetMemberSwap.prototype.getSetId_asU8 = function() {
  * @param {!(string|Uint8Array)} value
  * @return {!proto.set.SetMemberSwap} returns this
  */
-proto.set.SetMemberSwap.prototype.setSetId = function(value) {
+proto.set.SetMemberSwap.prototype.setId = function(value) {
   return jspb.Message.setProto3BytesField(this, 1, value);
 };
 
@@ -4305,7 +4305,7 @@ proto.set.SetTemplateMemberRequest.prototype.toObject = function(opt_includeInst
  */
 proto.set.SetTemplateMemberRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-setId: msg.getSetId_asB64(),
+id: msg.getId_asB64(),
 typeId: msg.getTypeId_asB64(),
 modelId: msg.getModelId_asB64(),
 dataIndex: msg.getDataIndex_asB64(),
@@ -4348,7 +4348,7 @@ proto.set.SetTemplateMemberRequest.deserializeBinaryFromReader = function(msg, r
     switch (field) {
     case 1:
       var value = /** @type {!Uint8Array} */ (reader.readBytes());
-      msg.setSetId(value);
+      msg.setId(value);
       break;
     case 2:
       var value = /** @type {!Uint8Array} */ (reader.readBytes());
@@ -4395,7 +4395,7 @@ proto.set.SetTemplateMemberRequest.prototype.serializeBinary = function() {
  */
 proto.set.SetTemplateMemberRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getSetId_asU8();
+  f = message.getId_asU8();
   if (f.length > 0) {
     writer.writeBytes(
       1,
@@ -4434,35 +4434,35 @@ proto.set.SetTemplateMemberRequest.serializeBinaryToWriter = function(message, w
 
 
 /**
- * optional bytes set_id = 1;
+ * optional bytes id = 1;
  * @return {!(string|Uint8Array)}
  */
-proto.set.SetTemplateMemberRequest.prototype.getSetId = function() {
+proto.set.SetTemplateMemberRequest.prototype.getId = function() {
   return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * optional bytes set_id = 1;
- * This is a type-conversion wrapper around `getSetId()`
+ * optional bytes id = 1;
+ * This is a type-conversion wrapper around `getId()`
  * @return {string}
  */
-proto.set.SetTemplateMemberRequest.prototype.getSetId_asB64 = function() {
+proto.set.SetTemplateMemberRequest.prototype.getId_asB64 = function() {
   return /** @type {string} */ (jspb.Message.bytesAsB64(
-      this.getSetId()));
+      this.getId()));
 };
 
 
 /**
- * optional bytes set_id = 1;
+ * optional bytes id = 1;
  * Note that Uint8Array is not supported on all browsers.
  * @see http://caniuse.com/Uint8Array
- * This is a type-conversion wrapper around `getSetId()`
+ * This is a type-conversion wrapper around `getId()`
  * @return {!Uint8Array}
  */
-proto.set.SetTemplateMemberRequest.prototype.getSetId_asU8 = function() {
+proto.set.SetTemplateMemberRequest.prototype.getId_asU8 = function() {
   return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
-      this.getSetId()));
+      this.getId()));
 };
 
 
@@ -4470,7 +4470,7 @@ proto.set.SetTemplateMemberRequest.prototype.getSetId_asU8 = function() {
  * @param {!(string|Uint8Array)} value
  * @return {!proto.set.SetTemplateMemberRequest} returns this
  */
-proto.set.SetTemplateMemberRequest.prototype.setSetId = function(value) {
+proto.set.SetTemplateMemberRequest.prototype.setId = function(value) {
   return jspb.Message.setProto3BytesField(this, 1, value);
 };
 
@@ -4651,7 +4651,7 @@ proto.set.SetTemplateMemberSwap.prototype.toObject = function(opt_includeInstanc
  */
 proto.set.SetTemplateMemberSwap.toObject = function(includeInstance, msg) {
   var f, obj = {
-setId: msg.getSetId_asB64(),
+id: msg.getId_asB64(),
 templateIndex1: jspb.Message.getFieldWithDefault(msg, 2, 0),
 templateIndex2: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
@@ -4692,7 +4692,7 @@ proto.set.SetTemplateMemberSwap.deserializeBinaryFromReader = function(msg, read
     switch (field) {
     case 1:
       var value = /** @type {!Uint8Array} */ (reader.readBytes());
-      msg.setSetId(value);
+      msg.setId(value);
       break;
     case 2:
       var value = /** @type {number} */ (reader.readInt32());
@@ -4731,7 +4731,7 @@ proto.set.SetTemplateMemberSwap.prototype.serializeBinary = function() {
  */
 proto.set.SetTemplateMemberSwap.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getSetId_asU8();
+  f = message.getId_asU8();
   if (f.length > 0) {
     writer.writeBytes(
       1,
@@ -4756,35 +4756,35 @@ proto.set.SetTemplateMemberSwap.serializeBinaryToWriter = function(message, writ
 
 
 /**
- * optional bytes set_id = 1;
+ * optional bytes id = 1;
  * @return {!(string|Uint8Array)}
  */
-proto.set.SetTemplateMemberSwap.prototype.getSetId = function() {
+proto.set.SetTemplateMemberSwap.prototype.getId = function() {
   return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * optional bytes set_id = 1;
- * This is a type-conversion wrapper around `getSetId()`
+ * optional bytes id = 1;
+ * This is a type-conversion wrapper around `getId()`
  * @return {string}
  */
-proto.set.SetTemplateMemberSwap.prototype.getSetId_asB64 = function() {
+proto.set.SetTemplateMemberSwap.prototype.getId_asB64 = function() {
   return /** @type {string} */ (jspb.Message.bytesAsB64(
-      this.getSetId()));
+      this.getId()));
 };
 
 
 /**
- * optional bytes set_id = 1;
+ * optional bytes id = 1;
  * Note that Uint8Array is not supported on all browsers.
  * @see http://caniuse.com/Uint8Array
- * This is a type-conversion wrapper around `getSetId()`
+ * This is a type-conversion wrapper around `getId()`
  * @return {!Uint8Array}
  */
-proto.set.SetTemplateMemberSwap.prototype.getSetId_asU8 = function() {
+proto.set.SetTemplateMemberSwap.prototype.getId_asU8 = function() {
   return /** @type {!Uint8Array} */ (jspb.Message.bytesAsU8(
-      this.getSetId()));
+      this.getId()));
 };
 
 
@@ -4792,7 +4792,7 @@ proto.set.SetTemplateMemberSwap.prototype.getSetId_asU8 = function() {
  * @param {!(string|Uint8Array)} value
  * @return {!proto.set.SetTemplateMemberSwap} returns this
  */
-proto.set.SetTemplateMemberSwap.prototype.setSetId = function(value) {
+proto.set.SetTemplateMemberSwap.prototype.setId = function(value) {
   return jspb.Message.setProto3BytesField(this, 1, value);
 };
 
