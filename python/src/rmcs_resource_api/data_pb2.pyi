@@ -20,6 +20,12 @@ class DataSchema(_message.Message):
     data_type: _containers.RepeatedScalarFieldContainer[int]
     def __init__(self, device_id: _Optional[bytes] = ..., model_id: _Optional[bytes] = ..., timestamp: _Optional[int] = ..., data_bytes: _Optional[bytes] = ..., data_type: _Optional[_Iterable[int]] = ...) -> None: ...
 
+class DataMultipleSchema(_message.Message):
+    __slots__ = ("schemas",)
+    SCHEMAS_FIELD_NUMBER: _ClassVar[int]
+    schemas: _containers.RepeatedCompositeFieldContainer[DataSchema]
+    def __init__(self, schemas: _Optional[_Iterable[_Union[DataSchema, _Mapping]]] = ...) -> None: ...
+
 class DataId(_message.Message):
     __slots__ = ("device_id", "model_id", "timestamp")
     DEVICE_ID_FIELD_NUMBER: _ClassVar[int]

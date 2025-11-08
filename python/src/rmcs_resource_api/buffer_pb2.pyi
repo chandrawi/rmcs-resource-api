@@ -24,6 +24,12 @@ class BufferSchema(_message.Message):
     status: int
     def __init__(self, id: _Optional[int] = ..., device_id: _Optional[bytes] = ..., model_id: _Optional[bytes] = ..., timestamp: _Optional[int] = ..., data_bytes: _Optional[bytes] = ..., data_type: _Optional[_Iterable[int]] = ..., status: _Optional[int] = ...) -> None: ...
 
+class BufferMultipleSchema(_message.Message):
+    __slots__ = ("schemas",)
+    SCHEMAS_FIELD_NUMBER: _ClassVar[int]
+    schemas: _containers.RepeatedCompositeFieldContainer[BufferSchema]
+    def __init__(self, schemas: _Optional[_Iterable[_Union[BufferSchema, _Mapping]]] = ...) -> None: ...
+
 class BufferId(_message.Message):
     __slots__ = ("id",)
     ID_FIELD_NUMBER: _ClassVar[int]
@@ -241,6 +247,12 @@ class BufferCreateResponse(_message.Message):
     ID_FIELD_NUMBER: _ClassVar[int]
     id: int
     def __init__(self, id: _Optional[int] = ...) -> None: ...
+
+class BufferCreateMultipleResponse(_message.Message):
+    __slots__ = ("ids",)
+    IDS_FIELD_NUMBER: _ClassVar[int]
+    ids: _containers.RepeatedScalarFieldContainer[int]
+    def __init__(self, ids: _Optional[_Iterable[int]] = ...) -> None: ...
 
 class BufferChangeResponse(_message.Message):
     __slots__ = ()

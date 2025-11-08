@@ -64,6 +64,8 @@ service BufferService {
 
     rpc CreateBuffer(BufferSchema) returns (BufferCreateResponse);
 
+    rpc CreateBufferMultiple(BufferMultipleSchema) returns (BufferCreateMultipleResponse);
+
     rpc UpdateBuffer(BufferUpdate) returns (BufferChangeResponse);
 
     rpc DeleteBuffer(BufferId) returns (BufferChangeResponse);
@@ -99,6 +101,10 @@ message BufferSchema {
     bytes data_bytes = 5;
     repeated uint32 data_type = 6;
     int32 status = 7;
+}
+
+message BufferMultipleSchema {
+    repeated BufferSchema schemas = 1;
 }
 
 message BufferId {
@@ -228,6 +234,10 @@ message BufferListResponse {
 
 message BufferCreateResponse {
     int32 id = 1;
+}
+
+message BufferCreateMultipleResponse {
+    repeated int32 ids = 1;
 }
 
 message BufferChangeResponse {

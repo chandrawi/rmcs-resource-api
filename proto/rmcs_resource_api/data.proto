@@ -44,6 +44,8 @@ service DataService {
 
     rpc CreateData(DataSchema) returns (DataChangeResponse);
 
+    rpc CreateDataMultiple(DataMultipleSchema) returns (DataChangeResponse);
+
     rpc DeleteData(DataId) returns (DataChangeResponse);
 
     rpc ReadDataTimestamp(DataId) returns (TimestampReadResponse);
@@ -89,6 +91,10 @@ message DataSchema {
     int64 timestamp = 3;
     bytes data_bytes = 4;
     repeated uint32 data_type = 5;
+}
+
+message DataMultipleSchema {
+    repeated DataSchema schemas = 1;
 }
 
 message DataId {

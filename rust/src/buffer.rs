@@ -16,6 +16,11 @@ pub struct BufferSchema {
     #[prost(int32, tag = "7")]
     pub status: i32,
 }
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct BufferMultipleSchema {
+    #[prost(message, repeated, tag = "1")]
+    pub schemas: ::prost::alloc::vec::Vec<BufferSchema>,
+}
 #[derive(Clone, Copy, PartialEq, ::prost::Message)]
 pub struct BufferId {
     #[prost(int32, tag = "1")]
@@ -213,6 +218,11 @@ pub struct BufferListResponse {
 pub struct BufferCreateResponse {
     #[prost(int32, tag = "1")]
     pub id: i32,
+}
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct BufferCreateMultipleResponse {
+    #[prost(int32, repeated, tag = "1")]
+    pub ids: ::prost::alloc::vec::Vec<i32>,
 }
 #[derive(Clone, Copy, PartialEq, ::prost::Message)]
 pub struct BufferChangeResponse {}
@@ -1104,6 +1114,30 @@ pub mod buffer_service_client {
                 .insert(GrpcMethod::new("buffer.BufferService", "CreateBuffer"));
             self.inner.unary(req, path, codec).await
         }
+        pub async fn create_buffer_multiple(
+            &mut self,
+            request: impl tonic::IntoRequest<super::BufferMultipleSchema>,
+        ) -> std::result::Result<
+            tonic::Response<super::BufferCreateMultipleResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/buffer.BufferService/CreateBufferMultiple",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("buffer.BufferService", "CreateBufferMultiple"));
+            self.inner.unary(req, path, codec).await
+        }
         pub async fn update_buffer(
             &mut self,
             request: impl tonic::IntoRequest<super::BufferUpdate>,
@@ -1674,6 +1708,13 @@ pub mod buffer_service_server {
             request: tonic::Request<super::BufferSchema>,
         ) -> std::result::Result<
             tonic::Response<super::BufferCreateResponse>,
+            tonic::Status,
+        >;
+        async fn create_buffer_multiple(
+            &self,
+            request: tonic::Request<super::BufferMultipleSchema>,
+        ) -> std::result::Result<
+            tonic::Response<super::BufferCreateMultipleResponse>,
             tonic::Status,
         >;
         async fn update_buffer(
@@ -3319,6 +3360,55 @@ pub mod buffer_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = CreateBufferSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/buffer.BufferService/CreateBufferMultiple" => {
+                    #[allow(non_camel_case_types)]
+                    struct CreateBufferMultipleSvc<T: BufferService>(pub Arc<T>);
+                    impl<
+                        T: BufferService,
+                    > tonic::server::UnaryService<super::BufferMultipleSchema>
+                    for CreateBufferMultipleSvc<T> {
+                        type Response = super::BufferCreateMultipleResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::BufferMultipleSchema>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as BufferService>::create_buffer_multiple(
+                                        &inner,
+                                        request,
+                                    )
+                                    .await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = CreateBufferMultipleSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(

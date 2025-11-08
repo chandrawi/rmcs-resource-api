@@ -1358,6 +1358,67 @@ proto.data.DataServicePromiseClient.prototype.createData =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
+ *   !proto.data.DataMultipleSchema,
+ *   !proto.data.DataChangeResponse>}
+ */
+const methodDescriptor_DataService_CreateDataMultiple = new grpc.web.MethodDescriptor(
+  '/data.DataService/CreateDataMultiple',
+  grpc.web.MethodType.UNARY,
+  proto.data.DataMultipleSchema,
+  proto.data.DataChangeResponse,
+  /**
+   * @param {!proto.data.DataMultipleSchema} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.data.DataChangeResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.data.DataMultipleSchema} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.data.DataChangeResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.data.DataChangeResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.data.DataServiceClient.prototype.createDataMultiple =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/data.DataService/CreateDataMultiple',
+      request,
+      metadata || {},
+      methodDescriptor_DataService_CreateDataMultiple,
+      callback);
+};
+
+
+/**
+ * @param {!proto.data.DataMultipleSchema} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.data.DataChangeResponse>}
+ *     Promise that resolves to the response
+ */
+proto.data.DataServicePromiseClient.prototype.createDataMultiple =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/data.DataService/CreateDataMultiple',
+      request,
+      metadata || {},
+      methodDescriptor_DataService_CreateDataMultiple);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
  *   !proto.data.DataId,
  *   !proto.data.DataChangeResponse>}
  */

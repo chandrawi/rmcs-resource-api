@@ -139,6 +139,11 @@ class DataServiceStub(object):
                 request_serializer=rmcs__resource__api_dot_data__pb2.DataSchema.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_data__pb2.DataChangeResponse.FromString,
                 _registered_method=True)
+        self.CreateDataMultiple = channel.unary_unary(
+                '/data.DataService/CreateDataMultiple',
+                request_serializer=rmcs__resource__api_dot_data__pb2.DataMultipleSchema.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_data__pb2.DataChangeResponse.FromString,
+                _registered_method=True)
         self.DeleteData = channel.unary_unary(
                 '/data.DataService/DeleteData',
                 request_serializer=rmcs__resource__api_dot_data__pb2.DataId.SerializeToString,
@@ -365,6 +370,12 @@ class DataServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def CreateDataMultiple(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def DeleteData(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -585,6 +596,11 @@ def add_DataServiceServicer_to_server(servicer, server):
             'CreateData': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateData,
                     request_deserializer=rmcs__resource__api_dot_data__pb2.DataSchema.FromString,
+                    response_serializer=rmcs__resource__api_dot_data__pb2.DataChangeResponse.SerializeToString,
+            ),
+            'CreateDataMultiple': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateDataMultiple,
+                    request_deserializer=rmcs__resource__api_dot_data__pb2.DataMultipleSchema.FromString,
                     response_serializer=rmcs__resource__api_dot_data__pb2.DataChangeResponse.SerializeToString,
             ),
             'DeleteData': grpc.unary_unary_rpc_method_handler(
@@ -1249,6 +1265,33 @@ class DataService(object):
             target,
             '/data.DataService/CreateData',
             rmcs__resource__api_dot_data__pb2.DataSchema.SerializeToString,
+            rmcs__resource__api_dot_data__pb2.DataChangeResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def CreateDataMultiple(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/data.DataService/CreateDataMultiple',
+            rmcs__resource__api_dot_data__pb2.DataMultipleSchema.SerializeToString,
             rmcs__resource__api_dot_data__pb2.DataChangeResponse.FromString,
             options,
             channel_credentials,

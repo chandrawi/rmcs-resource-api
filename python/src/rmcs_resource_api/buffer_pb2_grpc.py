@@ -189,6 +189,11 @@ class BufferServiceStub(object):
                 request_serializer=rmcs__resource__api_dot_buffer__pb2.BufferSchema.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferCreateResponse.FromString,
                 _registered_method=True)
+        self.CreateBufferMultiple = channel.unary_unary(
+                '/buffer.BufferService/CreateBufferMultiple',
+                request_serializer=rmcs__resource__api_dot_buffer__pb2.BufferMultipleSchema.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferCreateMultipleResponse.FromString,
+                _registered_method=True)
         self.UpdateBuffer = channel.unary_unary(
                 '/buffer.BufferService/UpdateBuffer',
                 request_serializer=rmcs__resource__api_dot_buffer__pb2.BufferUpdate.SerializeToString,
@@ -445,6 +450,12 @@ class BufferServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def CreateBufferMultiple(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def UpdateBuffer(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -680,6 +691,11 @@ def add_BufferServiceServicer_to_server(servicer, server):
                     servicer.CreateBuffer,
                     request_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferSchema.FromString,
                     response_serializer=rmcs__resource__api_dot_buffer__pb2.BufferCreateResponse.SerializeToString,
+            ),
+            'CreateBufferMultiple': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateBufferMultiple,
+                    request_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferMultipleSchema.FromString,
+                    response_serializer=rmcs__resource__api_dot_buffer__pb2.BufferCreateMultipleResponse.SerializeToString,
             ),
             'UpdateBuffer': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateBuffer,
@@ -1584,6 +1600,33 @@ class BufferService(object):
             '/buffer.BufferService/CreateBuffer',
             rmcs__resource__api_dot_buffer__pb2.BufferSchema.SerializeToString,
             rmcs__resource__api_dot_buffer__pb2.BufferCreateResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def CreateBufferMultiple(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/buffer.BufferService/CreateBufferMultiple',
+            rmcs__resource__api_dot_buffer__pb2.BufferMultipleSchema.SerializeToString,
+            rmcs__resource__api_dot_buffer__pb2.BufferCreateMultipleResponse.FromString,
             options,
             channel_credentials,
             insecure,

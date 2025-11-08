@@ -13,6 +13,11 @@ pub struct DataSchema {
     pub data_type: ::prost::alloc::vec::Vec<u32>,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
+pub struct DataMultipleSchema {
+    #[prost(message, repeated, tag = "1")]
+    pub schemas: ::prost::alloc::vec::Vec<DataSchema>,
+}
+#[derive(Clone, PartialEq, ::prost::Message)]
 pub struct DataId {
     #[prost(bytes = "vec", tag = "1")]
     pub device_id: ::prost::alloc::vec::Vec<u8>,
@@ -772,6 +777,30 @@ pub mod data_service_client {
                 .insert(GrpcMethod::new("data.DataService", "CreateData"));
             self.inner.unary(req, path, codec).await
         }
+        pub async fn create_data_multiple(
+            &mut self,
+            request: impl tonic::IntoRequest<super::DataMultipleSchema>,
+        ) -> std::result::Result<
+            tonic::Response<super::DataChangeResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/data.DataService/CreateDataMultiple",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("data.DataService", "CreateDataMultiple"));
+            self.inner.unary(req, path, codec).await
+        }
         pub async fn delete_data(
             &mut self,
             request: impl tonic::IntoRequest<super::DataId>,
@@ -1404,6 +1433,13 @@ pub mod data_service_server {
         async fn create_data(
             &self,
             request: tonic::Request<super::DataSchema>,
+        ) -> std::result::Result<
+            tonic::Response<super::DataChangeResponse>,
+            tonic::Status,
+        >;
+        async fn create_data_multiple(
+            &self,
+            request: tonic::Request<super::DataMultipleSchema>,
         ) -> std::result::Result<
             tonic::Response<super::DataChangeResponse>,
             tonic::Status,
@@ -2578,6 +2614,52 @@ pub mod data_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = CreateDataSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/data.DataService/CreateDataMultiple" => {
+                    #[allow(non_camel_case_types)]
+                    struct CreateDataMultipleSvc<T: DataService>(pub Arc<T>);
+                    impl<
+                        T: DataService,
+                    > tonic::server::UnaryService<super::DataMultipleSchema>
+                    for CreateDataMultipleSvc<T> {
+                        type Response = super::DataChangeResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::DataMultipleSchema>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as DataService>::create_data_multiple(&inner, request)
+                                    .await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = CreateDataMultipleSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
