@@ -12,6 +12,8 @@ pub struct ModelSchema {
     #[prost(uint32, repeated, tag = "5")]
     pub data_type: ::prost::alloc::vec::Vec<u32>,
     #[prost(message, repeated, tag = "6")]
+    pub tags: ::prost::alloc::vec::Vec<TagSchema>,
+    #[prost(message, repeated, tag = "7")]
     pub configs: ::prost::alloc::vec::Vec<ConfigSchemaVec>,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -104,6 +106,37 @@ pub struct ConfigUpdate {
     pub category: ::core::option::Option<::prost::alloc::string::String>,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
+pub struct TagSchema {
+    #[prost(bytes = "vec", tag = "1")]
+    pub model_id: ::prost::alloc::vec::Vec<u8>,
+    #[prost(int32, tag = "2")]
+    pub tag: i32,
+    #[prost(string, tag = "3")]
+    pub name: ::prost::alloc::string::String,
+    #[prost(int32, repeated, tag = "4")]
+    pub members: ::prost::alloc::vec::Vec<i32>,
+}
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct TagId {
+    #[prost(bytes = "vec", tag = "1")]
+    pub model_id: ::prost::alloc::vec::Vec<u8>,
+    #[prost(int32, tag = "2")]
+    pub tag: i32,
+}
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct TagUpdate {
+    #[prost(bytes = "vec", tag = "1")]
+    pub model_id: ::prost::alloc::vec::Vec<u8>,
+    #[prost(int32, tag = "2")]
+    pub tag: i32,
+    #[prost(string, optional, tag = "3")]
+    pub name: ::core::option::Option<::prost::alloc::string::String>,
+    #[prost(int32, repeated, tag = "4")]
+    pub members: ::prost::alloc::vec::Vec<i32>,
+    #[prost(bool, tag = "5")]
+    pub members_flag: bool,
+}
+#[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ModelReadResponse {
     #[prost(message, optional, tag = "1")]
     pub result: ::core::option::Option<ModelSchema>,
@@ -137,6 +170,18 @@ pub struct ConfigCreateResponse {
 }
 #[derive(Clone, Copy, PartialEq, ::prost::Message)]
 pub struct ConfigChangeResponse {}
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct TagReadResponse {
+    #[prost(message, optional, tag = "1")]
+    pub result: ::core::option::Option<TagSchema>,
+}
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct TagListResponse {
+    #[prost(message, repeated, tag = "1")]
+    pub results: ::prost::alloc::vec::Vec<TagSchema>,
+}
+#[derive(Clone, Copy, PartialEq, ::prost::Message)]
+pub struct TagChangeResponse {}
 /// Generated client implementations.
 pub mod model_service_client {
     #![allow(
@@ -564,6 +609,126 @@ pub mod model_service_client {
                 .insert(GrpcMethod::new("model.ModelService", "DeleteModelConfig"));
             self.inner.unary(req, path, codec).await
         }
+        pub async fn read_tag(
+            &mut self,
+            request: impl tonic::IntoRequest<super::TagId>,
+        ) -> std::result::Result<
+            tonic::Response<super::TagReadResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/model.ModelService/ReadTag",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("model.ModelService", "ReadTag"));
+            self.inner.unary(req, path, codec).await
+        }
+        pub async fn list_tag_by_model(
+            &mut self,
+            request: impl tonic::IntoRequest<super::ModelId>,
+        ) -> std::result::Result<
+            tonic::Response<super::TagListResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/model.ModelService/ListTagByModel",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("model.ModelService", "ListTagByModel"));
+            self.inner.unary(req, path, codec).await
+        }
+        pub async fn create_tag(
+            &mut self,
+            request: impl tonic::IntoRequest<super::TagSchema>,
+        ) -> std::result::Result<
+            tonic::Response<super::TagChangeResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/model.ModelService/CreateTag",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("model.ModelService", "CreateTag"));
+            self.inner.unary(req, path, codec).await
+        }
+        pub async fn update_tag(
+            &mut self,
+            request: impl tonic::IntoRequest<super::TagUpdate>,
+        ) -> std::result::Result<
+            tonic::Response<super::TagChangeResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/model.ModelService/UpdateTag",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("model.ModelService", "UpdateTag"));
+            self.inner.unary(req, path, codec).await
+        }
+        pub async fn delete_tag(
+            &mut self,
+            request: impl tonic::IntoRequest<super::TagId>,
+        ) -> std::result::Result<
+            tonic::Response<super::TagChangeResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/model.ModelService/DeleteTag",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("model.ModelService", "DeleteTag"));
+            self.inner.unary(req, path, codec).await
+        }
     }
 }
 /// Generated server implementations.
@@ -675,6 +840,35 @@ pub mod model_service_server {
             request: tonic::Request<super::ConfigId>,
         ) -> std::result::Result<
             tonic::Response<super::ConfigChangeResponse>,
+            tonic::Status,
+        >;
+        async fn read_tag(
+            &self,
+            request: tonic::Request<super::TagId>,
+        ) -> std::result::Result<tonic::Response<super::TagReadResponse>, tonic::Status>;
+        async fn list_tag_by_model(
+            &self,
+            request: tonic::Request<super::ModelId>,
+        ) -> std::result::Result<tonic::Response<super::TagListResponse>, tonic::Status>;
+        async fn create_tag(
+            &self,
+            request: tonic::Request<super::TagSchema>,
+        ) -> std::result::Result<
+            tonic::Response<super::TagChangeResponse>,
+            tonic::Status,
+        >;
+        async fn update_tag(
+            &self,
+            request: tonic::Request<super::TagUpdate>,
+        ) -> std::result::Result<
+            tonic::Response<super::TagChangeResponse>,
+            tonic::Status,
+        >;
+        async fn delete_tag(
+            &self,
+            request: tonic::Request<super::TagId>,
+        ) -> std::result::Result<
+            tonic::Response<super::TagChangeResponse>,
             tonic::Status,
         >;
     }
@@ -1357,6 +1551,222 @@ pub mod model_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = DeleteModelConfigSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/model.ModelService/ReadTag" => {
+                    #[allow(non_camel_case_types)]
+                    struct ReadTagSvc<T: ModelService>(pub Arc<T>);
+                    impl<T: ModelService> tonic::server::UnaryService<super::TagId>
+                    for ReadTagSvc<T> {
+                        type Response = super::TagReadResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::TagId>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as ModelService>::read_tag(&inner, request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = ReadTagSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/model.ModelService/ListTagByModel" => {
+                    #[allow(non_camel_case_types)]
+                    struct ListTagByModelSvc<T: ModelService>(pub Arc<T>);
+                    impl<T: ModelService> tonic::server::UnaryService<super::ModelId>
+                    for ListTagByModelSvc<T> {
+                        type Response = super::TagListResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::ModelId>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as ModelService>::list_tag_by_model(&inner, request)
+                                    .await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = ListTagByModelSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/model.ModelService/CreateTag" => {
+                    #[allow(non_camel_case_types)]
+                    struct CreateTagSvc<T: ModelService>(pub Arc<T>);
+                    impl<T: ModelService> tonic::server::UnaryService<super::TagSchema>
+                    for CreateTagSvc<T> {
+                        type Response = super::TagChangeResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::TagSchema>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as ModelService>::create_tag(&inner, request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = CreateTagSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/model.ModelService/UpdateTag" => {
+                    #[allow(non_camel_case_types)]
+                    struct UpdateTagSvc<T: ModelService>(pub Arc<T>);
+                    impl<T: ModelService> tonic::server::UnaryService<super::TagUpdate>
+                    for UpdateTagSvc<T> {
+                        type Response = super::TagChangeResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::TagUpdate>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as ModelService>::update_tag(&inner, request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = UpdateTagSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/model.ModelService/DeleteTag" => {
+                    #[allow(non_camel_case_types)]
+                    struct DeleteTagSvc<T: ModelService>(pub Arc<T>);
+                    impl<T: ModelService> tonic::server::UnaryService<super::TagId>
+                    for DeleteTagSvc<T> {
+                        type Response = super::TagChangeResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::TagId>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as ModelService>::delete_tag(&inner, request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = DeleteTagSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(

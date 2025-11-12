@@ -14,7 +14,7 @@ pub struct BufferSchema {
     #[prost(uint32, repeated, tag = "6")]
     pub data_type: ::prost::alloc::vec::Vec<u32>,
     #[prost(int32, tag = "7")]
-    pub status: i32,
+    pub tag: i32,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct BufferMultipleSchema {
@@ -35,7 +35,7 @@ pub struct BufferTime {
     #[prost(int64, tag = "3")]
     pub timestamp: i64,
     #[prost(int32, optional, tag = "4")]
-    pub status: ::core::option::Option<i32>,
+    pub tag: ::core::option::Option<i32>,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct BufferRange {
@@ -48,7 +48,7 @@ pub struct BufferRange {
     #[prost(int64, tag = "4")]
     pub end: i64,
     #[prost(int32, optional, tag = "5")]
-    pub status: ::core::option::Option<i32>,
+    pub tag: ::core::option::Option<i32>,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct BufferNumber {
@@ -61,7 +61,7 @@ pub struct BufferNumber {
     #[prost(uint32, tag = "4")]
     pub number: u32,
     #[prost(int32, optional, tag = "5")]
-    pub status: ::core::option::Option<i32>,
+    pub tag: ::core::option::Option<i32>,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct BufferSelector {
@@ -70,7 +70,7 @@ pub struct BufferSelector {
     #[prost(bytes = "vec", optional, tag = "2")]
     pub model_id: ::core::option::Option<::prost::alloc::vec::Vec<u8>>,
     #[prost(int32, optional, tag = "3")]
-    pub status: ::core::option::Option<i32>,
+    pub tag: ::core::option::Option<i32>,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct BuffersSelector {
@@ -79,7 +79,7 @@ pub struct BuffersSelector {
     #[prost(bytes = "vec", optional, tag = "2")]
     pub model_id: ::core::option::Option<::prost::alloc::vec::Vec<u8>>,
     #[prost(int32, optional, tag = "3")]
-    pub status: ::core::option::Option<i32>,
+    pub tag: ::core::option::Option<i32>,
     #[prost(uint32, tag = "4")]
     pub number: u32,
     #[prost(uint32, tag = "5")]
@@ -94,7 +94,7 @@ pub struct BufferIdsTime {
     #[prost(int64, tag = "3")]
     pub timestamp: i64,
     #[prost(int32, optional, tag = "4")]
-    pub status: ::core::option::Option<i32>,
+    pub tag: ::core::option::Option<i32>,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct BufferIdsRange {
@@ -107,7 +107,7 @@ pub struct BufferIdsRange {
     #[prost(int64, tag = "4")]
     pub end: i64,
     #[prost(int32, optional, tag = "5")]
-    pub status: ::core::option::Option<i32>,
+    pub tag: ::core::option::Option<i32>,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct BufferIdsNumber {
@@ -120,7 +120,7 @@ pub struct BufferIdsNumber {
     #[prost(uint32, tag = "4")]
     pub number: u32,
     #[prost(int32, optional, tag = "5")]
-    pub status: ::core::option::Option<i32>,
+    pub tag: ::core::option::Option<i32>,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct BufferIdsSelector {
@@ -129,7 +129,7 @@ pub struct BufferIdsSelector {
     #[prost(bytes = "vec", repeated, tag = "2")]
     pub model_ids: ::prost::alloc::vec::Vec<::prost::alloc::vec::Vec<u8>>,
     #[prost(int32, optional, tag = "3")]
-    pub status: ::core::option::Option<i32>,
+    pub tag: ::core::option::Option<i32>,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct BuffersIdsSelector {
@@ -138,7 +138,7 @@ pub struct BuffersIdsSelector {
     #[prost(bytes = "vec", repeated, tag = "2")]
     pub model_ids: ::prost::alloc::vec::Vec<::prost::alloc::vec::Vec<u8>>,
     #[prost(int32, optional, tag = "3")]
-    pub status: ::core::option::Option<i32>,
+    pub tag: ::core::option::Option<i32>,
     #[prost(uint32, tag = "4")]
     pub number: u32,
     #[prost(uint32, tag = "5")]
@@ -150,8 +150,6 @@ pub struct BufferSetTime {
     pub set_id: ::prost::alloc::vec::Vec<u8>,
     #[prost(int64, tag = "2")]
     pub timestamp: i64,
-    #[prost(int32, optional, tag = "3")]
-    pub status: ::core::option::Option<i32>,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct BufferSetRange {
@@ -161,8 +159,6 @@ pub struct BufferSetRange {
     pub begin: i64,
     #[prost(int64, tag = "3")]
     pub end: i64,
-    #[prost(int32, optional, tag = "4")]
-    pub status: ::core::option::Option<i32>,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct BufferSetNumber {
@@ -172,25 +168,19 @@ pub struct BufferSetNumber {
     pub timestamp: i64,
     #[prost(uint32, tag = "3")]
     pub number: u32,
-    #[prost(int32, optional, tag = "4")]
-    pub status: ::core::option::Option<i32>,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct BufferSetSelector {
     #[prost(bytes = "vec", tag = "1")]
     pub set_id: ::prost::alloc::vec::Vec<u8>,
-    #[prost(int32, optional, tag = "2")]
-    pub status: ::core::option::Option<i32>,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct BuffersSetSelector {
     #[prost(bytes = "vec", tag = "1")]
     pub set_id: ::prost::alloc::vec::Vec<u8>,
-    #[prost(int32, optional, tag = "2")]
-    pub status: ::core::option::Option<i32>,
-    #[prost(uint32, tag = "3")]
+    #[prost(uint32, tag = "2")]
     pub number: u32,
-    #[prost(uint32, tag = "4")]
+    #[prost(uint32, tag = "3")]
     pub offset: u32,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -202,7 +192,7 @@ pub struct BufferUpdate {
     #[prost(uint32, repeated, tag = "3")]
     pub data_type: ::prost::alloc::vec::Vec<u32>,
     #[prost(int32, optional, tag = "4")]
-    pub status: ::core::option::Option<i32>,
+    pub tag: ::core::option::Option<i32>,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct BufferReadResponse {
@@ -378,6 +368,30 @@ pub mod buffer_service_client {
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(GrpcMethod::new("buffer.BufferService", "ReadBufferByTime"));
+            self.inner.unary(req, path, codec).await
+        }
+        pub async fn list_buffer_by_time(
+            &mut self,
+            request: impl tonic::IntoRequest<super::BufferTime>,
+        ) -> std::result::Result<
+            tonic::Response<super::BufferListResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/buffer.BufferService/ListBufferByTime",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("buffer.BufferService", "ListBufferByTime"));
             self.inner.unary(req, path, codec).await
         }
         pub async fn list_buffer_by_last_time(
@@ -1507,6 +1521,13 @@ pub mod buffer_service_server {
             tonic::Response<super::BufferReadResponse>,
             tonic::Status,
         >;
+        async fn list_buffer_by_time(
+            &self,
+            request: tonic::Request<super::BufferTime>,
+        ) -> std::result::Result<
+            tonic::Response<super::BufferListResponse>,
+            tonic::Status,
+        >;
         async fn list_buffer_by_last_time(
             &self,
             request: tonic::Request<super::BufferTime>,
@@ -1957,6 +1978,50 @@ pub mod buffer_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ReadBufferByTimeSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/buffer.BufferService/ListBufferByTime" => {
+                    #[allow(non_camel_case_types)]
+                    struct ListBufferByTimeSvc<T: BufferService>(pub Arc<T>);
+                    impl<T: BufferService> tonic::server::UnaryService<super::BufferTime>
+                    for ListBufferByTimeSvc<T> {
+                        type Response = super::BufferListResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::BufferTime>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as BufferService>::list_buffer_by_time(&inner, request)
+                                    .await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = ListBufferByTimeSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(

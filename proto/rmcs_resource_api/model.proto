@@ -29,6 +29,16 @@ service ModelService {
     rpc UpdateModelConfig(ConfigUpdate) returns (ConfigChangeResponse);
 
     rpc DeleteModelConfig(ConfigId) returns (ConfigChangeResponse);
+
+    rpc ReadTag(TagId) returns (TagReadResponse);
+
+    rpc ListTagByModel(ModelId) returns (TagListResponse);
+
+    rpc CreateTag(TagSchema) returns (TagChangeResponse);
+
+    rpc UpdateTag(TagUpdate) returns (TagChangeResponse);
+
+    rpc DeleteTag(TagId) returns (TagChangeResponse);
 }
 
 message ModelSchema {
@@ -37,7 +47,8 @@ message ModelSchema {
     string name = 3;
     string description = 4;
     repeated uint32 data_type = 5;
-    repeated ConfigSchemaVec configs = 6;
+    repeated TagSchema tags = 6;
+    repeated ConfigSchemaVec configs = 7;
 }
 
 message ConfigSchemaVec {
@@ -101,6 +112,26 @@ message ConfigUpdate {
     optional string category = 5;
 }
 
+message TagSchema {
+    bytes model_id = 1;
+    int32 tag = 2;
+    string name = 3;
+    repeated int32 members = 4;
+}
+
+message TagId {
+    bytes model_id = 1;
+    int32 tag = 2;
+}
+
+message TagUpdate {
+    bytes model_id = 1;
+    int32 tag = 2;
+    optional string name = 3;
+    repeated int32 members = 4;
+    bool members_flag = 5;
+}
+
 message ModelReadResponse {
     ModelSchema result = 1;
 }
@@ -129,4 +160,15 @@ message ConfigCreateResponse {
 }
 
 message ConfigChangeResponse {
+}
+
+message TagReadResponse {
+    TagSchema result = 1;
+}
+
+message TagListResponse {
+    repeated TagSchema results = 1;
+}
+
+message TagChangeResponse {
 }

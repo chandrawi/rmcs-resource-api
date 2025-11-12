@@ -4,6 +4,8 @@ package data;
 service DataService {
     rpc ReadData(DataId) returns (DataReadResponse);
 
+    rpc ListDataByTime(DataId) returns (DataListResponse);
+
     rpc ListDataByLastTime(DataTime) returns (DataListResponse);
 
     rpc ListDataByRangeTime(DataRange) returns (DataListResponse);
@@ -33,6 +35,8 @@ service DataService {
     rpc ListDataBySetNumberAfter(DataSetNumber) returns (DataListResponse);
 
     rpc ReadDataSet(DataSetId) returns (DataSetReadResponse);
+
+    rpc ListDataSetByTime(DataSetId) returns (DataSetListResponse);
 
     rpc ListDataSetByLastTime(DataSetTime) returns (DataSetListResponse);
 
@@ -91,6 +95,7 @@ message DataSchema {
     int64 timestamp = 3;
     bytes data_bytes = 4;
     repeated uint32 data_type = 5;
+    int32 tag = 6;
 }
 
 message DataMultipleSchema {
@@ -101,12 +106,14 @@ message DataId {
     bytes device_id = 1;
     bytes model_id = 2;
     int64 timestamp = 3;
+    optional int32 tag = 4;
 }
 
 message DataTime {
     bytes device_id = 1;
     bytes model_id = 2;
     int64 timestamp = 3;
+    optional int32 tag = 4;
 }
 
 message DataRange {
@@ -114,6 +121,7 @@ message DataRange {
     bytes model_id = 2;
     int64 begin = 3;
     int64 end = 4;
+    optional int32 tag = 5;
 }
 
 message DataNumber {
@@ -121,6 +129,7 @@ message DataNumber {
     bytes model_id = 2;
     int64 timestamp = 3;
     uint32 number = 4;
+    optional int32 tag = 5;
 }
 
 message DataSetSchema {
@@ -134,12 +143,14 @@ message DataIds {
     repeated bytes device_ids = 1;
     repeated bytes model_ids = 2;
     int64 timestamp = 3;
+    optional int32 tag = 4;
 }
 
 message DataIdsTime {
     repeated bytes device_ids = 1;
     repeated bytes model_ids = 2;
     int64 timestamp = 3;
+    optional int32 tag = 4;
 }
 
 message DataIdsRange {
@@ -147,6 +158,7 @@ message DataIdsRange {
     repeated bytes model_ids = 2;
     int64 begin = 3;
     int64 end = 4;
+    optional int32 tag = 5;
 }
 
 message DataIdsNumber {
@@ -154,6 +166,7 @@ message DataIdsNumber {
     repeated bytes model_ids = 2;
     int64 timestamp = 3;
     uint32 number = 4;
+    optional int32 tag = 5;
 }
 
 message DataSetId {

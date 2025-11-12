@@ -6,6 +6,8 @@ service BufferService {
 
     rpc ReadBufferByTime(BufferTime) returns (BufferReadResponse);
 
+    rpc ListBufferByTime(BufferTime) returns (BufferListResponse);
+
     rpc ListBufferByLastTime(BufferTime) returns (BufferListResponse);
 
     rpc ListBufferByRangeTime(BufferRange) returns (BufferListResponse);
@@ -100,7 +102,7 @@ message BufferSchema {
     int64 timestamp = 4;
     bytes data_bytes = 5;
     repeated uint32 data_type = 6;
-    int32 status = 7;
+    int32 tag = 7;
 }
 
 message BufferMultipleSchema {
@@ -115,7 +117,7 @@ message BufferTime {
     bytes device_id = 1;
     bytes model_id = 2;
     int64 timestamp = 3;
-    optional int32 status = 4;
+    optional int32 tag = 4;
 }
 
 message BufferRange {
@@ -123,7 +125,7 @@ message BufferRange {
     bytes model_id = 2;
     int64 begin = 3;
     int64 end = 4;
-    optional int32 status = 5;
+    optional int32 tag = 5;
 }
 
 message BufferNumber {
@@ -131,19 +133,19 @@ message BufferNumber {
     bytes model_id = 2;
     int64 timestamp = 3;
     uint32 number = 4;
-    optional int32 status = 5;
+    optional int32 tag = 5;
 }
 
 message BufferSelector {
     optional bytes device_id = 1;
     optional bytes model_id = 2;
-    optional int32 status = 3;
+    optional int32 tag = 3;
 }
 
 message BuffersSelector {
     optional bytes device_id = 1;
     optional bytes model_id = 2;
-    optional int32 status = 3;
+    optional int32 tag = 3;
     uint32 number = 4;
     uint32 offset = 5;
 }
@@ -152,7 +154,7 @@ message BufferIdsTime {
     repeated bytes device_ids = 1;
     repeated bytes model_ids = 2;
     int64 timestamp = 3;
-    optional int32 status = 4;
+    optional int32 tag = 4;
 }
 
 message BufferIdsRange {
@@ -160,7 +162,7 @@ message BufferIdsRange {
     repeated bytes model_ids = 2;
     int64 begin = 3;
     int64 end = 4;
-    optional int32 status = 5;
+    optional int32 tag = 5;
 }
 
 message BufferIdsNumber {
@@ -168,19 +170,19 @@ message BufferIdsNumber {
     repeated bytes model_ids = 2;
     int64 timestamp = 3;
     uint32 number = 4;
-    optional int32 status = 5;
+    optional int32 tag = 5;
 }
 
 message BufferIdsSelector {
     repeated bytes device_ids = 1;
     repeated bytes model_ids = 2;
-    optional int32 status = 3;
+    optional int32 tag = 3;
 }
 
 message BuffersIdsSelector {
     repeated bytes device_ids = 1;
     repeated bytes model_ids = 2;
-    optional int32 status = 3;
+    optional int32 tag = 3;
     uint32 number = 4;
     uint32 offset = 5;
 }
@@ -188,40 +190,35 @@ message BuffersIdsSelector {
 message BufferSetTime {
     bytes set_id = 1;
     int64 timestamp = 2;
-    optional int32 status = 3;
 }
 
 message BufferSetRange {
     bytes set_id = 1;
     int64 begin = 2;
     int64 end = 3;
-    optional int32 status = 4;
 }
 
 message BufferSetNumber {
     bytes set_id = 1;
     int64 timestamp = 2;
     uint32 number = 3;
-    optional int32 status = 4;
 }
 
 message BufferSetSelector {
     bytes set_id = 1;
-    optional int32 status = 2;
 }
 
 message BuffersSetSelector {
     bytes set_id = 1;
-    optional int32 status = 2;
-    uint32 number = 3;
-    uint32 offset = 4;
+    uint32 number = 2;
+    uint32 offset = 3;
 }
 
 message BufferUpdate {
     int32 id = 1;
     optional bytes data_bytes = 2;
     repeated uint32 data_type = 3;
-    optional int32 status = 4;
+    optional int32 tag = 4;
 }
 
 message BufferReadResponse {
