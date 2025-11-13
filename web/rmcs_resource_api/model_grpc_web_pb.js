@@ -928,5 +928,310 @@ proto.model.ModelServicePromiseClient.prototype.deleteModelConfig =
 };
 
 
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.model.TagId,
+ *   !proto.model.TagReadResponse>}
+ */
+const methodDescriptor_ModelService_ReadTag = new grpc.web.MethodDescriptor(
+  '/model.ModelService/ReadTag',
+  grpc.web.MethodType.UNARY,
+  proto.model.TagId,
+  proto.model.TagReadResponse,
+  /**
+   * @param {!proto.model.TagId} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.model.TagReadResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.model.TagId} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.model.TagReadResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.model.TagReadResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.model.ModelServiceClient.prototype.readTag =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/model.ModelService/ReadTag',
+      request,
+      metadata || {},
+      methodDescriptor_ModelService_ReadTag,
+      callback);
+};
+
+
+/**
+ * @param {!proto.model.TagId} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.model.TagReadResponse>}
+ *     Promise that resolves to the response
+ */
+proto.model.ModelServicePromiseClient.prototype.readTag =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/model.ModelService/ReadTag',
+      request,
+      metadata || {},
+      methodDescriptor_ModelService_ReadTag);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.model.ModelId,
+ *   !proto.model.TagListResponse>}
+ */
+const methodDescriptor_ModelService_ListTagByModel = new grpc.web.MethodDescriptor(
+  '/model.ModelService/ListTagByModel',
+  grpc.web.MethodType.UNARY,
+  proto.model.ModelId,
+  proto.model.TagListResponse,
+  /**
+   * @param {!proto.model.ModelId} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.model.TagListResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.model.ModelId} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.model.TagListResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.model.TagListResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.model.ModelServiceClient.prototype.listTagByModel =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/model.ModelService/ListTagByModel',
+      request,
+      metadata || {},
+      methodDescriptor_ModelService_ListTagByModel,
+      callback);
+};
+
+
+/**
+ * @param {!proto.model.ModelId} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.model.TagListResponse>}
+ *     Promise that resolves to the response
+ */
+proto.model.ModelServicePromiseClient.prototype.listTagByModel =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/model.ModelService/ListTagByModel',
+      request,
+      metadata || {},
+      methodDescriptor_ModelService_ListTagByModel);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.model.TagSchema,
+ *   !proto.model.TagChangeResponse>}
+ */
+const methodDescriptor_ModelService_CreateTag = new grpc.web.MethodDescriptor(
+  '/model.ModelService/CreateTag',
+  grpc.web.MethodType.UNARY,
+  proto.model.TagSchema,
+  proto.model.TagChangeResponse,
+  /**
+   * @param {!proto.model.TagSchema} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.model.TagChangeResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.model.TagSchema} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.model.TagChangeResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.model.TagChangeResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.model.ModelServiceClient.prototype.createTag =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/model.ModelService/CreateTag',
+      request,
+      metadata || {},
+      methodDescriptor_ModelService_CreateTag,
+      callback);
+};
+
+
+/**
+ * @param {!proto.model.TagSchema} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.model.TagChangeResponse>}
+ *     Promise that resolves to the response
+ */
+proto.model.ModelServicePromiseClient.prototype.createTag =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/model.ModelService/CreateTag',
+      request,
+      metadata || {},
+      methodDescriptor_ModelService_CreateTag);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.model.TagUpdate,
+ *   !proto.model.TagChangeResponse>}
+ */
+const methodDescriptor_ModelService_UpdateTag = new grpc.web.MethodDescriptor(
+  '/model.ModelService/UpdateTag',
+  grpc.web.MethodType.UNARY,
+  proto.model.TagUpdate,
+  proto.model.TagChangeResponse,
+  /**
+   * @param {!proto.model.TagUpdate} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.model.TagChangeResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.model.TagUpdate} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.model.TagChangeResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.model.TagChangeResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.model.ModelServiceClient.prototype.updateTag =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/model.ModelService/UpdateTag',
+      request,
+      metadata || {},
+      methodDescriptor_ModelService_UpdateTag,
+      callback);
+};
+
+
+/**
+ * @param {!proto.model.TagUpdate} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.model.TagChangeResponse>}
+ *     Promise that resolves to the response
+ */
+proto.model.ModelServicePromiseClient.prototype.updateTag =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/model.ModelService/UpdateTag',
+      request,
+      metadata || {},
+      methodDescriptor_ModelService_UpdateTag);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.model.TagId,
+ *   !proto.model.TagChangeResponse>}
+ */
+const methodDescriptor_ModelService_DeleteTag = new grpc.web.MethodDescriptor(
+  '/model.ModelService/DeleteTag',
+  grpc.web.MethodType.UNARY,
+  proto.model.TagId,
+  proto.model.TagChangeResponse,
+  /**
+   * @param {!proto.model.TagId} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.model.TagChangeResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.model.TagId} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.model.TagChangeResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.model.TagChangeResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.model.ModelServiceClient.prototype.deleteTag =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/model.ModelService/DeleteTag',
+      request,
+      metadata || {},
+      methodDescriptor_ModelService_DeleteTag,
+      callback);
+};
+
+
+/**
+ * @param {!proto.model.TagId} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.model.TagChangeResponse>}
+ *     Promise that resolves to the response
+ */
+proto.model.ModelServicePromiseClient.prototype.deleteTag =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/model.ModelService/DeleteTag',
+      request,
+      metadata || {},
+      methodDescriptor_ModelService_DeleteTag);
+};
+
+
 module.exports = proto.model;
 

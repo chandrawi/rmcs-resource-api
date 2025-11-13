@@ -660,7 +660,7 @@ modelId: msg.getModelId_asB64(),
 timestamp: jspb.Message.getFieldWithDefault(msg, 4, 0),
 dataBytes: msg.getDataBytes_asB64(),
 dataTypeList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f,
-status: jspb.Message.getFieldWithDefault(msg, 7, 0)
+tag: jspb.Message.getFieldWithDefault(msg, 7, 0)
   };
 
   if (includeInstance) {
@@ -725,7 +725,7 @@ proto.buffer.BufferSchema.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 7:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setStatus(value);
+      msg.setTag(value);
       break;
     default:
       reader.skipField();
@@ -798,7 +798,7 @@ proto.buffer.BufferSchema.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getStatus();
+  f = message.getTag();
   if (f !== 0) {
     writer.writeInt32(
       7,
@@ -1008,10 +1008,10 @@ proto.buffer.BufferSchema.prototype.clearDataTypeList = function() {
 
 
 /**
- * optional int32 status = 7;
+ * optional int32 tag = 7;
  * @return {number}
  */
-proto.buffer.BufferSchema.prototype.getStatus = function() {
+proto.buffer.BufferSchema.prototype.getTag = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
 };
 
@@ -1020,7 +1020,7 @@ proto.buffer.BufferSchema.prototype.getStatus = function() {
  * @param {number} value
  * @return {!proto.buffer.BufferSchema} returns this
  */
-proto.buffer.BufferSchema.prototype.setStatus = function(value) {
+proto.buffer.BufferSchema.prototype.setTag = function(value) {
   return jspb.Message.setProto3IntField(this, 7, value);
 };
 
@@ -1350,7 +1350,7 @@ proto.buffer.BufferTime.toObject = function(includeInstance, msg) {
 deviceId: msg.getDeviceId_asB64(),
 modelId: msg.getModelId_asB64(),
 timestamp: jspb.Message.getFieldWithDefault(msg, 3, 0),
-status: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
+tag: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1401,7 +1401,7 @@ proto.buffer.BufferTime.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 4:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setStatus(value);
+      msg.setTag(value);
       break;
     default:
       reader.skipField();
@@ -1566,10 +1566,10 @@ proto.buffer.BufferTime.prototype.setTimestamp = function(value) {
 
 
 /**
- * optional int32 status = 4;
+ * optional int32 tag = 4;
  * @return {number}
  */
-proto.buffer.BufferTime.prototype.getStatus = function() {
+proto.buffer.BufferTime.prototype.getTag = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
@@ -1578,7 +1578,7 @@ proto.buffer.BufferTime.prototype.getStatus = function() {
  * @param {number} value
  * @return {!proto.buffer.BufferTime} returns this
  */
-proto.buffer.BufferTime.prototype.setStatus = function(value) {
+proto.buffer.BufferTime.prototype.setTag = function(value) {
   return jspb.Message.setField(this, 4, value);
 };
 
@@ -1587,7 +1587,7 @@ proto.buffer.BufferTime.prototype.setStatus = function(value) {
  * Clears the field making it undefined.
  * @return {!proto.buffer.BufferTime} returns this
  */
-proto.buffer.BufferTime.prototype.clearStatus = function() {
+proto.buffer.BufferTime.prototype.clearTag = function() {
   return jspb.Message.setField(this, 4, undefined);
 };
 
@@ -1596,7 +1596,7 @@ proto.buffer.BufferTime.prototype.clearStatus = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.buffer.BufferTime.prototype.hasStatus = function() {
+proto.buffer.BufferTime.prototype.hasTag = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
@@ -1637,7 +1637,7 @@ deviceId: msg.getDeviceId_asB64(),
 modelId: msg.getModelId_asB64(),
 begin: jspb.Message.getFieldWithDefault(msg, 3, 0),
 end: jspb.Message.getFieldWithDefault(msg, 4, 0),
-status: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
+tag: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1692,7 +1692,7 @@ proto.buffer.BufferRange.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 5:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setStatus(value);
+      msg.setTag(value);
       break;
     default:
       reader.skipField();
@@ -1882,10 +1882,10 @@ proto.buffer.BufferRange.prototype.setEnd = function(value) {
 
 
 /**
- * optional int32 status = 5;
+ * optional int32 tag = 5;
  * @return {number}
  */
-proto.buffer.BufferRange.prototype.getStatus = function() {
+proto.buffer.BufferRange.prototype.getTag = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
@@ -1894,7 +1894,7 @@ proto.buffer.BufferRange.prototype.getStatus = function() {
  * @param {number} value
  * @return {!proto.buffer.BufferRange} returns this
  */
-proto.buffer.BufferRange.prototype.setStatus = function(value) {
+proto.buffer.BufferRange.prototype.setTag = function(value) {
   return jspb.Message.setField(this, 5, value);
 };
 
@@ -1903,7 +1903,7 @@ proto.buffer.BufferRange.prototype.setStatus = function(value) {
  * Clears the field making it undefined.
  * @return {!proto.buffer.BufferRange} returns this
  */
-proto.buffer.BufferRange.prototype.clearStatus = function() {
+proto.buffer.BufferRange.prototype.clearTag = function() {
   return jspb.Message.setField(this, 5, undefined);
 };
 
@@ -1912,7 +1912,7 @@ proto.buffer.BufferRange.prototype.clearStatus = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.buffer.BufferRange.prototype.hasStatus = function() {
+proto.buffer.BufferRange.prototype.hasTag = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
@@ -1953,7 +1953,7 @@ deviceId: msg.getDeviceId_asB64(),
 modelId: msg.getModelId_asB64(),
 timestamp: jspb.Message.getFieldWithDefault(msg, 3, 0),
 number: jspb.Message.getFieldWithDefault(msg, 4, 0),
-status: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
+tag: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -2008,7 +2008,7 @@ proto.buffer.BufferNumber.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 5:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setStatus(value);
+      msg.setTag(value);
       break;
     default:
       reader.skipField();
@@ -2198,10 +2198,10 @@ proto.buffer.BufferNumber.prototype.setNumber = function(value) {
 
 
 /**
- * optional int32 status = 5;
+ * optional int32 tag = 5;
  * @return {number}
  */
-proto.buffer.BufferNumber.prototype.getStatus = function() {
+proto.buffer.BufferNumber.prototype.getTag = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
@@ -2210,7 +2210,7 @@ proto.buffer.BufferNumber.prototype.getStatus = function() {
  * @param {number} value
  * @return {!proto.buffer.BufferNumber} returns this
  */
-proto.buffer.BufferNumber.prototype.setStatus = function(value) {
+proto.buffer.BufferNumber.prototype.setTag = function(value) {
   return jspb.Message.setField(this, 5, value);
 };
 
@@ -2219,7 +2219,7 @@ proto.buffer.BufferNumber.prototype.setStatus = function(value) {
  * Clears the field making it undefined.
  * @return {!proto.buffer.BufferNumber} returns this
  */
-proto.buffer.BufferNumber.prototype.clearStatus = function() {
+proto.buffer.BufferNumber.prototype.clearTag = function() {
   return jspb.Message.setField(this, 5, undefined);
 };
 
@@ -2228,7 +2228,7 @@ proto.buffer.BufferNumber.prototype.clearStatus = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.buffer.BufferNumber.prototype.hasStatus = function() {
+proto.buffer.BufferNumber.prototype.hasTag = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
@@ -2267,7 +2267,7 @@ proto.buffer.BufferSelector.toObject = function(includeInstance, msg) {
   var f, obj = {
 deviceId: msg.getDeviceId_asB64(),
 modelId: msg.getModelId_asB64(),
-status: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
+tag: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -2314,7 +2314,7 @@ proto.buffer.BufferSelector.deserializeBinaryFromReader = function(msg, reader) 
       break;
     case 3:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setStatus(value);
+      msg.setTag(value);
       break;
     default:
       reader.skipField();
@@ -2490,10 +2490,10 @@ proto.buffer.BufferSelector.prototype.hasModelId = function() {
 
 
 /**
- * optional int32 status = 3;
+ * optional int32 tag = 3;
  * @return {number}
  */
-proto.buffer.BufferSelector.prototype.getStatus = function() {
+proto.buffer.BufferSelector.prototype.getTag = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
@@ -2502,7 +2502,7 @@ proto.buffer.BufferSelector.prototype.getStatus = function() {
  * @param {number} value
  * @return {!proto.buffer.BufferSelector} returns this
  */
-proto.buffer.BufferSelector.prototype.setStatus = function(value) {
+proto.buffer.BufferSelector.prototype.setTag = function(value) {
   return jspb.Message.setField(this, 3, value);
 };
 
@@ -2511,7 +2511,7 @@ proto.buffer.BufferSelector.prototype.setStatus = function(value) {
  * Clears the field making it undefined.
  * @return {!proto.buffer.BufferSelector} returns this
  */
-proto.buffer.BufferSelector.prototype.clearStatus = function() {
+proto.buffer.BufferSelector.prototype.clearTag = function() {
   return jspb.Message.setField(this, 3, undefined);
 };
 
@@ -2520,7 +2520,7 @@ proto.buffer.BufferSelector.prototype.clearStatus = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.buffer.BufferSelector.prototype.hasStatus = function() {
+proto.buffer.BufferSelector.prototype.hasTag = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
@@ -2559,7 +2559,7 @@ proto.buffer.BuffersSelector.toObject = function(includeInstance, msg) {
   var f, obj = {
 deviceId: msg.getDeviceId_asB64(),
 modelId: msg.getModelId_asB64(),
-status: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+tag: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
 number: jspb.Message.getFieldWithDefault(msg, 4, 0),
 offset: jspb.Message.getFieldWithDefault(msg, 5, 0)
   };
@@ -2608,7 +2608,7 @@ proto.buffer.BuffersSelector.deserializeBinaryFromReader = function(msg, reader)
       break;
     case 3:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setStatus(value);
+      msg.setTag(value);
       break;
     case 4:
       var value = /** @type {number} */ (reader.readUint32());
@@ -2806,10 +2806,10 @@ proto.buffer.BuffersSelector.prototype.hasModelId = function() {
 
 
 /**
- * optional int32 status = 3;
+ * optional int32 tag = 3;
  * @return {number}
  */
-proto.buffer.BuffersSelector.prototype.getStatus = function() {
+proto.buffer.BuffersSelector.prototype.getTag = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
@@ -2818,7 +2818,7 @@ proto.buffer.BuffersSelector.prototype.getStatus = function() {
  * @param {number} value
  * @return {!proto.buffer.BuffersSelector} returns this
  */
-proto.buffer.BuffersSelector.prototype.setStatus = function(value) {
+proto.buffer.BuffersSelector.prototype.setTag = function(value) {
   return jspb.Message.setField(this, 3, value);
 };
 
@@ -2827,7 +2827,7 @@ proto.buffer.BuffersSelector.prototype.setStatus = function(value) {
  * Clears the field making it undefined.
  * @return {!proto.buffer.BuffersSelector} returns this
  */
-proto.buffer.BuffersSelector.prototype.clearStatus = function() {
+proto.buffer.BuffersSelector.prototype.clearTag = function() {
   return jspb.Message.setField(this, 3, undefined);
 };
 
@@ -2836,7 +2836,7 @@ proto.buffer.BuffersSelector.prototype.clearStatus = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.buffer.BuffersSelector.prototype.hasStatus = function() {
+proto.buffer.BuffersSelector.prototype.hasTag = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
@@ -2919,7 +2919,7 @@ proto.buffer.BufferIdsTime.toObject = function(includeInstance, msg) {
 deviceIdsList: msg.getDeviceIdsList_asB64(),
 modelIdsList: msg.getModelIdsList_asB64(),
 timestamp: jspb.Message.getFieldWithDefault(msg, 3, 0),
-status: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
+tag: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -2970,7 +2970,7 @@ proto.buffer.BufferIdsTime.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 4:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setStatus(value);
+      msg.setTag(value);
       break;
     default:
       reader.skipField();
@@ -3173,10 +3173,10 @@ proto.buffer.BufferIdsTime.prototype.setTimestamp = function(value) {
 
 
 /**
- * optional int32 status = 4;
+ * optional int32 tag = 4;
  * @return {number}
  */
-proto.buffer.BufferIdsTime.prototype.getStatus = function() {
+proto.buffer.BufferIdsTime.prototype.getTag = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
@@ -3185,7 +3185,7 @@ proto.buffer.BufferIdsTime.prototype.getStatus = function() {
  * @param {number} value
  * @return {!proto.buffer.BufferIdsTime} returns this
  */
-proto.buffer.BufferIdsTime.prototype.setStatus = function(value) {
+proto.buffer.BufferIdsTime.prototype.setTag = function(value) {
   return jspb.Message.setField(this, 4, value);
 };
 
@@ -3194,7 +3194,7 @@ proto.buffer.BufferIdsTime.prototype.setStatus = function(value) {
  * Clears the field making it undefined.
  * @return {!proto.buffer.BufferIdsTime} returns this
  */
-proto.buffer.BufferIdsTime.prototype.clearStatus = function() {
+proto.buffer.BufferIdsTime.prototype.clearTag = function() {
   return jspb.Message.setField(this, 4, undefined);
 };
 
@@ -3203,7 +3203,7 @@ proto.buffer.BufferIdsTime.prototype.clearStatus = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.buffer.BufferIdsTime.prototype.hasStatus = function() {
+proto.buffer.BufferIdsTime.prototype.hasTag = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
@@ -3251,7 +3251,7 @@ deviceIdsList: msg.getDeviceIdsList_asB64(),
 modelIdsList: msg.getModelIdsList_asB64(),
 begin: jspb.Message.getFieldWithDefault(msg, 3, 0),
 end: jspb.Message.getFieldWithDefault(msg, 4, 0),
-status: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
+tag: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -3306,7 +3306,7 @@ proto.buffer.BufferIdsRange.deserializeBinaryFromReader = function(msg, reader) 
       break;
     case 5:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setStatus(value);
+      msg.setTag(value);
       break;
     default:
       reader.skipField();
@@ -3534,10 +3534,10 @@ proto.buffer.BufferIdsRange.prototype.setEnd = function(value) {
 
 
 /**
- * optional int32 status = 5;
+ * optional int32 tag = 5;
  * @return {number}
  */
-proto.buffer.BufferIdsRange.prototype.getStatus = function() {
+proto.buffer.BufferIdsRange.prototype.getTag = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
@@ -3546,7 +3546,7 @@ proto.buffer.BufferIdsRange.prototype.getStatus = function() {
  * @param {number} value
  * @return {!proto.buffer.BufferIdsRange} returns this
  */
-proto.buffer.BufferIdsRange.prototype.setStatus = function(value) {
+proto.buffer.BufferIdsRange.prototype.setTag = function(value) {
   return jspb.Message.setField(this, 5, value);
 };
 
@@ -3555,7 +3555,7 @@ proto.buffer.BufferIdsRange.prototype.setStatus = function(value) {
  * Clears the field making it undefined.
  * @return {!proto.buffer.BufferIdsRange} returns this
  */
-proto.buffer.BufferIdsRange.prototype.clearStatus = function() {
+proto.buffer.BufferIdsRange.prototype.clearTag = function() {
   return jspb.Message.setField(this, 5, undefined);
 };
 
@@ -3564,7 +3564,7 @@ proto.buffer.BufferIdsRange.prototype.clearStatus = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.buffer.BufferIdsRange.prototype.hasStatus = function() {
+proto.buffer.BufferIdsRange.prototype.hasTag = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
@@ -3612,7 +3612,7 @@ deviceIdsList: msg.getDeviceIdsList_asB64(),
 modelIdsList: msg.getModelIdsList_asB64(),
 timestamp: jspb.Message.getFieldWithDefault(msg, 3, 0),
 number: jspb.Message.getFieldWithDefault(msg, 4, 0),
-status: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
+tag: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -3667,7 +3667,7 @@ proto.buffer.BufferIdsNumber.deserializeBinaryFromReader = function(msg, reader)
       break;
     case 5:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setStatus(value);
+      msg.setTag(value);
       break;
     default:
       reader.skipField();
@@ -3895,10 +3895,10 @@ proto.buffer.BufferIdsNumber.prototype.setNumber = function(value) {
 
 
 /**
- * optional int32 status = 5;
+ * optional int32 tag = 5;
  * @return {number}
  */
-proto.buffer.BufferIdsNumber.prototype.getStatus = function() {
+proto.buffer.BufferIdsNumber.prototype.getTag = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
@@ -3907,7 +3907,7 @@ proto.buffer.BufferIdsNumber.prototype.getStatus = function() {
  * @param {number} value
  * @return {!proto.buffer.BufferIdsNumber} returns this
  */
-proto.buffer.BufferIdsNumber.prototype.setStatus = function(value) {
+proto.buffer.BufferIdsNumber.prototype.setTag = function(value) {
   return jspb.Message.setField(this, 5, value);
 };
 
@@ -3916,7 +3916,7 @@ proto.buffer.BufferIdsNumber.prototype.setStatus = function(value) {
  * Clears the field making it undefined.
  * @return {!proto.buffer.BufferIdsNumber} returns this
  */
-proto.buffer.BufferIdsNumber.prototype.clearStatus = function() {
+proto.buffer.BufferIdsNumber.prototype.clearTag = function() {
   return jspb.Message.setField(this, 5, undefined);
 };
 
@@ -3925,7 +3925,7 @@ proto.buffer.BufferIdsNumber.prototype.clearStatus = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.buffer.BufferIdsNumber.prototype.hasStatus = function() {
+proto.buffer.BufferIdsNumber.prototype.hasTag = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
@@ -3971,7 +3971,7 @@ proto.buffer.BufferIdsSelector.toObject = function(includeInstance, msg) {
   var f, obj = {
 deviceIdsList: msg.getDeviceIdsList_asB64(),
 modelIdsList: msg.getModelIdsList_asB64(),
-status: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
+tag: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -4018,7 +4018,7 @@ proto.buffer.BufferIdsSelector.deserializeBinaryFromReader = function(msg, reade
       break;
     case 3:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setStatus(value);
+      msg.setTag(value);
       break;
     default:
       reader.skipField();
@@ -4196,10 +4196,10 @@ proto.buffer.BufferIdsSelector.prototype.clearModelIdsList = function() {
 
 
 /**
- * optional int32 status = 3;
+ * optional int32 tag = 3;
  * @return {number}
  */
-proto.buffer.BufferIdsSelector.prototype.getStatus = function() {
+proto.buffer.BufferIdsSelector.prototype.getTag = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
@@ -4208,7 +4208,7 @@ proto.buffer.BufferIdsSelector.prototype.getStatus = function() {
  * @param {number} value
  * @return {!proto.buffer.BufferIdsSelector} returns this
  */
-proto.buffer.BufferIdsSelector.prototype.setStatus = function(value) {
+proto.buffer.BufferIdsSelector.prototype.setTag = function(value) {
   return jspb.Message.setField(this, 3, value);
 };
 
@@ -4217,7 +4217,7 @@ proto.buffer.BufferIdsSelector.prototype.setStatus = function(value) {
  * Clears the field making it undefined.
  * @return {!proto.buffer.BufferIdsSelector} returns this
  */
-proto.buffer.BufferIdsSelector.prototype.clearStatus = function() {
+proto.buffer.BufferIdsSelector.prototype.clearTag = function() {
   return jspb.Message.setField(this, 3, undefined);
 };
 
@@ -4226,7 +4226,7 @@ proto.buffer.BufferIdsSelector.prototype.clearStatus = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.buffer.BufferIdsSelector.prototype.hasStatus = function() {
+proto.buffer.BufferIdsSelector.prototype.hasTag = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
@@ -4272,7 +4272,7 @@ proto.buffer.BuffersIdsSelector.toObject = function(includeInstance, msg) {
   var f, obj = {
 deviceIdsList: msg.getDeviceIdsList_asB64(),
 modelIdsList: msg.getModelIdsList_asB64(),
-status: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+tag: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
 number: jspb.Message.getFieldWithDefault(msg, 4, 0),
 offset: jspb.Message.getFieldWithDefault(msg, 5, 0)
   };
@@ -4321,7 +4321,7 @@ proto.buffer.BuffersIdsSelector.deserializeBinaryFromReader = function(msg, read
       break;
     case 3:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setStatus(value);
+      msg.setTag(value);
       break;
     case 4:
       var value = /** @type {number} */ (reader.readUint32());
@@ -4521,10 +4521,10 @@ proto.buffer.BuffersIdsSelector.prototype.clearModelIdsList = function() {
 
 
 /**
- * optional int32 status = 3;
+ * optional int32 tag = 3;
  * @return {number}
  */
-proto.buffer.BuffersIdsSelector.prototype.getStatus = function() {
+proto.buffer.BuffersIdsSelector.prototype.getTag = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
@@ -4533,7 +4533,7 @@ proto.buffer.BuffersIdsSelector.prototype.getStatus = function() {
  * @param {number} value
  * @return {!proto.buffer.BuffersIdsSelector} returns this
  */
-proto.buffer.BuffersIdsSelector.prototype.setStatus = function(value) {
+proto.buffer.BuffersIdsSelector.prototype.setTag = function(value) {
   return jspb.Message.setField(this, 3, value);
 };
 
@@ -4542,7 +4542,7 @@ proto.buffer.BuffersIdsSelector.prototype.setStatus = function(value) {
  * Clears the field making it undefined.
  * @return {!proto.buffer.BuffersIdsSelector} returns this
  */
-proto.buffer.BuffersIdsSelector.prototype.clearStatus = function() {
+proto.buffer.BuffersIdsSelector.prototype.clearTag = function() {
   return jspb.Message.setField(this, 3, undefined);
 };
 
@@ -4551,7 +4551,7 @@ proto.buffer.BuffersIdsSelector.prototype.clearStatus = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.buffer.BuffersIdsSelector.prototype.hasStatus = function() {
+proto.buffer.BuffersIdsSelector.prototype.hasTag = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
@@ -4625,8 +4625,7 @@ proto.buffer.BufferSetTime.prototype.toObject = function(opt_includeInstance) {
 proto.buffer.BufferSetTime.toObject = function(includeInstance, msg) {
   var f, obj = {
 setId: msg.getSetId_asB64(),
-timestamp: jspb.Message.getFieldWithDefault(msg, 2, 0),
-status: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
+timestamp: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -4671,10 +4670,6 @@ proto.buffer.BufferSetTime.deserializeBinaryFromReader = function(msg, reader) {
       var value = /** @type {number} */ (reader.readInt64());
       msg.setTimestamp(value);
       break;
-    case 3:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setStatus(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -4715,13 +4710,6 @@ proto.buffer.BufferSetTime.serializeBinaryToWriter = function(message, writer) {
   if (f !== 0) {
     writer.writeInt64(
       2,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 3));
-  if (f != null) {
-    writer.writeInt32(
-      3,
       f
     );
   }
@@ -4788,42 +4776,6 @@ proto.buffer.BufferSetTime.prototype.setTimestamp = function(value) {
 };
 
 
-/**
- * optional int32 status = 3;
- * @return {number}
- */
-proto.buffer.BufferSetTime.prototype.getStatus = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.buffer.BufferSetTime} returns this
- */
-proto.buffer.BufferSetTime.prototype.setStatus = function(value) {
-  return jspb.Message.setField(this, 3, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.buffer.BufferSetTime} returns this
- */
-proto.buffer.BufferSetTime.prototype.clearStatus = function() {
-  return jspb.Message.setField(this, 3, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.buffer.BufferSetTime.prototype.hasStatus = function() {
-  return jspb.Message.getField(this, 3) != null;
-};
-
-
 
 
 
@@ -4858,8 +4810,7 @@ proto.buffer.BufferSetRange.toObject = function(includeInstance, msg) {
   var f, obj = {
 setId: msg.getSetId_asB64(),
 begin: jspb.Message.getFieldWithDefault(msg, 2, 0),
-end: jspb.Message.getFieldWithDefault(msg, 3, 0),
-status: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
+end: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -4908,10 +4859,6 @@ proto.buffer.BufferSetRange.deserializeBinaryFromReader = function(msg, reader) 
       var value = /** @type {number} */ (reader.readInt64());
       msg.setEnd(value);
       break;
-    case 4:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setStatus(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -4959,13 +4906,6 @@ proto.buffer.BufferSetRange.serializeBinaryToWriter = function(message, writer) 
   if (f !== 0) {
     writer.writeInt64(
       3,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 4));
-  if (f != null) {
-    writer.writeInt32(
-      4,
       f
     );
   }
@@ -5050,42 +4990,6 @@ proto.buffer.BufferSetRange.prototype.setEnd = function(value) {
 };
 
 
-/**
- * optional int32 status = 4;
- * @return {number}
- */
-proto.buffer.BufferSetRange.prototype.getStatus = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.buffer.BufferSetRange} returns this
- */
-proto.buffer.BufferSetRange.prototype.setStatus = function(value) {
-  return jspb.Message.setField(this, 4, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.buffer.BufferSetRange} returns this
- */
-proto.buffer.BufferSetRange.prototype.clearStatus = function() {
-  return jspb.Message.setField(this, 4, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.buffer.BufferSetRange.prototype.hasStatus = function() {
-  return jspb.Message.getField(this, 4) != null;
-};
-
-
 
 
 
@@ -5120,8 +5024,7 @@ proto.buffer.BufferSetNumber.toObject = function(includeInstance, msg) {
   var f, obj = {
 setId: msg.getSetId_asB64(),
 timestamp: jspb.Message.getFieldWithDefault(msg, 2, 0),
-number: jspb.Message.getFieldWithDefault(msg, 3, 0),
-status: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
+number: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -5170,10 +5073,6 @@ proto.buffer.BufferSetNumber.deserializeBinaryFromReader = function(msg, reader)
       var value = /** @type {number} */ (reader.readUint32());
       msg.setNumber(value);
       break;
-    case 4:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setStatus(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -5221,13 +5120,6 @@ proto.buffer.BufferSetNumber.serializeBinaryToWriter = function(message, writer)
   if (f !== 0) {
     writer.writeUint32(
       3,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 4));
-  if (f != null) {
-    writer.writeInt32(
-      4,
       f
     );
   }
@@ -5312,42 +5204,6 @@ proto.buffer.BufferSetNumber.prototype.setNumber = function(value) {
 };
 
 
-/**
- * optional int32 status = 4;
- * @return {number}
- */
-proto.buffer.BufferSetNumber.prototype.getStatus = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.buffer.BufferSetNumber} returns this
- */
-proto.buffer.BufferSetNumber.prototype.setStatus = function(value) {
-  return jspb.Message.setField(this, 4, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.buffer.BufferSetNumber} returns this
- */
-proto.buffer.BufferSetNumber.prototype.clearStatus = function() {
-  return jspb.Message.setField(this, 4, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.buffer.BufferSetNumber.prototype.hasStatus = function() {
-  return jspb.Message.getField(this, 4) != null;
-};
-
-
 
 
 
@@ -5380,8 +5236,7 @@ proto.buffer.BufferSetSelector.prototype.toObject = function(opt_includeInstance
  */
 proto.buffer.BufferSetSelector.toObject = function(includeInstance, msg) {
   var f, obj = {
-setId: msg.getSetId_asB64(),
-status: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f
+setId: msg.getSetId_asB64()
   };
 
   if (includeInstance) {
@@ -5422,10 +5277,6 @@ proto.buffer.BufferSetSelector.deserializeBinaryFromReader = function(msg, reade
       var value = /** @type {!Uint8Array} */ (reader.readBytes());
       msg.setSetId(value);
       break;
-    case 2:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setStatus(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -5459,13 +5310,6 @@ proto.buffer.BufferSetSelector.serializeBinaryToWriter = function(message, write
   if (f.length > 0) {
     writer.writeBytes(
       1,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 2));
-  if (f != null) {
-    writer.writeInt32(
-      2,
       f
     );
   }
@@ -5514,42 +5358,6 @@ proto.buffer.BufferSetSelector.prototype.setSetId = function(value) {
 };
 
 
-/**
- * optional int32 status = 2;
- * @return {number}
- */
-proto.buffer.BufferSetSelector.prototype.getStatus = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.buffer.BufferSetSelector} returns this
- */
-proto.buffer.BufferSetSelector.prototype.setStatus = function(value) {
-  return jspb.Message.setField(this, 2, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.buffer.BufferSetSelector} returns this
- */
-proto.buffer.BufferSetSelector.prototype.clearStatus = function() {
-  return jspb.Message.setField(this, 2, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.buffer.BufferSetSelector.prototype.hasStatus = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
 
 
 
@@ -5583,9 +5391,8 @@ proto.buffer.BuffersSetSelector.prototype.toObject = function(opt_includeInstanc
 proto.buffer.BuffersSetSelector.toObject = function(includeInstance, msg) {
   var f, obj = {
 setId: msg.getSetId_asB64(),
-status: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-number: jspb.Message.getFieldWithDefault(msg, 3, 0),
-offset: jspb.Message.getFieldWithDefault(msg, 4, 0)
+number: jspb.Message.getFieldWithDefault(msg, 2, 0),
+offset: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -5627,14 +5434,10 @@ proto.buffer.BuffersSetSelector.deserializeBinaryFromReader = function(msg, read
       msg.setSetId(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setStatus(value);
-      break;
-    case 3:
       var value = /** @type {number} */ (reader.readUint32());
       msg.setNumber(value);
       break;
-    case 4:
+    case 3:
       var value = /** @type {number} */ (reader.readUint32());
       msg.setOffset(value);
       break;
@@ -5674,24 +5477,17 @@ proto.buffer.BuffersSetSelector.serializeBinaryToWriter = function(message, writ
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 2));
-  if (f != null) {
-    writer.writeInt32(
-      2,
-      f
-    );
-  }
   f = message.getNumber();
   if (f !== 0) {
     writer.writeUint32(
-      3,
+      2,
       f
     );
   }
   f = message.getOffset();
   if (f !== 0) {
     writer.writeUint32(
-      4,
+      3,
       f
     );
   }
@@ -5741,10 +5537,10 @@ proto.buffer.BuffersSetSelector.prototype.setSetId = function(value) {
 
 
 /**
- * optional int32 status = 2;
+ * optional uint32 number = 2;
  * @return {number}
  */
-proto.buffer.BuffersSetSelector.prototype.getStatus = function() {
+proto.buffer.BuffersSetSelector.prototype.getNumber = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
@@ -5753,34 +5549,16 @@ proto.buffer.BuffersSetSelector.prototype.getStatus = function() {
  * @param {number} value
  * @return {!proto.buffer.BuffersSetSelector} returns this
  */
-proto.buffer.BuffersSetSelector.prototype.setStatus = function(value) {
-  return jspb.Message.setField(this, 2, value);
+proto.buffer.BuffersSetSelector.prototype.setNumber = function(value) {
+  return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
 /**
- * Clears the field making it undefined.
- * @return {!proto.buffer.BuffersSetSelector} returns this
- */
-proto.buffer.BuffersSetSelector.prototype.clearStatus = function() {
-  return jspb.Message.setField(this, 2, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.buffer.BuffersSetSelector.prototype.hasStatus = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional uint32 number = 3;
+ * optional uint32 offset = 3;
  * @return {number}
  */
-proto.buffer.BuffersSetSelector.prototype.getNumber = function() {
+proto.buffer.BuffersSetSelector.prototype.getOffset = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
@@ -5789,26 +5567,8 @@ proto.buffer.BuffersSetSelector.prototype.getNumber = function() {
  * @param {number} value
  * @return {!proto.buffer.BuffersSetSelector} returns this
  */
-proto.buffer.BuffersSetSelector.prototype.setNumber = function(value) {
-  return jspb.Message.setProto3IntField(this, 3, value);
-};
-
-
-/**
- * optional uint32 offset = 4;
- * @return {number}
- */
-proto.buffer.BuffersSetSelector.prototype.getOffset = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.buffer.BuffersSetSelector} returns this
- */
 proto.buffer.BuffersSetSelector.prototype.setOffset = function(value) {
-  return jspb.Message.setProto3IntField(this, 4, value);
+  return jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
@@ -5854,7 +5614,7 @@ proto.buffer.BufferUpdate.toObject = function(includeInstance, msg) {
 id: jspb.Message.getFieldWithDefault(msg, 1, 0),
 dataBytes: msg.getDataBytes_asB64(),
 dataTypeList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f,
-status: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
+tag: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -5907,7 +5667,7 @@ proto.buffer.BufferUpdate.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 4:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setStatus(value);
+      msg.setTag(value);
       break;
     default:
       reader.skipField();
@@ -6085,10 +5845,10 @@ proto.buffer.BufferUpdate.prototype.clearDataTypeList = function() {
 
 
 /**
- * optional int32 status = 4;
+ * optional int32 tag = 4;
  * @return {number}
  */
-proto.buffer.BufferUpdate.prototype.getStatus = function() {
+proto.buffer.BufferUpdate.prototype.getTag = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
@@ -6097,7 +5857,7 @@ proto.buffer.BufferUpdate.prototype.getStatus = function() {
  * @param {number} value
  * @return {!proto.buffer.BufferUpdate} returns this
  */
-proto.buffer.BufferUpdate.prototype.setStatus = function(value) {
+proto.buffer.BufferUpdate.prototype.setTag = function(value) {
   return jspb.Message.setField(this, 4, value);
 };
 
@@ -6106,7 +5866,7 @@ proto.buffer.BufferUpdate.prototype.setStatus = function(value) {
  * Clears the field making it undefined.
  * @return {!proto.buffer.BufferUpdate} returns this
  */
-proto.buffer.BufferUpdate.prototype.clearStatus = function() {
+proto.buffer.BufferUpdate.prototype.clearTag = function() {
   return jspb.Message.setField(this, 4, undefined);
 };
 
@@ -6115,7 +5875,7 @@ proto.buffer.BufferUpdate.prototype.clearStatus = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.buffer.BufferUpdate.prototype.hasStatus = function() {
+proto.buffer.BufferUpdate.prototype.hasTag = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 

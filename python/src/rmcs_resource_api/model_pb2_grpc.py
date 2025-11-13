@@ -5,7 +5,7 @@ import warnings
 
 from rmcs_resource_api import model_pb2 as rmcs__resource__api_dot_model__pb2
 
-GRPC_GENERATED_VERSION = '1.73.1'
+GRPC_GENERATED_VERSION = '1.76.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 
@@ -18,7 +18,7 @@ except ImportError:
 if _version_not_supported:
     raise RuntimeError(
         f'The grpc package installed is at version {GRPC_VERSION},'
-        + f' but the generated code in rmcs_resource_api/model_pb2_grpc.py depends on'
+        + ' but the generated code in rmcs_resource_api/model_pb2_grpc.py depends on'
         + f' grpcio>={GRPC_GENERATED_VERSION}.'
         + f' Please upgrade your grpc module to grpcio>={GRPC_GENERATED_VERSION}'
         + f' or downgrade your generated code using grpcio-tools<={GRPC_VERSION}.'
@@ -103,6 +103,31 @@ class ModelServiceStub(object):
                 '/model.ModelService/DeleteModelConfig',
                 request_serializer=rmcs__resource__api_dot_model__pb2.ConfigId.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_model__pb2.ConfigChangeResponse.FromString,
+                _registered_method=True)
+        self.ReadTag = channel.unary_unary(
+                '/model.ModelService/ReadTag',
+                request_serializer=rmcs__resource__api_dot_model__pb2.TagId.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_model__pb2.TagReadResponse.FromString,
+                _registered_method=True)
+        self.ListTagByModel = channel.unary_unary(
+                '/model.ModelService/ListTagByModel',
+                request_serializer=rmcs__resource__api_dot_model__pb2.ModelId.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_model__pb2.TagListResponse.FromString,
+                _registered_method=True)
+        self.CreateTag = channel.unary_unary(
+                '/model.ModelService/CreateTag',
+                request_serializer=rmcs__resource__api_dot_model__pb2.TagSchema.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_model__pb2.TagChangeResponse.FromString,
+                _registered_method=True)
+        self.UpdateTag = channel.unary_unary(
+                '/model.ModelService/UpdateTag',
+                request_serializer=rmcs__resource__api_dot_model__pb2.TagUpdate.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_model__pb2.TagChangeResponse.FromString,
+                _registered_method=True)
+        self.DeleteTag = channel.unary_unary(
+                '/model.ModelService/DeleteTag',
+                request_serializer=rmcs__resource__api_dot_model__pb2.TagId.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_model__pb2.TagChangeResponse.FromString,
                 _registered_method=True)
 
 
@@ -193,6 +218,36 @@ class ModelServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ReadTag(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListTagByModel(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateTag(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateTag(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteTag(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_ModelServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -265,6 +320,31 @@ def add_ModelServiceServicer_to_server(servicer, server):
                     servicer.DeleteModelConfig,
                     request_deserializer=rmcs__resource__api_dot_model__pb2.ConfigId.FromString,
                     response_serializer=rmcs__resource__api_dot_model__pb2.ConfigChangeResponse.SerializeToString,
+            ),
+            'ReadTag': grpc.unary_unary_rpc_method_handler(
+                    servicer.ReadTag,
+                    request_deserializer=rmcs__resource__api_dot_model__pb2.TagId.FromString,
+                    response_serializer=rmcs__resource__api_dot_model__pb2.TagReadResponse.SerializeToString,
+            ),
+            'ListTagByModel': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListTagByModel,
+                    request_deserializer=rmcs__resource__api_dot_model__pb2.ModelId.FromString,
+                    response_serializer=rmcs__resource__api_dot_model__pb2.TagListResponse.SerializeToString,
+            ),
+            'CreateTag': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateTag,
+                    request_deserializer=rmcs__resource__api_dot_model__pb2.TagSchema.FromString,
+                    response_serializer=rmcs__resource__api_dot_model__pb2.TagChangeResponse.SerializeToString,
+            ),
+            'UpdateTag': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateTag,
+                    request_deserializer=rmcs__resource__api_dot_model__pb2.TagUpdate.FromString,
+                    response_serializer=rmcs__resource__api_dot_model__pb2.TagChangeResponse.SerializeToString,
+            ),
+            'DeleteTag': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteTag,
+                    request_deserializer=rmcs__resource__api_dot_model__pb2.TagId.FromString,
+                    response_serializer=rmcs__resource__api_dot_model__pb2.TagChangeResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -645,6 +725,141 @@ class ModelService(object):
             '/model.ModelService/DeleteModelConfig',
             rmcs__resource__api_dot_model__pb2.ConfigId.SerializeToString,
             rmcs__resource__api_dot_model__pb2.ConfigChangeResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ReadTag(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/model.ModelService/ReadTag',
+            rmcs__resource__api_dot_model__pb2.TagId.SerializeToString,
+            rmcs__resource__api_dot_model__pb2.TagReadResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListTagByModel(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/model.ModelService/ListTagByModel',
+            rmcs__resource__api_dot_model__pb2.ModelId.SerializeToString,
+            rmcs__resource__api_dot_model__pb2.TagListResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def CreateTag(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/model.ModelService/CreateTag',
+            rmcs__resource__api_dot_model__pb2.TagSchema.SerializeToString,
+            rmcs__resource__api_dot_model__pb2.TagChangeResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UpdateTag(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/model.ModelService/UpdateTag',
+            rmcs__resource__api_dot_model__pb2.TagUpdate.SerializeToString,
+            rmcs__resource__api_dot_model__pb2.TagChangeResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def DeleteTag(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/model.ModelService/DeleteTag',
+            rmcs__resource__api_dot_model__pb2.TagId.SerializeToString,
+            rmcs__resource__api_dot_model__pb2.TagChangeResponse.FromString,
             options,
             channel_credentials,
             insecure,

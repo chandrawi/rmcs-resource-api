@@ -7,18 +7,20 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class DataSchema(_message.Message):
-    __slots__ = ("device_id", "model_id", "timestamp", "data_bytes", "data_type")
+    __slots__ = ("device_id", "model_id", "timestamp", "data_bytes", "data_type", "tag")
     DEVICE_ID_FIELD_NUMBER: _ClassVar[int]
     MODEL_ID_FIELD_NUMBER: _ClassVar[int]
     TIMESTAMP_FIELD_NUMBER: _ClassVar[int]
     DATA_BYTES_FIELD_NUMBER: _ClassVar[int]
     DATA_TYPE_FIELD_NUMBER: _ClassVar[int]
+    TAG_FIELD_NUMBER: _ClassVar[int]
     device_id: bytes
     model_id: bytes
     timestamp: int
     data_bytes: bytes
     data_type: _containers.RepeatedScalarFieldContainer[int]
-    def __init__(self, device_id: _Optional[bytes] = ..., model_id: _Optional[bytes] = ..., timestamp: _Optional[int] = ..., data_bytes: _Optional[bytes] = ..., data_type: _Optional[_Iterable[int]] = ...) -> None: ...
+    tag: int
+    def __init__(self, device_id: _Optional[bytes] = ..., model_id: _Optional[bytes] = ..., timestamp: _Optional[int] = ..., data_bytes: _Optional[bytes] = ..., data_type: _Optional[_Iterable[int]] = ..., tag: _Optional[int] = ...) -> None: ...
 
 class DataMultipleSchema(_message.Message):
     __slots__ = ("schemas",)
@@ -27,48 +29,56 @@ class DataMultipleSchema(_message.Message):
     def __init__(self, schemas: _Optional[_Iterable[_Union[DataSchema, _Mapping]]] = ...) -> None: ...
 
 class DataId(_message.Message):
-    __slots__ = ("device_id", "model_id", "timestamp")
+    __slots__ = ("device_id", "model_id", "timestamp", "tag")
     DEVICE_ID_FIELD_NUMBER: _ClassVar[int]
     MODEL_ID_FIELD_NUMBER: _ClassVar[int]
     TIMESTAMP_FIELD_NUMBER: _ClassVar[int]
+    TAG_FIELD_NUMBER: _ClassVar[int]
     device_id: bytes
     model_id: bytes
     timestamp: int
-    def __init__(self, device_id: _Optional[bytes] = ..., model_id: _Optional[bytes] = ..., timestamp: _Optional[int] = ...) -> None: ...
+    tag: int
+    def __init__(self, device_id: _Optional[bytes] = ..., model_id: _Optional[bytes] = ..., timestamp: _Optional[int] = ..., tag: _Optional[int] = ...) -> None: ...
 
 class DataTime(_message.Message):
-    __slots__ = ("device_id", "model_id", "timestamp")
+    __slots__ = ("device_id", "model_id", "timestamp", "tag")
     DEVICE_ID_FIELD_NUMBER: _ClassVar[int]
     MODEL_ID_FIELD_NUMBER: _ClassVar[int]
     TIMESTAMP_FIELD_NUMBER: _ClassVar[int]
+    TAG_FIELD_NUMBER: _ClassVar[int]
     device_id: bytes
     model_id: bytes
     timestamp: int
-    def __init__(self, device_id: _Optional[bytes] = ..., model_id: _Optional[bytes] = ..., timestamp: _Optional[int] = ...) -> None: ...
+    tag: int
+    def __init__(self, device_id: _Optional[bytes] = ..., model_id: _Optional[bytes] = ..., timestamp: _Optional[int] = ..., tag: _Optional[int] = ...) -> None: ...
 
 class DataRange(_message.Message):
-    __slots__ = ("device_id", "model_id", "begin", "end")
+    __slots__ = ("device_id", "model_id", "begin", "end", "tag")
     DEVICE_ID_FIELD_NUMBER: _ClassVar[int]
     MODEL_ID_FIELD_NUMBER: _ClassVar[int]
     BEGIN_FIELD_NUMBER: _ClassVar[int]
     END_FIELD_NUMBER: _ClassVar[int]
+    TAG_FIELD_NUMBER: _ClassVar[int]
     device_id: bytes
     model_id: bytes
     begin: int
     end: int
-    def __init__(self, device_id: _Optional[bytes] = ..., model_id: _Optional[bytes] = ..., begin: _Optional[int] = ..., end: _Optional[int] = ...) -> None: ...
+    tag: int
+    def __init__(self, device_id: _Optional[bytes] = ..., model_id: _Optional[bytes] = ..., begin: _Optional[int] = ..., end: _Optional[int] = ..., tag: _Optional[int] = ...) -> None: ...
 
 class DataNumber(_message.Message):
-    __slots__ = ("device_id", "model_id", "timestamp", "number")
+    __slots__ = ("device_id", "model_id", "timestamp", "number", "tag")
     DEVICE_ID_FIELD_NUMBER: _ClassVar[int]
     MODEL_ID_FIELD_NUMBER: _ClassVar[int]
     TIMESTAMP_FIELD_NUMBER: _ClassVar[int]
     NUMBER_FIELD_NUMBER: _ClassVar[int]
+    TAG_FIELD_NUMBER: _ClassVar[int]
     device_id: bytes
     model_id: bytes
     timestamp: int
     number: int
-    def __init__(self, device_id: _Optional[bytes] = ..., model_id: _Optional[bytes] = ..., timestamp: _Optional[int] = ..., number: _Optional[int] = ...) -> None: ...
+    tag: int
+    def __init__(self, device_id: _Optional[bytes] = ..., model_id: _Optional[bytes] = ..., timestamp: _Optional[int] = ..., number: _Optional[int] = ..., tag: _Optional[int] = ...) -> None: ...
 
 class DataSetSchema(_message.Message):
     __slots__ = ("set_id", "timestamp", "data_bytes", "data_type")
@@ -83,48 +93,56 @@ class DataSetSchema(_message.Message):
     def __init__(self, set_id: _Optional[bytes] = ..., timestamp: _Optional[int] = ..., data_bytes: _Optional[bytes] = ..., data_type: _Optional[_Iterable[int]] = ...) -> None: ...
 
 class DataIds(_message.Message):
-    __slots__ = ("device_ids", "model_ids", "timestamp")
+    __slots__ = ("device_ids", "model_ids", "timestamp", "tag")
     DEVICE_IDS_FIELD_NUMBER: _ClassVar[int]
     MODEL_IDS_FIELD_NUMBER: _ClassVar[int]
     TIMESTAMP_FIELD_NUMBER: _ClassVar[int]
+    TAG_FIELD_NUMBER: _ClassVar[int]
     device_ids: _containers.RepeatedScalarFieldContainer[bytes]
     model_ids: _containers.RepeatedScalarFieldContainer[bytes]
     timestamp: int
-    def __init__(self, device_ids: _Optional[_Iterable[bytes]] = ..., model_ids: _Optional[_Iterable[bytes]] = ..., timestamp: _Optional[int] = ...) -> None: ...
+    tag: int
+    def __init__(self, device_ids: _Optional[_Iterable[bytes]] = ..., model_ids: _Optional[_Iterable[bytes]] = ..., timestamp: _Optional[int] = ..., tag: _Optional[int] = ...) -> None: ...
 
 class DataIdsTime(_message.Message):
-    __slots__ = ("device_ids", "model_ids", "timestamp")
+    __slots__ = ("device_ids", "model_ids", "timestamp", "tag")
     DEVICE_IDS_FIELD_NUMBER: _ClassVar[int]
     MODEL_IDS_FIELD_NUMBER: _ClassVar[int]
     TIMESTAMP_FIELD_NUMBER: _ClassVar[int]
+    TAG_FIELD_NUMBER: _ClassVar[int]
     device_ids: _containers.RepeatedScalarFieldContainer[bytes]
     model_ids: _containers.RepeatedScalarFieldContainer[bytes]
     timestamp: int
-    def __init__(self, device_ids: _Optional[_Iterable[bytes]] = ..., model_ids: _Optional[_Iterable[bytes]] = ..., timestamp: _Optional[int] = ...) -> None: ...
+    tag: int
+    def __init__(self, device_ids: _Optional[_Iterable[bytes]] = ..., model_ids: _Optional[_Iterable[bytes]] = ..., timestamp: _Optional[int] = ..., tag: _Optional[int] = ...) -> None: ...
 
 class DataIdsRange(_message.Message):
-    __slots__ = ("device_ids", "model_ids", "begin", "end")
+    __slots__ = ("device_ids", "model_ids", "begin", "end", "tag")
     DEVICE_IDS_FIELD_NUMBER: _ClassVar[int]
     MODEL_IDS_FIELD_NUMBER: _ClassVar[int]
     BEGIN_FIELD_NUMBER: _ClassVar[int]
     END_FIELD_NUMBER: _ClassVar[int]
+    TAG_FIELD_NUMBER: _ClassVar[int]
     device_ids: _containers.RepeatedScalarFieldContainer[bytes]
     model_ids: _containers.RepeatedScalarFieldContainer[bytes]
     begin: int
     end: int
-    def __init__(self, device_ids: _Optional[_Iterable[bytes]] = ..., model_ids: _Optional[_Iterable[bytes]] = ..., begin: _Optional[int] = ..., end: _Optional[int] = ...) -> None: ...
+    tag: int
+    def __init__(self, device_ids: _Optional[_Iterable[bytes]] = ..., model_ids: _Optional[_Iterable[bytes]] = ..., begin: _Optional[int] = ..., end: _Optional[int] = ..., tag: _Optional[int] = ...) -> None: ...
 
 class DataIdsNumber(_message.Message):
-    __slots__ = ("device_ids", "model_ids", "timestamp", "number")
+    __slots__ = ("device_ids", "model_ids", "timestamp", "number", "tag")
     DEVICE_IDS_FIELD_NUMBER: _ClassVar[int]
     MODEL_IDS_FIELD_NUMBER: _ClassVar[int]
     TIMESTAMP_FIELD_NUMBER: _ClassVar[int]
     NUMBER_FIELD_NUMBER: _ClassVar[int]
+    TAG_FIELD_NUMBER: _ClassVar[int]
     device_ids: _containers.RepeatedScalarFieldContainer[bytes]
     model_ids: _containers.RepeatedScalarFieldContainer[bytes]
     timestamp: int
     number: int
-    def __init__(self, device_ids: _Optional[_Iterable[bytes]] = ..., model_ids: _Optional[_Iterable[bytes]] = ..., timestamp: _Optional[int] = ..., number: _Optional[int] = ...) -> None: ...
+    tag: int
+    def __init__(self, device_ids: _Optional[_Iterable[bytes]] = ..., model_ids: _Optional[_Iterable[bytes]] = ..., timestamp: _Optional[int] = ..., number: _Optional[int] = ..., tag: _Optional[int] = ...) -> None: ...
 
 class DataSetId(_message.Message):
     __slots__ = ("set_id", "timestamp")

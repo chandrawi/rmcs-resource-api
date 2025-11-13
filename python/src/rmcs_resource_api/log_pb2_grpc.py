@@ -5,7 +5,7 @@ import warnings
 
 from rmcs_resource_api import log_pb2 as rmcs__resource__api_dot_log__pb2
 
-GRPC_GENERATED_VERSION = '1.73.1'
+GRPC_GENERATED_VERSION = '1.76.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 
@@ -18,7 +18,7 @@ except ImportError:
 if _version_not_supported:
     raise RuntimeError(
         f'The grpc package installed is at version {GRPC_VERSION},'
-        + f' but the generated code in rmcs_resource_api/log_pb2_grpc.py depends on'
+        + ' but the generated code in rmcs_resource_api/log_pb2_grpc.py depends on'
         + f' grpcio>={GRPC_GENERATED_VERSION}.'
         + f' Please upgrade your grpc module to grpcio>={GRPC_GENERATED_VERSION}'
         + f' or downgrade your generated code using grpcio-tools<={GRPC_VERSION}.'
@@ -39,6 +39,11 @@ class LogServiceStub(object):
                 request_serializer=rmcs__resource__api_dot_log__pb2.LogId.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_log__pb2.LogReadResponse.FromString,
                 _registered_method=True)
+        self.ReadLogByTime = channel.unary_unary(
+                '/log.LogService/ReadLogByTime',
+                request_serializer=rmcs__resource__api_dot_log__pb2.LogTime.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_log__pb2.LogReadResponse.FromString,
+                _registered_method=True)
         self.ListLogByTime = channel.unary_unary(
                 '/log.LogService/ListLogByTime',
                 request_serializer=rmcs__resource__api_dot_log__pb2.LogTime.SerializeToString,
@@ -57,7 +62,7 @@ class LogServiceStub(object):
         self.CreateLog = channel.unary_unary(
                 '/log.LogService/CreateLog',
                 request_serializer=rmcs__resource__api_dot_log__pb2.LogSchema.SerializeToString,
-                response_deserializer=rmcs__resource__api_dot_log__pb2.LogChangeResponse.FromString,
+                response_deserializer=rmcs__resource__api_dot_log__pb2.LogCreateResponse.FromString,
                 _registered_method=True)
         self.UpdateLog = channel.unary_unary(
                 '/log.LogService/UpdateLog',
@@ -75,6 +80,12 @@ class LogServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def ReadLog(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ReadLogByTime(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -124,6 +135,11 @@ def add_LogServiceServicer_to_server(servicer, server):
                     request_deserializer=rmcs__resource__api_dot_log__pb2.LogId.FromString,
                     response_serializer=rmcs__resource__api_dot_log__pb2.LogReadResponse.SerializeToString,
             ),
+            'ReadLogByTime': grpc.unary_unary_rpc_method_handler(
+                    servicer.ReadLogByTime,
+                    request_deserializer=rmcs__resource__api_dot_log__pb2.LogTime.FromString,
+                    response_serializer=rmcs__resource__api_dot_log__pb2.LogReadResponse.SerializeToString,
+            ),
             'ListLogByTime': grpc.unary_unary_rpc_method_handler(
                     servicer.ListLogByTime,
                     request_deserializer=rmcs__resource__api_dot_log__pb2.LogTime.FromString,
@@ -142,7 +158,7 @@ def add_LogServiceServicer_to_server(servicer, server):
             'CreateLog': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateLog,
                     request_deserializer=rmcs__resource__api_dot_log__pb2.LogSchema.FromString,
-                    response_serializer=rmcs__resource__api_dot_log__pb2.LogChangeResponse.SerializeToString,
+                    response_serializer=rmcs__resource__api_dot_log__pb2.LogCreateResponse.SerializeToString,
             ),
             'UpdateLog': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateLog,
@@ -181,6 +197,33 @@ class LogService(object):
             target,
             '/log.LogService/ReadLog',
             rmcs__resource__api_dot_log__pb2.LogId.SerializeToString,
+            rmcs__resource__api_dot_log__pb2.LogReadResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ReadLogByTime(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/log.LogService/ReadLogByTime',
+            rmcs__resource__api_dot_log__pb2.LogTime.SerializeToString,
             rmcs__resource__api_dot_log__pb2.LogReadResponse.FromString,
             options,
             channel_credentials,
@@ -289,7 +332,7 @@ class LogService(object):
             target,
             '/log.LogService/CreateLog',
             rmcs__resource__api_dot_log__pb2.LogSchema.SerializeToString,
-            rmcs__resource__api_dot_log__pb2.LogChangeResponse.FromString,
+            rmcs__resource__api_dot_log__pb2.LogCreateResponse.FromString,
             options,
             channel_credentials,
             insecure,

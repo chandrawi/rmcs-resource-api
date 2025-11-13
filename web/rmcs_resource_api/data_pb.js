@@ -570,7 +570,8 @@ deviceId: msg.getDeviceId_asB64(),
 modelId: msg.getModelId_asB64(),
 timestamp: jspb.Message.getFieldWithDefault(msg, 3, 0),
 dataBytes: msg.getDataBytes_asB64(),
-dataTypeList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f
+dataTypeList: (f = jspb.Message.getRepeatedField(msg, 5)) == null ? undefined : f,
+tag: jspb.Message.getFieldWithDefault(msg, 6, 0)
   };
 
   if (includeInstance) {
@@ -628,6 +629,10 @@ proto.data.DataSchema.deserializeBinaryFromReader = function(msg, reader) {
       for (var i = 0; i < values.length; i++) {
         msg.addDataType(values[i]);
       }
+      break;
+    case 6:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setTag(value);
       break;
     default:
       reader.skipField();
@@ -690,6 +695,13 @@ proto.data.DataSchema.serializeBinaryToWriter = function(message, writer) {
   if (f.length > 0) {
     writer.writePackedUint32(
       5,
+      f
+    );
+  }
+  f = message.getTag();
+  if (f !== 0) {
+    writer.writeInt32(
+      6,
       f
     );
   }
@@ -874,6 +886,24 @@ proto.data.DataSchema.prototype.addDataType = function(value, opt_index) {
  */
 proto.data.DataSchema.prototype.clearDataTypeList = function() {
   return this.setDataTypeList([]);
+};
+
+
+/**
+ * optional int32 tag = 6;
+ * @return {number}
+ */
+proto.data.DataSchema.prototype.getTag = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.data.DataSchema} returns this
+ */
+proto.data.DataSchema.prototype.setTag = function(value) {
+  return jspb.Message.setProto3IntField(this, 6, value);
 };
 
 
@@ -1071,7 +1101,8 @@ proto.data.DataId.toObject = function(includeInstance, msg) {
   var f, obj = {
 deviceId: msg.getDeviceId_asB64(),
 modelId: msg.getModelId_asB64(),
-timestamp: jspb.Message.getFieldWithDefault(msg, 3, 0)
+timestamp: jspb.Message.getFieldWithDefault(msg, 3, 0),
+tag: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1120,6 +1151,10 @@ proto.data.DataId.deserializeBinaryFromReader = function(msg, reader) {
       var value = /** @type {number} */ (reader.readInt64());
       msg.setTimestamp(value);
       break;
+    case 4:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setTag(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1167,6 +1202,13 @@ proto.data.DataId.serializeBinaryToWriter = function(message, writer) {
   if (f !== 0) {
     writer.writeInt64(
       3,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeInt32(
+      4,
       f
     );
   }
@@ -1275,6 +1317,42 @@ proto.data.DataId.prototype.setTimestamp = function(value) {
 };
 
 
+/**
+ * optional int32 tag = 4;
+ * @return {number}
+ */
+proto.data.DataId.prototype.getTag = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.data.DataId} returns this
+ */
+proto.data.DataId.prototype.setTag = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.data.DataId} returns this
+ */
+proto.data.DataId.prototype.clearTag = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.data.DataId.prototype.hasTag = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
 
 
 
@@ -1309,7 +1387,8 @@ proto.data.DataTime.toObject = function(includeInstance, msg) {
   var f, obj = {
 deviceId: msg.getDeviceId_asB64(),
 modelId: msg.getModelId_asB64(),
-timestamp: jspb.Message.getFieldWithDefault(msg, 3, 0)
+timestamp: jspb.Message.getFieldWithDefault(msg, 3, 0),
+tag: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1358,6 +1437,10 @@ proto.data.DataTime.deserializeBinaryFromReader = function(msg, reader) {
       var value = /** @type {number} */ (reader.readInt64());
       msg.setTimestamp(value);
       break;
+    case 4:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setTag(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1405,6 +1488,13 @@ proto.data.DataTime.serializeBinaryToWriter = function(message, writer) {
   if (f !== 0) {
     writer.writeInt64(
       3,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeInt32(
+      4,
       f
     );
   }
@@ -1513,6 +1603,42 @@ proto.data.DataTime.prototype.setTimestamp = function(value) {
 };
 
 
+/**
+ * optional int32 tag = 4;
+ * @return {number}
+ */
+proto.data.DataTime.prototype.getTag = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.data.DataTime} returns this
+ */
+proto.data.DataTime.prototype.setTag = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.data.DataTime} returns this
+ */
+proto.data.DataTime.prototype.clearTag = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.data.DataTime.prototype.hasTag = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
 
 
 
@@ -1548,7 +1674,8 @@ proto.data.DataRange.toObject = function(includeInstance, msg) {
 deviceId: msg.getDeviceId_asB64(),
 modelId: msg.getModelId_asB64(),
 begin: jspb.Message.getFieldWithDefault(msg, 3, 0),
-end: jspb.Message.getFieldWithDefault(msg, 4, 0)
+end: jspb.Message.getFieldWithDefault(msg, 4, 0),
+tag: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1600,6 +1727,10 @@ proto.data.DataRange.deserializeBinaryFromReader = function(msg, reader) {
     case 4:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setEnd(value);
+      break;
+    case 5:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setTag(value);
       break;
     default:
       reader.skipField();
@@ -1655,6 +1786,13 @@ proto.data.DataRange.serializeBinaryToWriter = function(message, writer) {
   if (f !== 0) {
     writer.writeInt64(
       4,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
+    writer.writeInt32(
+      5,
       f
     );
   }
@@ -1781,6 +1919,42 @@ proto.data.DataRange.prototype.setEnd = function(value) {
 };
 
 
+/**
+ * optional int32 tag = 5;
+ * @return {number}
+ */
+proto.data.DataRange.prototype.getTag = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.data.DataRange} returns this
+ */
+proto.data.DataRange.prototype.setTag = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.data.DataRange} returns this
+ */
+proto.data.DataRange.prototype.clearTag = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.data.DataRange.prototype.hasTag = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
 
 
 
@@ -1816,7 +1990,8 @@ proto.data.DataNumber.toObject = function(includeInstance, msg) {
 deviceId: msg.getDeviceId_asB64(),
 modelId: msg.getModelId_asB64(),
 timestamp: jspb.Message.getFieldWithDefault(msg, 3, 0),
-number: jspb.Message.getFieldWithDefault(msg, 4, 0)
+number: jspb.Message.getFieldWithDefault(msg, 4, 0),
+tag: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1868,6 +2043,10 @@ proto.data.DataNumber.deserializeBinaryFromReader = function(msg, reader) {
     case 4:
       var value = /** @type {number} */ (reader.readUint32());
       msg.setNumber(value);
+      break;
+    case 5:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setTag(value);
       break;
     default:
       reader.skipField();
@@ -1923,6 +2102,13 @@ proto.data.DataNumber.serializeBinaryToWriter = function(message, writer) {
   if (f !== 0) {
     writer.writeUint32(
       4,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
+    writer.writeInt32(
+      5,
       f
     );
   }
@@ -2046,6 +2232,42 @@ proto.data.DataNumber.prototype.getNumber = function() {
  */
 proto.data.DataNumber.prototype.setNumber = function(value) {
   return jspb.Message.setProto3IntField(this, 4, value);
+};
+
+
+/**
+ * optional int32 tag = 5;
+ * @return {number}
+ */
+proto.data.DataNumber.prototype.getTag = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.data.DataNumber} returns this
+ */
+proto.data.DataNumber.prototype.setTag = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.data.DataNumber} returns this
+ */
+proto.data.DataNumber.prototype.clearTag = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.data.DataNumber.prototype.hasTag = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
@@ -2386,7 +2608,8 @@ proto.data.DataIds.toObject = function(includeInstance, msg) {
   var f, obj = {
 deviceIdsList: msg.getDeviceIdsList_asB64(),
 modelIdsList: msg.getModelIdsList_asB64(),
-timestamp: jspb.Message.getFieldWithDefault(msg, 3, 0)
+timestamp: jspb.Message.getFieldWithDefault(msg, 3, 0),
+tag: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -2435,6 +2658,10 @@ proto.data.DataIds.deserializeBinaryFromReader = function(msg, reader) {
       var value = /** @type {number} */ (reader.readInt64());
       msg.setTimestamp(value);
       break;
+    case 4:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setTag(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -2482,6 +2709,13 @@ proto.data.DataIds.serializeBinaryToWriter = function(message, writer) {
   if (f !== 0) {
     writer.writeInt64(
       3,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeInt32(
+      4,
       f
     );
   }
@@ -2628,6 +2862,42 @@ proto.data.DataIds.prototype.setTimestamp = function(value) {
 };
 
 
+/**
+ * optional int32 tag = 4;
+ * @return {number}
+ */
+proto.data.DataIds.prototype.getTag = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.data.DataIds} returns this
+ */
+proto.data.DataIds.prototype.setTag = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.data.DataIds} returns this
+ */
+proto.data.DataIds.prototype.clearTag = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.data.DataIds.prototype.hasTag = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
 
 /**
  * List of repeated fields within this message type.
@@ -2669,7 +2939,8 @@ proto.data.DataIdsTime.toObject = function(includeInstance, msg) {
   var f, obj = {
 deviceIdsList: msg.getDeviceIdsList_asB64(),
 modelIdsList: msg.getModelIdsList_asB64(),
-timestamp: jspb.Message.getFieldWithDefault(msg, 3, 0)
+timestamp: jspb.Message.getFieldWithDefault(msg, 3, 0),
+tag: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -2718,6 +2989,10 @@ proto.data.DataIdsTime.deserializeBinaryFromReader = function(msg, reader) {
       var value = /** @type {number} */ (reader.readInt64());
       msg.setTimestamp(value);
       break;
+    case 4:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setTag(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -2765,6 +3040,13 @@ proto.data.DataIdsTime.serializeBinaryToWriter = function(message, writer) {
   if (f !== 0) {
     writer.writeInt64(
       3,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeInt32(
+      4,
       f
     );
   }
@@ -2911,6 +3193,42 @@ proto.data.DataIdsTime.prototype.setTimestamp = function(value) {
 };
 
 
+/**
+ * optional int32 tag = 4;
+ * @return {number}
+ */
+proto.data.DataIdsTime.prototype.getTag = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.data.DataIdsTime} returns this
+ */
+proto.data.DataIdsTime.prototype.setTag = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.data.DataIdsTime} returns this
+ */
+proto.data.DataIdsTime.prototype.clearTag = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.data.DataIdsTime.prototype.hasTag = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
 
 /**
  * List of repeated fields within this message type.
@@ -2953,7 +3271,8 @@ proto.data.DataIdsRange.toObject = function(includeInstance, msg) {
 deviceIdsList: msg.getDeviceIdsList_asB64(),
 modelIdsList: msg.getModelIdsList_asB64(),
 begin: jspb.Message.getFieldWithDefault(msg, 3, 0),
-end: jspb.Message.getFieldWithDefault(msg, 4, 0)
+end: jspb.Message.getFieldWithDefault(msg, 4, 0),
+tag: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -3005,6 +3324,10 @@ proto.data.DataIdsRange.deserializeBinaryFromReader = function(msg, reader) {
     case 4:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setEnd(value);
+      break;
+    case 5:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setTag(value);
       break;
     default:
       reader.skipField();
@@ -3060,6 +3383,13 @@ proto.data.DataIdsRange.serializeBinaryToWriter = function(message, writer) {
   if (f !== 0) {
     writer.writeInt64(
       4,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
+    writer.writeInt32(
+      5,
       f
     );
   }
@@ -3224,6 +3554,42 @@ proto.data.DataIdsRange.prototype.setEnd = function(value) {
 };
 
 
+/**
+ * optional int32 tag = 5;
+ * @return {number}
+ */
+proto.data.DataIdsRange.prototype.getTag = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.data.DataIdsRange} returns this
+ */
+proto.data.DataIdsRange.prototype.setTag = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.data.DataIdsRange} returns this
+ */
+proto.data.DataIdsRange.prototype.clearTag = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.data.DataIdsRange.prototype.hasTag = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
 
 /**
  * List of repeated fields within this message type.
@@ -3266,7 +3632,8 @@ proto.data.DataIdsNumber.toObject = function(includeInstance, msg) {
 deviceIdsList: msg.getDeviceIdsList_asB64(),
 modelIdsList: msg.getModelIdsList_asB64(),
 timestamp: jspb.Message.getFieldWithDefault(msg, 3, 0),
-number: jspb.Message.getFieldWithDefault(msg, 4, 0)
+number: jspb.Message.getFieldWithDefault(msg, 4, 0),
+tag: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -3318,6 +3685,10 @@ proto.data.DataIdsNumber.deserializeBinaryFromReader = function(msg, reader) {
     case 4:
       var value = /** @type {number} */ (reader.readUint32());
       msg.setNumber(value);
+      break;
+    case 5:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setTag(value);
       break;
     default:
       reader.skipField();
@@ -3373,6 +3744,13 @@ proto.data.DataIdsNumber.serializeBinaryToWriter = function(message, writer) {
   if (f !== 0) {
     writer.writeUint32(
       4,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
+    writer.writeInt32(
+      5,
       f
     );
   }
@@ -3534,6 +3912,42 @@ proto.data.DataIdsNumber.prototype.getNumber = function() {
  */
 proto.data.DataIdsNumber.prototype.setNumber = function(value) {
   return jspb.Message.setProto3IntField(this, 4, value);
+};
+
+
+/**
+ * optional int32 tag = 5;
+ * @return {number}
+ */
+proto.data.DataIdsNumber.prototype.getTag = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.data.DataIdsNumber} returns this
+ */
+proto.data.DataIdsNumber.prototype.setTag = function(value) {
+  return jspb.Message.setField(this, 5, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.data.DataIdsNumber} returns this
+ */
+proto.data.DataIdsNumber.prototype.clearTag = function() {
+  return jspb.Message.setField(this, 5, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.data.DataIdsNumber.prototype.hasTag = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 

@@ -139,6 +139,67 @@ proto.log.LogServicePromiseClient.prototype.readLog =
  * @const
  * @type {!grpc.web.MethodDescriptor<
  *   !proto.log.LogTime,
+ *   !proto.log.LogReadResponse>}
+ */
+const methodDescriptor_LogService_ReadLogByTime = new grpc.web.MethodDescriptor(
+  '/log.LogService/ReadLogByTime',
+  grpc.web.MethodType.UNARY,
+  proto.log.LogTime,
+  proto.log.LogReadResponse,
+  /**
+   * @param {!proto.log.LogTime} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.log.LogReadResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.log.LogTime} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.log.LogReadResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.log.LogReadResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.log.LogServiceClient.prototype.readLogByTime =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/log.LogService/ReadLogByTime',
+      request,
+      metadata || {},
+      methodDescriptor_LogService_ReadLogByTime,
+      callback);
+};
+
+
+/**
+ * @param {!proto.log.LogTime} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.log.LogReadResponse>}
+ *     Promise that resolves to the response
+ */
+proto.log.LogServicePromiseClient.prototype.readLogByTime =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/log.LogService/ReadLogByTime',
+      request,
+      metadata || {},
+      methodDescriptor_LogService_ReadLogByTime);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.log.LogTime,
  *   !proto.log.LogListResponse>}
  */
 const methodDescriptor_LogService_ListLogByTime = new grpc.web.MethodDescriptor(
@@ -322,13 +383,13 @@ proto.log.LogServicePromiseClient.prototype.listLogByRangeTime =
  * @const
  * @type {!grpc.web.MethodDescriptor<
  *   !proto.log.LogSchema,
- *   !proto.log.LogChangeResponse>}
+ *   !proto.log.LogCreateResponse>}
  */
 const methodDescriptor_LogService_CreateLog = new grpc.web.MethodDescriptor(
   '/log.LogService/CreateLog',
   grpc.web.MethodType.UNARY,
   proto.log.LogSchema,
-  proto.log.LogChangeResponse,
+  proto.log.LogCreateResponse,
   /**
    * @param {!proto.log.LogSchema} request
    * @return {!Uint8Array}
@@ -336,7 +397,7 @@ const methodDescriptor_LogService_CreateLog = new grpc.web.MethodDescriptor(
   function(request) {
     return request.serializeBinary();
   },
-  proto.log.LogChangeResponse.deserializeBinary
+  proto.log.LogCreateResponse.deserializeBinary
 );
 
 
@@ -345,9 +406,9 @@ const methodDescriptor_LogService_CreateLog = new grpc.web.MethodDescriptor(
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
- * @param {function(?grpc.web.RpcError, ?proto.log.LogChangeResponse)}
+ * @param {function(?grpc.web.RpcError, ?proto.log.LogCreateResponse)}
  *     callback The callback function(error, response)
- * @return {!grpc.web.ClientReadableStream<!proto.log.LogChangeResponse>|undefined}
+ * @return {!grpc.web.ClientReadableStream<!proto.log.LogCreateResponse>|undefined}
  *     The XHR Node Readable Stream
  */
 proto.log.LogServiceClient.prototype.createLog =
@@ -366,7 +427,7 @@ proto.log.LogServiceClient.prototype.createLog =
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
- * @return {!Promise<!proto.log.LogChangeResponse>}
+ * @return {!Promise<!proto.log.LogCreateResponse>}
  *     Promise that resolves to the response
  */
 proto.log.LogServicePromiseClient.prototype.createLog =

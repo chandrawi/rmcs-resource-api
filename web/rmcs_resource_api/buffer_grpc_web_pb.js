@@ -202,6 +202,67 @@ proto.buffer.BufferServicePromiseClient.prototype.readBufferByTime =
  *   !proto.buffer.BufferTime,
  *   !proto.buffer.BufferListResponse>}
  */
+const methodDescriptor_BufferService_ListBufferByTime = new grpc.web.MethodDescriptor(
+  '/buffer.BufferService/ListBufferByTime',
+  grpc.web.MethodType.UNARY,
+  proto.buffer.BufferTime,
+  proto.buffer.BufferListResponse,
+  /**
+   * @param {!proto.buffer.BufferTime} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.buffer.BufferListResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.buffer.BufferTime} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.buffer.BufferListResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.buffer.BufferListResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.buffer.BufferServiceClient.prototype.listBufferByTime =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/buffer.BufferService/ListBufferByTime',
+      request,
+      metadata || {},
+      methodDescriptor_BufferService_ListBufferByTime,
+      callback);
+};
+
+
+/**
+ * @param {!proto.buffer.BufferTime} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.buffer.BufferListResponse>}
+ *     Promise that resolves to the response
+ */
+proto.buffer.BufferServicePromiseClient.prototype.listBufferByTime =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/buffer.BufferService/ListBufferByTime',
+      request,
+      metadata || {},
+      methodDescriptor_BufferService_ListBufferByTime);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.buffer.BufferTime,
+ *   !proto.buffer.BufferListResponse>}
+ */
 const methodDescriptor_BufferService_ListBufferByLastTime = new grpc.web.MethodDescriptor(
   '/buffer.BufferService/ListBufferByLastTime',
   grpc.web.MethodType.UNARY,

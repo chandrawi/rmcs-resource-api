@@ -138,6 +138,67 @@ proto.data.DataServicePromiseClient.prototype.readData =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
+ *   !proto.data.DataId,
+ *   !proto.data.DataListResponse>}
+ */
+const methodDescriptor_DataService_ListDataByTime = new grpc.web.MethodDescriptor(
+  '/data.DataService/ListDataByTime',
+  grpc.web.MethodType.UNARY,
+  proto.data.DataId,
+  proto.data.DataListResponse,
+  /**
+   * @param {!proto.data.DataId} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.data.DataListResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.data.DataId} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.data.DataListResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.data.DataListResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.data.DataServiceClient.prototype.listDataByTime =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/data.DataService/ListDataByTime',
+      request,
+      metadata || {},
+      methodDescriptor_DataService_ListDataByTime,
+      callback);
+};
+
+
+/**
+ * @param {!proto.data.DataId} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.data.DataListResponse>}
+ *     Promise that resolves to the response
+ */
+proto.data.DataServicePromiseClient.prototype.listDataByTime =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/data.DataService/ListDataByTime',
+      request,
+      metadata || {},
+      methodDescriptor_DataService_ListDataByTime);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
  *   !proto.data.DataTime,
  *   !proto.data.DataListResponse>}
  */
@@ -1047,6 +1108,67 @@ proto.data.DataServicePromiseClient.prototype.readDataSet =
       request,
       metadata || {},
       methodDescriptor_DataService_ReadDataSet);
+};
+
+
+/**
+ * @const
+ * @type {!grpc.web.MethodDescriptor<
+ *   !proto.data.DataSetId,
+ *   !proto.data.DataSetListResponse>}
+ */
+const methodDescriptor_DataService_ListDataSetByTime = new grpc.web.MethodDescriptor(
+  '/data.DataService/ListDataSetByTime',
+  grpc.web.MethodType.UNARY,
+  proto.data.DataSetId,
+  proto.data.DataSetListResponse,
+  /**
+   * @param {!proto.data.DataSetId} request
+   * @return {!Uint8Array}
+   */
+  function(request) {
+    return request.serializeBinary();
+  },
+  proto.data.DataSetListResponse.deserializeBinary
+);
+
+
+/**
+ * @param {!proto.data.DataSetId} request The
+ *     request proto
+ * @param {?Object<string, string>} metadata User defined
+ *     call metadata
+ * @param {function(?grpc.web.RpcError, ?proto.data.DataSetListResponse)}
+ *     callback The callback function(error, response)
+ * @return {!grpc.web.ClientReadableStream<!proto.data.DataSetListResponse>|undefined}
+ *     The XHR Node Readable Stream
+ */
+proto.data.DataServiceClient.prototype.listDataSetByTime =
+    function(request, metadata, callback) {
+  return this.client_.rpcCall(this.hostname_ +
+      '/data.DataService/ListDataSetByTime',
+      request,
+      metadata || {},
+      methodDescriptor_DataService_ListDataSetByTime,
+      callback);
+};
+
+
+/**
+ * @param {!proto.data.DataSetId} request The
+ *     request proto
+ * @param {?Object<string, string>=} metadata User defined
+ *     call metadata
+ * @return {!Promise<!proto.data.DataSetListResponse>}
+ *     Promise that resolves to the response
+ */
+proto.data.DataServicePromiseClient.prototype.listDataSetByTime =
+    function(request, metadata) {
+  return this.client_.unaryCall(this.hostname_ +
+      '/data.DataService/ListDataSetByTime',
+      request,
+      metadata || {},
+      methodDescriptor_DataService_ListDataSetByTime);
 };
 
 

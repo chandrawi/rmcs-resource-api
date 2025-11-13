@@ -5,7 +5,7 @@ import warnings
 
 from rmcs_resource_api import buffer_pb2 as rmcs__resource__api_dot_buffer__pb2
 
-GRPC_GENERATED_VERSION = '1.73.1'
+GRPC_GENERATED_VERSION = '1.76.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 
@@ -18,7 +18,7 @@ except ImportError:
 if _version_not_supported:
     raise RuntimeError(
         f'The grpc package installed is at version {GRPC_VERSION},'
-        + f' but the generated code in rmcs_resource_api/buffer_pb2_grpc.py depends on'
+        + ' but the generated code in rmcs_resource_api/buffer_pb2_grpc.py depends on'
         + f' grpcio>={GRPC_GENERATED_VERSION}.'
         + f' Please upgrade your grpc module to grpcio>={GRPC_GENERATED_VERSION}'
         + f' or downgrade your generated code using grpcio-tools<={GRPC_VERSION}.'
@@ -43,6 +43,11 @@ class BufferServiceStub(object):
                 '/buffer.BufferService/ReadBufferByTime',
                 request_serializer=rmcs__resource__api_dot_buffer__pb2.BufferTime.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferReadResponse.FromString,
+                _registered_method=True)
+        self.ListBufferByTime = channel.unary_unary(
+                '/buffer.BufferService/ListBufferByTime',
+                request_serializer=rmcs__resource__api_dot_buffer__pb2.BufferTime.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferListResponse.FromString,
                 _registered_method=True)
         self.ListBufferByLastTime = channel.unary_unary(
                 '/buffer.BufferService/ListBufferByLastTime',
@@ -271,6 +276,12 @@ class BufferServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ReadBufferByTime(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListBufferByTime(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -547,6 +558,11 @@ def add_BufferServiceServicer_to_server(servicer, server):
                     request_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferTime.FromString,
                     response_serializer=rmcs__resource__api_dot_buffer__pb2.BufferReadResponse.SerializeToString,
             ),
+            'ListBufferByTime': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListBufferByTime,
+                    request_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferTime.FromString,
+                    response_serializer=rmcs__resource__api_dot_buffer__pb2.BufferListResponse.SerializeToString,
+            ),
             'ListBufferByLastTime': grpc.unary_unary_rpc_method_handler(
                     servicer.ListBufferByLastTime,
                     request_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferTime.FromString,
@@ -817,6 +833,33 @@ class BufferService(object):
             '/buffer.BufferService/ReadBufferByTime',
             rmcs__resource__api_dot_buffer__pb2.BufferTime.SerializeToString,
             rmcs__resource__api_dot_buffer__pb2.BufferReadResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListBufferByTime(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/buffer.BufferService/ListBufferByTime',
+            rmcs__resource__api_dot_buffer__pb2.BufferTime.SerializeToString,
+            rmcs__resource__api_dot_buffer__pb2.BufferListResponse.FromString,
             options,
             channel_credentials,
             insecure,

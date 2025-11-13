@@ -5,7 +5,7 @@ import warnings
 
 from rmcs_resource_api import data_pb2 as rmcs__resource__api_dot_data__pb2
 
-GRPC_GENERATED_VERSION = '1.73.1'
+GRPC_GENERATED_VERSION = '1.76.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 
@@ -18,7 +18,7 @@ except ImportError:
 if _version_not_supported:
     raise RuntimeError(
         f'The grpc package installed is at version {GRPC_VERSION},'
-        + f' but the generated code in rmcs_resource_api/data_pb2_grpc.py depends on'
+        + ' but the generated code in rmcs_resource_api/data_pb2_grpc.py depends on'
         + f' grpcio>={GRPC_GENERATED_VERSION}.'
         + f' Please upgrade your grpc module to grpcio>={GRPC_GENERATED_VERSION}'
         + f' or downgrade your generated code using grpcio-tools<={GRPC_VERSION}.'
@@ -38,6 +38,11 @@ class DataServiceStub(object):
                 '/data.DataService/ReadData',
                 request_serializer=rmcs__resource__api_dot_data__pb2.DataId.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_data__pb2.DataReadResponse.FromString,
+                _registered_method=True)
+        self.ListDataByTime = channel.unary_unary(
+                '/data.DataService/ListDataByTime',
+                request_serializer=rmcs__resource__api_dot_data__pb2.DataId.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_data__pb2.DataListResponse.FromString,
                 _registered_method=True)
         self.ListDataByLastTime = channel.unary_unary(
                 '/data.DataService/ListDataByLastTime',
@@ -113,6 +118,11 @@ class DataServiceStub(object):
                 '/data.DataService/ReadDataSet',
                 request_serializer=rmcs__resource__api_dot_data__pb2.DataSetId.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_data__pb2.DataSetReadResponse.FromString,
+                _registered_method=True)
+        self.ListDataSetByTime = channel.unary_unary(
+                '/data.DataService/ListDataSetByTime',
+                request_serializer=rmcs__resource__api_dot_data__pb2.DataSetId.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_data__pb2.DataSetListResponse.FromString,
                 _registered_method=True)
         self.ListDataSetByLastTime = channel.unary_unary(
                 '/data.DataService/ListDataSetByLastTime',
@@ -250,6 +260,12 @@ class DataServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListDataByTime(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def ListDataByLastTime(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -335,6 +351,12 @@ class DataServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ReadDataSet(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListDataSetByTime(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -498,6 +520,11 @@ def add_DataServiceServicer_to_server(servicer, server):
                     request_deserializer=rmcs__resource__api_dot_data__pb2.DataId.FromString,
                     response_serializer=rmcs__resource__api_dot_data__pb2.DataReadResponse.SerializeToString,
             ),
+            'ListDataByTime': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListDataByTime,
+                    request_deserializer=rmcs__resource__api_dot_data__pb2.DataId.FromString,
+                    response_serializer=rmcs__resource__api_dot_data__pb2.DataListResponse.SerializeToString,
+            ),
             'ListDataByLastTime': grpc.unary_unary_rpc_method_handler(
                     servicer.ListDataByLastTime,
                     request_deserializer=rmcs__resource__api_dot_data__pb2.DataTime.FromString,
@@ -572,6 +599,11 @@ def add_DataServiceServicer_to_server(servicer, server):
                     servicer.ReadDataSet,
                     request_deserializer=rmcs__resource__api_dot_data__pb2.DataSetId.FromString,
                     response_serializer=rmcs__resource__api_dot_data__pb2.DataSetReadResponse.SerializeToString,
+            ),
+            'ListDataSetByTime': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListDataSetByTime,
+                    request_deserializer=rmcs__resource__api_dot_data__pb2.DataSetId.FromString,
+                    response_serializer=rmcs__resource__api_dot_data__pb2.DataSetListResponse.SerializeToString,
             ),
             'ListDataSetByLastTime': grpc.unary_unary_rpc_method_handler(
                     servicer.ListDataSetByLastTime,
@@ -726,6 +758,33 @@ class DataService(object):
             '/data.DataService/ReadData',
             rmcs__resource__api_dot_data__pb2.DataId.SerializeToString,
             rmcs__resource__api_dot_data__pb2.DataReadResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListDataByTime(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/data.DataService/ListDataByTime',
+            rmcs__resource__api_dot_data__pb2.DataId.SerializeToString,
+            rmcs__resource__api_dot_data__pb2.DataListResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -1131,6 +1190,33 @@ class DataService(object):
             '/data.DataService/ReadDataSet',
             rmcs__resource__api_dot_data__pb2.DataSetId.SerializeToString,
             rmcs__resource__api_dot_data__pb2.DataSetReadResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListDataSetByTime(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/data.DataService/ListDataSetByTime',
+            rmcs__resource__api_dot_data__pb2.DataSetId.SerializeToString,
+            rmcs__resource__api_dot_data__pb2.DataSetListResponse.FromString,
             options,
             channel_credentials,
             insecure,

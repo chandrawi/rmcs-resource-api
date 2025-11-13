@@ -7,20 +7,22 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class ModelSchema(_message.Message):
-    __slots__ = ("id", "category", "name", "description", "data_type", "configs")
+    __slots__ = ("id", "category", "name", "description", "data_type", "tags", "configs")
     ID_FIELD_NUMBER: _ClassVar[int]
     CATEGORY_FIELD_NUMBER: _ClassVar[int]
     NAME_FIELD_NUMBER: _ClassVar[int]
     DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     DATA_TYPE_FIELD_NUMBER: _ClassVar[int]
+    TAGS_FIELD_NUMBER: _ClassVar[int]
     CONFIGS_FIELD_NUMBER: _ClassVar[int]
     id: bytes
     category: str
     name: str
     description: str
     data_type: _containers.RepeatedScalarFieldContainer[int]
+    tags: _containers.RepeatedCompositeFieldContainer[TagSchema]
     configs: _containers.RepeatedCompositeFieldContainer[ConfigSchemaVec]
-    def __init__(self, id: _Optional[bytes] = ..., category: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., data_type: _Optional[_Iterable[int]] = ..., configs: _Optional[_Iterable[_Union[ConfigSchemaVec, _Mapping]]] = ...) -> None: ...
+    def __init__(self, id: _Optional[bytes] = ..., category: _Optional[str] = ..., name: _Optional[str] = ..., description: _Optional[str] = ..., data_type: _Optional[_Iterable[int]] = ..., tags: _Optional[_Iterable[_Union[TagSchema, _Mapping]]] = ..., configs: _Optional[_Iterable[_Union[ConfigSchemaVec, _Mapping]]] = ...) -> None: ...
 
 class ConfigSchemaVec(_message.Message):
     __slots__ = ("configs",)
@@ -122,6 +124,40 @@ class ConfigUpdate(_message.Message):
     category: str
     def __init__(self, id: _Optional[int] = ..., name: _Optional[str] = ..., config_bytes: _Optional[bytes] = ..., config_type: _Optional[int] = ..., category: _Optional[str] = ...) -> None: ...
 
+class TagSchema(_message.Message):
+    __slots__ = ("model_id", "tag", "name", "members")
+    MODEL_ID_FIELD_NUMBER: _ClassVar[int]
+    TAG_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    MEMBERS_FIELD_NUMBER: _ClassVar[int]
+    model_id: bytes
+    tag: int
+    name: str
+    members: _containers.RepeatedScalarFieldContainer[int]
+    def __init__(self, model_id: _Optional[bytes] = ..., tag: _Optional[int] = ..., name: _Optional[str] = ..., members: _Optional[_Iterable[int]] = ...) -> None: ...
+
+class TagId(_message.Message):
+    __slots__ = ("model_id", "tag")
+    MODEL_ID_FIELD_NUMBER: _ClassVar[int]
+    TAG_FIELD_NUMBER: _ClassVar[int]
+    model_id: bytes
+    tag: int
+    def __init__(self, model_id: _Optional[bytes] = ..., tag: _Optional[int] = ...) -> None: ...
+
+class TagUpdate(_message.Message):
+    __slots__ = ("model_id", "tag", "name", "members", "members_flag")
+    MODEL_ID_FIELD_NUMBER: _ClassVar[int]
+    TAG_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    MEMBERS_FIELD_NUMBER: _ClassVar[int]
+    MEMBERS_FLAG_FIELD_NUMBER: _ClassVar[int]
+    model_id: bytes
+    tag: int
+    name: str
+    members: _containers.RepeatedScalarFieldContainer[int]
+    members_flag: bool
+    def __init__(self, model_id: _Optional[bytes] = ..., tag: _Optional[int] = ..., name: _Optional[str] = ..., members: _Optional[_Iterable[int]] = ..., members_flag: bool = ...) -> None: ...
+
 class ModelReadResponse(_message.Message):
     __slots__ = ("result",)
     RESULT_FIELD_NUMBER: _ClassVar[int]
@@ -163,5 +199,21 @@ class ConfigCreateResponse(_message.Message):
     def __init__(self, id: _Optional[int] = ...) -> None: ...
 
 class ConfigChangeResponse(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
+
+class TagReadResponse(_message.Message):
+    __slots__ = ("result",)
+    RESULT_FIELD_NUMBER: _ClassVar[int]
+    result: TagSchema
+    def __init__(self, result: _Optional[_Union[TagSchema, _Mapping]] = ...) -> None: ...
+
+class TagListResponse(_message.Message):
+    __slots__ = ("results",)
+    RESULTS_FIELD_NUMBER: _ClassVar[int]
+    results: _containers.RepeatedCompositeFieldContainer[TagSchema]
+    def __init__(self, results: _Optional[_Iterable[_Union[TagSchema, _Mapping]]] = ...) -> None: ...
+
+class TagChangeResponse(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
