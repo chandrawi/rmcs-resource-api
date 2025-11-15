@@ -44,6 +44,11 @@ class BufferServiceStub(object):
                 request_serializer=rmcs__resource__api_dot_buffer__pb2.BufferTime.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferReadResponse.FromString,
                 _registered_method=True)
+        self.ListBuffer = channel.unary_unary(
+                '/buffer.BufferService/ListBuffer',
+                request_serializer=rmcs__resource__api_dot_buffer__pb2.BufferIds.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferListResponse.FromString,
+                _registered_method=True)
         self.ListBufferByTime = channel.unary_unary(
                 '/buffer.BufferService/ListBufferByTime',
                 request_serializer=rmcs__resource__api_dot_buffer__pb2.BufferTime.SerializeToString,
@@ -204,9 +209,19 @@ class BufferServiceStub(object):
                 request_serializer=rmcs__resource__api_dot_buffer__pb2.BufferUpdate.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferChangeResponse.FromString,
                 _registered_method=True)
+        self.UpdateBufferByTime = channel.unary_unary(
+                '/buffer.BufferService/UpdateBufferByTime',
+                request_serializer=rmcs__resource__api_dot_buffer__pb2.BufferUpdateTime.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferChangeResponse.FromString,
+                _registered_method=True)
         self.DeleteBuffer = channel.unary_unary(
                 '/buffer.BufferService/DeleteBuffer',
                 request_serializer=rmcs__resource__api_dot_buffer__pb2.BufferId.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferChangeResponse.FromString,
+                _registered_method=True)
+        self.DeleteBufferByTime = channel.unary_unary(
+                '/buffer.BufferService/DeleteBufferByTime',
+                request_serializer=rmcs__resource__api_dot_buffer__pb2.BufferTime.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferChangeResponse.FromString,
                 _registered_method=True)
         self.ReadBufferTimestampFirst = channel.unary_unary(
@@ -276,6 +291,12 @@ class BufferServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ReadBufferByTime(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListBuffer(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -473,7 +494,19 @@ class BufferServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def UpdateBufferByTime(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def DeleteBuffer(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteBufferByTime(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -557,6 +590,11 @@ def add_BufferServiceServicer_to_server(servicer, server):
                     servicer.ReadBufferByTime,
                     request_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferTime.FromString,
                     response_serializer=rmcs__resource__api_dot_buffer__pb2.BufferReadResponse.SerializeToString,
+            ),
+            'ListBuffer': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListBuffer,
+                    request_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferIds.FromString,
+                    response_serializer=rmcs__resource__api_dot_buffer__pb2.BufferListResponse.SerializeToString,
             ),
             'ListBufferByTime': grpc.unary_unary_rpc_method_handler(
                     servicer.ListBufferByTime,
@@ -718,9 +756,19 @@ def add_BufferServiceServicer_to_server(servicer, server):
                     request_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferUpdate.FromString,
                     response_serializer=rmcs__resource__api_dot_buffer__pb2.BufferChangeResponse.SerializeToString,
             ),
+            'UpdateBufferByTime': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateBufferByTime,
+                    request_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferUpdateTime.FromString,
+                    response_serializer=rmcs__resource__api_dot_buffer__pb2.BufferChangeResponse.SerializeToString,
+            ),
             'DeleteBuffer': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteBuffer,
                     request_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferId.FromString,
+                    response_serializer=rmcs__resource__api_dot_buffer__pb2.BufferChangeResponse.SerializeToString,
+            ),
+            'DeleteBufferByTime': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteBufferByTime,
+                    request_deserializer=rmcs__resource__api_dot_buffer__pb2.BufferTime.FromString,
                     response_serializer=rmcs__resource__api_dot_buffer__pb2.BufferChangeResponse.SerializeToString,
             ),
             'ReadBufferTimestampFirst': grpc.unary_unary_rpc_method_handler(
@@ -833,6 +881,33 @@ class BufferService(object):
             '/buffer.BufferService/ReadBufferByTime',
             rmcs__resource__api_dot_buffer__pb2.BufferTime.SerializeToString,
             rmcs__resource__api_dot_buffer__pb2.BufferReadResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListBuffer(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/buffer.BufferService/ListBuffer',
+            rmcs__resource__api_dot_buffer__pb2.BufferIds.SerializeToString,
+            rmcs__resource__api_dot_buffer__pb2.BufferListResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -1708,6 +1783,33 @@ class BufferService(object):
             _registered_method=True)
 
     @staticmethod
+    def UpdateBufferByTime(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/buffer.BufferService/UpdateBufferByTime',
+            rmcs__resource__api_dot_buffer__pb2.BufferUpdateTime.SerializeToString,
+            rmcs__resource__api_dot_buffer__pb2.BufferChangeResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
     def DeleteBuffer(request,
             target,
             options=(),
@@ -1723,6 +1825,33 @@ class BufferService(object):
             target,
             '/buffer.BufferService/DeleteBuffer',
             rmcs__resource__api_dot_buffer__pb2.BufferId.SerializeToString,
+            rmcs__resource__api_dot_buffer__pb2.BufferChangeResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def DeleteBufferByTime(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/buffer.BufferService/DeleteBufferByTime',
+            rmcs__resource__api_dot_buffer__pb2.BufferTime.SerializeToString,
             rmcs__resource__api_dot_buffer__pb2.BufferChangeResponse.FromString,
             options,
             channel_credentials,

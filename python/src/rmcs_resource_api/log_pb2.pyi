@@ -7,28 +7,34 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class LogSchema(_message.Message):
-    __slots__ = ("id", "timestamp", "device_id", "model_id", "tag", "log_bytes", "log_type")
+    __slots__ = ("id", "timestamp", "device_id", "model_id", "log_bytes", "log_type", "tag")
     ID_FIELD_NUMBER: _ClassVar[int]
     TIMESTAMP_FIELD_NUMBER: _ClassVar[int]
     DEVICE_ID_FIELD_NUMBER: _ClassVar[int]
     MODEL_ID_FIELD_NUMBER: _ClassVar[int]
-    TAG_FIELD_NUMBER: _ClassVar[int]
     LOG_BYTES_FIELD_NUMBER: _ClassVar[int]
     LOG_TYPE_FIELD_NUMBER: _ClassVar[int]
+    TAG_FIELD_NUMBER: _ClassVar[int]
     id: int
     timestamp: int
     device_id: bytes
     model_id: bytes
-    tag: int
     log_bytes: bytes
     log_type: int
-    def __init__(self, id: _Optional[int] = ..., timestamp: _Optional[int] = ..., device_id: _Optional[bytes] = ..., model_id: _Optional[bytes] = ..., tag: _Optional[int] = ..., log_bytes: _Optional[bytes] = ..., log_type: _Optional[int] = ...) -> None: ...
+    tag: int
+    def __init__(self, id: _Optional[int] = ..., timestamp: _Optional[int] = ..., device_id: _Optional[bytes] = ..., model_id: _Optional[bytes] = ..., log_bytes: _Optional[bytes] = ..., log_type: _Optional[int] = ..., tag: _Optional[int] = ...) -> None: ...
 
 class LogId(_message.Message):
     __slots__ = ("id",)
     ID_FIELD_NUMBER: _ClassVar[int]
     id: int
     def __init__(self, id: _Optional[int] = ...) -> None: ...
+
+class LogIds(_message.Message):
+    __slots__ = ("ids",)
+    IDS_FIELD_NUMBER: _ClassVar[int]
+    ids: _containers.RepeatedScalarFieldContainer[int]
+    def __init__(self, ids: _Optional[_Iterable[int]] = ...) -> None: ...
 
 class LogTime(_message.Message):
     __slots__ = ("timestamp", "device_id", "model_id", "tag")
@@ -57,16 +63,32 @@ class LogRange(_message.Message):
     def __init__(self, begin: _Optional[int] = ..., end: _Optional[int] = ..., device_id: _Optional[bytes] = ..., model_id: _Optional[bytes] = ..., tag: _Optional[int] = ...) -> None: ...
 
 class LogUpdate(_message.Message):
-    __slots__ = ("id", "tag", "log_bytes", "log_type")
+    __slots__ = ("id", "log_bytes", "log_type", "tag")
     ID_FIELD_NUMBER: _ClassVar[int]
-    TAG_FIELD_NUMBER: _ClassVar[int]
     LOG_BYTES_FIELD_NUMBER: _ClassVar[int]
     LOG_TYPE_FIELD_NUMBER: _ClassVar[int]
+    TAG_FIELD_NUMBER: _ClassVar[int]
     id: int
-    tag: int
     log_bytes: bytes
     log_type: int
-    def __init__(self, id: _Optional[int] = ..., tag: _Optional[int] = ..., log_bytes: _Optional[bytes] = ..., log_type: _Optional[int] = ...) -> None: ...
+    tag: int
+    def __init__(self, id: _Optional[int] = ..., log_bytes: _Optional[bytes] = ..., log_type: _Optional[int] = ..., tag: _Optional[int] = ...) -> None: ...
+
+class LogUpdateTime(_message.Message):
+    __slots__ = ("timestamp", "device_id", "model_id", "log_bytes", "log_type", "tag")
+    TIMESTAMP_FIELD_NUMBER: _ClassVar[int]
+    DEVICE_ID_FIELD_NUMBER: _ClassVar[int]
+    MODEL_ID_FIELD_NUMBER: _ClassVar[int]
+    LOG_BYTES_FIELD_NUMBER: _ClassVar[int]
+    LOG_TYPE_FIELD_NUMBER: _ClassVar[int]
+    TAG_FIELD_NUMBER: _ClassVar[int]
+    timestamp: int
+    device_id: bytes
+    model_id: bytes
+    log_bytes: bytes
+    log_type: int
+    tag: int
+    def __init__(self, timestamp: _Optional[int] = ..., device_id: _Optional[bytes] = ..., model_id: _Optional[bytes] = ..., log_bytes: _Optional[bytes] = ..., log_type: _Optional[int] = ..., tag: _Optional[int] = ...) -> None: ...
 
 class LogReadResponse(_message.Message):
     __slots__ = ("result",)

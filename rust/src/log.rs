@@ -9,17 +9,22 @@ pub struct LogSchema {
     pub device_id: ::core::option::Option<::prost::alloc::vec::Vec<u8>>,
     #[prost(bytes = "vec", optional, tag = "4")]
     pub model_id: ::core::option::Option<::prost::alloc::vec::Vec<u8>>,
-    #[prost(int32, tag = "5")]
-    pub tag: i32,
-    #[prost(bytes = "vec", tag = "6")]
+    #[prost(bytes = "vec", tag = "5")]
     pub log_bytes: ::prost::alloc::vec::Vec<u8>,
-    #[prost(uint32, tag = "7")]
+    #[prost(uint32, tag = "6")]
     pub log_type: u32,
+    #[prost(int32, tag = "7")]
+    pub tag: i32,
 }
 #[derive(Clone, Copy, PartialEq, ::prost::Message)]
 pub struct LogId {
     #[prost(int32, tag = "1")]
     pub id: i32,
+}
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct LogIds {
+    #[prost(int32, repeated, tag = "1")]
+    pub ids: ::prost::alloc::vec::Vec<i32>,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct LogTime {
@@ -49,12 +54,27 @@ pub struct LogRange {
 pub struct LogUpdate {
     #[prost(int32, tag = "1")]
     pub id: i32,
-    #[prost(int32, optional, tag = "2")]
-    pub tag: ::core::option::Option<i32>,
-    #[prost(bytes = "vec", optional, tag = "3")]
+    #[prost(bytes = "vec", optional, tag = "2")]
     pub log_bytes: ::core::option::Option<::prost::alloc::vec::Vec<u8>>,
-    #[prost(uint32, optional, tag = "4")]
+    #[prost(uint32, optional, tag = "3")]
     pub log_type: ::core::option::Option<u32>,
+    #[prost(int32, optional, tag = "4")]
+    pub tag: ::core::option::Option<i32>,
+}
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct LogUpdateTime {
+    #[prost(int64, tag = "1")]
+    pub timestamp: i64,
+    #[prost(bytes = "vec", optional, tag = "2")]
+    pub device_id: ::core::option::Option<::prost::alloc::vec::Vec<u8>>,
+    #[prost(bytes = "vec", optional, tag = "3")]
+    pub model_id: ::core::option::Option<::prost::alloc::vec::Vec<u8>>,
+    #[prost(bytes = "vec", optional, tag = "4")]
+    pub log_bytes: ::core::option::Option<::prost::alloc::vec::Vec<u8>>,
+    #[prost(uint32, optional, tag = "5")]
+    pub log_type: ::core::option::Option<u32>,
+    #[prost(int32, optional, tag = "6")]
+    pub tag: ::core::option::Option<i32>,
 }
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct LogReadResponse {
@@ -209,6 +229,27 @@ pub mod log_service_client {
                 .insert(GrpcMethod::new("log.LogService", "ReadLogByTime"));
             self.inner.unary(req, path, codec).await
         }
+        pub async fn list_log(
+            &mut self,
+            request: impl tonic::IntoRequest<super::LogIds>,
+        ) -> std::result::Result<
+            tonic::Response<super::LogListResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static("/log.LogService/ListLog");
+            let mut req = request.into_request();
+            req.extensions_mut().insert(GrpcMethod::new("log.LogService", "ListLog"));
+            self.inner.unary(req, path, codec).await
+        }
         pub async fn list_log_by_time(
             &mut self,
             request: impl tonic::IntoRequest<super::LogTime>,
@@ -323,6 +364,30 @@ pub mod log_service_client {
             req.extensions_mut().insert(GrpcMethod::new("log.LogService", "UpdateLog"));
             self.inner.unary(req, path, codec).await
         }
+        pub async fn update_log_by_time(
+            &mut self,
+            request: impl tonic::IntoRequest<super::LogUpdateTime>,
+        ) -> std::result::Result<
+            tonic::Response<super::LogChangeResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/log.LogService/UpdateLogByTime",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("log.LogService", "UpdateLogByTime"));
+            self.inner.unary(req, path, codec).await
+        }
         pub async fn delete_log(
             &mut self,
             request: impl tonic::IntoRequest<super::LogId>,
@@ -342,6 +407,30 @@ pub mod log_service_client {
             let path = http::uri::PathAndQuery::from_static("/log.LogService/DeleteLog");
             let mut req = request.into_request();
             req.extensions_mut().insert(GrpcMethod::new("log.LogService", "DeleteLog"));
+            self.inner.unary(req, path, codec).await
+        }
+        pub async fn delete_log_by_time(
+            &mut self,
+            request: impl tonic::IntoRequest<super::LogTime>,
+        ) -> std::result::Result<
+            tonic::Response<super::LogChangeResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/log.LogService/DeleteLogByTime",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("log.LogService", "DeleteLogByTime"));
             self.inner.unary(req, path, codec).await
         }
     }
@@ -367,6 +456,10 @@ pub mod log_service_server {
             &self,
             request: tonic::Request<super::LogTime>,
         ) -> std::result::Result<tonic::Response<super::LogReadResponse>, tonic::Status>;
+        async fn list_log(
+            &self,
+            request: tonic::Request<super::LogIds>,
+        ) -> std::result::Result<tonic::Response<super::LogListResponse>, tonic::Status>;
         async fn list_log_by_time(
             &self,
             request: tonic::Request<super::LogTime>,
@@ -393,9 +486,23 @@ pub mod log_service_server {
             tonic::Response<super::LogChangeResponse>,
             tonic::Status,
         >;
+        async fn update_log_by_time(
+            &self,
+            request: tonic::Request<super::LogUpdateTime>,
+        ) -> std::result::Result<
+            tonic::Response<super::LogChangeResponse>,
+            tonic::Status,
+        >;
         async fn delete_log(
             &self,
             request: tonic::Request<super::LogId>,
+        ) -> std::result::Result<
+            tonic::Response<super::LogChangeResponse>,
+            tonic::Status,
+        >;
+        async fn delete_log_by_time(
+            &self,
+            request: tonic::Request<super::LogTime>,
         ) -> std::result::Result<
             tonic::Response<super::LogChangeResponse>,
             tonic::Status,
@@ -548,6 +655,49 @@ pub mod log_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ReadLogByTimeSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/log.LogService/ListLog" => {
+                    #[allow(non_camel_case_types)]
+                    struct ListLogSvc<T: LogService>(pub Arc<T>);
+                    impl<T: LogService> tonic::server::UnaryService<super::LogIds>
+                    for ListLogSvc<T> {
+                        type Response = super::LogListResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::LogIds>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as LogService>::list_log(&inner, request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = ListLogSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
@@ -780,6 +930,49 @@ pub mod log_service_server {
                     };
                     Box::pin(fut)
                 }
+                "/log.LogService/UpdateLogByTime" => {
+                    #[allow(non_camel_case_types)]
+                    struct UpdateLogByTimeSvc<T: LogService>(pub Arc<T>);
+                    impl<T: LogService> tonic::server::UnaryService<super::LogUpdateTime>
+                    for UpdateLogByTimeSvc<T> {
+                        type Response = super::LogChangeResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::LogUpdateTime>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as LogService>::update_log_by_time(&inner, request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = UpdateLogByTimeSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
                 "/log.LogService/DeleteLog" => {
                     #[allow(non_camel_case_types)]
                     struct DeleteLogSvc<T: LogService>(pub Arc<T>);
@@ -808,6 +1001,49 @@ pub mod log_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = DeleteLogSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/log.LogService/DeleteLogByTime" => {
+                    #[allow(non_camel_case_types)]
+                    struct DeleteLogByTimeSvc<T: LogService>(pub Arc<T>);
+                    impl<T: LogService> tonic::server::UnaryService<super::LogTime>
+                    for DeleteLogByTimeSvc<T> {
+                        type Response = super::LogChangeResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::LogTime>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as LogService>::delete_log_by_time(&inner, request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = DeleteLogByTimeSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(

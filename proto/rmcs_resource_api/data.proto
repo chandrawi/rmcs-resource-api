@@ -4,7 +4,7 @@ package data;
 service DataService {
     rpc ReadData(DataId) returns (DataReadResponse);
 
-    rpc ListDataByTime(DataId) returns (DataListResponse);
+    rpc ListDataByTime(DataTime) returns (DataListResponse);
 
     rpc ListDataByLastTime(DataTime) returns (DataListResponse);
 
@@ -36,7 +36,7 @@ service DataService {
 
     rpc ReadDataSet(DataSetId) returns (DataSetReadResponse);
 
-    rpc ListDataSetByTime(DataSetId) returns (DataSetListResponse);
+    rpc ListDataSetByTime(DataSetTime) returns (DataSetListResponse);
 
     rpc ListDataSetByLastTime(DataSetTime) returns (DataSetListResponse);
 

@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1brmcs_resource_api/log.proto\x12\x03log\"\xa6\x01\n\tLogSchema\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x11\n\ttimestamp\x18\x02 \x01(\x03\x12\x16\n\tdevice_id\x18\x03 \x01(\x0cH\x00\x88\x01\x01\x12\x15\n\x08model_id\x18\x04 \x01(\x0cH\x01\x88\x01\x01\x12\x0b\n\x03tag\x18\x05 \x01(\x05\x12\x11\n\tlog_bytes\x18\x06 \x01(\x0c\x12\x10\n\x08log_type\x18\x07 \x01(\rB\x0c\n\n_device_idB\x0b\n\t_model_id\"\x13\n\x05LogId\x12\n\n\x02id\x18\x01 \x01(\x05\"\x80\x01\n\x07LogTime\x12\x11\n\ttimestamp\x18\x01 \x01(\x03\x12\x16\n\tdevice_id\x18\x02 \x01(\x0cH\x00\x88\x01\x01\x12\x15\n\x08model_id\x18\x03 \x01(\x0cH\x01\x88\x01\x01\x12\x10\n\x03tag\x18\x04 \x01(\x05H\x02\x88\x01\x01\x42\x0c\n\n_device_idB\x0b\n\t_model_idB\x06\n\x04_tag\"\x8a\x01\n\x08LogRange\x12\r\n\x05\x62\x65gin\x18\x01 \x01(\x03\x12\x0b\n\x03\x65nd\x18\x02 \x01(\x03\x12\x16\n\tdevice_id\x18\x03 \x01(\x0cH\x00\x88\x01\x01\x12\x15\n\x08model_id\x18\x04 \x01(\x0cH\x01\x88\x01\x01\x12\x10\n\x03tag\x18\x05 \x01(\x05H\x02\x88\x01\x01\x42\x0c\n\n_device_idB\x0b\n\t_model_idB\x06\n\x04_tag\"{\n\tLogUpdate\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x10\n\x03tag\x18\x02 \x01(\x05H\x00\x88\x01\x01\x12\x16\n\tlog_bytes\x18\x03 \x01(\x0cH\x01\x88\x01\x01\x12\x15\n\x08log_type\x18\x04 \x01(\rH\x02\x88\x01\x01\x42\x06\n\x04_tagB\x0c\n\n_log_bytesB\x0b\n\t_log_type\"1\n\x0fLogReadResponse\x12\x1e\n\x06result\x18\x01 \x01(\x0b\x32\x0e.log.LogSchema\"2\n\x0fLogListResponse\x12\x1f\n\x07results\x18\x01 \x03(\x0b\x32\x0e.log.LogSchema\"\x1f\n\x11LogCreateResponse\x12\n\n\x02id\x18\x01 \x01(\x05\"\x13\n\x11LogChangeResponse2\xb2\x03\n\nLogService\x12+\n\x07ReadLog\x12\n.log.LogId\x1a\x14.log.LogReadResponse\x12\x33\n\rReadLogByTime\x12\x0c.log.LogTime\x1a\x14.log.LogReadResponse\x12\x33\n\rListLogByTime\x12\x0c.log.LogTime\x1a\x14.log.LogListResponse\x12\x37\n\x11ListLogByLastTime\x12\x0c.log.LogTime\x1a\x14.log.LogListResponse\x12\x39\n\x12ListLogByRangeTime\x12\r.log.LogRange\x1a\x14.log.LogListResponse\x12\x33\n\tCreateLog\x12\x0e.log.LogSchema\x1a\x16.log.LogCreateResponse\x12\x33\n\tUpdateLog\x12\x0e.log.LogUpdate\x1a\x16.log.LogChangeResponse\x12/\n\tDeleteLog\x12\n.log.LogId\x1a\x16.log.LogChangeResponseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1brmcs_resource_api/log.proto\x12\x03log\"\xa6\x01\n\tLogSchema\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x11\n\ttimestamp\x18\x02 \x01(\x03\x12\x16\n\tdevice_id\x18\x03 \x01(\x0cH\x00\x88\x01\x01\x12\x15\n\x08model_id\x18\x04 \x01(\x0cH\x01\x88\x01\x01\x12\x11\n\tlog_bytes\x18\x05 \x01(\x0c\x12\x10\n\x08log_type\x18\x06 \x01(\r\x12\x0b\n\x03tag\x18\x07 \x01(\x05\x42\x0c\n\n_device_idB\x0b\n\t_model_id\"\x13\n\x05LogId\x12\n\n\x02id\x18\x01 \x01(\x05\"\x15\n\x06LogIds\x12\x0b\n\x03ids\x18\x01 \x03(\x05\"\x80\x01\n\x07LogTime\x12\x11\n\ttimestamp\x18\x01 \x01(\x03\x12\x16\n\tdevice_id\x18\x02 \x01(\x0cH\x00\x88\x01\x01\x12\x15\n\x08model_id\x18\x03 \x01(\x0cH\x01\x88\x01\x01\x12\x10\n\x03tag\x18\x04 \x01(\x05H\x02\x88\x01\x01\x42\x0c\n\n_device_idB\x0b\n\t_model_idB\x06\n\x04_tag\"\x8a\x01\n\x08LogRange\x12\r\n\x05\x62\x65gin\x18\x01 \x01(\x03\x12\x0b\n\x03\x65nd\x18\x02 \x01(\x03\x12\x16\n\tdevice_id\x18\x03 \x01(\x0cH\x00\x88\x01\x01\x12\x15\n\x08model_id\x18\x04 \x01(\x0cH\x01\x88\x01\x01\x12\x10\n\x03tag\x18\x05 \x01(\x05H\x02\x88\x01\x01\x42\x0c\n\n_device_idB\x0b\n\t_model_idB\x06\n\x04_tag\"{\n\tLogUpdate\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x16\n\tlog_bytes\x18\x02 \x01(\x0cH\x00\x88\x01\x01\x12\x15\n\x08log_type\x18\x03 \x01(\rH\x01\x88\x01\x01\x12\x10\n\x03tag\x18\x04 \x01(\x05H\x02\x88\x01\x01\x42\x0c\n\n_log_bytesB\x0b\n\t_log_typeB\x06\n\x04_tag\"\xd0\x01\n\rLogUpdateTime\x12\x11\n\ttimestamp\x18\x01 \x01(\x03\x12\x16\n\tdevice_id\x18\x02 \x01(\x0cH\x00\x88\x01\x01\x12\x15\n\x08model_id\x18\x03 \x01(\x0cH\x01\x88\x01\x01\x12\x16\n\tlog_bytes\x18\x04 \x01(\x0cH\x02\x88\x01\x01\x12\x15\n\x08log_type\x18\x05 \x01(\rH\x03\x88\x01\x01\x12\x10\n\x03tag\x18\x06 \x01(\x05H\x04\x88\x01\x01\x42\x0c\n\n_device_idB\x0b\n\t_model_idB\x0c\n\n_log_bytesB\x0b\n\t_log_typeB\x06\n\x04_tag\"1\n\x0fLogReadResponse\x12\x1e\n\x06result\x18\x01 \x01(\x0b\x32\x0e.log.LogSchema\"2\n\x0fLogListResponse\x12\x1f\n\x07results\x18\x01 \x03(\x0b\x32\x0e.log.LogSchema\"\x1f\n\x11LogCreateResponse\x12\n\n\x02id\x18\x01 \x01(\x05\"\x13\n\x11LogChangeResponse2\xd8\x04\n\nLogService\x12+\n\x07ReadLog\x12\n.log.LogId\x1a\x14.log.LogReadResponse\x12\x33\n\rReadLogByTime\x12\x0c.log.LogTime\x1a\x14.log.LogReadResponse\x12,\n\x07ListLog\x12\x0b.log.LogIds\x1a\x14.log.LogListResponse\x12\x33\n\rListLogByTime\x12\x0c.log.LogTime\x1a\x14.log.LogListResponse\x12\x37\n\x11ListLogByLastTime\x12\x0c.log.LogTime\x1a\x14.log.LogListResponse\x12\x39\n\x12ListLogByRangeTime\x12\r.log.LogRange\x1a\x14.log.LogListResponse\x12\x33\n\tCreateLog\x12\x0e.log.LogSchema\x1a\x16.log.LogCreateResponse\x12\x33\n\tUpdateLog\x12\x0e.log.LogUpdate\x1a\x16.log.LogChangeResponse\x12=\n\x0fUpdateLogByTime\x12\x12.log.LogUpdateTime\x1a\x16.log.LogChangeResponse\x12/\n\tDeleteLog\x12\n.log.LogId\x1a\x16.log.LogChangeResponse\x12\x37\n\x0f\x44\x65leteLogByTime\x12\x0c.log.LogTime\x1a\x16.log.LogChangeResponseb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -35,20 +35,24 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_LOGSCHEMA']._serialized_end=203
   _globals['_LOGID']._serialized_start=205
   _globals['_LOGID']._serialized_end=224
-  _globals['_LOGTIME']._serialized_start=227
-  _globals['_LOGTIME']._serialized_end=355
-  _globals['_LOGRANGE']._serialized_start=358
-  _globals['_LOGRANGE']._serialized_end=496
-  _globals['_LOGUPDATE']._serialized_start=498
-  _globals['_LOGUPDATE']._serialized_end=621
-  _globals['_LOGREADRESPONSE']._serialized_start=623
-  _globals['_LOGREADRESPONSE']._serialized_end=672
-  _globals['_LOGLISTRESPONSE']._serialized_start=674
-  _globals['_LOGLISTRESPONSE']._serialized_end=724
-  _globals['_LOGCREATERESPONSE']._serialized_start=726
-  _globals['_LOGCREATERESPONSE']._serialized_end=757
-  _globals['_LOGCHANGERESPONSE']._serialized_start=759
-  _globals['_LOGCHANGERESPONSE']._serialized_end=778
-  _globals['_LOGSERVICE']._serialized_start=781
-  _globals['_LOGSERVICE']._serialized_end=1215
+  _globals['_LOGIDS']._serialized_start=226
+  _globals['_LOGIDS']._serialized_end=247
+  _globals['_LOGTIME']._serialized_start=250
+  _globals['_LOGTIME']._serialized_end=378
+  _globals['_LOGRANGE']._serialized_start=381
+  _globals['_LOGRANGE']._serialized_end=519
+  _globals['_LOGUPDATE']._serialized_start=521
+  _globals['_LOGUPDATE']._serialized_end=644
+  _globals['_LOGUPDATETIME']._serialized_start=647
+  _globals['_LOGUPDATETIME']._serialized_end=855
+  _globals['_LOGREADRESPONSE']._serialized_start=857
+  _globals['_LOGREADRESPONSE']._serialized_end=906
+  _globals['_LOGLISTRESPONSE']._serialized_start=908
+  _globals['_LOGLISTRESPONSE']._serialized_end=958
+  _globals['_LOGCREATERESPONSE']._serialized_start=960
+  _globals['_LOGCREATERESPONSE']._serialized_end=991
+  _globals['_LOGCHANGERESPONSE']._serialized_start=993
+  _globals['_LOGCHANGERESPONSE']._serialized_end=1012
+  _globals['_LOGSERVICE']._serialized_start=1015
+  _globals['_LOGSERVICE']._serialized_end=1615
 # @@protoc_insertion_point(module_scope)

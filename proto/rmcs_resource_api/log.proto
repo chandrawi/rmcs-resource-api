@@ -6,6 +6,8 @@ service LogService {
 
     rpc ReadLogByTime(LogTime) returns (LogReadResponse);
 
+    rpc ListLog(LogIds) returns (LogListResponse);
+
     rpc ListLogByTime(LogTime) returns (LogListResponse);
 
     rpc ListLogByLastTime(LogTime) returns (LogListResponse);
@@ -16,7 +18,11 @@ service LogService {
 
     rpc UpdateLog(LogUpdate) returns (LogChangeResponse);
 
+    rpc UpdateLogByTime(LogUpdateTime) returns (LogChangeResponse);
+
     rpc DeleteLog(LogId) returns (LogChangeResponse);
+
+    rpc DeleteLogByTime(LogTime) returns (LogChangeResponse);
 }
 
 message LogSchema {
@@ -24,13 +30,17 @@ message LogSchema {
     int64 timestamp = 2;
     optional bytes device_id = 3;
     optional bytes model_id = 4;
-    int32 tag = 5;
-    bytes log_bytes = 6;
-    uint32 log_type = 7;
+    bytes log_bytes = 5;
+    uint32 log_type = 6;
+    int32 tag = 7;
 }
 
 message LogId {
     int32 id = 1;
+}
+
+message LogIds {
+    repeated int32 ids = 1;
 }
 
 message LogTime {
@@ -50,9 +60,18 @@ message LogRange {
 
 message LogUpdate {
     int32 id = 1;
-    optional int32 tag = 2;
-    optional bytes log_bytes = 3;
-    optional uint32 log_type = 4;
+    optional bytes log_bytes = 2;
+    optional uint32 log_type = 3;
+    optional int32 tag = 4;
+}
+
+message LogUpdateTime {
+    int64 timestamp = 1;
+    optional bytes device_id = 2;
+    optional bytes model_id = 3;
+    optional bytes log_bytes = 4;
+    optional uint32 log_type = 5;
+    optional int32 tag = 6;
 }
 
 message LogReadResponse {

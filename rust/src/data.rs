@@ -311,7 +311,7 @@ pub mod data_service_client {
         }
         pub async fn list_data_by_time(
             &mut self,
-            request: impl tonic::IntoRequest<super::DataId>,
+            request: impl tonic::IntoRequest<super::DataTime>,
         ) -> std::result::Result<
             tonic::Response<super::DataListResponse>,
             tonic::Status,
@@ -699,7 +699,7 @@ pub mod data_service_client {
         }
         pub async fn list_data_set_by_time(
             &mut self,
-            request: impl tonic::IntoRequest<super::DataSetId>,
+            request: impl tonic::IntoRequest<super::DataSetTime>,
         ) -> std::result::Result<
             tonic::Response<super::DataSetListResponse>,
             tonic::Status,
@@ -1365,7 +1365,7 @@ pub mod data_service_server {
         >;
         async fn list_data_by_time(
             &self,
-            request: tonic::Request<super::DataId>,
+            request: tonic::Request<super::DataTime>,
         ) -> std::result::Result<
             tonic::Response<super::DataListResponse>,
             tonic::Status,
@@ -1477,7 +1477,7 @@ pub mod data_service_server {
         >;
         async fn list_data_set_by_time(
             &self,
-            request: tonic::Request<super::DataSetId>,
+            request: tonic::Request<super::DataSetTime>,
         ) -> std::result::Result<
             tonic::Response<super::DataSetListResponse>,
             tonic::Status,
@@ -1780,7 +1780,7 @@ pub mod data_service_server {
                 "/data.DataService/ListDataByTime" => {
                     #[allow(non_camel_case_types)]
                     struct ListDataByTimeSvc<T: DataService>(pub Arc<T>);
-                    impl<T: DataService> tonic::server::UnaryService<super::DataId>
+                    impl<T: DataService> tonic::server::UnaryService<super::DataTime>
                     for ListDataByTimeSvc<T> {
                         type Response = super::DataListResponse;
                         type Future = BoxFuture<
@@ -1789,7 +1789,7 @@ pub mod data_service_server {
                         >;
                         fn call(
                             &mut self,
-                            request: tonic::Request<super::DataId>,
+                            request: tonic::Request<super::DataTime>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
@@ -2520,7 +2520,7 @@ pub mod data_service_server {
                 "/data.DataService/ListDataSetByTime" => {
                     #[allow(non_camel_case_types)]
                     struct ListDataSetByTimeSvc<T: DataService>(pub Arc<T>);
-                    impl<T: DataService> tonic::server::UnaryService<super::DataSetId>
+                    impl<T: DataService> tonic::server::UnaryService<super::DataSetTime>
                     for ListDataSetByTimeSvc<T> {
                         type Response = super::DataSetListResponse;
                         type Future = BoxFuture<
@@ -2529,7 +2529,7 @@ pub mod data_service_server {
                         >;
                         fn call(
                             &mut self,
-                            request: tonic::Request<super::DataSetId>,
+                            request: tonic::Request<super::DataSetTime>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {

@@ -44,6 +44,11 @@ class LogServiceStub(object):
                 request_serializer=rmcs__resource__api_dot_log__pb2.LogTime.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_log__pb2.LogReadResponse.FromString,
                 _registered_method=True)
+        self.ListLog = channel.unary_unary(
+                '/log.LogService/ListLog',
+                request_serializer=rmcs__resource__api_dot_log__pb2.LogIds.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_log__pb2.LogListResponse.FromString,
+                _registered_method=True)
         self.ListLogByTime = channel.unary_unary(
                 '/log.LogService/ListLogByTime',
                 request_serializer=rmcs__resource__api_dot_log__pb2.LogTime.SerializeToString,
@@ -69,9 +74,19 @@ class LogServiceStub(object):
                 request_serializer=rmcs__resource__api_dot_log__pb2.LogUpdate.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_log__pb2.LogChangeResponse.FromString,
                 _registered_method=True)
+        self.UpdateLogByTime = channel.unary_unary(
+                '/log.LogService/UpdateLogByTime',
+                request_serializer=rmcs__resource__api_dot_log__pb2.LogUpdateTime.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_log__pb2.LogChangeResponse.FromString,
+                _registered_method=True)
         self.DeleteLog = channel.unary_unary(
                 '/log.LogService/DeleteLog',
                 request_serializer=rmcs__resource__api_dot_log__pb2.LogId.SerializeToString,
+                response_deserializer=rmcs__resource__api_dot_log__pb2.LogChangeResponse.FromString,
+                _registered_method=True)
+        self.DeleteLogByTime = channel.unary_unary(
+                '/log.LogService/DeleteLogByTime',
+                request_serializer=rmcs__resource__api_dot_log__pb2.LogTime.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_log__pb2.LogChangeResponse.FromString,
                 _registered_method=True)
 
@@ -86,6 +101,12 @@ class LogServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ReadLogByTime(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListLog(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -121,7 +142,19 @@ class LogServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def UpdateLogByTime(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def DeleteLog(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteLogByTime(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -139,6 +172,11 @@ def add_LogServiceServicer_to_server(servicer, server):
                     servicer.ReadLogByTime,
                     request_deserializer=rmcs__resource__api_dot_log__pb2.LogTime.FromString,
                     response_serializer=rmcs__resource__api_dot_log__pb2.LogReadResponse.SerializeToString,
+            ),
+            'ListLog': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListLog,
+                    request_deserializer=rmcs__resource__api_dot_log__pb2.LogIds.FromString,
+                    response_serializer=rmcs__resource__api_dot_log__pb2.LogListResponse.SerializeToString,
             ),
             'ListLogByTime': grpc.unary_unary_rpc_method_handler(
                     servicer.ListLogByTime,
@@ -165,9 +203,19 @@ def add_LogServiceServicer_to_server(servicer, server):
                     request_deserializer=rmcs__resource__api_dot_log__pb2.LogUpdate.FromString,
                     response_serializer=rmcs__resource__api_dot_log__pb2.LogChangeResponse.SerializeToString,
             ),
+            'UpdateLogByTime': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateLogByTime,
+                    request_deserializer=rmcs__resource__api_dot_log__pb2.LogUpdateTime.FromString,
+                    response_serializer=rmcs__resource__api_dot_log__pb2.LogChangeResponse.SerializeToString,
+            ),
             'DeleteLog': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteLog,
                     request_deserializer=rmcs__resource__api_dot_log__pb2.LogId.FromString,
+                    response_serializer=rmcs__resource__api_dot_log__pb2.LogChangeResponse.SerializeToString,
+            ),
+            'DeleteLogByTime': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteLogByTime,
+                    request_deserializer=rmcs__resource__api_dot_log__pb2.LogTime.FromString,
                     response_serializer=rmcs__resource__api_dot_log__pb2.LogChangeResponse.SerializeToString,
             ),
     }
@@ -225,6 +273,33 @@ class LogService(object):
             '/log.LogService/ReadLogByTime',
             rmcs__resource__api_dot_log__pb2.LogTime.SerializeToString,
             rmcs__resource__api_dot_log__pb2.LogReadResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListLog(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/log.LogService/ListLog',
+            rmcs__resource__api_dot_log__pb2.LogIds.SerializeToString,
+            rmcs__resource__api_dot_log__pb2.LogListResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -371,6 +446,33 @@ class LogService(object):
             _registered_method=True)
 
     @staticmethod
+    def UpdateLogByTime(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/log.LogService/UpdateLogByTime',
+            rmcs__resource__api_dot_log__pb2.LogUpdateTime.SerializeToString,
+            rmcs__resource__api_dot_log__pb2.LogChangeResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
     def DeleteLog(request,
             target,
             options=(),
@@ -386,6 +488,33 @@ class LogService(object):
             target,
             '/log.LogService/DeleteLog',
             rmcs__resource__api_dot_log__pb2.LogId.SerializeToString,
+            rmcs__resource__api_dot_log__pb2.LogChangeResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def DeleteLogByTime(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/log.LogService/DeleteLogByTime',
+            rmcs__resource__api_dot_log__pb2.LogTime.SerializeToString,
             rmcs__resource__api_dot_log__pb2.LogChangeResponse.FromString,
             options,
             channel_credentials,

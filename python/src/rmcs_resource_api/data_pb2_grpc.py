@@ -41,7 +41,7 @@ class DataServiceStub(object):
                 _registered_method=True)
         self.ListDataByTime = channel.unary_unary(
                 '/data.DataService/ListDataByTime',
-                request_serializer=rmcs__resource__api_dot_data__pb2.DataId.SerializeToString,
+                request_serializer=rmcs__resource__api_dot_data__pb2.DataTime.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_data__pb2.DataListResponse.FromString,
                 _registered_method=True)
         self.ListDataByLastTime = channel.unary_unary(
@@ -121,7 +121,7 @@ class DataServiceStub(object):
                 _registered_method=True)
         self.ListDataSetByTime = channel.unary_unary(
                 '/data.DataService/ListDataSetByTime',
-                request_serializer=rmcs__resource__api_dot_data__pb2.DataSetId.SerializeToString,
+                request_serializer=rmcs__resource__api_dot_data__pb2.DataSetTime.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_data__pb2.DataSetListResponse.FromString,
                 _registered_method=True)
         self.ListDataSetByLastTime = channel.unary_unary(
@@ -522,7 +522,7 @@ def add_DataServiceServicer_to_server(servicer, server):
             ),
             'ListDataByTime': grpc.unary_unary_rpc_method_handler(
                     servicer.ListDataByTime,
-                    request_deserializer=rmcs__resource__api_dot_data__pb2.DataId.FromString,
+                    request_deserializer=rmcs__resource__api_dot_data__pb2.DataTime.FromString,
                     response_serializer=rmcs__resource__api_dot_data__pb2.DataListResponse.SerializeToString,
             ),
             'ListDataByLastTime': grpc.unary_unary_rpc_method_handler(
@@ -602,7 +602,7 @@ def add_DataServiceServicer_to_server(servicer, server):
             ),
             'ListDataSetByTime': grpc.unary_unary_rpc_method_handler(
                     servicer.ListDataSetByTime,
-                    request_deserializer=rmcs__resource__api_dot_data__pb2.DataSetId.FromString,
+                    request_deserializer=rmcs__resource__api_dot_data__pb2.DataSetTime.FromString,
                     response_serializer=rmcs__resource__api_dot_data__pb2.DataSetListResponse.SerializeToString,
             ),
             'ListDataSetByLastTime': grpc.unary_unary_rpc_method_handler(
@@ -783,7 +783,7 @@ class DataService(object):
             request,
             target,
             '/data.DataService/ListDataByTime',
-            rmcs__resource__api_dot_data__pb2.DataId.SerializeToString,
+            rmcs__resource__api_dot_data__pb2.DataTime.SerializeToString,
             rmcs__resource__api_dot_data__pb2.DataListResponse.FromString,
             options,
             channel_credentials,
@@ -1215,7 +1215,7 @@ class DataService(object):
             request,
             target,
             '/data.DataService/ListDataSetByTime',
-            rmcs__resource__api_dot_data__pb2.DataSetId.SerializeToString,
+            rmcs__resource__api_dot_data__pb2.DataSetTime.SerializeToString,
             rmcs__resource__api_dot_data__pb2.DataSetListResponse.FromString,
             options,
             channel_credentials,

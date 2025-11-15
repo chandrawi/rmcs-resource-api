@@ -36,6 +36,12 @@ class BufferId(_message.Message):
     id: int
     def __init__(self, id: _Optional[int] = ...) -> None: ...
 
+class BufferIds(_message.Message):
+    __slots__ = ("ids",)
+    IDS_FIELD_NUMBER: _ClassVar[int]
+    ids: _containers.RepeatedScalarFieldContainer[int]
+    def __init__(self, ids: _Optional[_Iterable[int]] = ...) -> None: ...
+
 class BufferTime(_message.Message):
     __slots__ = ("device_id", "model_id", "timestamp", "tag")
     DEVICE_ID_FIELD_NUMBER: _ClassVar[int]
@@ -87,18 +93,18 @@ class BufferSelector(_message.Message):
     def __init__(self, device_id: _Optional[bytes] = ..., model_id: _Optional[bytes] = ..., tag: _Optional[int] = ...) -> None: ...
 
 class BuffersSelector(_message.Message):
-    __slots__ = ("device_id", "model_id", "tag", "number", "offset")
+    __slots__ = ("number", "offset", "device_id", "model_id", "tag")
+    NUMBER_FIELD_NUMBER: _ClassVar[int]
+    OFFSET_FIELD_NUMBER: _ClassVar[int]
     DEVICE_ID_FIELD_NUMBER: _ClassVar[int]
     MODEL_ID_FIELD_NUMBER: _ClassVar[int]
     TAG_FIELD_NUMBER: _ClassVar[int]
-    NUMBER_FIELD_NUMBER: _ClassVar[int]
-    OFFSET_FIELD_NUMBER: _ClassVar[int]
+    number: int
+    offset: int
     device_id: bytes
     model_id: bytes
     tag: int
-    number: int
-    offset: int
-    def __init__(self, device_id: _Optional[bytes] = ..., model_id: _Optional[bytes] = ..., tag: _Optional[int] = ..., number: _Optional[int] = ..., offset: _Optional[int] = ...) -> None: ...
+    def __init__(self, number: _Optional[int] = ..., offset: _Optional[int] = ..., device_id: _Optional[bytes] = ..., model_id: _Optional[bytes] = ..., tag: _Optional[int] = ...) -> None: ...
 
 class BufferIdsTime(_message.Message):
     __slots__ = ("device_ids", "model_ids", "timestamp", "tag")
@@ -151,18 +157,18 @@ class BufferIdsSelector(_message.Message):
     def __init__(self, device_ids: _Optional[_Iterable[bytes]] = ..., model_ids: _Optional[_Iterable[bytes]] = ..., tag: _Optional[int] = ...) -> None: ...
 
 class BuffersIdsSelector(_message.Message):
-    __slots__ = ("device_ids", "model_ids", "tag", "number", "offset")
+    __slots__ = ("number", "offset", "device_ids", "model_ids", "tag")
+    NUMBER_FIELD_NUMBER: _ClassVar[int]
+    OFFSET_FIELD_NUMBER: _ClassVar[int]
     DEVICE_IDS_FIELD_NUMBER: _ClassVar[int]
     MODEL_IDS_FIELD_NUMBER: _ClassVar[int]
     TAG_FIELD_NUMBER: _ClassVar[int]
-    NUMBER_FIELD_NUMBER: _ClassVar[int]
-    OFFSET_FIELD_NUMBER: _ClassVar[int]
+    number: int
+    offset: int
     device_ids: _containers.RepeatedScalarFieldContainer[bytes]
     model_ids: _containers.RepeatedScalarFieldContainer[bytes]
     tag: int
-    number: int
-    offset: int
-    def __init__(self, device_ids: _Optional[_Iterable[bytes]] = ..., model_ids: _Optional[_Iterable[bytes]] = ..., tag: _Optional[int] = ..., number: _Optional[int] = ..., offset: _Optional[int] = ...) -> None: ...
+    def __init__(self, number: _Optional[int] = ..., offset: _Optional[int] = ..., device_ids: _Optional[_Iterable[bytes]] = ..., model_ids: _Optional[_Iterable[bytes]] = ..., tag: _Optional[int] = ...) -> None: ...
 
 class BufferSetTime(_message.Message):
     __slots__ = ("set_id", "timestamp")
@@ -219,6 +225,22 @@ class BufferUpdate(_message.Message):
     data_type: _containers.RepeatedScalarFieldContainer[int]
     tag: int
     def __init__(self, id: _Optional[int] = ..., data_bytes: _Optional[bytes] = ..., data_type: _Optional[_Iterable[int]] = ..., tag: _Optional[int] = ...) -> None: ...
+
+class BufferUpdateTime(_message.Message):
+    __slots__ = ("device_id", "model_id", "timestamp", "data_bytes", "data_type", "tag")
+    DEVICE_ID_FIELD_NUMBER: _ClassVar[int]
+    MODEL_ID_FIELD_NUMBER: _ClassVar[int]
+    TIMESTAMP_FIELD_NUMBER: _ClassVar[int]
+    DATA_BYTES_FIELD_NUMBER: _ClassVar[int]
+    DATA_TYPE_FIELD_NUMBER: _ClassVar[int]
+    TAG_FIELD_NUMBER: _ClassVar[int]
+    device_id: bytes
+    model_id: bytes
+    timestamp: int
+    data_bytes: bytes
+    data_type: _containers.RepeatedScalarFieldContainer[int]
+    tag: int
+    def __init__(self, device_id: _Optional[bytes] = ..., model_id: _Optional[bytes] = ..., timestamp: _Optional[int] = ..., data_bytes: _Optional[bytes] = ..., data_type: _Optional[_Iterable[int]] = ..., tag: _Optional[int] = ...) -> None: ...
 
 class BufferReadResponse(_message.Message):
     __slots__ = ("result",)
