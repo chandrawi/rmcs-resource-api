@@ -24,16 +24,6 @@ service DataService {
 
     rpc ListDataByIdsNumberAfter(DataIdsNumber) returns (DataListResponse);
 
-    rpc ListDataBySetTime(DataSetTime) returns (DataListResponse);
-
-    rpc ListDataBySetLastTime(DataSetTime) returns (DataListResponse);
-
-    rpc ListDataBySetRangeTime(DataSetRange) returns (DataListResponse);
-
-    rpc ListDataBySetNumberBefore(DataSetNumber) returns (DataListResponse);
-
-    rpc ListDataBySetNumberAfter(DataSetNumber) returns (DataListResponse);
-
     rpc ReadDataSet(DataSetId) returns (DataSetReadResponse);
 
     rpc ListDataSetByTime(DataSetTime) returns (DataSetListResponse);
@@ -41,10 +31,6 @@ service DataService {
     rpc ListDataSetByLastTime(DataSetTime) returns (DataSetListResponse);
 
     rpc ListDataSetByRangeTime(DataSetRange) returns (DataSetListResponse);
-
-    rpc ListDataSetByNumberBefore(DataSetNumber) returns (DataSetListResponse);
-
-    rpc ListDataSetByNumberAfter(DataSetNumber) returns (DataSetListResponse);
 
     rpc CreateData(DataSchema) returns (DataChangeResponse);
 
@@ -64,12 +50,6 @@ service DataService {
 
     rpc ListDataTimestampByIdsRangeTime(DataIdsRange) returns (TimestampListResponse);
 
-    rpc ReadDataTimestampBySet(DataSetId) returns (TimestampReadResponse);
-
-    rpc ListDataTimestampBySetLastTime(DataSetTime) returns (TimestampListResponse);
-
-    rpc ListDataTimestampBySetRangeTime(DataSetRange) returns (TimestampListResponse);
-
     rpc CountData(DataTime) returns (DataCountResponse);
 
     rpc CountDataByLastTime(DataTime) returns (DataCountResponse);
@@ -81,12 +61,6 @@ service DataService {
     rpc CountDataByIdsLastTime(DataIdsTime) returns (DataCountResponse);
 
     rpc CountDataByIdsRangeTime(DataIdsRange) returns (DataCountResponse);
-
-    rpc CountDataBySet(DataSetTime) returns (DataCountResponse);
-
-    rpc CountDataBySetLastTime(DataSetTime) returns (DataCountResponse);
-
-    rpc CountDataBySetRangeTime(DataSetRange) returns (DataCountResponse);
 }
 
 message DataSchema {
@@ -137,6 +111,7 @@ message DataSetSchema {
     int64 timestamp = 2;
     bytes data_bytes = 3;
     repeated uint32 data_type = 4;
+    int32 tag = 5;
 }
 
 message DataIds {
@@ -172,23 +147,20 @@ message DataIdsNumber {
 message DataSetId {
     bytes set_id = 1;
     int64 timestamp = 2;
+    optional int32 tag = 3;
 }
 
 message DataSetTime {
     bytes set_id = 1;
     int64 timestamp = 2;
+    optional int32 tag = 3;
 }
 
 message DataSetRange {
     bytes set_id = 1;
     int64 begin = 2;
     int64 end = 3;
-}
-
-message DataSetNumber {
-    bytes set_id = 1;
-    int64 timestamp = 2;
-    uint32 number = 3;
+    optional int32 tag = 4;
 }
 
 message DataReadResponse {

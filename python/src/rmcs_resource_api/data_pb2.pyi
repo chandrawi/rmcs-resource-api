@@ -81,16 +81,18 @@ class DataNumber(_message.Message):
     def __init__(self, device_id: _Optional[bytes] = ..., model_id: _Optional[bytes] = ..., timestamp: _Optional[int] = ..., number: _Optional[int] = ..., tag: _Optional[int] = ...) -> None: ...
 
 class DataSetSchema(_message.Message):
-    __slots__ = ("set_id", "timestamp", "data_bytes", "data_type")
+    __slots__ = ("set_id", "timestamp", "data_bytes", "data_type", "tag")
     SET_ID_FIELD_NUMBER: _ClassVar[int]
     TIMESTAMP_FIELD_NUMBER: _ClassVar[int]
     DATA_BYTES_FIELD_NUMBER: _ClassVar[int]
     DATA_TYPE_FIELD_NUMBER: _ClassVar[int]
+    TAG_FIELD_NUMBER: _ClassVar[int]
     set_id: bytes
     timestamp: int
     data_bytes: bytes
     data_type: _containers.RepeatedScalarFieldContainer[int]
-    def __init__(self, set_id: _Optional[bytes] = ..., timestamp: _Optional[int] = ..., data_bytes: _Optional[bytes] = ..., data_type: _Optional[_Iterable[int]] = ...) -> None: ...
+    tag: int
+    def __init__(self, set_id: _Optional[bytes] = ..., timestamp: _Optional[int] = ..., data_bytes: _Optional[bytes] = ..., data_type: _Optional[_Iterable[int]] = ..., tag: _Optional[int] = ...) -> None: ...
 
 class DataIds(_message.Message):
     __slots__ = ("device_ids", "model_ids", "timestamp", "tag")
@@ -145,40 +147,36 @@ class DataIdsNumber(_message.Message):
     def __init__(self, device_ids: _Optional[_Iterable[bytes]] = ..., model_ids: _Optional[_Iterable[bytes]] = ..., timestamp: _Optional[int] = ..., number: _Optional[int] = ..., tag: _Optional[int] = ...) -> None: ...
 
 class DataSetId(_message.Message):
-    __slots__ = ("set_id", "timestamp")
+    __slots__ = ("set_id", "timestamp", "tag")
     SET_ID_FIELD_NUMBER: _ClassVar[int]
     TIMESTAMP_FIELD_NUMBER: _ClassVar[int]
+    TAG_FIELD_NUMBER: _ClassVar[int]
     set_id: bytes
     timestamp: int
-    def __init__(self, set_id: _Optional[bytes] = ..., timestamp: _Optional[int] = ...) -> None: ...
+    tag: int
+    def __init__(self, set_id: _Optional[bytes] = ..., timestamp: _Optional[int] = ..., tag: _Optional[int] = ...) -> None: ...
 
 class DataSetTime(_message.Message):
-    __slots__ = ("set_id", "timestamp")
+    __slots__ = ("set_id", "timestamp", "tag")
     SET_ID_FIELD_NUMBER: _ClassVar[int]
     TIMESTAMP_FIELD_NUMBER: _ClassVar[int]
+    TAG_FIELD_NUMBER: _ClassVar[int]
     set_id: bytes
     timestamp: int
-    def __init__(self, set_id: _Optional[bytes] = ..., timestamp: _Optional[int] = ...) -> None: ...
+    tag: int
+    def __init__(self, set_id: _Optional[bytes] = ..., timestamp: _Optional[int] = ..., tag: _Optional[int] = ...) -> None: ...
 
 class DataSetRange(_message.Message):
-    __slots__ = ("set_id", "begin", "end")
+    __slots__ = ("set_id", "begin", "end", "tag")
     SET_ID_FIELD_NUMBER: _ClassVar[int]
     BEGIN_FIELD_NUMBER: _ClassVar[int]
     END_FIELD_NUMBER: _ClassVar[int]
+    TAG_FIELD_NUMBER: _ClassVar[int]
     set_id: bytes
     begin: int
     end: int
-    def __init__(self, set_id: _Optional[bytes] = ..., begin: _Optional[int] = ..., end: _Optional[int] = ...) -> None: ...
-
-class DataSetNumber(_message.Message):
-    __slots__ = ("set_id", "timestamp", "number")
-    SET_ID_FIELD_NUMBER: _ClassVar[int]
-    TIMESTAMP_FIELD_NUMBER: _ClassVar[int]
-    NUMBER_FIELD_NUMBER: _ClassVar[int]
-    set_id: bytes
-    timestamp: int
-    number: int
-    def __init__(self, set_id: _Optional[bytes] = ..., timestamp: _Optional[int] = ..., number: _Optional[int] = ...) -> None: ...
+    tag: int
+    def __init__(self, set_id: _Optional[bytes] = ..., begin: _Optional[int] = ..., end: _Optional[int] = ..., tag: _Optional[int] = ...) -> None: ...
 
 class DataReadResponse(_message.Message):
     __slots__ = ("result",)

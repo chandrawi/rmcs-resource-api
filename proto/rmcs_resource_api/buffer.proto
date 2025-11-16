@@ -48,23 +48,13 @@ service BufferService {
 
     rpc ListBufferLastOffsetByIds(BuffersIdsSelector) returns (BufferListResponse);
 
-    rpc ListBufferBySetTime(BufferSetTime) returns (BufferListResponse);
+    rpc ReadBufferSet(BufferSetId) returns (BufferSetReadResponse);
 
-    rpc ListBufferBySetLastTime(BufferSetTime) returns (BufferListResponse);
+    rpc ListBufferSetByTime(BufferSetTime) returns (BufferSetListResponse);
 
-    rpc ListBufferBySetRangeTime(BufferSetRange) returns (BufferListResponse);
+    rpc ListBufferSetByLastTime(BufferSetTime) returns (BufferSetListResponse);
 
-    rpc ListBufferBySetNumberBefore(BufferSetNumber) returns (BufferListResponse);
-
-    rpc ListBufferBySetNumberAfter(BufferSetNumber) returns (BufferListResponse);
-
-    rpc ListBufferFirstBySet(BuffersSetSelector) returns (BufferListResponse);
-
-    rpc ListBufferFirstOffsetBySet(BuffersSetSelector) returns (BufferListResponse);
-
-    rpc ListBufferLastBySet(BuffersSetSelector) returns (BufferListResponse);
-
-    rpc ListBufferLastOffsetBySet(BuffersSetSelector) returns (BufferListResponse);
+    rpc ListBufferSetByRangeTime(BufferSetRange) returns (BufferSetListResponse);
 
     rpc CreateBuffer(BufferSchema) returns (BufferCreateResponse);
 
@@ -90,15 +80,9 @@ service BufferService {
 
     rpc ListBufferTimestampLastByIds(BuffersIdsSelector) returns (TimestampListResponse);
 
-    rpc ListBufferTimestampFirstBySet(BuffersSetSelector) returns (TimestampListResponse);
-
-    rpc ListBufferTimestampLastBySet(BuffersSetSelector) returns (TimestampListResponse);
-
     rpc CountBuffer(BufferSelector) returns (BufferCountResponse);
 
     rpc CountBufferByIds(BufferIdsSelector) returns (BufferCountResponse);
-
-    rpc CountBufferBySet(BufferSetSelector) returns (BufferCountResponse);
 }
 
 message BufferSchema {
@@ -160,6 +144,15 @@ message BuffersSelector {
     optional int32 tag = 5;
 }
 
+message BufferSetSchema {
+    repeated int32 ids = 1;
+    bytes set_id = 2;
+    int64 timestamp = 3;
+    bytes data_bytes = 4;
+    repeated uint32 data_type = 5;
+    int32 tag = 6;
+}
+
 message BufferIdsTime {
     repeated bytes device_ids = 1;
     repeated bytes model_ids = 2;
@@ -197,31 +190,23 @@ message BuffersIdsSelector {
     optional int32 tag = 5;
 }
 
+message BufferSetId {
+    bytes set_id = 1;
+    int64 timestamp = 2;
+    optional int32 tag = 3;
+}
+
 message BufferSetTime {
     bytes set_id = 1;
     int64 timestamp = 2;
+    optional int32 tag = 3;
 }
 
 message BufferSetRange {
     bytes set_id = 1;
     int64 begin = 2;
     int64 end = 3;
-}
-
-message BufferSetNumber {
-    bytes set_id = 1;
-    int64 timestamp = 2;
-    uint32 number = 3;
-}
-
-message BufferSetSelector {
-    bytes set_id = 1;
-}
-
-message BuffersSetSelector {
-    bytes set_id = 1;
-    uint32 number = 2;
-    uint32 offset = 3;
+    optional int32 tag = 4;
 }
 
 message BufferUpdate {
@@ -246,6 +231,14 @@ message BufferReadResponse {
 
 message BufferListResponse {
     repeated BufferSchema results = 1;
+}
+
+message BufferSetReadResponse {
+    BufferSetSchema result = 1;
+}
+
+message BufferSetListResponse {
+    repeated BufferSetSchema results = 1;
 }
 
 message BufferCreateResponse {
