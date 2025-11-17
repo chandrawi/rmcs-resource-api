@@ -31,42 +31,42 @@ pub struct GatewaySchema {
     #[prost(message, repeated, tag = "6")]
     pub configs: ::prost::alloc::vec::Vec<ConfigSchema>,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct DeviceId {
     #[prost(bytes = "vec", tag = "1")]
     pub id: ::prost::alloc::vec::Vec<u8>,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct GatewayId {
     #[prost(bytes = "vec", tag = "1")]
     pub id: ::prost::alloc::vec::Vec<u8>,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct DeviceIds {
     #[prost(bytes = "vec", repeated, tag = "1")]
     pub ids: ::prost::alloc::vec::Vec<::prost::alloc::vec::Vec<u8>>,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct GatewayIds {
     #[prost(bytes = "vec", repeated, tag = "1")]
     pub ids: ::prost::alloc::vec::Vec<::prost::alloc::vec::Vec<u8>>,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct SerialNumber {
     #[prost(string, tag = "1")]
     pub serial_number: ::prost::alloc::string::String,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct DeviceName {
     #[prost(string, tag = "1")]
     pub name: ::prost::alloc::string::String,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct GatewayName {
     #[prost(string, tag = "1")]
     pub name: ::prost::alloc::string::String,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct DeviceOption {
     #[prost(bytes = "vec", optional, tag = "1")]
     pub gateway_id: ::core::option::Option<::prost::alloc::vec::Vec<u8>>,
@@ -75,14 +75,14 @@ pub struct DeviceOption {
     #[prost(string, optional, tag = "3")]
     pub name: ::core::option::Option<::prost::alloc::string::String>,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct GatewayOption {
     #[prost(bytes = "vec", optional, tag = "1")]
     pub type_id: ::core::option::Option<::prost::alloc::vec::Vec<u8>>,
     #[prost(string, optional, tag = "2")]
     pub name: ::core::option::Option<::prost::alloc::string::String>,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct DeviceUpdate {
     #[prost(bytes = "vec", tag = "1")]
     pub id: ::prost::alloc::vec::Vec<u8>,
@@ -97,7 +97,7 @@ pub struct DeviceUpdate {
     #[prost(bytes = "vec", optional, tag = "6")]
     pub type_id: ::core::option::Option<::prost::alloc::vec::Vec<u8>>,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct GatewayUpdate {
     #[prost(bytes = "vec", tag = "1")]
     pub id: ::prost::alloc::vec::Vec<u8>,
@@ -110,7 +110,7 @@ pub struct GatewayUpdate {
     #[prost(bytes = "vec", optional, tag = "5")]
     pub type_id: ::core::option::Option<::prost::alloc::vec::Vec<u8>>,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct ConfigSchema {
     #[prost(int32, tag = "1")]
     pub id: i32,
@@ -125,12 +125,12 @@ pub struct ConfigSchema {
     #[prost(string, tag = "6")]
     pub category: ::prost::alloc::string::String,
 }
-#[derive(Clone, Copy, PartialEq, ::prost::Message)]
+#[derive(Clone, Copy, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct ConfigId {
     #[prost(int32, tag = "1")]
     pub id: i32,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct ConfigUpdate {
     #[prost(int32, tag = "1")]
     pub id: i32,
@@ -143,7 +143,7 @@ pub struct ConfigUpdate {
     #[prost(string, optional, tag = "5")]
     pub category: ::core::option::Option<::prost::alloc::string::String>,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct TypeSchema {
     #[prost(bytes = "vec", tag = "1")]
     pub id: ::prost::alloc::vec::Vec<u8>,
@@ -154,27 +154,27 @@ pub struct TypeSchema {
     #[prost(bytes = "vec", repeated, tag = "4")]
     pub models: ::prost::alloc::vec::Vec<::prost::alloc::vec::Vec<u8>>,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct TypeId {
     #[prost(bytes = "vec", tag = "1")]
     pub id: ::prost::alloc::vec::Vec<u8>,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct TypeIds {
     #[prost(bytes = "vec", repeated, tag = "1")]
     pub ids: ::prost::alloc::vec::Vec<::prost::alloc::vec::Vec<u8>>,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct TypeName {
     #[prost(string, tag = "1")]
     pub name: ::prost::alloc::string::String,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct TypeOption {
     #[prost(string, optional, tag = "1")]
     pub name: ::core::option::Option<::prost::alloc::string::String>,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct TypeUpdate {
     #[prost(bytes = "vec", tag = "1")]
     pub id: ::prost::alloc::vec::Vec<u8>,
@@ -183,7 +183,7 @@ pub struct TypeUpdate {
     #[prost(string, optional, tag = "3")]
     pub description: ::core::option::Option<::prost::alloc::string::String>,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct TypeModel {
     #[prost(bytes = "vec", tag = "1")]
     pub id: ::prost::alloc::vec::Vec<u8>,
@@ -200,12 +200,12 @@ pub struct DeviceListResponse {
     #[prost(message, repeated, tag = "1")]
     pub results: ::prost::alloc::vec::Vec<DeviceSchema>,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct DeviceCreateResponse {
     #[prost(bytes = "vec", tag = "1")]
     pub id: ::prost::alloc::vec::Vec<u8>,
 }
-#[derive(Clone, Copy, PartialEq, ::prost::Message)]
+#[derive(Clone, Copy, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct DeviceChangeResponse {}
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct GatewayReadResponse {
@@ -217,14 +217,14 @@ pub struct GatewayListResponse {
     #[prost(message, repeated, tag = "1")]
     pub results: ::prost::alloc::vec::Vec<GatewaySchema>,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct GatewayCreateResponse {
     #[prost(bytes = "vec", tag = "1")]
     pub id: ::prost::alloc::vec::Vec<u8>,
 }
-#[derive(Clone, Copy, PartialEq, ::prost::Message)]
+#[derive(Clone, Copy, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct GatewayChangeResponse {}
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct ConfigReadResponse {
     #[prost(message, optional, tag = "1")]
     pub result: ::core::option::Option<ConfigSchema>,
@@ -234,14 +234,14 @@ pub struct ConfigListResponse {
     #[prost(message, repeated, tag = "1")]
     pub results: ::prost::alloc::vec::Vec<ConfigSchema>,
 }
-#[derive(Clone, Copy, PartialEq, ::prost::Message)]
+#[derive(Clone, Copy, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct ConfigCreateResponse {
     #[prost(int32, tag = "1")]
     pub id: i32,
 }
-#[derive(Clone, Copy, PartialEq, ::prost::Message)]
+#[derive(Clone, Copy, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct ConfigChangeResponse {}
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct TypeReadResponse {
     #[prost(message, optional, tag = "1")]
     pub result: ::core::option::Option<TypeSchema>,
@@ -251,12 +251,12 @@ pub struct TypeListResponse {
     #[prost(message, repeated, tag = "1")]
     pub results: ::prost::alloc::vec::Vec<TypeSchema>,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct TypeCreateResponse {
     #[prost(bytes = "vec", tag = "1")]
     pub id: ::prost::alloc::vec::Vec<u8>,
 }
-#[derive(Clone, Copy, PartialEq, ::prost::Message)]
+#[derive(Clone, Copy, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct TypeChangeResponse {}
 /// Generated client implementations.
 pub mod device_service_client {
@@ -364,7 +364,7 @@ pub mod device_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/device.DeviceService/ReadDevice",
             );
@@ -388,7 +388,7 @@ pub mod device_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/device.DeviceService/ReadDeviceBySn",
             );
@@ -412,7 +412,7 @@ pub mod device_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/device.DeviceService/ListDeviceByIds",
             );
@@ -436,7 +436,7 @@ pub mod device_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/device.DeviceService/ListDeviceByGateway",
             );
@@ -460,7 +460,7 @@ pub mod device_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/device.DeviceService/ListDeviceByType",
             );
@@ -484,7 +484,7 @@ pub mod device_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/device.DeviceService/ListDeviceByName",
             );
@@ -508,7 +508,7 @@ pub mod device_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/device.DeviceService/ListDeviceOption",
             );
@@ -532,7 +532,7 @@ pub mod device_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/device.DeviceService/CreateDevice",
             );
@@ -556,7 +556,7 @@ pub mod device_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/device.DeviceService/UpdateDevice",
             );
@@ -580,7 +580,7 @@ pub mod device_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/device.DeviceService/DeleteDevice",
             );
@@ -604,7 +604,7 @@ pub mod device_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/device.DeviceService/ReadGateway",
             );
@@ -628,7 +628,7 @@ pub mod device_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/device.DeviceService/ReadGatewayBySn",
             );
@@ -652,7 +652,7 @@ pub mod device_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/device.DeviceService/ListGatewayByIds",
             );
@@ -676,7 +676,7 @@ pub mod device_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/device.DeviceService/ListGatewayByType",
             );
@@ -700,7 +700,7 @@ pub mod device_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/device.DeviceService/ListGatewayByName",
             );
@@ -724,7 +724,7 @@ pub mod device_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/device.DeviceService/ListGatewayOption",
             );
@@ -748,7 +748,7 @@ pub mod device_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/device.DeviceService/CreateGateway",
             );
@@ -772,7 +772,7 @@ pub mod device_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/device.DeviceService/UpdateGateway",
             );
@@ -796,7 +796,7 @@ pub mod device_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/device.DeviceService/DeleteGateway",
             );
@@ -820,7 +820,7 @@ pub mod device_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/device.DeviceService/ReadDeviceConfig",
             );
@@ -844,7 +844,7 @@ pub mod device_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/device.DeviceService/ListDeviceConfig",
             );
@@ -868,7 +868,7 @@ pub mod device_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/device.DeviceService/CreateDeviceConfig",
             );
@@ -892,7 +892,7 @@ pub mod device_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/device.DeviceService/UpdateDeviceConfig",
             );
@@ -916,7 +916,7 @@ pub mod device_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/device.DeviceService/DeleteDeviceConfig",
             );
@@ -940,7 +940,7 @@ pub mod device_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/device.DeviceService/ReadGatewayConfig",
             );
@@ -964,7 +964,7 @@ pub mod device_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/device.DeviceService/ListGatewayConfig",
             );
@@ -988,7 +988,7 @@ pub mod device_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/device.DeviceService/CreateGatewayConfig",
             );
@@ -1012,7 +1012,7 @@ pub mod device_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/device.DeviceService/UpdateGatewayConfig",
             );
@@ -1036,7 +1036,7 @@ pub mod device_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/device.DeviceService/DeleteGatewayConfig",
             );
@@ -1060,7 +1060,7 @@ pub mod device_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/device.DeviceService/ReadType",
             );
@@ -1084,7 +1084,7 @@ pub mod device_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/device.DeviceService/ListTypeByIds",
             );
@@ -1108,7 +1108,7 @@ pub mod device_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/device.DeviceService/ListTypeByName",
             );
@@ -1132,7 +1132,7 @@ pub mod device_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/device.DeviceService/ListTypeOption",
             );
@@ -1156,7 +1156,7 @@ pub mod device_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/device.DeviceService/CreateType",
             );
@@ -1180,7 +1180,7 @@ pub mod device_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/device.DeviceService/UpdateType",
             );
@@ -1204,7 +1204,7 @@ pub mod device_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/device.DeviceService/DeleteType",
             );
@@ -1228,7 +1228,7 @@ pub mod device_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/device.DeviceService/AddTypeModel",
             );
@@ -1252,7 +1252,7 @@ pub mod device_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/device.DeviceService/RemoveTypeModel",
             );
@@ -1647,7 +1647,7 @@ pub mod device_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ReadDeviceSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1693,7 +1693,7 @@ pub mod device_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ReadDeviceBySnSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1737,7 +1737,7 @@ pub mod device_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListDeviceByIdsSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1784,7 +1784,7 @@ pub mod device_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListDeviceByGatewaySvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1828,7 +1828,7 @@ pub mod device_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListDeviceByTypeSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1872,7 +1872,7 @@ pub mod device_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListDeviceByNameSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1918,7 +1918,7 @@ pub mod device_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListDeviceOptionSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1963,7 +1963,7 @@ pub mod device_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = CreateDeviceSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -2008,7 +2008,7 @@ pub mod device_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = UpdateDeviceSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -2051,7 +2051,7 @@ pub mod device_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = DeleteDeviceSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -2094,7 +2094,7 @@ pub mod device_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ReadGatewaySvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -2140,7 +2140,7 @@ pub mod device_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ReadGatewayBySnSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -2184,7 +2184,7 @@ pub mod device_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListGatewayByIdsSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -2228,7 +2228,7 @@ pub mod device_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListGatewayByTypeSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -2274,7 +2274,7 @@ pub mod device_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListGatewayByNameSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -2320,7 +2320,7 @@ pub mod device_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListGatewayOptionSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -2365,7 +2365,7 @@ pub mod device_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = CreateGatewaySvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -2410,7 +2410,7 @@ pub mod device_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = UpdateGatewaySvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -2453,7 +2453,7 @@ pub mod device_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = DeleteGatewaySvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -2497,7 +2497,7 @@ pub mod device_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ReadDeviceConfigSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -2541,7 +2541,7 @@ pub mod device_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListDeviceConfigSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -2587,7 +2587,7 @@ pub mod device_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = CreateDeviceConfigSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -2633,7 +2633,7 @@ pub mod device_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = UpdateDeviceConfigSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -2677,7 +2677,7 @@ pub mod device_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = DeleteDeviceConfigSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -2721,7 +2721,7 @@ pub mod device_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ReadGatewayConfigSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -2765,7 +2765,7 @@ pub mod device_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListGatewayConfigSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -2811,7 +2811,7 @@ pub mod device_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = CreateGatewayConfigSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -2857,7 +2857,7 @@ pub mod device_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = UpdateGatewayConfigSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -2901,7 +2901,7 @@ pub mod device_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = DeleteGatewayConfigSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -2944,7 +2944,7 @@ pub mod device_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ReadTypeSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -2988,7 +2988,7 @@ pub mod device_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListTypeByIdsSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -3032,7 +3032,7 @@ pub mod device_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListTypeByNameSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -3076,7 +3076,7 @@ pub mod device_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListTypeOptionSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -3119,7 +3119,7 @@ pub mod device_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = CreateTypeSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -3162,7 +3162,7 @@ pub mod device_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = UpdateTypeSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -3205,7 +3205,7 @@ pub mod device_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = DeleteTypeSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -3248,7 +3248,7 @@ pub mod device_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = AddTypeModelSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -3292,7 +3292,7 @@ pub mod device_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = RemoveTypeModelSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,

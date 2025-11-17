@@ -12,7 +12,7 @@ pub struct SetSchema {
     #[prost(message, repeated, tag = "5")]
     pub members: ::prost::alloc::vec::Vec<SetMember>,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct SetMember {
     #[prost(bytes = "vec", tag = "1")]
     pub device_id: ::prost::alloc::vec::Vec<u8>,
@@ -21,29 +21,29 @@ pub struct SetMember {
     #[prost(bytes = "vec", tag = "3")]
     pub data_index: ::prost::alloc::vec::Vec<u8>,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct SetId {
     #[prost(bytes = "vec", tag = "1")]
     pub id: ::prost::alloc::vec::Vec<u8>,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct SetIds {
     #[prost(bytes = "vec", repeated, tag = "1")]
     pub ids: ::prost::alloc::vec::Vec<::prost::alloc::vec::Vec<u8>>,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct SetName {
     #[prost(string, tag = "1")]
     pub name: ::prost::alloc::string::String,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct SetOption {
     #[prost(bytes = "vec", optional, tag = "1")]
     pub template_id: ::core::option::Option<::prost::alloc::vec::Vec<u8>>,
     #[prost(string, optional, tag = "2")]
     pub name: ::core::option::Option<::prost::alloc::string::String>,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct SetUpdate {
     #[prost(bytes = "vec", tag = "1")]
     pub id: ::prost::alloc::vec::Vec<u8>,
@@ -54,7 +54,7 @@ pub struct SetUpdate {
     #[prost(string, optional, tag = "4")]
     pub description: ::core::option::Option<::prost::alloc::string::String>,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct SetMemberRequest {
     #[prost(bytes = "vec", tag = "1")]
     pub id: ::prost::alloc::vec::Vec<u8>,
@@ -65,7 +65,7 @@ pub struct SetMemberRequest {
     #[prost(bytes = "vec", tag = "4")]
     pub data_index: ::prost::alloc::vec::Vec<u8>,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct SetMemberSwap {
     #[prost(bytes = "vec", tag = "1")]
     pub id: ::prost::alloc::vec::Vec<u8>,
@@ -89,7 +89,7 @@ pub struct SetTemplateSchema {
     #[prost(message, repeated, tag = "5")]
     pub members: ::prost::alloc::vec::Vec<SetTemplateMember>,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct SetTemplateMember {
     #[prost(bytes = "vec", tag = "1")]
     pub type_id: ::prost::alloc::vec::Vec<u8>,
@@ -98,27 +98,27 @@ pub struct SetTemplateMember {
     #[prost(bytes = "vec", tag = "3")]
     pub data_index: ::prost::alloc::vec::Vec<u8>,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct SetTemplateId {
     #[prost(bytes = "vec", tag = "1")]
     pub id: ::prost::alloc::vec::Vec<u8>,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct SetTemplateIds {
     #[prost(bytes = "vec", repeated, tag = "1")]
     pub ids: ::prost::alloc::vec::Vec<::prost::alloc::vec::Vec<u8>>,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct SetTemplateName {
     #[prost(string, tag = "1")]
     pub name: ::prost::alloc::string::String,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct SetTemplateOption {
     #[prost(string, optional, tag = "1")]
     pub name: ::core::option::Option<::prost::alloc::string::String>,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct SetTemplateUpdate {
     #[prost(bytes = "vec", tag = "1")]
     pub id: ::prost::alloc::vec::Vec<u8>,
@@ -127,7 +127,7 @@ pub struct SetTemplateUpdate {
     #[prost(string, optional, tag = "3")]
     pub description: ::core::option::Option<::prost::alloc::string::String>,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct SetTemplateMemberRequest {
     #[prost(bytes = "vec", tag = "1")]
     pub id: ::prost::alloc::vec::Vec<u8>,
@@ -140,7 +140,7 @@ pub struct SetTemplateMemberRequest {
     #[prost(int32, tag = "5")]
     pub template_index: i32,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct SetTemplateMemberSwap {
     #[prost(bytes = "vec", tag = "1")]
     pub id: ::prost::alloc::vec::Vec<u8>,
@@ -159,12 +159,12 @@ pub struct SetListResponse {
     #[prost(message, repeated, tag = "1")]
     pub results: ::prost::alloc::vec::Vec<SetSchema>,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct SetCreateResponse {
     #[prost(bytes = "vec", tag = "1")]
     pub id: ::prost::alloc::vec::Vec<u8>,
 }
-#[derive(Clone, Copy, PartialEq, ::prost::Message)]
+#[derive(Clone, Copy, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct SetChangeResponse {}
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct TemplateReadResponse {
@@ -176,12 +176,12 @@ pub struct TemplateListResponse {
     #[prost(message, repeated, tag = "1")]
     pub results: ::prost::alloc::vec::Vec<SetTemplateSchema>,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct TemplateCreateResponse {
     #[prost(bytes = "vec", tag = "1")]
     pub id: ::prost::alloc::vec::Vec<u8>,
 }
-#[derive(Clone, Copy, PartialEq, ::prost::Message)]
+#[derive(Clone, Copy, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct TemplateChangeResponse {}
 /// Generated client implementations.
 pub mod set_service_client {
@@ -289,7 +289,7 @@ pub mod set_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static("/set.SetService/ReadSet");
             let mut req = request.into_request();
             req.extensions_mut().insert(GrpcMethod::new("set.SetService", "ReadSet"));
@@ -310,7 +310,7 @@ pub mod set_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/set.SetService/ListSetByIds",
             );
@@ -334,7 +334,7 @@ pub mod set_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/set.SetService/ListSetByTemplate",
             );
@@ -358,7 +358,7 @@ pub mod set_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/set.SetService/ListSetByName",
             );
@@ -382,7 +382,7 @@ pub mod set_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/set.SetService/ListSetOption",
             );
@@ -406,7 +406,7 @@ pub mod set_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static("/set.SetService/CreateSet");
             let mut req = request.into_request();
             req.extensions_mut().insert(GrpcMethod::new("set.SetService", "CreateSet"));
@@ -427,7 +427,7 @@ pub mod set_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static("/set.SetService/UpdateSet");
             let mut req = request.into_request();
             req.extensions_mut().insert(GrpcMethod::new("set.SetService", "UpdateSet"));
@@ -448,7 +448,7 @@ pub mod set_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static("/set.SetService/DeleteSet");
             let mut req = request.into_request();
             req.extensions_mut().insert(GrpcMethod::new("set.SetService", "DeleteSet"));
@@ -469,7 +469,7 @@ pub mod set_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/set.SetService/AddSetMember",
             );
@@ -493,7 +493,7 @@ pub mod set_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/set.SetService/RemoveSetMember",
             );
@@ -517,7 +517,7 @@ pub mod set_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/set.SetService/SwapSetMember",
             );
@@ -541,7 +541,7 @@ pub mod set_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/set.SetService/ReadSetTemplate",
             );
@@ -565,7 +565,7 @@ pub mod set_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/set.SetService/ListSetTemplateByIds",
             );
@@ -589,7 +589,7 @@ pub mod set_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/set.SetService/ListSetTemplateByName",
             );
@@ -613,7 +613,7 @@ pub mod set_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/set.SetService/ListSetTemplateOption",
             );
@@ -637,7 +637,7 @@ pub mod set_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/set.SetService/CreateSetTemplate",
             );
@@ -661,7 +661,7 @@ pub mod set_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/set.SetService/UpdateSetTemplate",
             );
@@ -685,7 +685,7 @@ pub mod set_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/set.SetService/DeleteSetTemplate",
             );
@@ -709,7 +709,7 @@ pub mod set_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/set.SetService/AddSetTemplateMember",
             );
@@ -733,7 +733,7 @@ pub mod set_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/set.SetService/RemoveSetTemplateMember",
             );
@@ -757,7 +757,7 @@ pub mod set_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/set.SetService/SwapSetTemplateMember",
             );
@@ -1018,7 +1018,7 @@ pub mod set_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ReadSetSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1061,7 +1061,7 @@ pub mod set_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListSetByIdsSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1105,7 +1105,7 @@ pub mod set_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListSetByTemplateSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1148,7 +1148,7 @@ pub mod set_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListSetByNameSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1191,7 +1191,7 @@ pub mod set_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListSetOptionSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1234,7 +1234,7 @@ pub mod set_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = CreateSetSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1277,7 +1277,7 @@ pub mod set_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = UpdateSetSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1320,7 +1320,7 @@ pub mod set_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = DeleteSetSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1365,7 +1365,7 @@ pub mod set_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = AddSetMemberSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1410,7 +1410,7 @@ pub mod set_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = RemoveSetMemberSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1453,7 +1453,7 @@ pub mod set_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = SwapSetMemberSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1496,7 +1496,7 @@ pub mod set_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ReadSetTemplateSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1542,7 +1542,7 @@ pub mod set_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListSetTemplateByIdsSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1591,7 +1591,7 @@ pub mod set_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListSetTemplateByNameSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1637,7 +1637,7 @@ pub mod set_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListSetTemplateOptionSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1683,7 +1683,7 @@ pub mod set_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = CreateSetTemplateSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1729,7 +1729,7 @@ pub mod set_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = UpdateSetTemplateSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1773,7 +1773,7 @@ pub mod set_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = DeleteSetTemplateSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1819,7 +1819,7 @@ pub mod set_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = AddSetTemplateMemberSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1868,7 +1868,7 @@ pub mod set_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = RemoveSetTemplateMemberSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1914,7 +1914,7 @@ pub mod set_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = SwapSetTemplateMemberSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,

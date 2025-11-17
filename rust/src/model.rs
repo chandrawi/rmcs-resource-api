@@ -21,32 +21,32 @@ pub struct ConfigSchemaVec {
     #[prost(message, repeated, tag = "1")]
     pub configs: ::prost::alloc::vec::Vec<ConfigSchema>,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct ModelId {
     #[prost(bytes = "vec", tag = "1")]
     pub id: ::prost::alloc::vec::Vec<u8>,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct ModelIds {
     #[prost(bytes = "vec", repeated, tag = "1")]
     pub ids: ::prost::alloc::vec::Vec<::prost::alloc::vec::Vec<u8>>,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct TypeId {
     #[prost(bytes = "vec", tag = "1")]
     pub id: ::prost::alloc::vec::Vec<u8>,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct ModelName {
     #[prost(string, tag = "1")]
     pub name: ::prost::alloc::string::String,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct ModelCategory {
     #[prost(string, tag = "1")]
     pub category: ::prost::alloc::string::String,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct ModelOption {
     #[prost(bytes = "vec", optional, tag = "1")]
     pub type_id: ::core::option::Option<::prost::alloc::vec::Vec<u8>>,
@@ -55,7 +55,7 @@ pub struct ModelOption {
     #[prost(string, optional, tag = "3")]
     pub category: ::core::option::Option<::prost::alloc::string::String>,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct ModelUpdate {
     #[prost(bytes = "vec", tag = "1")]
     pub id: ::prost::alloc::vec::Vec<u8>,
@@ -70,7 +70,7 @@ pub struct ModelUpdate {
     #[prost(bool, tag = "6")]
     pub data_type_flag: bool,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct ConfigSchema {
     #[prost(int32, tag = "1")]
     pub id: i32,
@@ -87,12 +87,12 @@ pub struct ConfigSchema {
     #[prost(string, tag = "7")]
     pub category: ::prost::alloc::string::String,
 }
-#[derive(Clone, Copy, PartialEq, ::prost::Message)]
+#[derive(Clone, Copy, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct ConfigId {
     #[prost(int32, tag = "1")]
     pub id: i32,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct ConfigUpdate {
     #[prost(int32, tag = "1")]
     pub id: i32,
@@ -105,7 +105,7 @@ pub struct ConfigUpdate {
     #[prost(string, optional, tag = "5")]
     pub category: ::core::option::Option<::prost::alloc::string::String>,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct TagSchema {
     #[prost(bytes = "vec", tag = "1")]
     pub model_id: ::prost::alloc::vec::Vec<u8>,
@@ -116,14 +116,14 @@ pub struct TagSchema {
     #[prost(int32, repeated, tag = "4")]
     pub members: ::prost::alloc::vec::Vec<i32>,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct TagId {
     #[prost(bytes = "vec", tag = "1")]
     pub model_id: ::prost::alloc::vec::Vec<u8>,
     #[prost(int32, tag = "2")]
     pub tag: i32,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct TagUpdate {
     #[prost(bytes = "vec", tag = "1")]
     pub model_id: ::prost::alloc::vec::Vec<u8>,
@@ -146,14 +146,14 @@ pub struct ModelListResponse {
     #[prost(message, repeated, tag = "1")]
     pub results: ::prost::alloc::vec::Vec<ModelSchema>,
 }
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct ModelCreateResponse {
     #[prost(bytes = "vec", tag = "1")]
     pub id: ::prost::alloc::vec::Vec<u8>,
 }
-#[derive(Clone, Copy, PartialEq, ::prost::Message)]
+#[derive(Clone, Copy, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct ModelChangeResponse {}
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct ConfigReadResponse {
     #[prost(message, optional, tag = "1")]
     pub result: ::core::option::Option<ConfigSchema>,
@@ -163,14 +163,14 @@ pub struct ConfigListResponse {
     #[prost(message, repeated, tag = "1")]
     pub results: ::prost::alloc::vec::Vec<ConfigSchema>,
 }
-#[derive(Clone, Copy, PartialEq, ::prost::Message)]
+#[derive(Clone, Copy, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct ConfigCreateResponse {
     #[prost(int32, tag = "1")]
     pub id: i32,
 }
-#[derive(Clone, Copy, PartialEq, ::prost::Message)]
+#[derive(Clone, Copy, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct ConfigChangeResponse {}
-#[derive(Clone, PartialEq, ::prost::Message)]
+#[derive(Clone, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct TagReadResponse {
     #[prost(message, optional, tag = "1")]
     pub result: ::core::option::Option<TagSchema>,
@@ -180,7 +180,7 @@ pub struct TagListResponse {
     #[prost(message, repeated, tag = "1")]
     pub results: ::prost::alloc::vec::Vec<TagSchema>,
 }
-#[derive(Clone, Copy, PartialEq, ::prost::Message)]
+#[derive(Clone, Copy, PartialEq, Eq, Hash, ::prost::Message)]
 pub struct TagChangeResponse {}
 /// Generated client implementations.
 pub mod model_service_client {
@@ -288,7 +288,7 @@ pub mod model_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/model.ModelService/ReadModel",
             );
@@ -312,7 +312,7 @@ pub mod model_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/model.ModelService/ListModelByIds",
             );
@@ -336,7 +336,7 @@ pub mod model_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/model.ModelService/ListModelByType",
             );
@@ -360,7 +360,7 @@ pub mod model_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/model.ModelService/ListModelByName",
             );
@@ -384,7 +384,7 @@ pub mod model_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/model.ModelService/ListModelByCategory",
             );
@@ -408,7 +408,7 @@ pub mod model_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/model.ModelService/ListModelOption",
             );
@@ -432,7 +432,7 @@ pub mod model_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/model.ModelService/CreateModel",
             );
@@ -456,7 +456,7 @@ pub mod model_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/model.ModelService/UpdateModel",
             );
@@ -480,7 +480,7 @@ pub mod model_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/model.ModelService/DeleteModel",
             );
@@ -504,7 +504,7 @@ pub mod model_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/model.ModelService/ReadModelConfig",
             );
@@ -528,7 +528,7 @@ pub mod model_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/model.ModelService/ListModelConfig",
             );
@@ -552,7 +552,7 @@ pub mod model_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/model.ModelService/CreateModelConfig",
             );
@@ -576,7 +576,7 @@ pub mod model_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/model.ModelService/UpdateModelConfig",
             );
@@ -600,7 +600,7 @@ pub mod model_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/model.ModelService/DeleteModelConfig",
             );
@@ -624,7 +624,7 @@ pub mod model_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/model.ModelService/ReadTag",
             );
@@ -648,7 +648,7 @@ pub mod model_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/model.ModelService/ListTagByModel",
             );
@@ -672,7 +672,7 @@ pub mod model_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/model.ModelService/CreateTag",
             );
@@ -696,7 +696,7 @@ pub mod model_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/model.ModelService/UpdateTag",
             );
@@ -720,7 +720,7 @@ pub mod model_service_client {
                         format!("Service was not ready: {}", e.into()),
                     )
                 })?;
-            let codec = tonic::codec::ProstCodec::default();
+            let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
                 "/model.ModelService/DeleteTag",
             );
@@ -976,7 +976,7 @@ pub mod model_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ReadModelSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1020,7 +1020,7 @@ pub mod model_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListModelByIdsSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1064,7 +1064,7 @@ pub mod model_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListModelByTypeSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1108,7 +1108,7 @@ pub mod model_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListModelByNameSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1154,7 +1154,7 @@ pub mod model_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListModelByCategorySvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1198,7 +1198,7 @@ pub mod model_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListModelOptionSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1241,7 +1241,7 @@ pub mod model_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = CreateModelSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1284,7 +1284,7 @@ pub mod model_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = UpdateModelSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1327,7 +1327,7 @@ pub mod model_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = DeleteModelSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1371,7 +1371,7 @@ pub mod model_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ReadModelConfigSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1415,7 +1415,7 @@ pub mod model_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListModelConfigSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1461,7 +1461,7 @@ pub mod model_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = CreateModelConfigSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1507,7 +1507,7 @@ pub mod model_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = UpdateModelConfigSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1551,7 +1551,7 @@ pub mod model_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = DeleteModelConfigSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1594,7 +1594,7 @@ pub mod model_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ReadTagSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1638,7 +1638,7 @@ pub mod model_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ListTagByModelSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1681,7 +1681,7 @@ pub mod model_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = CreateTagSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1724,7 +1724,7 @@ pub mod model_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = UpdateTagSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
@@ -1767,7 +1767,7 @@ pub mod model_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = DeleteTagSvc(inner);
-                        let codec = tonic::codec::ProstCodec::default();
+                        let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
                                 accept_compression_encodings,
