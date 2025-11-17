@@ -44,8 +44,8 @@ class LogServiceStub(object):
                 request_serializer=rmcs__resource__api_dot_log__pb2.LogTime.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_log__pb2.LogReadResponse.FromString,
                 _registered_method=True)
-        self.ListLog = channel.unary_unary(
-                '/log.LogService/ListLog',
+        self.ListLogByIds = channel.unary_unary(
+                '/log.LogService/ListLogByIds',
                 request_serializer=rmcs__resource__api_dot_log__pb2.LogIds.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_log__pb2.LogListResponse.FromString,
                 _registered_method=True)
@@ -54,13 +54,13 @@ class LogServiceStub(object):
                 request_serializer=rmcs__resource__api_dot_log__pb2.LogTime.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_log__pb2.LogListResponse.FromString,
                 _registered_method=True)
-        self.ListLogByLastTime = channel.unary_unary(
-                '/log.LogService/ListLogByLastTime',
+        self.ListLogByLatest = channel.unary_unary(
+                '/log.LogService/ListLogByLatest',
                 request_serializer=rmcs__resource__api_dot_log__pb2.LogTime.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_log__pb2.LogListResponse.FromString,
                 _registered_method=True)
-        self.ListLogByRangeTime = channel.unary_unary(
-                '/log.LogService/ListLogByRangeTime',
+        self.ListLogByRange = channel.unary_unary(
+                '/log.LogService/ListLogByRange',
                 request_serializer=rmcs__resource__api_dot_log__pb2.LogRange.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_log__pb2.LogListResponse.FromString,
                 _registered_method=True)
@@ -106,7 +106,7 @@ class LogServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListLog(self, request, context):
+    def ListLogByIds(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -118,13 +118,13 @@ class LogServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListLogByLastTime(self, request, context):
+    def ListLogByLatest(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListLogByRangeTime(self, request, context):
+    def ListLogByRange(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -173,8 +173,8 @@ def add_LogServiceServicer_to_server(servicer, server):
                     request_deserializer=rmcs__resource__api_dot_log__pb2.LogTime.FromString,
                     response_serializer=rmcs__resource__api_dot_log__pb2.LogReadResponse.SerializeToString,
             ),
-            'ListLog': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListLog,
+            'ListLogByIds': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListLogByIds,
                     request_deserializer=rmcs__resource__api_dot_log__pb2.LogIds.FromString,
                     response_serializer=rmcs__resource__api_dot_log__pb2.LogListResponse.SerializeToString,
             ),
@@ -183,13 +183,13 @@ def add_LogServiceServicer_to_server(servicer, server):
                     request_deserializer=rmcs__resource__api_dot_log__pb2.LogTime.FromString,
                     response_serializer=rmcs__resource__api_dot_log__pb2.LogListResponse.SerializeToString,
             ),
-            'ListLogByLastTime': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListLogByLastTime,
+            'ListLogByLatest': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListLogByLatest,
                     request_deserializer=rmcs__resource__api_dot_log__pb2.LogTime.FromString,
                     response_serializer=rmcs__resource__api_dot_log__pb2.LogListResponse.SerializeToString,
             ),
-            'ListLogByRangeTime': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListLogByRangeTime,
+            'ListLogByRange': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListLogByRange,
                     request_deserializer=rmcs__resource__api_dot_log__pb2.LogRange.FromString,
                     response_serializer=rmcs__resource__api_dot_log__pb2.LogListResponse.SerializeToString,
             ),
@@ -284,7 +284,7 @@ class LogService(object):
             _registered_method=True)
 
     @staticmethod
-    def ListLog(request,
+    def ListLogByIds(request,
             target,
             options=(),
             channel_credentials=None,
@@ -297,7 +297,7 @@ class LogService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/log.LogService/ListLog',
+            '/log.LogService/ListLogByIds',
             rmcs__resource__api_dot_log__pb2.LogIds.SerializeToString,
             rmcs__resource__api_dot_log__pb2.LogListResponse.FromString,
             options,
@@ -338,7 +338,7 @@ class LogService(object):
             _registered_method=True)
 
     @staticmethod
-    def ListLogByLastTime(request,
+    def ListLogByLatest(request,
             target,
             options=(),
             channel_credentials=None,
@@ -351,7 +351,7 @@ class LogService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/log.LogService/ListLogByLastTime',
+            '/log.LogService/ListLogByLatest',
             rmcs__resource__api_dot_log__pb2.LogTime.SerializeToString,
             rmcs__resource__api_dot_log__pb2.LogListResponse.FromString,
             options,
@@ -365,7 +365,7 @@ class LogService(object):
             _registered_method=True)
 
     @staticmethod
-    def ListLogByRangeTime(request,
+    def ListLogByRange(request,
             target,
             options=(),
             channel_credentials=None,
@@ -378,7 +378,7 @@ class LogService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/log.LogService/ListLogByRangeTime',
+            '/log.LogService/ListLogByRange',
             rmcs__resource__api_dot_log__pb2.LogRange.SerializeToString,
             rmcs__resource__api_dot_log__pb2.LogListResponse.FromString,
             options,

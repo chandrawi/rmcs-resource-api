@@ -202,8 +202,8 @@ proto.data.DataServicePromiseClient.prototype.listDataByTime =
  *   !proto.data.DataTime,
  *   !proto.data.DataListResponse>}
  */
-const methodDescriptor_DataService_ListDataByLastTime = new grpc.web.MethodDescriptor(
-  '/data.DataService/ListDataByLastTime',
+const methodDescriptor_DataService_ListDataByLatest = new grpc.web.MethodDescriptor(
+  '/data.DataService/ListDataByLatest',
   grpc.web.MethodType.UNARY,
   proto.data.DataTime,
   proto.data.DataListResponse,
@@ -228,13 +228,13 @@ const methodDescriptor_DataService_ListDataByLastTime = new grpc.web.MethodDescr
  * @return {!grpc.web.ClientReadableStream<!proto.data.DataListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.data.DataServiceClient.prototype.listDataByLastTime =
+proto.data.DataServiceClient.prototype.listDataByLatest =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/data.DataService/ListDataByLastTime',
+      '/data.DataService/ListDataByLatest',
       request,
       metadata || {},
-      methodDescriptor_DataService_ListDataByLastTime,
+      methodDescriptor_DataService_ListDataByLatest,
       callback);
 };
 
@@ -247,13 +247,13 @@ proto.data.DataServiceClient.prototype.listDataByLastTime =
  * @return {!Promise<!proto.data.DataListResponse>}
  *     Promise that resolves to the response
  */
-proto.data.DataServicePromiseClient.prototype.listDataByLastTime =
+proto.data.DataServicePromiseClient.prototype.listDataByLatest =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/data.DataService/ListDataByLastTime',
+      '/data.DataService/ListDataByLatest',
       request,
       metadata || {},
-      methodDescriptor_DataService_ListDataByLastTime);
+      methodDescriptor_DataService_ListDataByLatest);
 };
 
 
@@ -263,8 +263,8 @@ proto.data.DataServicePromiseClient.prototype.listDataByLastTime =
  *   !proto.data.DataRange,
  *   !proto.data.DataListResponse>}
  */
-const methodDescriptor_DataService_ListDataByRangeTime = new grpc.web.MethodDescriptor(
-  '/data.DataService/ListDataByRangeTime',
+const methodDescriptor_DataService_ListDataByRange = new grpc.web.MethodDescriptor(
+  '/data.DataService/ListDataByRange',
   grpc.web.MethodType.UNARY,
   proto.data.DataRange,
   proto.data.DataListResponse,
@@ -289,13 +289,13 @@ const methodDescriptor_DataService_ListDataByRangeTime = new grpc.web.MethodDesc
  * @return {!grpc.web.ClientReadableStream<!proto.data.DataListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.data.DataServiceClient.prototype.listDataByRangeTime =
+proto.data.DataServiceClient.prototype.listDataByRange =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/data.DataService/ListDataByRangeTime',
+      '/data.DataService/ListDataByRange',
       request,
       metadata || {},
-      methodDescriptor_DataService_ListDataByRangeTime,
+      methodDescriptor_DataService_ListDataByRange,
       callback);
 };
 
@@ -308,13 +308,13 @@ proto.data.DataServiceClient.prototype.listDataByRangeTime =
  * @return {!Promise<!proto.data.DataListResponse>}
  *     Promise that resolves to the response
  */
-proto.data.DataServicePromiseClient.prototype.listDataByRangeTime =
+proto.data.DataServicePromiseClient.prototype.listDataByRange =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/data.DataService/ListDataByRangeTime',
+      '/data.DataService/ListDataByRange',
       request,
       metadata || {},
-      methodDescriptor_DataService_ListDataByRangeTime);
+      methodDescriptor_DataService_ListDataByRange);
 };
 
 
@@ -443,16 +443,16 @@ proto.data.DataServicePromiseClient.prototype.listDataByNumberAfter =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.data.DataIdsTime,
+ *   !proto.data.DataGroupTime,
  *   !proto.data.DataListResponse>}
  */
-const methodDescriptor_DataService_ListDataByIdsTime = new grpc.web.MethodDescriptor(
-  '/data.DataService/ListDataByIdsTime',
+const methodDescriptor_DataService_ListDataGroupByTime = new grpc.web.MethodDescriptor(
+  '/data.DataService/ListDataGroupByTime',
   grpc.web.MethodType.UNARY,
-  proto.data.DataIdsTime,
+  proto.data.DataGroupTime,
   proto.data.DataListResponse,
   /**
-   * @param {!proto.data.DataIdsTime} request
+   * @param {!proto.data.DataGroupTime} request
    * @return {!Uint8Array}
    */
   function(request) {
@@ -463,7 +463,7 @@ const methodDescriptor_DataService_ListDataByIdsTime = new grpc.web.MethodDescri
 
 
 /**
- * @param {!proto.data.DataIdsTime} request The
+ * @param {!proto.data.DataGroupTime} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
@@ -472,48 +472,48 @@ const methodDescriptor_DataService_ListDataByIdsTime = new grpc.web.MethodDescri
  * @return {!grpc.web.ClientReadableStream<!proto.data.DataListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.data.DataServiceClient.prototype.listDataByIdsTime =
+proto.data.DataServiceClient.prototype.listDataGroupByTime =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/data.DataService/ListDataByIdsTime',
+      '/data.DataService/ListDataGroupByTime',
       request,
       metadata || {},
-      methodDescriptor_DataService_ListDataByIdsTime,
+      methodDescriptor_DataService_ListDataGroupByTime,
       callback);
 };
 
 
 /**
- * @param {!proto.data.DataIdsTime} request The
+ * @param {!proto.data.DataGroupTime} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.data.DataListResponse>}
  *     Promise that resolves to the response
  */
-proto.data.DataServicePromiseClient.prototype.listDataByIdsTime =
+proto.data.DataServicePromiseClient.prototype.listDataGroupByTime =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/data.DataService/ListDataByIdsTime',
+      '/data.DataService/ListDataGroupByTime',
       request,
       metadata || {},
-      methodDescriptor_DataService_ListDataByIdsTime);
+      methodDescriptor_DataService_ListDataGroupByTime);
 };
 
 
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.data.DataIdsTime,
+ *   !proto.data.DataGroupTime,
  *   !proto.data.DataListResponse>}
  */
-const methodDescriptor_DataService_ListDataByIdsLastTime = new grpc.web.MethodDescriptor(
-  '/data.DataService/ListDataByIdsLastTime',
+const methodDescriptor_DataService_ListDataGroupByLatest = new grpc.web.MethodDescriptor(
+  '/data.DataService/ListDataGroupByLatest',
   grpc.web.MethodType.UNARY,
-  proto.data.DataIdsTime,
+  proto.data.DataGroupTime,
   proto.data.DataListResponse,
   /**
-   * @param {!proto.data.DataIdsTime} request
+   * @param {!proto.data.DataGroupTime} request
    * @return {!Uint8Array}
    */
   function(request) {
@@ -524,7 +524,7 @@ const methodDescriptor_DataService_ListDataByIdsLastTime = new grpc.web.MethodDe
 
 
 /**
- * @param {!proto.data.DataIdsTime} request The
+ * @param {!proto.data.DataGroupTime} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
@@ -533,48 +533,48 @@ const methodDescriptor_DataService_ListDataByIdsLastTime = new grpc.web.MethodDe
  * @return {!grpc.web.ClientReadableStream<!proto.data.DataListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.data.DataServiceClient.prototype.listDataByIdsLastTime =
+proto.data.DataServiceClient.prototype.listDataGroupByLatest =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/data.DataService/ListDataByIdsLastTime',
+      '/data.DataService/ListDataGroupByLatest',
       request,
       metadata || {},
-      methodDescriptor_DataService_ListDataByIdsLastTime,
+      methodDescriptor_DataService_ListDataGroupByLatest,
       callback);
 };
 
 
 /**
- * @param {!proto.data.DataIdsTime} request The
+ * @param {!proto.data.DataGroupTime} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.data.DataListResponse>}
  *     Promise that resolves to the response
  */
-proto.data.DataServicePromiseClient.prototype.listDataByIdsLastTime =
+proto.data.DataServicePromiseClient.prototype.listDataGroupByLatest =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/data.DataService/ListDataByIdsLastTime',
+      '/data.DataService/ListDataGroupByLatest',
       request,
       metadata || {},
-      methodDescriptor_DataService_ListDataByIdsLastTime);
+      methodDescriptor_DataService_ListDataGroupByLatest);
 };
 
 
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.data.DataIdsRange,
+ *   !proto.data.DataGroupRange,
  *   !proto.data.DataListResponse>}
  */
-const methodDescriptor_DataService_ListDataByIdsRangeTime = new grpc.web.MethodDescriptor(
-  '/data.DataService/ListDataByIdsRangeTime',
+const methodDescriptor_DataService_ListDataGroupByRange = new grpc.web.MethodDescriptor(
+  '/data.DataService/ListDataGroupByRange',
   grpc.web.MethodType.UNARY,
-  proto.data.DataIdsRange,
+  proto.data.DataGroupRange,
   proto.data.DataListResponse,
   /**
-   * @param {!proto.data.DataIdsRange} request
+   * @param {!proto.data.DataGroupRange} request
    * @return {!Uint8Array}
    */
   function(request) {
@@ -585,7 +585,7 @@ const methodDescriptor_DataService_ListDataByIdsRangeTime = new grpc.web.MethodD
 
 
 /**
- * @param {!proto.data.DataIdsRange} request The
+ * @param {!proto.data.DataGroupRange} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
@@ -594,48 +594,48 @@ const methodDescriptor_DataService_ListDataByIdsRangeTime = new grpc.web.MethodD
  * @return {!grpc.web.ClientReadableStream<!proto.data.DataListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.data.DataServiceClient.prototype.listDataByIdsRangeTime =
+proto.data.DataServiceClient.prototype.listDataGroupByRange =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/data.DataService/ListDataByIdsRangeTime',
+      '/data.DataService/ListDataGroupByRange',
       request,
       metadata || {},
-      methodDescriptor_DataService_ListDataByIdsRangeTime,
+      methodDescriptor_DataService_ListDataGroupByRange,
       callback);
 };
 
 
 /**
- * @param {!proto.data.DataIdsRange} request The
+ * @param {!proto.data.DataGroupRange} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.data.DataListResponse>}
  *     Promise that resolves to the response
  */
-proto.data.DataServicePromiseClient.prototype.listDataByIdsRangeTime =
+proto.data.DataServicePromiseClient.prototype.listDataGroupByRange =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/data.DataService/ListDataByIdsRangeTime',
+      '/data.DataService/ListDataGroupByRange',
       request,
       metadata || {},
-      methodDescriptor_DataService_ListDataByIdsRangeTime);
+      methodDescriptor_DataService_ListDataGroupByRange);
 };
 
 
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.data.DataIdsNumber,
+ *   !proto.data.DataGroupNumber,
  *   !proto.data.DataListResponse>}
  */
-const methodDescriptor_DataService_ListDataByIdsNumberBefore = new grpc.web.MethodDescriptor(
-  '/data.DataService/ListDataByIdsNumberBefore',
+const methodDescriptor_DataService_ListDataGroupByNumberBefore = new grpc.web.MethodDescriptor(
+  '/data.DataService/ListDataGroupByNumberBefore',
   grpc.web.MethodType.UNARY,
-  proto.data.DataIdsNumber,
+  proto.data.DataGroupNumber,
   proto.data.DataListResponse,
   /**
-   * @param {!proto.data.DataIdsNumber} request
+   * @param {!proto.data.DataGroupNumber} request
    * @return {!Uint8Array}
    */
   function(request) {
@@ -646,7 +646,7 @@ const methodDescriptor_DataService_ListDataByIdsNumberBefore = new grpc.web.Meth
 
 
 /**
- * @param {!proto.data.DataIdsNumber} request The
+ * @param {!proto.data.DataGroupNumber} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
@@ -655,48 +655,48 @@ const methodDescriptor_DataService_ListDataByIdsNumberBefore = new grpc.web.Meth
  * @return {!grpc.web.ClientReadableStream<!proto.data.DataListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.data.DataServiceClient.prototype.listDataByIdsNumberBefore =
+proto.data.DataServiceClient.prototype.listDataGroupByNumberBefore =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/data.DataService/ListDataByIdsNumberBefore',
+      '/data.DataService/ListDataGroupByNumberBefore',
       request,
       metadata || {},
-      methodDescriptor_DataService_ListDataByIdsNumberBefore,
+      methodDescriptor_DataService_ListDataGroupByNumberBefore,
       callback);
 };
 
 
 /**
- * @param {!proto.data.DataIdsNumber} request The
+ * @param {!proto.data.DataGroupNumber} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.data.DataListResponse>}
  *     Promise that resolves to the response
  */
-proto.data.DataServicePromiseClient.prototype.listDataByIdsNumberBefore =
+proto.data.DataServicePromiseClient.prototype.listDataGroupByNumberBefore =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/data.DataService/ListDataByIdsNumberBefore',
+      '/data.DataService/ListDataGroupByNumberBefore',
       request,
       metadata || {},
-      methodDescriptor_DataService_ListDataByIdsNumberBefore);
+      methodDescriptor_DataService_ListDataGroupByNumberBefore);
 };
 
 
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.data.DataIdsNumber,
+ *   !proto.data.DataGroupNumber,
  *   !proto.data.DataListResponse>}
  */
-const methodDescriptor_DataService_ListDataByIdsNumberAfter = new grpc.web.MethodDescriptor(
-  '/data.DataService/ListDataByIdsNumberAfter',
+const methodDescriptor_DataService_ListDataGroupByNumberAfter = new grpc.web.MethodDescriptor(
+  '/data.DataService/ListDataGroupByNumberAfter',
   grpc.web.MethodType.UNARY,
-  proto.data.DataIdsNumber,
+  proto.data.DataGroupNumber,
   proto.data.DataListResponse,
   /**
-   * @param {!proto.data.DataIdsNumber} request
+   * @param {!proto.data.DataGroupNumber} request
    * @return {!Uint8Array}
    */
   function(request) {
@@ -707,7 +707,7 @@ const methodDescriptor_DataService_ListDataByIdsNumberAfter = new grpc.web.Metho
 
 
 /**
- * @param {!proto.data.DataIdsNumber} request The
+ * @param {!proto.data.DataGroupNumber} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
@@ -716,32 +716,32 @@ const methodDescriptor_DataService_ListDataByIdsNumberAfter = new grpc.web.Metho
  * @return {!grpc.web.ClientReadableStream<!proto.data.DataListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.data.DataServiceClient.prototype.listDataByIdsNumberAfter =
+proto.data.DataServiceClient.prototype.listDataGroupByNumberAfter =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/data.DataService/ListDataByIdsNumberAfter',
+      '/data.DataService/ListDataGroupByNumberAfter',
       request,
       metadata || {},
-      methodDescriptor_DataService_ListDataByIdsNumberAfter,
+      methodDescriptor_DataService_ListDataGroupByNumberAfter,
       callback);
 };
 
 
 /**
- * @param {!proto.data.DataIdsNumber} request The
+ * @param {!proto.data.DataGroupNumber} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.data.DataListResponse>}
  *     Promise that resolves to the response
  */
-proto.data.DataServicePromiseClient.prototype.listDataByIdsNumberAfter =
+proto.data.DataServicePromiseClient.prototype.listDataGroupByNumberAfter =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/data.DataService/ListDataByIdsNumberAfter',
+      '/data.DataService/ListDataGroupByNumberAfter',
       request,
       metadata || {},
-      methodDescriptor_DataService_ListDataByIdsNumberAfter);
+      methodDescriptor_DataService_ListDataGroupByNumberAfter);
 };
 
 
@@ -873,8 +873,8 @@ proto.data.DataServicePromiseClient.prototype.listDataSetByTime =
  *   !proto.data.DataSetTime,
  *   !proto.data.DataSetListResponse>}
  */
-const methodDescriptor_DataService_ListDataSetByLastTime = new grpc.web.MethodDescriptor(
-  '/data.DataService/ListDataSetByLastTime',
+const methodDescriptor_DataService_ListDataSetByLatest = new grpc.web.MethodDescriptor(
+  '/data.DataService/ListDataSetByLatest',
   grpc.web.MethodType.UNARY,
   proto.data.DataSetTime,
   proto.data.DataSetListResponse,
@@ -899,13 +899,13 @@ const methodDescriptor_DataService_ListDataSetByLastTime = new grpc.web.MethodDe
  * @return {!grpc.web.ClientReadableStream<!proto.data.DataSetListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.data.DataServiceClient.prototype.listDataSetByLastTime =
+proto.data.DataServiceClient.prototype.listDataSetByLatest =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/data.DataService/ListDataSetByLastTime',
+      '/data.DataService/ListDataSetByLatest',
       request,
       metadata || {},
-      methodDescriptor_DataService_ListDataSetByLastTime,
+      methodDescriptor_DataService_ListDataSetByLatest,
       callback);
 };
 
@@ -918,13 +918,13 @@ proto.data.DataServiceClient.prototype.listDataSetByLastTime =
  * @return {!Promise<!proto.data.DataSetListResponse>}
  *     Promise that resolves to the response
  */
-proto.data.DataServicePromiseClient.prototype.listDataSetByLastTime =
+proto.data.DataServicePromiseClient.prototype.listDataSetByLatest =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/data.DataService/ListDataSetByLastTime',
+      '/data.DataService/ListDataSetByLatest',
       request,
       metadata || {},
-      methodDescriptor_DataService_ListDataSetByLastTime);
+      methodDescriptor_DataService_ListDataSetByLatest);
 };
 
 
@@ -934,8 +934,8 @@ proto.data.DataServicePromiseClient.prototype.listDataSetByLastTime =
  *   !proto.data.DataSetRange,
  *   !proto.data.DataSetListResponse>}
  */
-const methodDescriptor_DataService_ListDataSetByRangeTime = new grpc.web.MethodDescriptor(
-  '/data.DataService/ListDataSetByRangeTime',
+const methodDescriptor_DataService_ListDataSetByRange = new grpc.web.MethodDescriptor(
+  '/data.DataService/ListDataSetByRange',
   grpc.web.MethodType.UNARY,
   proto.data.DataSetRange,
   proto.data.DataSetListResponse,
@@ -960,13 +960,13 @@ const methodDescriptor_DataService_ListDataSetByRangeTime = new grpc.web.MethodD
  * @return {!grpc.web.ClientReadableStream<!proto.data.DataSetListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.data.DataServiceClient.prototype.listDataSetByRangeTime =
+proto.data.DataServiceClient.prototype.listDataSetByRange =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/data.DataService/ListDataSetByRangeTime',
+      '/data.DataService/ListDataSetByRange',
       request,
       metadata || {},
-      methodDescriptor_DataService_ListDataSetByRangeTime,
+      methodDescriptor_DataService_ListDataSetByRange,
       callback);
 };
 
@@ -979,13 +979,13 @@ proto.data.DataServiceClient.prototype.listDataSetByRangeTime =
  * @return {!Promise<!proto.data.DataSetListResponse>}
  *     Promise that resolves to the response
  */
-proto.data.DataServicePromiseClient.prototype.listDataSetByRangeTime =
+proto.data.DataServicePromiseClient.prototype.listDataSetByRange =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/data.DataService/ListDataSetByRangeTime',
+      '/data.DataService/ListDataSetByRange',
       request,
       metadata || {},
-      methodDescriptor_DataService_ListDataSetByRangeTime);
+      methodDescriptor_DataService_ListDataSetByRange);
 };
 
 
@@ -1239,8 +1239,8 @@ proto.data.DataServicePromiseClient.prototype.readDataTimestamp =
  *   !proto.data.DataTime,
  *   !proto.data.TimestampListResponse>}
  */
-const methodDescriptor_DataService_ListDataTimestampByLastTime = new grpc.web.MethodDescriptor(
-  '/data.DataService/ListDataTimestampByLastTime',
+const methodDescriptor_DataService_ListDataTimestampByLatest = new grpc.web.MethodDescriptor(
+  '/data.DataService/ListDataTimestampByLatest',
   grpc.web.MethodType.UNARY,
   proto.data.DataTime,
   proto.data.TimestampListResponse,
@@ -1265,13 +1265,13 @@ const methodDescriptor_DataService_ListDataTimestampByLastTime = new grpc.web.Me
  * @return {!grpc.web.ClientReadableStream<!proto.data.TimestampListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.data.DataServiceClient.prototype.listDataTimestampByLastTime =
+proto.data.DataServiceClient.prototype.listDataTimestampByLatest =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/data.DataService/ListDataTimestampByLastTime',
+      '/data.DataService/ListDataTimestampByLatest',
       request,
       metadata || {},
-      methodDescriptor_DataService_ListDataTimestampByLastTime,
+      methodDescriptor_DataService_ListDataTimestampByLatest,
       callback);
 };
 
@@ -1284,13 +1284,13 @@ proto.data.DataServiceClient.prototype.listDataTimestampByLastTime =
  * @return {!Promise<!proto.data.TimestampListResponse>}
  *     Promise that resolves to the response
  */
-proto.data.DataServicePromiseClient.prototype.listDataTimestampByLastTime =
+proto.data.DataServicePromiseClient.prototype.listDataTimestampByLatest =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/data.DataService/ListDataTimestampByLastTime',
+      '/data.DataService/ListDataTimestampByLatest',
       request,
       metadata || {},
-      methodDescriptor_DataService_ListDataTimestampByLastTime);
+      methodDescriptor_DataService_ListDataTimestampByLatest);
 };
 
 
@@ -1300,8 +1300,8 @@ proto.data.DataServicePromiseClient.prototype.listDataTimestampByLastTime =
  *   !proto.data.DataRange,
  *   !proto.data.TimestampListResponse>}
  */
-const methodDescriptor_DataService_ListDataTimestampByRangeTime = new grpc.web.MethodDescriptor(
-  '/data.DataService/ListDataTimestampByRangeTime',
+const methodDescriptor_DataService_ListDataTimestampByRange = new grpc.web.MethodDescriptor(
+  '/data.DataService/ListDataTimestampByRange',
   grpc.web.MethodType.UNARY,
   proto.data.DataRange,
   proto.data.TimestampListResponse,
@@ -1326,13 +1326,13 @@ const methodDescriptor_DataService_ListDataTimestampByRangeTime = new grpc.web.M
  * @return {!grpc.web.ClientReadableStream<!proto.data.TimestampListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.data.DataServiceClient.prototype.listDataTimestampByRangeTime =
+proto.data.DataServiceClient.prototype.listDataTimestampByRange =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/data.DataService/ListDataTimestampByRangeTime',
+      '/data.DataService/ListDataTimestampByRange',
       request,
       metadata || {},
-      methodDescriptor_DataService_ListDataTimestampByRangeTime,
+      methodDescriptor_DataService_ListDataTimestampByRange,
       callback);
 };
 
@@ -1345,29 +1345,29 @@ proto.data.DataServiceClient.prototype.listDataTimestampByRangeTime =
  * @return {!Promise<!proto.data.TimestampListResponse>}
  *     Promise that resolves to the response
  */
-proto.data.DataServicePromiseClient.prototype.listDataTimestampByRangeTime =
+proto.data.DataServicePromiseClient.prototype.listDataTimestampByRange =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/data.DataService/ListDataTimestampByRangeTime',
+      '/data.DataService/ListDataTimestampByRange',
       request,
       metadata || {},
-      methodDescriptor_DataService_ListDataTimestampByRangeTime);
+      methodDescriptor_DataService_ListDataTimestampByRange);
 };
 
 
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.data.DataIds,
+ *   !proto.data.DataGroupId,
  *   !proto.data.TimestampReadResponse>}
  */
-const methodDescriptor_DataService_ReadDataTimestampByIds = new grpc.web.MethodDescriptor(
-  '/data.DataService/ReadDataTimestampByIds',
+const methodDescriptor_DataService_ReadDataGroupTimestamp = new grpc.web.MethodDescriptor(
+  '/data.DataService/ReadDataGroupTimestamp',
   grpc.web.MethodType.UNARY,
-  proto.data.DataIds,
+  proto.data.DataGroupId,
   proto.data.TimestampReadResponse,
   /**
-   * @param {!proto.data.DataIds} request
+   * @param {!proto.data.DataGroupId} request
    * @return {!Uint8Array}
    */
   function(request) {
@@ -1378,7 +1378,7 @@ const methodDescriptor_DataService_ReadDataTimestampByIds = new grpc.web.MethodD
 
 
 /**
- * @param {!proto.data.DataIds} request The
+ * @param {!proto.data.DataGroupId} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
@@ -1387,48 +1387,48 @@ const methodDescriptor_DataService_ReadDataTimestampByIds = new grpc.web.MethodD
  * @return {!grpc.web.ClientReadableStream<!proto.data.TimestampReadResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.data.DataServiceClient.prototype.readDataTimestampByIds =
+proto.data.DataServiceClient.prototype.readDataGroupTimestamp =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/data.DataService/ReadDataTimestampByIds',
+      '/data.DataService/ReadDataGroupTimestamp',
       request,
       metadata || {},
-      methodDescriptor_DataService_ReadDataTimestampByIds,
+      methodDescriptor_DataService_ReadDataGroupTimestamp,
       callback);
 };
 
 
 /**
- * @param {!proto.data.DataIds} request The
+ * @param {!proto.data.DataGroupId} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.data.TimestampReadResponse>}
  *     Promise that resolves to the response
  */
-proto.data.DataServicePromiseClient.prototype.readDataTimestampByIds =
+proto.data.DataServicePromiseClient.prototype.readDataGroupTimestamp =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/data.DataService/ReadDataTimestampByIds',
+      '/data.DataService/ReadDataGroupTimestamp',
       request,
       metadata || {},
-      methodDescriptor_DataService_ReadDataTimestampByIds);
+      methodDescriptor_DataService_ReadDataGroupTimestamp);
 };
 
 
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.data.DataIdsTime,
+ *   !proto.data.DataGroupTime,
  *   !proto.data.TimestampListResponse>}
  */
-const methodDescriptor_DataService_ListDataTimestampByIdsLastTime = new grpc.web.MethodDescriptor(
-  '/data.DataService/ListDataTimestampByIdsLastTime',
+const methodDescriptor_DataService_ListDataGroupTimestampByLatest = new grpc.web.MethodDescriptor(
+  '/data.DataService/ListDataGroupTimestampByLatest',
   grpc.web.MethodType.UNARY,
-  proto.data.DataIdsTime,
+  proto.data.DataGroupTime,
   proto.data.TimestampListResponse,
   /**
-   * @param {!proto.data.DataIdsTime} request
+   * @param {!proto.data.DataGroupTime} request
    * @return {!Uint8Array}
    */
   function(request) {
@@ -1439,7 +1439,7 @@ const methodDescriptor_DataService_ListDataTimestampByIdsLastTime = new grpc.web
 
 
 /**
- * @param {!proto.data.DataIdsTime} request The
+ * @param {!proto.data.DataGroupTime} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
@@ -1448,48 +1448,48 @@ const methodDescriptor_DataService_ListDataTimestampByIdsLastTime = new grpc.web
  * @return {!grpc.web.ClientReadableStream<!proto.data.TimestampListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.data.DataServiceClient.prototype.listDataTimestampByIdsLastTime =
+proto.data.DataServiceClient.prototype.listDataGroupTimestampByLatest =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/data.DataService/ListDataTimestampByIdsLastTime',
+      '/data.DataService/ListDataGroupTimestampByLatest',
       request,
       metadata || {},
-      methodDescriptor_DataService_ListDataTimestampByIdsLastTime,
+      methodDescriptor_DataService_ListDataGroupTimestampByLatest,
       callback);
 };
 
 
 /**
- * @param {!proto.data.DataIdsTime} request The
+ * @param {!proto.data.DataGroupTime} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.data.TimestampListResponse>}
  *     Promise that resolves to the response
  */
-proto.data.DataServicePromiseClient.prototype.listDataTimestampByIdsLastTime =
+proto.data.DataServicePromiseClient.prototype.listDataGroupTimestampByLatest =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/data.DataService/ListDataTimestampByIdsLastTime',
+      '/data.DataService/ListDataGroupTimestampByLatest',
       request,
       metadata || {},
-      methodDescriptor_DataService_ListDataTimestampByIdsLastTime);
+      methodDescriptor_DataService_ListDataGroupTimestampByLatest);
 };
 
 
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.data.DataIdsRange,
+ *   !proto.data.DataGroupRange,
  *   !proto.data.TimestampListResponse>}
  */
-const methodDescriptor_DataService_ListDataTimestampByIdsRangeTime = new grpc.web.MethodDescriptor(
-  '/data.DataService/ListDataTimestampByIdsRangeTime',
+const methodDescriptor_DataService_ListDataGroupTimestampByRange = new grpc.web.MethodDescriptor(
+  '/data.DataService/ListDataGroupTimestampByRange',
   grpc.web.MethodType.UNARY,
-  proto.data.DataIdsRange,
+  proto.data.DataGroupRange,
   proto.data.TimestampListResponse,
   /**
-   * @param {!proto.data.DataIdsRange} request
+   * @param {!proto.data.DataGroupRange} request
    * @return {!Uint8Array}
    */
   function(request) {
@@ -1500,7 +1500,7 @@ const methodDescriptor_DataService_ListDataTimestampByIdsRangeTime = new grpc.we
 
 
 /**
- * @param {!proto.data.DataIdsRange} request The
+ * @param {!proto.data.DataGroupRange} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
@@ -1509,32 +1509,32 @@ const methodDescriptor_DataService_ListDataTimestampByIdsRangeTime = new grpc.we
  * @return {!grpc.web.ClientReadableStream<!proto.data.TimestampListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.data.DataServiceClient.prototype.listDataTimestampByIdsRangeTime =
+proto.data.DataServiceClient.prototype.listDataGroupTimestampByRange =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/data.DataService/ListDataTimestampByIdsRangeTime',
+      '/data.DataService/ListDataGroupTimestampByRange',
       request,
       metadata || {},
-      methodDescriptor_DataService_ListDataTimestampByIdsRangeTime,
+      methodDescriptor_DataService_ListDataGroupTimestampByRange,
       callback);
 };
 
 
 /**
- * @param {!proto.data.DataIdsRange} request The
+ * @param {!proto.data.DataGroupRange} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.data.TimestampListResponse>}
  *     Promise that resolves to the response
  */
-proto.data.DataServicePromiseClient.prototype.listDataTimestampByIdsRangeTime =
+proto.data.DataServicePromiseClient.prototype.listDataGroupTimestampByRange =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/data.DataService/ListDataTimestampByIdsRangeTime',
+      '/data.DataService/ListDataGroupTimestampByRange',
       request,
       metadata || {},
-      methodDescriptor_DataService_ListDataTimestampByIdsRangeTime);
+      methodDescriptor_DataService_ListDataGroupTimestampByRange);
 };
 
 
@@ -1605,8 +1605,8 @@ proto.data.DataServicePromiseClient.prototype.countData =
  *   !proto.data.DataTime,
  *   !proto.data.DataCountResponse>}
  */
-const methodDescriptor_DataService_CountDataByLastTime = new grpc.web.MethodDescriptor(
-  '/data.DataService/CountDataByLastTime',
+const methodDescriptor_DataService_CountDataByLatest = new grpc.web.MethodDescriptor(
+  '/data.DataService/CountDataByLatest',
   grpc.web.MethodType.UNARY,
   proto.data.DataTime,
   proto.data.DataCountResponse,
@@ -1631,13 +1631,13 @@ const methodDescriptor_DataService_CountDataByLastTime = new grpc.web.MethodDesc
  * @return {!grpc.web.ClientReadableStream<!proto.data.DataCountResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.data.DataServiceClient.prototype.countDataByLastTime =
+proto.data.DataServiceClient.prototype.countDataByLatest =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/data.DataService/CountDataByLastTime',
+      '/data.DataService/CountDataByLatest',
       request,
       metadata || {},
-      methodDescriptor_DataService_CountDataByLastTime,
+      methodDescriptor_DataService_CountDataByLatest,
       callback);
 };
 
@@ -1650,13 +1650,13 @@ proto.data.DataServiceClient.prototype.countDataByLastTime =
  * @return {!Promise<!proto.data.DataCountResponse>}
  *     Promise that resolves to the response
  */
-proto.data.DataServicePromiseClient.prototype.countDataByLastTime =
+proto.data.DataServicePromiseClient.prototype.countDataByLatest =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/data.DataService/CountDataByLastTime',
+      '/data.DataService/CountDataByLatest',
       request,
       metadata || {},
-      methodDescriptor_DataService_CountDataByLastTime);
+      methodDescriptor_DataService_CountDataByLatest);
 };
 
 
@@ -1666,8 +1666,8 @@ proto.data.DataServicePromiseClient.prototype.countDataByLastTime =
  *   !proto.data.DataRange,
  *   !proto.data.DataCountResponse>}
  */
-const methodDescriptor_DataService_CountDataByRangeTime = new grpc.web.MethodDescriptor(
-  '/data.DataService/CountDataByRangeTime',
+const methodDescriptor_DataService_CountDataByRange = new grpc.web.MethodDescriptor(
+  '/data.DataService/CountDataByRange',
   grpc.web.MethodType.UNARY,
   proto.data.DataRange,
   proto.data.DataCountResponse,
@@ -1692,13 +1692,13 @@ const methodDescriptor_DataService_CountDataByRangeTime = new grpc.web.MethodDes
  * @return {!grpc.web.ClientReadableStream<!proto.data.DataCountResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.data.DataServiceClient.prototype.countDataByRangeTime =
+proto.data.DataServiceClient.prototype.countDataByRange =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/data.DataService/CountDataByRangeTime',
+      '/data.DataService/CountDataByRange',
       request,
       metadata || {},
-      methodDescriptor_DataService_CountDataByRangeTime,
+      methodDescriptor_DataService_CountDataByRange,
       callback);
 };
 
@@ -1711,29 +1711,29 @@ proto.data.DataServiceClient.prototype.countDataByRangeTime =
  * @return {!Promise<!proto.data.DataCountResponse>}
  *     Promise that resolves to the response
  */
-proto.data.DataServicePromiseClient.prototype.countDataByRangeTime =
+proto.data.DataServicePromiseClient.prototype.countDataByRange =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/data.DataService/CountDataByRangeTime',
+      '/data.DataService/CountDataByRange',
       request,
       metadata || {},
-      methodDescriptor_DataService_CountDataByRangeTime);
+      methodDescriptor_DataService_CountDataByRange);
 };
 
 
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.data.DataIdsTime,
+ *   !proto.data.DataGroupTime,
  *   !proto.data.DataCountResponse>}
  */
-const methodDescriptor_DataService_CountDataByIds = new grpc.web.MethodDescriptor(
-  '/data.DataService/CountDataByIds',
+const methodDescriptor_DataService_CountDataGroup = new grpc.web.MethodDescriptor(
+  '/data.DataService/CountDataGroup',
   grpc.web.MethodType.UNARY,
-  proto.data.DataIdsTime,
+  proto.data.DataGroupTime,
   proto.data.DataCountResponse,
   /**
-   * @param {!proto.data.DataIdsTime} request
+   * @param {!proto.data.DataGroupTime} request
    * @return {!Uint8Array}
    */
   function(request) {
@@ -1744,7 +1744,7 @@ const methodDescriptor_DataService_CountDataByIds = new grpc.web.MethodDescripto
 
 
 /**
- * @param {!proto.data.DataIdsTime} request The
+ * @param {!proto.data.DataGroupTime} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
@@ -1753,48 +1753,48 @@ const methodDescriptor_DataService_CountDataByIds = new grpc.web.MethodDescripto
  * @return {!grpc.web.ClientReadableStream<!proto.data.DataCountResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.data.DataServiceClient.prototype.countDataByIds =
+proto.data.DataServiceClient.prototype.countDataGroup =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/data.DataService/CountDataByIds',
+      '/data.DataService/CountDataGroup',
       request,
       metadata || {},
-      methodDescriptor_DataService_CountDataByIds,
+      methodDescriptor_DataService_CountDataGroup,
       callback);
 };
 
 
 /**
- * @param {!proto.data.DataIdsTime} request The
+ * @param {!proto.data.DataGroupTime} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.data.DataCountResponse>}
  *     Promise that resolves to the response
  */
-proto.data.DataServicePromiseClient.prototype.countDataByIds =
+proto.data.DataServicePromiseClient.prototype.countDataGroup =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/data.DataService/CountDataByIds',
+      '/data.DataService/CountDataGroup',
       request,
       metadata || {},
-      methodDescriptor_DataService_CountDataByIds);
+      methodDescriptor_DataService_CountDataGroup);
 };
 
 
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.data.DataIdsTime,
+ *   !proto.data.DataGroupTime,
  *   !proto.data.DataCountResponse>}
  */
-const methodDescriptor_DataService_CountDataByIdsLastTime = new grpc.web.MethodDescriptor(
-  '/data.DataService/CountDataByIdsLastTime',
+const methodDescriptor_DataService_CountDataGroupByLatest = new grpc.web.MethodDescriptor(
+  '/data.DataService/CountDataGroupByLatest',
   grpc.web.MethodType.UNARY,
-  proto.data.DataIdsTime,
+  proto.data.DataGroupTime,
   proto.data.DataCountResponse,
   /**
-   * @param {!proto.data.DataIdsTime} request
+   * @param {!proto.data.DataGroupTime} request
    * @return {!Uint8Array}
    */
   function(request) {
@@ -1805,7 +1805,7 @@ const methodDescriptor_DataService_CountDataByIdsLastTime = new grpc.web.MethodD
 
 
 /**
- * @param {!proto.data.DataIdsTime} request The
+ * @param {!proto.data.DataGroupTime} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
@@ -1814,48 +1814,48 @@ const methodDescriptor_DataService_CountDataByIdsLastTime = new grpc.web.MethodD
  * @return {!grpc.web.ClientReadableStream<!proto.data.DataCountResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.data.DataServiceClient.prototype.countDataByIdsLastTime =
+proto.data.DataServiceClient.prototype.countDataGroupByLatest =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/data.DataService/CountDataByIdsLastTime',
+      '/data.DataService/CountDataGroupByLatest',
       request,
       metadata || {},
-      methodDescriptor_DataService_CountDataByIdsLastTime,
+      methodDescriptor_DataService_CountDataGroupByLatest,
       callback);
 };
 
 
 /**
- * @param {!proto.data.DataIdsTime} request The
+ * @param {!proto.data.DataGroupTime} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.data.DataCountResponse>}
  *     Promise that resolves to the response
  */
-proto.data.DataServicePromiseClient.prototype.countDataByIdsLastTime =
+proto.data.DataServicePromiseClient.prototype.countDataGroupByLatest =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/data.DataService/CountDataByIdsLastTime',
+      '/data.DataService/CountDataGroupByLatest',
       request,
       metadata || {},
-      methodDescriptor_DataService_CountDataByIdsLastTime);
+      methodDescriptor_DataService_CountDataGroupByLatest);
 };
 
 
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.data.DataIdsRange,
+ *   !proto.data.DataGroupRange,
  *   !proto.data.DataCountResponse>}
  */
-const methodDescriptor_DataService_CountDataByIdsRangeTime = new grpc.web.MethodDescriptor(
-  '/data.DataService/CountDataByIdsRangeTime',
+const methodDescriptor_DataService_CountDataGroupByRange = new grpc.web.MethodDescriptor(
+  '/data.DataService/CountDataGroupByRange',
   grpc.web.MethodType.UNARY,
-  proto.data.DataIdsRange,
+  proto.data.DataGroupRange,
   proto.data.DataCountResponse,
   /**
-   * @param {!proto.data.DataIdsRange} request
+   * @param {!proto.data.DataGroupRange} request
    * @return {!Uint8Array}
    */
   function(request) {
@@ -1866,7 +1866,7 @@ const methodDescriptor_DataService_CountDataByIdsRangeTime = new grpc.web.Method
 
 
 /**
- * @param {!proto.data.DataIdsRange} request The
+ * @param {!proto.data.DataGroupRange} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
@@ -1875,32 +1875,32 @@ const methodDescriptor_DataService_CountDataByIdsRangeTime = new grpc.web.Method
  * @return {!grpc.web.ClientReadableStream<!proto.data.DataCountResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.data.DataServiceClient.prototype.countDataByIdsRangeTime =
+proto.data.DataServiceClient.prototype.countDataGroupByRange =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/data.DataService/CountDataByIdsRangeTime',
+      '/data.DataService/CountDataGroupByRange',
       request,
       metadata || {},
-      methodDescriptor_DataService_CountDataByIdsRangeTime,
+      methodDescriptor_DataService_CountDataGroupByRange,
       callback);
 };
 
 
 /**
- * @param {!proto.data.DataIdsRange} request The
+ * @param {!proto.data.DataGroupRange} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.data.DataCountResponse>}
  *     Promise that resolves to the response
  */
-proto.data.DataServicePromiseClient.prototype.countDataByIdsRangeTime =
+proto.data.DataServicePromiseClient.prototype.countDataGroupByRange =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/data.DataService/CountDataByIdsRangeTime',
+      '/data.DataService/CountDataGroupByRange',
       request,
       metadata || {},
-      methodDescriptor_DataService_CountDataByIdsRangeTime);
+      methodDescriptor_DataService_CountDataGroupByRange);
 };
 
 

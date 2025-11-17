@@ -6,13 +6,13 @@ service LogService {
 
     rpc ReadLogByTime(LogTime) returns (LogReadResponse);
 
-    rpc ListLog(LogIds) returns (LogListResponse);
+    rpc ListLogByIds(LogIds) returns (LogListResponse);
 
     rpc ListLogByTime(LogTime) returns (LogListResponse);
 
-    rpc ListLogByLastTime(LogTime) returns (LogListResponse);
+    rpc ListLogByLatest(LogTime) returns (LogListResponse);
 
-    rpc ListLogByRangeTime(LogRange) returns (LogListResponse);
+    rpc ListLogByRange(LogRange) returns (LogListResponse);
 
     rpc CreateLog(LogSchema) returns (LogCreateResponse);
 

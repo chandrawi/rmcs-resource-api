@@ -202,8 +202,8 @@ proto.buffer.BufferServicePromiseClient.prototype.readBufferByTime =
  *   !proto.buffer.BufferIds,
  *   !proto.buffer.BufferListResponse>}
  */
-const methodDescriptor_BufferService_ListBuffer = new grpc.web.MethodDescriptor(
-  '/buffer.BufferService/ListBuffer',
+const methodDescriptor_BufferService_ListBufferByIds = new grpc.web.MethodDescriptor(
+  '/buffer.BufferService/ListBufferByIds',
   grpc.web.MethodType.UNARY,
   proto.buffer.BufferIds,
   proto.buffer.BufferListResponse,
@@ -228,13 +228,13 @@ const methodDescriptor_BufferService_ListBuffer = new grpc.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.buffer.BufferListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.buffer.BufferServiceClient.prototype.listBuffer =
+proto.buffer.BufferServiceClient.prototype.listBufferByIds =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/buffer.BufferService/ListBuffer',
+      '/buffer.BufferService/ListBufferByIds',
       request,
       metadata || {},
-      methodDescriptor_BufferService_ListBuffer,
+      methodDescriptor_BufferService_ListBufferByIds,
       callback);
 };
 
@@ -247,13 +247,13 @@ proto.buffer.BufferServiceClient.prototype.listBuffer =
  * @return {!Promise<!proto.buffer.BufferListResponse>}
  *     Promise that resolves to the response
  */
-proto.buffer.BufferServicePromiseClient.prototype.listBuffer =
+proto.buffer.BufferServicePromiseClient.prototype.listBufferByIds =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/buffer.BufferService/ListBuffer',
+      '/buffer.BufferService/ListBufferByIds',
       request,
       metadata || {},
-      methodDescriptor_BufferService_ListBuffer);
+      methodDescriptor_BufferService_ListBufferByIds);
 };
 
 
@@ -324,8 +324,8 @@ proto.buffer.BufferServicePromiseClient.prototype.listBufferByTime =
  *   !proto.buffer.BufferTime,
  *   !proto.buffer.BufferListResponse>}
  */
-const methodDescriptor_BufferService_ListBufferByLastTime = new grpc.web.MethodDescriptor(
-  '/buffer.BufferService/ListBufferByLastTime',
+const methodDescriptor_BufferService_ListBufferByLatest = new grpc.web.MethodDescriptor(
+  '/buffer.BufferService/ListBufferByLatest',
   grpc.web.MethodType.UNARY,
   proto.buffer.BufferTime,
   proto.buffer.BufferListResponse,
@@ -350,13 +350,13 @@ const methodDescriptor_BufferService_ListBufferByLastTime = new grpc.web.MethodD
  * @return {!grpc.web.ClientReadableStream<!proto.buffer.BufferListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.buffer.BufferServiceClient.prototype.listBufferByLastTime =
+proto.buffer.BufferServiceClient.prototype.listBufferByLatest =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/buffer.BufferService/ListBufferByLastTime',
+      '/buffer.BufferService/ListBufferByLatest',
       request,
       metadata || {},
-      methodDescriptor_BufferService_ListBufferByLastTime,
+      methodDescriptor_BufferService_ListBufferByLatest,
       callback);
 };
 
@@ -369,13 +369,13 @@ proto.buffer.BufferServiceClient.prototype.listBufferByLastTime =
  * @return {!Promise<!proto.buffer.BufferListResponse>}
  *     Promise that resolves to the response
  */
-proto.buffer.BufferServicePromiseClient.prototype.listBufferByLastTime =
+proto.buffer.BufferServicePromiseClient.prototype.listBufferByLatest =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/buffer.BufferService/ListBufferByLastTime',
+      '/buffer.BufferService/ListBufferByLatest',
       request,
       metadata || {},
-      methodDescriptor_BufferService_ListBufferByLastTime);
+      methodDescriptor_BufferService_ListBufferByLatest);
 };
 
 
@@ -385,8 +385,8 @@ proto.buffer.BufferServicePromiseClient.prototype.listBufferByLastTime =
  *   !proto.buffer.BufferRange,
  *   !proto.buffer.BufferListResponse>}
  */
-const methodDescriptor_BufferService_ListBufferByRangeTime = new grpc.web.MethodDescriptor(
-  '/buffer.BufferService/ListBufferByRangeTime',
+const methodDescriptor_BufferService_ListBufferByRange = new grpc.web.MethodDescriptor(
+  '/buffer.BufferService/ListBufferByRange',
   grpc.web.MethodType.UNARY,
   proto.buffer.BufferRange,
   proto.buffer.BufferListResponse,
@@ -411,13 +411,13 @@ const methodDescriptor_BufferService_ListBufferByRangeTime = new grpc.web.Method
  * @return {!grpc.web.ClientReadableStream<!proto.buffer.BufferListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.buffer.BufferServiceClient.prototype.listBufferByRangeTime =
+proto.buffer.BufferServiceClient.prototype.listBufferByRange =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/buffer.BufferService/ListBufferByRangeTime',
+      '/buffer.BufferService/ListBufferByRange',
       request,
       metadata || {},
-      methodDescriptor_BufferService_ListBufferByRangeTime,
+      methodDescriptor_BufferService_ListBufferByRange,
       callback);
 };
 
@@ -430,13 +430,13 @@ proto.buffer.BufferServiceClient.prototype.listBufferByRangeTime =
  * @return {!Promise<!proto.buffer.BufferListResponse>}
  *     Promise that resolves to the response
  */
-proto.buffer.BufferServicePromiseClient.prototype.listBufferByRangeTime =
+proto.buffer.BufferServicePromiseClient.prototype.listBufferByRange =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/buffer.BufferService/ListBufferByRangeTime',
+      '/buffer.BufferService/ListBufferByRange',
       request,
       metadata || {},
-      methodDescriptor_BufferService_ListBufferByRangeTime);
+      methodDescriptor_BufferService_ListBufferByRange);
 };
 
 
@@ -931,16 +931,16 @@ proto.buffer.BufferServicePromiseClient.prototype.listBufferLastOffset =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.buffer.BufferIdsTime,
+ *   !proto.buffer.BufferGroupTime,
  *   !proto.buffer.BufferListResponse>}
  */
-const methodDescriptor_BufferService_ListBufferByIdsTime = new grpc.web.MethodDescriptor(
-  '/buffer.BufferService/ListBufferByIdsTime',
+const methodDescriptor_BufferService_ListBufferGroupByTime = new grpc.web.MethodDescriptor(
+  '/buffer.BufferService/ListBufferGroupByTime',
   grpc.web.MethodType.UNARY,
-  proto.buffer.BufferIdsTime,
+  proto.buffer.BufferGroupTime,
   proto.buffer.BufferListResponse,
   /**
-   * @param {!proto.buffer.BufferIdsTime} request
+   * @param {!proto.buffer.BufferGroupTime} request
    * @return {!Uint8Array}
    */
   function(request) {
@@ -951,7 +951,7 @@ const methodDescriptor_BufferService_ListBufferByIdsTime = new grpc.web.MethodDe
 
 
 /**
- * @param {!proto.buffer.BufferIdsTime} request The
+ * @param {!proto.buffer.BufferGroupTime} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
@@ -960,48 +960,48 @@ const methodDescriptor_BufferService_ListBufferByIdsTime = new grpc.web.MethodDe
  * @return {!grpc.web.ClientReadableStream<!proto.buffer.BufferListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.buffer.BufferServiceClient.prototype.listBufferByIdsTime =
+proto.buffer.BufferServiceClient.prototype.listBufferGroupByTime =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/buffer.BufferService/ListBufferByIdsTime',
+      '/buffer.BufferService/ListBufferGroupByTime',
       request,
       metadata || {},
-      methodDescriptor_BufferService_ListBufferByIdsTime,
+      methodDescriptor_BufferService_ListBufferGroupByTime,
       callback);
 };
 
 
 /**
- * @param {!proto.buffer.BufferIdsTime} request The
+ * @param {!proto.buffer.BufferGroupTime} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.buffer.BufferListResponse>}
  *     Promise that resolves to the response
  */
-proto.buffer.BufferServicePromiseClient.prototype.listBufferByIdsTime =
+proto.buffer.BufferServicePromiseClient.prototype.listBufferGroupByTime =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/buffer.BufferService/ListBufferByIdsTime',
+      '/buffer.BufferService/ListBufferGroupByTime',
       request,
       metadata || {},
-      methodDescriptor_BufferService_ListBufferByIdsTime);
+      methodDescriptor_BufferService_ListBufferGroupByTime);
 };
 
 
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.buffer.BufferIdsTime,
+ *   !proto.buffer.BufferGroupTime,
  *   !proto.buffer.BufferListResponse>}
  */
-const methodDescriptor_BufferService_ListBufferByIdsLastTime = new grpc.web.MethodDescriptor(
-  '/buffer.BufferService/ListBufferByIdsLastTime',
+const methodDescriptor_BufferService_ListBufferGroupByLatest = new grpc.web.MethodDescriptor(
+  '/buffer.BufferService/ListBufferGroupByLatest',
   grpc.web.MethodType.UNARY,
-  proto.buffer.BufferIdsTime,
+  proto.buffer.BufferGroupTime,
   proto.buffer.BufferListResponse,
   /**
-   * @param {!proto.buffer.BufferIdsTime} request
+   * @param {!proto.buffer.BufferGroupTime} request
    * @return {!Uint8Array}
    */
   function(request) {
@@ -1012,7 +1012,7 @@ const methodDescriptor_BufferService_ListBufferByIdsLastTime = new grpc.web.Meth
 
 
 /**
- * @param {!proto.buffer.BufferIdsTime} request The
+ * @param {!proto.buffer.BufferGroupTime} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
@@ -1021,48 +1021,48 @@ const methodDescriptor_BufferService_ListBufferByIdsLastTime = new grpc.web.Meth
  * @return {!grpc.web.ClientReadableStream<!proto.buffer.BufferListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.buffer.BufferServiceClient.prototype.listBufferByIdsLastTime =
+proto.buffer.BufferServiceClient.prototype.listBufferGroupByLatest =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/buffer.BufferService/ListBufferByIdsLastTime',
+      '/buffer.BufferService/ListBufferGroupByLatest',
       request,
       metadata || {},
-      methodDescriptor_BufferService_ListBufferByIdsLastTime,
+      methodDescriptor_BufferService_ListBufferGroupByLatest,
       callback);
 };
 
 
 /**
- * @param {!proto.buffer.BufferIdsTime} request The
+ * @param {!proto.buffer.BufferGroupTime} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.buffer.BufferListResponse>}
  *     Promise that resolves to the response
  */
-proto.buffer.BufferServicePromiseClient.prototype.listBufferByIdsLastTime =
+proto.buffer.BufferServicePromiseClient.prototype.listBufferGroupByLatest =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/buffer.BufferService/ListBufferByIdsLastTime',
+      '/buffer.BufferService/ListBufferGroupByLatest',
       request,
       metadata || {},
-      methodDescriptor_BufferService_ListBufferByIdsLastTime);
+      methodDescriptor_BufferService_ListBufferGroupByLatest);
 };
 
 
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.buffer.BufferIdsRange,
+ *   !proto.buffer.BufferGroupRange,
  *   !proto.buffer.BufferListResponse>}
  */
-const methodDescriptor_BufferService_ListBufferByIdsRangeTime = new grpc.web.MethodDescriptor(
-  '/buffer.BufferService/ListBufferByIdsRangeTime',
+const methodDescriptor_BufferService_ListBufferGroupByRange = new grpc.web.MethodDescriptor(
+  '/buffer.BufferService/ListBufferGroupByRange',
   grpc.web.MethodType.UNARY,
-  proto.buffer.BufferIdsRange,
+  proto.buffer.BufferGroupRange,
   proto.buffer.BufferListResponse,
   /**
-   * @param {!proto.buffer.BufferIdsRange} request
+   * @param {!proto.buffer.BufferGroupRange} request
    * @return {!Uint8Array}
    */
   function(request) {
@@ -1073,7 +1073,7 @@ const methodDescriptor_BufferService_ListBufferByIdsRangeTime = new grpc.web.Met
 
 
 /**
- * @param {!proto.buffer.BufferIdsRange} request The
+ * @param {!proto.buffer.BufferGroupRange} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
@@ -1082,48 +1082,48 @@ const methodDescriptor_BufferService_ListBufferByIdsRangeTime = new grpc.web.Met
  * @return {!grpc.web.ClientReadableStream<!proto.buffer.BufferListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.buffer.BufferServiceClient.prototype.listBufferByIdsRangeTime =
+proto.buffer.BufferServiceClient.prototype.listBufferGroupByRange =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/buffer.BufferService/ListBufferByIdsRangeTime',
+      '/buffer.BufferService/ListBufferGroupByRange',
       request,
       metadata || {},
-      methodDescriptor_BufferService_ListBufferByIdsRangeTime,
+      methodDescriptor_BufferService_ListBufferGroupByRange,
       callback);
 };
 
 
 /**
- * @param {!proto.buffer.BufferIdsRange} request The
+ * @param {!proto.buffer.BufferGroupRange} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.buffer.BufferListResponse>}
  *     Promise that resolves to the response
  */
-proto.buffer.BufferServicePromiseClient.prototype.listBufferByIdsRangeTime =
+proto.buffer.BufferServicePromiseClient.prototype.listBufferGroupByRange =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/buffer.BufferService/ListBufferByIdsRangeTime',
+      '/buffer.BufferService/ListBufferGroupByRange',
       request,
       metadata || {},
-      methodDescriptor_BufferService_ListBufferByIdsRangeTime);
+      methodDescriptor_BufferService_ListBufferGroupByRange);
 };
 
 
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.buffer.BufferIdsNumber,
+ *   !proto.buffer.BufferGroupNumber,
  *   !proto.buffer.BufferListResponse>}
  */
-const methodDescriptor_BufferService_ListBufferByIdsNumberBefore = new grpc.web.MethodDescriptor(
-  '/buffer.BufferService/ListBufferByIdsNumberBefore',
+const methodDescriptor_BufferService_ListBufferGroupByNumberBefore = new grpc.web.MethodDescriptor(
+  '/buffer.BufferService/ListBufferGroupByNumberBefore',
   grpc.web.MethodType.UNARY,
-  proto.buffer.BufferIdsNumber,
+  proto.buffer.BufferGroupNumber,
   proto.buffer.BufferListResponse,
   /**
-   * @param {!proto.buffer.BufferIdsNumber} request
+   * @param {!proto.buffer.BufferGroupNumber} request
    * @return {!Uint8Array}
    */
   function(request) {
@@ -1134,7 +1134,7 @@ const methodDescriptor_BufferService_ListBufferByIdsNumberBefore = new grpc.web.
 
 
 /**
- * @param {!proto.buffer.BufferIdsNumber} request The
+ * @param {!proto.buffer.BufferGroupNumber} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
@@ -1143,48 +1143,48 @@ const methodDescriptor_BufferService_ListBufferByIdsNumberBefore = new grpc.web.
  * @return {!grpc.web.ClientReadableStream<!proto.buffer.BufferListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.buffer.BufferServiceClient.prototype.listBufferByIdsNumberBefore =
+proto.buffer.BufferServiceClient.prototype.listBufferGroupByNumberBefore =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/buffer.BufferService/ListBufferByIdsNumberBefore',
+      '/buffer.BufferService/ListBufferGroupByNumberBefore',
       request,
       metadata || {},
-      methodDescriptor_BufferService_ListBufferByIdsNumberBefore,
+      methodDescriptor_BufferService_ListBufferGroupByNumberBefore,
       callback);
 };
 
 
 /**
- * @param {!proto.buffer.BufferIdsNumber} request The
+ * @param {!proto.buffer.BufferGroupNumber} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.buffer.BufferListResponse>}
  *     Promise that resolves to the response
  */
-proto.buffer.BufferServicePromiseClient.prototype.listBufferByIdsNumberBefore =
+proto.buffer.BufferServicePromiseClient.prototype.listBufferGroupByNumberBefore =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/buffer.BufferService/ListBufferByIdsNumberBefore',
+      '/buffer.BufferService/ListBufferGroupByNumberBefore',
       request,
       metadata || {},
-      methodDescriptor_BufferService_ListBufferByIdsNumberBefore);
+      methodDescriptor_BufferService_ListBufferGroupByNumberBefore);
 };
 
 
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.buffer.BufferIdsNumber,
+ *   !proto.buffer.BufferGroupNumber,
  *   !proto.buffer.BufferListResponse>}
  */
-const methodDescriptor_BufferService_ListBufferByIdsNumberAfter = new grpc.web.MethodDescriptor(
-  '/buffer.BufferService/ListBufferByIdsNumberAfter',
+const methodDescriptor_BufferService_ListBufferGroupByNumberAfter = new grpc.web.MethodDescriptor(
+  '/buffer.BufferService/ListBufferGroupByNumberAfter',
   grpc.web.MethodType.UNARY,
-  proto.buffer.BufferIdsNumber,
+  proto.buffer.BufferGroupNumber,
   proto.buffer.BufferListResponse,
   /**
-   * @param {!proto.buffer.BufferIdsNumber} request
+   * @param {!proto.buffer.BufferGroupNumber} request
    * @return {!Uint8Array}
    */
   function(request) {
@@ -1195,7 +1195,7 @@ const methodDescriptor_BufferService_ListBufferByIdsNumberAfter = new grpc.web.M
 
 
 /**
- * @param {!proto.buffer.BufferIdsNumber} request The
+ * @param {!proto.buffer.BufferGroupNumber} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
@@ -1204,48 +1204,48 @@ const methodDescriptor_BufferService_ListBufferByIdsNumberAfter = new grpc.web.M
  * @return {!grpc.web.ClientReadableStream<!proto.buffer.BufferListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.buffer.BufferServiceClient.prototype.listBufferByIdsNumberAfter =
+proto.buffer.BufferServiceClient.prototype.listBufferGroupByNumberAfter =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/buffer.BufferService/ListBufferByIdsNumberAfter',
+      '/buffer.BufferService/ListBufferGroupByNumberAfter',
       request,
       metadata || {},
-      methodDescriptor_BufferService_ListBufferByIdsNumberAfter,
+      methodDescriptor_BufferService_ListBufferGroupByNumberAfter,
       callback);
 };
 
 
 /**
- * @param {!proto.buffer.BufferIdsNumber} request The
+ * @param {!proto.buffer.BufferGroupNumber} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.buffer.BufferListResponse>}
  *     Promise that resolves to the response
  */
-proto.buffer.BufferServicePromiseClient.prototype.listBufferByIdsNumberAfter =
+proto.buffer.BufferServicePromiseClient.prototype.listBufferGroupByNumberAfter =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/buffer.BufferService/ListBufferByIdsNumberAfter',
+      '/buffer.BufferService/ListBufferGroupByNumberAfter',
       request,
       metadata || {},
-      methodDescriptor_BufferService_ListBufferByIdsNumberAfter);
+      methodDescriptor_BufferService_ListBufferGroupByNumberAfter);
 };
 
 
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.buffer.BuffersIdsSelector,
+ *   !proto.buffer.BuffersGroupSelector,
  *   !proto.buffer.BufferListResponse>}
  */
-const methodDescriptor_BufferService_ListBufferFirstByIds = new grpc.web.MethodDescriptor(
-  '/buffer.BufferService/ListBufferFirstByIds',
+const methodDescriptor_BufferService_ListBufferGroupFirst = new grpc.web.MethodDescriptor(
+  '/buffer.BufferService/ListBufferGroupFirst',
   grpc.web.MethodType.UNARY,
-  proto.buffer.BuffersIdsSelector,
+  proto.buffer.BuffersGroupSelector,
   proto.buffer.BufferListResponse,
   /**
-   * @param {!proto.buffer.BuffersIdsSelector} request
+   * @param {!proto.buffer.BuffersGroupSelector} request
    * @return {!Uint8Array}
    */
   function(request) {
@@ -1256,7 +1256,7 @@ const methodDescriptor_BufferService_ListBufferFirstByIds = new grpc.web.MethodD
 
 
 /**
- * @param {!proto.buffer.BuffersIdsSelector} request The
+ * @param {!proto.buffer.BuffersGroupSelector} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
@@ -1265,48 +1265,48 @@ const methodDescriptor_BufferService_ListBufferFirstByIds = new grpc.web.MethodD
  * @return {!grpc.web.ClientReadableStream<!proto.buffer.BufferListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.buffer.BufferServiceClient.prototype.listBufferFirstByIds =
+proto.buffer.BufferServiceClient.prototype.listBufferGroupFirst =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/buffer.BufferService/ListBufferFirstByIds',
+      '/buffer.BufferService/ListBufferGroupFirst',
       request,
       metadata || {},
-      methodDescriptor_BufferService_ListBufferFirstByIds,
+      methodDescriptor_BufferService_ListBufferGroupFirst,
       callback);
 };
 
 
 /**
- * @param {!proto.buffer.BuffersIdsSelector} request The
+ * @param {!proto.buffer.BuffersGroupSelector} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.buffer.BufferListResponse>}
  *     Promise that resolves to the response
  */
-proto.buffer.BufferServicePromiseClient.prototype.listBufferFirstByIds =
+proto.buffer.BufferServicePromiseClient.prototype.listBufferGroupFirst =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/buffer.BufferService/ListBufferFirstByIds',
+      '/buffer.BufferService/ListBufferGroupFirst',
       request,
       metadata || {},
-      methodDescriptor_BufferService_ListBufferFirstByIds);
+      methodDescriptor_BufferService_ListBufferGroupFirst);
 };
 
 
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.buffer.BuffersIdsSelector,
+ *   !proto.buffer.BuffersGroupSelector,
  *   !proto.buffer.BufferListResponse>}
  */
-const methodDescriptor_BufferService_ListBufferFirstOffsetByIds = new grpc.web.MethodDescriptor(
-  '/buffer.BufferService/ListBufferFirstOffsetByIds',
+const methodDescriptor_BufferService_ListBufferGroupFirstOffset = new grpc.web.MethodDescriptor(
+  '/buffer.BufferService/ListBufferGroupFirstOffset',
   grpc.web.MethodType.UNARY,
-  proto.buffer.BuffersIdsSelector,
+  proto.buffer.BuffersGroupSelector,
   proto.buffer.BufferListResponse,
   /**
-   * @param {!proto.buffer.BuffersIdsSelector} request
+   * @param {!proto.buffer.BuffersGroupSelector} request
    * @return {!Uint8Array}
    */
   function(request) {
@@ -1317,7 +1317,7 @@ const methodDescriptor_BufferService_ListBufferFirstOffsetByIds = new grpc.web.M
 
 
 /**
- * @param {!proto.buffer.BuffersIdsSelector} request The
+ * @param {!proto.buffer.BuffersGroupSelector} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
@@ -1326,48 +1326,48 @@ const methodDescriptor_BufferService_ListBufferFirstOffsetByIds = new grpc.web.M
  * @return {!grpc.web.ClientReadableStream<!proto.buffer.BufferListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.buffer.BufferServiceClient.prototype.listBufferFirstOffsetByIds =
+proto.buffer.BufferServiceClient.prototype.listBufferGroupFirstOffset =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/buffer.BufferService/ListBufferFirstOffsetByIds',
+      '/buffer.BufferService/ListBufferGroupFirstOffset',
       request,
       metadata || {},
-      methodDescriptor_BufferService_ListBufferFirstOffsetByIds,
+      methodDescriptor_BufferService_ListBufferGroupFirstOffset,
       callback);
 };
 
 
 /**
- * @param {!proto.buffer.BuffersIdsSelector} request The
+ * @param {!proto.buffer.BuffersGroupSelector} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.buffer.BufferListResponse>}
  *     Promise that resolves to the response
  */
-proto.buffer.BufferServicePromiseClient.prototype.listBufferFirstOffsetByIds =
+proto.buffer.BufferServicePromiseClient.prototype.listBufferGroupFirstOffset =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/buffer.BufferService/ListBufferFirstOffsetByIds',
+      '/buffer.BufferService/ListBufferGroupFirstOffset',
       request,
       metadata || {},
-      methodDescriptor_BufferService_ListBufferFirstOffsetByIds);
+      methodDescriptor_BufferService_ListBufferGroupFirstOffset);
 };
 
 
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.buffer.BuffersIdsSelector,
+ *   !proto.buffer.BuffersGroupSelector,
  *   !proto.buffer.BufferListResponse>}
  */
-const methodDescriptor_BufferService_ListBufferLastByIds = new grpc.web.MethodDescriptor(
-  '/buffer.BufferService/ListBufferLastByIds',
+const methodDescriptor_BufferService_ListBufferGroupLast = new grpc.web.MethodDescriptor(
+  '/buffer.BufferService/ListBufferGroupLast',
   grpc.web.MethodType.UNARY,
-  proto.buffer.BuffersIdsSelector,
+  proto.buffer.BuffersGroupSelector,
   proto.buffer.BufferListResponse,
   /**
-   * @param {!proto.buffer.BuffersIdsSelector} request
+   * @param {!proto.buffer.BuffersGroupSelector} request
    * @return {!Uint8Array}
    */
   function(request) {
@@ -1378,7 +1378,7 @@ const methodDescriptor_BufferService_ListBufferLastByIds = new grpc.web.MethodDe
 
 
 /**
- * @param {!proto.buffer.BuffersIdsSelector} request The
+ * @param {!proto.buffer.BuffersGroupSelector} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
@@ -1387,48 +1387,48 @@ const methodDescriptor_BufferService_ListBufferLastByIds = new grpc.web.MethodDe
  * @return {!grpc.web.ClientReadableStream<!proto.buffer.BufferListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.buffer.BufferServiceClient.prototype.listBufferLastByIds =
+proto.buffer.BufferServiceClient.prototype.listBufferGroupLast =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/buffer.BufferService/ListBufferLastByIds',
+      '/buffer.BufferService/ListBufferGroupLast',
       request,
       metadata || {},
-      methodDescriptor_BufferService_ListBufferLastByIds,
+      methodDescriptor_BufferService_ListBufferGroupLast,
       callback);
 };
 
 
 /**
- * @param {!proto.buffer.BuffersIdsSelector} request The
+ * @param {!proto.buffer.BuffersGroupSelector} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.buffer.BufferListResponse>}
  *     Promise that resolves to the response
  */
-proto.buffer.BufferServicePromiseClient.prototype.listBufferLastByIds =
+proto.buffer.BufferServicePromiseClient.prototype.listBufferGroupLast =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/buffer.BufferService/ListBufferLastByIds',
+      '/buffer.BufferService/ListBufferGroupLast',
       request,
       metadata || {},
-      methodDescriptor_BufferService_ListBufferLastByIds);
+      methodDescriptor_BufferService_ListBufferGroupLast);
 };
 
 
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.buffer.BuffersIdsSelector,
+ *   !proto.buffer.BuffersGroupSelector,
  *   !proto.buffer.BufferListResponse>}
  */
-const methodDescriptor_BufferService_ListBufferLastOffsetByIds = new grpc.web.MethodDescriptor(
-  '/buffer.BufferService/ListBufferLastOffsetByIds',
+const methodDescriptor_BufferService_ListBufferGroupLastOffset = new grpc.web.MethodDescriptor(
+  '/buffer.BufferService/ListBufferGroupLastOffset',
   grpc.web.MethodType.UNARY,
-  proto.buffer.BuffersIdsSelector,
+  proto.buffer.BuffersGroupSelector,
   proto.buffer.BufferListResponse,
   /**
-   * @param {!proto.buffer.BuffersIdsSelector} request
+   * @param {!proto.buffer.BuffersGroupSelector} request
    * @return {!Uint8Array}
    */
   function(request) {
@@ -1439,7 +1439,7 @@ const methodDescriptor_BufferService_ListBufferLastOffsetByIds = new grpc.web.Me
 
 
 /**
- * @param {!proto.buffer.BuffersIdsSelector} request The
+ * @param {!proto.buffer.BuffersGroupSelector} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
@@ -1448,32 +1448,32 @@ const methodDescriptor_BufferService_ListBufferLastOffsetByIds = new grpc.web.Me
  * @return {!grpc.web.ClientReadableStream<!proto.buffer.BufferListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.buffer.BufferServiceClient.prototype.listBufferLastOffsetByIds =
+proto.buffer.BufferServiceClient.prototype.listBufferGroupLastOffset =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/buffer.BufferService/ListBufferLastOffsetByIds',
+      '/buffer.BufferService/ListBufferGroupLastOffset',
       request,
       metadata || {},
-      methodDescriptor_BufferService_ListBufferLastOffsetByIds,
+      methodDescriptor_BufferService_ListBufferGroupLastOffset,
       callback);
 };
 
 
 /**
- * @param {!proto.buffer.BuffersIdsSelector} request The
+ * @param {!proto.buffer.BuffersGroupSelector} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.buffer.BufferListResponse>}
  *     Promise that resolves to the response
  */
-proto.buffer.BufferServicePromiseClient.prototype.listBufferLastOffsetByIds =
+proto.buffer.BufferServicePromiseClient.prototype.listBufferGroupLastOffset =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/buffer.BufferService/ListBufferLastOffsetByIds',
+      '/buffer.BufferService/ListBufferGroupLastOffset',
       request,
       metadata || {},
-      methodDescriptor_BufferService_ListBufferLastOffsetByIds);
+      methodDescriptor_BufferService_ListBufferGroupLastOffset);
 };
 
 
@@ -1605,8 +1605,8 @@ proto.buffer.BufferServicePromiseClient.prototype.listBufferSetByTime =
  *   !proto.buffer.BufferSetTime,
  *   !proto.buffer.BufferSetListResponse>}
  */
-const methodDescriptor_BufferService_ListBufferSetByLastTime = new grpc.web.MethodDescriptor(
-  '/buffer.BufferService/ListBufferSetByLastTime',
+const methodDescriptor_BufferService_ListBufferSetByLatest = new grpc.web.MethodDescriptor(
+  '/buffer.BufferService/ListBufferSetByLatest',
   grpc.web.MethodType.UNARY,
   proto.buffer.BufferSetTime,
   proto.buffer.BufferSetListResponse,
@@ -1631,13 +1631,13 @@ const methodDescriptor_BufferService_ListBufferSetByLastTime = new grpc.web.Meth
  * @return {!grpc.web.ClientReadableStream<!proto.buffer.BufferSetListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.buffer.BufferServiceClient.prototype.listBufferSetByLastTime =
+proto.buffer.BufferServiceClient.prototype.listBufferSetByLatest =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/buffer.BufferService/ListBufferSetByLastTime',
+      '/buffer.BufferService/ListBufferSetByLatest',
       request,
       metadata || {},
-      methodDescriptor_BufferService_ListBufferSetByLastTime,
+      methodDescriptor_BufferService_ListBufferSetByLatest,
       callback);
 };
 
@@ -1650,13 +1650,13 @@ proto.buffer.BufferServiceClient.prototype.listBufferSetByLastTime =
  * @return {!Promise<!proto.buffer.BufferSetListResponse>}
  *     Promise that resolves to the response
  */
-proto.buffer.BufferServicePromiseClient.prototype.listBufferSetByLastTime =
+proto.buffer.BufferServicePromiseClient.prototype.listBufferSetByLatest =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/buffer.BufferService/ListBufferSetByLastTime',
+      '/buffer.BufferService/ListBufferSetByLatest',
       request,
       metadata || {},
-      methodDescriptor_BufferService_ListBufferSetByLastTime);
+      methodDescriptor_BufferService_ListBufferSetByLatest);
 };
 
 
@@ -1666,8 +1666,8 @@ proto.buffer.BufferServicePromiseClient.prototype.listBufferSetByLastTime =
  *   !proto.buffer.BufferSetRange,
  *   !proto.buffer.BufferSetListResponse>}
  */
-const methodDescriptor_BufferService_ListBufferSetByRangeTime = new grpc.web.MethodDescriptor(
-  '/buffer.BufferService/ListBufferSetByRangeTime',
+const methodDescriptor_BufferService_ListBufferSetByRange = new grpc.web.MethodDescriptor(
+  '/buffer.BufferService/ListBufferSetByRange',
   grpc.web.MethodType.UNARY,
   proto.buffer.BufferSetRange,
   proto.buffer.BufferSetListResponse,
@@ -1692,13 +1692,13 @@ const methodDescriptor_BufferService_ListBufferSetByRangeTime = new grpc.web.Met
  * @return {!grpc.web.ClientReadableStream<!proto.buffer.BufferSetListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.buffer.BufferServiceClient.prototype.listBufferSetByRangeTime =
+proto.buffer.BufferServiceClient.prototype.listBufferSetByRange =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/buffer.BufferService/ListBufferSetByRangeTime',
+      '/buffer.BufferService/ListBufferSetByRange',
       request,
       metadata || {},
-      methodDescriptor_BufferService_ListBufferSetByRangeTime,
+      methodDescriptor_BufferService_ListBufferSetByRange,
       callback);
 };
 
@@ -1711,13 +1711,13 @@ proto.buffer.BufferServiceClient.prototype.listBufferSetByRangeTime =
  * @return {!Promise<!proto.buffer.BufferSetListResponse>}
  *     Promise that resolves to the response
  */
-proto.buffer.BufferServicePromiseClient.prototype.listBufferSetByRangeTime =
+proto.buffer.BufferServicePromiseClient.prototype.listBufferSetByRange =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/buffer.BufferService/ListBufferSetByRangeTime',
+      '/buffer.BufferService/ListBufferSetByRange',
       request,
       metadata || {},
-      methodDescriptor_BufferService_ListBufferSetByRangeTime);
+      methodDescriptor_BufferService_ListBufferSetByRange);
 };
 
 
@@ -2334,16 +2334,16 @@ proto.buffer.BufferServicePromiseClient.prototype.listBufferTimestampLast =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.buffer.BuffersIdsSelector,
+ *   !proto.buffer.BuffersGroupSelector,
  *   !proto.buffer.TimestampListResponse>}
  */
-const methodDescriptor_BufferService_ListBufferTimestampFirstByIds = new grpc.web.MethodDescriptor(
-  '/buffer.BufferService/ListBufferTimestampFirstByIds',
+const methodDescriptor_BufferService_ListBufferGroupTimestampFirst = new grpc.web.MethodDescriptor(
+  '/buffer.BufferService/ListBufferGroupTimestampFirst',
   grpc.web.MethodType.UNARY,
-  proto.buffer.BuffersIdsSelector,
+  proto.buffer.BuffersGroupSelector,
   proto.buffer.TimestampListResponse,
   /**
-   * @param {!proto.buffer.BuffersIdsSelector} request
+   * @param {!proto.buffer.BuffersGroupSelector} request
    * @return {!Uint8Array}
    */
   function(request) {
@@ -2354,7 +2354,7 @@ const methodDescriptor_BufferService_ListBufferTimestampFirstByIds = new grpc.we
 
 
 /**
- * @param {!proto.buffer.BuffersIdsSelector} request The
+ * @param {!proto.buffer.BuffersGroupSelector} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
@@ -2363,48 +2363,48 @@ const methodDescriptor_BufferService_ListBufferTimestampFirstByIds = new grpc.we
  * @return {!grpc.web.ClientReadableStream<!proto.buffer.TimestampListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.buffer.BufferServiceClient.prototype.listBufferTimestampFirstByIds =
+proto.buffer.BufferServiceClient.prototype.listBufferGroupTimestampFirst =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/buffer.BufferService/ListBufferTimestampFirstByIds',
+      '/buffer.BufferService/ListBufferGroupTimestampFirst',
       request,
       metadata || {},
-      methodDescriptor_BufferService_ListBufferTimestampFirstByIds,
+      methodDescriptor_BufferService_ListBufferGroupTimestampFirst,
       callback);
 };
 
 
 /**
- * @param {!proto.buffer.BuffersIdsSelector} request The
+ * @param {!proto.buffer.BuffersGroupSelector} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.buffer.TimestampListResponse>}
  *     Promise that resolves to the response
  */
-proto.buffer.BufferServicePromiseClient.prototype.listBufferTimestampFirstByIds =
+proto.buffer.BufferServicePromiseClient.prototype.listBufferGroupTimestampFirst =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/buffer.BufferService/ListBufferTimestampFirstByIds',
+      '/buffer.BufferService/ListBufferGroupTimestampFirst',
       request,
       metadata || {},
-      methodDescriptor_BufferService_ListBufferTimestampFirstByIds);
+      methodDescriptor_BufferService_ListBufferGroupTimestampFirst);
 };
 
 
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.buffer.BuffersIdsSelector,
+ *   !proto.buffer.BuffersGroupSelector,
  *   !proto.buffer.TimestampListResponse>}
  */
-const methodDescriptor_BufferService_ListBufferTimestampLastByIds = new grpc.web.MethodDescriptor(
-  '/buffer.BufferService/ListBufferTimestampLastByIds',
+const methodDescriptor_BufferService_ListBufferGroupTimestampLast = new grpc.web.MethodDescriptor(
+  '/buffer.BufferService/ListBufferGroupTimestampLast',
   grpc.web.MethodType.UNARY,
-  proto.buffer.BuffersIdsSelector,
+  proto.buffer.BuffersGroupSelector,
   proto.buffer.TimestampListResponse,
   /**
-   * @param {!proto.buffer.BuffersIdsSelector} request
+   * @param {!proto.buffer.BuffersGroupSelector} request
    * @return {!Uint8Array}
    */
   function(request) {
@@ -2415,7 +2415,7 @@ const methodDescriptor_BufferService_ListBufferTimestampLastByIds = new grpc.web
 
 
 /**
- * @param {!proto.buffer.BuffersIdsSelector} request The
+ * @param {!proto.buffer.BuffersGroupSelector} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
@@ -2424,32 +2424,32 @@ const methodDescriptor_BufferService_ListBufferTimestampLastByIds = new grpc.web
  * @return {!grpc.web.ClientReadableStream<!proto.buffer.TimestampListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.buffer.BufferServiceClient.prototype.listBufferTimestampLastByIds =
+proto.buffer.BufferServiceClient.prototype.listBufferGroupTimestampLast =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/buffer.BufferService/ListBufferTimestampLastByIds',
+      '/buffer.BufferService/ListBufferGroupTimestampLast',
       request,
       metadata || {},
-      methodDescriptor_BufferService_ListBufferTimestampLastByIds,
+      methodDescriptor_BufferService_ListBufferGroupTimestampLast,
       callback);
 };
 
 
 /**
- * @param {!proto.buffer.BuffersIdsSelector} request The
+ * @param {!proto.buffer.BuffersGroupSelector} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.buffer.TimestampListResponse>}
  *     Promise that resolves to the response
  */
-proto.buffer.BufferServicePromiseClient.prototype.listBufferTimestampLastByIds =
+proto.buffer.BufferServicePromiseClient.prototype.listBufferGroupTimestampLast =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/buffer.BufferService/ListBufferTimestampLastByIds',
+      '/buffer.BufferService/ListBufferGroupTimestampLast',
       request,
       metadata || {},
-      methodDescriptor_BufferService_ListBufferTimestampLastByIds);
+      methodDescriptor_BufferService_ListBufferGroupTimestampLast);
 };
 
 
@@ -2517,16 +2517,16 @@ proto.buffer.BufferServicePromiseClient.prototype.countBuffer =
 /**
  * @const
  * @type {!grpc.web.MethodDescriptor<
- *   !proto.buffer.BufferIdsSelector,
+ *   !proto.buffer.BufferGroupSelector,
  *   !proto.buffer.BufferCountResponse>}
  */
-const methodDescriptor_BufferService_CountBufferByIds = new grpc.web.MethodDescriptor(
-  '/buffer.BufferService/CountBufferByIds',
+const methodDescriptor_BufferService_CountBufferGroup = new grpc.web.MethodDescriptor(
+  '/buffer.BufferService/CountBufferGroup',
   grpc.web.MethodType.UNARY,
-  proto.buffer.BufferIdsSelector,
+  proto.buffer.BufferGroupSelector,
   proto.buffer.BufferCountResponse,
   /**
-   * @param {!proto.buffer.BufferIdsSelector} request
+   * @param {!proto.buffer.BufferGroupSelector} request
    * @return {!Uint8Array}
    */
   function(request) {
@@ -2537,7 +2537,7 @@ const methodDescriptor_BufferService_CountBufferByIds = new grpc.web.MethodDescr
 
 
 /**
- * @param {!proto.buffer.BufferIdsSelector} request The
+ * @param {!proto.buffer.BufferGroupSelector} request The
  *     request proto
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
@@ -2546,32 +2546,32 @@ const methodDescriptor_BufferService_CountBufferByIds = new grpc.web.MethodDescr
  * @return {!grpc.web.ClientReadableStream<!proto.buffer.BufferCountResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.buffer.BufferServiceClient.prototype.countBufferByIds =
+proto.buffer.BufferServiceClient.prototype.countBufferGroup =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/buffer.BufferService/CountBufferByIds',
+      '/buffer.BufferService/CountBufferGroup',
       request,
       metadata || {},
-      methodDescriptor_BufferService_CountBufferByIds,
+      methodDescriptor_BufferService_CountBufferGroup,
       callback);
 };
 
 
 /**
- * @param {!proto.buffer.BufferIdsSelector} request The
+ * @param {!proto.buffer.BufferGroupSelector} request The
  *     request proto
  * @param {?Object<string, string>=} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.buffer.BufferCountResponse>}
  *     Promise that resolves to the response
  */
-proto.buffer.BufferServicePromiseClient.prototype.countBufferByIds =
+proto.buffer.BufferServicePromiseClient.prototype.countBufferGroup =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/buffer.BufferService/CountBufferByIds',
+      '/buffer.BufferService/CountBufferGroup',
       request,
       metadata || {},
-      methodDescriptor_BufferService_CountBufferByIds);
+      methodDescriptor_BufferService_CountBufferGroup);
 };
 
 

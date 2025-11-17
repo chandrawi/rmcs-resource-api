@@ -291,7 +291,7 @@ pub mod slice_service_client {
                 .insert(GrpcMethod::new("slice.SliceService", "ListSliceByTime"));
             self.inner.unary(req, path, codec).await
         }
-        pub async fn list_slice_by_range_time(
+        pub async fn list_slice_by_range(
             &mut self,
             request: impl tonic::IntoRequest<super::SliceRange>,
         ) -> std::result::Result<
@@ -308,11 +308,11 @@ pub mod slice_service_client {
                 })?;
             let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
-                "/slice.SliceService/ListSliceByRangeTime",
+                "/slice.SliceService/ListSliceByRange",
             );
             let mut req = request.into_request();
             req.extensions_mut()
-                .insert(GrpcMethod::new("slice.SliceService", "ListSliceByRangeTime"));
+                .insert(GrpcMethod::new("slice.SliceService", "ListSliceByRange"));
             self.inner.unary(req, path, codec).await
         }
         pub async fn list_slice_by_name_time(
@@ -339,7 +339,7 @@ pub mod slice_service_client {
                 .insert(GrpcMethod::new("slice.SliceService", "ListSliceByNameTime"));
             self.inner.unary(req, path, codec).await
         }
-        pub async fn list_slice_by_name_range_time(
+        pub async fn list_slice_by_name_range(
             &mut self,
             request: impl tonic::IntoRequest<super::SliceNameRange>,
         ) -> std::result::Result<
@@ -356,13 +356,11 @@ pub mod slice_service_client {
                 })?;
             let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
-                "/slice.SliceService/ListSliceByNameRangeTime",
+                "/slice.SliceService/ListSliceByNameRange",
             );
             let mut req = request.into_request();
             req.extensions_mut()
-                .insert(
-                    GrpcMethod::new("slice.SliceService", "ListSliceByNameRangeTime"),
-                );
+                .insert(GrpcMethod::new("slice.SliceService", "ListSliceByNameRange"));
             self.inner.unary(req, path, codec).await
         }
         pub async fn list_slice_option(
@@ -509,7 +507,7 @@ pub mod slice_service_client {
                 .insert(GrpcMethod::new("slice.SliceService", "ListSliceSetByTime"));
             self.inner.unary(req, path, codec).await
         }
-        pub async fn list_slice_set_by_range_time(
+        pub async fn list_slice_set_by_range(
             &mut self,
             request: impl tonic::IntoRequest<super::SliceSetRange>,
         ) -> std::result::Result<
@@ -526,13 +524,11 @@ pub mod slice_service_client {
                 })?;
             let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
-                "/slice.SliceService/ListSliceSetByRangeTime",
+                "/slice.SliceService/ListSliceSetByRange",
             );
             let mut req = request.into_request();
             req.extensions_mut()
-                .insert(
-                    GrpcMethod::new("slice.SliceService", "ListSliceSetByRangeTime"),
-                );
+                .insert(GrpcMethod::new("slice.SliceService", "ListSliceSetByRange"));
             self.inner.unary(req, path, codec).await
         }
         pub async fn list_slice_set_by_name_time(
@@ -559,7 +555,7 @@ pub mod slice_service_client {
                 .insert(GrpcMethod::new("slice.SliceService", "ListSliceSetByNameTime"));
             self.inner.unary(req, path, codec).await
         }
-        pub async fn list_slice_set_by_name_range_time(
+        pub async fn list_slice_set_by_name_range(
             &mut self,
             request: impl tonic::IntoRequest<super::SliceNameRange>,
         ) -> std::result::Result<
@@ -576,12 +572,12 @@ pub mod slice_service_client {
                 })?;
             let codec = tonic_prost::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
-                "/slice.SliceService/ListSliceSetByNameRangeTime",
+                "/slice.SliceService/ListSliceSetByNameRange",
             );
             let mut req = request.into_request();
             req.extensions_mut()
                 .insert(
-                    GrpcMethod::new("slice.SliceService", "ListSliceSetByNameRangeTime"),
+                    GrpcMethod::new("slice.SliceService", "ListSliceSetByNameRange"),
                 );
             self.inner.unary(req, path, codec).await
         }
@@ -710,7 +706,7 @@ pub mod slice_service_server {
             tonic::Response<super::SliceListResponse>,
             tonic::Status,
         >;
-        async fn list_slice_by_range_time(
+        async fn list_slice_by_range(
             &self,
             request: tonic::Request<super::SliceRange>,
         ) -> std::result::Result<
@@ -724,7 +720,7 @@ pub mod slice_service_server {
             tonic::Response<super::SliceListResponse>,
             tonic::Status,
         >;
-        async fn list_slice_by_name_range_time(
+        async fn list_slice_by_name_range(
             &self,
             request: tonic::Request<super::SliceNameRange>,
         ) -> std::result::Result<
@@ -773,7 +769,7 @@ pub mod slice_service_server {
             tonic::Response<super::SliceSetListResponse>,
             tonic::Status,
         >;
-        async fn list_slice_set_by_range_time(
+        async fn list_slice_set_by_range(
             &self,
             request: tonic::Request<super::SliceSetRange>,
         ) -> std::result::Result<
@@ -787,7 +783,7 @@ pub mod slice_service_server {
             tonic::Response<super::SliceSetListResponse>,
             tonic::Status,
         >;
-        async fn list_slice_set_by_name_range_time(
+        async fn list_slice_set_by_name_range(
             &self,
             request: tonic::Request<super::SliceNameRange>,
         ) -> std::result::Result<
@@ -986,11 +982,11 @@ pub mod slice_service_server {
                     };
                     Box::pin(fut)
                 }
-                "/slice.SliceService/ListSliceByRangeTime" => {
+                "/slice.SliceService/ListSliceByRange" => {
                     #[allow(non_camel_case_types)]
-                    struct ListSliceByRangeTimeSvc<T: SliceService>(pub Arc<T>);
+                    struct ListSliceByRangeSvc<T: SliceService>(pub Arc<T>);
                     impl<T: SliceService> tonic::server::UnaryService<super::SliceRange>
-                    for ListSliceByRangeTimeSvc<T> {
+                    for ListSliceByRangeSvc<T> {
                         type Response = super::SliceListResponse;
                         type Future = BoxFuture<
                             tonic::Response<Self::Response>,
@@ -1002,10 +998,7 @@ pub mod slice_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                <T as SliceService>::list_slice_by_range_time(
-                                        &inner,
-                                        request,
-                                    )
+                                <T as SliceService>::list_slice_by_range(&inner, request)
                                     .await
                             };
                             Box::pin(fut)
@@ -1017,7 +1010,7 @@ pub mod slice_service_server {
                     let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
-                        let method = ListSliceByRangeTimeSvc(inner);
+                        let method = ListSliceByRangeSvc(inner);
                         let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
@@ -1082,13 +1075,13 @@ pub mod slice_service_server {
                     };
                     Box::pin(fut)
                 }
-                "/slice.SliceService/ListSliceByNameRangeTime" => {
+                "/slice.SliceService/ListSliceByNameRange" => {
                     #[allow(non_camel_case_types)]
-                    struct ListSliceByNameRangeTimeSvc<T: SliceService>(pub Arc<T>);
+                    struct ListSliceByNameRangeSvc<T: SliceService>(pub Arc<T>);
                     impl<
                         T: SliceService,
                     > tonic::server::UnaryService<super::SliceNameRange>
-                    for ListSliceByNameRangeTimeSvc<T> {
+                    for ListSliceByNameRangeSvc<T> {
                         type Response = super::SliceListResponse;
                         type Future = BoxFuture<
                             tonic::Response<Self::Response>,
@@ -1100,7 +1093,7 @@ pub mod slice_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                <T as SliceService>::list_slice_by_name_range_time(
+                                <T as SliceService>::list_slice_by_name_range(
                                         &inner,
                                         request,
                                     )
@@ -1115,7 +1108,7 @@ pub mod slice_service_server {
                     let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
-                        let method = ListSliceByNameRangeTimeSvc(inner);
+                        let method = ListSliceByNameRangeSvc(inner);
                         let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
@@ -1393,13 +1386,13 @@ pub mod slice_service_server {
                     };
                     Box::pin(fut)
                 }
-                "/slice.SliceService/ListSliceSetByRangeTime" => {
+                "/slice.SliceService/ListSliceSetByRange" => {
                     #[allow(non_camel_case_types)]
-                    struct ListSliceSetByRangeTimeSvc<T: SliceService>(pub Arc<T>);
+                    struct ListSliceSetByRangeSvc<T: SliceService>(pub Arc<T>);
                     impl<
                         T: SliceService,
                     > tonic::server::UnaryService<super::SliceSetRange>
-                    for ListSliceSetByRangeTimeSvc<T> {
+                    for ListSliceSetByRangeSvc<T> {
                         type Response = super::SliceSetListResponse;
                         type Future = BoxFuture<
                             tonic::Response<Self::Response>,
@@ -1411,7 +1404,7 @@ pub mod slice_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                <T as SliceService>::list_slice_set_by_range_time(
+                                <T as SliceService>::list_slice_set_by_range(
                                         &inner,
                                         request,
                                     )
@@ -1426,7 +1419,7 @@ pub mod slice_service_server {
                     let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
-                        let method = ListSliceSetByRangeTimeSvc(inner);
+                        let method = ListSliceSetByRangeSvc(inner);
                         let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(
@@ -1491,13 +1484,13 @@ pub mod slice_service_server {
                     };
                     Box::pin(fut)
                 }
-                "/slice.SliceService/ListSliceSetByNameRangeTime" => {
+                "/slice.SliceService/ListSliceSetByNameRange" => {
                     #[allow(non_camel_case_types)]
-                    struct ListSliceSetByNameRangeTimeSvc<T: SliceService>(pub Arc<T>);
+                    struct ListSliceSetByNameRangeSvc<T: SliceService>(pub Arc<T>);
                     impl<
                         T: SliceService,
                     > tonic::server::UnaryService<super::SliceNameRange>
-                    for ListSliceSetByNameRangeTimeSvc<T> {
+                    for ListSliceSetByNameRangeSvc<T> {
                         type Response = super::SliceSetListResponse;
                         type Future = BoxFuture<
                             tonic::Response<Self::Response>,
@@ -1509,7 +1502,7 @@ pub mod slice_service_server {
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                <T as SliceService>::list_slice_set_by_name_range_time(
+                                <T as SliceService>::list_slice_set_by_name_range(
                                         &inner,
                                         request,
                                     )
@@ -1524,7 +1517,7 @@ pub mod slice_service_server {
                     let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
-                        let method = ListSliceSetByNameRangeTimeSvc(inner);
+                        let method = ListSliceSetByNameRangeSvc(inner);
                         let codec = tonic_prost::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(

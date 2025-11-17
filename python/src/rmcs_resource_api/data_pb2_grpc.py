@@ -44,13 +44,13 @@ class DataServiceStub(object):
                 request_serializer=rmcs__resource__api_dot_data__pb2.DataTime.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_data__pb2.DataListResponse.FromString,
                 _registered_method=True)
-        self.ListDataByLastTime = channel.unary_unary(
-                '/data.DataService/ListDataByLastTime',
+        self.ListDataByLatest = channel.unary_unary(
+                '/data.DataService/ListDataByLatest',
                 request_serializer=rmcs__resource__api_dot_data__pb2.DataTime.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_data__pb2.DataListResponse.FromString,
                 _registered_method=True)
-        self.ListDataByRangeTime = channel.unary_unary(
-                '/data.DataService/ListDataByRangeTime',
+        self.ListDataByRange = channel.unary_unary(
+                '/data.DataService/ListDataByRange',
                 request_serializer=rmcs__resource__api_dot_data__pb2.DataRange.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_data__pb2.DataListResponse.FromString,
                 _registered_method=True)
@@ -64,29 +64,29 @@ class DataServiceStub(object):
                 request_serializer=rmcs__resource__api_dot_data__pb2.DataNumber.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_data__pb2.DataListResponse.FromString,
                 _registered_method=True)
-        self.ListDataByIdsTime = channel.unary_unary(
-                '/data.DataService/ListDataByIdsTime',
-                request_serializer=rmcs__resource__api_dot_data__pb2.DataIdsTime.SerializeToString,
+        self.ListDataGroupByTime = channel.unary_unary(
+                '/data.DataService/ListDataGroupByTime',
+                request_serializer=rmcs__resource__api_dot_data__pb2.DataGroupTime.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_data__pb2.DataListResponse.FromString,
                 _registered_method=True)
-        self.ListDataByIdsLastTime = channel.unary_unary(
-                '/data.DataService/ListDataByIdsLastTime',
-                request_serializer=rmcs__resource__api_dot_data__pb2.DataIdsTime.SerializeToString,
+        self.ListDataGroupByLatest = channel.unary_unary(
+                '/data.DataService/ListDataGroupByLatest',
+                request_serializer=rmcs__resource__api_dot_data__pb2.DataGroupTime.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_data__pb2.DataListResponse.FromString,
                 _registered_method=True)
-        self.ListDataByIdsRangeTime = channel.unary_unary(
-                '/data.DataService/ListDataByIdsRangeTime',
-                request_serializer=rmcs__resource__api_dot_data__pb2.DataIdsRange.SerializeToString,
+        self.ListDataGroupByRange = channel.unary_unary(
+                '/data.DataService/ListDataGroupByRange',
+                request_serializer=rmcs__resource__api_dot_data__pb2.DataGroupRange.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_data__pb2.DataListResponse.FromString,
                 _registered_method=True)
-        self.ListDataByIdsNumberBefore = channel.unary_unary(
-                '/data.DataService/ListDataByIdsNumberBefore',
-                request_serializer=rmcs__resource__api_dot_data__pb2.DataIdsNumber.SerializeToString,
+        self.ListDataGroupByNumberBefore = channel.unary_unary(
+                '/data.DataService/ListDataGroupByNumberBefore',
+                request_serializer=rmcs__resource__api_dot_data__pb2.DataGroupNumber.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_data__pb2.DataListResponse.FromString,
                 _registered_method=True)
-        self.ListDataByIdsNumberAfter = channel.unary_unary(
-                '/data.DataService/ListDataByIdsNumberAfter',
-                request_serializer=rmcs__resource__api_dot_data__pb2.DataIdsNumber.SerializeToString,
+        self.ListDataGroupByNumberAfter = channel.unary_unary(
+                '/data.DataService/ListDataGroupByNumberAfter',
+                request_serializer=rmcs__resource__api_dot_data__pb2.DataGroupNumber.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_data__pb2.DataListResponse.FromString,
                 _registered_method=True)
         self.ReadDataSet = channel.unary_unary(
@@ -99,13 +99,13 @@ class DataServiceStub(object):
                 request_serializer=rmcs__resource__api_dot_data__pb2.DataSetTime.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_data__pb2.DataSetListResponse.FromString,
                 _registered_method=True)
-        self.ListDataSetByLastTime = channel.unary_unary(
-                '/data.DataService/ListDataSetByLastTime',
+        self.ListDataSetByLatest = channel.unary_unary(
+                '/data.DataService/ListDataSetByLatest',
                 request_serializer=rmcs__resource__api_dot_data__pb2.DataSetTime.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_data__pb2.DataSetListResponse.FromString,
                 _registered_method=True)
-        self.ListDataSetByRangeTime = channel.unary_unary(
-                '/data.DataService/ListDataSetByRangeTime',
+        self.ListDataSetByRange = channel.unary_unary(
+                '/data.DataService/ListDataSetByRange',
                 request_serializer=rmcs__resource__api_dot_data__pb2.DataSetRange.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_data__pb2.DataSetListResponse.FromString,
                 _registered_method=True)
@@ -129,29 +129,29 @@ class DataServiceStub(object):
                 request_serializer=rmcs__resource__api_dot_data__pb2.DataId.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_data__pb2.TimestampReadResponse.FromString,
                 _registered_method=True)
-        self.ListDataTimestampByLastTime = channel.unary_unary(
-                '/data.DataService/ListDataTimestampByLastTime',
+        self.ListDataTimestampByLatest = channel.unary_unary(
+                '/data.DataService/ListDataTimestampByLatest',
                 request_serializer=rmcs__resource__api_dot_data__pb2.DataTime.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_data__pb2.TimestampListResponse.FromString,
                 _registered_method=True)
-        self.ListDataTimestampByRangeTime = channel.unary_unary(
-                '/data.DataService/ListDataTimestampByRangeTime',
+        self.ListDataTimestampByRange = channel.unary_unary(
+                '/data.DataService/ListDataTimestampByRange',
                 request_serializer=rmcs__resource__api_dot_data__pb2.DataRange.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_data__pb2.TimestampListResponse.FromString,
                 _registered_method=True)
-        self.ReadDataTimestampByIds = channel.unary_unary(
-                '/data.DataService/ReadDataTimestampByIds',
-                request_serializer=rmcs__resource__api_dot_data__pb2.DataIds.SerializeToString,
+        self.ReadDataGroupTimestamp = channel.unary_unary(
+                '/data.DataService/ReadDataGroupTimestamp',
+                request_serializer=rmcs__resource__api_dot_data__pb2.DataGroupId.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_data__pb2.TimestampReadResponse.FromString,
                 _registered_method=True)
-        self.ListDataTimestampByIdsLastTime = channel.unary_unary(
-                '/data.DataService/ListDataTimestampByIdsLastTime',
-                request_serializer=rmcs__resource__api_dot_data__pb2.DataIdsTime.SerializeToString,
+        self.ListDataGroupTimestampByLatest = channel.unary_unary(
+                '/data.DataService/ListDataGroupTimestampByLatest',
+                request_serializer=rmcs__resource__api_dot_data__pb2.DataGroupTime.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_data__pb2.TimestampListResponse.FromString,
                 _registered_method=True)
-        self.ListDataTimestampByIdsRangeTime = channel.unary_unary(
-                '/data.DataService/ListDataTimestampByIdsRangeTime',
-                request_serializer=rmcs__resource__api_dot_data__pb2.DataIdsRange.SerializeToString,
+        self.ListDataGroupTimestampByRange = channel.unary_unary(
+                '/data.DataService/ListDataGroupTimestampByRange',
+                request_serializer=rmcs__resource__api_dot_data__pb2.DataGroupRange.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_data__pb2.TimestampListResponse.FromString,
                 _registered_method=True)
         self.CountData = channel.unary_unary(
@@ -159,29 +159,29 @@ class DataServiceStub(object):
                 request_serializer=rmcs__resource__api_dot_data__pb2.DataTime.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_data__pb2.DataCountResponse.FromString,
                 _registered_method=True)
-        self.CountDataByLastTime = channel.unary_unary(
-                '/data.DataService/CountDataByLastTime',
+        self.CountDataByLatest = channel.unary_unary(
+                '/data.DataService/CountDataByLatest',
                 request_serializer=rmcs__resource__api_dot_data__pb2.DataTime.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_data__pb2.DataCountResponse.FromString,
                 _registered_method=True)
-        self.CountDataByRangeTime = channel.unary_unary(
-                '/data.DataService/CountDataByRangeTime',
+        self.CountDataByRange = channel.unary_unary(
+                '/data.DataService/CountDataByRange',
                 request_serializer=rmcs__resource__api_dot_data__pb2.DataRange.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_data__pb2.DataCountResponse.FromString,
                 _registered_method=True)
-        self.CountDataByIds = channel.unary_unary(
-                '/data.DataService/CountDataByIds',
-                request_serializer=rmcs__resource__api_dot_data__pb2.DataIdsTime.SerializeToString,
+        self.CountDataGroup = channel.unary_unary(
+                '/data.DataService/CountDataGroup',
+                request_serializer=rmcs__resource__api_dot_data__pb2.DataGroupTime.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_data__pb2.DataCountResponse.FromString,
                 _registered_method=True)
-        self.CountDataByIdsLastTime = channel.unary_unary(
-                '/data.DataService/CountDataByIdsLastTime',
-                request_serializer=rmcs__resource__api_dot_data__pb2.DataIdsTime.SerializeToString,
+        self.CountDataGroupByLatest = channel.unary_unary(
+                '/data.DataService/CountDataGroupByLatest',
+                request_serializer=rmcs__resource__api_dot_data__pb2.DataGroupTime.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_data__pb2.DataCountResponse.FromString,
                 _registered_method=True)
-        self.CountDataByIdsRangeTime = channel.unary_unary(
-                '/data.DataService/CountDataByIdsRangeTime',
-                request_serializer=rmcs__resource__api_dot_data__pb2.DataIdsRange.SerializeToString,
+        self.CountDataGroupByRange = channel.unary_unary(
+                '/data.DataService/CountDataGroupByRange',
+                request_serializer=rmcs__resource__api_dot_data__pb2.DataGroupRange.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_data__pb2.DataCountResponse.FromString,
                 _registered_method=True)
 
@@ -201,13 +201,13 @@ class DataServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListDataByLastTime(self, request, context):
+    def ListDataByLatest(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListDataByRangeTime(self, request, context):
+    def ListDataByRange(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -225,31 +225,31 @@ class DataServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListDataByIdsTime(self, request, context):
+    def ListDataGroupByTime(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListDataByIdsLastTime(self, request, context):
+    def ListDataGroupByLatest(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListDataByIdsRangeTime(self, request, context):
+    def ListDataGroupByRange(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListDataByIdsNumberBefore(self, request, context):
+    def ListDataGroupByNumberBefore(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListDataByIdsNumberAfter(self, request, context):
+    def ListDataGroupByNumberAfter(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -267,13 +267,13 @@ class DataServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListDataSetByLastTime(self, request, context):
+    def ListDataSetByLatest(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListDataSetByRangeTime(self, request, context):
+    def ListDataSetByRange(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -303,31 +303,31 @@ class DataServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListDataTimestampByLastTime(self, request, context):
+    def ListDataTimestampByLatest(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListDataTimestampByRangeTime(self, request, context):
+    def ListDataTimestampByRange(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ReadDataTimestampByIds(self, request, context):
+    def ReadDataGroupTimestamp(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListDataTimestampByIdsLastTime(self, request, context):
+    def ListDataGroupTimestampByLatest(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListDataTimestampByIdsRangeTime(self, request, context):
+    def ListDataGroupTimestampByRange(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -339,31 +339,31 @@ class DataServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def CountDataByLastTime(self, request, context):
+    def CountDataByLatest(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def CountDataByRangeTime(self, request, context):
+    def CountDataByRange(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def CountDataByIds(self, request, context):
+    def CountDataGroup(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def CountDataByIdsLastTime(self, request, context):
+    def CountDataGroupByLatest(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def CountDataByIdsRangeTime(self, request, context):
+    def CountDataGroupByRange(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -382,13 +382,13 @@ def add_DataServiceServicer_to_server(servicer, server):
                     request_deserializer=rmcs__resource__api_dot_data__pb2.DataTime.FromString,
                     response_serializer=rmcs__resource__api_dot_data__pb2.DataListResponse.SerializeToString,
             ),
-            'ListDataByLastTime': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListDataByLastTime,
+            'ListDataByLatest': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListDataByLatest,
                     request_deserializer=rmcs__resource__api_dot_data__pb2.DataTime.FromString,
                     response_serializer=rmcs__resource__api_dot_data__pb2.DataListResponse.SerializeToString,
             ),
-            'ListDataByRangeTime': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListDataByRangeTime,
+            'ListDataByRange': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListDataByRange,
                     request_deserializer=rmcs__resource__api_dot_data__pb2.DataRange.FromString,
                     response_serializer=rmcs__resource__api_dot_data__pb2.DataListResponse.SerializeToString,
             ),
@@ -402,29 +402,29 @@ def add_DataServiceServicer_to_server(servicer, server):
                     request_deserializer=rmcs__resource__api_dot_data__pb2.DataNumber.FromString,
                     response_serializer=rmcs__resource__api_dot_data__pb2.DataListResponse.SerializeToString,
             ),
-            'ListDataByIdsTime': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListDataByIdsTime,
-                    request_deserializer=rmcs__resource__api_dot_data__pb2.DataIdsTime.FromString,
+            'ListDataGroupByTime': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListDataGroupByTime,
+                    request_deserializer=rmcs__resource__api_dot_data__pb2.DataGroupTime.FromString,
                     response_serializer=rmcs__resource__api_dot_data__pb2.DataListResponse.SerializeToString,
             ),
-            'ListDataByIdsLastTime': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListDataByIdsLastTime,
-                    request_deserializer=rmcs__resource__api_dot_data__pb2.DataIdsTime.FromString,
+            'ListDataGroupByLatest': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListDataGroupByLatest,
+                    request_deserializer=rmcs__resource__api_dot_data__pb2.DataGroupTime.FromString,
                     response_serializer=rmcs__resource__api_dot_data__pb2.DataListResponse.SerializeToString,
             ),
-            'ListDataByIdsRangeTime': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListDataByIdsRangeTime,
-                    request_deserializer=rmcs__resource__api_dot_data__pb2.DataIdsRange.FromString,
+            'ListDataGroupByRange': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListDataGroupByRange,
+                    request_deserializer=rmcs__resource__api_dot_data__pb2.DataGroupRange.FromString,
                     response_serializer=rmcs__resource__api_dot_data__pb2.DataListResponse.SerializeToString,
             ),
-            'ListDataByIdsNumberBefore': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListDataByIdsNumberBefore,
-                    request_deserializer=rmcs__resource__api_dot_data__pb2.DataIdsNumber.FromString,
+            'ListDataGroupByNumberBefore': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListDataGroupByNumberBefore,
+                    request_deserializer=rmcs__resource__api_dot_data__pb2.DataGroupNumber.FromString,
                     response_serializer=rmcs__resource__api_dot_data__pb2.DataListResponse.SerializeToString,
             ),
-            'ListDataByIdsNumberAfter': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListDataByIdsNumberAfter,
-                    request_deserializer=rmcs__resource__api_dot_data__pb2.DataIdsNumber.FromString,
+            'ListDataGroupByNumberAfter': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListDataGroupByNumberAfter,
+                    request_deserializer=rmcs__resource__api_dot_data__pb2.DataGroupNumber.FromString,
                     response_serializer=rmcs__resource__api_dot_data__pb2.DataListResponse.SerializeToString,
             ),
             'ReadDataSet': grpc.unary_unary_rpc_method_handler(
@@ -437,13 +437,13 @@ def add_DataServiceServicer_to_server(servicer, server):
                     request_deserializer=rmcs__resource__api_dot_data__pb2.DataSetTime.FromString,
                     response_serializer=rmcs__resource__api_dot_data__pb2.DataSetListResponse.SerializeToString,
             ),
-            'ListDataSetByLastTime': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListDataSetByLastTime,
+            'ListDataSetByLatest': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListDataSetByLatest,
                     request_deserializer=rmcs__resource__api_dot_data__pb2.DataSetTime.FromString,
                     response_serializer=rmcs__resource__api_dot_data__pb2.DataSetListResponse.SerializeToString,
             ),
-            'ListDataSetByRangeTime': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListDataSetByRangeTime,
+            'ListDataSetByRange': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListDataSetByRange,
                     request_deserializer=rmcs__resource__api_dot_data__pb2.DataSetRange.FromString,
                     response_serializer=rmcs__resource__api_dot_data__pb2.DataSetListResponse.SerializeToString,
             ),
@@ -467,29 +467,29 @@ def add_DataServiceServicer_to_server(servicer, server):
                     request_deserializer=rmcs__resource__api_dot_data__pb2.DataId.FromString,
                     response_serializer=rmcs__resource__api_dot_data__pb2.TimestampReadResponse.SerializeToString,
             ),
-            'ListDataTimestampByLastTime': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListDataTimestampByLastTime,
+            'ListDataTimestampByLatest': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListDataTimestampByLatest,
                     request_deserializer=rmcs__resource__api_dot_data__pb2.DataTime.FromString,
                     response_serializer=rmcs__resource__api_dot_data__pb2.TimestampListResponse.SerializeToString,
             ),
-            'ListDataTimestampByRangeTime': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListDataTimestampByRangeTime,
+            'ListDataTimestampByRange': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListDataTimestampByRange,
                     request_deserializer=rmcs__resource__api_dot_data__pb2.DataRange.FromString,
                     response_serializer=rmcs__resource__api_dot_data__pb2.TimestampListResponse.SerializeToString,
             ),
-            'ReadDataTimestampByIds': grpc.unary_unary_rpc_method_handler(
-                    servicer.ReadDataTimestampByIds,
-                    request_deserializer=rmcs__resource__api_dot_data__pb2.DataIds.FromString,
+            'ReadDataGroupTimestamp': grpc.unary_unary_rpc_method_handler(
+                    servicer.ReadDataGroupTimestamp,
+                    request_deserializer=rmcs__resource__api_dot_data__pb2.DataGroupId.FromString,
                     response_serializer=rmcs__resource__api_dot_data__pb2.TimestampReadResponse.SerializeToString,
             ),
-            'ListDataTimestampByIdsLastTime': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListDataTimestampByIdsLastTime,
-                    request_deserializer=rmcs__resource__api_dot_data__pb2.DataIdsTime.FromString,
+            'ListDataGroupTimestampByLatest': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListDataGroupTimestampByLatest,
+                    request_deserializer=rmcs__resource__api_dot_data__pb2.DataGroupTime.FromString,
                     response_serializer=rmcs__resource__api_dot_data__pb2.TimestampListResponse.SerializeToString,
             ),
-            'ListDataTimestampByIdsRangeTime': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListDataTimestampByIdsRangeTime,
-                    request_deserializer=rmcs__resource__api_dot_data__pb2.DataIdsRange.FromString,
+            'ListDataGroupTimestampByRange': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListDataGroupTimestampByRange,
+                    request_deserializer=rmcs__resource__api_dot_data__pb2.DataGroupRange.FromString,
                     response_serializer=rmcs__resource__api_dot_data__pb2.TimestampListResponse.SerializeToString,
             ),
             'CountData': grpc.unary_unary_rpc_method_handler(
@@ -497,29 +497,29 @@ def add_DataServiceServicer_to_server(servicer, server):
                     request_deserializer=rmcs__resource__api_dot_data__pb2.DataTime.FromString,
                     response_serializer=rmcs__resource__api_dot_data__pb2.DataCountResponse.SerializeToString,
             ),
-            'CountDataByLastTime': grpc.unary_unary_rpc_method_handler(
-                    servicer.CountDataByLastTime,
+            'CountDataByLatest': grpc.unary_unary_rpc_method_handler(
+                    servicer.CountDataByLatest,
                     request_deserializer=rmcs__resource__api_dot_data__pb2.DataTime.FromString,
                     response_serializer=rmcs__resource__api_dot_data__pb2.DataCountResponse.SerializeToString,
             ),
-            'CountDataByRangeTime': grpc.unary_unary_rpc_method_handler(
-                    servicer.CountDataByRangeTime,
+            'CountDataByRange': grpc.unary_unary_rpc_method_handler(
+                    servicer.CountDataByRange,
                     request_deserializer=rmcs__resource__api_dot_data__pb2.DataRange.FromString,
                     response_serializer=rmcs__resource__api_dot_data__pb2.DataCountResponse.SerializeToString,
             ),
-            'CountDataByIds': grpc.unary_unary_rpc_method_handler(
-                    servicer.CountDataByIds,
-                    request_deserializer=rmcs__resource__api_dot_data__pb2.DataIdsTime.FromString,
+            'CountDataGroup': grpc.unary_unary_rpc_method_handler(
+                    servicer.CountDataGroup,
+                    request_deserializer=rmcs__resource__api_dot_data__pb2.DataGroupTime.FromString,
                     response_serializer=rmcs__resource__api_dot_data__pb2.DataCountResponse.SerializeToString,
             ),
-            'CountDataByIdsLastTime': grpc.unary_unary_rpc_method_handler(
-                    servicer.CountDataByIdsLastTime,
-                    request_deserializer=rmcs__resource__api_dot_data__pb2.DataIdsTime.FromString,
+            'CountDataGroupByLatest': grpc.unary_unary_rpc_method_handler(
+                    servicer.CountDataGroupByLatest,
+                    request_deserializer=rmcs__resource__api_dot_data__pb2.DataGroupTime.FromString,
                     response_serializer=rmcs__resource__api_dot_data__pb2.DataCountResponse.SerializeToString,
             ),
-            'CountDataByIdsRangeTime': grpc.unary_unary_rpc_method_handler(
-                    servicer.CountDataByIdsRangeTime,
-                    request_deserializer=rmcs__resource__api_dot_data__pb2.DataIdsRange.FromString,
+            'CountDataGroupByRange': grpc.unary_unary_rpc_method_handler(
+                    servicer.CountDataGroupByRange,
+                    request_deserializer=rmcs__resource__api_dot_data__pb2.DataGroupRange.FromString,
                     response_serializer=rmcs__resource__api_dot_data__pb2.DataCountResponse.SerializeToString,
             ),
     }
@@ -588,7 +588,7 @@ class DataService(object):
             _registered_method=True)
 
     @staticmethod
-    def ListDataByLastTime(request,
+    def ListDataByLatest(request,
             target,
             options=(),
             channel_credentials=None,
@@ -601,7 +601,7 @@ class DataService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/data.DataService/ListDataByLastTime',
+            '/data.DataService/ListDataByLatest',
             rmcs__resource__api_dot_data__pb2.DataTime.SerializeToString,
             rmcs__resource__api_dot_data__pb2.DataListResponse.FromString,
             options,
@@ -615,7 +615,7 @@ class DataService(object):
             _registered_method=True)
 
     @staticmethod
-    def ListDataByRangeTime(request,
+    def ListDataByRange(request,
             target,
             options=(),
             channel_credentials=None,
@@ -628,7 +628,7 @@ class DataService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/data.DataService/ListDataByRangeTime',
+            '/data.DataService/ListDataByRange',
             rmcs__resource__api_dot_data__pb2.DataRange.SerializeToString,
             rmcs__resource__api_dot_data__pb2.DataListResponse.FromString,
             options,
@@ -696,7 +696,7 @@ class DataService(object):
             _registered_method=True)
 
     @staticmethod
-    def ListDataByIdsTime(request,
+    def ListDataGroupByTime(request,
             target,
             options=(),
             channel_credentials=None,
@@ -709,8 +709,8 @@ class DataService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/data.DataService/ListDataByIdsTime',
-            rmcs__resource__api_dot_data__pb2.DataIdsTime.SerializeToString,
+            '/data.DataService/ListDataGroupByTime',
+            rmcs__resource__api_dot_data__pb2.DataGroupTime.SerializeToString,
             rmcs__resource__api_dot_data__pb2.DataListResponse.FromString,
             options,
             channel_credentials,
@@ -723,7 +723,7 @@ class DataService(object):
             _registered_method=True)
 
     @staticmethod
-    def ListDataByIdsLastTime(request,
+    def ListDataGroupByLatest(request,
             target,
             options=(),
             channel_credentials=None,
@@ -736,8 +736,8 @@ class DataService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/data.DataService/ListDataByIdsLastTime',
-            rmcs__resource__api_dot_data__pb2.DataIdsTime.SerializeToString,
+            '/data.DataService/ListDataGroupByLatest',
+            rmcs__resource__api_dot_data__pb2.DataGroupTime.SerializeToString,
             rmcs__resource__api_dot_data__pb2.DataListResponse.FromString,
             options,
             channel_credentials,
@@ -750,7 +750,7 @@ class DataService(object):
             _registered_method=True)
 
     @staticmethod
-    def ListDataByIdsRangeTime(request,
+    def ListDataGroupByRange(request,
             target,
             options=(),
             channel_credentials=None,
@@ -763,8 +763,8 @@ class DataService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/data.DataService/ListDataByIdsRangeTime',
-            rmcs__resource__api_dot_data__pb2.DataIdsRange.SerializeToString,
+            '/data.DataService/ListDataGroupByRange',
+            rmcs__resource__api_dot_data__pb2.DataGroupRange.SerializeToString,
             rmcs__resource__api_dot_data__pb2.DataListResponse.FromString,
             options,
             channel_credentials,
@@ -777,7 +777,7 @@ class DataService(object):
             _registered_method=True)
 
     @staticmethod
-    def ListDataByIdsNumberBefore(request,
+    def ListDataGroupByNumberBefore(request,
             target,
             options=(),
             channel_credentials=None,
@@ -790,8 +790,8 @@ class DataService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/data.DataService/ListDataByIdsNumberBefore',
-            rmcs__resource__api_dot_data__pb2.DataIdsNumber.SerializeToString,
+            '/data.DataService/ListDataGroupByNumberBefore',
+            rmcs__resource__api_dot_data__pb2.DataGroupNumber.SerializeToString,
             rmcs__resource__api_dot_data__pb2.DataListResponse.FromString,
             options,
             channel_credentials,
@@ -804,7 +804,7 @@ class DataService(object):
             _registered_method=True)
 
     @staticmethod
-    def ListDataByIdsNumberAfter(request,
+    def ListDataGroupByNumberAfter(request,
             target,
             options=(),
             channel_credentials=None,
@@ -817,8 +817,8 @@ class DataService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/data.DataService/ListDataByIdsNumberAfter',
-            rmcs__resource__api_dot_data__pb2.DataIdsNumber.SerializeToString,
+            '/data.DataService/ListDataGroupByNumberAfter',
+            rmcs__resource__api_dot_data__pb2.DataGroupNumber.SerializeToString,
             rmcs__resource__api_dot_data__pb2.DataListResponse.FromString,
             options,
             channel_credentials,
@@ -885,7 +885,7 @@ class DataService(object):
             _registered_method=True)
 
     @staticmethod
-    def ListDataSetByLastTime(request,
+    def ListDataSetByLatest(request,
             target,
             options=(),
             channel_credentials=None,
@@ -898,7 +898,7 @@ class DataService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/data.DataService/ListDataSetByLastTime',
+            '/data.DataService/ListDataSetByLatest',
             rmcs__resource__api_dot_data__pb2.DataSetTime.SerializeToString,
             rmcs__resource__api_dot_data__pb2.DataSetListResponse.FromString,
             options,
@@ -912,7 +912,7 @@ class DataService(object):
             _registered_method=True)
 
     @staticmethod
-    def ListDataSetByRangeTime(request,
+    def ListDataSetByRange(request,
             target,
             options=(),
             channel_credentials=None,
@@ -925,7 +925,7 @@ class DataService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/data.DataService/ListDataSetByRangeTime',
+            '/data.DataService/ListDataSetByRange',
             rmcs__resource__api_dot_data__pb2.DataSetRange.SerializeToString,
             rmcs__resource__api_dot_data__pb2.DataSetListResponse.FromString,
             options,
@@ -1047,7 +1047,7 @@ class DataService(object):
             _registered_method=True)
 
     @staticmethod
-    def ListDataTimestampByLastTime(request,
+    def ListDataTimestampByLatest(request,
             target,
             options=(),
             channel_credentials=None,
@@ -1060,7 +1060,7 @@ class DataService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/data.DataService/ListDataTimestampByLastTime',
+            '/data.DataService/ListDataTimestampByLatest',
             rmcs__resource__api_dot_data__pb2.DataTime.SerializeToString,
             rmcs__resource__api_dot_data__pb2.TimestampListResponse.FromString,
             options,
@@ -1074,7 +1074,7 @@ class DataService(object):
             _registered_method=True)
 
     @staticmethod
-    def ListDataTimestampByRangeTime(request,
+    def ListDataTimestampByRange(request,
             target,
             options=(),
             channel_credentials=None,
@@ -1087,7 +1087,7 @@ class DataService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/data.DataService/ListDataTimestampByRangeTime',
+            '/data.DataService/ListDataTimestampByRange',
             rmcs__resource__api_dot_data__pb2.DataRange.SerializeToString,
             rmcs__resource__api_dot_data__pb2.TimestampListResponse.FromString,
             options,
@@ -1101,7 +1101,7 @@ class DataService(object):
             _registered_method=True)
 
     @staticmethod
-    def ReadDataTimestampByIds(request,
+    def ReadDataGroupTimestamp(request,
             target,
             options=(),
             channel_credentials=None,
@@ -1114,8 +1114,8 @@ class DataService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/data.DataService/ReadDataTimestampByIds',
-            rmcs__resource__api_dot_data__pb2.DataIds.SerializeToString,
+            '/data.DataService/ReadDataGroupTimestamp',
+            rmcs__resource__api_dot_data__pb2.DataGroupId.SerializeToString,
             rmcs__resource__api_dot_data__pb2.TimestampReadResponse.FromString,
             options,
             channel_credentials,
@@ -1128,7 +1128,7 @@ class DataService(object):
             _registered_method=True)
 
     @staticmethod
-    def ListDataTimestampByIdsLastTime(request,
+    def ListDataGroupTimestampByLatest(request,
             target,
             options=(),
             channel_credentials=None,
@@ -1141,8 +1141,8 @@ class DataService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/data.DataService/ListDataTimestampByIdsLastTime',
-            rmcs__resource__api_dot_data__pb2.DataIdsTime.SerializeToString,
+            '/data.DataService/ListDataGroupTimestampByLatest',
+            rmcs__resource__api_dot_data__pb2.DataGroupTime.SerializeToString,
             rmcs__resource__api_dot_data__pb2.TimestampListResponse.FromString,
             options,
             channel_credentials,
@@ -1155,7 +1155,7 @@ class DataService(object):
             _registered_method=True)
 
     @staticmethod
-    def ListDataTimestampByIdsRangeTime(request,
+    def ListDataGroupTimestampByRange(request,
             target,
             options=(),
             channel_credentials=None,
@@ -1168,8 +1168,8 @@ class DataService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/data.DataService/ListDataTimestampByIdsRangeTime',
-            rmcs__resource__api_dot_data__pb2.DataIdsRange.SerializeToString,
+            '/data.DataService/ListDataGroupTimestampByRange',
+            rmcs__resource__api_dot_data__pb2.DataGroupRange.SerializeToString,
             rmcs__resource__api_dot_data__pb2.TimestampListResponse.FromString,
             options,
             channel_credentials,
@@ -1209,7 +1209,7 @@ class DataService(object):
             _registered_method=True)
 
     @staticmethod
-    def CountDataByLastTime(request,
+    def CountDataByLatest(request,
             target,
             options=(),
             channel_credentials=None,
@@ -1222,7 +1222,7 @@ class DataService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/data.DataService/CountDataByLastTime',
+            '/data.DataService/CountDataByLatest',
             rmcs__resource__api_dot_data__pb2.DataTime.SerializeToString,
             rmcs__resource__api_dot_data__pb2.DataCountResponse.FromString,
             options,
@@ -1236,7 +1236,7 @@ class DataService(object):
             _registered_method=True)
 
     @staticmethod
-    def CountDataByRangeTime(request,
+    def CountDataByRange(request,
             target,
             options=(),
             channel_credentials=None,
@@ -1249,7 +1249,7 @@ class DataService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/data.DataService/CountDataByRangeTime',
+            '/data.DataService/CountDataByRange',
             rmcs__resource__api_dot_data__pb2.DataRange.SerializeToString,
             rmcs__resource__api_dot_data__pb2.DataCountResponse.FromString,
             options,
@@ -1263,7 +1263,7 @@ class DataService(object):
             _registered_method=True)
 
     @staticmethod
-    def CountDataByIds(request,
+    def CountDataGroup(request,
             target,
             options=(),
             channel_credentials=None,
@@ -1276,8 +1276,8 @@ class DataService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/data.DataService/CountDataByIds',
-            rmcs__resource__api_dot_data__pb2.DataIdsTime.SerializeToString,
+            '/data.DataService/CountDataGroup',
+            rmcs__resource__api_dot_data__pb2.DataGroupTime.SerializeToString,
             rmcs__resource__api_dot_data__pb2.DataCountResponse.FromString,
             options,
             channel_credentials,
@@ -1290,7 +1290,7 @@ class DataService(object):
             _registered_method=True)
 
     @staticmethod
-    def CountDataByIdsLastTime(request,
+    def CountDataGroupByLatest(request,
             target,
             options=(),
             channel_credentials=None,
@@ -1303,8 +1303,8 @@ class DataService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/data.DataService/CountDataByIdsLastTime',
-            rmcs__resource__api_dot_data__pb2.DataIdsTime.SerializeToString,
+            '/data.DataService/CountDataGroupByLatest',
+            rmcs__resource__api_dot_data__pb2.DataGroupTime.SerializeToString,
             rmcs__resource__api_dot_data__pb2.DataCountResponse.FromString,
             options,
             channel_credentials,
@@ -1317,7 +1317,7 @@ class DataService(object):
             _registered_method=True)
 
     @staticmethod
-    def CountDataByIdsRangeTime(request,
+    def CountDataGroupByRange(request,
             target,
             options=(),
             channel_credentials=None,
@@ -1330,8 +1330,8 @@ class DataService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/data.DataService/CountDataByIdsRangeTime',
-            rmcs__resource__api_dot_data__pb2.DataIdsRange.SerializeToString,
+            '/data.DataService/CountDataGroupByRange',
+            rmcs__resource__api_dot_data__pb2.DataGroupRange.SerializeToString,
             rmcs__resource__api_dot_data__pb2.DataCountResponse.FromString,
             options,
             channel_credentials,

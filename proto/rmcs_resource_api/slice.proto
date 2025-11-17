@@ -6,11 +6,11 @@ service SliceService {
 
     rpc ListSliceByTime(SliceTime) returns (SliceListResponse);
 
-    rpc ListSliceByRangeTime(SliceRange) returns (SliceListResponse);
+    rpc ListSliceByRange(SliceRange) returns (SliceListResponse);
 
     rpc ListSliceByNameTime(SliceNameTime) returns (SliceListResponse);
 
-    rpc ListSliceByNameRangeTime(SliceNameRange) returns (SliceListResponse);
+    rpc ListSliceByNameRange(SliceNameRange) returns (SliceListResponse);
 
     rpc ListSliceOption(SliceOption) returns (SliceListResponse);
 
@@ -24,11 +24,11 @@ service SliceService {
 
     rpc ListSliceSetByTime(SliceSetTime) returns (SliceSetListResponse);
 
-    rpc ListSliceSetByRangeTime(SliceSetRange) returns (SliceSetListResponse);
+    rpc ListSliceSetByRange(SliceSetRange) returns (SliceSetListResponse);
 
     rpc ListSliceSetByNameTime(SliceNameTime) returns (SliceSetListResponse);
 
-    rpc ListSliceSetByNameRangeTime(SliceNameRange) returns (SliceSetListResponse);
+    rpc ListSliceSetByNameRange(SliceNameRange) returns (SliceSetListResponse);
 
     rpc ListSliceSetOption(SliceSetOption) returns (SliceSetListResponse);
 

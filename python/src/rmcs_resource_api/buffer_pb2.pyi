@@ -122,7 +122,7 @@ class BufferSetSchema(_message.Message):
     tag: int
     def __init__(self, ids: _Optional[_Iterable[int]] = ..., set_id: _Optional[bytes] = ..., timestamp: _Optional[int] = ..., data_bytes: _Optional[bytes] = ..., data_type: _Optional[_Iterable[int]] = ..., tag: _Optional[int] = ...) -> None: ...
 
-class BufferIdsTime(_message.Message):
+class BufferGroupTime(_message.Message):
     __slots__ = ("device_ids", "model_ids", "timestamp", "tag")
     DEVICE_IDS_FIELD_NUMBER: _ClassVar[int]
     MODEL_IDS_FIELD_NUMBER: _ClassVar[int]
@@ -134,7 +134,7 @@ class BufferIdsTime(_message.Message):
     tag: int
     def __init__(self, device_ids: _Optional[_Iterable[bytes]] = ..., model_ids: _Optional[_Iterable[bytes]] = ..., timestamp: _Optional[int] = ..., tag: _Optional[int] = ...) -> None: ...
 
-class BufferIdsRange(_message.Message):
+class BufferGroupRange(_message.Message):
     __slots__ = ("device_ids", "model_ids", "begin", "end", "tag")
     DEVICE_IDS_FIELD_NUMBER: _ClassVar[int]
     MODEL_IDS_FIELD_NUMBER: _ClassVar[int]
@@ -148,7 +148,7 @@ class BufferIdsRange(_message.Message):
     tag: int
     def __init__(self, device_ids: _Optional[_Iterable[bytes]] = ..., model_ids: _Optional[_Iterable[bytes]] = ..., begin: _Optional[int] = ..., end: _Optional[int] = ..., tag: _Optional[int] = ...) -> None: ...
 
-class BufferIdsNumber(_message.Message):
+class BufferGroupNumber(_message.Message):
     __slots__ = ("device_ids", "model_ids", "timestamp", "number", "tag")
     DEVICE_IDS_FIELD_NUMBER: _ClassVar[int]
     MODEL_IDS_FIELD_NUMBER: _ClassVar[int]
@@ -162,7 +162,7 @@ class BufferIdsNumber(_message.Message):
     tag: int
     def __init__(self, device_ids: _Optional[_Iterable[bytes]] = ..., model_ids: _Optional[_Iterable[bytes]] = ..., timestamp: _Optional[int] = ..., number: _Optional[int] = ..., tag: _Optional[int] = ...) -> None: ...
 
-class BufferIdsSelector(_message.Message):
+class BufferGroupSelector(_message.Message):
     __slots__ = ("device_ids", "model_ids", "tag")
     DEVICE_IDS_FIELD_NUMBER: _ClassVar[int]
     MODEL_IDS_FIELD_NUMBER: _ClassVar[int]
@@ -172,7 +172,7 @@ class BufferIdsSelector(_message.Message):
     tag: int
     def __init__(self, device_ids: _Optional[_Iterable[bytes]] = ..., model_ids: _Optional[_Iterable[bytes]] = ..., tag: _Optional[int] = ...) -> None: ...
 
-class BuffersIdsSelector(_message.Message):
+class BuffersGroupSelector(_message.Message):
     __slots__ = ("number", "offset", "device_ids", "model_ids", "tag")
     NUMBER_FIELD_NUMBER: _ClassVar[int]
     OFFSET_FIELD_NUMBER: _ClassVar[int]

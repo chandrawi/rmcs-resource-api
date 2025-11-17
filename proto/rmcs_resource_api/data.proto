@@ -6,31 +6,31 @@ service DataService {
 
     rpc ListDataByTime(DataTime) returns (DataListResponse);
 
-    rpc ListDataByLastTime(DataTime) returns (DataListResponse);
+    rpc ListDataByLatest(DataTime) returns (DataListResponse);
 
-    rpc ListDataByRangeTime(DataRange) returns (DataListResponse);
+    rpc ListDataByRange(DataRange) returns (DataListResponse);
 
     rpc ListDataByNumberBefore(DataNumber) returns (DataListResponse);
 
     rpc ListDataByNumberAfter(DataNumber) returns (DataListResponse);
 
-    rpc ListDataByIdsTime(DataIdsTime) returns (DataListResponse);
+    rpc ListDataGroupByTime(DataGroupTime) returns (DataListResponse);
 
-    rpc ListDataByIdsLastTime(DataIdsTime) returns (DataListResponse);
+    rpc ListDataGroupByLatest(DataGroupTime) returns (DataListResponse);
 
-    rpc ListDataByIdsRangeTime(DataIdsRange) returns (DataListResponse);
+    rpc ListDataGroupByRange(DataGroupRange) returns (DataListResponse);
 
-    rpc ListDataByIdsNumberBefore(DataIdsNumber) returns (DataListResponse);
+    rpc ListDataGroupByNumberBefore(DataGroupNumber) returns (DataListResponse);
 
-    rpc ListDataByIdsNumberAfter(DataIdsNumber) returns (DataListResponse);
+    rpc ListDataGroupByNumberAfter(DataGroupNumber) returns (DataListResponse);
 
     rpc ReadDataSet(DataSetId) returns (DataSetReadResponse);
 
     rpc ListDataSetByTime(DataSetTime) returns (DataSetListResponse);
 
-    rpc ListDataSetByLastTime(DataSetTime) returns (DataSetListResponse);
+    rpc ListDataSetByLatest(DataSetTime) returns (DataSetListResponse);
 
-    rpc ListDataSetByRangeTime(DataSetRange) returns (DataSetListResponse);
+    rpc ListDataSetByRange(DataSetRange) returns (DataSetListResponse);
 
     rpc CreateData(DataSchema) returns (DataChangeResponse);
 
@@ -40,27 +40,27 @@ service DataService {
 
     rpc ReadDataTimestamp(DataId) returns (TimestampReadResponse);
 
-    rpc ListDataTimestampByLastTime(DataTime) returns (TimestampListResponse);
+    rpc ListDataTimestampByLatest(DataTime) returns (TimestampListResponse);
 
-    rpc ListDataTimestampByRangeTime(DataRange) returns (TimestampListResponse);
+    rpc ListDataTimestampByRange(DataRange) returns (TimestampListResponse);
 
-    rpc ReadDataTimestampByIds(DataIds) returns (TimestampReadResponse);
+    rpc ReadDataGroupTimestamp(DataGroupId) returns (TimestampReadResponse);
 
-    rpc ListDataTimestampByIdsLastTime(DataIdsTime) returns (TimestampListResponse);
+    rpc ListDataGroupTimestampByLatest(DataGroupTime) returns (TimestampListResponse);
 
-    rpc ListDataTimestampByIdsRangeTime(DataIdsRange) returns (TimestampListResponse);
+    rpc ListDataGroupTimestampByRange(DataGroupRange) returns (TimestampListResponse);
 
     rpc CountData(DataTime) returns (DataCountResponse);
 
-    rpc CountDataByLastTime(DataTime) returns (DataCountResponse);
+    rpc CountDataByLatest(DataTime) returns (DataCountResponse);
 
-    rpc CountDataByRangeTime(DataRange) returns (DataCountResponse);
+    rpc CountDataByRange(DataRange) returns (DataCountResponse);
 
-    rpc CountDataByIds(DataIdsTime) returns (DataCountResponse);
+    rpc CountDataGroup(DataGroupTime) returns (DataCountResponse);
 
-    rpc CountDataByIdsLastTime(DataIdsTime) returns (DataCountResponse);
+    rpc CountDataGroupByLatest(DataGroupTime) returns (DataCountResponse);
 
-    rpc CountDataByIdsRangeTime(DataIdsRange) returns (DataCountResponse);
+    rpc CountDataGroupByRange(DataGroupRange) returns (DataCountResponse);
 }
 
 message DataSchema {
@@ -114,21 +114,21 @@ message DataSetSchema {
     int32 tag = 5;
 }
 
-message DataIds {
+message DataGroupId {
     repeated bytes device_ids = 1;
     repeated bytes model_ids = 2;
     int64 timestamp = 3;
     optional int32 tag = 4;
 }
 
-message DataIdsTime {
+message DataGroupTime {
     repeated bytes device_ids = 1;
     repeated bytes model_ids = 2;
     int64 timestamp = 3;
     optional int32 tag = 4;
 }
 
-message DataIdsRange {
+message DataGroupRange {
     repeated bytes device_ids = 1;
     repeated bytes model_ids = 2;
     int64 begin = 3;
@@ -136,7 +136,7 @@ message DataIdsRange {
     optional int32 tag = 5;
 }
 
-message DataIdsNumber {
+message DataGroupNumber {
     repeated bytes device_ids = 1;
     repeated bytes model_ids = 2;
     int64 timestamp = 3;

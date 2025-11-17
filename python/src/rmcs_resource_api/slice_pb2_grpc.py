@@ -44,8 +44,8 @@ class SliceServiceStub(object):
                 request_serializer=rmcs__resource__api_dot_slice__pb2.SliceTime.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_slice__pb2.SliceListResponse.FromString,
                 _registered_method=True)
-        self.ListSliceByRangeTime = channel.unary_unary(
-                '/slice.SliceService/ListSliceByRangeTime',
+        self.ListSliceByRange = channel.unary_unary(
+                '/slice.SliceService/ListSliceByRange',
                 request_serializer=rmcs__resource__api_dot_slice__pb2.SliceRange.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_slice__pb2.SliceListResponse.FromString,
                 _registered_method=True)
@@ -54,8 +54,8 @@ class SliceServiceStub(object):
                 request_serializer=rmcs__resource__api_dot_slice__pb2.SliceNameTime.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_slice__pb2.SliceListResponse.FromString,
                 _registered_method=True)
-        self.ListSliceByNameRangeTime = channel.unary_unary(
-                '/slice.SliceService/ListSliceByNameRangeTime',
+        self.ListSliceByNameRange = channel.unary_unary(
+                '/slice.SliceService/ListSliceByNameRange',
                 request_serializer=rmcs__resource__api_dot_slice__pb2.SliceNameRange.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_slice__pb2.SliceListResponse.FromString,
                 _registered_method=True)
@@ -89,8 +89,8 @@ class SliceServiceStub(object):
                 request_serializer=rmcs__resource__api_dot_slice__pb2.SliceSetTime.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_slice__pb2.SliceSetListResponse.FromString,
                 _registered_method=True)
-        self.ListSliceSetByRangeTime = channel.unary_unary(
-                '/slice.SliceService/ListSliceSetByRangeTime',
+        self.ListSliceSetByRange = channel.unary_unary(
+                '/slice.SliceService/ListSliceSetByRange',
                 request_serializer=rmcs__resource__api_dot_slice__pb2.SliceSetRange.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_slice__pb2.SliceSetListResponse.FromString,
                 _registered_method=True)
@@ -99,8 +99,8 @@ class SliceServiceStub(object):
                 request_serializer=rmcs__resource__api_dot_slice__pb2.SliceNameTime.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_slice__pb2.SliceSetListResponse.FromString,
                 _registered_method=True)
-        self.ListSliceSetByNameRangeTime = channel.unary_unary(
-                '/slice.SliceService/ListSliceSetByNameRangeTime',
+        self.ListSliceSetByNameRange = channel.unary_unary(
+                '/slice.SliceService/ListSliceSetByNameRange',
                 request_serializer=rmcs__resource__api_dot_slice__pb2.SliceNameRange.SerializeToString,
                 response_deserializer=rmcs__resource__api_dot_slice__pb2.SliceSetListResponse.FromString,
                 _registered_method=True)
@@ -141,7 +141,7 @@ class SliceServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListSliceByRangeTime(self, request, context):
+    def ListSliceByRange(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -153,7 +153,7 @@ class SliceServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListSliceByNameRangeTime(self, request, context):
+    def ListSliceByNameRange(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -195,7 +195,7 @@ class SliceServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListSliceSetByRangeTime(self, request, context):
+    def ListSliceSetByRange(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -207,7 +207,7 @@ class SliceServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListSliceSetByNameRangeTime(self, request, context):
+    def ListSliceSetByNameRange(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -250,8 +250,8 @@ def add_SliceServiceServicer_to_server(servicer, server):
                     request_deserializer=rmcs__resource__api_dot_slice__pb2.SliceTime.FromString,
                     response_serializer=rmcs__resource__api_dot_slice__pb2.SliceListResponse.SerializeToString,
             ),
-            'ListSliceByRangeTime': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListSliceByRangeTime,
+            'ListSliceByRange': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListSliceByRange,
                     request_deserializer=rmcs__resource__api_dot_slice__pb2.SliceRange.FromString,
                     response_serializer=rmcs__resource__api_dot_slice__pb2.SliceListResponse.SerializeToString,
             ),
@@ -260,8 +260,8 @@ def add_SliceServiceServicer_to_server(servicer, server):
                     request_deserializer=rmcs__resource__api_dot_slice__pb2.SliceNameTime.FromString,
                     response_serializer=rmcs__resource__api_dot_slice__pb2.SliceListResponse.SerializeToString,
             ),
-            'ListSliceByNameRangeTime': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListSliceByNameRangeTime,
+            'ListSliceByNameRange': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListSliceByNameRange,
                     request_deserializer=rmcs__resource__api_dot_slice__pb2.SliceNameRange.FromString,
                     response_serializer=rmcs__resource__api_dot_slice__pb2.SliceListResponse.SerializeToString,
             ),
@@ -295,8 +295,8 @@ def add_SliceServiceServicer_to_server(servicer, server):
                     request_deserializer=rmcs__resource__api_dot_slice__pb2.SliceSetTime.FromString,
                     response_serializer=rmcs__resource__api_dot_slice__pb2.SliceSetListResponse.SerializeToString,
             ),
-            'ListSliceSetByRangeTime': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListSliceSetByRangeTime,
+            'ListSliceSetByRange': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListSliceSetByRange,
                     request_deserializer=rmcs__resource__api_dot_slice__pb2.SliceSetRange.FromString,
                     response_serializer=rmcs__resource__api_dot_slice__pb2.SliceSetListResponse.SerializeToString,
             ),
@@ -305,8 +305,8 @@ def add_SliceServiceServicer_to_server(servicer, server):
                     request_deserializer=rmcs__resource__api_dot_slice__pb2.SliceNameTime.FromString,
                     response_serializer=rmcs__resource__api_dot_slice__pb2.SliceSetListResponse.SerializeToString,
             ),
-            'ListSliceSetByNameRangeTime': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListSliceSetByNameRangeTime,
+            'ListSliceSetByNameRange': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListSliceSetByNameRange,
                     request_deserializer=rmcs__resource__api_dot_slice__pb2.SliceNameRange.FromString,
                     response_serializer=rmcs__resource__api_dot_slice__pb2.SliceSetListResponse.SerializeToString,
             ),
@@ -396,7 +396,7 @@ class SliceService(object):
             _registered_method=True)
 
     @staticmethod
-    def ListSliceByRangeTime(request,
+    def ListSliceByRange(request,
             target,
             options=(),
             channel_credentials=None,
@@ -409,7 +409,7 @@ class SliceService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/slice.SliceService/ListSliceByRangeTime',
+            '/slice.SliceService/ListSliceByRange',
             rmcs__resource__api_dot_slice__pb2.SliceRange.SerializeToString,
             rmcs__resource__api_dot_slice__pb2.SliceListResponse.FromString,
             options,
@@ -450,7 +450,7 @@ class SliceService(object):
             _registered_method=True)
 
     @staticmethod
-    def ListSliceByNameRangeTime(request,
+    def ListSliceByNameRange(request,
             target,
             options=(),
             channel_credentials=None,
@@ -463,7 +463,7 @@ class SliceService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/slice.SliceService/ListSliceByNameRangeTime',
+            '/slice.SliceService/ListSliceByNameRange',
             rmcs__resource__api_dot_slice__pb2.SliceNameRange.SerializeToString,
             rmcs__resource__api_dot_slice__pb2.SliceListResponse.FromString,
             options,
@@ -639,7 +639,7 @@ class SliceService(object):
             _registered_method=True)
 
     @staticmethod
-    def ListSliceSetByRangeTime(request,
+    def ListSliceSetByRange(request,
             target,
             options=(),
             channel_credentials=None,
@@ -652,7 +652,7 @@ class SliceService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/slice.SliceService/ListSliceSetByRangeTime',
+            '/slice.SliceService/ListSliceSetByRange',
             rmcs__resource__api_dot_slice__pb2.SliceSetRange.SerializeToString,
             rmcs__resource__api_dot_slice__pb2.SliceSetListResponse.FromString,
             options,
@@ -693,7 +693,7 @@ class SliceService(object):
             _registered_method=True)
 
     @staticmethod
-    def ListSliceSetByNameRangeTime(request,
+    def ListSliceSetByNameRange(request,
             target,
             options=(),
             channel_credentials=None,
@@ -706,7 +706,7 @@ class SliceService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/slice.SliceService/ListSliceSetByNameRangeTime',
+            '/slice.SliceService/ListSliceSetByNameRange',
             rmcs__resource__api_dot_slice__pb2.SliceNameRange.SerializeToString,
             rmcs__resource__api_dot_slice__pb2.SliceSetListResponse.FromString,
             options,

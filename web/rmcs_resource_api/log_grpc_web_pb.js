@@ -202,8 +202,8 @@ proto.log.LogServicePromiseClient.prototype.readLogByTime =
  *   !proto.log.LogIds,
  *   !proto.log.LogListResponse>}
  */
-const methodDescriptor_LogService_ListLog = new grpc.web.MethodDescriptor(
-  '/log.LogService/ListLog',
+const methodDescriptor_LogService_ListLogByIds = new grpc.web.MethodDescriptor(
+  '/log.LogService/ListLogByIds',
   grpc.web.MethodType.UNARY,
   proto.log.LogIds,
   proto.log.LogListResponse,
@@ -228,13 +228,13 @@ const methodDescriptor_LogService_ListLog = new grpc.web.MethodDescriptor(
  * @return {!grpc.web.ClientReadableStream<!proto.log.LogListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.log.LogServiceClient.prototype.listLog =
+proto.log.LogServiceClient.prototype.listLogByIds =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/log.LogService/ListLog',
+      '/log.LogService/ListLogByIds',
       request,
       metadata || {},
-      methodDescriptor_LogService_ListLog,
+      methodDescriptor_LogService_ListLogByIds,
       callback);
 };
 
@@ -247,13 +247,13 @@ proto.log.LogServiceClient.prototype.listLog =
  * @return {!Promise<!proto.log.LogListResponse>}
  *     Promise that resolves to the response
  */
-proto.log.LogServicePromiseClient.prototype.listLog =
+proto.log.LogServicePromiseClient.prototype.listLogByIds =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/log.LogService/ListLog',
+      '/log.LogService/ListLogByIds',
       request,
       metadata || {},
-      methodDescriptor_LogService_ListLog);
+      methodDescriptor_LogService_ListLogByIds);
 };
 
 
@@ -324,8 +324,8 @@ proto.log.LogServicePromiseClient.prototype.listLogByTime =
  *   !proto.log.LogTime,
  *   !proto.log.LogListResponse>}
  */
-const methodDescriptor_LogService_ListLogByLastTime = new grpc.web.MethodDescriptor(
-  '/log.LogService/ListLogByLastTime',
+const methodDescriptor_LogService_ListLogByLatest = new grpc.web.MethodDescriptor(
+  '/log.LogService/ListLogByLatest',
   grpc.web.MethodType.UNARY,
   proto.log.LogTime,
   proto.log.LogListResponse,
@@ -350,13 +350,13 @@ const methodDescriptor_LogService_ListLogByLastTime = new grpc.web.MethodDescrip
  * @return {!grpc.web.ClientReadableStream<!proto.log.LogListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.log.LogServiceClient.prototype.listLogByLastTime =
+proto.log.LogServiceClient.prototype.listLogByLatest =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/log.LogService/ListLogByLastTime',
+      '/log.LogService/ListLogByLatest',
       request,
       metadata || {},
-      methodDescriptor_LogService_ListLogByLastTime,
+      methodDescriptor_LogService_ListLogByLatest,
       callback);
 };
 
@@ -369,13 +369,13 @@ proto.log.LogServiceClient.prototype.listLogByLastTime =
  * @return {!Promise<!proto.log.LogListResponse>}
  *     Promise that resolves to the response
  */
-proto.log.LogServicePromiseClient.prototype.listLogByLastTime =
+proto.log.LogServicePromiseClient.prototype.listLogByLatest =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/log.LogService/ListLogByLastTime',
+      '/log.LogService/ListLogByLatest',
       request,
       metadata || {},
-      methodDescriptor_LogService_ListLogByLastTime);
+      methodDescriptor_LogService_ListLogByLatest);
 };
 
 
@@ -385,8 +385,8 @@ proto.log.LogServicePromiseClient.prototype.listLogByLastTime =
  *   !proto.log.LogRange,
  *   !proto.log.LogListResponse>}
  */
-const methodDescriptor_LogService_ListLogByRangeTime = new grpc.web.MethodDescriptor(
-  '/log.LogService/ListLogByRangeTime',
+const methodDescriptor_LogService_ListLogByRange = new grpc.web.MethodDescriptor(
+  '/log.LogService/ListLogByRange',
   grpc.web.MethodType.UNARY,
   proto.log.LogRange,
   proto.log.LogListResponse,
@@ -411,13 +411,13 @@ const methodDescriptor_LogService_ListLogByRangeTime = new grpc.web.MethodDescri
  * @return {!grpc.web.ClientReadableStream<!proto.log.LogListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.log.LogServiceClient.prototype.listLogByRangeTime =
+proto.log.LogServiceClient.prototype.listLogByRange =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/log.LogService/ListLogByRangeTime',
+      '/log.LogService/ListLogByRange',
       request,
       metadata || {},
-      methodDescriptor_LogService_ListLogByRangeTime,
+      methodDescriptor_LogService_ListLogByRange,
       callback);
 };
 
@@ -430,13 +430,13 @@ proto.log.LogServiceClient.prototype.listLogByRangeTime =
  * @return {!Promise<!proto.log.LogListResponse>}
  *     Promise that resolves to the response
  */
-proto.log.LogServicePromiseClient.prototype.listLogByRangeTime =
+proto.log.LogServicePromiseClient.prototype.listLogByRange =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/log.LogService/ListLogByRangeTime',
+      '/log.LogService/ListLogByRange',
       request,
       metadata || {},
-      methodDescriptor_LogService_ListLogByRangeTime);
+      methodDescriptor_LogService_ListLogByRange);
 };
 
 

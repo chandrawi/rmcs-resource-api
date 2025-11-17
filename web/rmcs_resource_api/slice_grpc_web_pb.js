@@ -202,8 +202,8 @@ proto.slice.SliceServicePromiseClient.prototype.listSliceByTime =
  *   !proto.slice.SliceRange,
  *   !proto.slice.SliceListResponse>}
  */
-const methodDescriptor_SliceService_ListSliceByRangeTime = new grpc.web.MethodDescriptor(
-  '/slice.SliceService/ListSliceByRangeTime',
+const methodDescriptor_SliceService_ListSliceByRange = new grpc.web.MethodDescriptor(
+  '/slice.SliceService/ListSliceByRange',
   grpc.web.MethodType.UNARY,
   proto.slice.SliceRange,
   proto.slice.SliceListResponse,
@@ -228,13 +228,13 @@ const methodDescriptor_SliceService_ListSliceByRangeTime = new grpc.web.MethodDe
  * @return {!grpc.web.ClientReadableStream<!proto.slice.SliceListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.slice.SliceServiceClient.prototype.listSliceByRangeTime =
+proto.slice.SliceServiceClient.prototype.listSliceByRange =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/slice.SliceService/ListSliceByRangeTime',
+      '/slice.SliceService/ListSliceByRange',
       request,
       metadata || {},
-      methodDescriptor_SliceService_ListSliceByRangeTime,
+      methodDescriptor_SliceService_ListSliceByRange,
       callback);
 };
 
@@ -247,13 +247,13 @@ proto.slice.SliceServiceClient.prototype.listSliceByRangeTime =
  * @return {!Promise<!proto.slice.SliceListResponse>}
  *     Promise that resolves to the response
  */
-proto.slice.SliceServicePromiseClient.prototype.listSliceByRangeTime =
+proto.slice.SliceServicePromiseClient.prototype.listSliceByRange =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/slice.SliceService/ListSliceByRangeTime',
+      '/slice.SliceService/ListSliceByRange',
       request,
       metadata || {},
-      methodDescriptor_SliceService_ListSliceByRangeTime);
+      methodDescriptor_SliceService_ListSliceByRange);
 };
 
 
@@ -324,8 +324,8 @@ proto.slice.SliceServicePromiseClient.prototype.listSliceByNameTime =
  *   !proto.slice.SliceNameRange,
  *   !proto.slice.SliceListResponse>}
  */
-const methodDescriptor_SliceService_ListSliceByNameRangeTime = new grpc.web.MethodDescriptor(
-  '/slice.SliceService/ListSliceByNameRangeTime',
+const methodDescriptor_SliceService_ListSliceByNameRange = new grpc.web.MethodDescriptor(
+  '/slice.SliceService/ListSliceByNameRange',
   grpc.web.MethodType.UNARY,
   proto.slice.SliceNameRange,
   proto.slice.SliceListResponse,
@@ -350,13 +350,13 @@ const methodDescriptor_SliceService_ListSliceByNameRangeTime = new grpc.web.Meth
  * @return {!grpc.web.ClientReadableStream<!proto.slice.SliceListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.slice.SliceServiceClient.prototype.listSliceByNameRangeTime =
+proto.slice.SliceServiceClient.prototype.listSliceByNameRange =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/slice.SliceService/ListSliceByNameRangeTime',
+      '/slice.SliceService/ListSliceByNameRange',
       request,
       metadata || {},
-      methodDescriptor_SliceService_ListSliceByNameRangeTime,
+      methodDescriptor_SliceService_ListSliceByNameRange,
       callback);
 };
 
@@ -369,13 +369,13 @@ proto.slice.SliceServiceClient.prototype.listSliceByNameRangeTime =
  * @return {!Promise<!proto.slice.SliceListResponse>}
  *     Promise that resolves to the response
  */
-proto.slice.SliceServicePromiseClient.prototype.listSliceByNameRangeTime =
+proto.slice.SliceServicePromiseClient.prototype.listSliceByNameRange =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/slice.SliceService/ListSliceByNameRangeTime',
+      '/slice.SliceService/ListSliceByNameRange',
       request,
       metadata || {},
-      methodDescriptor_SliceService_ListSliceByNameRangeTime);
+      methodDescriptor_SliceService_ListSliceByNameRange);
 };
 
 
@@ -751,8 +751,8 @@ proto.slice.SliceServicePromiseClient.prototype.listSliceSetByTime =
  *   !proto.slice.SliceSetRange,
  *   !proto.slice.SliceSetListResponse>}
  */
-const methodDescriptor_SliceService_ListSliceSetByRangeTime = new grpc.web.MethodDescriptor(
-  '/slice.SliceService/ListSliceSetByRangeTime',
+const methodDescriptor_SliceService_ListSliceSetByRange = new grpc.web.MethodDescriptor(
+  '/slice.SliceService/ListSliceSetByRange',
   grpc.web.MethodType.UNARY,
   proto.slice.SliceSetRange,
   proto.slice.SliceSetListResponse,
@@ -777,13 +777,13 @@ const methodDescriptor_SliceService_ListSliceSetByRangeTime = new grpc.web.Metho
  * @return {!grpc.web.ClientReadableStream<!proto.slice.SliceSetListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.slice.SliceServiceClient.prototype.listSliceSetByRangeTime =
+proto.slice.SliceServiceClient.prototype.listSliceSetByRange =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/slice.SliceService/ListSliceSetByRangeTime',
+      '/slice.SliceService/ListSliceSetByRange',
       request,
       metadata || {},
-      methodDescriptor_SliceService_ListSliceSetByRangeTime,
+      methodDescriptor_SliceService_ListSliceSetByRange,
       callback);
 };
 
@@ -796,13 +796,13 @@ proto.slice.SliceServiceClient.prototype.listSliceSetByRangeTime =
  * @return {!Promise<!proto.slice.SliceSetListResponse>}
  *     Promise that resolves to the response
  */
-proto.slice.SliceServicePromiseClient.prototype.listSliceSetByRangeTime =
+proto.slice.SliceServicePromiseClient.prototype.listSliceSetByRange =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/slice.SliceService/ListSliceSetByRangeTime',
+      '/slice.SliceService/ListSliceSetByRange',
       request,
       metadata || {},
-      methodDescriptor_SliceService_ListSliceSetByRangeTime);
+      methodDescriptor_SliceService_ListSliceSetByRange);
 };
 
 
@@ -873,8 +873,8 @@ proto.slice.SliceServicePromiseClient.prototype.listSliceSetByNameTime =
  *   !proto.slice.SliceNameRange,
  *   !proto.slice.SliceSetListResponse>}
  */
-const methodDescriptor_SliceService_ListSliceSetByNameRangeTime = new grpc.web.MethodDescriptor(
-  '/slice.SliceService/ListSliceSetByNameRangeTime',
+const methodDescriptor_SliceService_ListSliceSetByNameRange = new grpc.web.MethodDescriptor(
+  '/slice.SliceService/ListSliceSetByNameRange',
   grpc.web.MethodType.UNARY,
   proto.slice.SliceNameRange,
   proto.slice.SliceSetListResponse,
@@ -899,13 +899,13 @@ const methodDescriptor_SliceService_ListSliceSetByNameRangeTime = new grpc.web.M
  * @return {!grpc.web.ClientReadableStream<!proto.slice.SliceSetListResponse>|undefined}
  *     The XHR Node Readable Stream
  */
-proto.slice.SliceServiceClient.prototype.listSliceSetByNameRangeTime =
+proto.slice.SliceServiceClient.prototype.listSliceSetByNameRange =
     function(request, metadata, callback) {
   return this.client_.rpcCall(this.hostname_ +
-      '/slice.SliceService/ListSliceSetByNameRangeTime',
+      '/slice.SliceService/ListSliceSetByNameRange',
       request,
       metadata || {},
-      methodDescriptor_SliceService_ListSliceSetByNameRangeTime,
+      methodDescriptor_SliceService_ListSliceSetByNameRange,
       callback);
 };
 
@@ -918,13 +918,13 @@ proto.slice.SliceServiceClient.prototype.listSliceSetByNameRangeTime =
  * @return {!Promise<!proto.slice.SliceSetListResponse>}
  *     Promise that resolves to the response
  */
-proto.slice.SliceServicePromiseClient.prototype.listSliceSetByNameRangeTime =
+proto.slice.SliceServicePromiseClient.prototype.listSliceSetByNameRange =
     function(request, metadata) {
   return this.client_.unaryCall(this.hostname_ +
-      '/slice.SliceService/ListSliceSetByNameRangeTime',
+      '/slice.SliceService/ListSliceSetByNameRange',
       request,
       metadata || {},
-      methodDescriptor_SliceService_ListSliceSetByNameRangeTime);
+      methodDescriptor_SliceService_ListSliceSetByNameRange);
 };
 
 

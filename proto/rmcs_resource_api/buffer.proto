@@ -6,13 +6,13 @@ service BufferService {
 
     rpc ReadBufferByTime(BufferTime) returns (BufferReadResponse);
 
-    rpc ListBuffer(BufferIds) returns (BufferListResponse);
+    rpc ListBufferByIds(BufferIds) returns (BufferListResponse);
 
     rpc ListBufferByTime(BufferTime) returns (BufferListResponse);
 
-    rpc ListBufferByLastTime(BufferTime) returns (BufferListResponse);
+    rpc ListBufferByLatest(BufferTime) returns (BufferListResponse);
 
-    rpc ListBufferByRangeTime(BufferRange) returns (BufferListResponse);
+    rpc ListBufferByRange(BufferRange) returns (BufferListResponse);
 
     rpc ListBufferByNumberBefore(BufferNumber) returns (BufferListResponse);
 
@@ -30,31 +30,31 @@ service BufferService {
 
     rpc ListBufferLastOffset(BuffersSelector) returns (BufferListResponse);
 
-    rpc ListBufferByIdsTime(BufferIdsTime) returns (BufferListResponse);
+    rpc ListBufferGroupByTime(BufferGroupTime) returns (BufferListResponse);
 
-    rpc ListBufferByIdsLastTime(BufferIdsTime) returns (BufferListResponse);
+    rpc ListBufferGroupByLatest(BufferGroupTime) returns (BufferListResponse);
 
-    rpc ListBufferByIdsRangeTime(BufferIdsRange) returns (BufferListResponse);
+    rpc ListBufferGroupByRange(BufferGroupRange) returns (BufferListResponse);
 
-    rpc ListBufferByIdsNumberBefore(BufferIdsNumber) returns (BufferListResponse);
+    rpc ListBufferGroupByNumberBefore(BufferGroupNumber) returns (BufferListResponse);
 
-    rpc ListBufferByIdsNumberAfter(BufferIdsNumber) returns (BufferListResponse);
+    rpc ListBufferGroupByNumberAfter(BufferGroupNumber) returns (BufferListResponse);
 
-    rpc ListBufferFirstByIds(BuffersIdsSelector) returns (BufferListResponse);
+    rpc ListBufferGroupFirst(BuffersGroupSelector) returns (BufferListResponse);
 
-    rpc ListBufferFirstOffsetByIds(BuffersIdsSelector) returns (BufferListResponse);
+    rpc ListBufferGroupFirstOffset(BuffersGroupSelector) returns (BufferListResponse);
 
-    rpc ListBufferLastByIds(BuffersIdsSelector) returns (BufferListResponse);
+    rpc ListBufferGroupLast(BuffersGroupSelector) returns (BufferListResponse);
 
-    rpc ListBufferLastOffsetByIds(BuffersIdsSelector) returns (BufferListResponse);
+    rpc ListBufferGroupLastOffset(BuffersGroupSelector) returns (BufferListResponse);
 
     rpc ReadBufferSet(BufferSetId) returns (BufferSetReadResponse);
 
     rpc ListBufferSetByTime(BufferSetTime) returns (BufferSetListResponse);
 
-    rpc ListBufferSetByLastTime(BufferSetTime) returns (BufferSetListResponse);
+    rpc ListBufferSetByLatest(BufferSetTime) returns (BufferSetListResponse);
 
-    rpc ListBufferSetByRangeTime(BufferSetRange) returns (BufferSetListResponse);
+    rpc ListBufferSetByRange(BufferSetRange) returns (BufferSetListResponse);
 
     rpc CreateBuffer(BufferSchema) returns (BufferCreateResponse);
 
@@ -76,13 +76,13 @@ service BufferService {
 
     rpc ListBufferTimestampLast(BuffersSelector) returns (TimestampListResponse);
 
-    rpc ListBufferTimestampFirstByIds(BuffersIdsSelector) returns (TimestampListResponse);
+    rpc ListBufferGroupTimestampFirst(BuffersGroupSelector) returns (TimestampListResponse);
 
-    rpc ListBufferTimestampLastByIds(BuffersIdsSelector) returns (TimestampListResponse);
+    rpc ListBufferGroupTimestampLast(BuffersGroupSelector) returns (TimestampListResponse);
 
     rpc CountBuffer(BufferSelector) returns (BufferCountResponse);
 
-    rpc CountBufferByIds(BufferIdsSelector) returns (BufferCountResponse);
+    rpc CountBufferGroup(BufferGroupSelector) returns (BufferCountResponse);
 }
 
 message BufferSchema {
@@ -153,14 +153,14 @@ message BufferSetSchema {
     int32 tag = 6;
 }
 
-message BufferIdsTime {
+message BufferGroupTime {
     repeated bytes device_ids = 1;
     repeated bytes model_ids = 2;
     int64 timestamp = 3;
     optional int32 tag = 4;
 }
 
-message BufferIdsRange {
+message BufferGroupRange {
     repeated bytes device_ids = 1;
     repeated bytes model_ids = 2;
     int64 begin = 3;
@@ -168,7 +168,7 @@ message BufferIdsRange {
     optional int32 tag = 5;
 }
 
-message BufferIdsNumber {
+message BufferGroupNumber {
     repeated bytes device_ids = 1;
     repeated bytes model_ids = 2;
     int64 timestamp = 3;
@@ -176,13 +176,13 @@ message BufferIdsNumber {
     optional int32 tag = 5;
 }
 
-message BufferIdsSelector {
+message BufferGroupSelector {
     repeated bytes device_ids = 1;
     repeated bytes model_ids = 2;
     optional int32 tag = 3;
 }
 
-message BuffersIdsSelector {
+message BuffersGroupSelector {
     uint32 number = 1;
     uint32 offset = 2;
     repeated bytes device_ids = 3;

@@ -94,7 +94,7 @@ class DataSetSchema(_message.Message):
     tag: int
     def __init__(self, set_id: _Optional[bytes] = ..., timestamp: _Optional[int] = ..., data_bytes: _Optional[bytes] = ..., data_type: _Optional[_Iterable[int]] = ..., tag: _Optional[int] = ...) -> None: ...
 
-class DataIds(_message.Message):
+class DataGroupId(_message.Message):
     __slots__ = ("device_ids", "model_ids", "timestamp", "tag")
     DEVICE_IDS_FIELD_NUMBER: _ClassVar[int]
     MODEL_IDS_FIELD_NUMBER: _ClassVar[int]
@@ -106,7 +106,7 @@ class DataIds(_message.Message):
     tag: int
     def __init__(self, device_ids: _Optional[_Iterable[bytes]] = ..., model_ids: _Optional[_Iterable[bytes]] = ..., timestamp: _Optional[int] = ..., tag: _Optional[int] = ...) -> None: ...
 
-class DataIdsTime(_message.Message):
+class DataGroupTime(_message.Message):
     __slots__ = ("device_ids", "model_ids", "timestamp", "tag")
     DEVICE_IDS_FIELD_NUMBER: _ClassVar[int]
     MODEL_IDS_FIELD_NUMBER: _ClassVar[int]
@@ -118,7 +118,7 @@ class DataIdsTime(_message.Message):
     tag: int
     def __init__(self, device_ids: _Optional[_Iterable[bytes]] = ..., model_ids: _Optional[_Iterable[bytes]] = ..., timestamp: _Optional[int] = ..., tag: _Optional[int] = ...) -> None: ...
 
-class DataIdsRange(_message.Message):
+class DataGroupRange(_message.Message):
     __slots__ = ("device_ids", "model_ids", "begin", "end", "tag")
     DEVICE_IDS_FIELD_NUMBER: _ClassVar[int]
     MODEL_IDS_FIELD_NUMBER: _ClassVar[int]
@@ -132,7 +132,7 @@ class DataIdsRange(_message.Message):
     tag: int
     def __init__(self, device_ids: _Optional[_Iterable[bytes]] = ..., model_ids: _Optional[_Iterable[bytes]] = ..., begin: _Optional[int] = ..., end: _Optional[int] = ..., tag: _Optional[int] = ...) -> None: ...
 
-class DataIdsNumber(_message.Message):
+class DataGroupNumber(_message.Message):
     __slots__ = ("device_ids", "model_ids", "timestamp", "number", "tag")
     DEVICE_IDS_FIELD_NUMBER: _ClassVar[int]
     MODEL_IDS_FIELD_NUMBER: _ClassVar[int]
